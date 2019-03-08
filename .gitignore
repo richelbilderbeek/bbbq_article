@@ -241,3 +241,10 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 article.pdf
+*.doc
+*.docx
+article.md
+*.odt
+article.txt
+bbbq.zip
+*.rtf
