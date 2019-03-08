@@ -9,7 +9,11 @@
 
 % Affiliations
 \usepackage{authblk}
-\title{pirouette: Determining the error BEAST2 makes in inferring a phylogeny}
+\title{
+  Transmembrane helices are also 
+  an overlooked source of major histocompatibility complex class II epitopes
+  and evolutionary more conserved than expected by change
+}
 \author[1]{Rich\`el J.C. Bilderbeek}
 \author[1]{?Rampal S. Etienne}
 \author[2]{Frans Bianchi}
@@ -91,119 +95,150 @@
 
 \begin{abstract}
 
-About a fourth of the human proteome is anchored by transmembrane helices (TMHs) to
-lipid membranes. It, therefore, comes as no surprise that
-bioinformatics analysis predicts an over-representation of TMHs among strong MHC
-class I (MHC-I) binders. Published peptide elution studies confirm that TMHs are indeed
-presented by MHC-I. This raises the question how membrane proteins are processed
-for MHC-I (cross-)presentation, with current research focusing on soluble antigens. The
-presentation of membrane-buried peptides is likely important in health and disease, as
-TMHs are considerably conserved and their presentation might prevent escape muta-
-tions by pathogens. Therefore, it could contribute to the disease correlations described
-for many human leukocyte antigen haplotypes.
-
+Transmembrane helices (TMHs) are an overlooked source of 
+major histocompatibility complex (MHC) class I epitopes.
+It is unknown why this is the case and 
+whether MHC-II also is an overlooked source of epitopes.
+This study investigates if there is an evolutionary conservation 
+of a pathogen's TMHs and if this is matches 
+with MHC-II's over/equally/under-presenting TMHs.
+We find that ...
 \end{abstract}
 
-{\bf Keywords:} antigen presentation, antigen cross-presentation, membrane proteins, bioinformatics, adaptive
-immunity, transmembrane domain, epitopes, T lymphocyte, MHC-2
+{\bf Keywords:} antigen presentation, membrane proteins, bioinformatics, 
+adaptive immunity, transmembrane domain, epitopes, T lymphocyte, MHC-2
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cite{bianchi2017transmembrane}
+For MHC-1, we know that epitopes derived from transmembrane helices (TMHs) are 
+over-presented by all human leukocyte antigen (HLA)-A and most HLA-B super 
+types [\cite{bianchi2017transmembrane}].
 
+A hypothesis offered by that same paper is that the presentation of 
+especially TMHs may have an evolutionary advantage for the (human) host.
+The argumentation given is that the presentation of parts of TMHs
+is likelier to detect pathogenic proteins, as TMHs are already conserved
+due to the functional requirement of being able to span a membrane.
+Additionally, there are fewer escape mutations possible for the pathogen,
+as relatively less of these will result in a functional TMH.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+However, that argumentation can also go the other way: as there are less
+polypeptide fragments from (the less amount of) possible TMHs, 
+it is likelier that host and pathogen
+share the same protein sequence, 
+resulting the pathogen avoiding detection.
+
+Within the immune response, MHC-I is unique in [doing something].
+The other most important participant in the immune response in MHC-II,
+which is more involved in detecting bacterial pathogens, 
+e.g. tuberculosis, [and others].
+
+From the earlier research done on MHC-I, it naturally follows to check
+if MHC-II are likelier to present TMHs than expected by chance.
+
+Extending the previous study on MHC-I, we also measure the evolutionary
+conservation of TMH epitopes in Mycoplasma pathogens.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-There are thousands of MHC2 alleles known.
-For this research, we picked the three alleles that are most abundant,
-accoring to \richel{reference here}, 
-which are DRB4*0101, 
-HLA-DPA10103-DPB10402 
+Transmembrane helices and strong MHC-II-binding peptides
+were predicted for a tuberculosis reference proteome 
+from \url{https://www.ebi.ac.uk/reference_proteomes}
+using the \verb;epitopeome; 
 \richel{
-  we decided for DPB1*0402, but there are multiple alleles matching.
-  I just picked the first one of the alleles matching, which are:
-  HLA-DPA10103-DPB10402,
-  HLA-DPA10104-DPB10402,
-  HLA-DPA10105-DPB10402,
-  HLA-DPA10106-DPB10402,
-  HLA-DPA10107-DPB10402,
-  HLA-DPA10108-DPB10402,
-  HLA-DPA10109-DPB10402,
-  HLA-DPA10110-DPB10402,
-  HLA-DPA10201-DPB10402,
-  HLA-DPA10202-DPB10402,
-  HLA-DPA10203-DPB10402,
-  HLA-DPA10204-DPB10402,
-  HLA-DPA10301-DPB10402,
-  HLA-DPA10302-DPB10402,
-  HLA-DPA10303-DPB10402,
-  HLA-DPA10401-DPB10402
+  I'd enjoy a better name
 }
-and DQA1*0501/DQB1*0301,
-that are present in respectively 31, 41 and 59 percent 
-\richel{fix numbers}
-of the current human population.
+R package [\cite{epitopeome}].
+We picked the three MHC-II alleles that are most abundant 
+in the current human population, 
+which are DRB4*0101, HLA-DPA10103-DPB10402 
+\richel{
+  We decided for DPB1*0402, but there are multiple alleles matching.
+  I just picked the first one of the alleles matching, which are:
+  HLA-DPA10x-DPB10402, where x equals 103-110, 201-204, 301-303 or 401
+}
+and DQA1*0501/DQB1*0301 \richel{reference here}.
+The 5\% peptides with the lowest IC50 values were defined as binders.
+We then simply counted the number of amino acids that were present inside the
+cell, within the membrane or outside of the cell, as well as if it was part 
+of a strong MHC-II binding site, as shown in figue \ref{tab:results}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The \verb;epitopeome; R package \cite{epitopeome} binds together 
+the \verb;tmhmm; [\cite{tmhmm}] and \verb;netmhc2pan; [\cite{netmhc2pan}] 
+R packages. \verb;tmhmm; provides an R interface to
+TMHMM [\cite{krogh2001predicting}, \cite{sonnhammer1998hidden}], a tool
+to predict where membrane proteins' amino acids are located within the
+membrance.   
+\verb;netmhc2pan; provides an R interface to
+NetMHC2pan [\cite{jensen2018improved}], a tool
+to predict MHC-II binding to proteins.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{table_imoimo.latex}
 % has label tab:results
+\richel{
+  I'd enjoy 
+  (1) a row with 'expected by chance', 
+  (2) using percentages instead,
+  (3) merging inside and outside
+}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgements}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Thanks to Geert van den Bogaart for his help \richel{reword}.
 We thank the Netherlands 
 Organization for Scientific Research (NWO) for financial support 
 through a VICI grant awarded to RSE.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Accessibility}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 All code is archived at \url{http://github.com/richelbilderbeek/someplace},
 with DOI \url{https://doi.org/12.3456/zenodo.1234567}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Authors' contributions}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 RJCB, FB and RSE conceived the idea for this research. 
 RJCB wrote the code.
 FB supplied the DNA alignment.
 RJCB, FB and RSE contributed to writing the article.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MEE style
 \bibliographystyle{mee}
 \bibliography{article}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Appendix section 1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \end{document}
