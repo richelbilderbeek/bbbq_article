@@ -11,6 +11,6 @@ DRB4*0101 & 7448 & 6116 & 122304 & 2228 & 2097 & 22441 \\
   DQA1*0501/DQB1*0301 & 6422 & 3180 & 86916 & 3254 & 5033 & 57829 \\ 
    \hline
 \end{tabular}
-\caption{\richel{These are preliminary, 6 percent of proteome} Location and binding of amino acids for the alleles. i: non-binding and inside, m: non-binding and transmembrane, o: non-binding and outside, I: binding and inside, M: binding and transmembrane, O: binding and outside} 
+\caption{Location and binding of amino acids for the alleles. i: non-binding and inside, m: non-binding and transmembrane, o: non-binding and outside, I: binding and inside, M: binding and transmembrane, O: binding and outside} 
 \label{tab:results}
 \end{table}
