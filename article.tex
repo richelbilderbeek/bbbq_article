@@ -15,7 +15,6 @@
   and evolutionary more conserved than expected by chance
 }
 \author[1]{Rich\`el J.C. Bilderbeek}
-\author[1]{?Rampal S. Etienne}
 \author[2]{Frans Bianchi}
 \affil[1]{Groningen Institute for Evolutionary Life Sciences, University of 
 Groningen, Groningen, The Netherlands}
@@ -49,9 +48,8 @@ Groningen, Groningen, The Netherlands}
 \usepackage{rotating}
 
 % Style of listings
-% From 
-http://r.789695.n4.nabble.com/How-to-nicely-display-R-code-with-the-LaTeX-packag
-e-listings-tp4648110.html
+% From http://r.789695.n4.nabble.com/
+%   How-to-nicely-display-R-code-with-the-LaTeX-package-listings-tp4648110.html
 \usepackage{fancyvrb} 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -61,12 +59,10 @@ e-listings-tp4648110.html
   language=R,% set programming language
   basicstyle=\ttfamily\small,% basic font style
   commentstyle=\color{gray},% comment style
-  % numbers=left,% display line numbers on the left side
   numberstyle=\scriptsize,% use small line numbers
   numbersep=10pt,% space between line numbers and code
   tabsize=2,% sizes of tabs
-  showstringspaces=false,% do not replace spaces in strings by a certain 
-character
+  showstringspaces=false,
   captionpos=b,% positioning of the caption below
   breaklines=true,% automatic line breaking
   escapeinside={(*}{*)},% escaping to LaTeX
@@ -74,24 +70,19 @@ character
   extendedchars=false,% prohibit extended chars (chars of codes 128--255)
   alsoletter={.<-},% becomes a letter
   alsoother={$},% becomes other
-  otherkeywords={!=, ~, $, \&, \%/\%, \%*\%, \%\%, <-, <<-, /},% other keywords
+  otherkeywords={!=, ~, $, \&, \%/\%, \%*\%, \%\%, <-, <<-, /},
   deletekeywords={c}% remove keywords 
 }
 \lstset{style=mystyle}
 
-% Adds numbered lines
-\usepackage{lineno}
-\linenumbers
-
-% Rename 'Abstract' to 'Summary 
-\usepackage[english]{babel}
-\addto{\captionsenglish}{\renewcommand{\abstractname}{Summary}}
+% Adds numbered lines. Not yet...
+% \usepackage{lineno}
+% \linenumbers
 
 %comments
 \newcommand{\frans}[1]{\textcolor{blue}{\textbf{[FB: #1]}}}
 \newcommand{\richel}[1]{\textcolor{orange}{\textbf{[RB: #1]}}}
 \newcommand{\rampal}[1]{\textcolor{green}{\textbf{[RSE: #1]}}}
-
 
 \begin{document}
 
