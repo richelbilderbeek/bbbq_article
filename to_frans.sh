@@ -1,6 +1,5 @@
 #!/bin/bash
 pandoc article.tex -o article.odt
-pandoc article.tex -o article.doc
 pandoc article.tex -o article.docx
 pandoc article.tex -o article.md
 pandoc article.tex -o article.txt

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# cd ../figures
-# ./create_figures
-# cd ../article
-
 pdflatex article.tex --shell-escape
 bibtex article.aux
 pdflatex article.tex --shell-escape
