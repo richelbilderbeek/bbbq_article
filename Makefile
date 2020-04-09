@@ -7,7 +7,10 @@ article.pdf: create.sh article.tex ks/fig_1.png ks/table_1.latex
 ks/fig_1.png: ks/render.sh ks/ks.Rmd
 	cd ks; ./render.sh; cd ..
 
-ks/table_1.latex: ks/render.sh ks/ks.Rmd
+ks/table_1.latex: ks/table_1.csv
+	csv2latex ks/table_1.csv --nohead > ks/table_1.latex
+
+ks/table_1.csv: ks/render.sh ks/ks.Rmd
 	cd ks; ./render.sh; cd ..
 
 frans: bbbq.zip

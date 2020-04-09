@@ -52,7 +52,7 @@ sink("table_1.latex")
     xtable::xtable(
       df,
       caption = paste0("Percentage of epitopes overlapping \nwith transmembrane helix"),
-      digits = 2
+      digits = 3
     ),
     include.rownames = FALSE
   )

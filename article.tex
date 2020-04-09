@@ -187,7 +187,7 @@ figure \ref{fig:ks}, for an $\alpha$ of $0.05$.
 is below 
 
 \begin{figure}[!htbp]
-  \includegraphics[width=0.4\textwidth]{pics/ks.png}
+  \includegraphics[width=0.4\textwidth]{ks/fig_1.png}
   \caption{
     Condition of a Kolmogorov-Smirnov (KS) statistic to rejects a null
     hypothesis. $D_{n,m}$ is the KS statistic, $n = m$ is the size
@@ -201,66 +201,70 @@ is below
 \subsection{MHC-2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Transmembrane helices and strong MHC-II-binding peptides
-were predicted for a tuberculosis reference proteome 
-from \url{https://www.ebi.ac.uk/reference_proteomes}
-using the \verb;epitopeome; R package (\cite{epitopeome}).
-We picked the three MHC-II alleles that are most abundant 
-in the current human population, 
-which are DRB4*0101, HLA-DPA10103-DPB10402 
-\richel{
-  We decided for DPB1*0402, but there are multiple alleles matching.
-  I just picked the first one of the alleles matching, which are:
-  HLA-DPA10x-DPB10402, where x equals 103-110, 201-204, 301-303 or 401
-}
-and DQA1*0501/DQB1*0301 \richel{reference here}.
-The 5\% peptides with the lowest IC50 values were defined as binders.
-We then simply counted the number of amino acids that were present inside the
-cell, within the membrane or outside of the cell, as well as if it was part 
-of a strong MHC-II binding site, as shown in figue \ref{tab:results}.
+\iffalse
+	Transmembrane helices and strong MHC-II-binding peptides
+	were predicted for a tuberculosis reference proteome 
+	from \url{https://www.ebi.ac.uk/reference_proteomes}
+	using the \verb;epitopeome; R package (\cite{epitopeome}).
+	We picked the three MHC-II alleles that are most abundant 
+	in the current human population, 
+	which are DRB4*0101, HLA-DPA10103-DPB10402 
+	\richel{
+	  We decided for DPB1*0402, but there are multiple alleles matching.
+	  I just picked the first one of the alleles matching, which are:
+	  HLA-DPA10x-DPB10402, where x equals 103-110, 201-204, 301-303 or 401
+	}
+	and DQA1*0501/DQB1*0301 \richel{reference here}.
+	The 5\% peptides with the lowest IC50 values were defined as binders.
+	We then simply counted the number of amino acids that were present inside the
+	cell, within the membrane or outside of the cell, as well as if it was part 
+	of a strong MHC-II binding site, as shown in figue \ref{tab:results}.
 
 
-The \verb;epitopeome; R package (\cite{epitopeome}) binds 
-together the \verb;tmhmm; (\cite{tmhmm}) and \verb;netmhc2pan; 
-(\cite{netmhc2pan}) 
-R packages. \verb;tmhmm; provides an R interface to
-TMHMM (\cite{krogh2001predicting, sonnhammer1998hidden}), a tool
-to predict where membrane proteins' amino acids are located within the
-membrance.   
-\verb;netmhc2pan; provides an R interface to
-NetMHC2pan (\cite{jensen2018improved}), a tool
-to predict MHC-II binding to proteins.
+	The \verb;epitopeome; R package (\cite{epitopeome}) binds 
+	together the \verb;tmhmm; (\cite{tmhmm}) and \verb;netmhc2pan; 
+	(\cite{netmhc2pan}) 
+	R packages. \verb;tmhmm; provides an R interface to
+	TMHMM (\cite{krogh2001predicting, sonnhammer1998hidden}), a tool
+	to predict where membrane proteins' amino acids are located within the
+	membrance.   
+	\verb;netmhc2pan; provides an R interface to
+	NetMHC2pan (\cite{jensen2018improved}), a tool
+	to predict MHC-II binding to proteins.
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The evolutionary conservation of TMHs was measured from a
-DNA alignment of multiple transmembrane proteins in multitiple
-species of the mycoplasma bacterial family
-\richel{how obtained exactly? how alignment done?}.
+\iffalse
+	The evolutionary conservation of TMHs was measured from a
+	DNA alignment of multiple transmembrane proteins in multitiple
+	species of the mycoplasma bacterial family
+	\richel{how obtained exactly? how alignment done?}.
 
-Using the \verb;tmhprot; R package (\cite{tmhprot}), the DNA alignment is split
-into two alignments, one for the TMH parts, another for the non-TMH
-parts. Each alignment was tested by the \verb;mcbette; 
-R package (\cite{mcbette}) to select the Bayesian inference model with
-the highest evidence (a.k.a. the marginal likelihood) using the nested
-sampling approach as described in \cite{maturana2018model},
-using the popular Bayesian phylogenetic tool 
-BEAST2 (\cite{bouckaert2014beast}) in the back-end.
-\verb;mcbette; used a set of 40 candidate inference models, 
-consisting of all combinations of 
-4 site models (JC, HKY, TN, GTR), 
-2 clock models (strict, RLN) and 
-5 tree priors (Yule, BD, CBS, CCP, CEP).
+	Using the \verb;tmhprot; R package (\cite{tmhprot}), the DNA alignment is split
+	into two alignments, one for the TMH parts, another for the non-TMH
+	parts. Each alignment was tested by the \verb;mcbette; 
+	R package (\cite{mcbette}) to select the Bayesian inference model with
+	the highest evidence (a.k.a. the marginal likelihood) using the nested
+	sampling approach as described in \cite{maturana2018model},
+	using the popular Bayesian phylogenetic tool 
+	BEAST2 (\cite{bouckaert2014beast}) in the back-end.
+	\verb;mcbette; used a set of 40 candidate inference models, 
+	consisting of all combinations of 
+	4 site models (JC, HKY, TN, GTR), 
+	2 clock models (strict, RLN) and 
+	5 tree priors (Yule, BD, CBS, CCP, CEP).
 
-For each alignment, the inference model with the highest evidence
-is used in a Bayesian inference. From each Bayesian posterior,
-the parameter estimates regarding mutation rates (including clock rate)
-were obtained and compared to determine which realized mutation rate is lower.
-The Markov chain Monte Carlo was set up in such a way that the effective sample
-size for the likelihood of the inference model is above the recommended value
-of 200 (\cite{bouckaert2014beast}).
+	For each alignment, the inference model with the highest evidence
+	is used in a Bayesian inference. From each Bayesian posterior,
+	the parameter estimates regarding mutation rates (including clock rate)
+	were obtained and compared to determine which realized mutation rate is lower.
+	The Markov chain Monte Carlo was set up in such a way that the effective sample
+	size for the likelihood of the inference model is above the recommended value
+	of 200 (\cite{bouckaert2014beast}).
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
@@ -280,46 +284,48 @@ of 200 (\cite{bouckaert2014beast}).
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Table \ref{tab:results} shows the location and binding strength for the
-tuberculosis proteome.
+\iffalse
+	Table \ref{tab:results} shows the location and binding strength for the
+	tuberculosis proteome.
 
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{figure_1.png}
-  \label{fig:1}
-\end{figure}
+	\begin{figure}[ht]
+	  \includegraphics[width=\textwidth]{figure_1.png}
+	  \label{fig:1}
+	\end{figure}
 
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{figure_1_5.png}
-  \label{fig:1_5}
-\end{figure}
+	\begin{figure}[ht]
+	  \includegraphics[width=\textwidth]{figure_1_5.png}
+	  \label{fig:1_5}
+	\end{figure}
 
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{figure_3.png}
-  \label{fig:3}
-\end{figure}
-
-
+	\begin{figure}[ht]
+	  \includegraphics[width=\textwidth]{figure_3.png}
+	  \label{fig:3}
+	\end{figure}
 
 
-\input{table_imoimo.latex}
-% has label tab:results
-\richel{
-  I'd enjoy 
-  (1) a row with 'expected by chance', 
-  (2) using percentages instead,
-  (3) merging inside and outside
-}
 
-The inference model with the highest evidence in the
-TMH-only alignment was [yet unknown] and [also yet unknown]
-for the non-TMH alignment. Individual model weights are shown
-in tables \ref{tab:evidences_tmh} 
-and \ref{tab:evidences_non_tmh}.
 
-The Bayesian inference resulted in [a distribution of mutation rates],
-as shown in [absent figure].
-The ESSes of the Bayesian parameter estimates was above 200, exact values
-are shown in tables \ref{tab:esses_tmh} and \ref{tab:esses_non_tmh}.
+	\input{table_imoimo.latex}
+	% has label tab:results
+	\richel{
+	  I'd enjoy 
+	  (1) a row with 'expected by chance', 
+	  (2) using percentages instead,
+	  (3) merging inside and outside
+	}
+
+	The inference model with the highest evidence in the
+	TMH-only alignment was [yet unknown] and [also yet unknown]
+	for the non-TMH alignment. Individual model weights are shown
+	in tables \ref{tab:evidences_tmh} 
+	and \ref{tab:evidences_non_tmh}.
+
+	The Bayesian inference resulted in [a distribution of mutation rates],
+	as shown in [absent figure].
+	The ESSes of the Bayesian parameter estimates was above 200, exact values
+	are shown in tables \ref{tab:esses_tmh} and \ref{tab:esses_non_tmh}.
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -382,86 +388,16 @@ RJCB and FB wrote the article.
 \bibliography{article}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Model selection}
+\section{Supplementary materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{rlllrr}
-  \hline
- & Site model & Clock model & Tree prior & log(evidence) & Weight \\ 
-  \hline
-1 & JC & Strict & Yule & -8201.109 & 0.002 \\ 
-  2 & JC & Strict & BD & -8203.346 & 0.000 \\ 
-  3 & JC & Strict & CCP & -8195.927 & 0.278 \\ 
-  4 & JC & Strict & CEP & -8194.976 & 0.720 \\ 
-   \hline
-\end{tabular}
-\caption{
-  Evidences for the TMH-only alignment
-  \richel{These are just example values}
-} 
-\label{tab:evidences_tmh}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{rlllrr}
-  \hline
- & Site model & Clock model & Tree prior & log(evidence) & Weight \\ 
-  \hline
-1 & JC & Strict & Yule & -8201.109 & 0.002 \\ 
-  2 & JC & Strict & BD & -8203.346 & 0.000 \\ 
-  3 & JC & Strict & CCP & -8195.927 & 0.278 \\ 
-  4 & JC & Strict & CEP & -8194.976 & 0.720 \\ 
-   \hline
-\end{tabular}
-\caption{
-  Evidences for the non-TMH alignment
-  \richel{These are just example values}
-} 
-\label{tab:evidences_non_tmh}
-\end{table}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Inference strength}
+\subsection{Binding}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrrrrr}
-  \hline
- & posterior & likelihood & prior & treeLikelihood & TreeHeight & YuleModel & 
-birthRate \\ 
-  \hline
-1 & 10001 & 10001 & 10001 & 10001 & 9913 & 10001 & 9540 \\ 
-   \hline
-\end{tabular}
-\caption{
-  ESSes of the TMH-only alignment
-  \richel{These are just example values}
-} 
-\label{tab:esses_tmh}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrrrrr}
-  \hline
- & posterior & likelihood & prior & treeLikelihood & TreeHeight & YuleModel & 
-birthRate \\ 
-  \hline
-1 & 10001 & 10001 & 10001 & 10001 & 9913 & 10001 & 9540 \\ 
-   \hline
-\end{tabular}
-\caption{
-  ESSes of the non-TMH alignment
-  \richel{These are just example values}
-} 
-\label{tab:esses_non_tmh}
-\end{table}
+\input{ks/table_1.latex}
 
 \end{document}
