@@ -1,8 +1,10 @@
-all: article.pdf
-
-article.pdf: article.tex
-	./create.sh
+all: view.sh article.pdf
 	./view.sh
 
-frans: article.tex
-	./to_frans.sh
+article.pdf: create.sh article.tex
+	./create.sh
+
+frans: bbbq.zip
+
+bbbq.zip: zip.sh article.pdf
+	./zip.sh
