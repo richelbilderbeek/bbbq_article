@@ -15,7 +15,6 @@ library(ggplot2)
 Human samples:
 
 ```{r}
-set.seed(314)
 # n: sample size, equals the number of HLA haplotypes
 n <- 13
 # f denotes 'fraction', a value between 0.0 and 1.0
@@ -27,7 +26,7 @@ expect_true(all(f_covid > 0.0))
 expect_true(all(f_covid < 1.0))
 ```
 
-Plot:
+Create table:
 
 ```{r}
 df <- tibble::tibble(
@@ -37,6 +36,50 @@ df <- tibble::tibble(
 )
 df$proteome <- as.factor(df$proteome)
 df$haplotype <- as.factor(df$haplotype)
+```
+
+Show table:
+
+```{r}
+knitr::kable(df)
+```
+
+Save table:
+
+```{r}
+sink("table_1.latex")
+  xtable::print.xtable(
+    xtable::xtable(
+      df,
+      caption = paste0("Percentage of epitopes overlapping \nwith transmembrane helix"),
+      digits = 2
+    ),
+    include.rownames = FALSE
+  )
+sink()
+```
+
+Test:
+
+```{r}
+t <- ks.test(x = f_human, y = f_covid)
+print(t)
+```
+
+Stats:
+
+```{r}
+alpha <- 0.05
+if (t$p.value <= alpha) {
+  print("Reject that the two samples are taken from a same distribution") 
+} else {
+  print("Accept that the two samples are taken from a same distribution")
+}
+```
+
+Plot:
+
+```{r}
 ggplot(df, aes(x = haplotype, y = f, fill = proteome)) + 
   scale_fill_manual(values = c("human" = "#ffffff", "covid" = "#cccccc")) +
   geom_col(position = position_dodge(), color = "#000000") + xlab("HLA haplotype") + 
@@ -52,6 +95,5 @@ ggplot(df, aes(x = haplotype, y = f, fill = proteome)) +
   ) + ggsave("fig_1.png", width = 7, height = 7)
 ```
 
-Test:
 
 
