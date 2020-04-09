@@ -78,7 +78,6 @@ ggplot(df, aes(x = haplotype, y = f, fill = proteome)) +
   geom_hline(yintercept = mean(f_human), lty = "dashed") +
   geom_hline(yintercept = mean(f_covid), lty = "dotted") +
   labs(
-    title = "SIMULATED DATA!",
     caption = paste0(
       "Dashed line: average in humans: ", formatC(mean(f_human), digits = 2),". ",
       "Dotted line: average in COVID-19: ", formatC(mean(f_covid), digits = 2),"."  
