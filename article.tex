@@ -90,18 +90,27 @@ Groningen, Groningen, The Netherlands}
 
 \begin{abstract}
 
-Transmembrane helices (TMHs) are an overrepresented source of epitopes on major 
+Transmembrane helices (TMHs) in the human proteome
+are an overrepresented source of epitopes on major 
 histocompatibility complex (MHC) class I for the majority of HLA-I haplotypes. 
-It is unknown why there is such a preference exists and 
-whether this is the case for MHC-II haplotypes. 
-This study shows that also MHC-II binds to polypeptides derived from TMHs 
-more often than expected by chance. It is unknown if a signal of
-natural selection is present in the proteome coding for TMHs.
-This study shows that in the mutation rate in TMHs of [a pathogen] 
-are [less/equal/more], hinting at 
+This finding may be a methodological artifact and using the proteome
+of an actual pathogen nullifies this finding.
+Additionally, it is unknown if TMH-II is also likelier to present
+TMHs than expected by chance. 
+Lastly, if the immune system if more tailored to detect polypeptides
+derived from TMHs, can we confirm this by detecting the evolutionary
+conservation of this behavior?
+This study shows that MHC-I [also has/does not have] more
+epitopes derived from a TMH for a pathogen proteome, when compared with
+a host proteome.
+Additionally, MHC-II binds to polypeptides derived from TMHs 
+[less/equally/more] often than expected by chance.
+Lastly, this study shows that in the mutation rate in TMHs of a pathogen
+is [lower/as much/higher], hinting at 
 evolutionary [conservation/neutrality/disruptive selection].
-Our findings suggest that developing vaccines targeting the TMHs of
-pathogens is a [good/neutral/bad] idea.
+Our findings suggest that the immune system is [less/neutral/more]
+vigilant to TMHs than expected by chance and this has left [a/no]
+signal in the evolutionary history of the pathogen.
 
 \end{abstract}
 
@@ -113,34 +122,31 @@ COVID-19
 \section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For MHC-1, it was found that epitopes derived from transmembrane helices (TMHs)
+For MHC-1, it was found that epitopes derived 
+from human transmembrane helices (TMHs)
 are over-presented by all human leukocyte antigen (HLA)-A and 
 most HLA-B super types (\cite{bianchi2017}). 
-One explanation is that the 
-presentation of especially TMHs may have an evolutionary advantage for 
-the (human) host. The argumentation for this is that the TMHs are more 
+One explanation is that the presentation of TMHs 
+may have an evolutionary advantage for 
+the (human) host, as TMHs may be more 
 conserved due to the functional requirement of being able to span a lipid 
-bilayer. Additionally, there are limited escape mutations possible for the 
-pathogen, as many will result in a non-functional TMH.
+bilayer. 
+Due to this, pathogens have a lower chance to develop an escape mutation,
+as many mutations will result in a disfunctional TMH.
 
-However, that argumentation can also be countered as there are limited unique 
-polypeptide fragments and TMHs are a conserved throughout all species, it is 
-likelier that host and pathogen share the same unique epitope sequences, 
-resulting in the pathogen avoiding detection due to the negative T-cell 
-selection process in the thymus \richel{Frans, jij beweerde dat bacterien
-en mensen compleet verschillende TMH sequenties hebben. Als ik dat goed
-onthouden hebt, klopt deze paragraaf dus niet}
-
-If presentation of TMH’s on MHC-I would bring an evolutionary advantage 
+If presentation of TMHs on MHC-I would bring an evolutionary advantage 
 in the recognition of pathogens by the immune, 
-it would follow that this is equally important for MHC-II. 
-MHC-II, which is necessary for the activation of B-cells after the detection 
-of bacterial pathogens, e.g.  tuberculosis, by dendritic cells or [...]. 
-From the earlier research done on MHC-I, it naturally follows to check if 
-also MHC-II is more likely to present TMHs than expected by chance. 
-Extending the previous study on MHC-I, we also measure the evolutionary 
-conservation of TMH epitopes in Mycoplasma pathogens to adress if 
-presentation of TMH derived epitopes has an evolutionary advantage.
+it would follow that this is equally important for MHC-II.
+
+If the human immune system is more prone to detect polypeptides
+derived from a pathogen's TMHs, one may expect to find an evolutionary
+signal in fast-evolving pathogen. 
+We can assume that only after the moment that COVID-19 spilled over 
+to humans, it's the human immune system that is an influential component 
+of its evolutionary selection.
+Using the extensive amount of time-dated COVID-19 sequences,
+we can quantify to which extent selection in COVID-19 occurs
+in the transmembrane part of its proteins.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hypotheses}
@@ -274,6 +280,13 @@ is below
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Figure \ref{fig:1} shows the percentages of epitopes overlapping 
+with TMHs for a human and COVID-19 proteome.
+The KS test to determine if these percentages are sampled from
+a same distribution resulted in a p-value of \richel{unknown},
+which makes us reject/accept the hypothesis that these percentages
+are sampled from a same distribution. 
+
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ks/fig_1_watermarked.png}
   \caption{
@@ -282,6 +295,7 @@ is below
   }
   \label{fig:1}
 \end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -339,6 +353,12 @@ is below
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+We found that the percentages of epitopes overlapping 
+with TMHs for a human and COVID-19 proteome are 
+[similar/different]. In other words, the
+epitopes that MHC-I presents are [as/not as] likely 
+to be derived from TMH within either a human host and its viral pathogen.
+
 \iffalse
 	We conclude that MHC-II binds to TMH peptides with a higher/lower/equal
 	probability than expected by chance. 
@@ -350,6 +370,15 @@ is below
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We concluded that the
+epitopes that MHC-I presents are [as/not as] likely 
+to be derived from TMH within either a human host and its viral pathogen.
+Because the full COVID-19 only has 4 TMHs \richel{check}, the percentages
+of HMC-I epitopes being part of a TMH are likelier to be affected by
+stochasticity. We chose to use COVID-19 regardless, as the thousands
+of its time-dated genomic sequences are ideal for determining the 
+evolutionary conservation of MHC-I detecting TMHs. 
 
 \iffalse
 	We compared the mutation rates between the TMH and non-TMH part of
