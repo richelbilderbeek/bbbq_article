@@ -44,6 +44,8 @@ Create wide (untidy) table:
 
 ```{r}
 df_wide <- spread(df, proteome, f)
+df_wide$covid <- formatC(100.0 * df_wide$covid, digits = 3)
+df_wide$human <- formatC(100.0 * df_wide$human, digits = 3)
 ```
 
 
@@ -51,7 +53,7 @@ df_wide <- spread(df, proteome, f)
 Show table:
 
 ```{r}
-knitr::kable(df_wide, caption = "Fraction of epitopes overlapping with transmembrane helix")
+knitr::kable(df_wide, caption = "Percentage of epitopes overlapping with transmembrane helix")
 ```
 
 Save table:
