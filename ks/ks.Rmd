@@ -47,16 +47,7 @@ knitr::kable(df)
 Save table:
 
 ```{r}
-sink("table_1.latex")
-  xtable::print.xtable(
-    xtable::xtable(
-      df,
-      caption = paste0("Percentage of epitopes overlapping \nwith transmembrane helix"),
-      digits = 3
-    ),
-    include.rownames = FALSE
-  )
-sink()
+write.csv(df, "table_1.csv", row.names = FALSE)
 ```
 
 Test:
