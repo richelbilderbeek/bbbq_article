@@ -8,3 +8,4 @@
 #
 
 mousepad article.tex
+make
