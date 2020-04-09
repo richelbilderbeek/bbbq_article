@@ -113,8 +113,9 @@ COVID-19
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 For MHC-1, it was found that epitopes derived from transmembrane helices (TMHs)
-are over-presented by all human leukocyte antigen (HLA)-A and most HLA-B super 
-types [\cite{bianchi2017transmembrane}]. One explanation is that the 
+are over-presented by all human leukocyte antigen (HLA)-A and 
+most HLA-B super types (\cite{bianchi2017}). 
+One explanation is that the 
 presentation of especially TMHs may have an evolutionary advantage for 
 the (human) host. The argumentation for this is that the TMHs are more 
 conserved due to the functional requirement of being able to span a lipid 
@@ -146,30 +147,63 @@ presentation of TMH derived epitopes has an evolutionary advantage.
 
 \begin{itemize}
   \item $\mathcal{H}_1$: MHC-I has the same percentage of epitopes overlapping
-    (that is 5.73 to 5.59 percent, with a confidence interval of 99 percent) 
-    with TMHs in COVID-19 as in 
-4 + ((117 / 135) * 2) = 5.73
-4 + ((107 / 135) * 2) = 5.59
-
-  \item $\mathcal{H}_2$: MHC-II binds as often to TMHs as the cytosolic and extracellular
-    parts of a pathogen's transmembrane proteins
-  \item $\mathcal{H}_3$: The TMHs of [a pathogen] have the same mutation rate 
-    as the cytosolic and extracellular
-    parts of its transmembrane proteins
+    with TMHs in Homo sapiens as in COVID-19
+  \item $\mathcal{H}_2$: MHC-II has the same percentage of epitopes overlapping
+    with TMHs as expected by chance
+  \item $\mathcal{H}_3$: The TMHs of COVID-19 have the same mutation rate 
+    as the cytosolic and extracellular parts of its transmembrane proteins
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{MHC-I}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We used the same analysis as \cite{bianchi2017},
+except that instead of a human reference proteome,
+we used the proteome of the first sequenced COVID-19 strain (\cite{wu2020new}),
+with a GenBank ID of MN908947.3, as can be downloaded 
+from \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947}.
+
+Bianchi and colleagues obtained a distribution of 
+percentages of MHC-I epitopes overlap with TMHs in Homo sapiens
+for the different HLA haplotypes, with has an average of 5.3\%.
+We obtained a similar distribution of percentages of MHC-I epitopes that 
+overlap with TMHs for the different HLA haplotypes, but then applied to
+COVID-19.
+
+We compare these distribution using a two-sample 
+Kolmogorov-Smirnov (KS) test. The KS test determines if two samples
+are derived from a same distribution, without making assumptions
+regarding the shape of that distribution. We will reject
+the null hypothesis that MHC-I has the same percentage of epitopes 
+overlapping with TMHs in Homo sapiens as in COVID-19 when 
+the KS statistic follows the relationship as show in 
+figure \ref{fig:ks}, for an $\alpha$ of $0.05$.
+is below 
+
+\begin{figure}[!htbp]
+  \includegraphics[width=0.4\textwidth]{pics/ks.png}
+  \caption{
+    Condition of a Kolmogorov-Smirnov (KS) statistic to rejects a null
+    hypothesis. $D_{n,m}$ is the KS statistic, $n = m$ is the size
+    of the samples, in this case, the number of HLA haplotypes ($n = m = 13$).
+    $\alpha = 0.05$ is the significance level.
+  }
+  \label{fig:ks}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{MHC-2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Transmembrane helices and strong MHC-II-binding peptides
 were predicted for a tuberculosis reference proteome 
 from \url{https://www.ebi.ac.uk/reference_proteomes}
-using the \verb;epitopeome; 
-\richel{
-  I'd enjoy a better name
-}
-R package [\cite{epitopeome}].
+using the \verb;epitopeome; R package (\cite{epitopeome}).
 We picked the three MHC-II alleles that are most abundant 
 in the current human population, 
 which are DRB4*0101, HLA-DPA10103-DPB10402 
@@ -185,30 +219,34 @@ cell, within the membrane or outside of the cell, as well as if it was part
 of a strong MHC-II binding site, as shown in figue \ref{tab:results}.
 
 
-The \verb;epitopeome; R package \cite{epitopeome} binds \richel{pun intended} 
-together the \verb;tmhmm; [\cite{tmhmm}] and \verb;netmhc2pan; 
-[\cite{netmhc2pan}] 
+The \verb;epitopeome; R package (\cite{epitopeome}) binds 
+together the \verb;tmhmm; (\cite{tmhmm}) and \verb;netmhc2pan; 
+(\cite{netmhc2pan}) 
 R packages. \verb;tmhmm; provides an R interface to
-TMHMM [\cite{krogh2001predicting}, \cite{sonnhammer1998hidden}], a tool
+TMHMM (\cite{krogh2001predicting, sonnhammer1998hidden}), a tool
 to predict where membrane proteins' amino acids are located within the
 membrance.   
 \verb;netmhc2pan; provides an R interface to
-NetMHC2pan [\cite{jensen2018improved}], a tool
+NetMHC2pan (\cite{jensen2018improved}), a tool
 to predict MHC-II binding to proteins.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Evolutionary conservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The evolutionary conservation of TMHs was measured from a
 DNA alignment of multiple transmembrane proteins in multitiple
 species of the mycoplasma bacterial family
 \richel{how obtained exactly? how alignment done?}.
 
-Using the \verb;tmhprot; R package [\cite{tmhprot}], the DNA alignment is split
+Using the \verb;tmhprot; R package (\cite{tmhprot}), the DNA alignment is split
 into two alignments, one for the TMH parts, another for the non-TMH
 parts. Each alignment was tested by the \verb;mcbette; 
-R package [\cite{mcbette}] to select the Bayesian inference model with
+R package (\cite{mcbette}) to select the Bayesian inference model with
 the highest evidence (a.k.a. the marginal likelihood) using the nested
 sampling approach as described in \cite{maturana2018model},
 using the popular Bayesian phylogenetic tool 
-BEAST2 [\cite{bouckaert2014beast}] in the back-end.
+BEAST2 (\cite{bouckaert2014beast}) in the back-end.
 \verb;mcbette; used a set of 40 candidate inference models, 
 consisting of all combinations of 
 4 site models (JC, HKY, TN, GTR), 
@@ -221,10 +259,24 @@ the parameter estimates regarding mutation rates (including clock rate)
 were obtained and compared to determine which realized mutation rate is lower.
 The Markov chain Monte Carlo was set up in such a way that the effective sample
 size for the likelihood of the inference model is above the recommended value
-of 200 [\cite{bouckaert2014beast}].
+of 200 (\cite{bouckaert2014beast}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{MHC-I}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{MHC-II}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Table \ref{tab:results} shows the location and binding strength for the
