@@ -1,0 +1,57 @@
+---
+title: "Kolmogorov-Smirnov"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(testthat)
+library(ggplot2)
+```
+
+Human samples:
+
+```{r}
+set.seed(314)
+# n: sample size, equals the number of HLA haplotypes
+n <- 13
+# f denotes 'fraction', a value between 0.0 and 1.0
+f_human <- rnorm(n = n, mean = 0.053, sd = 0.01)
+f_covid <- rnorm(n = n, mean = runif(n = 1, min = 0.03, max = 0.1), sd = 0.01)
+expect_true(all(f_human > 0.0))
+expect_true(all(f_human < 1.0))
+expect_true(all(f_covid > 0.0))
+expect_true(all(f_covid < 1.0))
+```
+
+Plot:
+
+```{r}
+df <- tibble::tibble(
+  proteome = rep(c("human", "covid"), each = n),
+  haplotype = rep(LETTERS[1:n], time = 2),
+  f = c(f_human, f_covid)
+)
+df$proteome <- as.factor(df$proteome)
+df$haplotype <- as.factor(df$haplotype)
+ggplot(df, aes(x = haplotype, y = f, fill = proteome)) + 
+  scale_fill_manual(values = c("human" = "#ffffff", "covid" = "#cccccc")) +
+  geom_col(position = position_dodge(), color = "#000000") + xlab("HLA haplotype") + 
+  ylab("% epitopes overlapping \nwith transmembrane helix") +
+  geom_hline(yintercept = mean(f_human), lty = "dashed") +
+  geom_hline(yintercept = mean(f_covid), lty = "dotted") +
+  labs(
+    title = "SIMULATED DATA!",
+    caption = paste0(
+      "Dashed line: average in humans: ", formatC(mean(f_human), digits = 2),". ",
+      "Dotted line: average in COVID-19: ", formatC(mean(f_covid), digits = 2),"."  
+    )
+  ) + ggsave("fig_1.png", width = 7, height = 7)
+```
+
+Test:
+
+
