@@ -1,14 +1,16 @@
 ---
 title: "Kolmogorov-Smirnov"
-output: html_document
+author: Richel J.C. Bilderbeek
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r, message=FALSE}
 library(testthat)
+library(tidyr)
 library(ggplot2)
 ```
 
@@ -26,7 +28,7 @@ expect_true(all(f_covid > 0.0))
 expect_true(all(f_covid < 1.0))
 ```
 
-Create table:
+Create tidy table:
 
 ```{r}
 df <- tibble::tibble(
@@ -38,16 +40,24 @@ df$proteome <- as.factor(df$proteome)
 df$haplotype <- as.factor(df$haplotype)
 ```
 
+Create wide (untidy) table:
+
+```{r}
+df_wide <- spread(df, proteome, f)
+```
+
+
+
 Show table:
 
 ```{r}
-knitr::kable(df)
+knitr::kable(df_wide, caption = "Fraction of epitopes overlapping with transmembrane helix")
 ```
 
 Save table:
 
 ```{r}
-write.csv(df, "table_1.csv", row.names = FALSE)
+write.csv(df_wide, "table_1.csv", row.names = FALSE)
 ```
 
 Test:
@@ -74,13 +84,14 @@ Plot:
 ggplot(df, aes(x = haplotype, y = f, fill = proteome)) + 
   scale_fill_manual(values = c("human" = "#ffffff", "covid" = "#cccccc")) +
   geom_col(position = position_dodge(), color = "#000000") + xlab("HLA haplotype") + 
-  ylab("% epitopes overlapping \nwith transmembrane helix") +
+  ylab("Epitopes overlapping \nwith transmembrane helix") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 3)) +
   geom_hline(yintercept = mean(f_human), lty = "dashed") +
   geom_hline(yintercept = mean(f_covid), lty = "dotted") +
   labs(
     caption = paste0(
-      "Dashed line: average in humans: ", formatC(mean(f_human), digits = 2),". ",
-      "Dotted line: average in COVID-19: ", formatC(mean(f_covid), digits = 2),"."  
+      "Dashed line: average in humans: ", formatC(100.0 * mean(f_human), digits = 2),"%. ",
+      "Dotted line: average in COVID-19: ", formatC(100.0 * mean(f_covid), digits = 2),"%."  
     )
   ) + ggsave("fig_1.png", width = 7, height = 7)
 ```
