@@ -53,7 +53,7 @@ df_wide$human <- formatC(100.0 * df_wide$human, digits = 3)
 Show table:
 
 ```{r}
-knitr::kable(df_wide, caption = "Percentage of epitopes overlapping with transmembrane helix")
+knitr::kable(df_wide, caption = "Percentage of MHC-I epitopes overlapping with transmembrane helix")
 ```
 
 Save table:

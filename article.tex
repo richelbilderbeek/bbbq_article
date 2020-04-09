@@ -15,7 +15,7 @@
   an overlooked source of major histocompatibility complex class II epitopes
   and evolutionary more conserved than expected by chance
 }
-\author[1]{Rich\`el J.C. Bilderbeek}
+\author[1]{Richèl J.C. Bilderbeek}
 \author[2]{Frans Bianchi}
 \affil[1]{Groningen Institute for Evolutionary Life Sciences, University of 
 Groningen, Groningen, The Netherlands}
@@ -93,8 +93,8 @@ Groningen, Groningen, The Netherlands}
 Transmembrane helices (TMHs) in the human proteome
 are an overrepresented source of epitopes on major 
 histocompatibility complex (MHC) class I for the majority of HLA-I haplotypes. 
-This finding may be a methodological artifact and using the proteome
-of an actual pathogen nullifies this finding.
+It is unknown if this same overrepresentation
+is also the case for the proteome of a pathogen.
 Additionally, it is unknown if TMH-II is also likelier to present
 TMHs than expected by chance. 
 Lastly, if the immune system if more tailored to detect polypeptides
@@ -115,14 +115,14 @@ signal in the evolutionary history of the pathogen.
 \end{abstract}
 
 {\bf Keywords:} antigen presentation, membrane proteins, bioinformatics, 
-adaptive immunity, transmembrane domain, epitopes, T lymphocyte, MHC-2,
-COVID-19
+adaptive immunity, transmembrane domain, epitopes, T lymphocyte, 
+MHC-1, MHC-I, MHC-2, MHC-II, COVID-19
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For MHC-1, it was found that epitopes derived 
+For MHC-I, it was found that epitopes derived 
 from human transmembrane helices (TMHs)
 are over-presented by all human leukocyte antigen (HLA)-A and 
 most HLA-B super types (\cite{bianchi2017}). 
@@ -224,7 +224,7 @@ is below
 	The 5\% peptides with the lowest IC50 values were defined as binders.
 	We then simply counted the number of amino acids that were present inside the
 	cell, within the membrane or outside of the cell, as well as if it was part 
-	of a strong MHC-II binding site, as shown in figue \ref{tab:results}.
+	of a strong MHC-II binding site, as shown in figure \ref{tab:results}.
 
 
 	The \verb;epitopeome; R package (\cite{epitopeome}) binds 
@@ -233,7 +233,7 @@ is below
 	R packages. \verb;tmhmm; provides an R interface to
 	TMHMM (\cite{krogh2001predicting, sonnhammer1998hidden}), a tool
 	to predict where membrane proteins' amino acids are located within the
-	membrance.   
+	membrane.   
 	\verb;netmhc2pan; provides an R interface to
 	NetMHC2pan (\cite{jensen2018improved}), a tool
 	to predict MHC-II binding to proteins.
@@ -245,7 +245,7 @@ is below
 
 \iffalse
 	The evolutionary conservation of TMHs was measured from a
-	DNA alignment of multiple transmembrane proteins in multitiple
+	DNA alignment of multiple transmembrane proteins in multiple
 	species of the mycoplasma bacterial family
 	\richel{how obtained exactly? how alignment done?}.
 
@@ -375,7 +375,7 @@ We concluded that the
 epitopes that MHC-I presents are [as/not as] likely 
 to be derived from TMH within either a human host and its viral pathogen.
 Because the full COVID-19 only has 4 TMHs \richel{check}, the percentages
-of HMC-I epitopes being part of a TMH are likelier to be affected by
+of MHC-I epitopes being part of a TMH are likelier to be affected by
 stochasticity. We chose to use COVID-19 regardless, as the thousands
 of its time-dated genomic sequences are ideal for determining the 
 evolutionary conservation of MHC-I detecting TMHs. 
@@ -401,7 +401,7 @@ evolutionary conservation of MHC-I detecting TMHs.
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Acknowledgements}
+\section{Acknowledgments}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We thanks to Geert van den Bogaart for his wisdom.
@@ -439,6 +439,11 @@ RJCB and FB wrote the article.
 \subsection{Binding}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{ks/table_1.latex}
+\begin{table}
+  \input{ks/table_1.latex}
+  \caption{Percentage of MHC-I epitopes overlapping with transmembrane helix}
+  \label{table:1}
+\end{table}
+
 
 \end{document}
