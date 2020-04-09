@@ -28,40 +28,6 @@ expect_true(all(f_covid > 0.0))
 expect_true(all(f_covid < 1.0))
 ```
 
-Create tidy table:
-
-```{r}
-df <- tibble::tibble(
-  proteome = rep(c("human", "covid"), each = n),
-  haplotype = rep(LETTERS[1:n], time = 2),
-  f = c(f_human, f_covid)
-)
-df$proteome <- as.factor(df$proteome)
-df$haplotype <- as.factor(df$haplotype)
-```
-
-Create wide (untidy) table:
-
-```{r}
-df_wide <- spread(df, proteome, f)
-df_wide$covid <- formatC(100.0 * df_wide$covid, digits = 3)
-df_wide$human <- formatC(100.0 * df_wide$human, digits = 3)
-```
-
-
-
-Show table:
-
-```{r}
-knitr::kable(df_wide, caption = "Percentage of MHC-I epitopes overlapping with transmembrane helix")
-```
-
-Save table:
-
-```{r}
-write.csv(df_wide, "table_1.csv", row.names = FALSE)
-```
-
 Test:
 
 ```{r}
@@ -74,13 +40,54 @@ Stats:
 ```{r}
 alpha <- 0.05
 if (t$p.value <= alpha) {
-  print("Reject that the two samples are taken from a same distribution") 
+  verdict <- "Reject that the two samples are taken from a same distribution"
 } else {
-  print("Accept that the two samples are taken from a same distribution")
+  verdict <- "Accept that the two samples are taken from a same distribution"
 }
+print(verdict)
 ```
 
-Plot:
+Create tidy table:
+
+```{r}
+df <- tibble::tibble(
+  proteome = rep(c("human", "covid"), each = n),
+  haplotype = rep(LETTERS[1:n], time = 2),
+  f = c(f_human, f_covid)
+)
+df$proteome <- as.factor(df$proteome)
+df$haplotype <- as.factor(df$haplotype)
+```
+
+## Stats output
+
+```{r}
+names(t)
+df_t_wide <- data.frame(
+  statistic = t$statistic,
+  p_value = t$p.value,
+  alternative = t$alternative,
+  method = t$method,
+  data_name = t$data.name,
+  alpha = alpha,
+  verdict = verdict
+)
+df_t <- t(df_t_wide)
+values <- df_t[,1]
+param_names <- rownames(df_t)
+df_t <- data.frame(
+  parameter = param_names,
+  value = values
+)
+
+knitr::kable(df_t, row.names = FALSE)
+```
+
+```{r}
+write.csv(df_t, "ks.csv", row.names = FALSE)
+```
+
+## Plot
 
 ```{r}
 ggplot(df, aes(x = haplotype, y = f, fill = proteome)) + 
@@ -98,5 +105,26 @@ ggplot(df, aes(x = haplotype, y = f, fill = proteome)) +
   ) + ggsave("fig_1.png", width = 7, height = 7)
 ```
 
+## Table
+
+Create wide (untidy) table:
+
+```{r}
+df_wide <- spread(df, proteome, f)
+df_wide$covid <- formatC(100.0 * df_wide$covid, digits = 3)
+df_wide$human <- formatC(100.0 * df_wide$human, digits = 3)
+```
+
+Show table:
+
+```{r}
+knitr::kable(df_wide, caption = "Percentage of MHC-I epitopes overlapping with transmembrane helix")
+```
+
+Save table:
+
+```{r}
+write.csv(df_wide, "table_1.csv", row.names = FALSE)
+```
 
 
