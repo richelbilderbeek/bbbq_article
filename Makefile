@@ -1,7 +1,7 @@
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh article.tex ks/fig_1.png ks/table_1.latex
+article.pdf: create.sh article.tex ks/fig_1_watermarked.png ks/table_1.latex
 	./create.sh
 
 ks/fig_1_watermarked.png: ks/render.sh ks/ks.Rmd
