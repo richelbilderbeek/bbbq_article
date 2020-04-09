@@ -2,6 +2,7 @@ all: view.sh article.pdf
 	./view.sh
 
 article.pdf: create.sh article.tex ks/fig_1_watermarked.png ks/table_1.latex
+	aspell -t -c article.tex
 	./create.sh
 
 ks/fig_1_watermarked.png: ks/render.sh ks/ks.Rmd
