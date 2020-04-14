@@ -1,7 +1,7 @@
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh article.tex ks/table_1.latex ks/ks.latex
+article.pdf: create.sh article.tex ks/table_1.latex ks/ks.latex ks/fig_1_watermarked.png
 	aspell -t -c article.tex
 	./create.sh
 

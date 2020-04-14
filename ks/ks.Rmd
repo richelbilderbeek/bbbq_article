@@ -14,11 +14,33 @@ library(tidyr)
 library(ggplot2)
 ```
 
+Haplotypes:
+
+```{r}
+get_haplotypes <- function() {
+  c(
+    "HLA-A01-01",
+    "HLA-A02-01",
+    "HLA-A03-01",
+    "HLA-A24-02",
+    "HLA-A26-01",
+    "HLA-B07-02",
+    "HLA-B08-01",
+    "HLA-B18-01",
+    "HLA-B27-05",
+    "HLA-B39-01",
+    "HLA-B40-02", 
+    "HLA-B58-01",
+    "HLA-B15-01"
+  )
+}
+```
+
 Human samples:
 
 ```{r}
 # n: sample size, equals the number of HLA haplotypes
-n <- 13
+n <- length(get_haplotypes())
 # f denotes 'fraction', a value between 0.0 and 1.0
 f_human <- rnorm(n = n, mean = 0.053, sd = 0.01)
 f_covid <- rnorm(n = n, mean = runif(n = 1, min = 0.03, max = 0.1), sd = 0.01)
@@ -52,7 +74,7 @@ Create tidy table:
 ```{r}
 df <- tibble::tibble(
   proteome = rep(c("human", "covid"), each = n),
-  haplotype = rep(LETTERS[1:n], time = 2),
+  haplotype = rep(get_haplotypes(), time = 2),
   f = c(f_human, f_covid)
 )
 df$proteome <- as.factor(df$proteome)
@@ -95,6 +117,7 @@ ggplot(df, aes(x = haplotype, y = f, fill = proteome)) +
   geom_col(position = position_dodge(), color = "#000000") + xlab("HLA haplotype") + 
   ylab("Epitopes overlapping \nwith transmembrane helix") +
   scale_y_continuous(labels = scales::percent_format(accuracy = 3)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   geom_hline(yintercept = mean(f_human), lty = "dashed") +
   geom_hline(yintercept = mean(f_covid), lty = "dotted") +
   labs(
