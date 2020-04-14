@@ -16,10 +16,11 @@
   and evolutionary more conserved than expected by chance
 }
 \author[1]{Richèl J.C. Bilderbeek}
-\author[2]{Frans Bianchi}
-\affil[1]{Groningen Institute for Evolutionary Life Sciences, University of 
+\author[1]{Maxim Baranov}
+\author[1]{Geert van den Bogaart}
+\author[1]{Frans Bianchi}
+\affil[1]{GBB, University of 
 Groningen, Groningen, The Netherlands}
-\affil[2]{Frans' Institute, University of Groningen, Groningen, The Netherlands}
 
 % Use double spacing
 \usepackage{setspace}
@@ -91,10 +92,10 @@ Groningen, Groningen, The Netherlands}
 \begin{abstract}
 
 Transmembrane helices (TMHs) in the human proteome
-are an overrepresented source of epitopes on major 
+are an overrepresented potential source of epitopes on major 
 histocompatibility complex (MHC) class I for the majority of HLA-I haplotypes. 
 It is unknown if this same overrepresentation
-is also the case for the proteome of a pathogen.
+also holds for the proteome of a pathogen.
 Additionally, it is unknown if TMH-II is also likelier to present
 TMHs than expected by chance. 
 Lastly, if the immune system if more tailored to detect polypeptides
@@ -124,14 +125,14 @@ MHC-1, MHC-I, MHC-2, MHC-II, COVID-19
 
 \paragraph{MHC-I}
 
-For MHC-I, it was found that epitopes derived 
+For MHC-I, it was found that predicted epitopes derived 
 from human transmembrane helices (TMHs)
 are over-presented by all human leukocyte antigen (HLA)-A and 
 most HLA-B super types (\cite{bianchi2017}). 
 One explanation is that the presentation of TMHs 
 may have an evolutionary advantage for 
-the (human) host, as TMHs may be more 
-conserved due to the functional requirement of being able to span a lipid 
+the (human) host, as TMHs have a reduced variability 
+due to the functional requirement of being able to span a lipid 
 bilayer. 
 Due to this, pathogens have a lower chance to develop an escape mutation,
 as many mutations will result in a disfunctional TMH.
@@ -139,8 +140,10 @@ as many mutations will result in a disfunctional TMH.
 \paragraph{MHC-II}
 
 If presentation of TMHs on MHC-I would bring an evolutionary advantage 
-in the recognition of pathogens by the immune, 
-it would follow that this is equally important for MHC-II.
+in the recognition of pathogens by the immune system, 
+it would follow that this is equally important for MHC-II, 
+especially as CD4+ T cell help is needed for a long lasting CD8+Tcell 
+response \cite{novy2007cd4}.
 
 \paragraph{Evolution}
 
@@ -152,7 +155,7 @@ to humans, it's the human immune system that is an influential component
 of its evolutionary selection.
 Using the extensive amount of time-dated COVID-19 sequences,
 we can quantify to which extent selection in COVID-19 occurs
-in the transmembrane part of its proteins.
+in the transmembrane part of its proteome.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hypotheses}
@@ -183,14 +186,14 @@ from \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947}.
 
 Bianchi and colleagues obtained a distribution of 
 percentages of MHC-I epitopes overlap with TMHs in Homo sapiens
-for the different HLA haplotypes, with has an average of 5.3\%.
+for the different HLA haplotypes, with an average of 5.3\%.
 We obtained a similar distribution of percentages of MHC-I epitopes that 
 overlap with TMHs for the different HLA haplotypes, but then applied to
 COVID-19.
 
-We compare these distribution using a two-sample 
+We compare these distributions using a two-sample 
 Kolmogorov-Smirnov (KS) test. The KS test determines if two samples
-are derived from a same distribution, without making assumptions
+are derived from the same distribution, without making assumptions
 regarding the shape of that distribution. 
 
 We will reject
@@ -222,7 +225,11 @@ and $n = m = 13$ HLA haplotypes.
 	  I just picked the first one of the alleles matching, which are:
 	  HLA-DPA10x-DPB10402, where x equals 103-110, 201-204, 301-303 or 401
 	}
-	and DQA1*0501/DQB1*0301 \richel{reference here}.
+	and DQA1*0501/DQB1*0301 \richel{reference here}
+	\frans{
+	  Neem aan dat dit die ref is naar dat stukje van most common haplotype in human population. Misschien moeten we even de coverage erbij melden. 
+	  Greenbaum, Jason, et al. "Functional classification of class II human leukocyte antigen (HLA) molecules reveals seven different supertypes and a surprising degree of repertoire sharing across supertypes." Immunogenetics 63.6 (2011): 325-335.
+	}.
 	The 5\% peptides with the lowest IC50 values were defined as binders.
 	We then simply counted the number of amino acids that were present inside the
 	cell, within the membrane or outside of the cell, as well as if it was part 
@@ -246,11 +253,20 @@ and $n = m = 13$ HLA haplotypes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \iffalse
+
+	\frans{
+	  Ik heb zitten denken over de evolutie naast conservering is occurrence ook heel belangrijk. Moeten we de mate van conservering niet wegen ten opzichte van de occurrence.
+	  Wat ik daarmee bedoel is data als je kiest voor een mega geconseveerd epitope maar van dat type komen er maar 40 in een proteome voor versus een minder geconserveerd epitope maar daar zijn wel 100.000 varianten van dan heb je meer kans om 1 van die 100.000 te pakken toch? 
+	}
 	The evolutionary conservation of TMHs was measured from a
 	DNA alignment of multiple transmembrane proteins in multiple
 	species of the mycoplasma bacterial family
-	\richel{how obtained exactly? how alignment done?}.
-
+	\richel{how obtained exactly? how alignment done?}
+	\frans{
+	Via entrez en blast 
+	  Ik he been transcript van Maxim ik zal dit proberen te vertalen naar een stukje tekst. 
+	}
+	.
 	Using the \verb;tmhprot; R package (\cite{tmhprot}), the DNA alignment is split
 	into two alignments, one for the TMH parts, another for the non-TMH
 	parts. Each alignment was tested by the \verb;mcbette; 
@@ -287,13 +303,17 @@ with TMHs for a human and COVID-19 proteome.
 The KS test to determine if these percentages are sampled from
 a same distribution resulted in a p-value of \richel{unknown},
 which makes us reject/accept the hypothesis that these percentages
-are sampled from a same distribution. 
+are sampled from the same distribution. 
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1/fig_bbbq_1_watermarked.png}
   \caption{
     \% epitopes overlapping with transmembrane helix
-    for a human and COVID-19 proteome
+    for a human and COVID-19 proteome.
+    \richel{
+      The Illuminati watermark indicates the data underlying this
+      figure has been simulated
+    }
   }
   \label{fig:1}
 \end{figure}
@@ -383,6 +403,17 @@ of its time-dated genomic sequences are ideal for determining the
 evolutionary conservation of MHC-I detecting TMHs. 
 
 \iffalse
+	\frans{
+	  De TMH evolutie data van COVID is missachien interresanter. Ik zie het als volgt. 
+	  COVID is een mooi voorbeeld van een virus 
+	  Myco van een bacterie
+	  In de bacterie is duidelijk dat tenmisnte voor MHCII TMHs zijn overgrepresenteerd virus niet. 
+	  Dus verhaal kan zijn dat TMHs belangrijk voot bacteirele afweer niet zozeer voor virussen. 
+	
+	  Hiervoor moeten we MHC-I doen voor myco
+	  Kijken wat evolutie data doet voor virus dan evt kijken wat dit doet voor myco en vergelijken. 
+	}
+	
 	We compared the mutation rates between the TMH and non-TMH part of
 	multiple mycoplasma species. Where we expect no variation 
 	in mutation rate for every TMH amino acid,
