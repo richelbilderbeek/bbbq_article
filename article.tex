@@ -191,27 +191,19 @@ COVID-19.
 We compare these distribution using a two-sample 
 Kolmogorov-Smirnov (KS) test. The KS test determines if two samples
 are derived from a same distribution, without making assumptions
-regarding the shape of that distribution. We will reject
+regarding the shape of that distribution. 
+
+We will reject
 the null hypothesis that MHC-I has the same percentage of epitopes 
 overlapping with TMHs in Homo sapiens as in COVID-19 when 
-the KS statistic follows the relationship as show in 
-figure \ref{fig:ks}, for an $\alpha$ of $0.05$.
-is below 
+the KS statistic $D_{n,m}$ follows the relationship as shown in 
+equation \ref{eq:ks}, for a significance level $\alpha = 0.05$
+and $n = m = 13$ HLA haplotypes.
 
 \begin{equation}
    D_{n,m} > \frac{1}{\sqrt{n}} \cdot \sqrt{ -\ln(\frac{\alpha}{2}) \cdot \frac{1 + \frac{n}{m}}{2} }
+\  \label{eq:ks}
 \end{equation}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=0.4\textwidth]{pics/ks.png}
-  \caption{
-    Condition of a Kolmogorov-Smirnov (KS) statistic to rejects a null
-    hypothesis. $D_{n,m}$ is the KS statistic, $n = m$ is the size
-    of the samples, in this case, the number of HLA haplotypes ($n = m = 13$).
-    $\alpha = 0.05$ is the significance level.
-  }
-  \label{fig:ks}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-2}
