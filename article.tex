@@ -417,6 +417,18 @@ are sampled from the same distribution.
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_2/fig_bbbq_2_watermarked.png}
+  \caption{
+    \% epitopes overlapping with transmembrane helix
+    for a human, COVID-19 and Mycobacterium proteome.
+    \richel{
+      the data underlying this figure has been simulated
+    }
+  }
+  \label{fig:2}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -425,7 +437,7 @@ are sampled from the same distribution.
 	% tuberculosis proteome.
 
 	% \begin{figure}[ht]
-	%   \includegraphics[width=\textwidth]{figure_1.png}
+	%   \includegraphics[width=\textwidth]{bbbq_3/figure_1.png}
 	%   \label{fig:1}
 	% \end{figure}
 
@@ -577,7 +589,7 @@ RJCB and FB wrote the article.
     Percentage of MHC-I epitopes overlapping with transmembrane helix.
     \richel{This is simulated data}
   }
-  \label{table:1}
+  \label{table:bbbq_1_percentages}
 \end{table}
 
 \begin{table}
@@ -586,7 +598,7 @@ RJCB and FB wrote the article.
     Kolmogorov-Smirnov test results
     \richel{Done on the simulated data}
   }
-  \label{table:ks_covid}
+  \label{table:bbbq_1_stats_covid}
 \end{table}
 
 \begin{table}
@@ -595,7 +607,38 @@ RJCB and FB wrote the article.
     Kolmogorov-Smirnov test results
     \richel{Done on the simulated data}
   }
-  \label{table:ks_myco}
+  \label{table:bbbq_1_stats_myco}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{MHC-II}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+  \input{bbbq_2/bbbq_2_percentages.latex}
+  \caption{
+    Percentage of MHC-I epitopes overlapping with transmembrane helix.
+    \richel{This is simulated data}
+  }
+  \label{table:bbbq_2_percentages}
+\end{table}
+
+\begin{table}
+  \input{bbbq_2/bbbq_2_stats_covid.latex}
+  \caption{
+    Kolmogorov-Smirnov test results
+    \richel{Done on the simulated data}
+  }
+  \label{table:bbbq_2_stats_covid}
+\end{table}
+
+\begin{table}
+  \input{bbbq_2/bbbq_2_stats_myco.latex}
+  \caption{
+    Kolmogorov-Smirnov test results
+    \richel{Done on the simulated data}
+  }
+  \label{table:bbbq_2_stats_myco}
 \end{table}
 
 \end{document}
