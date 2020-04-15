@@ -245,7 +245,7 @@ to humans, it has mostly been the human immune system selecting against
 its detection, although this is only part of the selection for 
 having a high transmission rate.
 To detect an evolutionary signal for selection on the TMHs of bacteria, 
-we use the proteomes of Mycoplasma. Mycoplasma is \richel{something}.
+we use the proteomes of Mycobacterium. Mycobacterium is \richel{something}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,10 +254,10 @@ we use the proteomes of Mycoplasma. Mycoplasma is \richel{something}.
 
 \begin{itemize}
   \item $\mathcal{H}_1$: MHC-I has the same percentage of epitopes overlapping
-    with TMHs in Homo sapiens as in COVID-19 as in Mycoplasma
+    with TMHs in Homo sapiens as in COVID-19 as in Mycobacterium
   \item $\mathcal{H}_2$: MHC-II has the same percentage of epitopes overlapping
-    with TMHs as expected by chance in Homo sapiens and COVID-19 and Mycoplasma
-  \item $\mathcal{H}_3$: The TMHs of both COVID-19 and Mycoplasma
+    with TMHs as expected by chance in Homo sapiens and COVID-19 and Mycobacterium
+  \item $\mathcal{H}_3$: The TMHs of both COVID-19 and Mycobacterium
     have the same mutation rate 
     as the cytosolic and extracellular parts of their transmembrane proteins
 \end{itemize}
@@ -274,14 +274,16 @@ We used the same analysis as \cite{bianchi2017},
 except that instead of a human reference proteome,
 we use the proteome of the first sequenced COVID-19 strain (\cite{wu2020new},
 GenBank ID of MN908947.3, \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947})
-as well as a Mycoplasma \richel{that one} reference genome.
+and a reference Mycobacterium tuberculosis 
+proteome (\url{https://www.ebi.ac.uk/reference_proteomes}, UP000001584, 
+83332 MYCTU).
 
 Bianchi and colleagues obtained a distribution of 
 percentages of MHC-I epitopes overlap with TMHs in Homo sapiens
 for the different HLA haplotypes, with an average of 5.3\%.
 We obtained a similar distribution of percentages of MHC-I epitopes that 
 overlap with TMHs for the different HLA haplotypes, but then applied to
-COVID-19 and Mycoplasma.
+COVID-19 and Mycobacterium.
 
 We compare the distributions of humans and each pathogen
 using a two-sample 
@@ -305,9 +307,13 @@ and $n = m = 13$ HLA haplotypes.
 \subsection{MHC-2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+For MHC-II, we do the same analysis as MHC-I, except for
+MHC-II haplotypes.
+
+
+
 	% Transmembrane helices and strong MHC-II-binding peptides
 	% were predicted for a tuberculosis reference proteome 
-	% from \url{https://www.ebi.ac.uk/reference_proteomes}
 	% using the \verb;epitopeome; R package (\cite{epitopeome}).
 	% We picked the three MHC-II alleles that are most abundant 
 	% in the current human population, 
@@ -349,7 +355,7 @@ and $n = m = 13$ HLA haplotypes.
 	% }
 	% The evolutionary conservation of TMHs was measured from a
 	% DNA alignment of multiple transmembrane proteins in multiple
-	% species of the mycoplasma bacterial family
+	% species of the mycobacterium bacterial family
 	% \richel{how obtained exactly? how alignment done?}
 	% \frans{
 	% Via entrez en blast 
@@ -387,7 +393,7 @@ and $n = m = 13$ HLA haplotypes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure \ref{fig:1} shows the percentages of epitopes overlapping 
-with TMHs for a human, COVID-19 and Mycoplasma proteome.
+with TMHs for a human, COVID-19 and Mycobacterium proteome.
 The KS test to determine if these percentages are sampled from
 a same distribution resulted in a p-value of \richel{unknown},
 which makes us reject/accept the hypothesis that these percentages
@@ -397,7 +403,7 @@ are sampled from the same distribution.
   \includegraphics[width=\textwidth]{bbbq_1/fig_bbbq_1_watermarked.png}
   \caption{
     \% epitopes overlapping with transmembrane helix
-    for a human, COVID-19 and Mycoplasma proteome.
+    for a human, COVID-19 and Mycobacterium proteome.
     \richel{
       the data underlying this figure has been simulated
     }
@@ -467,7 +473,7 @@ epitopes that MHC-I presents are [as/not as] likely
 to be derived from TMH within either a human host and its viral pathogen.
 
 We found that the percentages of epitopes overlapping 
-with TMHs for a human and Mycoplasma proteome are 
+with TMHs for a human and Mycobacterium proteome are 
 [similar/different]. In other words, the
 epitopes that MHC-I presents are [as/not as] likely 
 to be derived from TMH within either a human host and its bacterial pathogen.
@@ -509,7 +515,7 @@ will not be presented by MHC-I, this result is [unexpected/expected]
 	% }
 	% 
 	% We compared the mutation rates between the TMH and non-TMH part of
-	% multiple mycoplasma species. Where we expect no variation 
+	% multiple mycobacterium species. Where we expect no variation 
 	% in mutation rate for every TMH amino acid,
 	% \richel{
 	%   we can test this, but unsure if that would make sense
