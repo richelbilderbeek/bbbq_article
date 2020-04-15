@@ -307,43 +307,20 @@ and $n = m = 13$ HLA haplotypes.
 \subsection{MHC-2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\richel{Check against stupidity}
 For MHC-II, we do the same analysis as MHC-I, except for
-MHC-II haplotypes.
-
-
-
-	% Transmembrane helices and strong MHC-II-binding peptides
-	% were predicted for a tuberculosis reference proteome 
-	% using the \verb;epitopeome; R package (\cite{epitopeome}).
-	% We picked the three MHC-II alleles that are most abundant 
-	% in the current human population, 
-	% which are DRB4*0101, HLA-DPA10103-DPB10402 
-	% \richel{
-	%   We decided for DPB1*0402, but there are multiple alleles matching.
-	%   I just picked the first one of the alleles matching, which are:
-	%   HLA-DPA10x-DPB10402, where x equals 103-110, 201-204, 301-303 or 401
-	% }
-	% and DQA1*0501/DQB1*0301 \richel{reference here}
-	% \frans{
-	%   Neem aan dat dit die ref is naar dat stukje van most common haplotype in human population. Misschien moeten we even de coverage erbij melden. 
-	%   Greenbaum, Jason, et al. "Functional classification of class II human leukocyte antigen (HLA) molecules reveals seven different supertypes and a surprising degree of repertoire sharing across supertypes." Immunogenetics 63.6 (2011): 325-335.
-	% }.
-	% The 5\% peptides with the lowest IC50 values were defined as binders.
-	% We then simply counted the number of amino acids that were present inside the
-	% cell, within the membrane or outside of the cell, as well as if it was part 
-	% of a strong MHC-II binding site, as shown in figure \ref{tab:results}.
-
-
-	% The \verb;epitopeome; R package (\cite{epitopeome}) binds 
-	% together the \verb;tmhmm; (\cite{tmhmm}) and \verb;netmhc2pan; 
-	% (\cite{netmhc2pan}) 
-	% R packages. \verb;tmhmm; provides an R interface to
-	% TMHMM (\cite{krogh2001predicting, sonnhammer1998hidden}), a tool
-	% to predict where membrane proteins' amino acids are located within the
-	% membrane.   
-	% \verb;netmhc2pan; provides an R interface to
-	% NetMHC2pan (\cite{jensen2018improved}), a tool
-	% to predict MHC-II binding to proteins.
+MHC-II haplotypes. We picked the top 21 MHC-II alleles that are most abundant 
+in the current human population \richel{reference here}
+%\frans{
+%  Neem aan dat dit die ref is naar dat stukje van most common haplotype in human population. 
+%  Misschien moeten we even de coverage erbij melden. 
+%  Greenbaum, Jason, et al. "Functional classification of class II human leukocyte antigen (HLA) molecules reveals seven different supertypes and a surprising degree of repertoire sharing across supertypes." Immunogenetics 63.6 (2011): 325-335.
+%}.
+We chose to use 21 alleles to have a similar number of alleles as is done
+for MHC-I.
+Same as \cite{bianchi2017}, we defined the 5\% of polypeptides 
+with the lowest IC50 values as binders. We then counted the percentage
+of binders that have one or more amino acids that are part of a TMH.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
