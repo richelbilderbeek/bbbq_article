@@ -22,3 +22,7 @@ frans: bbbq.zip
 
 bbbq.zip: zip.sh article.pdf
 	./zip.sh
+
+clean:
+	rm article.aux article.bbl article.blg article.docx article.log article.md article.odt article.out article.pdf article.rtf article.tex.bak article.txt *.zip
+
