@@ -167,6 +167,7 @@ polypeptide fragments.
 
 \paragraph{MHC-I}
 
+\richel{Check against stupidity}
 For MHC-I, it was found that predicted epitopes derived 
 from human transmembrane helices (TMHs)
 are over-presented by all HLA-A and 
@@ -178,14 +179,19 @@ due to the functional requirement of being able to span a lipid
 bilayer. 
 Due to this, pathogens have a lower chance to develop an escape mutation,
 as many mutations will result in a disfunctional TMH.
+Note that the mechanism by which a cell presents its TMHs is
+yet unknown.
 
 \paragraph{MHC-II}
 
+\richel{Check against stupidity}
 If presentation of TMHs on MHC-I would bring an evolutionary advantage 
 in the recognition of pathogens by the immune system, 
 it would follow that this is equally important for MHC-II, 
 especially as CD4+ T cell help is needed for a long lasting CD8+ T cell 
-response \cite{novy2007cd4}.
+response \cite{novy2007cd4}. 
+The mechanism to detect foreign TMHs by MHC-II would be unknown, 
+similar to the discovery that MHC-I presents TMHs.
 
 \paragraph{Evolutionary arms race}
 
@@ -197,30 +203,50 @@ If the human immune system is more prone to display (and possibly
 detect) polypeptides derived from TMHs, one may expect to find 
 an evolutionary signal in pathogens as well. 
 
-\paragraph{Evolutionary signal of unknown strength}
+\paragraph{Evolutionary signal of unknown strength for virus}
 
 \richel{Check against stupidity}
-We do not know how viruses are selected \richel{so I should read the
-literature on that}. We predict that there is a strong 
+Regarding human viruses, we do not know the extent to which the human
+immune systems selects on these, nor which loci are selected
+upon \richel{so I should read the literature on that}. 
+We predict that there is a strong 
 evolutionary conservation in regions that are essential for viral proteins'
 functions. Because these regions are rare in a viral proteome,
 and differ widely between pathogens, we expect that the human immune system
 is not tailored to detect these sites. TMHs, however, have less 
 functional constraints yet are more general. Because TMHs are more general,
 we expect it for the immune system to pay off to be more attentive towards
-TMHs. Because the strength of the evolutionary signal,
-are strong data set needs to be used.
+TMHs. 
+Additionally, viruses are not only selected for their evasion of an 
+immune response, yet are selected to have a high reproductive value.
+Because the strength of the evolutionary signal is unknown,
+we use a strong data set to be able to detect it.
 
+\paragraph{Evolutionary signal of unknown strength for bacteria}
 
-We expect that 
+\richel{Check against stupidity}
+Regarding human pathogenic bacteria, we do not know the extent to which the 
+human immune systems selects on these, nor which loci are selected
+upon \richel{so I should read the literature on that}.
+Because most bacterial pathogens are generalists, that is,
+can infect multiple hosts, we expect the selection pressure exerted
+by the human immune response to be weak.
+Also, it is unknown if bacterial TMHs are detected by MHC-II at all.
+Due to this, the strength of the evolutionary signal is unknown,
+thus we need a strong data set to be able to detect it.
 
+\paragraph{Data sets}
 
+\richel{Check against stupidity}
+To detect an evolutionary signal for selection on the TMHs of viruses, 
+we use the many time-dated COVID-19 proteomes.
 We can assume that only after the moment that COVID-19 spilled over 
-to humans, it's the human immune system that is an influential component 
-of its evolutionary selection.
-Using the extensive amount of time-dated COVID-19 sequences,
-we can quantify to which extent selection in COVID-19 occurs
-in the transmembrane part of its proteome.
+to humans, it has mostly been the human immune system selecting against
+its detection, although this is only part of the selection for 
+having a high transmission rate.
+To detect an evolutionary signal for selection on the TMHs of bacteria, 
+we use the proteomes of Mycoplasma. Mycoplasma is \richel{something}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hypotheses}
@@ -228,11 +254,12 @@ in the transmembrane part of its proteome.
 
 \begin{itemize}
   \item $\mathcal{H}_1$: MHC-I has the same percentage of epitopes overlapping
-    with TMHs in Homo sapiens as in COVID-19
+    with TMHs in Homo sapiens as in COVID-19 as in Mycoplasma
   \item $\mathcal{H}_2$: MHC-II has the same percentage of epitopes overlapping
-    with TMHs as expected by chance
-  \item $\mathcal{H}_3$: The TMHs of COVID-19 have the same mutation rate 
-    as the cytosolic and extracellular parts of its transmembrane proteins
+    with TMHs as expected by chance in Homo sapiens and COVID-19 and Mycoplasma
+  \item $\mathcal{H}_3$: The TMHs of both COVID-19 and Mycoplasma
+    have the same mutation rate 
+    as the cytosolic and extracellular parts of their transmembrane proteins
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,25 +272,26 @@ in the transmembrane part of its proteome.
 
 We used the same analysis as \cite{bianchi2017},
 except that instead of a human reference proteome,
-we used the proteome of the first sequenced COVID-19 strain (\cite{wu2020new}),
-with a GenBank ID of MN908947.3, as can be downloaded 
-from \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947}.
+we use the proteome of the first sequenced COVID-19 strain (\cite{wu2020new},
+GenBank ID of MN908947.3, \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947})
+as well as a Mycoplasma \richel{that one} reference genome.
 
 Bianchi and colleagues obtained a distribution of 
 percentages of MHC-I epitopes overlap with TMHs in Homo sapiens
 for the different HLA haplotypes, with an average of 5.3\%.
 We obtained a similar distribution of percentages of MHC-I epitopes that 
 overlap with TMHs for the different HLA haplotypes, but then applied to
-COVID-19.
+COVID-19 and Mycoplasma.
 
-We compare these distributions using a two-sample 
+We compare the distributions of humans and each pathogen
+using a two-sample 
 Kolmogorov-Smirnov (KS) test. The KS test determines if two samples
 are derived from the same distribution, without making assumptions
 regarding the shape of that distribution. 
 
 We will reject
 the null hypothesis that MHC-I has the same percentage of epitopes 
-overlapping with TMHs in Homo sapiens as in COVID-19 when 
+overlapping with TMHs in Homo sapiens compared to each pathogen when 
 the KS statistic $D_{n,m}$ follows the relationship as shown in 
 equation \ref{eq:ks}, for a significance level $\alpha = 0.05$
 and $n = m = 13$ HLA haplotypes.
@@ -359,7 +387,7 @@ and $n = m = 13$ HLA haplotypes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure \ref{fig:1} shows the percentages of epitopes overlapping 
-with TMHs for a human and COVID-19 proteome.
+with TMHs for a human, COVID-19 and Mycoplasma proteome.
 The KS test to determine if these percentages are sampled from
 a same distribution resulted in a p-value of \richel{unknown},
 which makes us reject/accept the hypothesis that these percentages
@@ -369,10 +397,9 @@ are sampled from the same distribution.
   \includegraphics[width=\textwidth]{bbbq_1/fig_bbbq_1_watermarked.png}
   \caption{
     \% epitopes overlapping with transmembrane helix
-    for a human and COVID-19 proteome.
+    for a human, COVID-19 and Mycoplasma proteome.
     \richel{
-      The Illuminati watermark indicates the data underlying this
-      figure has been simulated
+      the data underlying this figure has been simulated
     }
   }
   \label{fig:1}
@@ -439,6 +466,12 @@ with TMHs for a human and COVID-19 proteome are
 epitopes that MHC-I presents are [as/not as] likely 
 to be derived from TMH within either a human host and its viral pathogen.
 
+We found that the percentages of epitopes overlapping 
+with TMHs for a human and Mycopasma proteome are 
+[similar/different]. In other words, the
+epitopes that MHC-I presents are [as/not as] likely 
+to be derived from TMH within either a human host and its bacterial pathogen.
+
 	% We conclude that MHC-II binds to TMH peptides with a higher/lower/equal
 	% probability than expected by chance. 
 
@@ -457,6 +490,12 @@ of MHC-I epitopes being part of a TMH are likelier to be affected by
 stochasticity. We chose to use COVID-19 regardless, as the thousands
 of its time-dated genomic sequences are ideal for determining the 
 evolutionary conservation of MHC-I detecting TMHs. 
+
+We concluded that the
+epitopes that MHC-I presents are [as/not as] likely 
+to be derived from TMH within either a human host and its bacterial pathogen.
+Because a bacterium does not infect a cell, thus its polypeptides
+will not be presented by MHC-I, this result is [unexpected/expected]
 
 	% \frans{
 	%   De TMH evolutie data van COVID is missachien interresanter. Ik zie het als volgt. 
