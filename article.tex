@@ -296,7 +296,7 @@ the null hypothesis that MHC-I has the same percentage of epitopes
 overlapping with TMHs in Homo sapiens compared to each pathogen when 
 the KS statistic $D_{n,m}$ follows the relationship as shown in 
 equation \ref{eq:ks}, for a significance level $\alpha = 0.05$
-and $n = m = 13$ HLA haplotypes.
+and $n = m$ equals the number of HLA haplotypes.
 
 \begin{equation}
    D_{n,m} > \frac{1}{\sqrt{n}} \cdot \sqrt{ -\ln(\frac{\alpha}{2}) \cdot \frac{1 + \frac{n}{m}}{2} }
@@ -310,7 +310,7 @@ and $n = m = 13$ HLA haplotypes.
 \richel{Check against stupidity}
 For MHC-II, we do the same analysis as MHC-I, except for
 MHC-II haplotypes. We picked the top 21 MHC-II alleles that are most abundant 
-in the current human population \richel{reference here}
+in the current human population (\cite{greenbaum2011functional}).
 %\frans{
 %  Neem aan dat dit die ref is naar dat stukje van most common haplotype in human population. 
 %  Misschien moeten we even de coverage erbij melden. 
@@ -525,7 +525,9 @@ will not be presented by MHC-I, this result is [unexpected/expected]
 \section{Acknowledgments}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We thanks to Geert van den Bogaart for his wisdom.
+We thank the Center for Information Technology of the University 
+of Groningen for its support and for providing access to the Peregrine 
+high performance computing cluster. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Accessibility}
@@ -590,6 +592,15 @@ RJCB and FB wrote the article.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+  \input{mhc2_haplotypes.latex}
+  \caption{
+    Percentage of MHC-II haplotypes, from \cite{greenbaum2011functional}
+  }
+  \label{table:bbbq_2_percentages}
+\end{table}
+
 
 \begin{table}
   \input{bbbq_2/bbbq_2_percentages.latex}
