@@ -3,6 +3,7 @@ all: view.sh article.pdf
 
 article.pdf: create.sh article.tex bbbq_1/bbbq_1_percentages.latex bbbq_1/bbbq_1_stats.latex bbbq_1/fig_bbbq_1_watermarked.png
 	aspell -t -c article.tex
+	cd bbbq_1; make; cd ..
 	./create.sh
 
 bbbq_1/bbbq_1.Rmd:
