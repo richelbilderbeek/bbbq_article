@@ -286,22 +286,8 @@ overlap with TMHs for the different HLA haplotypes, but then applied to
 COVID-19 and Mycobacterium.
 
 We compare the distributions of humans and each pathogen
-using a two-sample 
-Kolmogorov-Smirnov (KS) test. The KS test determines if two samples
-are derived from the same distribution, without making assumptions
-regarding the shape of that distribution. 
-
-We will reject
-the null hypothesis that MHC-I has the same percentage of epitopes 
-overlapping with TMHs in Homo sapiens compared to each pathogen when 
-the KS statistic $D_{n,m}$ follows the relationship as shown in 
-equation \ref{eq:ks}, for a significance level $\alpha = 0.05$
-and $n = m$ equals the number of HLA haplotypes.
-
-\begin{equation}
-   D_{n,m} > \frac{1}{\sqrt{n}} \cdot \sqrt{ -\ln(\frac{\alpha}{2}) \cdot \frac{1 + \frac{n}{m}}{2} }
-\  \label{eq:ks}
-\end{equation}
+using a two-sample Kolmogorov-Smirnov (KS) test
+for a significance level $\alpha = 0.05$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-2}
@@ -311,16 +297,14 @@ and $n = m$ equals the number of HLA haplotypes.
 For MHC-II, we do the same analysis as MHC-I, except for
 MHC-II haplotypes. We picked the top 21 MHC-II alleles that are most abundant 
 in the current human population (\cite{greenbaum2011functional}).
-%\frans{
-%  Neem aan dat dit die ref is naar dat stukje van most common haplotype in human population. 
-%  Misschien moeten we even de coverage erbij melden. 
-%  Greenbaum, Jason, et al. "Functional classification of class II human leukocyte antigen (HLA) molecules reveals seven different supertypes and a surprising degree of repertoire sharing across supertypes." Immunogenetics 63.6 (2011): 325-335.
-%}.
+\frans{Show coverage}
 We chose to use 21 alleles to have a similar number of alleles as is done
 for MHC-I.
 Same as \cite{bianchi2017}, we defined the 5\% of polypeptides 
 with the lowest IC50 values as binders. We then counted the percentage
 of binders that have one or more amino acids that are part of a TMH.
+
+\richel{Read up on \cite{arlehamn2016quantitative}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
@@ -594,15 +578,6 @@ RJCB and FB wrote the article.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}
-  \input{mhc2_haplotypes.latex}
-  \caption{
-    Percentage of MHC-II haplotypes, from \cite{greenbaum2011functional}
-  }
-  \label{table:bbbq_2_percentages}
-\end{table}
-
-
-\begin{table}
   \input{bbbq_2/bbbq_2_percentages.latex}
   \caption{
     Percentage of MHC-II epitopes overlapping with transmembrane helix.
@@ -628,5 +603,52 @@ RJCB and FB wrote the article.
   }
   \label{table:bbbq_2_stats_myco}
 \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{MHC-II haplotype occurrences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\richel{
+  This is just a reminder, instead of new research. 
+  This subsection be deleted in the future.
+}
+
+\begin{table}
+  \input{mhc2_haplotypes.latex}
+  \caption{
+    Percentage of MHC-II haplotypes, from \cite{greenbaum2011functional}
+    \richel{
+      This is just a reminder, instead of new research. 
+      This table be deleted in the future.
+    }
+  }
+  \label{table:bbbq_2_percentages}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Kolmogorov-Smirnov}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\richel{
+  This is just a reminder, instead of new research. 
+  This subsection be deleted in the future.
+}
+
+The Kolmogorov-Smirnov (KS) test determines if two samples
+are derived from the same distribution, without making assumptions
+regarding the shape of that distribution. 
+
+We will reject
+the null hypothesis that MHC-I has the same percentage of epitopes 
+overlapping with TMHs in Homo sapiens compared to each pathogen when 
+the KS statistic $D_{n,m}$ follows the relationship as shown in 
+equation \ref{eq:ks}, for a significance level $\alpha = 0.05$
+and $n = m$ equals the number of HLA haplotypes.
+
+\begin{equation}
+   D_{n,m} > \frac{1}{\sqrt{n}} \cdot \sqrt{ -\ln(\frac{\alpha}{2}) \cdot \frac{1 + \frac{n}{m}}{2} }
+   \label{eq:ks}
+\end{equation}
 
 \end{document}
