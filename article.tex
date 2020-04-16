@@ -253,11 +253,20 @@ we use the proteomes of Mycobacterium. Mycobacterium is \richel{something}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-  \item $\mathcal{H}_1$: MHC-I has the same percentage of epitopes overlapping
-    with TMHs in Homo sapiens as in COVID-19 as in Mycobacterium
-  \item $\mathcal{H}_2$: MHC-II has the same percentage of epitopes overlapping
-    with TMHs as expected by chance in Homo sapiens and COVID-19 and Mycobacterium
-  \item $\mathcal{H}_3$: The TMHs of both COVID-19 and Mycobacterium
+  \item $\mathcal{H}_{1,1}$: MHC-I has the same percentage of epitopes overlapping
+    with TMHs in Homo sapiens as in COVID-19
+  \item $\mathcal{H}_{1,2}$: MHC-I has the same percentage of epitopes overlapping
+    with TMHs in Homo sapiens as in Mycobacterium
+  \item $\mathcal{H}_{2,1}$: MHC-II has the same percentage of epitopes overlapping
+    with TMHs as expected by chance in Homo sapiens
+  \item $\mathcal{H}_{2,2}$: MHC-II has the same percentage of epitopes overlapping
+    with TMHs as expected by chance in COVID-19
+  \item $\mathcal{H}_{2,3}$: MHC-II has the same percentage of epitopes overlapping
+    with TMHs as expected by chance in Mycobacterium
+  \item $\mathcal{H}_{3,1}$: The TMHs of COVID-19
+    have the same mutation rate 
+    as the cytosolic and extracellular parts of their transmembrane proteins
+  \item $\mathcal{H}_{3,2}$: The TMHs of Mycobacterium
     have the same mutation rate 
     as the cytosolic and extracellular parts of their transmembrane proteins
 \end{itemize}
@@ -299,12 +308,10 @@ MHC-II haplotypes. We picked the top 21 MHC-II alleles that are most abundant
 in the current human population (\cite{greenbaum2011functional}).
 \frans{Show coverage}
 We chose to use 21 alleles to have a similar number of alleles as is done
-for MHC-I.
+for MHC-I \richel{Unsure if this was the actual reason}.
 Same as \cite{bianchi2017}, we defined the 5\% of polypeptides 
 with the lowest IC50 values as binders. We then counted the percentage
 of binders that have one or more amino acids that are part of a TMH.
-
-\richel{Read up on \cite{arlehamn2016quantitative}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
@@ -371,8 +378,6 @@ are sampled from the same distribution.
   }
   \label{fig:1}
 \end{figure}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II}
