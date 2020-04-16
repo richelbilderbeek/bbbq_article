@@ -9,10 +9,97 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r, message=FALSE}
-library(bbbq)
+library(tmhmm)
 library(testthat)
 library(tidyr)
 library(ggplot2)
 ```
 
+Must be installed:
 
+```{r}
+expect_true(is_tmhmm_installed())
+```
+
+
+```{r}
+fasta_filename <- "proteome.fasta"
+expect_true(file.exists(fasta_filename))
+```
+
+Run:
+
+```{r}
+locatome <- run_tmhmm(fasta_filename)
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43415.1 orf1ab.*", 
+  replacement = ">ORF1ab"
+)
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43416.1 surface glycoprotein.*", 
+  replacement = ">S"
+)
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43417.1 ORF3a protein.*", 
+  replacement = ">ORF3a"
+)
+
+
+
+
+
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43418.1 envelope protein.*", 
+  replacement = ">E"
+)
+
+
+
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43419.1 membrane glycoprotein.*", 
+  replacement = ">M"
+)
+
+
+
+
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43420.1 ORF6 protein.*", 
+  replacement = ">ORF6"
+)
+
+
+
+
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43421.1 ORF7a protein.*", 
+  replacement = ">ORF7a"
+)
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43422.1 ORF8 protein.*", 
+  replacement = ">ORF8"
+)
+
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHD43423.2 nucleocapsid phosphoprotein.*", 
+  replacement = ">N"
+)
+
+locatome <- stringr::str_replace(
+  string = locatome, 
+  pattern = ">QHI42199.1 ORF10.*", 
+  replacement = ">ORF10"
+)
+
+
+plot_locatome(locatome) + ggsave("tmhs.png", width = 7, height = 7)
+```
