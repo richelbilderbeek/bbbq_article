@@ -9,4 +9,30 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(bbbq)
+library(testthat)
+```
 
+```{r}
+proteome_filename <- system.file(
+  "extdata", 
+  "UP000001584_83332_0.fasta", 
+  package = "bbbq")
+stopifnot(file.exists(proteome_filename))
+```
+
+```{r}
+proteome <- ape::read.FASTA(proteome_filename, type = "AA")
+```
+```{r}
+library(ape)
+first_protein <- as.character(proteome)[[1]]
+first_polypeptide <- paste0(first_protein[1:13], collapse = "")
+cat(first_polypeptide)
+```
+
+```{r}
+first_hydropbobicity <- Peptides::hydrophobicity(first_polypeptide)
+cat(first_hydropbobicity)
+```
