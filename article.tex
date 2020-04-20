@@ -1,5 +1,10 @@
 \documentclass{article}
 
+% Just to have them already
+% \begin{sloppypar}
+% \end{sloppypar}
+
+
 % Bibliography
 \usepackage{natbib}
 \bibpunct{(}{)}{;}{a}{}{;}
@@ -190,7 +195,7 @@ that will display different polypeptide fragments. Additionally, there
 may have been selection the HLA to display and or detect different
 polypeptide fragments.
 
-\paragraph{MHC-I}
+\paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
 \richel{Check against stupidity}
 For MHC-I, it was found that predicted epitopes derived 
@@ -206,6 +211,17 @@ Due to this, pathogens have a lower chance to develop an escape mutation,
 as many mutations will result in a disfunctional TMH.
 Note that the mechanism by which a cell presents its TMHs is
 yet unknown.
+
+\paragraph{Does MHC-I present TMH-derived epitopes from pathogens as often?}
+
+It is important that MHC-I presents both the polypeptides of the 
+(healthy) cell, as well as possible pathogen-derived polypeptides when the
+cell is infected. As described above, MHC-I presents TMH-derived epitopes 
+from the human host more often. It is unknown if MHC-I has the same
+dedication to present epitopes that stem from TMHs derived from
+proteins produced by pathogen, either would the pathogen
+be a virus \richel{$\mathcal{H}_{1,1}$} or 
+a bacterium \richel{$\mathcal{H}_{1,2}$}.
 
 \paragraph{MHC-II}
 
@@ -231,15 +247,27 @@ an evolutionary signal in pathogens as well.
 \paragraph{Evolutionary signal of unknown strength for virus}
 
 \richel{Check against stupidity}
-Regarding human viruses, we do not know the extent to which the human
-immune systems selects on these, nor which loci are selected
-upon \richel{so I should read the literature on that}. 
-We predict that there is a strong 
-evolutionary conservation in regions that are essential for viral proteins'
-functions. Because these regions are rare in a viral proteome,
+Regarding human viruses, we do not know the selection pressure
+exerted by the human immune system.
+We do know that this selection pressure is 
+limited for seasonal influenza \cite{han2019individual},
+but this study does not show how frequent selected upon 
+TMHs \richel{Use this study, if COVID-19 dataset is too weak}.
+For COVID-19, there is preliminary evidence that the strongest
+selection pressure is upon ORF3 (an ion channel and a viroporin)
+and ORF8 (unknown function). ORF3 has 3 TMHs that appear irrelevant for
+the natural selection of COVID-19.
+We predict that evolutionary conservation is strongest 
+for regions that are essential for viral proteins'
+functions (such as catalytic binding sites), instead of TMHs.
+Because these essential regions are rare in a viral proteome,
 and differ widely between pathogens, we expect that the human immune system
-is not tailored to detect these sites. TMHs, however, have less 
-functional constraints yet are more general. Because TMHs are more general,
+is not tailored to detect these sites, similar to the aforementioned
+influenza study. 
+TMHs, however, have less 
+functional constraints compared to catalytic regions,
+and as such are more general. 
+Because TMHs are more general,
 we expect it for the immune system to pay off to be more attentive towards
 TMHs. 
 Additionally, viruses are not only selected for their evasion of an 
@@ -656,10 +684,11 @@ RJCB and FB wrote the article.
 }
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{pics/covid_genome_and_proteome.png}
+  \includegraphics[width=0.9\textwidth]{pics/covid_genome_and_proteome.png}
   \caption{
     Overview of COVID-19 genome and proteome.
-    From \url{https://zhanglab.ccmb.med.umich.edu/COVID-19}
+    From 
+    \url{https://zhanglab.ccmb.med.umich.edu/COVID-19}
   }
   \label{fig:covid_genome_and_proteome}
 \end{figure}
@@ -699,7 +728,7 @@ RJCB and FB wrote the article.
       This table be deleted in the future.
     }
   }
-  \label{table:bbbq_2_percentages}
+  \label{table:mhc2_haplotypes}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
