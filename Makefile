@@ -1,7 +1,7 @@
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh article.tex mhc2_haplotypes.latex bbbq_1/bbbq_1_percentages.latex bbbq_1/bbbq_1_stats.latex bbbq_1/fig_bbbq_1_watermarked.png bbbq_2/bbbq_2_percentages.latex bbbq_2/bbbq_2_stats.latex bbbq_2/fig_bbbq_2_watermarked.png
+article.pdf: create.sh article.tex mhc2_haplotypes.latex bbbq_1/bbbq_1_percentages.latex bbbq_1/bbbq_1_stats.latex bbbq_1/fig_bbbq_1_watermarked.png bbbq_2/bbbq_2_percentages.latex bbbq_2/bbbq_2_stats.latex bbbq_2/fig_bbbq_2_watermarked.png pics/covid_genome_and_proteome.png
 	aspell -t -c article.tex
 	cd bbbq_1; make; cd ..
 	cd bbbq_2; make; cd ..
@@ -33,6 +33,9 @@ bbbq_2/fig_bbbq_2_watermarked.png: bbbq_2/bbbq_2.Rmd
 
 mhc2_haplotypes.latex: mhc2_haplotypes.csv
 	csv2latex mhc2_haplotypes.csv --nohead > mhc2_haplotypes.latex
+
+pics/covid_genome_and_proteome.png: pics/covid_genome_and_proteome.gif
+	convert pics/covid_genome_and_proteome.gif pics/covid_genome_and_proteome.png
 
 frans: bbbq.zip
 
