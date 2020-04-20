@@ -150,12 +150,39 @@ which all express MHC-II, to detect a pathogen and trigger the response to
 kill the pathogen. Note that the foreign proteins of a viral envelope 
 can be detected in this way as well, which is commonly used in vaccination.
 
-\paragraph{Non-random epitopes}
+\paragraph{MHCs bind hydrophobic epitopes}
 
 \richel{Check against stupidity}
-Any human's immune system detects only a selection of all possible
-polypeptide fragments. Each MHC molecule can only express (MHC-I)
-or detect (MHC-II) a couple of polypeptides. An increased detection
+Any human's immune system detects only a fraction of all possible
+polypeptide fragments. 
+Already each MHC molecule can only bind a
+subset of all possible polypeptides. 
+The polypeptides that can bind are also likelier to by hydrophobic,
+as most TMHs have a hydrophobic binding pocket \richel{Reference needed}.
+There are two sources of hydrophobic polypeptides, which are 
+from membrane proteins and of soluble proteins.
+Membrane proteins have at least one TMH to anchor them to
+the membrane. TMHs are hydrophobic, as this is required to span the 
+hydrophobic cellular lipid membrane. Additionally,
+they often have a length of 23 amino acids to be able to span
+the membrane.
+Soluble proteins have (non-TMH) hydrophobic regions as well, 
+to guides the protein to achieve its 3D configuration.
+
+\paragraph{MHC-I presents hydrophobic regions more often}
+
+One might expect that the hydrophobic epitopes presented,
+for a same hydrophobicity, are as likely to stem from 
+membrane proteins TMHs or from soluble proteins hydrophobic (non-TMH) regions.
+For MHC-I, however, it is found that the 9-mers stemming
+from TMHs are presented more often than expected by chance \cite{bianchi2017}.
+For MHC-II, it is unknown which percentage of binders 
+is derived from TMHs for all 13-mers present in a proteome
+that have the same hydrophobicity \richel{$\mathcal{H}_{3,1}$}.
+
+\paragraph{HLAs increase detection range}
+
+An increased detection
 is obtained by expressing a wide variety of
 MHCs, which is assured by the human leukocyte antigen gene complex (HLA).
 However, a different HLA will result in a different variety of MHCs,
@@ -186,7 +213,7 @@ yet unknown.
 If presentation of TMHs on MHC-I would bring an evolutionary advantage 
 in the recognition of pathogens by the immune system, 
 it would follow that this is equally important for MHC-II, 
-especially as CD4+ T cell help is needed for a long lasting CD8+ T cell 
+especially as the help of CD4+ T cells is needed for a long lasting CD8+ T cell 
 response \cite{novy2007cd4}. 
 The mechanism to detect foreign TMHs by MHC-II would be unknown, 
 similar to the discovery that MHC-I presents TMHs.
@@ -261,13 +288,25 @@ we use the proteomes of Mycobacterium. Mycobacterium is \richel{something}.
     with TMHs as expected by chance in COVID-19
   \item $\mathcal{H}_{2,3}$: MHC-II has the same percentage of epitopes overlapping
     with TMHs as expected by chance in Mycobacterium
-  \item $\mathcal{H}_{3,1}$: The TMHs of COVID-19
+  \item $\mathcal{H}_{3,1}$: MHC-II haplotypes will display epitopes
+    of a certain hydrophobicity, that is as likely to stem from
+    a TMH or a non-TMH 13-mer as expected by chance
+  \item $\mathcal{H}_{3,2}$: MHC-II haplotypes that have hydrophobic
+    binding pockets, will display more epitopes derived from (hydrophobic)
+    TMHs
+  \item $\mathcal{H}_{3,3}$: MHC-II haplotypes that have binding pockets
+    that are only partly hydrophobic, will display more epitopes derived 
+    from the flanking regions of TMHs
+  \item $\mathcal{H}_{4,1}$: The TMHs of COVID-19
     have the same mutation rate 
     as the cytosolic and extracellular parts of their transmembrane proteins
-  \item $\mathcal{H}_{3,2}$: The TMHs of Mycobacterium
+  \item $\mathcal{H}_{4,2}$: The TMHs of Mycobacterium
     have the same mutation rate 
     as the cytosolic and extracellular parts of their transmembrane proteins
 \end{itemize}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}
