@@ -255,9 +255,31 @@ or viruses \richel{$\mathcal{H}_{2,3}$}.
 The human immune system and human pathogen are in an evolutionary
 arms race, in which our immune systems is selected for the detection
 of pathogens, whereas pathogens are selected to avoid being detected.
-If the human immune system is more prone to display (and possibly 
-detect) polypeptides derived from TMHs, one may expect to find 
-an evolutionary signal in pathogens as well. 
+If the human immune system is more prone to bind hydrophobic polypeptides, 
+most of which derived from TMHs, one may expect to find 
+an evolutionary signal in TMHs.
+
+\paragraph{Amino acid substitution models}
+
+One important assumption for such phylogenetic inference
+is the amino acid substitution model (AASM), which may be different
+in TMHs. An AASM encodes the relative rates at which amino acids
+change through evolutionary time. Some amino acids have more 
+DNA triplets encoding for them, which is reflected in the AASM.
+Already for decades, AASMs are devised and refined from whole proteomes,
+such as the Blosum62 (\cite{henikoff1992amino}), 
+Dayhoff (\cite{dayhoff197822}), JTT (\cite{jones1992rapid}), 
+and WAG (\cite{whelan2001general}) models. 
+That such a generalization
+is not always desired, AASMs are devised for 
+chloroplasts (the CPREV model, see \cite{adachi2000plastid})
+and mitochondria (the MTREV24 model, see \cite{adachi1996model}).
+In all AASM, TMHs are generalized out and therefore, 
+there is no specialized AASM for TMHS. It would, however,
+be possible to derive an AASM from in silico predictions. 
+An in silico prediction would bypass any effects of evolution.
+Another AASM could be constructed from humans, if we assume
+that there is no selection on TMHs, except for being functional.
 
 \paragraph{Evolutionary signal of unknown strength for virus}
 
@@ -266,8 +288,8 @@ Regarding human viruses, we do not know the selection pressure
 exerted by the human immune system.
 We do know that this selection pressure is 
 limited for seasonal influenza \cite{han2019individual},
-but this study does not show how frequent selected upon 
-TMHs \richel{Use this study, if COVID-19 dataset is too weak}.
+but this study does not look into the evolution of TMHs
+\richel{Use this study, if COVID-19 dataset is too weak}.
 For COVID-19, there is preliminary evidence that the strongest
 selection pressure is upon ORF3 (an ion channel and a viroporin)
 and ORF8 (unknown function). ORF3 has 3 TMHs that appear irrelevant for
@@ -284,7 +306,11 @@ functional constraints compared to catalytic regions,
 and as such are more general. 
 Because TMHs are more general,
 we expect it for the immune system to pay off to be more attentive towards
-TMHs. 
+TMHs.
+For viral TMHs that are undetected by most human haplotypes, we
+expect these to be conserved, to remain avoiding detection.
+For viral TMHs that are detected by most human haplotypes, we
+expect there to be a higher mutation rate, to avoid detection.
 Additionally, viruses are not only selected for their evasion of an 
 immune response, yet are selected to have a high reproductive value.
 Because the strength of the evolutionary signal is unknown,
@@ -299,6 +325,10 @@ upon \richel{so I should read the literature on that}.
 Because most bacterial pathogens are generalists, that is,
 can infect multiple hosts, we expect the selection pressure exerted
 by the human immune response to be weak.
+For bacterial TMHs that are undetected by most human haplotypes, we
+expect these to be conserved, to remain avoiding detection.
+For bacterial TMHs that are detected by most human haplotypes, we
+expect there to be a higher mutation rate, to avoid detection.
 Also, it is unknown if bacterial TMHs are detected by MHC-II at all.
 Due to this, the strength of the evolutionary signal is unknown,
 thus we need a strong data set to be able to detect it.
@@ -395,8 +425,40 @@ Same as \cite{bianchi2017}, we defined the 5\% of polypeptides
 with the lowest IC50 values as binders. We then counted the percentage
 of binders that have one or more amino acids that are part of a TMH.
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{In silico prediction of TMH AASM}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We use a Monte-Carlo approach to produce an AASM for TMHs.
+We simulate a random amino acid sequence with a length 23.
+Using TMHMM, we determine if a sequence encodes for a TMH.
+For a TMH sequence, we independently change 
+each locus to all other amino acids.
+Of each mutation, we count how often the new sequence remains a TMH.
+Doing this for many random amino acid sequences, we can determine
+the AASM. See figure \ref{fig:tmh_aasm_method} for a schematic
+overview of this method.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=0.9\textwidth]{tmh_aasm_method.png}
+  \caption{
+    In silico prediction of TMH AASM
+  }
+  \label{fig:tmh_aasm_method}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Baseline TMH mutation rate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Detecting evolution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	% \frans{
