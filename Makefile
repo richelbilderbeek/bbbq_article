@@ -30,13 +30,12 @@ article.pdf: create.sh article.tex $(all_figure_filenames) $(all_table_filenames
 	./create.sh
 
 $(repo_names):
-	git clone https://github.com/richelbilderbeek/$@.git
+	git clone -b develop https://github.com/richelbilderbeek/$@.git
 
 $(makefile_names): $(repo_names)
 	cd $(dir $@) && $(MAKE)
 
-bbbq_1/bbbq_1.Rmd:
-	git clone https://github.com/richelbilderbeek/bbbq_1
+bbbq_1/bbbq_1.Rmd: bbbq_1
 
 bbbq_1/bbbq_1_percentages.latex: bbbq_1/bbbq_1.Rmd
 	cd bbbq_1; make; cd ..
@@ -47,8 +46,7 @@ bbbq_1/bbbq_1_stats.latex: bbbq_1/bbbq_1.Rmd
 bbbq_1/fig_bbbq_1_watermarked.png: bbbq_1/bbbq_1.Rmd
 	cd bbbq_1; make; cd ..
 
-bbbq_2/bbbq_2.Rmd:
-	git clone https://github.com/richelbilderbeek/bbbq_2
+bbbq_2/bbbq_2.Rmd: bbbq_2
 
 bbbq_2/bbbq_2_percentages.latex: bbbq_2/bbbq_2.Rmd
 	cd bbbq_2; make; cd ..
