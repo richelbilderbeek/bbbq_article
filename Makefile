@@ -1,7 +1,21 @@
+
+all_figure_filenames = \
+    mhc2_haplotypes.latex \
+    bbbq_1/bbbq_1_stats.latex \
+    bbbq_1/bbbq_1_percentages.latex \
+    bbbq_2/bbbq_2_stats.latex \
+    bbbq_2/bbbq_2_percentages.latex
+
+all_table_filenames = \
+    bbbq_1/fig_bbbq_1_watermarked.png \
+    bbbq_2/fig_bbbq_2_watermarked.png \
+    pics/covid_genome_and_proteome.png \
+    fig_tmh_mut_rate.png
+
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh article.tex mhc2_haplotypes.latex bbbq_1/bbbq_1_percentages.latex bbbq_1/bbbq_1_stats.latex bbbq_1/fig_bbbq_1_watermarked.png bbbq_2/bbbq_2_percentages.latex bbbq_2/bbbq_2_stats.latex bbbq_2/fig_bbbq_2_watermarked.png pics/covid_genome_and_proteome.png
+article.pdf: create.sh article.tex $(all_figure_filenames) $(all_table_filenames)
 	aspell -t -c article.tex
 	cd bbbq_1; make; cd ..
 	cd bbbq_2; make; cd ..
