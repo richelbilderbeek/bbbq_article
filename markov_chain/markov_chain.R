@@ -65,7 +65,7 @@ show_dow <- function(
 #'     \item \code{[2,2]} denotes \code{U -> U}
 #'  }
 show_tikz <- function(
-  transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE),
+  transition_matrix = matrix(c(0.8, 0.2, 0.1, 0.9), nrow = 2, byrow = TRUE),
   png_filename = tempfile()
 ) {
   testthat::expect_equal(2, ncol(transition_matrix))
@@ -73,9 +73,6 @@ show_tikz <- function(
   testthat::expect_equal(1.0, sum(transition_matrix[1, ]))
   testthat::expect_equal(1.0, sum(transition_matrix[2, ]))
   tex_text <- c(
-    "% Drawing a graph",
-    "% Author: Stefan Kottwitz",
-    "% https://www.packtpub.com/hardware-and-creative/latex-cookbook",
     "\\documentclass[border=10pt]{standalone}",
     "\\usepackage{tkz-graph}",
     "\\tikzset{",
@@ -104,7 +101,8 @@ show_tikz <- function(
   cmd <- paste0("pdflatex -halt-on-error ", tex_filename)
   system(cmd)
   pdf_filename <- paste0(basename(tex_filename), ".pdf")
-  file.exists(pdf_filename)
+  testthat::expect_true(file.exists(pdf_filename))
+
   png_filename_0 <- tempfile()
   cmd <- paste0("pdftoppm ", pdf_filename, " ", png_filename_0, " -png")
   system(cmd)
@@ -114,14 +112,15 @@ show_tikz <- function(
     pattern = basename(png_filename_0),
     replacement = paste0(basename(png_filename_0), "-1.png")
   )
-  file.exists(png_filename_1)
+  testthat::expect_true(file.exists(png_filename_1))
 
   # Cleanup
-  file.rename(from = png_filename_1, to = png_filename)
+  file.copy(from = png_filename_1, to = png_filename)
   file.remove(pdf_filename)
 
   grid::grid.raster(png::readPNG(png_filename))
 }
 show_tikz()
+show_tikz(png_filename = file.path(getwd(), "markov_chain.png"))
 
 
