@@ -3,7 +3,9 @@ library(markovchain)
 # Let's assume all protein sequences are TMH
 # Let's assume that a sequence is detected by MHC is 50%
 
-show_igraph <- function(transition_matrix = matrix(c(0.5, 0.5, 0.5, 0.5), nrow = 2)) {
+show_igraph <- function(
+  transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE)
+) {
   markov_chain <- new(
     "markovchain",
     states = c("Detected","Undetected"),
@@ -26,6 +28,7 @@ show_igraph <- function(transition_matrix = matrix(c(0.5, 0.5, 0.5, 0.5), nrow =
     layout = igraph::layout_on_grid
   )
 }
+show_igraph()
 
 show_dow <- function(
   transition_matrix = matrix(c(0.5, 0.5, 0.5, 0.5), nrow = 2)
@@ -50,22 +53,35 @@ show_dow <- function(
 }
 
 
-
+#' Show a Markov chain using TikZ
+#'
+#' @param transition_matrix a transition matrix.
+#'   The first row denotes the transition rates from D.
+#'   All rows must sum up to one.
+#'   \itemize{
+#'     \item \code{[1,1]} denotes \code{D -> D}
+#'     \item \code{[1,2]} denotes \code{D -> U}
+#'     \item \code{[2,1]} denotes \code{U -> D}
+#'     \item \code{[2,2]} denotes \code{U -> U}
+#'  }
 show_tikz <- function(
-  transition_matrix = matrix(c(0.5, 0.5, 0.5, 0.5), nrow = 2),
+  transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE),
   png_filename = tempfile()
 ) {
+  testthat::expect_equal(2, ncol(transition_matrix))
+  testthat::expect_equal(2, nrow(transition_matrix))
+  testthat::expect_equal(1.0, sum(transition_matrix[1, ]))
+  testthat::expect_equal(1.0, sum(transition_matrix[2, ]))
   tex_text <- c(
     "% Drawing a graph",
     "% Author: Stefan Kottwitz",
     "% https://www.packtpub.com/hardware-and-creative/latex-cookbook",
     "\\documentclass[border=10pt]{standalone}",
     "\\usepackage{tkz-graph}",
-    "\\GraphInit[vstyle = Shade]",
     "\\tikzset{",
     "  LabelStyle/.style = { rectangle, rounded corners, draw,",
-    "                        minimum width = 2em, fill = yellow!50,",
-    "                        text = red, font = \\bfseries },",
+    "                        minimum width = 2em, fill = white!50,",
+    "                         },",
     "  VertexStyle/.append style = { inner sep=5pt,",
     "                                font = \\Large\\bfseries},",
     "  EdgeStyle/.append style = {->, bend left} }",
@@ -73,15 +89,13 @@ show_tikz <- function(
     "\\begin{document}",
     "\\begin{tikzpicture}",
     "  \\SetGraphUnit{5}",
-    "  \\Vertex{A}",
-    "  \\Vertex{B}",
-    "  \\WE(B){A}",
-#    "  \\EA(B){C}",
-    "  \\Loop[dist = 4cm, dir = NO, label = 5](A.west)",
-    "  \\Loop[dist = 4cm, dir = SO, label = 6](B.east)",
+    "  \\Vertex{U}",
+    "  \\WE(U){D}",
+    paste0("  \\Loop[dist = 4cm, dir = NO, label = ", transition_matrix[1, 1], "](D.west)"),
+    paste0("  \\Loop[dist = 4cm, dir = SO, label = ", transition_matrix[2, 2], "](U.east)"),
     "  \\tikzset{EdgeStyle/.append style = {bend left = 50}}",
-    "  \\Edge[label = 7](A)(B)",
-    "  \\Edge[label = 8](B)(A)",
+    paste0("  \\Edge[label = ", transition_matrix[1,2], "](D)(U)"),
+    paste0("  \\Edge[label = ", transition_matrix[2,1], "](U)(D)"),
     "\\end{tikzpicture}",
     "\\end{document}"
   )
