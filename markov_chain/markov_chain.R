@@ -1,126 +1,67 @@
-library(markovchain)
+library(bbbq)
 
-# Let's assume all protein sequences are TMH
+# By chance,
 # Let's assume that a sequence is detected by MHC is 50%
+transition_matrix <- matrix(rep(0.5, 4), nrow = 2)
+bbbq::plot_markov_chain(transition_matrix)
 
-show_igraph <- function(
-  transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE)
-) {
-  markov_chain <- new(
-    "markovchain",
-    states = c("Detected","Undetected"),
-    transitionMatrix = transition_matrix
-  )
+# By chance,
+# But if you are detected, you are probably hydrophobic.
+# After a mutation, you probably still are.
+# So self-loops are likelier.
+transition_matrix[1,1] <- 0.9
+transition_matrix[1,2] <- 0.1
+transition_matrix[2,1] <- 0.1
+transition_matrix[2,2] <- 0.9
+bbbq::plot_markov_chain(transition_matrix)
 
-  markov_chain_as_net <- markovchain:::.getNet(markov_chain)
-  igraph::plot.igraph(
-    markov_chain_as_net,
-    vertex.color = "white",
-    vertex.frame.color = "Black",
-    vertex.label.color = "Black",
-    vertex.size = 70,
-    edge.label = round(igraph::E(markov_chain_as_net)$weight / 100, 2),
-    edge.color = "Black",
-    edge.label.color = "Black",
-    edge.arrow.size = 0.1,
-    arrow.mode = 2,
-    edge.curved = 0.5 * pi,
-    layout = igraph::layout_on_grid
-  )
-}
-show_igraph()
-
-show_dow <- function(
-  transition_matrix = matrix(c(0.5, 0.5, 0.5, 0.5), nrow = 2)
-) {
-  dot_text <- c(
-  "digraph markov_chain {",
-  "  a [label=detected];",
-  "  b [label=undetected];",
-  "  a -> a [label=0.7 tailport=nw headport=sw];",
-  "  a -> b [label=0.3 tailport=ne headport=nw];",
-  "  b -> a [label=0.2 tailport=sw headport=se];",
-  "  b -> b [label=0.8 tailport=se headport=ne];",
-  "  { rank=same; a b }",
-  "}"
-  )
-  dot_filename <- tempfile()
-  writeLines(text = dot_text, con = dot_filename)
-  png_filename <- tempfile()
-  cmd <- paste0("dot -Tpng ", dot_filename, " > ", png_filename)
-  system(cmd)
-  grid::grid.raster(png::readPNG(png_filename))
-}
+# By chance,
+# We assume it is easier to avoid detection (as there are so many ways)
+# then it is to acquire being detected
+transition_matrix[1,1] <- 0.8
+transition_matrix[1,2] <- 0.2
+transition_matrix[2,1] <- 0.1
+transition_matrix[2,2] <- 0.9
+bbbq::plot_markov_chain(transition_matrix)
 
 
-#' Show a Markov chain using TikZ
-#'
-#' @param transition_matrix a transition matrix.
-#'   The first row denotes the transition rates from D.
-#'   All rows must sum up to one.
-#'   \itemize{
-#'     \item \code{[1,1]} denotes \code{D -> D}
-#'     \item \code{[1,2]} denotes \code{D -> U}
-#'     \item \code{[2,1]} denotes \code{U -> D}
-#'     \item \code{[2,2]} denotes \code{U -> U}
-#'  }
-show_tikz <- function(
-  transition_matrix = matrix(c(0.8, 0.2, 0.1, 0.9), nrow = 2, byrow = TRUE),
-  png_filename = tempfile()
-) {
-  testthat::expect_equal(2, ncol(transition_matrix))
-  testthat::expect_equal(2, nrow(transition_matrix))
-  testthat::expect_equal(1.0, sum(transition_matrix[1, ]))
-  testthat::expect_equal(1.0, sum(transition_matrix[2, ]))
-  tex_text <- c(
-    "\\documentclass[border=10pt]{standalone}",
-    "\\usepackage{tkz-graph}",
-    "\\tikzset{",
-    "  LabelStyle/.style = { rectangle, rounded corners, draw,",
-    "                        minimum width = 2em, fill = white!50,",
-    "                         },",
-    "  VertexStyle/.append style = { inner sep=5pt,",
-    "                                font = \\Large\\bfseries},",
-    "  EdgeStyle/.append style = {->, bend left} }",
-    "\\thispagestyle{empty}",
-    "\\begin{document}",
-    "\\begin{tikzpicture}",
-    "  \\SetGraphUnit{5}",
-    "  \\Vertex{U}",
-    "  \\WE(U){D}",
-    paste0("  \\Loop[dist = 4cm, dir = NO, label = ", transition_matrix[1, 1], "](D.west)"),
-    paste0("  \\Loop[dist = 4cm, dir = SO, label = ", transition_matrix[2, 2], "](U.east)"),
-    "  \\tikzset{EdgeStyle/.append style = {bend left = 50}}",
-    paste0("  \\Edge[label = ", transition_matrix[1,2], "](D)(U)"),
-    paste0("  \\Edge[label = ", transition_matrix[2,1], "](U)(D)"),
-    "\\end{tikzpicture}",
-    "\\end{document}"
-  )
-  tex_filename <- tempfile()
-  writeLines(text = tex_text, con = tex_filename)
-  cmd <- paste0("pdflatex -halt-on-error ", tex_filename)
-  system(cmd)
-  pdf_filename <- paste0(basename(tex_filename), ".pdf")
-  testthat::expect_true(file.exists(pdf_filename))
 
-  png_filename_0 <- tempfile()
-  cmd <- paste0("pdftoppm ", pdf_filename, " ", png_filename_0, " -png")
-  system(cmd)
+transition_matrix <- matrix(
+  c(
+    0.5, 0.2, 0.2, 0.1,  # Undetected
+    0.2, 0.5, 0.2, 0.1,  # Detected by I
+    0.2, 0.2, 0.5, 0.1,   # Detected by II
+    0.1, 0.2, 0.2, 0.5  # Detected by I and II
+  ),
+  nrow = 4, byrow = TRUE
+)
+png_filename <- tempfile()
 
-  png_filename_1 <- stringr::str_replace(
-    string = png_filename_0,
-    pattern = basename(png_filename_0),
-    replacement = paste0(basename(png_filename_0), "-1.png")
-  )
-  testthat::expect_true(file.exists(png_filename_1))
+markov_chain <- new(
+  "markovchain",
+  states = c("U", "D by I", "D by II", "D by both"),
+  transitionMatrix = transition_matrix
+)
 
-  # Cleanup
-  file.copy(from = png_filename_1, to = png_filename)
-  file.remove(pdf_filename)
+markov_chain_as_net <- markovchain:::.getNet(markov_chain)
+igraph::plot.igraph(
+  markov_chain_as_net,
+  edge.label = round(igraph::E(markov_chain_as_net)$weight / 100, 2)
+)
 
-  grid::grid.raster(png::readPNG(png_filename))
-}
-show_tikz()
-show_tikz(png_filename = file.path(getwd(), "markov_chain.png"))
-
-
+#grDevices::png(png_filename)
+igraph::plot.igraph(
+  markov_chain_as_net,
+  vertex.color = "white",
+  vertex.frame.color = "Black",
+  vertex.label.color = "Black",
+  vertex.size = 70,
+  edge.label = round(igraph::E(markov_chain_as_net)$weight / 100, 2),
+  edge.color = "Black",
+  edge.label.color = "Black",
+  edge.arrow.size = 0.3,
+  arrow.mode = 2,
+  edge.curved = 0.125 * pi
+  #layout = igraph::layout_on_grid
+)
+grDevices::dev.off()

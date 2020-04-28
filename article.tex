@@ -113,7 +113,7 @@ a host proteome.
 Additionally, MHC-II binds to polypeptides derived from TMHs 
 [less/equally/more] often than expected by chance.
 Lastly, this study shows that in the mutation rate in TMHs of a pathogen
-is [lower/as much/higher], hinting at 
+is [lower/as much/higher] then expected just by chance, hinting at 
 evolutionary [conservation/neutrality/disruptive selection].
 Our findings suggest that the immune system is [less/neutral/more]
 vigilant to TMHs than expected by chance and this has left [a/no]
@@ -131,7 +131,7 @@ MHC-1, MHC-I, MHC-2, MHC-II, COVID-19
 
 \paragraph{Immune response}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 Our immune system fights invaders on a daily basis.
 These invaders can be fungi, bacteria or viruses.
 The innate immune response is its first general 
@@ -141,7 +141,7 @@ combat forces.
 
 \paragraph{Immune response by MHC-I}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 All nucleated cells in humans present randomly sampled polypeptides
 fragments to the surroundings of the cell using MHC class I molecules.
 If a cell gets infected by a virus, also the virus' polypeptides
@@ -150,7 +150,7 @@ by cytotoxic T lymphocytes, which will kill the infected cell.
 
 \paragraph{Immune response by MHC-II}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 Bacteria and fungi do not infect a cell with their foreign DNA,
 but are detected by the proteins on their cell walls. MHC class II molecules 
 bind to specific polypeptide fragments. This binding allows T and B cells,
@@ -160,7 +160,7 @@ can be detected in this way as well, which is commonly used in vaccination.
 
 \paragraph{MHCs bind hydrophobic epitopes}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 Any human's immune system detects only a fraction of all possible
 polypeptide fragments. 
 Already each MHC molecule can only bind a
@@ -183,7 +183,9 @@ One might expect that the hydrophobic epitopes presented,
 for a same hydrophobicity, are as likely to stem from 
 membrane proteins TMHs or from soluble proteins hydrophobic (non-TMH) regions.
 For MHC-I, however, it is found that the 9-mers stemming
-from TMHs are presented more often than expected by chance \cite{bianchi2017}.
+from TMHs are presented more often than expected by 
+chance \cite{bianchi2017}
+\richel{but also when compensating for hydrophobicity?}.
 For MHC-II, it is unknown which percentage of binders 
 is derived from TMHs for all 13-mers present in a proteome
 that have the same hydrophobicity 
@@ -203,7 +205,7 @@ polypeptide fragments.
 
 \paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 For MHC-I, it was found that predicted epitopes derived 
 from human transmembrane helices (TMHs)
 are over-presented by all HLA-A and 
@@ -232,7 +234,7 @@ a bacterium \richel{$\mathcal{H}_{1,2}$}.
 
 \paragraph{MHC-II is expected to present TMHs}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 If presentation of TMHs on MHC-I would bring an evolutionary advantage 
 in the recognition of pathogens by the immune system, 
 it would follow that this is equally important for MHC-II, 
@@ -249,36 +251,62 @@ in humans \richel{$\mathcal{H}_{2,1}$},
 bacteria \richel{$\mathcal{H}_{2,2}$}
 or viruses \richel{$\mathcal{H}_{2,3}$}.
 
-\paragraph{Evolutionary arms race}
+\paragraph{Selection undetectable in whole proteome}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 The human immune system and human pathogen are in an evolutionary
-arms race, in which our immune systems is selected for the detection
-of pathogens, whereas pathogens are selected to avoid being detected.
-If the human immune system is more prone to bind hydrophobic polypeptides, 
-most of which derived from TMHs, one may expect to find 
-an evolutionary signal in TMHs.
+arms race: our immune systems is selected for the detection
+of pathogens, whereas pathogens are selected to avoid detection.
+From a pathogen's point of view, however, this struggle 
+is of only minor importance:
+in seasonal influenza, for example, the selection pressure
+exerted by the immune system was only limited \cite{han2019individual}
+\richel{but this study does not look into the evolution of TMHs}.
+In general, on would expect that evolutionary selection is strongest 
+for regions that are important for viral proteins' functions:
+in COVID-19, for example, there is preliminary evidence that the strongest
+selection pressure is upon residues that changes its virulence \cite{velazquez2020positive}
+\richel{residue 251 of ORF3a (an ion channel and a 
+viroporin, residue is not part of TMH), and position 84 of ORF8 (unknown function)}.
+The part of a pathogen's proteome that is essential, 
+only accounts for small part of its full proteome.
+Also, these essential parts differ widely between pathogens.
+Because of this scarcity and variance in targets, 
+one expects that the human immune system
+is not tailored to detect these sites, 
+as hinted by upon by the aforementioned influenza study.
+
+\paragraph{Selection may be detectable in TMHs}
+
+TMHs, on the other hand, also have their function constraints, 
+yet can occur multiple time a pathogen's proteome.
+One can safely assume a pathogen's proteome contains multiple TMHs.
+Therefore, it may be beneficial for the host
+if its immune system would be more attentive towards TMHs.
+And maybe this has already happened: MHC-I already detects hydrophobic
+polypeptides. This feature, however, may also be caused by selection
+to detect hydrophobic regions in the soluble proteins of pathogens.
+It is unknown, when focussing on TMHs only, if a signal of selection
+can be detected.
 
 \paragraph{Use of protein data in phylogenetics}
 
-In DNA, select
-To detect the signature of selection \cite{murrell2015gene}
-
-From \cite{anisimova2009investigating}, I quote: 
-although most proteins evolve under purifying selection most of the time, 
-positive selection may affect some lineages, and during episodes of adaptive 
-evolution, only a small fraction of sites in the protein have the capacity 
-to increase the 'fitness' of the protein via AA 
-replacements (e.g., Gillespie 1991; Li 1997; Messier and Stewart 1997; 
-Pupko and Galtier 2002). 
-Thus, approaches assuming constant selective pressure over time and 
-over sites lack power in detecting genes affected by positive 
-selection (Yang and Bielawski 2000).
-
-
-
-Commonly, DNA is used in phylogenetics.
-Some argue that the proteome is superior \cite{diz2012proteomics}:
+When using DNA sequences, one can use dS/dN rates 
+to detect the signature of selection \cite{murrell2015gene}.
+Using AA sequences, however, has its advantages,
+as its is closer to the actual phenotype
+selection acts upon: DNA may never be translated to RNA,
+or its RNA may never be transcribed \cite{diz2012proteomics}
+\richel{improve upon this point}.
+When using a preoteome in phylogenetic research,
+we know that the majority of proteins are selected to just 
+maintain their function most of the time, where
+is the timespans there is selection, only a few AAs
+can actually increase the 'fitness' of the 
+protein \cite{anisimova2009investigating}.
+There, when generalizing the dynamics of mostly purifying selection (to maintain
+a protein's function) and a short duration of positive selection,
+those genes that are selected cannot be detected \cite{yang2000statistical}.
 
 \paragraph{Amino acid substitution models}
 
@@ -304,31 +332,9 @@ that there is no selection on TMHs, except for being functional.
 
 \paragraph{Evolutionary signal of unknown strength for virus}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 Regarding human viruses, we do not know the selection pressure
 exerted by the human immune system.
-We do know that this selection pressure is 
-limited for seasonal influenza \cite{han2019individual},
-but this study does not look into the evolution of TMHs
-\richel{Use this study, if COVID-19 dataset is too weak}.
-For COVID-19, there is preliminary evidence that the strongest
-selection pressure is upon ORF3 (an ion channel and a viroporin)
-and ORF8 (unknown function) \cite{velazquez2020positive}. 
-Of these two proteins, ORF3 has 3 TMHs,
-yet selection was only detectable in non-TMHs.
-We predict that evolutionary conservation is strongest 
-for regions that are essential for viral proteins'
-functions (such as catalytic binding sites), instead of TMHs.
-Because these essential regions are rare in a viral proteome,
-and differ widely between pathogens, we expect that the human immune system
-is not tailored to detect these sites, similar to the aforementioned
-influenza study. 
-TMHs, however, have less 
-functional constraints compared to catalytic regions,
-and as such are more general. 
-Because TMHs are more general,
-we expect it for the immune system to pay off to be more attentive towards
-TMHs.
 For viral TMHs that are undetected by most human haplotypes, we
 expect these to be conserved, to remain avoiding detection.
 For viral TMHs that are detected by most human haplotypes, we
@@ -340,7 +346,7 @@ we use a strong data set to be able to detect it.
 
 \paragraph{Evolutionary signal of unknown strength for bacteria}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 Regarding human pathogenic bacteria, we do not know the extent to which the 
 human immune systems selects on these, nor which loci are selected
 upon \richel{so I should read the literature on that}.
@@ -357,7 +363,7 @@ thus we need a strong data set to be able to detect it.
 
 \paragraph{Data sets}
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 To detect an evolutionary signal for selection on the TMHs of viruses, 
 we use the many time-dated COVID-19 proteomes.
 We can assume that only after the moment that COVID-19 spilled over 
@@ -436,7 +442,7 @@ for a significance level $\alpha = 0.05$.
 \subsection{MHC-2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{Check against stupidity}
+\richel{Check for correctness}
 For MHC-II, we do the same analysis as MHC-I, except for
 MHC-II haplotypes. We picked the top 21 MHC-II alleles that are most abundant 
 in the current human population (\cite{greenbaum2011functional}).
