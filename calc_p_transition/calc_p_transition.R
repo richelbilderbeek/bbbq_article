@@ -17,6 +17,7 @@
 # * Keep the ones that result in a TMH
 # * Of those, count which state these are
 # * Convert these counts to probabilities
+library(testthat)
 
 get_amino_acids <- function(
 ) {
@@ -25,7 +26,7 @@ get_amino_acids <- function(
 expect_equal(20, length(get_amino_acids()))
 
 is_tmh <- function(protein_sequence) {
-  locatome <- run_tmhmm_on_sequence(protein_sequence)
+  locatome <- tmhmm::run_tmhmm_on_sequence(protein_sequence)
   stringr::str_count(string = locatome, pattern = "(M|m)") > 0
 }
 expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
@@ -39,7 +40,6 @@ are_tmhs <- function(protein_sequences) {
 }
 expect_true(are_tmhs("VVIILTIAGNILVIMAVSLE"))
 expect_true(all(are_tmhs(c("VVIILTIAGNILVIMAVSLE", "VVIILTIAGNILVIMAVSLE"))))
-
 
 #' @param s the string
 #' @param n the index of the character
@@ -70,16 +70,6 @@ get_adjacent_sequence <- function(aa_sequence = "VVIILTIAGNILVIMAVSLE")
   seqs[ seqs != aa_sequence ]
 }
 
-focal_sequence <- "VVIILTIAGNILVIMAVSLE"
-expect_true(is_detected_by_mhc_1(focal_sequence))
-expect_false(is_detected_by_mhc_2(focal_sequence))
-
-all_seqs <- get_adjacent_sequence(focal_sequence)
-length(all_seqs) #380
-
-all_tmhs <- all_seqs[ are_tmhs(all_seqs) ]
-length(all_tmhs) #223
-
 is_detected_by_mhc_1 <- function(protein_sequence = "VVIIRTIAGRILVIMARSLE") {
   is_detected <- FALSE
   tryCatch({
@@ -103,9 +93,6 @@ are_detected_by_mhc_1 <- function(protein_sequences) {
 expect_true(are_detected_by_mhc_1("VVIILTIAGNILVIMAVSLE"))
 expect_false(are_detected_by_mhc_1("VVIIRTIAGRILVIMARSLE"))
 
-tmhs_detected_mhc_1 <- all_tmhs[ are_detected_by_mhc_1(all_tmhs) ]
-length(tmhs_detected_mhc_1) #223
-
 is_detected_by_mhc_2 <- function(protein_sequence = "VVIIRTIAGRILVIMARSLE") {
   fasta_text <- c(">protein_name", protein_sequence)
   fasta_filename <- tempfile()
@@ -125,6 +112,19 @@ are_detected_by_mhc_2 <- function(protein_sequences) {
 }
 expect_true(are_detected_by_mhc_2("VVIIRTIAGRILVIMARSLE"))
 expect_false(are_detected_by_mhc_2("VRRIRRIAGRIHVIRARSHE"))
+
+focal_sequence <- "VVIILTIAGNILVIMAVSLE"
+expect_true(is_detected_by_mhc_1(focal_sequence))
+expect_false(is_detected_by_mhc_2(focal_sequence))
+
+all_seqs <- get_adjacent_sequence(focal_sequence)
+length(all_seqs) #380
+
+all_tmhs <- all_seqs[ are_tmhs(all_seqs) ]
+length(all_tmhs) #223
+
+tmhs_detected_mhc_1 <- all_tmhs[ are_detected_by_mhc_1(all_tmhs) ]
+length(tmhs_detected_mhc_1) #223
 
 tmhs_detected_mhc_2 <- all_tmhs[ are_detected_by_mhc_2(all_tmhs) ]
 length(tmhs_detected_mhc_2) #
