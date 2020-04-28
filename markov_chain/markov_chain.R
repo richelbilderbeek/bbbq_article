@@ -73,24 +73,21 @@ show_tikz <- function(
     "\\begin{document}",
     "\\begin{tikzpicture}",
     "  \\SetGraphUnit{5}",
+    "  \\Vertex{A}",
     "  \\Vertex{B}",
     "  \\WE(B){A}",
-    "  \\EA(B){C}",
-    "  \\Edge[label = 1](A)(B)",
-    "  \\Edge[label = 2](B)(C)",
-    "  \\Edge[label = 3](C)(B)",
-    "  \\Edge[label = 4](B)(A)",
+#    "  \\EA(B){C}",
     "  \\Loop[dist = 4cm, dir = NO, label = 5](A.west)",
-    "  \\Loop[dist = 4cm, dir = SO, label = 6](C.east)",
+    "  \\Loop[dist = 4cm, dir = SO, label = 6](B.east)",
     "  \\tikzset{EdgeStyle/.append style = {bend left = 50}}",
-    "  \\Edge[label = 7](A)(C)",
-    "  \\Edge[label = 8](C)(A)",
+    "  \\Edge[label = 7](A)(B)",
+    "  \\Edge[label = 8](B)(A)",
     "\\end{tikzpicture}",
     "\\end{document}"
   )
   tex_filename <- tempfile()
   writeLines(text = tex_text, con = tex_filename)
-  cmd <- paste0("pdflatex ", tex_filename)
+  cmd <- paste0("pdflatex -halt-on-error ", tex_filename)
   system(cmd)
   pdf_filename <- paste0(basename(tex_filename), ".pdf")
   file.exists(pdf_filename)
@@ -111,5 +108,6 @@ show_tikz <- function(
 
   grid::grid.raster(png::readPNG(png_filename))
 }
+show_tikz()
 
 
