@@ -1,0 +1,11 @@
+\begin{tabular}{lllll}
+  \hline
+                     & Undetected & Detected by MHC-I & Detected by MHC-II & Detected by both \\
+  \hline
+  Undetected         & 700*/500   & 130/200           & 120/200            & 50/100           \\
+  Detected by MHC-I  & 140*/100   & 50/80             & 5/10               & 5/10             \\
+  Detected by MHC-II & 280*/200   & 100/160           & 10/20              & 10/20            \\
+  Detected by both   & 10*/5      & 15*/10            & 15*/10             & 10/25            \\
+  \hline
+\end{tabular}
+

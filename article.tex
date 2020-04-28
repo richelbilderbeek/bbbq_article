@@ -286,49 +286,27 @@ if its immune system would be more attentive towards TMHs.
 And maybe this has already happened: MHC-I already detects hydrophobic
 polypeptides. This feature, however, may also be caused by selection
 to detect hydrophobic regions in the soluble proteins of pathogens.
-It is unknown, when focussing on TMHs only, if a signal of selection
+It is unknown, when focusing on TMHs only, if a signal of selection
 can be detected.
 
 \paragraph{Use of protein data in phylogenetics}
 
-When using DNA sequences, one can use dS/dN rates 
+When using DNA sequences, one can use $dS/dN$ rates 
 to detect the signature of selection \cite{murrell2015gene}.
 Using AA sequences, however, has its advantages,
 as its is closer to the actual phenotype
 selection acts upon: DNA may never be translated to RNA,
 or its RNA may never be transcribed \cite{diz2012proteomics}
 \richel{improve upon this point}.
-When using a preoteome in phylogenetic research,
+When using a proteome in phylogenetic research,
 we know that the majority of proteins are selected to just 
 maintain their function most of the time, where
-is the timespans there is selection, only a few AAs
+is the time spans there is selection, only a few AAs
 can actually increase the 'fitness' of the 
 protein \cite{anisimova2009investigating}.
 There, when generalizing the dynamics of mostly purifying selection (to maintain
 a protein's function) and a short duration of positive selection,
 those genes that are selected cannot be detected \cite{yang2000statistical}.
-
-\paragraph{Amino acid substitution models}
-
-One important assumption for such phylogenetic inference
-is the amino acid substitution model (AASM), which may be different
-in TMHs. An AASM encodes the relative rates at which amino acids
-change through evolutionary time. Some amino acids have more 
-DNA triplets encoding for them, which is reflected in the AASM.
-Already for decades, AASMs are devised and refined from whole proteomes,
-such as the Blosum62 (\cite{henikoff1992amino}), 
-Dayhoff (\cite{dayhoff197822}), JTT (\cite{jones1992rapid}), 
-and WAG (\cite{whelan2001general}) models. 
-That such a generalization
-is not always desired, AASMs are devised for 
-chloroplasts (the CPREV model, see \cite{adachi2000plastid})
-and mitochondria (the MTREV24 model, see \cite{adachi1996model}).
-In all AASM, TMHs are generalized out and therefore, 
-there is no specialized AASM for TMHS. It would, however,
-be possible to derive an AASM from in silico predictions. 
-An in silico prediction would bypass any effects of evolution.
-Another AASM could be constructed from humans, if we assume
-that there is no selection on TMHs, except for being functional.
 
 \paragraph{Evolutionary signal of unknown strength for virus}
 
@@ -459,33 +437,6 @@ of binders that have one or more amino acids that are part of a TMH.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{In silico prediction of TMH AASM}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-We use a Monte-Carlo approach to produce an AASM for TMHs.
-We simulate a random amino acid sequence with a length 23.
-Using TMHMM, we determine if a sequence encodes for a TMH.
-For a TMH sequence, we independently change 
-each locus to all other amino acids.
-Of each mutation, we count how often the new sequence remains a TMH.
-Doing this for many random amino acid sequences, we can determine
-the AASM. See figure \ref{fig:tmh_aasm_method} for a schematic
-overview of this method.
-
-\begin{figure}[!htbp]
-  \includegraphics[width=0.9\textwidth]{tmh_aasm_method.png}
-  \caption{
-    In silico prediction of TMH AASM
-  }
-  \label{fig:tmh_aasm_method}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Baseline TMH mutation rate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Detecting evolution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -501,32 +452,12 @@ overview of this method.
 	% Via entrez en blast 
 	%   Ik he been transcript van Maxim ik zal dit proberen te vertalen naar een stukje tekst. 
 	% }
-	% .
-	% Using the \verb;tmhprot; R package (\cite{tmhprot}), the DNA alignment is split
-	% into two alignments, one for the TMH parts, another for the non-TMH
-	% parts. Each alignment was tested by the \verb;mcbette; 
-	% R package (\cite{mcbette}) to select the Bayesian inference model with
-	% the highest evidence (a.k.a. the marginal likelihood) using the nested
-	% sampling approach as described in \cite{maturana2018model},
-	% using the popular Bayesian phylogenetic tool 
-	% BEAST2 (\cite{bouckaert2014beast}) in the back-end.
-	% \verb;mcbette; used a set of 40 candidate inference models, 
-	% consisting of all combinations of 
-	% 4 site models (JC, HKY, TN, GTR), 
-	% 2 clock models (strict, RLN) and 
-	% 5 tree priors (Yule, BD, CBS, CCP, CEP).
-
-	% For each alignment, the inference model with the highest evidence
-	% is used in a Bayesian inference. From each Bayesian posterior,
-	% the parameter estimates regarding mutation rates (including clock rate)
-	% were obtained and compared to determine which realized mutation rate is lower.
-	% The Markov chain Monte Carlo was set up in such a way that the effective sample
-	% size for the likelihood of the inference model is above the recommended value
-	% of 200 (\cite{bouckaert2014beast}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Poisson binomial distribution
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
@@ -570,6 +501,35 @@ are sampled from the same distribution.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{transitions.png}
+  \caption{
+    Transitions in TMHs that occur more often then expected by chance,
+    for a confidence interval of 5 percent.
+    Table \ref{tab:transitions} shows the transition counts.
+    \richel{
+      stub figure
+    }
+  }
+  \label{fig:transitions}
+\end{figure}
+
+\begin{table}[!htbp]
+  \input{table_transitions.latex}
+  \caption{
+    Transitions counts, where the row indicates the source state,
+    and the column indicates the target state.
+    First number per cell is the observed number of this state transition,
+    where the second number is the expected number of this state transition
+    as predicted by chance.
+    An asterisk behind the observed count indicates that this count
+    is unlikely to be caused by chance only.
+    Figure \ref{fig:transitions} shows which transition counts are 
+    unlikely to be caused by chance only.
+  }
+  \label{tab:transitions}
+\end{table}
 
 	% Table \ref{tab:results} shows the location and binding strength for the
 	% tuberculosis proteome.
