@@ -19,28 +19,6 @@
 # * Convert these counts to probabilities
 library(testthat)
 
-get_amino_acids <- function(
-) {
-  c("A", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y")
-}
-expect_equal(20, length(get_amino_acids()))
-
-is_tmh <- function(protein_sequence) {
-  locatome <- tmhmm::run_tmhmm_on_sequence(protein_sequence)
-  stringr::str_count(string = locatome, pattern = "(M|m)") > 0
-}
-expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
-
-are_tmhs <- function(protein_sequences) {
-  results <- rep(NA, length(protein_sequences))
-  for (i in seq_along(protein_sequences)) {
-    results[i] <- is_tmh(protein_sequences[i])
-  }
-  results
-}
-expect_true(are_tmhs("VVIILTIAGNILVIMAVSLE"))
-expect_true(all(are_tmhs(c("VVIILTIAGNILVIMAVSLE", "VVIILTIAGNILVIMAVSLE"))))
-
 #' @param s the string
 #' @param n the index of the character
 #' @param c the character to be placed at that index
@@ -62,7 +40,7 @@ get_adjacent_sequence <- function(aa_sequence = "VVIILTIAGNILVIMAVSLE")
   seqs <- rep(NA, nchar(aa_sequence) * 20)
   i <- 1
   for (locus in seq(1, nchar(aa_sequence))) {
-    for (aa in get_amino_acids()) {
+    for (aa in bbbq::get_amino_acids()) {
       seqs[i] <- replace_nth_char(s = aa_sequence, n = locus, c = aa)
       i <- i + 1
     }
@@ -70,57 +48,14 @@ get_adjacent_sequence <- function(aa_sequence = "VVIILTIAGNILVIMAVSLE")
   seqs[ seqs != aa_sequence ]
 }
 
-is_detected_by_mhc_1 <- function(protein_sequence = "VVIIRTIAGRILVIMARSLE") {
-  is_detected <- FALSE
-  tryCatch({
-    EpitopePrediction::binders(protein_sequence)
-    is_detected <- TRUE
-  },
-    error = function(e) {}
-  )
-  is_detected
-}
-expect_true(is_detected_by_mhc_1("VVIILTIAGNILVIMAVSLE"))
-expect_false(is_detected_by_mhc_1("VVIIRTIAGRILVIMARSLE"))
-
-are_detected_by_mhc_1 <- function(protein_sequences) {
-  are_detected <- rep(NA, length(protein_sequences))
-  for (i in seq_along(protein_sequences)) {
-    are_detected[i] <- is_detected_by_mhc_1(protein_sequences[i])
-  }
-  are_detected
-}
-expect_true(are_detected_by_mhc_1("VVIILTIAGNILVIMAVSLE"))
-expect_false(are_detected_by_mhc_1("VVIIRTIAGRILVIMARSLE"))
-
-is_detected_by_mhc_2 <- function(protein_sequence = "VVIIRTIAGRILVIMARSLE") {
-  fasta_text <- c(">protein_name", protein_sequence)
-  fasta_filename <- tempfile()
-  writeLines(text = fasta_text, con = fasta_filename)
-  results <- netmhc2pan::run_netmhc2pan(fasta_filename = fasta_filename)
-  sum(results$Rank < 5.0) > 0
-}
-expect_true(is_detected_by_mhc_2("VVIIRTIAGRILVIMARSLE"))
-expect_false(is_detected_by_mhc_2(protein_sequence = "VRRIRRIAGRIHVIRARSHE"))
-
-are_detected_by_mhc_2 <- function(protein_sequences) {
-  are_detected <- rep(NA, length(protein_sequences))
-  for (i in seq_along(protein_sequences)) {
-    are_detected[i] <- is_detected_by_mhc_2(protein_sequences[i])
-  }
-  are_detected
-}
-expect_true(are_detected_by_mhc_2("VVIIRTIAGRILVIMARSLE"))
-expect_false(are_detected_by_mhc_2("VRRIRRIAGRIHVIRARSHE"))
-
 focal_sequence <- "VVIILTIAGNILVIMAVSLE"
-expect_true(is_detected_by_mhc_1(focal_sequence))
-expect_false(is_detected_by_mhc_2(focal_sequence))
+expect_true(bbbq::is_detected_by_mhc_1(focal_sequence))
+expect_false(bbbq::is_detected_by_mhc_2(focal_sequence))
 
 all_seqs <- get_adjacent_sequence(focal_sequence)
 length(all_seqs) #380
 
-all_tmhs <- all_seqs[ are_tmhs(all_seqs) ]
+all_tmhs <- all_seqs[ tmhmm::are_tmhs(all_seqs) ]
 length(all_tmhs) #223
 
 tmhs_detected_mhc_1 <- all_tmhs[ are_detected_by_mhc_1(all_tmhs) ]
