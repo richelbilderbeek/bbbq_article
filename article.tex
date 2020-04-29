@@ -130,7 +130,6 @@ MHC-1, MHC-I, MHC-2, MHC-II, COVID-19
 
 \paragraph{Immune response}
 
-\richel{Check for correctness}
 Our immune system fights invaders on a daily basis.
 These invaders can be fungi, bacteria or viruses.
 The innate immune response is its first general 
@@ -140,30 +139,43 @@ combat forces.
 
 \paragraph{Immune response by MHC-I}
 
-\richel{Check for correctness}
 All nucleated cells in humans present randomly sampled polypeptides
 fragments to the surroundings of the cell using MHC class I molecules.
 If a cell gets infected by a virus, also the virus' polypeptides
-will be presented at the cell surface. The viral antigen is detected 
+will be presented at the cell surface. The foreign viral antigen is detected 
 by cytotoxic T lymphocytes, which will kill the infected cell.
 
 \paragraph{Immune response by MHC-II}
 
-\richel{Check for correctness}
-Bacteria and fungi do not infect a cell with their foreign DNA,
-but are detected by the proteins on their cell walls. MHC class II molecules 
-bind to specific polypeptide fragments. This binding allows T and B cells,
-which all express MHC-II, to detect a pathogen and trigger the response to
-kill the pathogen. Note that the foreign proteins of a viral envelope 
-can be detected in this way as well, which is commonly used in vaccination.
+All pathogens can be detected by the foreign proteins on 
+their (bacterial or fungal) cell walls or (viral) envelope.
+For bacteria and fungi, this is the main mode of their detection,
+as these do not infect a cell with their (foreign) DNA.
+T and B cells express MHC-II to detect foreign polypeptide fragments.
+An immune response is started when MHC-II detects a pathogen.
 
-\paragraph{MHCs bind hydrophobic epitopes}
+\paragraph{Epitope prediction}
 
-\richel{Check for correctness}
 Any human's immune system detects only a fraction of all possible
 polypeptide fragments. 
 Already each MHC molecule can only bind a
-subset of all possible polypeptides. 
+subset of all possible polypeptides.
+The classification of HLAs is based on algorithms that
+maximize the information content of each 
+classification, such as the presence of a certain amino acid at 
+the first (for MHC-II, \cite{southwood1998several})
+or second position (for MHC-I, \cite{lund2004definition}) of a polypeptide.
+However, this does not imply that all polypeptides for a classification
+pattern bind to the MHC, as there is no simple method to predict which 
+MHCs bind which epitopes.
+Using artificial neural networks, it became
+possible to make theoretical predictions \cite{nielsen2003reliable,nielsen2004improved},
+which are tested to be reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
+
+
+
+
+??? 
 The polypeptides that can bind are also likelier to by hydrophobic,
 as most TMHs have a hydrophobic binding pocket \richel{Reference needed}.
 There are two sources of hydrophobic polypeptides, which are 
@@ -204,7 +216,7 @@ polypeptide fragments.
 
 \paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
-\richel{Check for correctness}
+
 For MHC-I, it was found that predicted epitopes derived 
 from human transmembrane helices (TMHs)
 are over-presented by all HLA-A and 
@@ -233,7 +245,7 @@ a bacterium \richel{$\mathcal{H}_{1,2}$}.
 
 \paragraph{MHC-II is expected to present TMHs}
 
-\richel{Check for correctness}
+
 If presentation of TMHs on MHC-I would bring an evolutionary advantage 
 in the recognition of pathogens by the immune system, 
 it would follow that this is equally important for MHC-II, 
@@ -252,7 +264,7 @@ or viruses \richel{$\mathcal{H}_{2,3}$}.
 
 \paragraph{Selection undetectable in whole proteome}
 
-\richel{Check for correctness}
+
 The human immune system and human pathogen are in an evolutionary
 arms race: our immune systems is selected for the detection
 of pathogens, whereas pathogens are selected to avoid detection.
@@ -309,7 +321,7 @@ those genes that are selected cannot be detected \cite{yang2000statistical}.
 
 \paragraph{Evolutionary signal of unknown strength for virus}
 
-\richel{Check for correctness}
+
 Regarding human viruses, we do not know the selection pressure
 exerted by the human immune system.
 For viral TMHs that are undetected by most human haplotypes, we
@@ -323,7 +335,7 @@ we use a strong data set to be able to detect it.
 
 \paragraph{Evolutionary signal of unknown strength for bacteria}
 
-\richel{Check for correctness}
+
 Regarding human pathogenic bacteria, we do not know the extent to which the 
 human immune systems selects on these, nor which loci are selected
 upon \richel{so I should read the literature on that}.
@@ -340,7 +352,7 @@ thus we need a strong data set to be able to detect it.
 
 \paragraph{Data sets}
 
-\richel{Check for correctness}
+
 To detect an evolutionary signal for selection on the TMHs of viruses, 
 we use the many time-dated COVID-19 proteomes.
 We can assume that only after the moment that COVID-19 spilled over 
@@ -419,7 +431,7 @@ for a significance level $\alpha = 0.05$.
 \subsection{MHC-2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{Check for correctness}
+
 For MHC-II, we do the same analysis as MHC-I, except for
 MHC-II haplotypes. We picked the top 21 MHC-II alleles that are most abundant 
 in the current human population (\cite{greenbaum2011functional}).
@@ -611,6 +623,13 @@ epitopes that MHC-I presents are [as/not as] likely
 to be derived from TMH within either a human host and its bacterial pathogen.
 Because a bacterium does not infect a cell, thus its polypeptides
 will not be presented by MHC-I, this result is [unexpected/expected]
+
+We aimed our evolutionary experiment at TMHs, because these can
+be predicted well from a protein structure,
+are common structures and are present in all pathogens. 
+We could have done the same experiment on beta-turn,
+as also these can be predicted well \cite{petersen2010netturnp},
+are common structures and are present in all pathogens.
 
 	% \frans{
 	%   De TMH evolutie data van COVID is missachien interresanter. Ik zie het als volgt. 
