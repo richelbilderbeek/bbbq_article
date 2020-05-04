@@ -6,48 +6,174 @@
 #
 library(ggplot2)
 
-#' Create a dataset
-#' @param n number of polypeptides
-#' @param n_aas number of amino acids per polypeptide
-#' @param f function to create a polypeptide
-create_dataset <- function(
-  n,
-  n_aas,
-  f
-) {
-  df <- tibble::tibble(
-    hydrophobicity = rep(NA, n),
-    is_tmh = NA,
-    binds_mhc1 = NA,
-    binds_mhc2 = NA
-  )
-  df$hydrophobicity <- as.numeric(df$hydrophobicity)
-  df$is_tmh <- as.numeric(df$is_tmh)
-  df$binds_mhc1 <- as.numeric(df$binds_mhc1)
-  df$binds_mhc2 <- as.numeric(df$binds_mhc2)
-  for (i in seq(1, n)) {
-    polypeptide <- f(n_aas)
-    df$hydrophobicity[i] <- Peptides::hydrophobicity(polypeptide)
-    df$is_tmh[i] <- tmhmm::is_tmh(polypeptide)
-    df$binds_mhc1[i] <- bbbq::is_detected_by_mhc_1(polypeptide)
-    df$binds_mhc2[i] <- bbbq::is_detected_by_mhc_2(polypeptide)
+if (1 == 2) {
+  #' Create a dataset
+  #' @param n number of polypeptides
+  #' @param n_aas number of amino acids per polypeptide
+  #' @param f function to create a polypeptide
+  create_dataset <- function(
+    n,
+    n_aas,
+    f
+  ) {
+    df <- tibble::tibble(
+      hydrophobicity = rep(NA, n),
+      is_tmh = NA,
+      binds_mhc1 = NA,
+      binds_mhc2 = NA
+    )
+    df$hydrophobicity <- as.numeric(df$hydrophobicity)
+    df$is_tmh <- as.numeric(df$is_tmh)
+    df$binds_mhc1 <- as.numeric(df$binds_mhc1)
+    df$binds_mhc2 <- as.numeric(df$binds_mhc2)
+    for (i in seq(1, n)) {
+      polypeptide <- f(n_aas)
+      df$hydrophobicity[i] <- Peptides::hydrophobicity(polypeptide)
+      df$is_tmh[i] <- tmhmm::is_tmh(polypeptide)
+      df$binds_mhc1[i] <- bbbq::is_detected_by_mhc_1(polypeptide)
+      df$binds_mhc2[i] <- bbbq::is_detected_by_mhc_2(polypeptide)
+    }
+    df
   }
-  df
+
+  df_1 <- create_dataset(
+    n = 1000,
+    n_aas = 20,
+    f = bbbq::create_random_extreme_polypeptide
+  )
+  df_2 <- create_dataset(
+    n = 1000,
+    n_aas = 20,
+    f = bbbq::create_random_hydrophobic_polypeptide
+  )
+  df <- rbind(df_1, df_2)
+  write.csv(x = df, file = "~/raw_data.csv")
 }
 
-df_1 <- create_dataset(
-  n = 1000,
-  n_aas = 20,
-  f = bbbq::create_random_extreme_polypeptide
-)
-df_2 <- create_dataset(
-  n = 1000,
-  n_aas = 20,
-  f = bbbq::create_random_hydrophobic_polypeptide
-)
-df <- rbind(df_1, df_2)
-write.csv(x = df, file = "~/raw_data.csv")
-quit()
+raw_data <- system.file("extdata", "raw_data.csv", package = "bbbq")
+
+plot_is_tmh_vs_binds_mhc1 <- function(
+  df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
+  png_filename = tempfile()
+) {
+  df_tally <- df %>%
+    dplyr::group_by(is_tmh, binds_mhc1) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(is_tmh, binds_mhc1, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_x_discrete() +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Is TMH? Left = no, right = yes") +
+      ggplot2::ylab("Binds to MHC-I? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_is_tmh_vs_binds_mhc2 <- function(
+  df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
+  png_filename = tempfile()
+) {
+  df_tally <- df %>%
+    dplyr::group_by(is_tmh, binds_mhc2) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(is_tmh, binds_mhc2, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_x_discrete() +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Is TMH? Left = no, right = yes") +
+      ggplot2::ylab("Binds to MHC-II? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_binds_mhc1_vs_binds_mhc2 <- function(
+  df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
+  png_filename = tempfile()
+) {
+  df_tally <- df %>%
+    dplyr::group_by(binds_mhc1, binds_mhc2) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(binds_mhc1, binds_mhc2, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_x_discrete() +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Binds to MHC-I?? Left = no, right = yes") +
+      ggplot2::ylab("Binds to MHC-II? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_hydrophobicity_vs_is_tmh <- function(
+  df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
+  png_filename = tempfile()
+) {
+  df <- tibble::as_tibble(df)
+
+  df_tally <- df %>%
+    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
+    dplyr::group_by(bin, is_tmh) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(bin, is_tmh, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Hydrophobicity x2") +
+      ggplot2::ylab("Is TMH? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_hydrophobicity_vs_binds_mhc1 <- function(
+  df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
+  png_filename = tempfile()
+) {
+  df <- tibble::as_tibble(df)
+  df_tally <- df %>%
+    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
+    dplyr::group_by(bin, binds_mhc1) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(bin, binds_mhc1, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Hydrophobicity x2") +
+      ggplot2::ylab("Is MHC-I? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_hydrophobicity_vs_binds_mhc2 <- function(
+  df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
+  png_filename = tempfile()
+) {
+  df <- tibble::as_tibble(df)
+
+  df_tally <- df %>%
+    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
+    dplyr::group_by(bin, binds_mhc2) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(bin, binds_mhc2, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Hydrophobicity x2") +
+      ggplot2::ylab("Is MHC-II? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+
+plot_is_tmh_vs_binds_mhc1(png_filename = "is_tmh_vs_binds_mhc1.png")
+plot_is_tmh_vs_binds_mhc2(png_filename = "is_tmh_vs_binds_mhc2.png")
+plot_binds_mhc1_vs_binds_mhc2(png_filename = "binds_mhc1_vs_binds_mhc2.png")
+plot_hydrophobicity_vs_is_tmh(png_filename = "hydrophobicity_vs_is_tmh.png")
+plot_hydrophobicity_vs_binds_mhc1(png_filename = "hydrophobicity_vs_binds_mhc1.png")
+plot_hydrophobicity_vs_binds_mhc2(png_filename = "hydrophobicity_vs_binds_mhc2.png")
+
+
 names(df)
 df_plot <- dplyr::mutate(df, bin = trunc(hydrophobicity * 2))
 df_plot <- dplyr::mutate(
