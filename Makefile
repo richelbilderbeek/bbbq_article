@@ -7,6 +7,7 @@ repo_names = \
 # For example, 'bbbq_1/Makefile'
 makefile_names = $(foreach repo_name,$(repo_names),$(repo_name)/Makefile)
 
+
 all_figure_filenames = \
   mhc2_haplotypes.latex \
   bbbq_1/bbbq_1_stats.latex \
@@ -20,10 +21,19 @@ all_table_filenames = \
   pics/covid_genome_and_proteome.png \
   fig_tmh_mut_rate.png
 
+p_bind_per_hydrophobicity_filenames = \
+  p_bind_per_hydrophobicity/binds_mhc1_vs_binds_mhc2.png \
+  p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc1.png \
+  p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc2.png \
+  p_bind_per_hydrophobicity/hydrophobicity_vs_is_tmh.png \
+  p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc1.png \
+  p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc2.png
+
+
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh article.tex $(all_figure_filenames) $(all_table_filenames) $(makefile_names)
+article.pdf: create.sh article.tex $(all_figure_filenames) $(all_table_filenames) $(makefile_names) $(p_bind_per_hydrophobicity_filenames)
 	aspell -t -c article.tex
 	cd bbbq_1 && $(MAKE)
 	cd bbbq_2 && $(MAKE)
@@ -34,6 +44,9 @@ $(repo_names):
 
 $(makefile_names): $(repo_names)
 	cd $(dir $@) && $(MAKE)
+
+$(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity/p_bind_per_hydrophobicity.R
+	cd p_bind_per_hydrophobicity && Rscript p_bind_per_hydrophobicity.R
 
 bbbq_1/bbbq_1.Rmd: bbbq_1
 
