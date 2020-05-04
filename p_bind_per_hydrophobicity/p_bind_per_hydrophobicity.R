@@ -6,38 +6,6 @@
 #
 library(ggplot2)
 
-#' Create a random polypeptide
-#' @param n_aas number of amino acids
-create_random_polypeptide <- function(n_aas)
-{
-  paste0(
-    sample(x = bbbq::get_amino_acids(), size = n_aas, replace = TRUE),
-    collapse = ""
-  )
-}
-
-create_random_extreme_polypeptide <- function(n_aas)
-{
-  aas <- bbbq::get_amino_acids()
-  hs <- Peptides::hydrophobicity(aas)
-  prob <- abs(hs ^ 5)
-  paste0(
-    sample(
-      x = aas, size = n_aas, replace = TRUE, prob = prob),
-    collapse = ""
-  )
-}
-
-create_random_tmh <- function(n_aas)
-{
-  seq <- create_random_hydrophobic_polypeptide(n_aas)
-  while (!tmhmm::is_tmh(seq)) {
-    seq <- create_random_hydrophobic_polypeptide(n_aas)
-  }
-  seq
-}
-create_random_tmh(20)
-
 #' Create a dataset
 #' @param n number of polypeptides
 #' @param n_aas number of amino acids per polypeptide
@@ -66,6 +34,82 @@ create_dataset <- function(
   }
   df
 }
+
+df_1 <- create_dataset(
+  n = 1000,
+  n_aas = 20,
+  f = bbbq::create_random_extreme_polypeptide
+)
+df_2 <- create_dataset(
+  n = 1000,
+  n_aas = 20,
+  f = bbbq::create_random_hydrophobic_polypeptide
+)
+df <- rbind(df_1, df_2)
+write.csv(x = df, file = "~/raw_data.csv")
+quit()
+names(df)
+df_plot <- dplyr::mutate(df, bin = trunc(hydrophobicity * 2))
+df_plot <- dplyr::mutate(
+  df_plot,
+  state_all = (is_tmh * 4) + (binds_mhc1 * 2) + binds_mhc2
+)
+df_plot <- dplyr::mutate(
+  df_plot,
+  state_no_mhc2 = (is_tmh * 2) + binds_mhc1
+)
+df_plot <- dplyr::mutate(
+  df_plot,
+  state_no_mhc1 = (is_tmh * 2) + binds_mhc2
+)
+
+df_tally_all <- df_plot %>%
+  dplyr::group_by(bin, state_all) %>%
+  dplyr::tally()
+df_tally_no_mhc1 <- df_plot %>%
+  dplyr::group_by(bin, state_no_mhc1) %>%
+  dplyr::tally()
+df_tally_no_mhc2 <- df_plot %>%
+  dplyr::group_by(bin, state_no_mhc2) %>%
+  dplyr::tally()
+
+
+# Heatmap
+ggplot(df_tally_no_mhc1, aes(bin, state_no_mhc1, fill = n)) +
+  geom_tile() +
+  labs(
+    caption = paste0(
+      "0 = 00: No TMH, No MHC-II\n",
+      "1 = 01: No TMH, Yes MHC-II\n",
+      "2 = 10: Yes TMH, No MHC-II\n",
+      "3 = 11: Yes TMH, Yes MHC-II\n"
+    )
+  )
+
+
+ggplot(df_tally_no_mhc2, aes(bin, state_no_mhc2, fill = n)) +
+  geom_tile() +
+  labs(
+    caption = paste0(
+      "0 = 00: No TMH, No MHC-I\n",
+      "1 = 01: No TMH, Yes MHC-I\n",
+      "2 = 10: Yes TMH, No MHC-I\n",
+      "3 = 11: Yes TMH, Yes MHC-I\n"
+    )
+  )
+
+ggplot(df_tally_all, aes(bin, state_all, fill = n)) +
+  geom_tile() +
+  labs(
+    caption = paste0(
+        "State:\n",
+        "000: No TMH, No MHC-I, no MHC-II\n",
+        "001: No TMH, No MHC-I, yes MHC-II\n",
+        "010: No TMH, Yes MHC-I, no MHC-II\n",
+        "100: Yes TMH, No MHC-I, no MHC-II\n"
+    )
+  )
+
 
 
 save_plots <- function(
