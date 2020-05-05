@@ -111,7 +111,8 @@ epitopes derived from a TMH for a pathogen proteome, when compared with
 a host proteome.
 Additionally, MHC-II binds to polypeptides derived from TMHs 
 [less/equally/more] often than expected by chance.
-Lastly, we show that natural selection on TMHs is [strong enough/still too weak]
+Lastly, using an unprecedented sharp method, 
+we show that natural selection on TMHs is [strong enough/still too weak]
 to detect.
 Our findings suggest that the immune system is [less/neutral/more]
 vigilant to TMHs than expected by chance and this has 
@@ -159,7 +160,8 @@ An immune response is started when MHC-II detects a pathogen.
 Any human's immune system detects only a fraction of all possible
 polypeptide fragments. 
 Already each MHC molecule can only bind a
-subset of all possible polypeptides (but it has been observed that HLA-A and HLA-B have no overlap in which
+subset of all possible polypeptides (but it has been observed 
+that HLA-A and HLA-B have no overlap in which
 peptides they bind, \cite{lund2004definition}).
 The classification of HLAs is based on algorithms that
 maximize the information content of each 
@@ -173,6 +175,14 @@ Using artificial neural networks, it became
 possible to make theoretical predictions \cite{nielsen2003reliable,nielsen2004improved},
 which are tested to be reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
 
+
+
+
+We can predict epitopes.
+For MHC-I, \verb;epitope-prediction; is used \richel{Cite Johannes}.
+For MHC-II, NetMHCIIpan uses all haplotypes \richel{Cite Morten}.
+Although \cite{zhang2015accurate} looks like an even better
+method for MHC-II, they only take one haplotype into account.
 
 
 
@@ -453,10 +463,12 @@ of binders that have one or more amino acids that are part of a TMH.
 Transition matrix from \cite{dang2010flu}.
 
 We assume that if a polypeptide binds to an MHC, it is always presented and always
-leads to an immune response. We know this is not the case \richel{for example,
-I know this from Frans :-)}, but we do not know how common this is 
-\richel{read literature to find out}. The more often this phenomenon occurs,
-the more our analysis is weakened.
+leads to an immune response.
+The more often this assumption is violated, 
+the more our analysis will be weakened.
+Experiments in mice with MHC-I epitopes, however, indicate that (if the dose 
+administered was high enough) there are either none or rare
+exceptions \cite{sette1994relationship}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Detecting evolution}
