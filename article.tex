@@ -155,46 +155,71 @@ as these do not infect a cell with their (foreign) DNA.
 T and B cells express MHC-II to detect foreign polypeptide fragments.
 An immune response is started when MHC-II detects a pathogen.
 
-\paragraph{Epitope prediction}
+\paragraph{Classification of HLA}
 
 Any human's immune system detects only a fraction of all possible
 polypeptide fragments. 
-Already each MHC molecule can only bind a
-subset of all possible polypeptides (but it has been observed 
-that HLA-A and HLA-B have no overlap in which
-peptides they bind, \cite{lund2004definition}).
-The classification of HLAs is based on algorithms that
+Human MHCs are also called HLAs ('Human Leukocyte Antigens') and
+because this research uses human hosts only, we will use these terms
+interchangeably.
+Already each MHC molecule can only bind a, possible exclusive,
+subset of all possible polypeptides.
+For example, HLA-A and HLA-B have no overlap in which
+peptides they bind (\cite{lund2004definition}).
+The HLA region of humans is highly polymorphic, 
+making it hard to classify all of the many haplotypes.
+Classification of HLAs is based on algorithms that
 maximize the information content of each 
 classification, such as the presence of a certain amino acid at 
 the first (for MHC-II, \cite{southwood1998several})
 or second position (for MHC-I, \cite{lund2004definition}) of a polypeptide.
 However, this does not imply that all polypeptides for a classification
-pattern bind to the MHC, as there is no simple method to predict which 
-MHCs bind which epitopes.
-Using artificial neural networks, it became
-possible to make theoretical predictions \cite{nielsen2003reliable,nielsen2004improved},
-which are tested to be reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
+pattern bind to the MHC. Instead, software should be used that are
+tailored to predict if a polypeptide binds to an HLA.
+
+\paragraph{Epitope prediction}
+
+It is helpful to be able to predict which polypeptides are immunogenic,
+in, among others, vaccine development \richel{Reference here}. 
+Already for a decade, synthesized polypeptide fragments are used 
+to experimentally determine which polypeptides
+are immunogenic \richel{Reference here}.
+This approach, however, is tedious and costly.
+It should come as no surprise that these results would be used
+to make in silico predictions.
+It may come as a surprise, however, that these predictions
+are actually reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
+
+\paragraph{MHC-I epitope prediction}
+
+For MHC-I, there are multiple computational tools developed 
+to predict epitopes. 
+According to \cite{lundegaard2011prediction}, in 2011,
+from a set of multiple tools, 
+NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
+A tool not included in this review is \verb;epitope-prediction;,
+which uses a stabilized matrix method, as described in \cite{kim2009derivation}.
+The reason this tool is mentioned, is because it is used 
+in cite{bianchi2017}.
+
+\paragraph{MHC-II epitope prediction}
+
+Also for MHC-II, there are multiple computational tools developed 
+to predict epitopes,
+such as using a trained neural network (\cite{nielsen2003reliable})
+or a Gibbs sampling approach (\cite{nielsen2004improved}).
+According to \cite{lundegaard2011prediction}, in 2011,
+from a set of multiple tools, 
+NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
+gave rise to the most accurate predictions.
+Later tools are \cite{zhang2013predicting},
+\cite{trolle2014nettepi} and \cite{zhang2015accurate}.
+These later tools, although they look promising, have not been compared
+with one another \richel{Maybe cool to do so!}.
 
 
 
-
-We can predict epitopes.
-For MHC-I, \verb;epitope-prediction; is used \richel{Cite Johannes}.
-
-Alternatives are NetMHCcons \cite{karosiene2012netmhccons}.
-
-For MHC-II, NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
-uses all haplotypes.
-Also \cite{zhang2013predicting} predicts immunogenic T-cell epitopes.
-Also \cite{trolle2014nettepi} predicts immunogenic T-cell epitopes.
-
-
-Although \cite{zhang2015accurate} looks like an even better
-method for MHC-II, they only take one haplotype into account.
-
-According to \cite{lundegaard2011prediction}, in 2011, 
-NetMHCcons and NetMHCIIpan were the best.
-
+\paragraph{Leftovers (to move or remove)}
 
 \richel{This is nonsense: 'The polypeptides that can bind are also 
 likelier to by hydrophobic,
@@ -210,6 +235,10 @@ they often have a length of 23 amino acids to be able to span
 the membrane.
 Soluble proteins have (non-TMH) hydrophobic regions as well, 
 to guides the protein to achieve its 3D configuration.
+
+\paragraph{TMH prediction}
+
+\richel{Or someplace else. Reorganise!}
 
 \paragraph{MHC-I presents hydrophobic regions more often}
 
