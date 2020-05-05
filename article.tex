@@ -304,7 +304,8 @@ can be detected.
 
 \paragraph{Use of protein data in phylogenetics}
 
-When using DNA sequences, one can use $dS/dN$ rates 
+When using DNA sequences, one can use a skewed rate 
+in non- versus synonymous mutation
 to detect the signature of selection \cite{murrell2015gene}.
 Using AA sequences, however, has its advantages,
 as its is closer to the actual phenotype
@@ -450,6 +451,12 @@ of binders that have one or more amino acids that are part of a TMH.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Transition matrix from \cite{dang2010flu}.
+
+We assume that if a polypeptide binds to an MHC, it is always presented and always
+leads to an immune response. We know this is not the case \richel{for example,
+I know this from Frans :-)}, but we do not know how common this is 
+\richel{read literature to find out}. The more often this phenomenon occurs,
+the more our analysis is weakened.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Detecting evolution}
@@ -635,6 +642,7 @@ We could have done the same experiment on beta-turn,
 as also these can be predicted well \cite{petersen2010netturnp},
 are common structures and are present in all pathogens.
 
+
 	% \frans{
 	%   De TMH evolutie data van COVID is missachien interresanter. Ik zie het als volgt. 
 	%   COVID is een mooi voorbeeld van een virus 
@@ -789,7 +797,7 @@ RJCB and FB wrote the article.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/binds_mhc1_vs_binds_mhc2.png}
   \caption{
-    \richel{Used simulated data}
+    \richel{Used randomly simulated polypeptides, results are real}
   }
   \label{fig:binds_mhc1_vs_binds_mhc2}
 \end{figure}
@@ -797,7 +805,7 @@ RJCB and FB wrote the article.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc1.png}
   \caption{
-    \richel{Used simulated data}
+    \richel{Used randomly simulated polypeptides, results are real}
   }
   \label{fig:hydrophobicity_vs_binds_mhc1}
 \end{figure}
@@ -805,7 +813,7 @@ RJCB and FB wrote the article.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc2.png}
   \caption{
-    \richel{Used simulated data}
+    \richel{Used randomly simulated polypeptides, results are real}
   }
   \label{fig:hydrophobicity_vs_binds_mhc2}
 \end{figure}
@@ -813,7 +821,7 @@ RJCB and FB wrote the article.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_is_tmh.png}
   \caption{
-    \richel{Used simulated data}
+    \richel{Used randomly simulated polypeptides, results are real}
   }
   \label{fig:hydrophobicity_vs_is_tmh}
 \end{figure}
@@ -821,7 +829,7 @@ RJCB and FB wrote the article.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc1.png}
   \caption{
-    \richel{Used simulated data}
+    \richel{Used randomly simulated polypeptides, results are real}
   }
   \label{fig:is_tmh_vs_binds_mhc1}
 \end{figure}
@@ -829,7 +837,7 @@ RJCB and FB wrote the article.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc2.png}
   \caption{
-    \richel{Used simulated data}
+    \richel{Used randomly simulated polypeptides, results are real}
   }
   \label{fig:is_tmh_vs_binds_mhc2}
 \end{figure}
