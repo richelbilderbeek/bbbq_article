@@ -10,9 +10,9 @@
   \Vertex{U}
   \WE(U){D}
   \Loop[dist = 4cm, dir = NO, label = $p_{DD}$](D.west)
-  \Loop[dist = 4cm, dir = SO, label = 0.9](U.east)
+  \Loop[dist = 4cm, dir = SO, label = $p_{UU}$](U.east)
   \tikzset{EdgeStyle/.append style = {bend left = 50}}
-  \Edge[label = 0.2](D)(U)
-  \Edge[label = 0.1](U)(D)
+  \Edge[label = $p_{DU}$](D)(U)
+  \Edge[label = $p_{UD}$](U)(D)
 \end{tikzpicture}
 
