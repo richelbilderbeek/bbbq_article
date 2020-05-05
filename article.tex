@@ -250,7 +250,7 @@ Contemporary tools that are running, such as
 the closed-source MemBrain \cite{feng2020topology} 
 and the FOSS tool PureseqTM \cite{wang2019efficient}.
 \richel{Will use TMHMM for starters (as it is already programmed),
-then use PureseqTM iff time}
+then use PureseqTM if time}
 
 \paragraph{MHC-I presents hydrophobic regions more often}
 
@@ -508,8 +508,18 @@ of binders that have one or more amino acids that are part of a TMH.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Evolutionary conservation}
+\subsubsection{Detecting evolution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Introduction}
+
+To detect evolution, we determine the probability 
+that all of the observed TMH mutations have arisen by chance,
+with regards to being detected/presented by the immune system.
+If this probability is lower than 5\%, we will state 
+that this unlikely situation is most likely caused by natural selection.
+
+\input{markov_chain.latex}
 
 Transition matrix from \cite{dang2010flu}.
 
@@ -521,22 +531,6 @@ Experiments in mice with MHC-I epitopes, however, indicate that (if the dose
 administered was high enough) there are either none or rare
 exceptions \cite{sette1994relationship}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Detecting evolution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-	% \frans{
-	%   Ik heb zitten denken over de evolutie naast conservering is occurrence ook heel belangrijk. Moeten we de mate van conservering niet wegen ten opzichte van de occurrence.
-	%   Wat ik daarmee bedoel is data als je kiest voor een mega geconseveerd epitope maar van dat type komen er maar 40 in een proteome voor versus een minder geconserveerd epitope maar daar zijn wel 100.000 varianten van dan heb je meer kans om 1 van die 100.000 te pakken toch? 
-	% }
-	% The evolutionary conservation of TMHs was measured from a
-	% DNA alignment of multiple transmembrane proteins in multiple
-	% species of the mycobacterium bacterial family
-	% \richel{how obtained exactly? how alignment done?}
-	% \frans{
-	% Via entrez en blast 
-	%   Ik he been transcript van Maxim ik zal dit proberen te vertalen naar een stukje tekst. 
-	% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}

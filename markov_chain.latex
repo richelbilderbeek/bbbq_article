@@ -1,0 +1,11 @@
+\begin{tikzpicture},
+  \SetGraphUnit{5},
+  \Vertex{U},
+  \WE(U){D},
+  \Loop[dist = 4cm, dir = NO, label = 0.8](D.west)
+  \Loop[dist = 4cm, dir = SO, label = 0.9](U.east)
+  \tikzset{EdgeStyle/.append style = {bend left = 50}}
+  \Edge[label = 0.2](D)(U)
+  \Edge[label = 0.1](U)(D)
+\end{tikzpicture}
+
