@@ -200,7 +200,7 @@ NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
 A tool not included in this review is \verb;epitope-prediction;,
 which uses a stabilized matrix method, as described in \cite{kim2009derivation}.
 The reason this tool is mentioned, is because it is used 
-in cite{bianchi2017}.
+in \cite{bianchi2017}.
 
 \paragraph{MHC-II epitope prediction}
 
@@ -217,28 +217,33 @@ Later tools are \cite{zhang2013predicting},
 These later tools, although they look promising, have not been compared
 with one another \richel{Maybe cool to do so!}.
 
+\paragraph{TMHs}
 
-
-\paragraph{Leftovers (to move or remove)}
-
-\richel{This is nonsense: 'The polypeptides that can bind are also 
-likelier to by hydrophobic,
-as most TMHs have a hydrophobic binding pocket': \cite{lund2004definition}
-uses the hydrophobicity of some peptides for classification, but this
-does not mean the statement is true}
-There are two sources of hydrophobic polypeptides, which are 
-from membrane proteins and of soluble proteins.
-Membrane proteins have at least one TMH to anchor them to
-the membrane. TMHs are hydrophobic, as this is required to span the 
+Transmembrane helices are conserved structures that span
+a cell membrane with an alpha helix.
+TMHs are hydrophobic, as this is required to span the 
 hydrophobic cellular lipid membrane. Additionally,
 they often have a length of 23 amino acids to be able to span
 the membrane.
-Soluble proteins have (non-TMH) hydrophobic regions as well, 
-to guides the protein to achieve its 3D configuration.
+Polypeptide fragments derived from TMHs are among the most hydrophobic,
+together with the internals of soluble proteins, where the
+hydrophobicity parts guide the protein to achieve its 3D configuration.
+TMHs are general structures: 25 percent of the human proteome is
+anchored by at least one TMH. COVID-19 has 21 TMHs, 
+making up for \richel{?} percent of its entire genome.
 
 \paragraph{TMH prediction}
 
-\richel{Or someplace else. Reorganise!}
+There are multiple computational tools developed to detect which
+parts of membrane proteins are TMH (as well as which side is inside
+and outside). 
+
+In 2001, multiple tools to do so have been compared \cite{moller2001evaluation},
+of which TMHMM \cite{krogh2001predicting} turned out to be the best.
+A later method such as \cite{kall2004combined} \richel{I should check}.
+Other later methods, such as ConPred II (\cite{arai2004conpred})
+and MetaTM (\cite{klammer2009metatm}) show promises, but
+appear to be unavailable \richel{Uh, both servers are down?!?!}.
 
 \paragraph{MHC-I presents hydrophobic regions more often}
 
