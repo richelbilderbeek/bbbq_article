@@ -1,40 +1,8 @@
 \documentclass{article}
 
-% Just to have them already
-% \begin{sloppypar}
-% \end{sloppypar}
-
-
 % Just try to parse, do not ask for input
 \nonstopmode
 
-% Bibliography
-\usepackage{natbib}
-\bibpunct{(}{)}{;}{a}{}{;}
-
-% Use 'It was found that A is B (Name 1234)' style
-\setcitestyle{authoryear,open={},close={}}
-
-% Affiliations
-\usepackage{authblk}
-\title{
-  Transmembrane helices are also 
-  an overlooked source of major histocompatibility complex class II epitopes
-  and evolutionary more conserved than expected by chance
-}
-\author[1]{Richèl J.C. Bilderbeek}
-\author[1]{Maxim Baranov}
-\author[1]{Geert van den Bogaart}
-\author[1]{Frans Bianchi}
-\affil[1]{GBB, University of 
-Groningen, Groningen, The Netherlands}
-
-% Use double spacing
-\usepackage{setspace}
-\doublespacing
-
-\usepackage{listings}
-\usepackage{hyperref}
 \usepackage{todonotes}
 \usepackage{verbatim}
 \usepackage{pgf}
@@ -42,60 +10,19 @@ Groningen, Groningen, The Netherlands}
 \usepackage{multirow}
 \usepackage{amsfonts}
 \usepackage{array}
-\usepackage{booktabs}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\usepackage{longtable}
 
 \usepackage{tkz-graph}
 \usetikzlibrary{arrows,automata}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
 
-% sidewaysfigure
-\usepackage{rotating}
-
-% Style of listings
-% From http://r.789695.n4.nabble.com/
-%   How-to-nicely-display-R-code-with-the-LaTeX-package-listings-tp4648110.html
-\usepackage{fancyvrb} 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
-\lstdefinestyle{mystyle}{
-  language=R,% set programming language
-  basicstyle=\ttfamily\small,% basic font style
-  commentstyle=\color{gray},% comment style
-  numberstyle=\scriptsize,% use small line numbers
-  numbersep=10pt,% space between line numbers and code
-  tabsize=2,% sizes of tabs
-  showstringspaces=false,
-  captionpos=b,% positioning of the caption below
-  breaklines=true,% automatic line breaking
-  escapeinside={(*}{*)},% escaping to LaTeX
-  fancyvrb=true,% verbatim code is typset by listings
-  extendedchars=false,% prohibit extended chars (chars of codes 128--255)
-  alsoletter={.<-},% becomes a letter
-  alsoother={$},% becomes other
-  otherkeywords={!=, ~, $, \&, \%/\%, \%*\%, \%\%, <-, <<-, /},
-  deletekeywords={c}% remove keywords 
-}
-\lstset{style=mystyle}
-
 \begin{document}
 
 \begin{figure}
   \centering
   \input{markov_chain.latex}
-  \caption{
-    State transitions in TMHs caused by mutations, with respect to the
-    detection by the immune system. Any TMH is either in a detected, $D$, or
-    undetected, $U$, state. Mutations cause state transitions with probability
-    $p$. For example, $p_{DU}$ denotes the probability that a detected
-    TMH mutates into an undetected one.
-  }
-  \label{fig:markov_chain}
 \end{figure}
 
 \end{document}
