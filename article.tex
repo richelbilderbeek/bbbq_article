@@ -280,7 +280,6 @@ polypeptide fragments.
 
 \paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
-
 For MHC-I, it was found that predicted epitopes derived 
 from human transmembrane helices (TMHs)
 are over-presented by all HLA-A and 
@@ -385,7 +384,6 @@ those genes that are selected cannot be detected \cite{yang2000statistical}.
 
 \paragraph{Evolutionary signal of unknown strength for virus}
 
-
 Regarding human viruses, we do not know the selection pressure
 exerted by the human immune system.
 For viral TMHs that are undetected by most human haplotypes, we
@@ -414,19 +412,6 @@ Also, it is unknown if bacterial TMHs are detected by MHC-II at all.
 Due to this, the strength of the evolutionary signal is unknown,
 thus we need a strong data set to be able to detect it.
 
-\paragraph{Data sets}
-
-
-To detect an evolutionary signal for selection on the TMHs of viruses, 
-we use the many time-dated COVID-19 proteomes.
-We can assume that only after the moment that COVID-19 spilled over 
-to humans, it has mostly been the human immune system selecting against
-its detection, although this is only part of the selection for 
-having a high transmission rate.
-To detect an evolutionary signal for selection on the TMHs of bacteria, 
-we use the proteomes of Mycobacterium. Mycobacterium is \richel{something}.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hypotheses}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -448,24 +433,43 @@ we use the proteomes of Mycobacterium. Mycobacterium is \richel{something}.
 \section{Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\paragraph{Data sets for TMH epitopes}
+
+To determine the percentages of epitopes overlapping
+with TMHs, we use two reference proteomes.
+Our viral AA sequence is represented by
+the proteome of the first sequenced COVID-19 strain (\cite{wu2020new},
+GenBank ID of MN908947.3, \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947})
+For bacteria, we use the reference genome of 
+Mycobacterium tuberculosis (\url{https://www.ebi.ac.uk/reference_proteomes}, UP000001584, 
+83332 MYCTU).
+
+\paragraph{Data sets for evolutionary selection}
+
+To detect an evolutionary signal for selection on binding
+TMHs polypeptides, we need a phylogenetic tree with 
+many time-dated proteomes.
+For humans, we use the 25000 proteomes used in influenza \richel{citation here}.
+For viruses, we use the many time-dated COVID-19 proteomes.
+We can assume that only after the moment that COVID-19 spilled over 
+to humans, it has mostly been the human immune system selecting against
+its detection, although this is only part of the selection for 
+having a high transmission rate.
+For bacteria, use the proteomes of Mycobacterium 
+\richel{Really? Pick better set, if possible!}.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We used the same analysis as \cite{bianchi2017},
-except that instead of a human reference proteome,
-we use the proteome of the first sequenced COVID-19 strain (\cite{wu2020new},
-GenBank ID of MN908947.3, \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947})
-and a reference Mycobacterium tuberculosis 
-proteome (\url{https://www.ebi.ac.uk/reference_proteomes}, UP000001584, 
-83332 MYCTU).
-
+except that instead of a human reference proteome.
 Bianchi and colleagues obtained a distribution of 
 percentages of MHC-I epitopes overlap with TMHs in Homo sapiens
 for the different HLA haplotypes, with an average of 5.3\%.
 We obtained a similar distribution of percentages of MHC-I epitopes that 
 overlap with TMHs for the different HLA haplotypes, but then applied to
-COVID-19 and Mycobacterium.
+our viral and bacterial proteome.
 
 We compare the distributions of humans and each pathogen
 using a two-sample Kolmogorov-Smirnov (KS) test
@@ -475,17 +479,16 @@ for a significance level $\alpha = 0.05$.
 \subsection{MHC-2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 For MHC-II, we do the same analysis as MHC-I, except for
-MHC-II haplotypes. We picked the top 21 MHC-II alleles that are most abundant 
-in the current human population (\cite{greenbaum2011functional}).
-\frans{Show coverage}
-We chose to use 21 alleles to have a similar number of alleles as is done
-for MHC-I \richel{Unsure if this was the actual reason}.
-Same as \cite{bianchi2017}, we defined the 5\% of polypeptides 
+MHC-II haplotypes. We picked the MHC-II alleles
+that occur with a frequency of at least 20\% in
+the human population (\cite{greenbaum2011functional},
+see \ref{table:mhc2_haplotypes} for coverage),
+resulting in \richel{approx 8} HLAs.
+The threshold of 20\% is arbitrarily, yet chosen to result in 5 and 10 HLA variants.  
+As \cite{bianchi2017}, we define the 5\% of polypeptides 
 with the lowest IC50 values as binders. We then counted the percentage
 of binders that have one or more amino acids that are part of a TMH.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Detecting evolution}
