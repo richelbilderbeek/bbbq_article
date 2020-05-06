@@ -1,18 +1,25 @@
 \begin{tikzpicture}
-  \tikzset{
-    LabelStyle/.style = { rectangle, rounded corners, draw,
-      minimum width = 2em, fill = white!50 },
-    VertexStyle/.append style = { inner sep=5pt,
-      font = \Large\bfseries },
-    EdgeStyle/.append style = {->, bend left} 
-  }
-  \SetGraphUnit{5}
-  \Vertex{U}
-  \WE(U){D}
-  \Loop[dist = 4cm, dir = NO, label = $p_{DD}$](D.west)
-  \Loop[dist = 4cm, dir = SO, label = $p_{UU}$](U.east)
-  \tikzset{EdgeStyle/.append style = {bend left = 50}}
-  \Edge[label = $p_{DU}$](D)(U)
-  \Edge[label = $p_{UD}$](U)(D)
+  \begin{scope}[every node/.style={circle,thick,draw,minimum size = 40}]
+    \node (A) at (0,8) {$D_0$};
+    \node (B) at (8,8) {$D_1$};
+    \node (C) at (0,0) {$D_2$};
+    \node (D) at (8,0) {$D_3$};
+  \end{scope}
+  \begin{scope}[>={Stealth[black]},
+              every node/.style={fill=white,circle},
+              every edge/.style={draw=black,thick}]
+    \path [->] (A) edge[bend left=20] node[left] {$p_{01}$} (B);
+    \path [->] (B) edge[draw=red,very thick,bend left=20] node[left] {$p_{10}$} (A);
+    \path [->] (A) edge[bend left=20] node[left] {$p_{02}$} (C);
+    \path [->] (C) edge[draw=blue,very thick,bend left=20] node[left] {$p_{20}$} (A);
+    \path [->] (A) edge[bend left=20] node[left] {$p_{03}$} (D);
+    \path [->] (D) edge[bend left=20] node[left] {$p_{30}$} (A);
+    \path [->] (B) edge[bend left=20] node[left] {$p_{13}$} (D);
+    \path [->] (D) edge[bend left=20] node[left] {$p_{31}$} (B);
+    \path [->] (B) edge[bend left=20] node[left] {$p_{12}$} (C);
+    \path [->] (C) edge[bend left=20] node[left] {$p_{21}$} (B);
+    \path [->] (C) edge[bend left=20] node[left] {$p_{23}$} (D);
+    \path [->] (D) edge[bend left=20] node[left] {$p_{32}$} (C);
+  \end{scope}
 \end{tikzpicture}
 
