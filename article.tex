@@ -516,8 +516,22 @@ of binders that have one or more amino acids that are part of a TMH.
 To detect evolution, we determine the probability 
 that all of the observed TMH mutations have arisen by chance,
 with regards to being detected/presented by the immune system.
-If this probability is lower than 5\%, we will state 
-that this unlikely situation is most likely caused by natural selection.
+To do so, we calculate the probability of observing the complete
+dataset, for which we need to calculate the probability 
+of each individual mutation. 
+
+\paragraph{System depicted as a Markov chain}
+
+To calculate the probability all of our observations happened by chance,
+we view our experiment as a two-state Markov chain, as depicted in
+figure \ref{fig:markov_chain}. The two nodes depict the
+two possible detection state a polypeptide is in, which is
+either undetected $U$, or detected $D$ by the immune system.
+The edges depict the probability of a state transition by mutation,
+for example, $p_{DU}$ denotes the probability that a detected
+polypeptide mutates into an undetected one.
+We focus on polypeptides that are TMH and we assume a mutation that 
+renders the TMH non-functional as lethal.
 
 \begin{figure}
   \centering
@@ -527,12 +541,35 @@ that this unlikely situation is most likely caused by natural selection.
     detection by the immune system. Any TMH is either in a detected, $D$, or
     undetected, $U$, state. Mutations cause state transitions with probability
     $p$. For example, $p_{DU}$ denotes the probability that a detected
-    TMH mutations into an undetected one.
+    TMH mutates into an undetected one.
   }
   \label{fig:markov_chain}
 \end{figure}
 
-Transition matrix from \cite{dang2010flu}.
+\paragraph{Statistics}
+
+When we have calculated the probability of each transition (as described below),
+we can simply count the number of observed transitions.
+Because the probability of transitions differ per polypeptide,
+the total system has the properties of a Poisson binomial distribution,
+where, for example, the expected number of transitions is the sum of individual
+probabilities. We calculate the probability of the observing our
+number of transitions.
+If this probability is lower than 5\%, we will state 
+that this unlikely situation is most likely caused by natural selection.
+
+\paragraph{Calculating one polypeptide's probability}
+
+We calculate the probability of a transition per polypeptide.
+For any polypeptide, we can generate all sequences that differ
+in only one amino acids. Of these sequences, we only keep the ones
+that result in a TMH. Of each of the remaining TMH sequences, we predict
+which mutants are detected by the immune system. Because not all 
+AA mutations are equally likely, we correct for the AA transition
+rates using the FLU transition matrix (\cite{dang2010flu}),
+which is a transition matrix derived from observed influenza AA mutations.
+
+\paragraph{Assumption that epitopes are immunogenic}
 
 We assume that if a polypeptide binds to an MHC, it is always presented and always
 leads to an immune response.
@@ -541,7 +578,6 @@ the more our analysis will be weakened.
 Experiments in mice with MHC-I epitopes, however, indicate that (if the dose 
 administered was high enough) there are either none or rare
 exceptions \cite{sette1994relationship}.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}

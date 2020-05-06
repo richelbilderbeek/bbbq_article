@@ -7,5 +7,5 @@
 #   ./edit.sh
 #
 
-mousepad article.tex article.bib markov_chain.latex
+mousepad article.bib article.tex
 make
