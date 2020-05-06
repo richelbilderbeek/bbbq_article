@@ -517,10 +517,16 @@ To detect evolution, we determine the probability
 that all of the observed TMH mutations have arisen by chance,
 with regards to being detected/presented by the immune system,
 per MHC class and haplotype.
+
+\paragraph{Correction against many tests}
+
 Because we use \richel{X} MHC-I and \richel{Y} MHC-II haplotypes
 for a significance level of 5\%, by chance we expect \richel{X+Y/20}
-times to find a haplotype that is suggested to have selection working 
-upon it. 
+times to find a (MHC-I or MHC-II) haplotype 
+that is suggested to have selection working 
+upon it. Applying a binomial distribution ($p = 0.05$, $n = X+Y$, $\alpha = 0.05$),
+we will claim we detected selection when we found \richel{Z} or
+more examples of having a significant result. 
 
 \paragraph{System depicted as a Markov chain}
  
