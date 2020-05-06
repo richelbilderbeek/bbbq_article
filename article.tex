@@ -552,10 +552,24 @@ When we have calculated the probability of each transition (as described below),
 we can simply count the number of observed transitions.
 Because the probability of transitions differ per polypeptide,
 the total system has the properties of a Poisson binomial distribution,
-where, for example, the expected number of transitions is the sum of individual
-probabilities. We calculate the probability of the observing our
+from which we can calculate the probability of the observing our
 number of transitions.
-If this probability is lower than 5\%, we will state 
+
+\paragraph{Hypotheses testing}
+
+Of the complete system, we test for each of the 12 state transitions (that is,
+we do not test for mutations that result in the same state).
+For each transition rate, we know the expected and observed number
+of transitions. If the observed number of transitions is below the expected
+value, we test for finding that (low) number of transitions or less.
+If the observed number of transitions is above the expected
+value, we test for finding that (high) number of transitions or more.
+We use a significance level $\alpha$ of 5\%, because we have no prior
+evidence. 
+As we are testing 12 hypothesis, applying the Bonferroni correction results
+in $\alpha_c = \frac{\alpha}{12}$.
+If the probability of observing that few/many 
+transition is below $\alpha_c$, we will state 
 that this unlikely situation is most likely caused by natural selection.
 
 \paragraph{Calculating one polypeptide's probability}
