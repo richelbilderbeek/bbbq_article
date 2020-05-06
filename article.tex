@@ -263,10 +263,7 @@ chance \cite{bianchi2017}
 \richel{but also when compensating for hydrophobicity?}.
 For MHC-II, it is unknown which percentage of binders 
 is derived from TMHs for all 13-mers present in a proteome
-that have the same hydrophobicity 
-\richel{
-  $\mathcal{H}_{3,1}$
-}.
+that have the same hydrophobicity.
 
 \paragraph{HLAs increase detection range}
 
@@ -462,8 +459,11 @@ For bacteria, use the proteomes of Mycobacterium
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We used the same analysis as \cite{bianchi2017},
-except that instead of a human reference proteome.
+To determine the percentages of MHC-I epitopes overlap
+with TMHs, we used the same 
+analysis as \cite{bianchi2017},
+except for using a viral and bacterial proteome (instead 
+of a human proteome, as used in the original study).
 Bianchi and colleagues obtained a distribution of 
 percentages of MHC-I epitopes overlap with TMHs in Homo sapiens
 for the different HLA haplotypes, with an average of 5.3\%.
@@ -479,7 +479,8 @@ for a significance level $\alpha = 0.05$.
 \subsection{MHC-2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For MHC-II, we do the same analysis as MHC-I, except for
+To determine the percentages of MHC-II epitopes overlap, 
+we do the same analysis as MHC-I, except for
 MHC-II haplotypes. We picked the MHC-II alleles
 that occur with a frequency of at least 20\% in
 the human population (\cite{greenbaum2011functional},
@@ -600,18 +601,28 @@ exceptions \cite{sette1994relationship}.
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Figure \ref{fig:1} shows the percentages of epitopes overlapping 
-with TMHs for a human, COVID-19 and Mycobacterium proteome.
-The KS test to determine if these percentages are sampled from
-a same distribution resulted in a p-value of \richel{unknown},
-which makes us reject/accept the hypothesis that these percentages
+Figure \ref{fig:1} shows the percentages of MHC-I epitopes overlapping 
+with TMHs for our human, viral and bacterial proteome.
+
+The KS test to determine if MHC-I has the same percentage 
+of epitopes overlapping with viral TMHs, 
+compared to human TMHs \richel{$\mathcal{H}_{1,V}$},
+resulted in a p-value of \richel{unknown},
+which makes us [reject/accept] the hypothesis that these percentages
+are sampled from the same distribution. 
+
+The KS test to determine if MHC-I has the same percentage 
+of epitopes overlapping with bacterial TMHs, 
+compared to human TMHs \richel{$\mathcal{H}_{1,B}$},
+resulted in a p-value of \richel{unknown},
+which makes us [reject/accept] the hypothesis that these percentages
 are sampled from the same distribution. 
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1/fig_bbbq_1_watermarked.png}
   \caption{
-    \% epitopes overlapping with transmembrane helix
-    for a human, COVID-19 and Mycobacterium proteome.
+    Percentage of MHC-I epitopes overlapping with TMHs
+    for a human, viral and bacterial proteome.
     \richel{
       the data underlying this figure has been simulated
     }
@@ -622,6 +633,9 @@ are sampled from the same distribution.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure \ref{fig:2} shows the percentages of MHC-II epitopes overlapping 
+with TMHs for our human, viral and bacterial proteome.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_2/fig_bbbq_2_watermarked.png}
@@ -667,47 +681,6 @@ are sampled from the same distribution.
   }
   \label{tab:transitions}
 \end{table}
-
-	% Table \ref{tab:results} shows the location and binding strength for the
-	% tuberculosis proteome.
-
-	% \begin{figure}[ht]
-	%   \includegraphics[width=\textwidth]{bbbq_3/figure_1.png}
-	%   \label{fig:1}
-	% \end{figure}
-
-	% \begin{figure}[ht]
-	%   \includegraphics[width=\textwidth]{figure_1_5.png}
-	%   \label{fig:1_5}
-	% \end{figure}
-
-	% \begin{figure}[ht]
-	%   \includegraphics[width=\textwidth]{figure_3.png}
-	%   \label{fig:3}
-	% \end{figure}
-
-
-
-
-	% \input{table_imoimo.latex}
-	% % has label tab:results
-	% \richel{
-	%   I'd enjoy 
-	%   (1) a row with 'expected by chance', 
-	%   (2) using percentages instead,
-	%   (3) merging inside and outside
-	% }
-
-	% The inference model with the highest evidence in the
-	% TMH-only alignment was [yet unknown] and [also yet unknown]
-	% for the non-TMH alignment. Individual model weights are shown
-	% in tables \ref{tab:evidences_tmh} 
-	% and \ref{tab:evidences_non_tmh}.
-
-	% The Bayesian inference resulted in [a distribution of mutation rates],
-	% as shown in [absent figure].
-	% The ESSes of the Bayesian parameter estimates was above 200, exact values
-	% are shown in tables \ref{tab:esses_tmh} and \ref{tab:esses_non_tmh}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -757,35 +730,12 @@ We could have done the same experiment on beta-turn,
 as also these can be predicted well \cite{petersen2010netturnp},
 are common structures and are present in all pathogens.
 
-
-	% \frans{
-	%   De TMH evolutie data van COVID is missachien interresanter. Ik zie het als volgt. 
-	%   COVID is een mooi voorbeeld van een virus 
-	%   Myco van een bacterie
-	%   In de bacterie is duidelijk dat tenmisnte voor MHCII TMHs zijn overgrepresenteerd virus niet. 
-	%   Dus verhaal kan zijn dat TMHs belangrijk voot bacteirele afweer niet zozeer voor virussen. 
-	% 
-	%   Hiervoor moeten we MHC-I doen voor myco
-	%   Kijken wat evolutie data doet voor virus dan evt kijken wat dit doet voor myco en vergelijken. 
-	% }
-	% 
-	% We compared the mutation rates between the TMH and non-TMH part of
-	% multiple mycobacterium species. Where we expect no variation 
-	% in mutation rate for every TMH amino acid,
-	% \richel{
-	%   we can test this, but unsure if that would make sense
-	% }
-	% we know that non-TMH part will have regions of different evolutionary
-	% conservation: functional domains, especially in protein-protein
-	% interactions will be strongly conserved, due to an even more constrained
-	% set of peptides that enable a certain function.
-
-	% \richel{
-	%   Note that most bacteria are opportunistic pathogens.
-	%   Note that most bacteria are generalists.
-	%   Note that most bacteria have different cell membranes (and walls), that
-	%   may have different functional constraints than a human cell membrane
-	% }
+\richel{
+  Note that most bacteria are opportunistic pathogens.
+  Note that most bacteria are generalists.
+  Note that most bacteria have different cell membranes (and walls), that
+  may have different functional constraints than a human cell membrane
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgments}
