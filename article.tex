@@ -515,18 +515,21 @@ of binders that have one or more amino acids that are part of a TMH.
 
 To detect evolution, we determine the probability 
 that all of the observed TMH mutations have arisen by chance,
-with regards to being detected/presented by the immune system.
-To do so, we calculate the probability of observing the complete
-dataset, for which we need to calculate the probability 
-of each individual mutation. 
+with regards to being detected/presented by the immune system,
+per MHC class and haplotype.
+Because we use \richel{X} MHC-I and \richel{Y} MHC-II haplotypes
+for a significance level of 5\%, by chance we expect \richel{X+Y/20}
+times to find a haplotype that is suggested to have selection working 
+upon it. 
 
 \paragraph{System depicted as a Markov chain}
-
+ 
 To calculate the probability all of our observations happened by chance,
 we view our experiment as a two-state Markov chain, as depicted in
 figure \ref{fig:markov_chain}. The two nodes depict the
 two possible detection state a polypeptide is in, which is
 either undetected $U$, or detected $D$ by the immune system.
+The $D$ can be either detection by an MHC-I or MHC-II haplotype.
 The edges depict the probability of a state transition by mutation,
 for example, $p_{DU}$ denotes the probability that a detected
 polypeptide mutates into an undetected one.
@@ -566,11 +569,15 @@ If the observed number of transitions is above the expected
 value, we test for finding that (high) number of transitions or more.
 We use a significance level $\alpha$ of 5\%, because we have no prior
 evidence. 
-As we are testing 12 hypothesis, applying the Bonferroni correction results
-in $\alpha_c = \frac{\alpha}{12}$.
+
+As we are testing 12 hypothesis, 
+we correct against type I errors (false positives), 
+by applying the Holm-Bonferroni correction, 
+resulting in \richel{here is just a normal Bonferroni correction, for now}
+$\alpha_c = \frac{\alpha}{12}$.
 If the probability of observing that few/many 
 transition is below $\alpha_c$, we will state 
-that this unlikely situation is most likely caused by natural selection.
+that this unlikely situation may be caused by natural selection.
 
 \paragraph{Calculating one polypeptide's probability}
 
