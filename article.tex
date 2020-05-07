@@ -100,9 +100,9 @@ Groningen, Groningen, The Netherlands}
 Transmembrane helices (TMHs) in the human proteome
 are an overrepresented potential source of epitopes on major 
 histocompatibility complex (MHC) class I for the majority of HLA-I haplotypes. 
-It is unknown if the immune system is as able to detect those 
-TMHs present in pathogens.
-Additionally, it is unknown if TMH-II is also likelier to detect
+It is unknown if the immune system is as able to detect 
+TMHs as found in pathogens.
+Additionally, it is unknown if MHC-II is also likelier to detect
 human and pathogen TMHs than expected by chance.
 It is unknown if natural selection is the cause that 
 the immune system is more attentive for TMHs
@@ -111,7 +111,7 @@ epitopes derived from a TMH for a pathogen proteome, when compared with
 a host proteome.
 Additionally, MHC-II binds to polypeptides derived from TMHs 
 [less/equally/more] often than expected by chance.
-Lastly, using an unprecedented sharp method, 
+Lastly, using an innovative computation method, 
 we show that natural selection on TMHs is [strong enough/still too weak]
 to detect.
 Our findings suggest that the immune system is [less/neutral/more]
@@ -141,7 +141,8 @@ combat forces.
 \paragraph{Immune response by MHC-I}
 
 All nucleated cells in humans present randomly sampled polypeptides
-fragments to the surroundings of the cell using MHC class I molecules.
+fragments to the surroundings of the cell using the Major 
+Histocompatibility Complex (MHC) class I molecules.
 If a cell gets infected by a virus, also the virus' polypeptides
 will be presented at the cell surface. The foreign viral antigen is detected 
 by cytotoxic T lymphocytes, which will kill the infected cell.
@@ -197,10 +198,9 @@ to predict epitopes.
 According to \cite{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
 NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
-A tool not included in this review is \verb;epitope-prediction;,
-which uses a stabilized matrix method, as described in \cite{kim2009derivation}.
-The reason this tool is mentioned, is because it is used 
-in \cite{bianchi2017}.
+A tool developed later is \verb;epitope-prediction; \cite{bianchi2017},
+which uses a stabilized matrix method \cite{kim2009derivation}.
+In this study, we will use \verb;epitope-prediction; \cite{bianchi2017}.
 
 \paragraph{MHC-II epitope prediction}
 
@@ -214,8 +214,7 @@ NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
 gave rise to the most accurate predictions.
 Later tools are \cite{zhang2013predicting},
 \cite{trolle2014nettepi} and \cite{zhang2015accurate}.
-These later tools, although they look promising, have not been compared
-with one another \richel{Maybe cool to do so!}.
+In this study, we'll be using \richel{Pick FOSS tool here}
 
 \paragraph{TMHs}
 
@@ -246,11 +245,11 @@ and MetaTM (\cite{klammer2009metatm}), which signals the importance
 of TMH predictions. 
 Unlike TMHMM, which is still up and running, 
 these later tools have already become obsolete.
-Contemporary tools that are running, such as
+Contemporary tools that are good for use, such as
 the closed-source MemBrain \cite{feng2020topology} 
 and the FOSS tool PureseqTM \cite{wang2019efficient}.
-\richel{Will use TMHMM for starters (as it is already programmed),
-then use PureseqTM if time}
+In this study, we will use TMHMM  for pragmatic reasons
+\richel{I would love to use PureseqTM instead, but only if there is time}.
 
 \paragraph{MHC-I presents hydrophobic regions more often}
 
