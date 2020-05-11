@@ -392,7 +392,6 @@ we use a strong data set to be able to detect it.
 
 \paragraph{Evolutionary signal of unknown strength for bacteria}
 
-
 Regarding human pathogenic bacteria, we do not know the extent to which the 
 human immune systems selects on these, nor which loci are selected
 upon \richel{so I should read the literature on that}.
@@ -501,9 +500,16 @@ with regards to being detected/presented by the immune system,
 per MHC class and haplotype. We do this for human, viral and
 bacterial TMHs.
 
-\paragraph{Extracting polypeptides}
+\paragraph{Gene prediction}
 
 \richel{More detail here}.
+
+For gene prediction, we used \richel{X} as is recommended
+in a recent benchmark study for eukaryotes (\cite{scalzitti2020benchmark}).
+
+Although the closed source Vgas (\cite{zhang2019vgas}) appears promising,
+we opted for reproducible research and used Prodigal (\cite{hyatt2012gene})
+instead, which was just a bit better than prokka (\cite{seemann2014prokka}).
 
 \paragraph{Correction against many tests}
 
