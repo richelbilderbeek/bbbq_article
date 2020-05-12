@@ -369,15 +369,29 @@ between the fitness of a pathogen and the number of epitopes is unknown.
 One could assume a two-state fitness landscape: being
 undetected, due to zero epitopes, or being detected, due to one or more
 epitopes. Alternatively, one may hypothesize a gradual fitness decrease per
-extra epitope.
+extra epitope. Both fitness landscapes are depicted in 
+figure \ref{fig:fitness_landscape}.
 
-```
-[FIGURE HERE]
-```
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{fitness_landscape.png}
+  \caption{
+    Two conceptual fitness landscapes. At the left is a two-state
+    fitness landscape, in which the number of epitopes has a simple
+    effect: a pathogen's fitness is high if it has no epitopes,
+    as it is undetected by a host's immune system. 
+    For one or more epitopes, fitness is at a same lower values. 
+    In this fitness landscape, acquiring a second or third or more 
+    epitope, this has no effect on fitness.
+    At the right is a gradual fitness landscape, in which any increase in
+    the number of epitopes results in a lower fitness.
+  }
+  \label{fig:fitness_landscape}
+\end{figure}
 
 Would the pathogen have many epitopes, this study needs to 
 assume a gradual fitness landscape. Due to this, we did a simple 
-exploratory experiment (see 'Fitness landscape'\richel{TODO}) in which
+exploratory experiment (see 'Fitness landscape', 
+subsection \ref{subsec:fitness_landscape}) in which
 we counted the number of epitopes in COVID-19. Because the number
 of epitopes has decreased, we dared to assume a gradual fitness landscape
 and to proceed with the full experiment.
@@ -836,6 +850,47 @@ RJCB and FB wrote the article.
 \appendix
 \section{Supplementary materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Fitness landscape}
+\label{subsec:fitness_landscape}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Reason to do before actual experiment}
+This exploratory experiment tests an assumptions 
+of the bigger evolutionary experiment. 
+If the assumption is incorrect,
+a different evolutionary experiment needs to be contrived.
+
+\paragraph{Method in general}
+For a given MHC-I haplotype, we count the number of epitopes in 
+the proteome of COVID-19, at the start of the 2019 pandemic (as
+described in \cite{wu2020new})
+and a random strain sequenced most recently at the day of the experiment. 
+Of both proteomes, we use use \verb;epitope-prediction; \cite{bianchi2017} 
+to count the number of predicted binders for the HLA-A-02:01 haplotype.
+
+\paragraph{Decision rule}
+If the number of epitopes has increased, we assume a two-state fitness landscape,
+in which the number of epitopes can increase neutrally by drift alone.
+In this case, the experiment will be cancelled and replaced by a 
+viable approach.
+Else, the bigger evolutionary experiment is done as described already.
+It may still be possible that the number of epitopes decreased due to drift,
+but this would be a proper result in confirming the null hypothesis
+of $\mathcal{H}_{3,HVB}$.
+
+\paragraph{Method detail}
+Because the proteome is only sequenced at the start of the pandemic,
+we use the DNA sequences of both strains, and infer the proteome
+of each, using Prodigal. Although the earlier strand has a published
+proteome, we infer it regardless, as to use the same pipeline.
+If needed, we tweak the Prodigal parameter settings up until
+the inferred proteome of the earlier strain with known proteome
+matches well enough, as concluded by eyeballing.
+The parameter settings used to infer a good proteome on the earlier
+strain, is then used on the genome of the more recent strain 
+to infer our recent proteome.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
