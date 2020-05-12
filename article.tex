@@ -329,18 +329,17 @@ From a pathogen's point of view, however, this struggle
 is of only minor importance:
 in seasonal influenza, for example, the selection pressure
 exerted by the immune system was only limited \cite{han2019individual}
-\richel{but this study does not look into the evolution of TMHs}.
-In general, on would expect that evolutionary selection is strongest 
-for regions that are important for viral proteins' functions:
-in COVID-19, for example, there is preliminary evidence that the strongest
-selection pressure is upon residues that changes its virulence \cite{velazquez2020positive}
-\richel{residue 251 of ORF3a (an ion channel and a 
-viroporin, residue is not part of TMH), and position 84 of ORF8 (unknown function)}.
-The part of a pathogen's proteome that is essential, 
-only accounts for small part of its full proteome.
-Also, these essential parts differ widely between pathogens.
+
+In general, on would hope that evolutionary selection results in
+an immune system that as most attentive for loci that are
+essential for a virus, as these will be most conserved.
+In COVID-19, for example, there is preliminary evidence that the strongest
+selection pressure is upon residues that changes its 
+virulence \cite{velazquez2020positive}.
+These loci, however, only account for a small part of a pathogen's proteome.
+Additionally, these essential parts differ widely between pathogens.
 Because of this scarcity and variance in targets, 
-one expects that the human immune system
+one can imagine that the human immune system 
 is not tailored to detect these sites, 
 as hinted by upon by the aforementioned influenza study.
 
@@ -356,6 +355,32 @@ polypeptides. This feature, however, may also be caused by selection
 to detect hydrophobic regions in the soluble proteins of pathogens.
 It is unknown, when focusing on TMHs only, if a signal of selection
 can be detected.
+
+\paragraph{Selection needs to be additive}
+
+Would a pathogen have only peptides that do not bind to
+any HLA, a pathogen would be undetected. In that case, a mutation
+that causes a pathogen to become detected by a host's immune
+system, may be selected against. Also, would a pathogen have only
+one epitope, there would be selection for a mutation to lose it.
+If there are many, say hundreds, of epitopes, the selection to lose or
+gain an epitope is expected to have little effect. The relation
+between the fitness of a pathogen and the number of epitopes is unknown.
+One could assume a two-state fitness landscape: being
+undetected, due to zero epitopes, or being detected, due to one or more
+epitopes. Alternatively, one may hypothesize a gradual fitness decrease per
+extra epitope.
+
+```
+[FIGURE HERE]
+```
+
+Would the pathogen have many epitopes, this study needs to 
+assume a gradual fitness landscape. Due to this, we did a simple 
+exploratory experiment (see 'Fitness landscape'\richel{TODO}) in which
+we counted the number of epitopes in COVID-19. Because the number
+of epitopes has decreased, we dared to assume a gradual fitness landscape
+and to proceed with the full experiment.
 
 \paragraph{Use of protein data in phylogenetics}
 
@@ -502,14 +527,17 @@ bacterial TMHs.
 
 \paragraph{Gene prediction}
 
-\richel{More detail here}.
-
-For gene prediction, we used \richel{X} as is recommended
-in a recent benchmark study for eukaryotes (\cite{scalzitti2020benchmark}).
-
-Although the closed source Vgas (\cite{zhang2019vgas}) appears promising,
-we opted for reproducible research and used Prodigal (\cite{hyatt2012gene})
-instead, which was just a bit better than prokka (\cite{seemann2014prokka}).
+Proteogenomics is the field dedicated to, among others,
+predict the proteins that arise from a DNA 
+sequence \cite{nesvizhskii2014proteogenomics}.
+For an ab initio gene prediction of a viral genome, 
+we searched the literature for the most recent software tool,
+which is Vgas (\cite{zhang2019vgas}). In this article, 
+Vgas is compared to tools, such as GeneMarkS (\cite{besemer2001genemarks}),
+Prodigal (\cite{hyatt2012gene}), GLIMMER (\cite{delcher1999improved}),
+RAST \cite{aziz2008rast} and prokka (\cite{seemann2014prokka}).
+We picked the FOSS tool that scored best in the (closed source) Vgas
+benchmark (\cite{zhang2019vgas}), which is Prodigal.
 
 \paragraph{Correction against many tests}
 
@@ -874,6 +902,8 @@ RJCB and FB wrote the article.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{COVID-19 genome and proteome}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Tip: see \cite{bar2020sars} for COVID-19 in numbers.
 
 \richel{
   This is just a reminder, instead of new research. 
