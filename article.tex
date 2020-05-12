@@ -366,35 +366,14 @@ one epitope, there would be selection for a mutation to lose it.
 If there are many, say hundreds, of epitopes, the selection to lose or
 gain an epitope is expected to have little effect. The relation
 between the fitness of a pathogen and the number of epitopes is unknown.
-One could assume a two-state fitness landscape: being
-undetected, due to zero epitopes, or being detected, due to one or more
-epitopes. Alternatively, one may hypothesize a gradual fitness decrease per
-extra epitope. Both fitness landscapes are depicted in 
-figure \ref{fig:fitness_landscape}.
 
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{fitness_landscape.png}
-  \caption{
-    Two conceptual fitness landscapes. At the left is a two-state
-    fitness landscape, in which the number of epitopes has a simple
-    effect: a pathogen's fitness is high if it has no epitopes,
-    as it is undetected by a host's immune system. 
-    For one or more epitopes, fitness is at a same lower values. 
-    In this fitness landscape, acquiring a second or third or more 
-    epitope, this has no effect on fitness.
-    At the right is a gradual fitness landscape, in which any increase in
-    the number of epitopes results in a lower fitness.
-  }
-  \label{fig:fitness_landscape}
-\end{figure}
-
-Would the pathogen have many epitopes, this study needs to 
-assume a gradual fitness landscape. Due to this, we did a simple 
+This study assumes a gradual fitness landscape, in which it always
+(slightly) beneficial for a pathogen to lose an epitope.
+Because this assumption needs to be correct for the research
+to be viable, we did an
 exploratory experiment (see 'Fitness landscape', 
-subsection \ref{subsec:fitness_landscape}) in which
-we counted the number of epitopes in COVID-19. Because the number
-of epitopes has decreased, we dared to assume a gradual fitness landscape
-and to proceed with the full experiment.
+subsection \ref{subsec:fitness_landscape}).
+We concluded that the assumption may be correct.
 
 \paragraph{Use of protein data in phylogenetics}
 
@@ -856,19 +835,44 @@ RJCB and FB wrote the article.
 \label{subsec:fitness_landscape}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Reason to do before actual experiment}
+\paragraph{Introduction}
+One could assume a two-state fitness landscape: being
+undetected, due to zero epitopes, or being detected, due to one or more
+epitopes. Alternatively, one may hypothesize a gradual fitness decrease per
+extra epitope. Both fitness landscapes are depicted in 
+figure \ref{fig:fitness_landscape}.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{fitness_landscape.png}
+  \caption{
+    Two conceptual fitness landscapes. At the left is a two-state
+    fitness landscape, in which the number of epitopes has a simple
+    effect: a pathogen's fitness is high if it has no epitopes,
+    as it is undetected by a host's immune system. 
+    For one or more epitopes, fitness is at a same lower values. 
+    In this fitness landscape, acquiring a second or third or more 
+    epitope, this has no effect on fitness.
+    At the right is a gradual fitness landscape, in which any increase in
+    the number of epitopes results in a lower fitness.
+  }
+  \label{fig:fitness_landscape}
+\end{figure}
+
+\paragraph{Why}
 This exploratory experiment tests an assumptions 
 of the bigger evolutionary experiment. 
 If the assumption is incorrect,
 a different evolutionary experiment needs to be contrived.
 
-\paragraph{Method in general}
+\paragraph{Method}
 For a given MHC-I haplotype, we count the number of epitopes in 
 the proteome of COVID-19, at the start of the 2019 pandemic (as
 described in \cite{wu2020new})
 and a random strain sequenced most recently at the day of the experiment. 
 Of both proteomes, we use use \verb;epitope-prediction; \cite{bianchi2017} 
 to count the number of predicted binders for the HLA-A-02:01 haplotype.
+We use that haplotype, as it is the haplotype used by default with the
+\verb;epitope-prediction; package.
 
 \paragraph{Decision rule}
 If the number of epitopes has increased, we assume a two-state fitness landscape,
