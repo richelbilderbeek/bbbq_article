@@ -368,16 +368,26 @@ If there are, however, already many epitopes present in the
 proteome, the selection to lose or gain an epitope is expected 
 to have less or no effect.
 
-\paragraph{Test that selection is additive}
+\paragraph{Immunodominance}
 
-This study assumes a gradual fitness landscape, in which it always
-(slightly) beneficial for a pathogen to lose an epitope.
-Because this assumption needs to be correct for the research
-to be viable, we did an
-exploratory experiment (see 'Fitness landscape', 
-subsection \ref{subsec:fitness_landscape}).
-We concluded that the assumption may be correct 
-\richel{Let's assume for now}.
+The effective number of epitopes, however,
+is much lower than the actual number of possible
+epitopes, due to immunodominance. 
+Immunodominance is a feature of the immune system,
+due to which some epitopes dominate in causing an immune response,
+where other (called subdominant) epitopes end up having no 
+effect \cite{akram2012immunodominance}.
+The same study mentions 20 factors that influence the strength
+of an immune response.
+The most relevant factor for this study is the effect of
+a mutation within an epitope, 
+such as the in vitro example described in \cite{berkhoff2004mutation},
+where one single mutation resulted in a 5-20\% weaker
+responese of virus-specific CD8+ T cells \richel{Fun experiment:
+do this in silico}.
+Due to immunodominance, we dare assume that there can be selection
+for immune system avoidance, as the effective number of loci may be
+low and effects of a single mutation noticable.
 
 \paragraph{Use of protein data in phylogenetics}
 
@@ -804,6 +814,8 @@ are common structures and are present in all pathogens.
 We thank the Center for Information Technology of the University 
 of Groningen for its support and for providing access to the Peregrine 
 high performance computing cluster. 
+Additionally, we would like to thank Sci-Hub \cite{himmelstein2018sci}
+for allowing us to read paywalled articles while working from home.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Accessibility}
@@ -833,72 +845,6 @@ RJCB and FB wrote the article.
 \appendix
 \section{Supplementary materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Fitness landscape}
-\label{subsec:fitness_landscape}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\paragraph{Introduction}
-One could assume a two-state fitness landscape: being
-undetected, due to zero epitopes, or being detected, due to one or more
-epitopes. Alternatively, one may hypothesize a gradual fitness decrease per
-extra epitope. Both fitness landscapes are depicted in 
-figure \ref{fig:fitness_landscape}.
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{fitness_landscape.png}
-  \caption{
-    Two conceptual fitness landscapes. At the left is a two-state
-    fitness landscape, in which the number of epitopes has a simple
-    effect: a pathogen's fitness is high if it has no epitopes,
-    as it is undetected by a host's immune system. 
-    For one or more epitopes, fitness is at a same lower values. 
-    In this fitness landscape, acquiring a second or third or more 
-    epitope, this has no effect on fitness.
-    At the right is a gradual fitness landscape, in which any increase in
-    the number of epitopes results in a lower fitness.
-  }
-  \label{fig:fitness_landscape}
-\end{figure}
-
-\paragraph{Why}
-This exploratory experiment tests an assumptions 
-of the bigger evolutionary experiment. 
-If the assumption is incorrect,
-a different evolutionary experiment needs to be contrived.
-
-\paragraph{Method}
-For a given MHC-I haplotype, we count the number of epitopes in 
-the proteome of COVID-19, at the start of the 2019 pandemic (as
-described in \cite{wu2020new})
-and a random strain sequenced most recently at the day of the experiment. 
-Of both proteomes, we use use \verb;epitope-prediction; \cite{bianchi2017} 
-to count the number of predicted binders for the HLA-A-02:01 haplotype.
-We use that haplotype, as it is the haplotype used by default with the
-\verb;epitope-prediction; package.
-
-\paragraph{Decision rule}
-If the number of epitopes has increased, we assume a two-state fitness landscape,
-in which the number of epitopes can increase neutrally by drift alone.
-In this case, the experiment will be cancelled and replaced by a 
-viable approach.
-Else, the bigger evolutionary experiment is done as described already.
-It may still be possible that the number of epitopes decreased due to drift,
-but this would be a proper result in confirming the null hypothesis
-of $\mathcal{H}_{3,HVB}$.
-
-\paragraph{Method detail}
-Because the proteome is only sequenced at the start of the pandemic,
-we use the DNA sequences of both strains, and infer the proteome
-of each, using Prodigal. Although the earlier strand has a published
-proteome, we infer it regardless, as to use the same pipeline.
-If needed, we tweak the Prodigal parameter settings up until
-the inferred proteome of the earlier strain with known proteome
-matches well enough, as concluded by eyeballing.
-The parameter settings used to infer a good proteome on the earlier
-strain, is then used on the genome of the more recent strain 
-to infer our recent proteome.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
