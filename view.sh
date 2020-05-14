@@ -1,2 +1,2 @@
 #!/bin/bash
-evince article.pdf
+evince bbbq_article.pdf

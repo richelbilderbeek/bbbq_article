@@ -7,5 +7,5 @@
 #   ./edit.sh
 #
 
-mousepad article.bib article.tex
+mousepad bbbq_header.tex bbbq_article.bib bbbq_article.tex
 make
