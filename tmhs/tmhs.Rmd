@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r, message=FALSE}
-library(tmhmm)
+library(pureseqtmr)
 library(testthat)
 library(tidyr)
 library(ggplot2)
@@ -18,7 +18,7 @@ library(ggplot2)
 Must be installed:
 
 ```{r}
-expect_true(is_tmhmm_installed())
+expect_true(is_pureseqtm_installed())
 ```
 
 
@@ -30,7 +30,7 @@ expect_true(file.exists(fasta_filename))
 Run:
 
 ```{r}
-locatome <- run_tmhmm(fasta_filename)
+locatome <- run_pureseqtm(fasta_filename)
 locatome <- stringr::str_replace(
   string = locatome, 
   pattern = ">QHD43415.1 orf1ab.*", 

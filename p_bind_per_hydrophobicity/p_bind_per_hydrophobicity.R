@@ -5,6 +5,7 @@
 # H1: higher hydrophobicity equals higher chance to bind
 #
 library(ggplot2)
+library(dplyr)
 
 if (1 == 2) {
   #' Create a dataset
@@ -173,6 +174,8 @@ plot_hydrophobicity_vs_is_tmh(png_filename = "hydrophobicity_vs_is_tmh.png")
 plot_hydrophobicity_vs_binds_mhc1(png_filename = "hydrophobicity_vs_binds_mhc1.png")
 plot_hydrophobicity_vs_binds_mhc2(png_filename = "hydrophobicity_vs_binds_mhc2.png")
 
+df <- read.csv(system.file("extdata", "raw_data.csv", package = "bbbq"))
+df <- tibble::as_tibble(df)
 
 names(df)
 df_plot <- dplyr::mutate(df, bin = trunc(hydrophobicity * 2))
@@ -276,22 +279,24 @@ save_plots <- function(
     geom_boxplot() + ggsave(filenames[4])
 }
 
-save_plots(
-  df = create_dataset(n = 1000, n_aas = 20, f = create_random_hydrophobic_polypeptide),
-  filenames = c(
-    "p_bind_mhc1_per_hydrophobicity.png",
-    "p_bind_mhc2_per_hydrophobicity.png",
-    "hydrophobicity_per_mhc1.png",
-    "hydrophobicity_per_mhc2.png"
+if (1 == 2) {
+  save_plots(
+    df = create_dataset(n = 1000, n_aas = 20, f = create_random_hydrophobic_polypeptide),
+    filenames = c(
+      "p_bind_mhc1_per_hydrophobicity.png",
+      "p_bind_mhc2_per_hydrophobicity.png",
+      "hydrophobicity_per_mhc1.png",
+      "hydrophobicity_per_mhc2.png"
+    )
   )
-)
-
-save_plots(
-  df = create_dataset(n = 1000, n_aas = 20, f = create_random_tmh),
-  filenames = c(
-    "p_bind_mhc1_per_hydrophobicity_tmh.png",
-    "p_bind_mhc2_per_hydrophobicity_tmh.png",
-    "hydrophobicity_per_mhc1_tmh.png",
-    "hydrophobicity_per_mhc2_tmh.png"
+  
+  save_plots(
+    df = create_dataset(n = 1000, n_aas = 20, f = create_random_tmh),
+    filenames = c(
+      "p_bind_mhc1_per_hydrophobicity_tmh.png",
+      "p_bind_mhc2_per_hydrophobicity_tmh.png",
+      "hydrophobicity_per_mhc1_tmh.png",
+      "hydrophobicity_per_mhc2_tmh.png"
+    )
   )
-)
+}

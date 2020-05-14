@@ -1,3 +1,4 @@
 *.pdf
 *.csv
 *.png
+.Rhistory

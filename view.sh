@@ -1,2 +1,2 @@
 #!/bin/bash
-qpdfview article.pdf
+evince article.pdf
