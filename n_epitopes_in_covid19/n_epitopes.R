@@ -2,6 +2,16 @@
 library(testthat)
 library(ggplot2)
 
+get_proteome_size <- function(fasta_filename) {
+  expect_true(file.exists(fasta_filename))
+  proteome <- protr::readFASTA(fasta_filename)
+  n_chars <- 0
+  for (protein in proteome) {
+    n_chars <- n_chars + nchar(protein)
+  }
+  n_chars
+}
+
 predict_n_epitopes <- function(fasta_filename) {
   expect_true(file.exists(fasta_filename))
   proteome <- protr::readFASTA(fasta_filename)

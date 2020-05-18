@@ -814,6 +814,58 @@ RJCB and FB wrote the article.
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strength of COVID-19 dataset}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Our evolutionary experiment depends on the strength of the dataset.
+Here we do a back-on-the-envelope calculation to assess if the dataset
+is strong enough.
+
+\begin{itemize}
+	\item Genome size: $\approx 3 \cdot 10^4$ bases
+	\item Evolution rate: $\approx 10^{-3}$ per nucleotide per year (from \cite{bar2020sars})
+	\item Evolution rate per genome: $\approx 26$ per year (GISAID)
+	\item Evolution rate per nucleotide: $0.00088$ per nucleotide per year as $\frac{26}{\cdot 10^4}$ per nucleotide year
+	\item Mutation rate: $\approx 10^{-6}$ per nucleotide per cycle
+	\item Proteome size: 9701 (from reference proteome)
+	\item Size of proteome compared to genome: $\frac{9701}{3 \cdot 10^4} \approx \frac{1}{3}$ \richel{no/little non-coding DNA indeed}
+	\item Fraction of mutations that change AA: $\frac{20}{64}$ 
+	\item Evolution rate: $\approx 0.00092$ per amino acid per year (as $\frac{1}{3} \cdot \frac{20}{64} \cdot 0.00088$)
+	\item TMHs per proteome: 21 (from TMHMM)
+	\item AAs per TMHs: 23 (from Bianchi et al.)
+	\item AAs per proteome that is TMH: $21 \cdot 23 = 483$
+	\item Mutations in TMH per proteome year: $\approx 0.444$ (as $483 \cdot 0.00092$)
+	\item Number of sequenced proteomes: 5600 (GISAID, genomes)
+	\item Pandemic duration: $\approx \frac{1}{3}$ year
+	\item Expected number of observed TMH mutations: $\approx 800$ (as $0.444 \cdot 5600 \cdot \frac{1}{3}$)
+	\item Chance that a mutation may lose/acquire epitope binding: $\frac{1}{100}$ \richel{Just a guess, based on weak selection}
+	\item Expected number of observed TMH mutations that cause a transition: $\approx 8$ (as $800 \cdot \frac{1}{100}$)
+\end{itemize}
+
+Conclusion: weak, but a good 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strength of Influenza A}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Our evolutionary experiment depends on the strength of the dataset.
+Here we do a back-on-the-envelope calculation to assess if the dataset
+is strong enough.
+
+\begin{itemize}
+	\item Genome size: $\approx 1.3 \cdot 10^4$ bases
+	\item Relative genome size compared to COVID-19: $\approx 0.4$ (as $\frac{1.3 \cdot 10^4}{3.0 \cdot 10^4}$)
+	\item Full genome sets: $\approx 3.2 \cdot 10^4$ (Influenza A)
+	\item Relative number of genome sets compared to COVID-19: $\approx 6.4$ as much (as $\frac{\approx 32 \cdot 10^3}{5 \cdot 10^3}$)
+	\item Relative time to accumulate mutations: $\approx 12$ times longer (average age $\approx$ 4 year, before 2015, already 8k sequences)
+	\item Relative chance of observing transitions: $\approx 30$ (as $0.4 \cdot 6.4 \cdot 12$)
+	\item Expected number of observed TMH mutations in COVID-19 that cause a transition: $\approx 8$
+	\item Expected number of observed TMH mutations that cause a transition: $\approx 240$ (as $8 \cdot 30$)
+\end{itemize}
+
+Conclusion: seems strong enough to us.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{COVID-19 genome and proteome}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
