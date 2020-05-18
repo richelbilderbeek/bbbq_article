@@ -33,8 +33,8 @@ p_bind_per_hydrophobicity_filenames = \
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh article.tex $(all_figure_filenames) $(all_table_filenames) $(makefile_names) $(p_bind_per_hydrophobicity_filenames)
-	aspell -t -c article.tex
+article.pdf: create.sh bbbq_article.tex $(all_figure_filenames) $(all_table_filenames) $(makefile_names) $(p_bind_per_hydrophobicity_filenames)
+	aspell -t -c bbbq_article.tex
 	cd bbbq_1 && $(MAKE)
 	cd bbbq_2 && $(MAKE)
 	./create.sh
@@ -82,5 +82,8 @@ bbbq.zip: zip.sh article.pdf
 	./zip.sh
 
 clean:
-	rm article.aux article.bbl article.blg article.docx article.log article.md article.odt article.out article.pdf article.rtf article.tex.bak article.txt *.zip
+	rm bbbq_article.aux bbbq_article.bbl bbbq_article.blg bbbq_article.log bbbq_article.tex.bak
+	rm bbbq_header.aux bbbq_header.bbl bbbq_header.blg bbbq_header.log bbbq_header.tex.bak
+	rm article.docx article.md article.odt article.pdf article.rtf article.txt
+	rm *.zip
 
