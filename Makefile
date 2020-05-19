@@ -8,18 +8,19 @@ repo_names = \
 makefile_names = $(foreach repo_name,$(repo_names),$(repo_name)/Makefile)
 
 
-all_figure_filenames = \
+all_table_filenames = \
   mhc2_haplotypes.latex \
   bbbq_1/bbbq_1_stats.latex \
   bbbq_1/bbbq_1_percentages.latex \
   bbbq_2/bbbq_2_stats.latex \
   bbbq_2/bbbq_2_percentages.latex
 
-all_table_filenames = \
+all_figure_filenames = \
   bbbq_1/fig_bbbq_1.png \
   bbbq_2/fig_bbbq_2.png \
   pics/covid_genome_and_proteome.png \
-  fig_tmh_mut_rate.png
+  fig_tmh_mut_rate.png \
+  tmhs/tmhs.png
 
 p_bind_per_hydrophobicity_filenames = \
   p_bind_per_hydrophobicity/binds_mhc1_vs_binds_mhc2.png \
@@ -37,6 +38,7 @@ article.pdf: create.sh bbbq_article.tex $(all_figure_filenames) $(all_table_file
 	aspell -t -c bbbq_article.tex
 	cd bbbq_1 && $(MAKE)
 	cd bbbq_2 && $(MAKE)
+	cd tmhs && $(MAKE)
 	./create.sh
 
 $(repo_names):
@@ -69,6 +71,9 @@ bbbq_2/bbbq_2_stats.latex: bbbq_2/bbbq_2.Rmd
 
 bbbq_2/fig_bbbq_2.png: bbbq_2/bbbq_2.Rmd
 	cd bbbq_2; make; cd ..
+
+tmhs/tmhs.png:
+	cd tmhs && $(MAKE)
 
 mhc2_haplotypes.latex: mhc2_haplotypes.csv
 	csv2latex mhc2_haplotypes.csv --nohead > mhc2_haplotypes.latex
