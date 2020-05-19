@@ -34,7 +34,7 @@ p_bind_per_hydrophobicity_filenames = \
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh bbbq_article.tex $(all_figure_filenames) $(all_table_filenames) $(makefile_names) $(p_bind_per_hydrophobicity_filenames)
+article.pdf: create.sh bbbq_article.tex $(all_figure_filenames) $(all_table_filenames) $(makefile_names) $(p_bind_per_hydrophobicity_filenames) covid_dataset_strength/covid_dataset_strength.pdf
 	aspell -t -c bbbq_article.tex
 	cd bbbq_1 && $(MAKE)
 	cd bbbq_2 && $(MAKE)
@@ -74,6 +74,9 @@ bbbq_2/fig_bbbq_2.png: bbbq_2/bbbq_2.Rmd
 
 tmhs/tmhs.png:
 	cd tmhs && $(MAKE)
+
+covid_dataset_strength/covid_dataset_strength.pdf:
+	cd covid_dataset_strength && $(MAKE)
 
 mhc2_haplotypes.latex: mhc2_haplotypes.csv
 	csv2latex mhc2_haplotypes.csv --nohead > mhc2_haplotypes.latex
