@@ -1,0 +1,53 @@
+---
+title: "COVID-19 dataset strength"
+author: Richel J.C. Bilderbeek
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(testthat)
+library(pureseqtmr)
+```
+
+Must be installed:
+
+```{r}
+expect_true(is_pureseqtm_installed())
+```
+
+
+```{r cache=TRUE}
+fasta_filename <- "covid.fasta"
+expect_true(file.exists(fasta_filename))
+topology <- pureseqtmr::predict_proteome_topology(fasta_filename)
+```
+
+```{r}
+n_non_tmh_aas <- sum(stringr::str_count(topology$topology, "0"))
+message("number of non-TMH amino acids, n_non_tmh_aas: ", n_non_tmh_aas)
+```
+
+```{r}
+n_tmh_aas <- sum(stringr::str_count(topology$topology, "1"))
+message("number of TMH amino acids, n_tmh_aas: ", n_tmh_aas)
+```
+
+```{r}
+n_aas <- n_non_tmh_aas + n_tmh_aas
+message("proteome size, number of amino acids, n_aas: ", n_aas)
+```
+
+```{r}
+perc_aas <- n_tmh_aas / (n_tmh_aas + n_non_tmh_aas)
+message("percentage of proteome that is TMH, perc_aas: ", perc_aas)
+```
+
+```{r}
+n_tmhs <- sum(tally_tmhs(topology)$n_tmhs) 
+message("number of TMHs, n_tmhs: ", n_tmhs)
+```
+
