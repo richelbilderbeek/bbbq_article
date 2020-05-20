@@ -30,9 +30,9 @@ if (1 == 2) {
     for (i in seq(1, n)) {
       polypeptide <- f(n_aas)
       df$hydrophobicity[i] <- Peptides::hydrophobicity(polypeptide)
-      df$is_tmh[i] <- tmhmm::is_tmh(polypeptide)
+      df$is_tmh[i] <- pureseqtmr::is_tmh(polypeptide)
       df$binds_mhc1[i] <- bbbq::is_detected_by_mhc_1(polypeptide)
-      df$binds_mhc2[i] <- bbbq::is_detected_by_mhc_2(polypeptide)
+      #df$binds_mhc2[i] <- bbbq::is_detected_by_mhc_2(polypeptide)
     }
     df
   }
@@ -142,7 +142,7 @@ plot_hydrophobicity_vs_binds_mhc1 <- function(
       ggplot2::scale_fill_gradient(low = "white", high = "red") +
       ggplot2::scale_y_discrete() +
       ggplot2::xlab("Hydrophobicity x2") +
-      ggplot2::ylab("Is MHC-I? Down = no, up = yes") +
+      ggplot2::ylab("Binds to MHC-I? Down = no, up = yes") +
       ggplot2::ggsave(png_filename, width = 7, height = 7)
 }
 
@@ -162,7 +162,7 @@ plot_hydrophobicity_vs_binds_mhc2 <- function(
       ggplot2::scale_fill_gradient(low = "white", high = "red") +
       ggplot2::scale_y_discrete() +
       ggplot2::xlab("Hydrophobicity x2") +
-      ggplot2::ylab("Is MHC-II? Down = no, up = yes") +
+      ggplot2::ylab("Binds to MHC-II? Down = no, up = yes") +
       ggplot2::ggsave(png_filename, width = 7, height = 7)
 }
 
@@ -173,6 +173,8 @@ plot_binds_mhc1_vs_binds_mhc2(png_filename = "binds_mhc1_vs_binds_mhc2.png")
 plot_hydrophobicity_vs_is_tmh(png_filename = "hydrophobicity_vs_is_tmh.png")
 plot_hydrophobicity_vs_binds_mhc1(png_filename = "hydrophobicity_vs_binds_mhc1.png")
 plot_hydrophobicity_vs_binds_mhc2(png_filename = "hydrophobicity_vs_binds_mhc2.png")
+
+return()
 
 df <- read.csv(system.file("extdata", "raw_data.csv", package = "bbbq"))
 df <- tibble::as_tibble(df)
