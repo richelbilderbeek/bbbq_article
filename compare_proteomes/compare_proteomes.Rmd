@@ -1,0 +1,60 @@
+---
+title: "COVID-19 dataset strength"
+author: Richel J.C. Bilderbeek
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(testthat)
+library(pureseqtmr)
+```
+
+Must be installed:
+
+```{r}
+expect_true(is_pureseqtm_installed())
+```
+
+```{r}
+show_properties <- function(fasta_filename) {
+  expect_true(file.exists(fasta_filename))
+  topology <- pureseqtmr::predict_proteome_topology(fasta_filename)
+  n_proteins <- nrow(topology)
+  n_non_tmh_aas <- sum(stringr::str_count(topology$topology, "0"))
+  n_tmh_aas <- sum(stringr::str_count(topology$topology, "1"))
+  n_aas <- n_non_tmh_aas + n_tmh_aas
+  testthat::expect_equal(
+    n_aas,
+    sum(nchar(protr::readFASTA(fasta_filename)))
+  )
+  perc_tmh_aas <- n_tmh_aas / (n_tmh_aas + n_non_tmh_aas)
+  n_tmhs <- sum(tally_tmhs(topology)$n_tmhs) 
+  
+  tibble::tibble(
+    n_aas = n_aas,
+    n_proteins = n_proteins,
+    n_non_tmh_aas = n_non_tmh_aas,
+    n_tmh_aas = n_tmh_aas,
+    perc_tmh_aas = perc_tmh_aas,
+    n_tmhs = n_tmhs
+  )
+} 
+
+```
+
+
+```{r}
+t1 <- show_properties(fasta_filename = "proteome.fasta")
+knitr::kable(t1)
+```
+
+```{r}
+t2 <- show_properties(fasta_filename = "UP000464024.fasta")
+knitr::kable(t2)
+```
+
+
