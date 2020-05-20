@@ -8,8 +8,12 @@ p_bind_per_hydrophobicity_filenames = \
 
 all: $(p_bind_per_hydrophobicity_filenames) p_bind_per_hydrophobicity.R
 
-$(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity.R
+
+$(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity.R p_bind_per_hydrophobicity.csv
 	Rscript p_bind_per_hydrophobicity.R
+
+p_bind_per_hydrophobicity.csv:
+	Rscript create_dataset.R
 
 clean:
 	rm -f *.png *.pdf
