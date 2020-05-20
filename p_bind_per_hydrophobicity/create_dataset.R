@@ -32,12 +32,12 @@ create_dataset <- function(
 
 df_1 <- create_dataset(
   n = 1000,
-  n_aas = 20,
+  n_aas = 40,
   f = bbbq::create_random_extreme_polypeptide
 )
 df_2 <- create_dataset(
   n = 1000,
-  n_aas = 20,
+  n_aas = 40,
   f = bbbq::create_random_hydrophobic_polypeptide
 )
 df <- rbind(df_1, df_2)
