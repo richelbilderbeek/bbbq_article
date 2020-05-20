@@ -55,7 +55,7 @@ raw_data <- system.file("extdata", "raw_data.csv", package = "bbbq")
 
 plot_is_tmh_vs_binds_mhc1 <- function(
   df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
-  png_filename = tempfile()
+  png_filename = tempfile(fileext = ".png")
 ) {
   df_tally <- df %>%
     dplyr::group_by(is_tmh, binds_mhc1) %>%
@@ -73,7 +73,7 @@ plot_is_tmh_vs_binds_mhc1 <- function(
 
 plot_is_tmh_vs_binds_mhc2 <- function(
   df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
-  png_filename = tempfile()
+  png_filename = tempfile(fileext = ".png")
 ) {
   df_tally <- df %>%
     dplyr::group_by(is_tmh, binds_mhc2) %>%
@@ -91,7 +91,7 @@ plot_is_tmh_vs_binds_mhc2 <- function(
 
 plot_binds_mhc1_vs_binds_mhc2 <- function(
   df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
-  png_filename = tempfile()
+  png_filename = tempfile(fileext = ".png")
 ) {
   df_tally <- df %>%
     dplyr::group_by(binds_mhc1, binds_mhc2) %>%
@@ -109,7 +109,7 @@ plot_binds_mhc1_vs_binds_mhc2 <- function(
 
 plot_hydrophobicity_vs_is_tmh <- function(
   df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
-  png_filename = tempfile()
+  png_filename = tempfile(fileext = ".png")
 ) {
   df <- tibble::as_tibble(df)
 
@@ -129,7 +129,7 @@ plot_hydrophobicity_vs_is_tmh <- function(
 
 plot_hydrophobicity_vs_binds_mhc1 <- function(
   df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
-  png_filename = tempfile()
+  png_filename = tempfile(fileext = ".png")
 ) {
   df <- tibble::as_tibble(df)
   df_tally <- df %>%
@@ -148,7 +148,7 @@ plot_hydrophobicity_vs_binds_mhc1 <- function(
 
 plot_hydrophobicity_vs_binds_mhc2 <- function(
   df = read.csv(system.file("extdata", "raw_data.csv", package = "bbbq")),
-  png_filename = tempfile()
+  png_filename = tempfile(fileext = ".png")
 ) {
   df <- tibble::as_tibble(df)
 
@@ -289,7 +289,7 @@ if (1 == 2) {
       "hydrophobicity_per_mhc2.png"
     )
   )
-  
+
   save_plots(
     df = create_dataset(n = 1000, n_aas = 20, f = create_random_tmh),
     filenames = c(
