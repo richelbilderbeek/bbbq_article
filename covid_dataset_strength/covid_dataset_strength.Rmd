@@ -20,6 +20,7 @@ expect_true(is_pureseqtm_installed())
 ```
 
 
+
 ```{r cache=TRUE}
 fasta_filename <- "UP000464024.fasta"
 expect_true(file.exists(fasta_filename))
@@ -71,6 +72,14 @@ message("rel_size_proteome_to_genome: ", rel_size_proteome_to_genome)
 ```
 
 
+```{r}
+fasta_filename <- "proteome.fasta"
+expect_true(file.exists(fasta_filename))
+text <- readLines()
+```
+
+
+```
 \begin{itemize}
 	\item Proteome size: 9701 (from reference proteome)
 	\item Size of proteome compared to genome: $\frac{9701}{3 \cdot 10^4} \approx \frac{1}{3}$ \richel{no/little non-coding DNA indeed}
@@ -86,3 +95,4 @@ message("rel_size_proteome_to_genome: ", rel_size_proteome_to_genome)
 	\item Chance that a mutation may lose/acquire epitope binding: $\frac{1}{100}$ \richel{Just a guess, based on weak selection}
 	\item Expected number of observed TMH mutations that cause a transition: $\approx 8$ (as $800 \cdot \frac{1}{100}$)
 \end{itemize}
+```
