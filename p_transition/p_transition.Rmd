@@ -20,6 +20,7 @@ We load the libraries needed:
 ```{r, message=FALSE}
 library(testthat)
 library(pureseqtmr)
+library(bbbq)
 ```
 
 PureseqTM, which predicts TMHs, must be installed:
@@ -41,7 +42,7 @@ TMHs  |Transmembrane helices
 ## Method
 
 ```{r}
-mhc1_haplotype <- "HLA-A26-01"
+mhc_1_haplotype <- "HLA-A26-01"
 ```
 
 We need to pick a haplotype. I will pick 'HLA-A26-01', because 50 percent
@@ -73,7 +74,7 @@ for (i in seq_len(n)) {
   expect_true(pureseqtmr::is_tmh(protein_sequence))
   p <- calc_p_det_tmh_mut(
     protein_sequence = protein_sequence,
-    mhc1_haplotype = mhc1_haplotype
+    mhc_1_haplotype = mhc_1_haplotype
   )
   ps[i] <- p
 }
