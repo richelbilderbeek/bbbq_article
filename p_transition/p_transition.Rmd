@@ -68,7 +68,7 @@ from `find_tmhs_that_do_not_bind_to_mhc1/find_tmhs_that_do_not_bind_to_mhc1.csv`
 ```{r}
 n <- 2
 ps <- rep(NA, n)
-for (i in seq_len(n))
+for (i in seq_len(n)) {
   protein_sequence <- bbbq::create_random_tmh(n_aas = 30)
   expect_true(pureseqtmr::is_tmh(protein_sequence))
   p <- calc_p_det_tmh_mut(
