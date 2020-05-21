@@ -19,5 +19,5 @@
 #SBATCH --mem=1G
 #SBATCH --job-name=peregrine_make
 #SBATCH --output=peregrine_make.log
-module load pandoc
+module load Pandoc
 make
