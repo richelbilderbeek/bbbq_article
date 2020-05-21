@@ -1,8 +1,15 @@
 #!/bin/bash
+#
+# Push all subfolders that are git repos
+#
+# Usage:
+#
+#   ./push_all.sh
+#
+#
 
-for folder in $(ls -d */ | egrep -v "(Urho3D|mycroft|\.Rcheck/)")
+for folder in $(ls -d */")
 do
-
   cd $folder
 
   if [ -d ".git" ]
