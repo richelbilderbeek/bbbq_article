@@ -4,11 +4,11 @@
 #
 # Usage (in queue, preferred):
 #
-#   sbatch ./peregrine_make
+#   sbatch ./peregrine_make.sh
 #
 # Usage (local):
 #
-#   ./peregrine_make
+#   ./peregrine_make.sh
 #
 #
 # Peregrine directives:
