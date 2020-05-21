@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Check dead links
+#
+# Usage:
+#
+#   ./script/check_dead_links.sh
+#
 
 # Collect all dead links in a file
 find . -name \*.md -exec markdown-link-check {} \; 2>/dev/null | egrep "[✖]" > broken.txt
