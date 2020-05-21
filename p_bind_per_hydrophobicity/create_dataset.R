@@ -30,8 +30,10 @@ create_dataset <- function(
   df
 }
 
-df_1 <- create_dataset(
-  n = 1000,
+
+
+df <- create_dataset(
+  n = 10,
   n_aas = 40,
   f = bbbq::create_random_extreme_polypeptide
 )
