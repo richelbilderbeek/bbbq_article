@@ -24,6 +24,8 @@ df <- tibble::as_tibble(
     stringsAsFactors = FALSE
   )
 )
+
+write.csv(df, "ic50s.csv")
 df
 n_rows <- nrow(df)
 for (i in seq_len(n_rows)) {
@@ -49,20 +51,18 @@ df_scatter <- tidyr::pivot_wider(
   names_from = tool,
   values_from = ic50
 )
-df_scatter$mhcn <- df_scatter$mhcn * 1000
 
 ggplot(df_scatter, aes(x = ep, y = mhcn, color = haplotype)) +
   geom_abline(slope = 1, intercept = 0, lty = "dashed") +
   geom_point() +
   scale_y_continuous(limits = c(0, max(df_scatter$mhcn))) +
-  scale_x_continuous(limits = c(0, max(df_scatter$ep))) +
-  geom_smooth(method = "lm") +
+  scale_x_continuous(limits = c(0, max(df_scatter$mhcn))) +
+  geom_smooth(method = "lm", alpha = 0.1) +
   xlab("IC50 predicted by EpitopePrediction") +
-  ylab("IC50 predicted by MHCnuggets (x1000)") +
+  ylab("IC50 predicted by MHCnuggets") +
   labs(
     caption = paste0(
       "Dashed line: x = y. ",
       "Blue line = fit to linear model, should ideally match the dashed line"
     )
   ) + ggsave("ep_vs_mhcn.png", width = 7, height = 7)
-
