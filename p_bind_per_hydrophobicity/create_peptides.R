@@ -4,7 +4,7 @@ library(bbbq)
 suppressMessages(library(dplyr))
 
 n_aas <- 40
-n_peptides_per_hydrophobicity <- 100
+n_peptides_per_hydrophobicity <- 2
 
 df <- tibble::as_tibble(
   expand.grid(
@@ -27,4 +27,10 @@ for (i in seq_len(n_rows)) {
   df$sequence[i] <- sequence
   df$hydrophobicity[i] <- Peptides::hydrophobicity(sequence)
 }
+
+df <- df %>%
+  select(-min_hydrophobicity) %>%
+  select(-max_hydrophobicity) %>%
+  select(-idx)
+
 readr::write_csv(df, "peptides.csv")
