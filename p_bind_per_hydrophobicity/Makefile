@@ -11,8 +11,11 @@ all: $(p_bind_per_hydrophobicity_filenames) p_bind_per_hydrophobicity.R
 $(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity.R p_bind_per_hydrophobicity.csv
 	Rscript p_bind_per_hydrophobicity.R
 
-p_bind_per_hydrophobicity.csv: create_dataset.R
+p_bind_per_hydrophobicity.csv: create_dataset.R peptides.csv
 	Rscript create_dataset.R
+
+peptides.csv: create_dataset.R
+	Rscript create_peptides.R
 
 clean:
 	rm -f *.png *.pdf
