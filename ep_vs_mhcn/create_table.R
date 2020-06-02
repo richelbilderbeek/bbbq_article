@@ -3,7 +3,6 @@ library(testthat)
 
 expect_true(file.exists("ic50s.csv"))
 df <- readr::read_csv("ic50s.csv")
-df <- dplyr::select(df, -X1)
 
 # tool | haplotype | IC50
 # -----|-----------|------
