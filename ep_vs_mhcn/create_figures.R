@@ -1,8 +1,8 @@
 library(ggplot2)
 library(testthat)
 
-expect_true(file.exists("ic50s.csv"))
-df <- readr::read_csv("ic50s.csv")
+expect_true(file.exists("ep_vs_mhcn.csv"))
+df <- readr::read_csv("ep_vs_mhcn.csv")
 
 # tool | haplotype | IC50
 # -----|-----------|------
@@ -49,3 +49,8 @@ ggplot(df_scatter, aes(x = ep, y = mhcn, color = haplotype)) +
       "Blue line = fit to linear model, should ideally match the dashed line"
     )
   ) + ggsave("ep_vs_mhcn_log.png", width = 7, height = 7)
+
+
+expect_true(file.exists("ep_vs_mhcn.png"))
+expect_true(file.exists("ep_vs_mhcn_log.png"))
+

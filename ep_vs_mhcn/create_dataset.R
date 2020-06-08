@@ -30,4 +30,4 @@ for (i in seq_len(n_rows)) {
   )$ic50
 }
 df
-readr::write_csv(df, "ic50s.csv")
+readr::write_csv(df, "ep_vs_mhcn.csv")

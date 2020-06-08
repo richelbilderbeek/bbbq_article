@@ -76,8 +76,8 @@ bbbq_2/fig_bbbq_2.png: bbbq_2/bbbq_2.Rmd
 tmhs/tmhs.png:
 	cd tmhs && $(MAKE)
 
-ep_vs_mhcn/ep_vs_mhcn.png:
-	cd ep_vs_mhcn && $(MAKE)
+figures:
+	cd ep_vs_mhcn ; make figures ; cd ..
 
 covid_dataset_strength/covid_dataset_strength.pdf:
 	cd covid_dataset_strength && $(MAKE)

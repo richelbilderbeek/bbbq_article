@@ -4,28 +4,24 @@
 #
 # To run on Peregrine:
 #
-#   sbatch make_data.sh
+#   sbatch make.sh
 #
 
-all:
-	echo "On Peregrine: 'sbatch make_data.sh'"
-	echo "On local: 'make figures'"
-	echo "Use 'make figures' to create the figure (do this locally)"
-	echo" Use 'make data' to create the dataset (do this on Peregrine)"
+all: ep_vs_mhcn.png ep_vs_mhcn_log.png ep_vs_mhcn_wide.csv
 
-figures:
-	echo "Assumes 'ic50s.csv' is present, as created by Peregrine"
+ep_vs_mhcn.png: ep_vs_mhcn.csv
 	../../peregrine/scripts/run_r_script_with_x.sh create_figures.R
 	# Rscript create_figures.R
 
-data: ep_vs_mhcn.csv ic50s.csv 
+ep_vs_mhcn_log.png: ep_vs_mhcn.csv
+	../../peregrine/scripts/run_r_script_with_x.sh create_figures.R
+	# Rscript create_figures.R
 
-# Wide form
-ep_vs_mhcn.csv: create_table.R ic50s.csv
+ep_vs_mhcn_wide.csv: create_table.R ep_vs_mhcn.csv
 	Rscript create_table.R
 
 # Long form
-ic50s.csv: create_dataset.R
+ep_vs_mhcn.csv: create_dataset.R
 	Rscript create_dataset.R
 
 clean:
