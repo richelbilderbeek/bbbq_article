@@ -29,4 +29,4 @@ ic50s.csv: create_dataset.R
 	Rscript create_dataset.R
 
 clean:
-	rm -f *.png *.latex *.csv *.pdf
+	rm -f *.png *.latex *.csv *.pdf *.log
