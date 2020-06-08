@@ -4,7 +4,7 @@ library(bbbq)
 suppressMessages(library(dplyr))
 
 n_aas <- 40
-n_peptides_per_hydrophobicity <- 2
+n_peptides_per_hydrophobicity <- 10
 
 df <- tibble::as_tibble(
   expand.grid(
