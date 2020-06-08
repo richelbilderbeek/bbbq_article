@@ -4,14 +4,18 @@
 #
 # To run on Peregrine:
 #
-#   sbatch ../../peregrine/scripts/run_make.sh
+#   sbatch make_data.sh
 #
 
-all: ep_vs_mhcn.png ep_vs_mhcn.csv
-	echo 4
+all:
+	echo "Use 'make figures' for create the figures (do this locally)"
+	echo "Use 'make data' to create the dataset (do this on Peregrine)"
+
+figures: ep_vs_mhcn.png
+
+data: ep_vs_mhcn.csv
 
 ep_vs_mhcn.png: create_figure.R ic50s.csv
-	echo 1
 	Rscript create_figure.R
 
 ep_vs_mhcn.csv: create_table.R ic50s.csv
