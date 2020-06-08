@@ -8,8 +8,10 @@
 #
 
 all:
+	echo "On Peregrine: 'sbatch make_data.sh'
+	echo "On local: 'make figures'
 	echo "Use 'make figures' for create the figures (do this locally)"
-	echo "Use 'make data' to create the dataset (do this on Peregrine)"
+	echo" Use 'make data' to create the dataset (do this on Peregrine)"
 
 figures: ep_vs_mhcn.png
 
