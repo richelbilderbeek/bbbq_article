@@ -8,7 +8,7 @@ library(mhcnuggetsr)
 mhc1_haplotypes <- get_mhc1_haplotypes()
 
 n_aas <- 9
-n_peptides <- 1000
+n_peptides <- 2
 
 # A tidy tibble
 df <- tibble::as_tibble(
