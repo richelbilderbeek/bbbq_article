@@ -19,5 +19,5 @@ peptides.csv: create_dataset.R
 	Rscript create_peptides.R
 
 clean:
-	rm -f *.png *.pdf *.log
+	rm -f *.png *.pdf *.log *.png *.csv
 
