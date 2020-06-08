@@ -33,3 +33,19 @@ ggplot(df_scatter, aes(x = ep, y = mhcn, color = haplotype)) +
       "Blue line = fit to linear model, should ideally match the dashed line"
     )
   ) + ggsave("ep_vs_mhcn.png", width = 7, height = 7)
+
+
+ggplot(df_scatter, aes(x = ep, y = mhcn, color = haplotype)) +
+  geom_abline(slope = 1, intercept = 0, lty = "dashed") +
+  geom_point() +
+  scale_y_log10(limits = c(min(df$ic50), max(df$ic50))) +
+  scale_x_log10(limits = c(min(df$ic50), max(df$ic50))) +
+  geom_smooth(method = "lm", alpha = 0.1) +
+  xlab("IC50 predicted by EpitopePrediction") +
+  ylab("IC50 predicted by MHCnuggets") +
+  labs(
+    caption = paste0(
+      "Dashed line: x = y. ",
+      "Blue line = fit to linear model, should ideally match the dashed line"
+    )
+  ) + ggsave("ep_vs_mhcn_log.png", width = 7, height = 7)

@@ -9,21 +9,23 @@
 
 all:
 	echo "On Peregrine: 'sbatch make_data.sh'"
-	echo "On local: 'make figure'"
-	echo "Use 'make figure' to create the figure (do this locally)"
+	echo "On local: 'make figures'"
+	echo "Use 'make figures' to create the figure (do this locally)"
 	echo" Use 'make data' to create the dataset (do this on Peregrine)"
 
-figure: ep_vs_mhcn.png
+figures:
 	echo "Assumes 'ic50s.csv' is present, as created by Peregrine"
-	Rscript create_figure.R
+	Rscript create_figures.R
 
-data: ep_vs_mhcn.csv
+data: ep_vs_mhcn.csv ic50s.csv 
 
+# Wide form
 ep_vs_mhcn.csv: create_table.R ic50s.csv
 	Rscript create_table.R
 
+# Long form
 ic50s.csv: create_dataset.R
 	Rscript create_dataset.R
 
 clean:
-	rm *.png *.latex *.csv *.pdf
+	rm -f *.png *.latex *.csv *.pdf
