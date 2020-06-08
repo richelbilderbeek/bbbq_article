@@ -8,7 +8,6 @@ df <- readr::read_csv(peptides_filename)
 df$is_tmh <- NA
 df$binds_mhc1 <- NA
 df$binds_mhc2 <- NA
-df
 
 n_rows <- nrow(df)
 
