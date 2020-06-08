@@ -1,0 +1,146 @@
+---
+title: "p_bind"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+# Calculate the relation between hydrophobicity
+# and chance to bind to MHC-I.
+#
+# H0: there is no relation
+# H1: higher hydrophobicity equals higher chance to bind
+#
+suppressMessages(library(ggplot2))
+suppressMessages(library(dplyr))
+suppressMessages(library(testthat))
+
+plot_is_tmh_vs_binds_mhc1 <- function(
+  df,
+  png_filename = tempfile(fileext = ".png")
+) {
+  df_tally <- df %>%
+    dplyr::group_by(is_tmh, binds_mhc1) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(is_tmh, binds_mhc1, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_x_discrete() +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Is TMH? Left = no, right = yes") +
+      ggplot2::ylab("Binds to MHC-I? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_is_tmh_vs_binds_mhc2 <- function(
+  df,
+  png_filename = tempfile(fileext = ".png")
+) {
+  df_tally <- df %>%
+    dplyr::group_by(is_tmh, binds_mhc2) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(is_tmh, binds_mhc2, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_x_discrete() +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Is TMH? Left = no, right = yes") +
+      ggplot2::ylab("Binds to MHC-II? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_binds_mhc1_vs_binds_mhc2 <- function(
+  df,
+  png_filename = tempfile(fileext = ".png")
+) {
+  df_tally <- df %>%
+    dplyr::group_by(binds_mhc1, binds_mhc2) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(binds_mhc1, binds_mhc2, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_x_discrete() +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Binds to MHC-I?? Left = no, right = yes") +
+      ggplot2::ylab("Binds to MHC-II? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_hydrophobicity_vs_is_tmh <- function(
+  df,
+  png_filename = tempfile(fileext = ".png")
+) {
+  df <- tibble::as_tibble(df)
+
+  df_tally <- df %>%
+    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
+    dplyr::group_by(bin, is_tmh) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(bin, is_tmh, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Hydrophobicity x2") +
+      ggplot2::ylab("Is TMH? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_hydrophobicity_vs_binds_mhc1 <- function(
+  df,
+  png_filename = tempfile(fileext = ".png")
+) {
+  df <- tibble::as_tibble(df)
+  df_tally <- df %>%
+    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
+    dplyr::group_by(bin, binds_mhc1) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(bin, binds_mhc1, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Hydrophobicity x2") +
+      ggplot2::ylab("Binds to MHC-I? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+plot_hydrophobicity_vs_binds_mhc2 <- function(
+  df,
+  png_filename = tempfile(fileext = ".png")
+) {
+  df <- tibble::as_tibble(df)
+
+  df_tally <- df %>%
+    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
+    dplyr::group_by(bin, binds_mhc2) %>%
+    dplyr::tally()
+  ggplot2::ggplot(df_tally, ggplot2::aes(bin, binds_mhc2, fill = n)) +
+    ggplot2::geom_tile() +
+    ggplot2::geom_text(ggplot2::aes(label = n)) +
+      ggplot2::scale_fill_gradient(low = "white", high = "red") +
+      ggplot2::scale_y_discrete() +
+      ggplot2::xlab("Hydrophobicity x2") +
+      ggplot2::ylab("Binds to MHC-II? Down = no, up = yes") +
+      ggplot2::ggsave(png_filename, width = 7, height = 7)
+}
+
+raw_data <- "p_bind_per_hydrophobicity.csv"
+expect_true(file.exists(raw_data))
+df <- read.csv(raw_data)
+
+plot_is_tmh_vs_binds_mhc1(df = df, png_filename = "is_tmh_vs_binds_mhc1.png")
+plot_is_tmh_vs_binds_mhc2(df = df, png_filename = "is_tmh_vs_binds_mhc2.png")
+plot_binds_mhc1_vs_binds_mhc2(df = df, png_filename = "binds_mhc1_vs_binds_mhc2.png")
+plot_hydrophobicity_vs_is_tmh(df = df, png_filename = "hydrophobicity_vs_is_tmh.png")
+plot_hydrophobicity_vs_binds_mhc1(df = df, png_filename = "hydrophobicity_vs_binds_mhc1.png")
+plot_hydrophobicity_vs_binds_mhc2(df = df, png_filename = "hydrophobicity_vs_binds_mhc2.png")
+```
+
