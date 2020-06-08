@@ -15,7 +15,8 @@ all:
 
 figures:
 	echo "Assumes 'ic50s.csv' is present, as created by Peregrine"
-	Rscript create_figures.R
+	../../peregrine/scripts/run_r_script_with_x.sh create_figures.R
+	# Rscript create_figures.R
 
 data: ep_vs_mhcn.csv ic50s.csv 
 
