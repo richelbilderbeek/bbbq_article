@@ -19,5 +19,4 @@ for (i in seq_len(n_rows)) {
   # df$binds_mhc2[i] <- bbbq::is_detected_by_mhc_2(sequence)
 }
 
-df
 readr::write_csv(df, "p_bind_per_hydrophobicity.csv")
