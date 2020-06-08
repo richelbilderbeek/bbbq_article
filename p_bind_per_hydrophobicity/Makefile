@@ -1,4 +1,16 @@
-p_bind_per_hydrophobicity_filenames = \
+# Usage:
+#
+# * On local, creates figures:
+#
+#   make
+#
+# * On Peregrine, creates data:
+# 
+#   make data
+#
+#   (do this by 'sbatch make.sh)
+#
+figures_filenames = \
   binds_mhc1_vs_binds_mhc2.png \
   hydrophobicity_vs_binds_mhc1.png \
   hydrophobicity_vs_binds_mhc2.png \
@@ -6,9 +18,12 @@ p_bind_per_hydrophobicity_filenames = \
   is_tmh_vs_binds_mhc1.png \
   is_tmh_vs_binds_mhc2.png
 
-all: $(p_bind_per_hydrophobicity_filenames) p_bind_per_hydrophobicity.R
 
-$(p_bind_per_hydrophobicity_filenames): create_figures.R p_bind_per_hydrophobicity.csv
+all: $(figures_filenames)
+
+data: p_bind_per_hydrophobicity.csv
+
+$(figures_filenames): create_figures.R p_bind_per_hydrophobicity.csv
 	Rscript -e 'rmarkdown::render("p_transition.Rmd")'
 	# ../../peregrine/scripts/run_r_script_with_x.sh create_figures.R
 	# Rscript p_bind_per_hydrophobicity.R
