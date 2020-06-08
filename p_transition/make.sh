@@ -12,6 +12,6 @@
 #SBATCH --mem=10G
 #SBATCH --job-name=p_transition
 #SBATCH --output=p_transition.log
-module load R Python/3.8.2-GCCcore-9.3.0 binutils ImageMagick X11 libX11 xprop
+module load R Python/3.8.2-GCCcore-9.3.0 binutils ImageMagick X11 libX11 xprop Pandoc
 make
 
