@@ -10,7 +10,7 @@
 all: ep_vs_mhcn.png ep_vs_mhcn.csv
 
 ep_vs_mhcn.png: create_figure.R ic50s.csv
-	create_figure.R
+	Rscript create_figure.R
 
 ep_vs_mhcn.csv: create_table.R ic50s.csv
 	Rscript create_table.R
