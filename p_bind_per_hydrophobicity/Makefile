@@ -9,7 +9,8 @@ p_bind_per_hydrophobicity_filenames = \
 all: $(p_bind_per_hydrophobicity_filenames) p_bind_per_hydrophobicity.R
 
 $(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity.R p_bind_per_hydrophobicity.csv
-	Rscript p_bind_per_hydrophobicity.R
+	../../peregrine/scripts/run_r_script_with_x.sh p_bind_per_hydrophobicity.R
+	# Rscript p_bind_per_hydrophobicity.R
 
 p_bind_per_hydrophobicity.csv: create_dataset.R peptides.csv
 	Rscript create_dataset.R
@@ -18,5 +19,5 @@ peptides.csv: create_dataset.R
 	Rscript create_peptides.R
 
 clean:
-	rm -f *.png *.pdf
+	rm -f *.png *.pdf *.log
 
