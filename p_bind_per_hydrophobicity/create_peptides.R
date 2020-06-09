@@ -7,10 +7,10 @@ n_aas <- 40
 
 # 2: 30 secs
 # 10: 150 sec = 3 mins
-# 100: 1500 sec = 30 mins
-# 1000: 15000 sec = 300 mins = 5 hours
+# 100: 1500 sec = 30 mins indeed
+# 1000: 15000 sec = 300 mins = 5 hours predicted
 
-n_peptides_per_hydrophobicity <- 100
+n_peptides_per_hydrophobicity <- 1000
 
 df <- tibble::as_tibble(
   expand.grid(
