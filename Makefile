@@ -48,7 +48,7 @@ $(repo_names):
 $(makefile_names): $(repo_names)
 	cd $(dir $@) && $(MAKE)
 
-$(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity/p_bind_per_hydrophobicity.R
+$(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity/p_bind_per_hydrophobicity.csv p_bind_per_hydrophobicity/peptides.csv
 	cd p_bind_per_hydrophobicity && $(MAKE)
 
 bbbq_1/bbbq_1.Rmd: bbbq_1
