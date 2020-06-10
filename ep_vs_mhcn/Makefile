@@ -16,5 +16,8 @@ ep_vs_mhcn_log.png: ep_vs_mhcn.csv
 ep_vs_mhcn.csv: create_dataset.R
 	Rscript create_dataset.R
 
+zip: 
+	zip ep_vs_mhcn.zip *.csv *.png *.R *.sh *.log Makefile
+
 clean:
-	rm -f *.png *.latex *.csv *.pdf *.log
+	rm -f *.png *.latex *.csv *.pdf *.log *.zip
