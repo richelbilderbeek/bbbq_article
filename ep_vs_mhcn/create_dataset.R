@@ -9,7 +9,8 @@ mhc1_haplotypes <- get_mhc1_haplotypes()
 
 n_aas <- 9
 # 1000: 9 hours, before running out of 20 GB memory
-n_peptides <- 100 # Tested per haplotype
+# 100: 30 mins
+n_peptides <- 200 # Tested per haplotype
 
 # A tidy tibble
 df <- tibble::as_tibble(
