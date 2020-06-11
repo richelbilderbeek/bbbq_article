@@ -4,7 +4,7 @@ library(tidyr)
 library(testthat)
 
 n_substs <- 6
-n_haplotypes <- 7
+n_haplotypes <- length(bbbq::get_mhc1_haplotypes())
 
 predict_ic50s <- function(
   peptides,
@@ -64,7 +64,7 @@ expect_equal(n_to_peptides, nrow(peptides))
 from <- tibble(
   peptide_from = unique(peptides$from)
 )
-from <- from %>% expand(peptide_from, haplotype = bbbq::get_mhc1_haplotypes()[1:n_haplotypes])
+from <- from %>% expand(peptide_from, haplotype = bbbq::get_mhc1_haplotypes())
 from <- from %>% expand(peptide_from, haplotype, mhc_class = "I")
 from$ic50 <- predict_ic50s(
   peptides = from$peptide_from,
@@ -77,7 +77,7 @@ from
 to <- tibble(
   peptide_to = peptides$to
 )
-to <- to %>% expand(peptide_to, haplotype = bbbq::get_mhc1_haplotypes()[1:n_haplotypes])
+to <- to %>% expand(peptide_to, haplotype = bbbq::get_mhc1_haplotypes())
 to <- to %>% expand(peptide_to, haplotype, mhc_class = "I")
 to$peptide_from <- rep(from$peptide_from, each = n_substs)
 to$ic50 <- predict_ic50s(
