@@ -22,6 +22,9 @@ ic50s_per_haplotype.csv: create_dataset.R peptides.csv
 peptides.csv: create_peptides.R
 	Rscript create_peptides.R
 
+zip:
+	zip ic50s_per_haplotype.zip *.csv *.png *.log *.R Makefile *.sh
+
 clean:
 	rm -f *.png *.pdf *.log *.png *.csv
 
