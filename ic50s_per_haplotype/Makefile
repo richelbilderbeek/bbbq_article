@@ -10,21 +10,10 @@
 #
 #   (do this by 'sbatch make.sh)
 #
-figures_filenames = \
-  binds_mhc1_vs_binds_mhc2.png \
-  hydrophobicity_vs_binds_mhc1.png \
-  hydrophobicity_vs_binds_mhc2.png \
-  hydrophobicity_vs_is_tmh.png \
-  is_tmh_vs_binds_mhc1.png \
-  is_tmh_vs_binds_mhc2.png
 
+all: p_bind_per_hydrophobicity.png
 
-all: $(figures_filenames)
-
-data: p_bind_per_hydrophobicity.csv
-
-$(figures_filenames): create_figures.R
-	# Assumes 'p_bind_per_hydrophobicity.csv' is created
+p_bind_per_hydrophobicity.png: create_figures.R p_bind_per_hydrophobicity.csv
 	Rscript create_figures.R
 
 p_bind_per_hydrophobicity.csv: create_dataset.R peptides.csv

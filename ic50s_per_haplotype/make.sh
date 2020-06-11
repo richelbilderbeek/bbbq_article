@@ -10,8 +10,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --mem=10G
-#SBATCH --job-name=p_bind_per_hydrophobicity
-#SBATCH --output=p_bind_per_hydrophobicity.log
+#SBATCH --job-name=ic50s_per_haplotype
+#SBATCH --output=ic50s_per_haplotype.log
 module load R Python/3.8.2-GCCcore-9.3.0
-make data
+make
 

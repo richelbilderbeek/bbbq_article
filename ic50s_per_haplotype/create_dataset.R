@@ -13,19 +13,10 @@ df <- rbind(
   tidyr::expand_grid(peptide = df$peptide, mhc_class = "I", haplotype = bbbq::get_mhc1_haplotypes()),
   tidyr::expand_grid(peptide = df$peptide, mhc_class = "II", haplotype = bbbq::get_mhc2_haplotypes())
 )
-df
 df$is_tmh <- NA
 df$ic50 <- NA
-df
+
 n_rows <- nrow(df)
-
-mhc1 <- mhcnuggetsr::get_mhc_1_haplotypes()
-mhc2s <- mhcnuggetsr::get_mhc_2_haplotypes()
-cat(mhc2s, sep = "\n")
-
-
-tidyr::drop_na(tibble::tibble(mhc = stringr::str_match(mhc2s, ".*DQA1.*")))
-
 for (i in seq_len(n_rows)) {
   mhcnuggets_name <- mhcnuggetsr::to_mhcnuggets_name(df$haplotype[i])
   if (!mhcnuggetsr::is_mhcnuggets_name(mhcnuggets_name)) {
