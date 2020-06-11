@@ -3,8 +3,8 @@ suppressMessages(library(dplyr))
 library(tidyr)
 library(testthat)
 
-n_substs <- 3
-n_haplotypes <- 2
+n_substs <- 4
+n_haplotypes <- 3
 
 predict_ic50s <- function(
   peptides,
