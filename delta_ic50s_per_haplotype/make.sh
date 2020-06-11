@@ -12,6 +12,6 @@
 #SBATCH --mem=10G
 #SBATCH --job-name=delta_ic50s_per_haplotype
 #SBATCH --output=delta_ic50s_per_haplotype.log
-module load R Python/3.8.2-GCCcore-9.3.0 ImageMagick X11
-make
+module load R Python/3.8.2-GCCcore-9.3.0
+make data
 

@@ -13,7 +13,10 @@
 
 all: delta_ic50s_per_haplotype.png
 
-delta_ic50s_per_haplotype.png: create_figures.R delta_ic50s_per_haplotype.csv
+data: delta_ic50s_per_haplotype.csv
+
+# Ignore delta_ic50s_per_haplotype.csv
+delta_ic50s_per_haplotype.png: create_figures.R
 	Rscript create_figures.R
 
 delta_ic50s_per_haplotype.csv: create_dataset.R peptides.csv
