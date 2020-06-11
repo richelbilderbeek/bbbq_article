@@ -8,6 +8,9 @@ df <- readr::read_csv("delta_ic50s_per_haplotype.csv")
 #  geom_segment(aes(x = from_ic50, y = from_ic50, xend = from_ic50, yend = to_ic50)) +
 
 n_peptides <- length(unique(df$from_peptide))
+n_muts <- length(unique(df$to_peptide)) / n_peptides
+
+
 
 df$haplotype <- as.factor(df$haplotype)
 ggplot(df, aes(color = haplotype)) +
@@ -16,6 +19,10 @@ ggplot(df, aes(color = haplotype)) +
   xlab("IC50 before substitution") +
   ylab("IC50 after substitution") +
   labs(
-    caption = glue::glue("Pepides per haplotype: {n_peptides}. Dashed line: x = y.")
+    caption = glue::glue(
+      "Peptides per haplotype: {n_peptides}. ",
+      "Substitutions pers peptide: {n_muts}. ",
+      "Dashed line: x = y."
+    )
   ) + ggsave("delta_ic50s_per_haplotype.png", width = 7, height = 7)
 
