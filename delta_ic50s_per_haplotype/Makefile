@@ -11,7 +11,7 @@
 #   (do this by 'sbatch make.sh)
 #
 
-all: ic50s_per_haplotype.png
+all: delta_ic50s_per_haplotype.png
 
 delta_ic50s_per_haplotype.png: create_figures.R delta_ic50s_per_haplotype.csv
 	Rscript create_figures.R
