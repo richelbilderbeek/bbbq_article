@@ -3,7 +3,7 @@ suppressMessages(library(dplyr))
 library(tidyr)
 library(testthat)
 
-n_substs <- 6
+n_substs <- 12
 n_haplotypes <- length(bbbq::get_mhc1_haplotypes())
 
 predict_ic50s <- function(
