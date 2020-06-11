@@ -33,17 +33,29 @@ peptides_filename <- "peptides.csv"
 expect_true(file.exists(peptides_filename))
 
 # peptide before and after
-peptides <- tibble(from = readr::read_csv(peptides_filename)$peptide)
+n_substs <- 3
+peptides <- tibble(
+  from = rep(
+    readr::read_csv(peptides_filename)$peptide,
+    each = n_substs
+  )
+)
 peptides$to <- NA
-for (i in seq_len(nrow(peptides))) {
-  peptides$to[i] <- sample(
-    bbbq::get_adjacent_sequences(peptides$from[i]),
-    size = 1
+for (i in seq_len(nrow(peptides) / n_substs)) {
+  from_index <- 1 + (i - 1) * n_substs
+  to_index <- from_index + n_substs - 1
+  expect_true(from_index >= 1)
+  expect_true(to_index <= nrow(peptides))
+  peptides$to[from_index:to_index] <- sample(
+    bbbq::get_adjacent_sequences(peptides$from[from_index]),
+    size = n_substs
   )
 }
 expect_true(all(!(peptides$from == peptides$to)))
 
-from <- tibble(peptide = peptides$from)
+from <- tibble(
+  peptide = unique(peptides$from)
+)
 from <- from %>% expand(peptide, haplotype = bbbq::get_mhc1_haplotypes()[1:2])
 from <- from %>% expand(peptide, haplotype, mhc_class = "I")
 from$ic50 <- predict_ic50s(
@@ -53,9 +65,12 @@ from$ic50 <- predict_ic50s(
 )
 from
 
-to <- tibble(peptide = peptides$to)
-to <- to %>% expand(peptide, haplotype = bbbq::get_mhc1_haplotypes()[1:2])
-to <- to %>% expand(peptide, haplotype, mhc_class = "I")
+to <- tibble(
+  peptide_from = peptides$from,
+  peptide = peptides$to
+)
+to <- to %>% expand(peptide_from, peptide, haplotype = bbbq::get_mhc1_haplotypes()[1:2])
+to <- to %>% expand(peptide_from, peptide, haplotype, mhc_class = "I")
 to$ic50 <- predict_ic50s(
   peptides = to$peptide,
   haplotypes = to$haplotype,
@@ -63,24 +78,22 @@ to$ic50 <- predict_ic50s(
 )
 to
 
-expect_equal(nrow(from), nrow(to))
-expect_equal(from$haplotype, to$haplotype)
-expect_equal(from$mhc_class, to$mhc_class)
+from$peptide_from <- from$peptide
 
-expect_true(all(!(peptides$from == peptides$to)))
-
-from$peptide == to$peptide
-expect_true(all(!(from$peptide == to$peptide)))
-from$ic50 == to$ic50
-expect_true(all(!(from$ic50 == to$ic50)))
+merged <- merge(
+  from,
+  to,
+  by = c("peptide_from", "haplotype", "mhc_class")
+)
+merged$haplotype.x == merged$haplotype.y
 
 df <- tibble(
-  from_peptide = from$peptide,
-  from_ic50 = from$ic50,
-  to_peptide = to$peptide,
-  to_ic50 = to$ic50,
-  haplotype = from$haplotype,
-  mhc_class = from$mhc_class
+  from_peptide = merged$peptide_from,
+  from_ic50 = merged$ic50.x,
+  to_peptide = merged$peptide.x,
+  to_ic50 = merged$ic50.y,
+  haplotype = merged$haplotype,
+  mhc_class = merged$mhc_class
 )
 
 readr::write_csv(df, "delta_ic50s_per_haplotype.csv")
