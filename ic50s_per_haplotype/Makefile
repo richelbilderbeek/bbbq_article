@@ -11,12 +11,12 @@
 #   (do this by 'sbatch make.sh)
 #
 
-all: p_bind_per_hydrophobicity.png
+all: ic50s_per_haplotype.png
 
-p_bind_per_hydrophobicity.png: create_figures.R p_bind_per_hydrophobicity.csv
+ic50s_per_haplotype.png: create_figures.R ic50s_per_haplotype.csv
 	Rscript create_figures.R
 
-p_bind_per_hydrophobicity.csv: create_dataset.R peptides.csv
+ic50s_per_haplotype.csv: create_dataset.R peptides.csv
 	Rscript create_dataset.R
 
 peptides.csv: create_peptides.R

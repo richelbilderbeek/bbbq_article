@@ -6,14 +6,10 @@ peptides_filename <- "peptides.csv"
 expect_true(file.exists(peptides_filename))
 df <- readr::read_csv(peptides_filename)
 
-
-bbbq::get_mhc2_haplotypes()
-
 df <- rbind(
   tidyr::expand_grid(peptide = df$peptide, mhc_class = "I", haplotype = bbbq::get_mhc1_haplotypes()),
   tidyr::expand_grid(peptide = df$peptide, mhc_class = "II", haplotype = bbbq::get_mhc2_haplotypes())
 )
-df$is_tmh <- NA
 df$ic50 <- NA
 
 n_rows <- nrow(df)
@@ -31,7 +27,6 @@ for (i in seq_len(n_rows)) {
 
 for (i in seq_len(n_rows)) {
   peptide <- df$peptide[i]
-  df$is_tmh[i] <- pureseqtmr::is_tmh(peptide)
   mhcnuggets_options <- mhcnuggetsr::create_mhcnuggets_options(
     mhc_class =  df$mhc_class[i],
     mhc = mhcnuggetsr::to_mhcnuggets_name(df$haplotype[i])
@@ -45,4 +40,4 @@ for (i in seq_len(n_rows)) {
   df$ic50[i] <- ic50
 }
 
-readr::write_csv(df, "p_bind_per_hydrophobicity.csv")
+readr::write_csv(df, "ic50s_per_haplotype.csv")

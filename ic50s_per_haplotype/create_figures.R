@@ -1,14 +1,9 @@
-# Calculate the relation between hydrophobicity
-# and chance to bind to MHC-I.
-#
-# H0: there is no relation
-# H1: higher hydrophobicity equals higher chance to bind
-#
+# Get the distributions of IC50s for random peptides per haplotype
 suppressMessages(library(ggplot2))
 suppressMessages(library(dplyr))
 suppressMessages(library(testthat))
 
-df <- readr::read_csv("p_bind_per_hydrophobicity.csv")
+df <- readr::read_csv("ic50s_per_haplotype.csv")
 
 n_peptides <- length(unique(df$peptide))
 n_aas <- nchar(df$peptide)[1]
@@ -21,4 +16,4 @@ ggplot(df, aes(x = as.factor(haplotype), y = ic50)) +
     caption = glue::glue(
       "Number of random peptides: {n_peptides}, peptide length: {n_aas} amino acids"
     )
-  ) + ggplot2::ggsave("p_bind_per_hydrophobicity.png", width = 7, height = 7)
+  ) + ggplot2::ggsave("ic50s_per_haplotype.png", width = 7, height = 7)
