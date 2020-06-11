@@ -5,8 +5,9 @@ suppressMessages(library(dplyr))
 
 n_aas <- 9
 
-# 2: ? minutes
-n_peptides <- 2
+# 2: 1.5 minutes
+# 100: 75 mins?
+n_peptides <- 100 # per haplotype
 
 t <- tibble::tibble(
   peptide = replicate(n = n_peptides, bbbq::create_random_peptide(n_aas = n_aas))
