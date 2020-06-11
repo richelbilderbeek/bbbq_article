@@ -41,7 +41,7 @@ for (i in seq_len(nrow(peptides))) {
     size = 1
   )
 }
-
+expect_true(all(!(peptides$from == peptides$to)))
 
 from <- tibble(peptide = peptides$from)
 from <- from %>% expand(peptide, haplotype = bbbq::get_mhc1_haplotypes()[1:2])
@@ -54,8 +54,8 @@ from$ic50 <- predict_ic50s(
 from
 
 to <- tibble(peptide = peptides$to)
-to <- from %>% expand(peptide, haplotype = bbbq::get_mhc1_haplotypes()[1:2])
-to <- from %>% expand(peptide, haplotype, mhc_class = "I")
+to <- to %>% expand(peptide, haplotype = bbbq::get_mhc1_haplotypes()[1:2])
+to <- to %>% expand(peptide, haplotype, mhc_class = "I")
 to$ic50 <- predict_ic50s(
   peptides = to$peptide,
   haplotypes = to$haplotype,
@@ -66,6 +66,14 @@ to
 expect_equal(nrow(from), nrow(to))
 expect_equal(from$haplotype, to$haplotype)
 expect_equal(from$mhc_class, to$mhc_class)
+
+expect_true(all(!(peptides$from == peptides$to)))
+
+from$peptide == to$peptide
+expect_true(all(!(from$peptide == to$peptide)))
+from$ic50 == to$ic50
+expect_true(all(!(from$ic50 == to$ic50)))
+
 df <- tibble(
   from_peptide = from$peptide,
   from_ic50 = from$ic50,
