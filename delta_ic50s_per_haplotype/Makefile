@@ -26,7 +26,7 @@ peptides.csv: create_peptides.R
 	Rscript create_peptides.R
 
 zip:
-	zip delta_ic50s_per_haplotype.zip delta_ic50s_per_haplotype.csv delta_ic50s_per_haplotype.png delta_ic50s_per_haplotype_perc.png delta_ic50s_per_haplotype.log
+	zip delta_ic50s_per_haplotype.zip *.csv *.png .R *.log *.sh
 
 clean:
 	rm -f *.png *.pdf *.log *.png *.csv *.zip

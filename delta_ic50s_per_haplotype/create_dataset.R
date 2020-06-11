@@ -4,22 +4,27 @@ library(tidyr)
 library(testthat)
 
 n_substs <- 12
-n_haplotypes <- length(bbbq::get_mhc1_haplotypes())
+
+n_haplotypes <- length(bbbq::get_mhc1_haplotypes()) +
+  length(bbbq::get_mhc2_haplotypes())
 
 predict_ic50s <- function(
   peptides,
-  haplotypes,
-  mhc_classes
+  haplotypes
 ) {
   n <- length(peptides)
   expect_equal(n, length(haplotypes))
-  expect_equal(n, length(mhc_classes))
   ic50s <- rep(NA, n)
   for (i in seq_len(n)) {
     peptide <- peptides[i]
+    haplotype <- haplotypes[i]
+    # mhc_class <- bbbq::get_mhc_class(haplotypes[i])
+    mhc_class <- NA
+    if (haplotype %in% bbbq::get_mhc1_haplotypes()) mhc_class <- "I"
+    if (haplotype %in% bbbq::get_mhc2_haplotypes()) mhc_class <- "II"
     mhcnuggets_options <- mhcnuggetsr::create_mhcnuggets_options(
-      mhc_class =  mhc_classes[i],
-      mhc = mhcnuggetsr::to_mhcnuggets_name(haplotypes[i])
+      mhc_class = mhc_class,
+      mhc = mhcnuggetsr::to_mhcnuggets_name(haplotype)
     )
     mhcnuggetsr::check_mhcnuggets_options(mhcnuggets_options)
     ic50 <- mhcnuggetsr::predict_ic50(
@@ -64,12 +69,12 @@ expect_equal(n_to_peptides, nrow(peptides))
 from <- tibble(
   peptide_from = unique(peptides$from)
 )
-from <- from %>% expand(peptide_from, haplotype = bbbq::get_mhc1_haplotypes())
-from <- from %>% expand(peptide_from, haplotype, mhc_class = "I")
+haplotypes <- c(bbbq::get_mhc1_haplotypes(), bbbq::get_mhc2_haplotypes())
+from <- from %>% expand(peptide_from, haplotype = haplotypes)
+from <- from %>% expand(peptide_from, haplotype)
 from$ic50 <- predict_ic50s(
   peptides = from$peptide_from,
-  haplotypes = from$haplotype,
-  mhc_classes = from$mhc_class
+  haplotypes = from$haplotype
 )
 expect_equal(n_from_peptides * n_haplotypes, nrow(from))
 from
