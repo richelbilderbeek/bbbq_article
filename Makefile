@@ -20,8 +20,7 @@ all_figure_filenames = \
   bbbq_2/fig_bbbq_2.png \
   pics/covid_genome_and_proteome.png \
   fig_tmh_mut_rate.png \
-  tmhs/tmhs.png \
-  ep_vs_mhcn/ep_vs_mhcn.png
+  tmhs/tmhs.png
 
 p_bind_per_hydrophobicity_filenames = \
   p_bind_per_hydrophobicity/binds_mhc1_vs_binds_mhc2.png \
@@ -75,9 +74,6 @@ bbbq_2/fig_bbbq_2.png: bbbq_2/bbbq_2.Rmd
 
 tmhs/tmhs.png:
 	cd tmhs && $(MAKE)
-
-figures:
-	cd ep_vs_mhcn ; make figures ; cd ..
 
 covid_dataset_strength/covid_dataset_strength.pdf:
 	cd covid_dataset_strength && $(MAKE)
