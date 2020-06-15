@@ -37,12 +37,10 @@ ggplot(df, aes(x = haplotype, y = ic50_changed)) +
   geom_boxplot() +
   xlab("Haplotype") +
   ylab("Relative IC50 after mutation (%)") +
-  scale_y_continuous(limits = c(0, NA), labels = scales::percent) +
+  scale_y_log10(labels = scales::percent) +
   labs(
     caption = glue::glue(
       "Peptides per haplotype: {n_peptides}. ",
       "Substitutions pers peptide: {n_muts}. "
     )
   ) + ggsave("delta_ic50s_per_haplotype_perc.png", width = 7, height = 7)
-
-
