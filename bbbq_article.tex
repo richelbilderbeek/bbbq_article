@@ -1,18 +1,16 @@
 \begin{abstract}
 
-Transmembrane helices (TMHs) in the human proteome
-are an overrepresented potential source of epitopes on major 
-histocompatibility complex (MHC) class I for the majority of HLA-I haplotypes. 
-It is unknown if the immune system is as able to detect 
-TMHs as found in pathogens.
-Additionally, it is unknown if MHC-II is also likelier to detect
-human and pathogen TMHs than expected by chance.
-It is unknown if natural selection is the cause that 
-the immune system is more attentive for TMHs
+The human immune system is unexpectedly attentive towards
+human transmembrane helices (TMHs), as TMH-derived peptide fragments
+bind to histocompatibility complex (MHC) class I more often then expected
+by chance only.
+This finding hints that there has been selection upon detecting TMH-derived
+peptides in pathogens.
+If this signature of selection is present in MHC-II is unknown.
 This study shows that MHC-I [also has/does not have] more
 epitopes derived from a TMH for a pathogen proteome, when compared with
 a host proteome.
-Additionally, MHC-II binds to polypeptides derived from TMHs 
+Additionally, MHC-II binds to peptides derived from TMHs 
 [less/equally/more] often than expected by chance.
 Lastly, using an innovative computation method, 
 we show that natural selection on TMHs is [strong enough/still too weak]
@@ -25,8 +23,8 @@ signal in the evolutionary history of the pathogen.
 \end{abstract}
 
 {\bf Keywords:} antigen presentation, membrane proteins, bioinformatics, 
-adaptive immunity, transmembrane domain, epitopes, T lymphocyte, 
-MHC-1, MHC-I, MHC-2, MHC-II, COVID-19
+adaptive immunity, transmembrane domain, transmembrane helix, 
+epitopes, T lymphocyte, MHC-1, MHC-I, MHC-2, MHC-II, COVID-19
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -43,10 +41,10 @@ combat forces.
 
 \paragraph{Immune response by MHC-I}
 
-All nucleated cells in humans present randomly sampled polypeptides
+All nucleated cells in humans present randomly sampled peptides
 fragments to the surroundings of the cell using the Major 
 Histocompatibility Complex (MHC) class I molecules.
-If a cell gets infected by a virus, also the virus' polypeptides
+If a cell gets infected by a virus, also the virus' peptides
 will be presented at the cell surface. The foreign viral antigen is detected 
 by cytotoxic T lymphocytes, which will kill the infected cell.
 
@@ -56,18 +54,16 @@ All pathogens can be detected by the foreign proteins on
 their (bacterial or fungal) cell walls or (viral) envelope.
 For bacteria and fungi, this is the main mode of their detection,
 as these do not infect a cell with their (foreign) DNA.
-T and B cells express MHC-II to detect foreign polypeptide fragments.
+T and B cells express MHC-II to detect foreign peptide fragments.
 An immune response is started when MHC-II detects a pathogen.
 
 \paragraph{Classification of HLA}
 
 Any human's immune system detects only a fraction of all possible
-polypeptide fragments. 
-Human MHCs are also called HLAs ('Human Leukocyte Antigens') and
-because this research uses human hosts only, we will use these terms
-interchangeably.
-Already each MHC molecule can only bind a, possible exclusive,
-subset of all possible polypeptides.
+peptide fragments.
+For humans, the MHC proteins are encoded by the
+HLA ('Human Leukocyte Antigens') genes.
+Each MHC complex can only bind a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
 peptides they bind (\cite{lund2004definition}).
 The HLA region of humans is highly polymorphic, 
@@ -76,23 +72,22 @@ Classification of HLAs is based on algorithms that
 maximize the information content of each 
 classification, such as the presence of a certain amino acid at 
 the first (for MHC-II, \cite{southwood1998several})
-or second position (for MHC-I, \cite{lund2004definition}) of a polypeptide.
-However, this does not imply that all polypeptides for a classification
-pattern bind to the MHC. Instead, software should be used that are
-tailored to predict if a polypeptide binds to an HLA.
+or second position (for MHC-I, \cite{lund2004definition}) of a peptide.
+However, this does not imply that when a peptide follows
+a classification pattern, that it will bind to the MHC. 
+Instead, software should be used to predict if the
+full peptide will do so.
 
 \paragraph{Epitope prediction}
 
-It is helpful to be able to predict which polypeptides are immunogenic,
+It is helpful to be able to predict which peptides are immunogenic,
 in, among others, vaccine development \richel{Reference here}. 
-Already for a decade, synthesized polypeptide fragments are used 
-to experimentally determine which polypeptides
+Already for a decade, synthesized peptide fragments are used 
+to experimentally determine which peptides
 are immunogenic \richel{Reference here}.
 This approach, however, is tedious and costly.
-It should come as no surprise that these results would be used
-to make in silico predictions.
-It may come as a surprise, however, that these predictions
-are actually reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
+Due to this, software was written that allows for silico 
+predictions, which are reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
 
 \paragraph{MHC-I epitope prediction}
 
@@ -103,7 +98,8 @@ from a set of multiple tools,
 NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
 A tool developed later is \verb;epitope-prediction; \cite{bianchi2017},
 which uses a stabilized matrix method \cite{kim2009derivation}.
-In this study, we will use \verb;epitope-prediction; \cite{bianchi2017}.
+The most recent FOSS tool available is MHCnuggets\cite{shao2020high},
+which we will use in this study
 
 \paragraph{MHC-II epitope prediction}
 
@@ -174,9 +170,9 @@ An increased detection
 is obtained by expressing a wide variety of
 MHCs, which is assured by the human leukocyte antigen gene complex (HLA).
 However, a different HLA will result in a different variety of MHCs,
-that will display different polypeptide fragments. Additionally, there
+that will display different peptide fragments. Additionally, there
 may have been selection the HLA to display and or detect different
-polypeptide fragments.
+peptide fragments.
 
 \paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
@@ -195,8 +191,8 @@ yet unknown.
 
 \paragraph{Does MHC-I present TMH-derived epitopes from pathogens as often?}
 
-It is important that MHC-I presents both the polypeptides of the 
-(healthy) cell, as well as possible pathogen-derived polypeptides when the
+It is important that MHC-I presents both the peptides of the 
+(healthy) cell, as well as possible pathogen-derived peptides when the
 cell is infected. As described above, MHC-I presents TMH-derived epitopes 
 from the human host more often. It is unknown if MHC-I has the same
 dedication to present epitopes that stem from TMHs derived from
@@ -255,7 +251,7 @@ One can safely assume a pathogen's proteome contains multiple TMHs.
 Therefore, it may be beneficial for the host
 if its immune system would be more attentive towards TMHs.
 And maybe this has already happened: MHC-I already detects hydrophobic
-polypeptides. This feature, however, may also be caused by selection
+peptides. This feature, however, may also be caused by selection
 to detect hydrophobic regions in the soluble proteins of pathogens.
 It is unknown, when focusing on TMHs only, if a signal of selection
 can be detected.
@@ -377,7 +373,7 @@ Mycobacterium tuberculosis (\url{https://www.ebi.ac.uk/reference_proteomes}, UP0
 \paragraph{Data sets for evolutionary selection}
 
 To detect an evolutionary signal for selection on binding
-TMHs polypeptides, we need a phylogenetic tree with 
+TMHs peptides, we need a phylogenetic tree with 
 many time-dated proteomes.
 For humans, we use the 25000 proteomes used in influenza \richel{citation here}.
 For viruses, we use the many time-dated COVID-19 proteomes.
@@ -420,7 +416,7 @@ the human population (\cite{greenbaum2011functional},
 see \ref{table:mhc2_haplotypes} for coverage),
 resulting in \richel{approx 8} HLAs.
 The threshold of 20\% is arbitrarily, yet chosen to result in 5 and 10 HLA variants.  
-As \cite{bianchi2017}, we define the 5\% of polypeptides 
+As \cite{bianchi2017}, we define the 5\% of peptides 
 with the lowest IC50 values as binders. We then counted the percentage
 of binders that have one or more amino acids that are part of a TMH.
 
@@ -474,13 +470,13 @@ when, for a same hypothesis, we find 2 examples of having a significant result.
 To calculate the probability all of our observations happened by chance,
 we view our experiment as a two-state Markov chain, as depicted in
 figure \ref{fig:markov_chain}. The two nodes depict the
-two possible detection state a polypeptide is in, which is
+two possible detection state a peptide is in, which is
 either undetected $U$, or detected $D$ by the immune system.
 The $D$ can be either detection by an MHC-I or MHC-II haplotype.
 The edges depict the probability of a state transition by mutation,
 for example, $p_{DU}$ denotes the probability that a detected
-polypeptide mutates into an undetected one.
-We focus on polypeptides that are TMH and we assume a mutation that 
+peptide mutates into an undetected one.
+We focus on peptides that are TMH and we assume a mutation that 
 renders the TMH non-functional as lethal.
 
 \begin{figure}
@@ -500,7 +496,7 @@ renders the TMH non-functional as lethal.
 
 When we have calculated the probability of each transition (as described below),
 we can simply count the number of observed transitions.
-Because the probability of transitions differ per polypeptide,
+Because the probability of transitions differ per peptide,
 the total system has the properties of a Poisson binomial distribution,
 from which we can calculate the probability of the observing our
 number of transitions.
@@ -526,10 +522,10 @@ If the probability of observing that few/many
 transition is below $\alpha_c$, we will state 
 that this unlikely situation may be caused by natural selection.
 
-\paragraph{Calculating one polypeptide's probability}
+\paragraph{Calculating one peptide's probability}
 
-We calculate the probability of a transition per polypeptide.
-For any polypeptide, we can generate all sequences that differ
+We calculate the probability of a transition per peptide.
+For any peptide, we can generate all sequences that differ
 in only one amino acids. Of these sequences, we only keep the ones
 that result in a TMH. Of each of the remaining TMH sequences, we predict
 which mutants are detected by the immune system. Because not all 
@@ -539,7 +535,7 @@ which is a transition matrix derived from observed influenza AA mutations.
 
 \paragraph{Assumption that epitopes are immunogenic}
 
-We assume that if a polypeptide binds to an MHC, it is always presented and always
+We assume that if a peptide binds to an MHC, it is always presented and always
 leads to an immune response.
 The more often this assumption is violated, 
 the more our analysis will be weakened.
@@ -567,7 +563,7 @@ let evolution bias the observations two-fold, that is,
 we let mutations that are beneficial occur twice as often as expected by chance.
 
 All data sets consists out of $10^4$ observations.
-Each observation starts with a randomly generated source polypeptide fragment,
+Each observation starts with a randomly generated source peptide fragment,
 as well a mutant. For the 'null' data set, the mutant is randomly select.
 For the 'rigged' data set, beneficial mutations are twice as likely to
 be selected. We define a beneficial mutation as a transition from
@@ -694,7 +690,7 @@ evolutionary conservation of MHC-I detecting TMHs.
 We concluded that the
 epitopes that MHC-I presents are [as/not as] likely 
 to be derived from TMH within either a human host and its bacterial pathogen.
-Because a bacterium does not infect a cell, thus its polypeptides
+Because a bacterium does not infect a cell, thus its peptides
 will not be presented by MHC-I, this result is [unexpected/expected]
 
 We aimed our evolutionary experiment at TMHs, because these can
@@ -853,7 +849,7 @@ is used to determine if a peptide binds to the haplotype's MHC.
   \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype.png}
   Predicted IC50s (in nM) per MHC-I haplotype
   \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
+    \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:ic50s_per_haplotype}
 \end{figure}
@@ -865,7 +861,7 @@ is used to determine if a peptide binds to the haplotype's MHC.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/binds_mhc1_vs_binds_mhc2.png}
   \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
+    \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:binds_mhc1_vs_binds_mhc2}
 \end{figure}
@@ -873,7 +869,7 @@ is used to determine if a peptide binds to the haplotype's MHC.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc1.png}
   \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
+    \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:hydrophobicity_vs_binds_mhc1}
 \end{figure}
@@ -881,7 +877,7 @@ is used to determine if a peptide binds to the haplotype's MHC.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc2.png}
   \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
+    \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:hydrophobicity_vs_binds_mhc2}
 \end{figure}
@@ -889,7 +885,7 @@ is used to determine if a peptide binds to the haplotype's MHC.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_is_tmh.png}
   \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
+    \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:hydrophobicity_vs_is_tmh}
 \end{figure}
@@ -897,7 +893,7 @@ is used to determine if a peptide binds to the haplotype's MHC.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc1.png}
   \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
+    \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:is_tmh_vs_binds_mhc1}
 \end{figure}
@@ -905,7 +901,7 @@ is used to determine if a peptide binds to the haplotype's MHC.
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc2.png}
   \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
+    \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:is_tmh_vs_binds_mhc2}
 \end{figure}
