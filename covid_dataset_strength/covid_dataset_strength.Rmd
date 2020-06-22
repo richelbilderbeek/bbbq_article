@@ -57,7 +57,7 @@ expect_true(file.exists(fasta_filename))
 We determine the topology:
 
 ```{r cache=TRUE}
-topology <- pureseqtmr::predict_proteome_topology(fasta_filename)
+topology <- pureseqtmr::predict_topology(fasta_filename)
 n_proteins <- nrow(topology)
 n_tmhs <- sum(tally_tmhs(topology)$n_tmhs)
 n_non_tmh_aas <- sum(stringr::str_count(topology$topology, "0"))
@@ -181,12 +181,16 @@ find `r n_tmh_aa_mutations` AA mutations in TMHs.
 Not all mutations, however, will cause the pathogen to lose or acquire
 an epitope.
 
-```{r}
-p_state_transition <- 0.01
-```
+This chance we call it `r p_state_transition`.
 
-Based upon nothing but our gut instinct, we estimate this
-chance at `r p_state_transition`.
+Based upon simulations (see https://github.com/richelbilderbeek/bbbq_p_trans), we 
+estimate `r p_state_transition`:
+
+![](p_trans_0_02.png)
+
+```{r}
+p_state_transition <- 0.0494
+```
 
 ```{r}
 n_state_transitions <- p_state_transition * n_tmh_aa_mutations
