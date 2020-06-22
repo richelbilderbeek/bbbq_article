@@ -1,7 +1,7 @@
 # Creates peptides.csv
 
 library(bbbq)
-suppressMessages(library(dplyr))
+library(dplyr, quietly = TRUE)
 
 n_aas <- 40
 
@@ -10,7 +10,10 @@ n_aas <- 40
 # 100: 1500 sec = 30 mins indeed
 # 1000: 15000 sec = 300 mins = 5 hours predicted
 
-n_peptides_per_hydrophobicity <- 1000
+n_peptides_per_hydrophobicity <- 2
+if (peregrine::is_on_peregrine()) {
+  n_peptides_per_hydrophobicity <- 1000
+}
 
 df <- tibble::as_tibble(
   expand.grid(

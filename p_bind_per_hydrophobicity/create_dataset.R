@@ -1,21 +1,29 @@
-suppressMessages(library(ggplot2))
-suppressMessages(library(dplyr))
+library(dplyr, quietly = TRUE)
 library(testthat)
+library(readr)
 
-peptides_filename <- "peptides.csv"
-expect_true(file.exists(peptides_filename))
-df <- readr::read_csv(peptides_filename)
-df$is_tmh <- NA
-df$binds_mhc1 <- NA
-df$binds_mhc2 <- NA
+is_tmh_filename <- "is_tmh.csv"
+expect_true(file.exists(is_tmh_filename))
+is_binder_filename <- "is_binder.csv"
+expect_true(file.exists(is_binder_filename))
 
-n_rows <- nrow(df)
+is_tmh <- read_csv(
+  is_tmh_filename,
+   col_types = cols(
+     sequence = col_character(),
+     hydrophobicity = col_double(),
+     is_tmh = col_logical()
+   )
+)
+is_binder <- readr::read_csv(
+  is_binder_filename,
+   col_types = cols(
+     sequence = col_character(),
+     mhc_haplotype = col_character(),
+     percentile = col_double(),
+     is_binder = col_logical()
+   )
+)
 
-for (i in seq_len(n_rows)) {
-  sequence <- df$sequence[i]
-  df$is_tmh[i] <- pureseqtmr::is_tmh(sequence)
-  df$binds_mhc1[i] <- bbbq::is_detected_by_mhc_1(sequence)
-  # df$binds_mhc2[i] <- bbbq::is_detected_by_mhc_2(sequence)
-}
-
-readr::write_csv(df, "p_bind_per_hydrophobicity.csv")
+t <- dplyr::full_join(is_tmh, is_binder)
+readr::write_csv(t, "dataset.csv")
