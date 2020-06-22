@@ -89,8 +89,10 @@ genome_size <- 29903
 We know from `wu2020new` (`https://www.ncbi.nlm.nih.gov/genbank/sars-cov-2-seqs/`) 
 that the reference genome size has `r genome_size` nucleotides.
 
+
+![](nextstrain.png)
 ```{r}
-dna_evolution_rate_per_genome_per_year <- 26
+dna_evolution_rate_per_genome_per_year <- 23.565
 ```
 
 We know from GISAID (also `bar2020sars`) that COVID-19 evolves 
@@ -136,7 +138,7 @@ years_per_pandemic <- 0.5
 ```
 
 The first COVID-19 sequence (`https://www.ncbi.nlm.nih.gov/nuccore/NC_045512`)
-was created in December 2019. Currenly, May 2020, 
+was created in December 2019. Currenly, June 2020, 
 is `r years_per_pandemic` years later.
 
 ```{r}
@@ -160,11 +162,15 @@ Due to this, per proteome sequence, we
 expect to observe `r tmh_aa_evolution_rate_per_sequence`
 TMH AA mutations per sequence.
 
+![](gisaid.png)
+
 ```{r}
-n_sequences <- 4329
+n_sequences <- 49790
 ```
 
-There are `r n_sequences` COVID-19 sequences (`https://nextstrain.org/ncov`).
+There are `r n_sequences` COVID-19 sequences (`https://www.gisaid.org/`).
+
+
 
 ```{r}
 n_tmh_aa_mutations <- tmh_aa_evolution_rate_per_sequence * n_sequences
@@ -181,16 +187,17 @@ find `r n_tmh_aa_mutations` AA mutations in TMHs.
 Not all mutations, however, will cause the pathogen to lose or acquire
 an epitope.
 
-This chance we call it `r p_state_transition`.
-
-Based upon simulations (see https://github.com/richelbilderbeek/bbbq_p_trans), we 
-estimate `r p_state_transition`:
-
 ![](p_trans_0_02.png)
+
+> This plot shows the chance of a state transition `p`,
+> per haplotype, based on simulated data
 
 ```{r}
 p_state_transition <- 0.0494
 ```
+
+Based upon simulations (see https://github.com/richelbilderbeek/bbbq_p_trans), we 
+estimated this chance at `p_state_transition`:
 
 ```{r}
 n_state_transitions <- p_state_transition * n_tmh_aa_mutations
