@@ -25,6 +25,7 @@ data: p_bind_per_hydrophobicity.csv
 
 $(figures_filenames): create_figures.R
 	# Assumes 'p_bind_per_hydrophobicity.csv' is created
+	# Tip: run 'make data' to create it
 	Rscript create_figures.R
 
 p_bind_per_hydrophobicity.csv: create_dataset.R peptides.csv

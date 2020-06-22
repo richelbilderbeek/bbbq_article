@@ -820,27 +820,6 @@ RJCB and FB wrote the article.
 See at the end of this document.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Strength of Influenza A}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Our evolutionary experiment depends on the strength of the dataset.
-Here we do a back-on-the-envelope calculation to assess if the dataset
-is strong enough.
-
-\begin{itemize}
-	\item Genome size: $\approx 1.3 \cdot 10^4$ bases
-	\item Relative genome size compared to COVID-19: $\approx 0.4$ (as $\frac{1.3 \cdot 10^4}{3.0 \cdot 10^4}$)
-	\item Full genome sets: $\approx 3.2 \cdot 10^4$ (Influenza A)
-	\item Relative number of genome sets compared to COVID-19: $\approx 6.4$ as much (as $\frac{\approx 32 \cdot 10^3}{5 \cdot 10^3}$)
-	\item Relative time to accumulate mutations: $\approx 12$ times longer (average age $\approx$ 4 year, before 2015, already 8k sequences)
-	\item Relative chance of observing transitions: $\approx 30$ (as $0.4 \cdot 6.4 \cdot 12$)
-	\item Expected number of observed TMH mutations in COVID-19 that cause a transition: $\approx 8$
-	\item Expected number of observed TMH mutations that cause a transition: $\approx 240$ (as $8 \cdot 30$)
-\end{itemize}
-
-Conclusion: seems strong enough to us.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{COVID-19 genome and proteome}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -865,27 +844,18 @@ Tip: see \cite{bar2020sars} for COVID-19 in numbers.
 \subsection{IC50s per haplotype}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Here we have simulated \richel{some, say 100} random peptides.
-Per peptide, we measured the IC50 
-per MHC-I (figure \label{fig:ic50s_per_haplotype_mhc_1})
-and MHC-II  (figure \label{fig:ic50s_per_haplotype_mhc_2}) haplotype.
+Per MHC haplotype, we simulated random peptides and measured the
+predicted IC50 using MHCnuggets. 
+Here, we show the IC50 value per haplotype that
+is used to determine if a peptide binds to the haplotype's MHC.
 
 \begin{figure}[!htbp]
-  \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype_mhc_1.png}
+  \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype.png}
   Predicted IC50s (in nM) per MHC-I haplotype
   \caption{
     \richel{Used randomly simulated polypeptides, results are real}
   }
-  \label{fig:ic50s_per_haplotype_mhc_1}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype_mhc_2.png}
-  Predicted IC50s (in nM) per MHC-II haplotype
-  \caption{
-    \richel{Used randomly simulated polypeptides, results are real}
-  }
-  \label{fig:ic50s_per_haplotype_mhc_2}
+  \label{fig:ic50s_per_haplotype}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
