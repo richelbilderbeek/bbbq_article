@@ -220,12 +220,11 @@ draw_conclusion <- function(n_state_transitions) {
 }
 ```
 
-Based upon nothing but our gut instinct, we base a conclusion on the
-number of transitions as shown in the code above.
+Based on the expected number of transitions, `r n_state_transitions`, we draw a conslusion.
 
 ```{r}
 conclusion <- draw_conclusion(n_state_transitions)
 ```
 
-From that we conclude that for our expected `r n_state_transitions` state
-transitions, that our dataset is `r conclusion`.
+We conclude that for our expected `r n_state_transitions` state
+transitions, that the dataset is `r conclusion`.
