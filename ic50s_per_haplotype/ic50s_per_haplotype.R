@@ -1,20 +1,27 @@
 library(bbbq)
 library(ggplot2, quietly = TRUE)
+library(dplyr)
 library(testthat)
 
 t <- tidyr::expand_grid(
   official_name = bbbq::get_mhc_haplotypes(),
   mhc_class = NA,
   mhcnuggets_name = NA,
-  peptide_length = c(9, 10),
+  peptide_length = NA,
   filename = NA,
   n_peptides = NA,
   percentile = 0.02,
   ic50 = NA
 )
 for (i in seq_len(nrow(t))) {
-  if (t$official_name[i] %in% bbbq::get_mhc1_haplotypes()) t$mhc_class[i] <- "I"
-  if (t$official_name[i] %in% bbbq::get_mhc2_haplotypes()) t$mhc_class[i] <- "II"
+  if (t$official_name[i] %in% bbbq::get_mhc1_haplotypes()) {
+    t$mhc_class[i] <- "I"
+    t$peptide_length[i] <- 9
+  }
+  if (t$official_name[i] %in% bbbq::get_mhc2_haplotypes()) {
+    t$mhc_class[i] <- "II"
+    t$peptide_length[i] <- 10
+  }
 }
 for (i in seq_len(nrow(t))) {
   t$mhcnuggets_name[i] <- mhcnuggetsr::to_mhcnuggets_name(t$official_name[i])
@@ -52,6 +59,18 @@ ggplot(t, aes(x = official_name, y = ic50, color = peptide_length)) +
   scale_y_continuous(name = "IC50") +
   scale_x_discrete(name = "Haplotype") +
   labs(
-    caption = glue::glue("Percentile: {percentile}, # peptides per IC50: {n_peptides}")
+    caption = glue::glue(
+      "Percentile: {percentile}, # peptides per IC50: {n_peptides}",
+      " , TODO: use 13 peptides for MHC-II"
+    )
   ) +
   ggsave("ic50s_per_haplotype.png", width = 7, height = 7)
+
+
+
+readr::write_csv(
+  x = t %>%
+  select(official_name, ic50) %>%
+  rename(haplotype = official_name),
+  "ic50s_per_haplotype.csv"
+)
