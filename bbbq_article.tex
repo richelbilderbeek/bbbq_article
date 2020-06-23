@@ -405,7 +405,7 @@ a pragmatic choice made due to the extension of the original experiment.
 The definition of a binder differs from \cite{bianchi2017}:
 in this study a peptide is labeled an MHC-I binder if, within a haplotype, 
 any of its 9-mer peptides have an IC50 in the lowest 2\% of randomly simulated 
-peptides (see Supmat for values \richel{Put these values in supmat}), were the original study defined
+peptides (see table \ref{table:ic50s_per_haplotype} for values), were the original study defined
 a binder as having an IC50 in the lowest 2\% of the peptides within a protein.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
 
@@ -474,17 +474,56 @@ bacterial TMHs.
 
 \paragraph{Correction against many tests}
 
-Because we use 13 haplotypes per MHC class,
-for a significance level of 5\%, 
-there is a 14% chance to find one haplotype 
-that hints to have selection working upon it.
-% > pbinom(q = 1, size = 13, prob = 0.05, lower.tail = FALSE)
-% [1] 0.1354239
+% Chance to find
+%            this amount of positives (sums to 1)
+%              |
+%              v
+% > dbinom(x = 0, size = 26, prob = 0.05)
+% [1] 0.2635201
+% > dbinom(x = 1, size = 26, prob = 0.05)
+% [1] 0.3606064
+% > dbinom(x = 2, size = 26, prob = 0.05)
+% [1] 0.2372411
+% > dbinom(x = 3, size = 26, prob = 0.05)
+% [1] 0.09989098
+% > dbinom(x = 4, size = 26, prob = 0.05)
+% [1] 0.03023017
+% > dbinom(x = 5, size = 26, prob = 0.05)
+% [1] 0.00700067
+%
+% Chance to find more than
+%            this amount of positives (excluding the value!)
+%              |
+%              v
+% > pbinom(q = 0, size = 26, prob = 0.05, lower.tail = FALSE)
+% [1] 0.7364799
+% > pbinom(q = 1, size = 26, prob = 0.05, lower.tail = FALSE)
+% [1] 0.3758735
+% > pbinom(q = 2, size = 26, prob = 0.05, lower.tail = FALSE)
+% [1] 0.1386324
+% > pbinom(q = 3, size = 26, prob = 0.05, lower.tail = FALSE)
+% [1] 0.0387414
+% > pbinom(q = 4, size = 26, prob = 0.05, lower.tail = FALSE)
+% [1] 0.008511231
 
+
+Because we use 13 haplotypes per MHC class,
+for a significance level of 5\%,
+for both directions (D to U, or U to D)
+we expect 5% times 26 equals 1.3 significant findings.
+
+\richel{Hmm, improve}
 The chance to find 2 haplotypes that hint to have selection working upon it
-is 2\%, which is below our significance level.
-% > pbinom(q = 2, size = 13, prob = 0.05, lower.tail = FALSE)
-% [1] 0.02450784
+is 4\%, which is below our significance level.
+% > pbinom(q = 3, size = 26, prob = 0.05, lower.tail = FALSE)
+% [1] 0.0387414
+
+Upon finding 3 haplotypes that hint to have selection working upon it,
+there is the additional chance that selection is working in different
+directions (i.e. in one case there is selection for losing detection,
+where in the other case, there is (unexpected) selection for gaining
+detection). Therefore, finding 3 haplotypes that hint to have selection working 
+upon it in the same direction 
 
 Therefore, we will claim there is directional selection, 
 when, for a proteome, we find 2 haplotypes 
@@ -496,7 +535,9 @@ To calculate the probability all of our observations happened by chance,
 we view our experiment as a two-state Markov chain, as depicted in
 figure \ref{fig:markov_chain}. The two nodes depict the
 two possible detection state a peptide is in, which is
-either undetected $U$, or detected $D$ by the immune system.
+either undetected $U$, or detected $D$ by the immune system,
+where a detected peptide is a binder, that is, 
+a peptide with an IC50 in the lowest 2\%.
 The $D$ can be either detection by an MHC-I or MHC-II haplotype.
 The edges depict the probability of a state transition by mutation,
 for example, $p_{DU}$ denotes the probability that a detected
@@ -528,21 +569,21 @@ number of transitions.
 
 \paragraph{Hypotheses testing}
 
-Of the complete system, we test for each of the 2 state transitions (that is,
-we do not test for mutations that result in the same state).
+Of the complete system, we test for each of the 2 observed 
+state transition rates (that is, we do not test for mutations that result in the same state)
+if these are likely to be caused by chance.
 For each transition rate, we know the expected and observed number
 of transitions. If the observed number of transitions is below the expected
 value, we test for finding that (low) number of transitions or less.
 If the observed number of transitions is above the expected
 value, we test for finding that (high) number of transitions or more.
 We use a significance level $\alpha$ of 5\%, because we have no prior
-evidence. 
+expectations. 
 
-As we are testing 2 hypotheses, 
+As we are testing 2 rates (and thus 2 hypotheses), 
 we correct against type I errors (false positives), 
-by applying the Holm-Bonferroni correction, 
-resulting in \richel{here is just a normal Bonferroni correction, for now}
-$\alpha_c = \frac{\alpha}{2}$.
+by applying the Bonferroni correction, 
+resulting in $\alpha_c = \frac{\alpha}{2}$.
 If the probability of observing that few/many 
 transition is below $\alpha_c$, we will state 
 that this unlikely situation may be caused by natural selection.
@@ -872,12 +913,22 @@ is used to determine if a peptide binds to the haplotype's MHC.
 
 \begin{figure}[!htbp]
   \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype.png}
-  Predicted IC50s (in nM) per MHC-I haplotype
+  Predicted IC50s (in nM) per haplotype
   \caption{
     \richel{Used randomly simulated peptides, results are real}
   }
   \label{fig:ic50s_per_haplotype}
 \end{figure}
+
+
+\begin{table}[!htbp]
+  \input{ic50s_per_haplotype/ic50s_per_haplotype.latex}
+  \caption{
+    Predicted IC50s (in nM) per haplotype
+    \richel{Used randomly simulated peptides, results are real}
+  }
+  \label{table:ic50s_per_haplotype}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Relation between hydrophobicity, TMH and MHC binding}
