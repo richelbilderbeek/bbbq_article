@@ -113,7 +113,7 @@ NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
 gave rise to the most accurate predictions.
 Later tools are \cite{zhang2013predicting},
 \cite{trolle2014nettepi}, \cite{zhang2015accurate}
-and the very recent MHCnuggets\cite{shao2020high}.
+and the very recent MHCnuggets (\cite{shao2020high}).
 In this study, we'll be using MHCnuggets, as it is the only FOSS tool available.
  
 \paragraph{TMHs}
@@ -143,13 +143,9 @@ ConPred II (\cite{arai2004conpred}),
 MEMSAT3 (\cite{jones2007improving})
 and MetaTM (\cite{klammer2009metatm}), which signals the importance
 of TMH predictions. 
-Unlike TMHMM, which is still up and running, 
-these later tools have already become obsolete.
-Contemporary tools that are good for use, such as
-the closed-source MemBrain \cite{feng2020topology} 
-and the FOSS tool PureseqTM \cite{wang2019efficient}.
-In this study, we will use TMHMM  for pragmatic reasons
-\richel{I would love to use PureseqTM instead, but only if there is time}.
+Contemporary tools are the closed-source MemBrain (\cite{feng2020topology}) 
+and the FOSS tool PureseqTM (\cite{wang2019efficient}).
+In this study, we will use PureseqTM.
 
 \paragraph{MHC-I presents hydrophobic regions more often}
 
@@ -200,15 +196,13 @@ proteins produced by pathogen, either would the pathogen
 be a virus \richel{$\mathcal{H}_{1,1}$} or 
 a bacterium \richel{$\mathcal{H}_{1,2}$}.
 
-
 \paragraph{MHC-II is expected to present TMHs}
-
 
 If presentation of TMHs on MHC-I would bring an evolutionary advantage 
 in the recognition of pathogens by the immune system, 
 it would follow that this is equally important for MHC-II, 
 especially as the help of CD4+ T cells is needed for a long lasting CD8+ T cell 
-response \cite{novy2007cd4}. 
+response (\cite{novy2007cd4}). 
 The mechanism to detect foreign TMHs by MHC-II would be unknown, 
 similar to the discovery that MHC-I presents TMHs.
 
@@ -228,7 +222,7 @@ of pathogens, whereas pathogens are selected to avoid detection.
 From a pathogen's point of view, however, this struggle 
 is of only minor importance:
 in seasonal influenza, for example, the selection pressure
-exerted by the immune system was only limited \cite{han2019individual}
+exerted by the immune system was only limited (\cite{han2019individual}).
 
 In general, on would hope that evolutionary selection results in
 an immune system that as most attentive for loci that are
@@ -362,63 +356,95 @@ thus we need a strong data set to be able to detect it.
 \paragraph{Data sets for TMH epitopes}
 
 To determine the percentages of epitopes overlapping
-with TMHs, we use two reference proteomes.
-Our viral AA sequence is represented by
+with TMHs, we use three reference proteomes, which are
+a human, viral and bacterial one.
+The human reference proteome is \richel{here}, 
+which is the same as \cite{bianchi2017}.
+The viral reference proteome is represented by
 the proteome of the first sequenced COVID-19 strain (\cite{wu2020new},
 GenBank ID of MN908947.3, \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947})
-For bacteria, we use the reference genome of 
+For bacteria, the reference genome of 
 Mycobacterium tuberculosis (\url{https://www.ebi.ac.uk/reference_proteomes}, UP000001584, 
-83332 MYCTU).
+83332 MYCTU) is used.
 
-\paragraph{Data sets for evolutionary selection}
+\paragraph{Data set for evolutionary selection}
 
 To detect an evolutionary signal for selection on binding
 TMHs peptides, we need a phylogenetic tree with 
 many time-dated proteomes.
-For humans, we use the 25000 proteomes used in influenza \richel{citation here}.
-For viruses, we use the many time-dated COVID-19 proteomes.
-We can assume that only after the moment that COVID-19 spilled over 
-to humans, it has mostly been the human immune system selecting against
-its detection, although this is only part of the selection for 
-having a high transmission rate.
-For bacteria, use the proteomes of Mycobacterium 
-\richel{Really? Pick better set, if possible!}.
+To do so, we use a viral pathogen, as these are detected by both
+MHC-I and MHC-II.
+To detect individual mutations, we need a high resolution dataset
+that also includes the evolutionary history of the virus.
+COVID-19 satisfies both requirements:
+as of 2020-06-22, it has 49790 proteomes, as provided by GISAID (\cite{shu2017gisaid}),
+as well as a provided evolutionary history by Nextstrain (\cite{hadfield2018nextstrain}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{MHC-I}
+\subsection{Measuring TMH epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To determine the percentages of MHC-I epitopes overlap
-with TMHs, we used the same 
-analysis as \cite{bianchi2017},
-except for using a viral and bacterial proteome (instead 
-of a human proteome, as used in the original study).
-Bianchi and colleagues obtained a distribution of 
-percentages of MHC-I epitopes overlap with TMHs in Homo sapiens
-for the different HLA haplotypes, with an average of 5.3\%.
-We obtained a similar distribution of percentages of MHC-I epitopes that 
-overlap with TMHs for the different HLA haplotypes, but then applied to
-our viral and bacterial proteome.
+To determine the percentages of MHC-I and MHC-II epitopes overlap
+with TMHs, we used mostly the same analysis as described in \cite{bianchi2017}.
+To summarize: a proteome is converted into all its possible 9-mers. For each
+of these peptides, it is measured if it has been part of a TMH (at least
+1 residue), as well as if the peptide is a binder to an MHC-I haplotype.
+Because the percentage of TMH residues is known, a binomial test can be
+used to determine if TMH-derived peptides are as likely to be a binder
+as expected by chance (the null hypothesis), or that TMHs are indeed an
+overrepresented source of epitopes (as found by \cite{bianchi2017}).
 
-We compare the distributions of humans and each pathogen
-using a two-sample Kolmogorov-Smirnov (KS) test
-for a significance level $\alpha = 0.05$.
+This study differs in some aspects, described below in more detail,
+which is the definition of what a binder is,
+the addition of using MHC-II haplotypes, the software used,
+and the significance level to determine if TMH-derived peptides are as 
+likely to be a binder as expected by chance.
+These deviations are either a refinement of the previous method or
+a pragmatic choice made due to the extension of the original experiment.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{MHC-2}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The definition of a binder differs from \cite{bianchi2017}:
+in this study a peptide is labeled an MHC-I binder if, within a haplotype, 
+any of its 9-mer peptides have an IC50 in the lowest 2\% of randomly simulated 
+peptides (see Supmat for values \richel{Put these values in supmat}), were the original study defined
+a binder as having an IC50 in the lowest 2\% of the peptides within a protein.
+% See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
 
-To determine the percentages of MHC-II epitopes overlap, 
-we do the same analysis as MHC-I, except for
-MHC-II haplotypes. We picked the MHC-II alleles
-that occur with a frequency of at least 20\% in
+The 13 MHC-I haplotypes used in this study are the same as 
+the ones in \cite{bianchi2017}.
+The MHC-II haplotypes used additionally are selected 
+to occur with a phenotypic frequency of at least 14\% in
 the human population (\cite{greenbaum2011functional},
 see \ref{table:mhc2_haplotypes} for coverage),
-resulting in \richel{approx 8} HLAs.
-The threshold of 20\% is arbitrarily, yet chosen to result in 5 and 10 HLA variants.  
-As \cite{bianchi2017}, we define the 5\% of peptides 
-with the lowest IC50 values as binders. We then counted the percentage
-of binders that have one or more amino acids that are part of a TMH.
+resulting in 13 haplotypes.
+This frequency threshold is arbitrarily chosen to result in 
+the same number of haplotypes for each MHC class
+\richel{Add this to bbbq, there it is now 21}.
+When using an MHC-II haplotype, instead of using 9-mers, 13-mers are
+used, as these are the canonical MHC-II epitope size \richel{Reference here}.
+
+Instead of using the MHC-I-only epitope prediction 
+tool \verb;EpitopePrediction;, MHCnuggets is used, as it can predict
+both MHC-I and MHC-II epitopes.
+Additionally, instead of only using a human proteome, in this study
+also a viral and bacterial proteome are analyzed.
+
+Where the original study used a significance level of 1\% 
+for the binomial test to determine if TMH-derived peptides 
+are as likely to be a binder as expected by chance, this study
+uses 5\%, which is a common significance level for an exploratory study.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comparing amounts of TMH epitopes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To determine if MHC-I has the same percentage of epitopes overlapping
+with viral/bacterial TMHs as with human TMHs \richel{$\mathcal{H}_{1,VB}$}, 
+we compare the distributions of the measured percentages 
+of TMH-overlapping peptides for all haplotypes,
+and compare the distributions between humans and each pathogen
+using a two-sample Kolmogorov-Smirnov (KS) test
+for a significance level $\alpha = 0.05$, 
+which is a common significance level for an exploratory study.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Detecting evolution}
@@ -432,38 +458,37 @@ with regards to being detected/presented by the immune system,
 per MHC class and haplotype. We do this for human, viral and
 bacterial TMHs.
 
-\paragraph{Gene prediction}
-
-Proteogenomics is the field dedicated to, among others,
-predict the proteins that arise from a DNA 
-sequence \cite{nesvizhskii2014proteogenomics}.
-For an ab initio gene prediction of a viral genome, 
-we searched the literature for the most recent software tool,
-which is Vgas (\cite{zhang2019vgas}). In this article, 
-Vgas is compared to tools, such as GeneMarkS (\cite{besemer2001genemarks}),
-Prodigal (\cite{hyatt2012gene}), GLIMMER (\cite{delcher1999improved}),
-RAST \cite{aziz2008rast} and prokka (\cite{seemann2014prokka}).
-We picked the FOSS tool that scored best in the (closed source) Vgas
-benchmark (\cite{zhang2019vgas}), which is Prodigal.
+% \paragraph{Gene prediction}
+% 
+% Proteogenomics is the field dedicated to, among others,
+% predict the proteins that arise from a DNA 
+% sequence \cite{nesvizhskii2014proteogenomics}.
+% For an ab initio gene prediction of a viral genome, 
+% we searched the literature for the most recent software tool,
+% which is Vgas (\cite{zhang2019vgas}). In this article, 
+% Vgas is compared to tools, such as GeneMarkS (\cite{besemer2001genemarks}),
+% Prodigal (\cite{hyatt2012gene}), GLIMMER (\cite{delcher1999improved}),
+% RAST \cite{aziz2008rast} and prokka (\cite{seemann2014prokka}).
+% We picked the FOSS tool that scored best in the (closed source) Vgas
+% benchmark (\cite{zhang2019vgas}), which is Prodigal.
 
 \paragraph{Correction against many tests}
 
-Because we use 13 MHC-I and 7 MHC-II haplotypes
-for a significance level of 5\%, by chance we expect (5\% of $13 + 7$)
-one times to find a (MHC-I or MHC-II) haplotype 
-that is suggested to have selection working upon it.
-Applying a binomial distribution ($p = 0.05$, $n = 13+7$, $\alpha = 0.05$),
-we will claim we there is some form of selection when we find 3
-or more examples of having a significant result.
-However, because there are 2 hypotheses tested per haplotype,
-we will claim there is directional selection, 
-when, for a same hypothesis, we find 2 examples of having a significant result.
+Because we use 13 haplotypes per MHC class,
+for a significance level of 5\%, 
+there is a 14% chance to find one haplotype 
+that hints to have selection working upon it.
+% > pbinom(q = 1, size = 13, prob = 0.05, lower.tail = FALSE)
+% [1] 0.1354239
 
-% > pbinom(q = 2, size = 20, prob = 0.05, lower.tail = FALSE)
-% [1] 0.07548367
-%
-% pbinom(q = 3, size = 20, prob = 0.05, lower.tail = FALSE)
-% [1] 0.01590153
+The chance to find 2 haplotypes that hint to have selection working upon it
+is 2\%, which is below our significance level.
+% > pbinom(q = 2, size = 13, prob = 0.05, lower.tail = FALSE)
+% [1] 0.02450784
+
+Therefore, we will claim there is directional selection, 
+when, for a proteome, we find 2 haplotypes 
+that hint to have selection working upon it
 
 \paragraph{System depicted as a Markov chain}
  
