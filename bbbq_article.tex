@@ -89,32 +89,6 @@ This approach, however, is tedious and costly.
 Due to this, software was written that allows for silico 
 predictions, which are reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
 
-\paragraph{MHC-I epitope prediction}
-
-For MHC-I, there are multiple computational tools developed 
-to predict epitopes. 
-According to \cite{lundegaard2011prediction}, in 2011,
-from a set of multiple tools, 
-NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
-A tool developed later is \verb;epitope-prediction; \cite{bianchi2017},
-which uses a stabilized matrix method \cite{kim2009derivation}.
-The most recent FOSS tool available is MHCnuggets\cite{shao2020high},
-which we will use in this study
-
-\paragraph{MHC-II epitope prediction}
-
-Also for MHC-II, there are multiple computational tools developed 
-to predict epitopes,
-such as using a trained neural network (\cite{nielsen2003reliable})
-or a Gibbs sampling approach (\cite{nielsen2004improved}).
-According to \cite{lundegaard2011prediction}, in 2011,
-from a set of multiple tools, 
-NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
-gave rise to the most accurate predictions.
-Later tools are \cite{zhang2013predicting},
-\cite{trolle2014nettepi}, \cite{zhang2015accurate}
-and the very recent MHCnuggets (\cite{shao2020high}).
-In this study, we'll be using MHCnuggets, as it is the only FOSS tool available.
  
 \paragraph{TMHs}
 
@@ -133,19 +107,8 @@ making up for \richel{?} percent of its entire genome.
 
 \paragraph{TMH prediction}
 
-There are multiple computational tools developed to detect which
+There are multiple computational tools developed to predict which
 parts of membrane proteins are TMH
-In 2001, multiple tools to do so have been compared \cite{moller2001evaluation},
-of which TMHMM \cite{krogh2001predicting} turned out to be the best.
-Many other tools followed, such as 
-Phobius (\cite{kall2004combined}),
-ConPred II (\cite{arai2004conpred}),
-MEMSAT3 (\cite{jones2007improving})
-and MetaTM (\cite{klammer2009metatm}), which signals the importance
-of TMH predictions. 
-Contemporary tools are the closed-source MemBrain (\cite{feng2020topology}) 
-and the FOSS tool PureseqTM (\cite{wang2019efficient}).
-In this study, we will use PureseqTM.
 
 \paragraph{MHC-I presents hydrophobic regions more often}
 
@@ -458,20 +421,6 @@ with regards to being detected/presented by the immune system,
 per MHC class and haplotype. We do this for human, viral and
 bacterial TMHs.
 
-% \paragraph{Gene prediction}
-% 
-% Proteogenomics is the field dedicated to, among others,
-% predict the proteins that arise from a DNA 
-% sequence \cite{nesvizhskii2014proteogenomics}.
-% For an ab initio gene prediction of a viral genome, 
-% we searched the literature for the most recent software tool,
-% which is Vgas (\cite{zhang2019vgas}). In this article, 
-% Vgas is compared to tools, such as GeneMarkS (\cite{besemer2001genemarks}),
-% Prodigal (\cite{hyatt2012gene}), GLIMMER (\cite{delcher1999improved}),
-% RAST \cite{aziz2008rast} and prokka (\cite{seemann2014prokka}).
-% We picked the FOSS tool that scored best in the (closed source) Vgas
-% benchmark (\cite{zhang2019vgas}), which is Prodigal.
-
 \paragraph{Correction against many tests}
 
 % Chance to find
@@ -634,6 +583,108 @@ as well a mutant. For the 'null' data set, the mutant is randomly select.
 For the 'rigged' data set, beneficial mutations are twice as likely to
 be selected. We define a beneficial mutation as a transition from
 being detected to being undetected.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prediction software used}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For this research, the scientific literature was explored 
+to find the most recent free and open source (FOSS) prediction software.
+This was done by searching for papers that (1) reference older
+prediction software, and (2) present a novel method to make predictions.
+As a starting point, a review paper was used.
+
+\paragraph{TMH prediction}
+
+There are multiple computational tools developed to predict which
+parts of membrane proteins are TMH
+In 2001, multiple tools to do so have been compared \cite{moller2001evaluation},
+of which TMHMM \cite{krogh2001predicting} turned out to be the best, yet
+this software has a restrictive software license and is nearly two
+decades old. Inspired on TMHMM, many other tools followed, such as 
+Phobius (\cite{kall2004combined}),
+ConPred II (\cite{arai2004conpred}),
+MEMSAT3 (\cite{jones2007improving})
+and MetaTM (\cite{klammer2009metatm}).
+The most recent FOSS tool is called PureseqTM (\cite{wang2019efficient}),
+which is used in this study.
+
+\paragraph{MHC-I epitope prediction}
+
+For MHC-I, there are multiple computational tools developed 
+to predict epitopes. 
+According to \cite{lundegaard2011prediction}, in 2011,
+from a set of multiple tools, 
+NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
+A tool developed later is \verb;epitope-prediction; \cite{bianchi2017},
+which uses a stabilized matrix method \cite{kim2009derivation}.
+The most recent FOSS tool available is MHCnuggets\cite{shao2020high},
+which we will use in this study
+
+\paragraph{MHC-II epitope prediction}
+
+Also for MHC-II, there are multiple computational tools developed 
+to predict epitopes,
+such as using a trained neural network (\cite{nielsen2003reliable})
+or a Gibbs sampling approach (\cite{nielsen2004improved}).
+According to \cite{lundegaard2011prediction}, in 2011,
+from a set of multiple tools, 
+NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
+gave rise to the most accurate predictions.
+Later tools are \cite{zhang2013predicting},
+\cite{trolle2014nettepi}, \cite{zhang2015accurate}
+and the very recent MHCnuggets (\cite{shao2020high}),
+the latter which we will use in this study.
+
+% \paragraph{Gene prediction}
+% 
+% Proteogenomics is the field dedicated to, among others,
+% predict the proteins that arise from a DNA 
+% sequence \cite{nesvizhskii2014proteogenomics}.
+% For an ab initio gene prediction of a viral genome, 
+% we searched the literature for the most recent software tool,
+% which is Vgas (\cite{zhang2019vgas}). In this article, 
+% Vgas is compared to tools, such as GeneMarkS (\cite{besemer2001genemarks}),
+% Prodigal (\cite{hyatt2012gene}), GLIMMER (\cite{delcher1999improved}),
+% RAST \cite{aziz2008rast} and prokka (\cite{seemann2014prokka}).
+% We picked the FOSS tool that scored best in the (closed source) Vgas
+% benchmark (\cite{zhang2019vgas}), which is Prodigal.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prediction software written}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The R programming language is used for the complete 
+experiment, including the analysis.
+The complete experiment is bundled in the 'bbbq' R package,
+which is dependent on 'pureseqtmr', 'mhcnuggetsr' and 'mhcnpreds',
+as described below.
+
+To be able to call, from R, the TMH prediction software 'PureseqTM',
+which is written in C, the package 'pureseqtmr' has been developed. 
+'pureseqtmr' allows to install 'PureseqTM' and use most of its features.
+Excluded are the features that are used by the 'PureseqTM' 
+developers to verify the correctness of their work.
+'pureseqtmr' has been submitted to CRAN.
+
+The R package 'mhcnuggetsr' is written to call the 
+'MHCnuggets' Python package.
+'mhcnuggetsr' allows to install 'MHCnuggets' and call it
+to predict IC50 values for multiple MHC haplotypes that 'MHCnuggets' 
+has already been trained upon.
+Excluded is the feature to train 'MHCnuggets' on new data and/or other
+haplotypes, as this study only needs IC50 predictions.
+'mhcnuggetsr' has been submitted to CRAN.
+
+To be able to use pre-calculated MHCnuggets
+predictions (i.e. a distribution of IC50 values per haplotype, 
+derived from random peptides), the 'mhcnpreds' R package has been 
+developed. In practice, this is nothing more than a big look-up table.
+Because the package is too big, it will not been submitted to CRAN.
+
+To reproduce the full experiment as done in this paper,
+the functions needed are bundled in the 'bbbq' R package.
+This package is too specific to be submitted to CRAN.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
