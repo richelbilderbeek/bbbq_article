@@ -82,13 +82,13 @@ full peptide will do so.
 
 It is helpful to be able to predict which peptides are immunogenic,
 in, among others, vaccine development \richel{Reference here}. 
-Already for a decade, synthesized peptide fragments are used 
+Already for a decade, synthesized peptide fragments are used
 to experimentally determine which peptides
 are immunogenic \richel{Reference here}.
 This approach, however, is tedious and costly.
 Due to this, software was written that allows for silico 
-predictions, which are reliable in practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
-
+predictions, which are reliable in 
+practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
  
 \paragraph{TMHs}
 
@@ -104,11 +104,8 @@ hydrophobicity parts guide the protein to achieve its 3D configuration.
 TMHs are general structures: 25 percent of the human proteome is
 anchored by at least one TMH. COVID-19 has 21 TMHs, 
 making up for \richel{?} percent of its entire genome.
-
-\paragraph{TMH prediction}
-
 There are multiple computational tools developed to predict which
-parts of membrane proteins are TMH
+parts of membrane proteins are TMH.
 
 \paragraph{MHC-I presents hydrophobic regions more often}
 
@@ -266,34 +263,15 @@ There, when generalizing the dynamics of mostly purifying selection (to maintain
 a protein's function) and a short duration of positive selection,
 those genes that are selected cannot be detected \cite{yang2000statistical}.
 
-\paragraph{Evolutionary signal of unknown strength for virus}
+\paragraph{Evolutionary signal of unknown strength for pathogens}
 
-Regarding human viruses, we do not know the selection pressure
-exerted by the human immune system.
-For viral TMHs that are undetected by most human haplotypes, we
-expect these to be conserved, to remain avoiding detection.
-For viral TMHs that are detected by most human haplotypes, we
-expect there to be a higher mutation rate, to avoid detection.
-Additionally, viruses are not only selected for their evasion of an 
-immune response, yet are selected to have a high reproductive value.
-Because the strength of the evolutionary signal is unknown,
-we use a strong data set to be able to detect it.
-
-\paragraph{Evolutionary signal of unknown strength for bacteria}
-
-Regarding human pathogenic bacteria, we do not know the extent to which the 
-human immune systems selects on these, nor which loci are selected
-upon \richel{so I should read the literature on that}.
-Because most bacterial pathogens are generalists, that is,
-can infect multiple hosts, we expect the selection pressure exerted
-by the human immune response to be weak.
-For bacterial TMHs that are undetected by most human haplotypes, we
-expect these to be conserved, to remain avoiding detection.
-For bacterial TMHs that are detected by most human haplotypes, we
-expect there to be a higher mutation rate, to avoid detection.
-Also, it is unknown if bacterial TMHs are detected by MHC-II at all.
-Due to this, the strength of the evolutionary signal is unknown,
-thus we need a strong data set to be able to detect it.
+Up until today, it is unknown if an evolutionary signal 
+is present in a (human) pathogen's proteome that stems from avoiding
+detection by the human immune system.
+If such a signal is present, we expect to detect it most likely in
+viruses, as both MHC-I and MHC-II are used in protecting the
+human host. 
+Therefore, this study focuses in detecting this signal in viruses.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hypotheses}
@@ -306,10 +284,10 @@ thus we need a strong data set to be able to detect it.
     with viral/bacterial TMHs as with human TMHs
   \item $\mathcal{H}_{2,HVB}$: MHC-II has the same percentage of epitopes overlapping
     with human/viral/bacterial TMHs as expected by chance
-  \item $\mathcal{H}_{3,HVB}$: The mutations observed in 
-    human/viral/bacterial TMHs are caused by chance.
+  \item $\mathcal{H}_{3}$: The mutations observed in 
+    viral TMHs are caused by chance.
     Alternatively, these are caused by natural selection
-    induced by binding to HLAs
+    induced by (non-)binding to HLAs
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
