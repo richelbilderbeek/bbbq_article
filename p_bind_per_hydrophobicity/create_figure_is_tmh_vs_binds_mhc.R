@@ -9,6 +9,10 @@ library(dplyr, quietly = TRUE)
 library(testthat, quietly = TRUE)
 library(bbbq, quietly = TRUE)
 
+raw_data <- "dataset.csv"
+expect_true(file.exists(raw_data))
+df <- readr::read_csv(raw_data)
+
 plot_is_tmh_vs_is_binder <- function(
   df,
   png_filename = tempfile(fileext = ".png")
@@ -135,32 +139,15 @@ plot_hydrophobicity_vs_is_binder <- function(
       ggplot2::ggsave(png_filename, width = 7, height = 7)
 }
 
-raw_data <- "dataset.csv"
-expect_true(file.exists(raw_data))
-df <- readr::read_csv(raw_data)
-
 df_1 <- df %>% filter(mhc_haplotype %in% get_mhc1_haplotypes())
 df_2 <- df %>% filter(mhc_haplotype %in% get_mhc2_haplotypes())
 
 plot_is_tmh_vs_is_binder(
   df = df_1,
-  png_filename = "is_tmh_vs_is_binder_1.png"
+  png_filename = "is_tmh_vs_binds_mhc1.png"
 )
 plot_is_tmh_vs_is_binder(
   df = df_2,
-  png_filename = "is_tmh_vs_is_binder_2.png"
-)
-# plot_is_binder_vs_is_binder(df = df, png_filename = "is_binder_vs_is_binder.png")
-plot_hydrophobicity_vs_is_tmh(
-  df = df, png_filename = "hydrophobicity_vs_is_tmh.png"
-)
-
-plot_hydrophobicity_vs_is_binder(
-  df = df_1,
-  png_filename = "hydrophobicity_vs_is_binder_1.png"
-)
-plot_hydrophobicity_vs_is_binder(
-  df = df_2,
-  png_filename = "hydrophobicity_vs_is_binder_2.png"
+  png_filename = "is_tmh_vs_binds_mhc2.png"
 )
 

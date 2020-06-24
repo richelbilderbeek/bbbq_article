@@ -10,23 +10,37 @@
 #
 #   (do this by 'sbatch make.sh)
 #
-figures_filenames = \
-  binds_mhc1_vs_binds_mhc2.png \
-  hydrophobicity_vs_binds_mhc1.png \
-  hydrophobicity_vs_binds_mhc2.png \
-  is_tmh_vs_binds_mhc1.png \
-  is_tmh_vs_binds_mhc2.png
 
+all: is_tmh_vs_binds_mhc1.png \
+     is_tmh_vs_binds_mhc2.png \
+     hydrophobicity_vs_is_tmh.png \
+     hydrophobicity_vs_is_binder_1.png\
+     hydrophobicity_vs_is_binder_2.png
 
-all: $(figures_filenames) hydrophobicity_vs_is_tmh.png
-
-$(figures_filenames): create_figures.R
+is_tmh_vs_binds_mhc1.png: create_figure_is_tmh_vs_binds_mhc.R
 	# Assumes 'dataset.csv' is created
 	# Tip: run 'make data' to create it
-	Rscript create_figures.R
+	Rscript create_figure_is_tmh_vs_binds_mhc.R
+
+is_tmh_vs_binds_mhc2.png: create_figure_is_tmh_vs_binds_mhc.R
+	# Assumes 'dataset.csv' is created
+	# Tip: run 'make data' to create it
+	Rscript create_figure_is_tmh_vs_binds_mhc.R
 
 hydrophobicity_vs_is_tmh.png: create_figure_hydrophobicity_vs_is_tmh.R
+	# Assumes 'dataset.csv' is created
+	# Tip: run 'make data' to create it
 	Rscript create_figure_hydrophobicity_vs_is_tmh.R
+
+hydrophobicity_vs_is_binder_1.png: create_figure_hydrophobicity_vs_is_binder.R
+	# Assumes 'dataset.csv' is created
+	# Tip: run 'make data' to create it
+	Rscript create_figure_hydrophobicity_vs_is_binder.R
+
+hydrophobicity_vs_is_binder_2.png: create_figure_hydrophobicity_vs_is_binder.R
+	# Assumes 'dataset.csv' is created
+	# Tip: run 'make data' to create it
+	Rscript create_figure_hydrophobicity_vs_is_binder.R
 
 ##########################################
 # Data, run on Peregrine
