@@ -57,88 +57,6 @@ plot_is_tmh_vs_is_binder <- function(
 }
 
 
-# plot_is_binder_vs_is_binder <- function(
-#   df,
-#   png_filename = tempfile(fileext = ".png")
-# ) {
-#   df_tally <- df %>%
-#     dplyr::group_by(is_binder, is_binder) %>%
-#     dplyr::tally()
-#   ggplot2::ggplot(df_tally, ggplot2::aes(is_binder, is_binder, fill = n)) +
-#     ggplot2::geom_tile() +
-#     ggplot2::geom_text(ggplot2::aes(label = n)) +
-#       ggplot2::scale_fill_gradient(low = "white", high = "red") +
-#       ggplot2::scale_x_discrete() +
-#       ggplot2::scale_y_discrete() +
-#       ggplot2::xlab("Binds to MHC-I?? Left = no, right = yes") +
-#       ggplot2::ylab("Binds to MHC-II? Down = no, up = yes") +
-#       ggplot2::ggsave(png_filename, width = 7, height = 7)
-# }
-
-plot_hydrophobicity_vs_is_tmh <- function(
-  df,
-  png_filename = tempfile(fileext = ".png")
-) {
-  df <- tibble::as_tibble(df)
-
-  df_tally <- df %>%
-    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
-    dplyr::group_by(bin, is_tmh) %>%
-    dplyr::tally()
-  ggplot2::ggplot(df_tally, ggplot2::aes(bin, is_tmh, fill = n)) +
-    ggplot2::geom_tile() +
-    ggplot2::geom_text(ggplot2::aes(label = n)) +
-      ggplot2::scale_fill_gradient(low = "white", high = "red") +
-      ggplot2::scale_y_discrete() +
-      ggplot2::xlab("Hydrophobicity x2") +
-      ggplot2::ylab("Is TMH? Down = no, up = yes") +
-      ggplot2::ggsave(png_filename, width = 7, height = 7)
-}
-
-plot_hydrophobicity_vs_is_binder <- function(
-  df,
-  png_filename = tempfile(fileext = ".png")
-) {
-  mhc_class <- NA
-  if (df$mhc_haplotype[1] %in% bbbq::get_mhc1_haplotypes()) {
-    mhc_class <- "I"
-    testthat::expect_true(
-      all(df$mhc_haplotype %in% bbbq::get_mhc1_haplotypes())
-    )
-  }
-  if (df$mhc_haplotype[1] %in% bbbq::get_mhc2_haplotypes()) {
-    mhc_class <- "II"
-    testthat::expect_true(
-      all(df$mhc_haplotype %in% bbbq::get_mhc2_haplotypes())
-    )
-  }
-  testthat::expect_true(!is.na(mhc_class))
-
-  n_haplotypes <- length(unique(df$mhc_haplotype))
-  n_peptides <- length(unique(df$sequence))
-
-  df <- tibble::as_tibble(df)
-  df_tally <- df %>%
-    dplyr::mutate(bin = trunc(hydrophobicity * 2)) %>%
-    dplyr::group_by(bin, is_binder) %>%
-    dplyr::tally()
-  ggplot2::ggplot(df_tally, ggplot2::aes(bin, is_binder, fill = n)) +
-    ggplot2::geom_tile() +
-    ggplot2::geom_text(ggplot2::aes(label = n)) +
-      ggplot2::scale_fill_gradient(low = "white", high = "red") +
-      ggplot2::scale_y_discrete() +
-      ggplot2::xlab("Hydrophobicity x2") +
-      ggplot2::ylab(
-        glue::glue("Binds to MHC-{mhc_class}? Down = no, up = yes")
-      ) +
-      ggplot2::labs(
-        caption = glue::glue(
-          "# peptides: {n_peptides}, # haplotypes: {n_haplotypes}"
-        )
-      ) +
-      ggplot2::ggsave(png_filename, width = 7, height = 7)
-}
-
 df_1 <- df %>% filter(mhc_haplotype %in% get_mhc1_haplotypes())
 df_2 <- df %>% filter(mhc_haplotype %in% get_mhc2_haplotypes())
 
@@ -151,3 +69,11 @@ plot_is_tmh_vs_is_binder(
   png_filename = "is_tmh_vs_binds_mhc2.png"
 )
 
+if (1 == 2) {
+  df$is_tmh <- as.double(df$is_tmh)
+  ggplot(df, aes(is_tmh, fill = is_binder)
+  ) +
+    geom_histogram(
+      breaks = c(-0.5, 0.5, 1.5)
+  ) + scale_x_continuous(breaks = c(0, 1))
+}
