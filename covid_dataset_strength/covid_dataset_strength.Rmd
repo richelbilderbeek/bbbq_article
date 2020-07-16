@@ -35,6 +35,7 @@ Abbr  |Full
 AA    |Amino acid
 AAs   |Amino acids
 Abbr  |Abbreviation
+Abbrs |Abbreviations
 TMH   |Transmembrane helix
 TMHs  |Transmembrane helices
 
@@ -58,6 +59,17 @@ We determine the topology:
 
 ```{r cache=TRUE}
 topology <- pureseqtmr::predict_topology(fasta_filename)
+```
+
+Plot it:
+
+```{r}
+pureseqtmr::plot_topology(topology)
+```
+
+Extract data from the topology:
+
+```{r}
 n_proteins <- nrow(topology)
 n_tmhs <- sum(tally_tmhs(topology)$n_tmhs)
 n_non_tmh_aas <- sum(stringr::str_count(topology$topology, "0"))
@@ -169,11 +181,54 @@ n_sequences <- 49790
 ```
 
 There are `r n_sequences` COVID-19 sequences (`https://www.gisaid.org/`).
+Not all of these are unique.
+We will determine the number of unique sequences
+from the percentage of unique sequence per protein.
 
+To do so, we read all COVID-19 sequences:
 
+```{r cache=TRUE}
+all_sequences_filename <- "../downloads/allprot0621.fasta"
+testthat::expect_true(file.exists(all_sequences_filename))
+sequences <- seqinr::read.fasta(
+  all_sequences_filename, 
+  seqtype = "AA",
+  as.string = TRUE
+)
+```
+
+Grouping them by protein:
 
 ```{r}
-n_tmh_aa_mutations <- tmh_aa_evolution_rate_per_sequence * n_sequences
+t <- tibble::tibble(
+  prot_name = as.character(
+    na.omit(
+      stringr::str_match(
+        names(sequences),
+        "^([:upper:][:alnum:]{0,5})\\|"
+      )[, 2]
+    )
+  ),
+  sequence = as.character(sequences)
+)
+library(dplyr)
+t$prot_name <- as.factor(t$prot_name)
+t_unique <- t %>% group_by(prot_name) %>% 
+  summarise(n = n(), n_distinct = n_distinct(sequence)) %>%
+  mutate(perc = n_distinct / n)
+perc_unique <- mean(t_unique$perc)
+```
+
+Of all proteins, on average, `r perc_unique` are unique.
+
+```{r}
+n_unique_sequences <- perc_unique * n_sequences
+```
+
+Therefor, there are `r n_unique_sequences` unique sequences.
+
+```{r}
+n_tmh_aa_mutations <- tmh_aa_evolution_rate_per_sequence * n_unique_sequences
 ```
 
 Therefore, for the complete data set, we expect to 
