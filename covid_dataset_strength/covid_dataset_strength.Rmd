@@ -216,13 +216,21 @@ t$prot_name <- as.factor(t$prot_name)
 t_unique <- t %>% group_by(prot_name) %>% 
   summarise(n = n(), n_distinct = n_distinct(sequence)) %>%
   mutate(perc = n_distinct / n)
-perc_unique <- mean(t_unique$perc)
+perc_unique_protein <- mean(t_unique$perc)
 ```
 
-Of all proteins, on average, `r perc_unique` are unique.
+Of all proteins, on average, `r perc_unique_protein` are unique.
+We are looking, however, for unique proteomes. The percentage
+of unique proteomes is the product of 
 
 ```{r}
-n_unique_sequences <- perc_unique * n_sequences
+percs_duplicate_protein <- 1.0 - t_unique$perc
+perc_duplicate_proteome <- prod(percs_duplicate_protein)
+perc_unique_proteome <- 1.0 - perc_duplicate_proteome
+```
+
+```{r}
+n_unique_sequences <- perc_unique_proteome * n_sequences
 ```
 
 Therefor, there are `r n_unique_sequences` unique sequences.
