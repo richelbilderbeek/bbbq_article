@@ -11,3 +11,8 @@ The Bianchi  Bilderbeek Bogaart Question answered.
 ```
 make
 ```
+
+
+## Download 
+
+ * [v0.7](http://richelbilderbeek.nl/bbbq_article_0_7.zip) (last Open Science approach)
