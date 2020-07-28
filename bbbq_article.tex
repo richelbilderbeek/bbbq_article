@@ -721,39 +721,6 @@ with TMHs for our human, viral and bacterial proteome.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Evolutionary conservation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{transitions.png}
-  \caption{
-    Transitions in TMHs that occur more often then expected by chance,
-    for a confidence interval of 5 percent.
-    Table \ref{tab:transitions} shows the transition counts.
-    \richel{
-      stub figure
-    }
-  }
-  \label{fig:transitions}
-\end{figure}
-
-\begin{table}[!htbp]
-  \input{table_transitions.latex}
-  \caption{
-    Transitions counts, where the row indicates the source state,
-    and the column indicates the target state.
-    First number per cell is the observed number of this state transition,
-    where the second number is the expected number of this state transition
-    as predicted by chance.
-    An asterisk behind the observed count indicates that this count
-    is unlikely to be caused by chance only.
-    Figure \ref{fig:transitions} shows which transition counts are 
-    unlikely to be caused by chance only.
-  }
-  \label{tab:transitions}
-\end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -840,6 +807,37 @@ RJCB and FB wrote the article.
 \appendix
 \section{Supplementary materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differences with Bianchi et al., 2017}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A part of this study does the same analysis as Bianchi et al., 2017.
+Here we describe the deviations, which are about the use of different
+software and the use of a different definition of what a binder is.
+
+\paragraph{TMH prediction software}
+
+The earlier study uses TMHMM, which has a restricted software license.
+Instead, we chose to use PureseqTM, which is free and open source.
+
+\paragraph{IC50 prediction software}
+
+The earlier study uses a hand-crafted method, that only works on MHC-I.
+Instead, we use MHCnuggets, which (1) free and open source, and (2) predicts
+IC50s on both MHC-I and MHC-II.
+
+\paragraph{Definition of what a binder is}
+
+The earlier study defines a peptide a binder (for a haplotype), 
+if \emp{within the peptide} in which it is found, 
+is within the peptides with the 2\% lowest IC50 values.
+This can be seen at \url{https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/master/predict-binders.R},
+where the binders are written to file.
+
+In this study, a peptide is defined a binder (for a haplotype), 
+if \emp{within a proteome} in which it is found, 
+is within the peptides with the 2\% lowest IC50 values.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
