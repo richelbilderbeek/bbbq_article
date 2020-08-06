@@ -19,7 +19,7 @@ if (!peregrine::is_on_peregrine()) {
 t_binds <- tidyr::expand_grid(
   sequence = t$sequence,
   mhc_haplotype = bbbq::get_mhc_haplotypes(),
-  percentile = 0.02,
+  percentile = bbbq::get_ic50_percentile_binder(),
   is_binder = NA
 )
 

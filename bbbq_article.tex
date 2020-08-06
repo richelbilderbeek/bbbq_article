@@ -821,6 +821,15 @@ The earlier study uses a hand-crafted method, that only works on MHC-I.
 Instead, we use MHCnuggets, which (1) free and open source, and (2) predicts
 IC50s on both MHC-I and MHC-II.
 
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_1/fig_ic50_distribution.png}
+  \caption{
+    Distribution of IC50 estimations per haplotype per target.
+    The IC50 value is plotted on a logarithmic scale.
+  }
+  \label{fig:1}
+\end{figure}
+
 \paragraph{Definition of what a binder is}
 
 The earlier study defines a peptide a binder (for a haplotype), 
@@ -832,6 +841,8 @@ where the binders are written to file.
 In this study, a peptide is defined a binder (for a haplotype), 
 if \emp{within a proteome} in which it is found, 
 is within the peptides with the 2\% lowest IC50 values.
+
+\input{bbbq_1/table_ic50_binders.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}

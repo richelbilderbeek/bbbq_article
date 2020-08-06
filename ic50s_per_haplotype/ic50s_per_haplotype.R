@@ -10,7 +10,7 @@ t <- tidyr::expand_grid(
   peptide_length = NA,
   filename = NA,
   n_peptides = NA,
-  percentile = 0.02,
+  percentile = bbbq::get_ic50_percentile_binder(),
   ic50 = NA
 )
 for (i in seq_len(nrow(t))) {
