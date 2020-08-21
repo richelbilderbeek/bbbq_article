@@ -5,19 +5,21 @@ repo_names = \
   bbbq_2
 
 # For example, 'bbbq_1/Makefile'
-makefile_names = $(foreach repo_name,$(repo_names),$(repo_name)/Makefile)
+#makefile_names = $(foreach repo_name,$(repo_names),$(repo_name)/Makefile)
 
 
 all_table_filenames = \
   mhc2_haplotypes.latex \
-  bbbq_1/bbbq_1_stats.latex \
-  bbbq_1/bbbq_1_percentages.latex \
-  bbbq_2/bbbq_2_stats.latex \
-  bbbq_2/bbbq_2_percentages.latex
+  bbbq_1/table_tmh_binders_mhc1.latex \
+  bbbq_1/table_tmh_binders_mhc2.latex
+  #bbbq_1/bbbq_1_stats.latex \
+  #bbbq_1/bbbq_1_percentages.latex \
+  #bbbq_2/bbbq_2_stats.latex \
+  #bbbq_2/bbbq_2_percentages.latex
 
 all_figure_filenames = \
-  bbbq_1/fig_bbbq_1.png \
-  bbbq_2/fig_bbbq_2.png \
+  bbbq_1/fig_f_tmh_mhc1_grid.png \
+  bbbq_1/fig_f_tmh_mhc2_grid.png \
   pics/covid_genome_and_proteome.png \
   fig_tmh_mut_rate.png \
   tmhs/tmhs.png
@@ -34,43 +36,46 @@ all_figure_filenames = \
 all: view.sh article.pdf
 	./view.sh
 
-article.pdf: create.sh bbbq_article.tex $(all_figure_filenames) $(all_table_filenames) $(makefile_names) $(p_bind_per_hydrophobicity_filenames) covid_dataset_strength/covid_dataset_strength.pdf
+article.pdf: create.sh \
+             bbbq_article.tex $(all_figure_filenames) $(all_table_filenames) \
+             $(p_bind_per_hydrophobicity_filenames) \
+             covid_dataset_strength/covid_dataset_strength.pdf
 	aspell -t -c bbbq_article.tex
-	cd bbbq_1 && $(MAKE)
-	cd bbbq_2 && $(MAKE)
+	#cd bbbq_1 && $(MAKE)
+	#cd bbbq_2 && $(MAKE)
 	cd tmhs && $(MAKE)
 	./create.sh
 
 $(repo_names):
 	git clone -b develop https://github.com/richelbilderbeek/$@.git
 
-$(makefile_names): $(repo_names)
-	cd $(dir $@) && $(MAKE)
+#$(makefile_names): $(repo_names)
+#	cd $(dir $@) && $(MAKE)
 
 # $(p_bind_per_hydrophobicity_filenames): p_bind_per_hydrophobicity/p_bind_per_hydrophobicity.csv p_bind_per_hydrophobicity/peptides.csv
 # 	cd p_bind_per_hydrophobicity && $(MAKE)
 
 bbbq_1/bbbq_1.Rmd: bbbq_1
 
-bbbq_1/bbbq_1_percentages.latex: bbbq_1/bbbq_1.Rmd
-	cd bbbq_1; make; cd ..
+#bbbq_1/bbbq_1_percentages.latex: bbbq_1/bbbq_1.Rmd
+#	cd bbbq_1; make; cd ..
  
-bbbq_1/bbbq_1_stats.latex: bbbq_1/bbbq_1.Rmd
-	cd bbbq_1; make; cd ..
+#bbbq_1/bbbq_1_stats.latex: bbbq_1/bbbq_1.Rmd
+#	cd bbbq_1; make; cd ..
 
-bbbq_1/fig_bbbq_1.png: bbbq_1/bbbq_1.Rmd
-	cd bbbq_1; make; cd ..
+#bbbq_1/fig_bbbq_1.png: bbbq_1/bbbq_1.Rmd
+#	cd bbbq_1; make; cd ..
 
-bbbq_2/bbbq_2.Rmd: bbbq_2
+#bbbq_2/bbbq_2.Rmd: bbbq_2
 
-bbbq_2/bbbq_2_percentages.latex: bbbq_2/bbbq_2.Rmd
-	cd bbbq_2; make; cd ..
+#bbbq_2/bbbq_2_percentages.latex: bbbq_2/bbbq_2.Rmd
+#	cd bbbq_2; make; cd ..
  
-bbbq_2/bbbq_2_stats.latex: bbbq_2/bbbq_2.Rmd
-	cd bbbq_2; make; cd ..
+#bbbq_2/bbbq_2_stats.latex: bbbq_2/bbbq_2.Rmd
+#	cd bbbq_2; make; cd ..
 
-bbbq_2/fig_bbbq_2.png: bbbq_2/bbbq_2.Rmd
-	cd bbbq_2; make; cd ..
+#bbbq_2/fig_bbbq_2.png: bbbq_2/bbbq_2.Rmd
+#	cd bbbq_2; make; cd ..
 
 tmhs/tmhs.png:
 	cd tmhs && $(MAKE)
