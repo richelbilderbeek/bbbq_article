@@ -402,26 +402,27 @@ using a Kolmogorov-Smirnov test, for a significance level of 5 percent.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[]
-  \begin{tabular}{lll}
-    Goal & Tool  \\ 
+  \begin{tabular}{llll}
+    Goal & Tool & Reference \\ 
     \hline
-    Predict topology                  & TMHMM \cite{krogh2001predicting} \\
-    Predict topology                  & PureseqTM \cite{wang2019efficient} \\
-    Predict epitopes MHC-I            & \verb;epitope-prediction; \cite{bianchi2017} \\
-    Predict epitopes MHC-II           & NetMHCIIpan \cite{nielsen2008quantitative,karosiene2013netmhciipan} \\
-    Predict epitopes MHC-I and MHC-II & MHCnuggets \cite{shao2020high} \\
-    Call TMHMM from R                 & tmhmm \cite{tmhmm} \\
-    Call PureseqTM from R             & pureseqtmr \cite{pureseqtmr} \\
-    Call NetMHCIIpan from R           & netmhc2pan \cite{netmhc2pan} \\
-    Call MHCnuggets from R            & mhcnuggetsr \cite{mhcnuggetsr} \\
-    \verb;epitope-prediction; LUT     & epiprepreds \cite{epiprepreds} \\
-    NetMHCIIpan LUT                   & nmhc2ppreds \cite{nmhc2ppreds} \\
-    MHCnuggets LUT                    & mhcnpreds \cite{mhcnpreds} \\
-    Combine all                       & bbbq \cite{bbbq}
+    Predict topology                  & TMHMM                     & \cite{krogh2001predicting} \\
+    Predict topology                  & PureseqTM                 & \cite{wang2019efficient} \\
+    Predict epitopes MHC-I            & \verb;epitope-prediction; & \cite{bianchi2017} \\
+    Predict epitopes MHC-II           & NetMHCIIpan               & \cite{nielsen2008quantitative,karosiene2013netmhciipan} \\
+    Predict epitopes MHC-I and MHC-II & MHCnuggets                & \cite{shao2020high} \\
+    Call TMHMM from R                 & tmhmm                     & \cite{tmhmm} \\
+    Call PureseqTM from R             & pureseqtmr                & \cite{pureseqtmr} \\
+    Call NetMHCIIpan from R           & netmhc2pan                & \cite{netmhc2pan} \\
+    Call MHCnuggets from R            & mhcnuggetsr               & \cite{mhcnuggetsr} \\
+    \verb;epitope-prediction; LUT     & epiprepreds               & \cite{epiprepreds} \\
+    NetMHCIIpan LUT                   & nmhc2ppreds               & \cite{nmhc2ppreds} \\
+    MHCnuggets LUT                    & mhcnpreds                 & \cite{mhcnpreds} \\
+    Sequence alignment                & ClustalW                  & \cite{thompson1994clustal} \\
+    Conservation scores               & msa                       & \cite{bodenhofer2015msa} \\
+    Combine all                       & bbbq                      & \cite{bbbq}
   \end{tabular}
   \caption{
     Overview of all software used in this research.
-    Software without a reference is written for this research.
     'LUT' is an abbreviation for 'Look-up table'. 
   }
   \label{table:software_used}
