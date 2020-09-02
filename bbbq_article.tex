@@ -386,10 +386,18 @@ which is a common significance level for an exploratory study.
 \paragraph{Introduction}
 
 To detect the evolutionary conservation of TMHs,
-we create an alignment using msa, that uses msaClustalW in the back,
-create a consensus sequence, determine the topology of the consensus
-using the FLU transition matrix,
-measure the topology of it, then estimate the conservation values.
+we first selected all unique protein sequences per
+gene from all 45k SARS-CoV-2 proteomes,
+resulting in around 500 unique protein sequences per gene.
+From the unique protein sequences, we made an alignment per gene,
+using the msa \cite{bodenhofer2015msa} R package, 
+using default settings, including the use of the default alignment tool
+ClustalW \cite{thompson1994clustal}.
+Per alignment, we used msa to determine the consensus sequence
+and the conservation scores.
+Per consensus sequences, the topology was determined using pureseqtmr.
+
+\richel{use the FLU transition matrix?}
 
 \paragraph{Statistics}
 
