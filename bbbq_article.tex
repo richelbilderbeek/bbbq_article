@@ -576,6 +576,18 @@ with TMHs for our human, viral and bacterial proteome.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Evolutionary conservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_2/scores_boxplot.png}
+  \caption{
+    Evolutionary conservation
+  }
+  \label{fig:evolutionary_conservation_boxplot}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -684,15 +696,6 @@ The earlier study uses a hand-crafted method, that only works on MHC-I.
 Instead, we use MHCnuggets, which (1) free and open source, and (2) predicts
 IC50s on both MHC-I and MHC-II.
 
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_1/fig_ic50_distribution.png}
-  \caption{
-    Distribution of IC50 estimations per haplotype per target.
-    The IC50 value is plotted on a logarithmic scale.
-  }
-  \label{fig:1}
-\end{figure}
-
 \paragraph{Definition of what a binder is}
 
 The earlier study defines a peptide a binder (for a haplotype), 
@@ -704,8 +707,8 @@ where the binders are written to file.
 In this study, a peptide is defined a binder (for a haplotype), 
 if \emp{within a proteome} in which it is found, 
 is within the peptides with the 2\% lowest IC50 values.
-
-\input{bbbq_1/table_ic50_binders.latex}
+Subsection \ref{subsec:ic50s_per_haplotype} shows the IC50 values
+for a binder per haplotype.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
@@ -756,7 +759,28 @@ is within the peptides with the 2\% lowest IC50 values.
 % \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Evolutionary conservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_2/scores.png}
+  \caption{
+    Evolutionary conservation
+  }
+  \label{fig:evolutionary_conservation_tmh}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_2/scores_all.png}
+  \caption{
+    Evolutionary conservation
+  }
+  \label{fig:evolutionary_conservation_all}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50s per haplotype}
+\label{subsec:ic50s_per_haplotype}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Per MHC haplotype, we simulated random peptides and measured the
@@ -837,33 +861,6 @@ is used to determine if a peptide binds to the haplotype's MHC.
   }
   \label{fig:is_tmh_vs_binds_mhc2}
 \end{figure}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{COVID-19 TMHs}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{tmhs/tmhs.png}
-  \caption{
-    Location of amino acids of reference COVID-19 
-    proteome (Uniprot ID: UP000464024).
-    Note that ORF1a results in multiple proteins, 
-    as shown in figure \ref{fig:covid_genome_and_proteome}.
-    Legend: 1 = located in the membrane, 0 = not located in the membrane.
-    Topology obtained using 'pureseqtmr' \cite{pureseqtmr}
-  }
-  \label{fig:covid_topology}
-\end{figure}
-
-\begin{table}[!htbp]
-  \input{tmhs/covid_tmhs.latex}
-  \caption{
-    Number of TMHs per COVID-19 ORF,
-    using 'pureseqtmr' \cite{pureseqtmr}
-  }
-  \label{table:covid_tmhs}
-\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II haplotype occurrences}
