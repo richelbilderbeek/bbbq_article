@@ -1,5 +1,5 @@
 library(bbbq)
-library(ggplot2, quietly = TRUE)
+library(ggplot2, warn.conflicts = FALSE, quietly = TRUE)
 library(dplyr, warn.conflicts = FALSE)
 library(testthat, warn.conflicts = FALSE)
 
@@ -40,17 +40,44 @@ t
 expect_true(all(t$percentile == t$percentile[1]))
 percentile <- t$percentile[1]
 
+title <- "IC50 values that define a binder"
+
+
+ic50_prediction_tool_colors <- c(
+  EpitopePrediction = "#555555",
+  mhcnuggetsr = "#AAAAAA",
+  netmhc2pan = "#FFFFFF"
+)
+
+
 ggplot(t, aes(x = official_name, y = ic50, fill = ic50_prediction_tool)) +
-  geom_col(position = "dodge") +
+  geom_col(position = "dodge", col = "black") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_fill_manual(values = ic50_prediction_tool_colors) +
   scale_y_log10(name = "IC50 (nM) threshold to be a binder") +
   scale_x_discrete(name = "Haplotype") +
   labs(
+    title = title,
     caption = glue::glue(
       "Percentile: {percentile}"
     )
   ) +
   ggsave("ic50s_per_haplotype.png", width = 7, height = 7)
+
+  ggplot(t, aes(x = official_name, y = ic50, fill = ic50_prediction_tool)) +
+  geom_col(position = "dodge", col = "black") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_fill_manual(values = ic50_prediction_tool_colors) +
+  ggplot2::facet_grid(. ~ mhc_class, scales = "free_x") +
+  scale_y_log10(name = "IC50 (nM) threshold to be a binder") +
+  scale_x_discrete(name = "Haplotype") +
+  labs(
+    title = title,
+    caption = glue::glue(
+      "Percentile: {percentile}"
+    )
+  ) +
+  ggsave("ic50s_per_haplotype_per_mhc_class.png", width = 7, height = 7)
 
 
 
@@ -60,3 +87,11 @@ readr::write_csv(
   rename(haplotype = official_name),
   "ic50s_per_haplotype.csv"
 )
+
+knitr::kable(
+  t %>% dplyr::select(-percentile), "latex",
+  caption = glue::glue(
+    "{title}. Percentile: {percentile}"
+  ),
+  label = "ic50s_per_haplotype"
+) %>% cat(., file = "ic50s_per_haplotype.latex")
