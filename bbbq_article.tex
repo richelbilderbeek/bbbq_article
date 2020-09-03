@@ -764,21 +764,27 @@ predicted IC50 using MHCnuggets.
 Here, we show the IC50 value per haplotype that
 is used to determine if a peptide binds to the haplotype's MHC.
 
+% Less pretty 
+% 
+% \begin{figure}[!htbp]
+%   \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype.png}
+%   \caption{
+%     IC50 values that define a binder
+%   }
+%   \label{fig:ic50s_per_haplotype}
+% \end{figure}
+
 \begin{figure}[!htbp]
-  \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype.png}
-  Distribution of predicted IC50s (in nM) per haplotype
+  \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype_per_mhc_class.png}
+  \caption{
+    IC50 values that define a binder
+  }
   \label{fig:ic50s_per_haplotype}
 \end{figure}
 
+\input{ic50s_per_haplotype/ic50s_per_haplotype_1.latex}
 
-\begin{table}[!htbp]
-  \input{ic50s_per_haplotype/ic50s_per_haplotype.latex}
-  \caption{
-    Predicted IC50s (in nM) per haplotype
-    \richel{Used randomly simulated peptides, results are real}
-  }
-  \label{table:ic50s_per_haplotype}
-\end{table}
+\input{ic50s_per_haplotype/ic50s_per_haplotype_2.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Relation between hydrophobicity, TMH and MHC binding}
