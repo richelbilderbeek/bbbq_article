@@ -88,10 +88,40 @@ readr::write_csv(
   "ic50s_per_haplotype.csv"
 )
 
+t
+t_wide <- tidyr::pivot_wider(
+  data = t %>% dplyr::select(official_name, ic50_prediction_tool, ic50, mhc_class),
+  names_from = ic50_prediction_tool,
+  values_from = ic50
+)
+t_wide
+
 knitr::kable(
-  t %>% dplyr::select(-percentile), "latex",
+  t_wide, "latex",
   caption = glue::glue(
     "{title}. Percentile: {percentile}"
   ),
   label = "ic50s_per_haplotype"
 ) %>% cat(., file = "ic50s_per_haplotype.latex")
+
+knitr::kable(
+  t_wide %>% dplyr::filter(mhc_class == "I") %>% dplyr::select(official_name, EpitopePrediction, mhcnuggetsr),
+  "latex",
+  caption = glue::glue(
+    "{title}, for MHC-I haplotypes. ",
+    "Peptide length: {bbbq::get_mhc1_peptide_length()}. ",
+    "Percentile: {percentile}."
+  ),
+  label = "ic50s_per_haplotype_1"
+) %>% cat(., file = "ic50s_per_haplotype_1.latex")
+
+knitr::kable(
+  t_wide %>% dplyr::filter(mhc_class == "II") %>% dplyr::select(official_name, netmhc2pan, mhcnuggetsr),
+  "latex",
+  caption = glue::glue(
+    "{title}, for MHC-II haplotypes. ",
+    "Peptide length: {bbbq::get_mhc2_peptide_length()}. ",
+    "Percentile: {percentile}."
+  ),
+  label = "ic50s_per_haplotype_2"
+) %>% cat(., file = "ic50s_per_haplotype_2.latex")
