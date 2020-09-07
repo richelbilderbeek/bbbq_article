@@ -91,7 +91,7 @@ practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genom
  
 \paragraph{TMHs}
 
-Transmembrane helices are conserved structures that span
+Transmembrane helices are structurally conserved structures that span
 a cell membrane with an alpha helix.
 TMHs are hydrophobic, as this is required to span the 
 hydrophobic cellular lipid membrane. Additionally,
@@ -102,7 +102,7 @@ together with the internals of soluble proteins, where the
 hydrophobicity parts guide the protein to achieve its 3D configuration.
 TMHs are general structures: 25 percent of the human proteome is
 anchored by at least one TMH. SARS-CoV-2 has 21 TMHs, 
-making up for \richel{?} percent of its entire genome.
+making up for 5.5 percent of its entire genome.
 There are multiple computational tools developed to predict which
 parts of membrane proteins are TMH.
 
@@ -113,7 +113,7 @@ for a same hydrophobicity, are as likely to stem from
 membrane proteins TMHs or from soluble proteins hydrophobic (non-TMH) regions.
 For MHC-I, however, it is found that the 9-mers stemming
 from TMHs are presented more often than expected by 
-chance \cite{bianchi2017}
+chance (\cite{bianchi2017})
 \richel{but also when compensating for hydrophobicity?}.
 For MHC-II, it is unknown which percentage of binders 
 is derived from TMHs for all 13-mers present in a proteome
@@ -121,8 +121,8 @@ that have the same hydrophobicity.
 
 \paragraph{HLAs increase detection range}
 
-An increased detection
-is obtained by expressing a wide variety of
+One of many strategies to increase the number of pathogenic
+peptides that can be detected is to express a wide variety of
 MHCs, which is assured by the human leukocyte antigen gene complex (HLA).
 However, a different HLA will result in a different variety of MHCs,
 that will display different peptide fragments. Additionally, there
@@ -188,7 +188,7 @@ an immune system that as most attentive for loci that are
 essential for a virus, as these will be most conserved.
 In SARS-CoV-2, for example, there is preliminary evidence that the strongest
 selection pressure is upon residues that changes its 
-virulence \cite{velazquez2020positive}.
+virulence (\cite{velazquez2020positive}).
 These loci, however, only account for a small part of a pathogen's proteome.
 Additionally, these essential parts differ widely between pathogens.
 Because of this scarcity and variance in targets, 
@@ -229,12 +229,12 @@ epitopes, due to immunodominance.
 Immunodominance is a feature of the immune system,
 due to which some epitopes dominate in causing an immune response,
 where other (called subdominant) epitopes end up having no 
-effect \cite{akram2012immunodominance}.
+effect (\cite{akram2012immunodominance}).
 The same study mentions 20 factors that influence the strength
 of an immune response.
 The most relevant factor for this study is the effect of
 a mutation within an epitope, 
-such as the in vitro example described in \cite{berkhoff2004mutation},
+such as the in vitro example described in (\cite{berkhoff2004mutation}),
 where one single mutation resulted in a 5-20\% weaker
 response of virus-specific CD8+ T cells \richel{Fun experiment:
 do this in silico}.
@@ -246,21 +246,21 @@ low and effects of a single mutation noticeable.
 
 When using DNA sequences, one can use a skewed rate 
 in non- versus synonymous mutation
-to detect the signature of selection \cite{murrell2015gene}.
+to detect the signature of selection (\cite{murrell2015gene}).
 Using AA sequences, however, has its advantages,
 as its is closer to the actual phenotype
 selection acts upon: DNA may never be translated to RNA,
-or its RNA may never be transcribed \cite{diz2012proteomics}
+or its RNA may never be transcribed (\cite{diz2012proteomics})
 \richel{improve upon this point}.
 When using a proteome in phylogenetic research,
 we know that the majority of proteins are selected to just 
 maintain their function most of the time, where
 is the time spans there is selection, only a few AAs
 can actually increase the 'fitness' of the 
-protein \cite{anisimova2009investigating}.
+protein (\cite{anisimova2009investigating}).
 There, when generalizing the dynamics of mostly purifying selection (to maintain
 a protein's function) and a short duration of positive selection,
-those genes that are selected cannot be detected \cite{yang2000statistical}.
+those genes that are selected cannot be detected (\cite{yang2000statistical}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hypotheses}
@@ -353,7 +353,7 @@ are as likely to be a binder as expected by chance, this study
 uses 5\%, which is a common significance level for an exploratory study.
 
 Instead of using the membrane protein topology prediction
-tool \verb;TMHMM; \cite{krogh2001predicting}, PureseqTM \cite{wang2019efficient}
+tool \verb;TMHMM; (\cite{krogh2001predicting}), PureseqTM (\cite{wang2019efficient})
 is used instead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -380,9 +380,9 @@ we first selected all unique protein sequences per
 gene from all 45k SARS-CoV-2 proteomes,
 resulting in around 500 unique protein sequences per gene.
 From the unique protein sequences, we made an alignment per gene,
-using the msa \cite{bodenhofer2015msa} R package, 
+using the msa (\cite{bodenhofer2015msa}) R package, 
 using default settings, including the use of the default alignment tool
-ClustalW \cite{thompson1994clustal}.
+ClustalW (\cite{thompson1994clustal}).
 Per alignment, we used msa to determine the consensus sequence
 and the conservation scores.
 Per consensus sequences, the topology was determined using pureseqtmr.
@@ -437,9 +437,9 @@ As a starting point, a review paper was used.
 
 There are multiple computational tools developed to predict which
 parts of membrane proteins are TMH.
-In 2001, multiple tools to do so have been compared \cite{moller2001evaluation},
-of which TMHMM \cite{krogh2001predicting} turned out to be the best.
-TMHMM is used in the previous study \cite{bianchi2017},
+In 2001, multiple tools to do so have been compared (\cite{moller2001evaluation}),
+of which TMHMM (\cite{krogh2001predicting}) turned out to be the best.
+TMHMM is used in the previous study (\cite{bianchi2017}),
 yet TMHMM itself has a restrictive software license and is nearly two
 decades old. 
 Inspired on TMHMM, many other tools followed, such as 
@@ -456,11 +456,11 @@ For MHC-I, there are multiple computational tools developed
 to predict epitopes. 
 According to \cite{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
-NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
-A tool developed later is \verb;epitope-prediction; \cite{bianchi2017},
-which uses a stabilized matrix method \cite{kim2009derivation}.
+NetMHCcons (\cite{karosiene2012netmhccons}) gave the best predictions.
+A tool developed later is \verb;epitope-prediction; (\cite{bianchi2017}),
+which uses a stabilized matrix method (\cite{kim2009derivation}).
 The most recent FOSS tool available is 
-MHCnuggets \cite{shao2020high} (which can do both MHC-I 
+MHCnuggets (\cite{shao2020high}) (which can do both MHC-I 
 and MHC-II prediction) which is used in this study
 
 \paragraph{MHC-II epitope prediction}
@@ -473,8 +473,10 @@ According to \cite{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
 NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
 gave rise to the most accurate predictions.
-Later tools are \cite{zhang2013predicting},
-\cite{trolle2014nettepi}, \cite{zhang2015accurate}
+Later tools are 
+\richel{name of tool here} (\cite{zhang2013predicting}),
+\richel{name of tool here} (\cite{trolle2014nettepi}),
+\richel{name of tool here} (\cite{zhang2015accurate})
 and the very recent MHCnuggets (\cite{shao2020high}),
 the latter which is used in this study.
 
@@ -657,7 +659,7 @@ We aimed our evolutionary experiment at TMHs, because these can
 be predicted well from a protein structure,
 are common structures and are present in all pathogens. 
 We could have done the same experiment on beta-turn,
-as also these can be predicted well \cite{petersen2010netturnp},
+as also these can be predicted well (\cite{petersen2010netturnp}),
 are common structures and are present in all pathogens.
 
 \richel{
@@ -674,7 +676,7 @@ are common structures and are present in all pathogens.
 We thank the Center for Information Technology of the University 
 of Groningen for its support and for providing access to the Peregrine 
 high performance computing cluster. 
-Additionally, we would like to thank Sci-Hub \cite{himmelstein2018sci}
+Additionally, we would like to thank Sci-Hub (\cite{himmelstein2018sci})
 for allowing us to read paywalled articles while working from home.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

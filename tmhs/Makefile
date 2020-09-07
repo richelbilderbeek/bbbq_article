@@ -1,10 +1,10 @@
 all: tmhs.png covid_tmhs.latex
 
-tmhs.png: tmhs.Rmd
-	Rscript -e 'rmarkdown::render("tmhs.Rmd")'
+tmhs.png: tmhs.R
+	Rscript tmhs.R
 
-covid_tmhs.latex: covid_tmhs.csv
-	csv2latex covid_tmhs.csv --nohead > covid_tmhs.latex
+covid_tmhs.latex: tmhs.R
+	Rscript tmhs.R
 
 clean:
 	rm *.png *.latex *.csv *.pdf
