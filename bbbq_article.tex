@@ -12,9 +12,8 @@ epitopes derived from a TMH for a pathogen proteome, when compared with
 a host proteome.
 Additionally, MHC-II binds to peptides derived from TMHs 
 [less/equally/more] often than expected by chance.
-Lastly, using an innovative computation method, 
-we show that natural selection on TMHs is [strong enough/still too weak]
-to detect.
+Lastly, we show the TMHs are [more/less/equally] 
+conserved.
 Our findings suggest that the immune system is [less/neutral/more]
 vigilant to TMHs than expected by chance and this has 
 left [a clear/a weak/no]
@@ -24,7 +23,7 @@ signal in the evolutionary history of the pathogen.
 
 {\bf Keywords:} antigen presentation, membrane proteins, bioinformatics, 
 adaptive immunity, transmembrane domain, transmembrane helix, 
-epitopes, T lymphocyte, MHC-1, MHC-I, MHC-2, MHC-II, COVID-19
+epitopes, T lymphocyte, MHC-I, MHC-II, SARS-CoV-2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -102,7 +101,7 @@ Polypeptide fragments derived from TMHs are among the most hydrophobic,
 together with the internals of soluble proteins, where the
 hydrophobicity parts guide the protein to achieve its 3D configuration.
 TMHs are general structures: 25 percent of the human proteome is
-anchored by at least one TMH. COVID-19 has 21 TMHs, 
+anchored by at least one TMH. SARS-CoV-2 has 21 TMHs, 
 making up for \richel{?} percent of its entire genome.
 There are multiple computational tools developed to predict which
 parts of membrane proteins are TMH.
@@ -187,7 +186,7 @@ exerted by the immune system was only limited (\cite{han2019individual}).
 In general, on would hope that evolutionary selection results in
 an immune system that as most attentive for loci that are
 essential for a virus, as these will be most conserved.
-In COVID-19, for example, there is preliminary evidence that the strongest
+In SARS-CoV-2, for example, there is preliminary evidence that the strongest
 selection pressure is upon residues that changes its 
 virulence \cite{velazquez2020positive}.
 These loci, however, only account for a small part of a pathogen's proteome.
@@ -291,7 +290,7 @@ For a human reference proteome, we used the Uniprot human reference proteome
 from \url{https://www.uniprot.org/proteomes/UP000005640}), 
 which is the same as \cite{bianchi2017}.
 The viral reference proteome is represented by
-the proteome of the first sequenced COVID-19 strain (\cite{wu2020new},
+the proteome of the first sequenced SARS-CoV-2 strain (\cite{wu2020new},
 GenBank ID of MN908947.3, \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947})
 For bacteria, we used the Uniprot Mycobacterium tuberculosis reference genome
 (\url{https://www.uniprot.org/proteomes/UP000001584}) is used.
@@ -570,7 +569,8 @@ with TMHs for our human, viral and bacterial proteome.
   \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc2_grid.png}
   \caption{
     \% epitopes overlapping with transmembrane helix
-    for a human, COVID-19 and Mycobacterium proteome.
+    for a human, SARS-CoV-2 (labeled 'covid') 
+    and Mycobacterium tuberculosis (labeled 'myco') proteome. 
   }
   \label{fig:2}
 \end{figure}
@@ -641,9 +641,9 @@ to be derived from TMH within either a human host and its bacterial pathogen.
 We concluded that the
 epitopes that MHC-I presents are [as/not as] likely 
 to be derived from TMH within either a human host and its viral pathogen.
-Because the full COVID-19 has 21 TMHs, the percentages
+Because the full SARS-CoV-2 has 21 TMHs, the percentages
 of MHC-I epitopes being part of a TMH are likelier to be affected by
-stochasticity. We chose to use COVID-19 regardless, as the thousands
+stochasticity. We chose to use SARS-CoV-2 regardless, as the thousands
 of its time-dated genomic sequences are ideal for determining the 
 evolutionary conservation of MHC-I detecting TMHs. 
 
@@ -750,7 +750,7 @@ for a binder per haplotype.
 %\begin{table}[!htbp]
 %   \input{bbbq_1/bbbq_1_stats_covid.latex}
 %   \caption{
-%     Kolmogorov-Smirnov test results comparing human and COVID-19 for MHC-I
+%     Kolmogorov-Smirnov test results comparing human and SARS-CoV-2 for MHC-I
 %     \richel{Done on the simulated data}
 %   }
 %   \label{table:bbbq_1_stats_covid}
@@ -759,7 +759,7 @@ for a binder per haplotype.
 % \begin{table}[!htbp]
 %   \input{bbbq_1/bbbq_1_stats_myco.latex}
 %   \caption{
-%     Kolmogorov-Smirnov test results comparing human and Mycobacterium for MHC-I
+%     Kolmogorov-Smirnov test results comparing human and Mycobacterium tuberculosis for MHC-I
 %     \richel{Done on the simulated data}
 %   }
 %   \label{table:bbbq_1_stats_myco}
@@ -774,7 +774,7 @@ for a binder per haplotype.
 % \begin{table}[!htbp]
 %   \input{bbbq_2/bbbq_2_stats_covid.latex}
 %   \caption{
-%     Kolmogorov-Smirnov test results comparing human and COVID-19 for MHC-II
+%     Kolmogorov-Smirnov test results comparing human and SARS-CoV-2 for MHC-II
 %     \richel{Done on the simulated data}
 %   }
 %   \label{table:bbbq_2_stats_covid}
@@ -783,7 +783,8 @@ for a binder per haplotype.
 % \begin{table}[!htbp]
 %   \input{bbbq_2/bbbq_2_stats_myco.latex}
 %   \caption{
-%     Kolmogorov-Smirnov test results comparing human and Mycobacterium for MHC-II
+%     Kolmogorov-Smirnov test results comparing human and 
+      Mycobacterium tuberculosis for MHC-II
 %     \richel{Done on the simulated data}
 %   }
 %   \label{table:bbbq_2_stats_myco}
