@@ -566,6 +566,8 @@ are sampled from the same distribution.
 
 Figure \ref{fig:2} shows the percentages of MHC-II epitopes overlapping 
 with TMHs for our human, viral and bacterial proteome.
+See the supplementary materials (tables \ref{tab:tmh_binders_mhc1} 
+and \ref{tab:tmh_binders_mhc2}) for the TMH and epitope counts.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc2_grid.png}
@@ -721,7 +723,8 @@ software and the use of a different definition of what a binder is.
 The earlier study uses TMHMM, which has a restricted software license.
 Instead, we chose to use PureseqTM, which is free and open source.
 
-\input{bbbq_1/table_f_tmh.latex}
+% Percentage of spots and spots that overlap with a TMH
+\input{bbbq_1_fast/table_f_tmh.latex}
 
 \paragraph{IC50 prediction software}
 
@@ -747,10 +750,15 @@ for a binder per haplotype.
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{bbbq_1/table_tmh_binders_mhc1.latex}
+% Percentage of MHC-I 9-mers overlapping with TMH. Values in brackets
+% show the number of binders that have at least one residue overlapping with a
+% TMH (first value)as well as the number of binders (second value). Percentile
+% used: 0.02
+% Label: tab:tmh_binders_mhc1
+\input{bbbq_1_fast/table_tmh_binders_mhc1.latex}
 
 %\begin{table}[!htbp]
-%   \input{bbbq_1/bbbq_1_stats_covid.latex}
+%   \input{bbbq_1_fast/bbbq_1_stats_covid.latex}
 %   \caption{
 %     Kolmogorov-Smirnov test results comparing human and SARS-CoV-2 for MHC-I
 %     \richel{Done on the simulated data}
@@ -759,7 +767,7 @@ for a binder per haplotype.
 % \end{table}
 
 % \begin{table}[!htbp]
-%   \input{bbbq_1/bbbq_1_stats_myco.latex}
+%   \input{bbbq_1_fast/bbbq_1_stats_myco.latex}
 %   \caption{
 %     Kolmogorov-Smirnov test results comparing human and Mycobacterium tuberculosis for MHC-I
 %     \richel{Done on the simulated data}
@@ -771,10 +779,10 @@ for a binder per haplotype.
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{bbbq_1/table_tmh_binders_mhc2.latex}
+\input{bbbq_1_fast/table_tmh_binders_mhc2.latex}
 
 % \begin{table}[!htbp]
-%   \input{bbbq_2/bbbq_2_stats_covid.latex}
+%   \input{bbbq_1_fast/bbbq_2_stats_covid.latex}
 %   \caption{
 %     Kolmogorov-Smirnov test results comparing human and SARS-CoV-2 for MHC-II
 %     \richel{Done on the simulated data}
@@ -783,7 +791,7 @@ for a binder per haplotype.
 % \end{table}
 
 % \begin{table}[!htbp]
-%   \input{bbbq_2/bbbq_2_stats_myco.latex}
+%   \input{bbbq_1_fast/bbbq_2_stats_myco.latex}
 %   \caption{
 %     Kolmogorov-Smirnov test results comparing human and 
       Mycobacterium tuberculosis for MHC-II
