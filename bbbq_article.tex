@@ -383,11 +383,11 @@ From the unique protein sequences, we made an alignment per gene,
 using the msa (\cite{bodenhofer2015msa}) R package, 
 using default settings, including the use of the default alignment tool
 ClustalW (\cite{thompson1994clustal}).
+Instead of the default BLOSUM62 amino acid transition matrix (\cite{henikoff1992amino}),
+the FLU transition matrix (\cite{dang2010flu}) was used.
 Per alignment, we used msa to determine the consensus sequence
 and the conservation scores.
 Per consensus sequences, the topology was determined using pureseqtmr.
-
-\richel{use the FLU transition matrix?}
 
 \paragraph{Statistics}
 
