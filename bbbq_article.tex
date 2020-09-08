@@ -383,8 +383,9 @@ From the unique protein sequences, we made an alignment per gene,
 using the msa (\cite{bodenhofer2015msa}) R package, 
 using default settings, including the use of the default alignment tool
 ClustalW (\cite{thompson1994clustal}).
-Instead of the default BLOSUM62 amino acid transition matrix (\cite{henikoff1992amino}),
-the FLU transition matrix (\cite{dang2010flu}) was used.
+Instead of the default and general BLOSUM62 amino acid transition matrix (\cite{henikoff1992amino}),
+the FLU transition matrix (\cite{dang2010flu}) was used,
+as the latter is based on amino acid transitions in another viral pathogen, influenza.
 Per alignment, we used msa to determine the consensus sequence
 and the conservation scores.
 Per consensus sequences, the topology was determined using pureseqtmr.
@@ -819,6 +820,29 @@ for a binder per haplotype.
     Evolutionary conservation
   }
   \label{fig:evolutionary_conservation_all}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Relation between haplotype and TMH over-representation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{haplotype_freq_vs_f_tmh_epitopes/haplotype_perc_vs_f_tmh_binders.png}
+  \caption{
+    Relation between genotype frequency and the percentage
+    of binders that are TMH for the 21 MHC-II haplotypes
+  }
+  \label{fig:haplotype_perc_vs_f_tmh_binders}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{haplotype_freq_vs_f_tmh_epitopes/phenotype_freq_vs_f_tmh_binders.png}
+  \caption{
+    Relation between phenotype frequency and the percentage
+    of binders that are TMH for the 21 MHC-II haplotypes
+  }
+  \label{fig:phenotype_freq_vs_f_tmh_binders}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
