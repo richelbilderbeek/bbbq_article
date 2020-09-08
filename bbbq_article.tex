@@ -584,11 +584,24 @@ and \ref{tab:tmh_binders_mhc2}) for the TMH and epitope counts.
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Evolutionary conservation scores are shown in 
+figures \ref{fig:evolutionary_conservation} (topology)
+and \ref{fig:evolutionary_conservation_boxplot} (boxplot)
+for proteins that have at least one TMH (see figures
+\ref{fig:evolutionary_conservation_all} and 
+\ref{fig:evolutionary_conservation_all_boxplot}
+for the scores for all proteins).
+
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_2/scores.png}
   \caption{
-    Conservation scores across the SARS-CoV-2 proteome
-    for proteins that have at least one TMH
+    Conservation scores for the aligned SARS-CoV-2 proteomes,
+    for proteins that have at least one TMH.
+    The (non-logarithmic) scale of the conservation score has been removed
+    for readability.
+    Conservation scores do not start at residue 1 when
+    an aligned protein sequence outflanks the consensus sequence 
+    at the N-terminal
   }
   \label{fig:evolutionary_conservation}
 \end{figure}
@@ -604,24 +617,6 @@ and \ref{tab:tmh_binders_mhc2}) for the TMH and epitope counts.
 \end{figure}
 
 
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_all.png}
-  \caption{
-    Conservation scores across the SARS-CoV-2 proteome
-    for all proteins
-  }
-  \label{fig:evolutionary_conservation}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_boxplot_all.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    for all proteins
-  }
-  \label{fig:evolutionary_conservation_boxplot}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -807,21 +802,28 @@ for a binder per haplotype.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores.png}
+  \includegraphics[width=0.7\textwidth,scale=0.7]{bbbq_2/scores_all.png}
   \caption{
-    Evolutionary conservation
-  }
-  \label{fig:evolutionary_conservation_tmh}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_all.png}
-  \caption{
-    Evolutionary conservation
+    Conservation scores for the aligned SARS-CoV-2 proteomes,
+    for all proteins.
+    The (non-logarithmic) scale of the conservation score has been removed
+    for readability.
+    Conservation scores do not start at residue 1 when
+    an aligned protein sequence outflanks the consensus sequence 
+    at the N-terminal.
   }
   \label{fig:evolutionary_conservation_all}
 \end{figure}
 
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_2/scores_boxplot_all.png}
+  \caption{
+    Evolutionary conservation scores of TMH versus non-TMH
+    residues in the SARS-CoV-2 proteome,
+    for all proteins
+  }
+  \label{fig:evolutionary_conservation_all_boxplot}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Relation between haplotype and TMH over-representation}
