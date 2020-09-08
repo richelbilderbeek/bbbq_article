@@ -941,23 +941,3 @@ is used to determine if a peptide binds to the haplotype's MHC.
   \label{table:mhc2_haplotypes}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Kolmogorov-Smirnov}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The Kolmogorov-Smirnov (KS) test determines if two samples
-are derived from the same distribution, without making assumptions
-regarding the shape of that distribution. 
-
-We will reject
-the null hypothesis that MHC-I has the same percentage of epitopes 
-overlapping with TMHs in Homo sapiens compared to each pathogen when 
-the KS statistic $D_{n,m}$ follows the relationship as shown in 
-equation \ref{eq:ks}, for a significance level $\alpha = 0.05$
-and $n = m$ equals the number of HLA haplotypes.
-
-\begin{equation}
-   D_{n,m} > \frac{1}{\sqrt{n}} \cdot \sqrt{ -\ln(\frac{\alpha}{2}) \cdot \frac{1 + \frac{n}{m}}{2} }
-   \label{eq:ks}
-\end{equation}
-
