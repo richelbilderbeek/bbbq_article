@@ -536,28 +536,32 @@ This package is too specific to be submitted to CRAN.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure \ref{fig:1} shows the percentages of MHC-I epitopes overlapping 
-with TMHs for our human, viral and bacterial proteome.
+with TMHs for our human, viral and bacterial proteome,
+when using EpitopePrediction to predict epitopes.
+See the supplementary materials (table \ref{tab:tmh_binders_mhc1}) 
+for the TMH and epitope counts.
 
-The KS test to determine if MHC-I has the same percentage 
-of epitopes overlapping with viral TMHs, 
-compared to human TMHs \richel{$\mathcal{H}_{1,V}$},
-resulted in a p-value of \richel{unknown},
-which makes us [reject/accept] the hypothesis that these percentages
-are sampled from the same distribution. 
+% The KS test to determine if MHC-I has the same percentage 
+% of epitopes overlapping with viral TMHs, 
+% compared to human TMHs \richel{$\mathcal{H}_{1,V}$},
+% resulted in a p-value of \richel{unknown},
+% which makes us [reject/accept] the hypothesis that these percentages
+% are sampled from the same distribution. 
 
-The KS test to determine if MHC-I has the same percentage 
-of epitopes overlapping with bacterial TMHs, 
-compared to human TMHs \richel{$\mathcal{H}_{1,B}$},
-resulted in a p-value of \richel{unknown},
-which makes us [reject/accept] the hypothesis that these percentages
-are sampled from the same distribution. 
+% The KS test to determine if MHC-I has the same percentage 
+% of epitopes overlapping with bacterial TMHs, 
+% compared to human TMHs \richel{$\mathcal{H}_{1,B}$},
+% resulted in a p-value of \richel{unknown},
+% which makes us [reject/accept] the hypothesis that these percentages
+% are sampled from the same distribution. 
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc1_grid.png}
+  \includegraphics[height=0.9\textheight]{bbbq_1_fast/fig_f_tmh_mhc1_grid.png}
   \caption{
     Percentage of MHC-I epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
     Epitope prediction by EpitopePrediction.
+    See table \ref{tab:tmh_binders_mhc1} for the TMH and epitope counts.
   }
   \label{fig:1}
 \end{figure}
@@ -568,16 +572,17 @@ are sampled from the same distribution.
 
 Figure \ref{fig:2} shows the percentages of MHC-II epitopes overlapping 
 with TMHs for our human, viral and bacterial proteome.
-See the supplementary materials (tables \ref{tab:tmh_binders_mhc1} 
-and \ref{tab:tmh_binders_mhc2}) for the TMH and epitope counts.
+See the supplementary materials (table \ref{tab:tmh_binders_mhc2}) 
+for the TMH and epitope counts.
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc2_grid.png}
+  \includegraphics[height=0.9\textheight]{bbbq_1_fast/fig_f_tmh_mhc2_grid.png}
   \caption{
     \% epitopes overlapping with transmembrane helix
     for a human, SARS-CoV-2 (labeled 'covid') 
     and Mycobacterium tuberculosis (labeled 'myco') proteome,
     Epitope prediction by NetMHCIIpan.
+    See table \ref{tab:tmh_binders_mhc2} for the TMH and epitope counts.
   }
   \label{fig:2}
 \end{figure}
