@@ -574,9 +574,12 @@ for the TMH and epitope counts.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Evolutionary conservation scores are shown in 
-figures \ref{fig:evolutionary_conservation} (topology)
-and \ref{fig:evolutionary_conservation_violin} (boxplot)
-for proteins that have at least one TMH (see figures
+figures \ref{fig:evolutionary_conservation} (topology),
+\ref{fig:evolutionary_conservation_violin} (per 
+protein with at least 1 TMH, violin)
+and \ref{fig:evolutionary_conservation_merged} (grouped 
+from all proteins that have at least 1 TMH).
+See figures
 \ref{fig:evolutionary_conservation_all} and 
 \ref{fig:evolutionary_conservation_all_violin}
 for the scores for all proteins).
@@ -593,6 +596,16 @@ for the scores for all proteins).
     at the N-terminal
   }
   \label{fig:evolutionary_conservation}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_2/scores_merged_violin.png}
+  \caption{
+    Evolutionary conservation scores of TMH versus non-TMH
+    residues in the SARS-CoV-2 proteome,
+    with conservation scores group from all proteins that have at least one TMH
+  }
+  \label{fig:evolutionary_conservation_merged}
 \end{figure}
 
 \begin{figure}[!htbp]
