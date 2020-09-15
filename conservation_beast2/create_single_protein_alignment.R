@@ -1,5 +1,5 @@
 library(testthat)
-library(dplyr)
+library(dplyr, warn.conflicts = FALSE)
 
 proteomes_filename <- "allprot0621.fasta"
 testthat::expect_true(file.exists(proteomes_filename))

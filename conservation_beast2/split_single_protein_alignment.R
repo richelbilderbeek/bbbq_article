@@ -1,14 +1,24 @@
 library(testthat)
-library(dplyr)
-library(ggplot2)
-library(seqinr)
+library(dplyr, warn.conflicts = FALSE)
+library(ggplot2, warn.conflicts = FALSE)
+library(seqinr, warn.conflicts = FALSE)
 
 proteomes_envelope_filename <- "allprot0621_envelopes.fasta"
 testthat::expect_true(file.exists(proteomes_envelope_filename))
 
 proteome <- seqinr::read.fasta(proteomes_envelope_filename, seqtype = "AA", as.string = TRUE)
 
-proteins <- proteome
+proteome_names <- seqinr::getName(proteome)
+
+names(proteome) <- paste0("p", seq(1, length(names(proteome))))
+
+library(msa)
+alignment <- msa::msa(
+  inputSeqs = proteomes_envelope_filename,
+  method = "ClustalOmega",
+  type = "protein",
+  verbose = TRUE
+)
 
 message("number of proteins: ", length(proteins))
 hist(getLength(proteins))
