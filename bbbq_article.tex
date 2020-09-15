@@ -409,14 +409,11 @@ using a Kolmogorov-Smirnov test, for a significance level of 5 percent.
     Predict topology                  & PureseqTM                 & \cite{wang2019efficient} \\
     Predict epitopes MHC-I            & \verb;epitope-prediction; & \cite{bianchi2017} \\
     Predict epitopes MHC-II           & NetMHCIIpan               & \cite{nielsen2008quantitative,karosiene2013netmhciipan} \\
-    Predict epitopes MHC-I and MHC-II & MHCnuggets                & \cite{shao2020high} \\
     Call TMHMM from R                 & tmhmm                     & \cite{tmhmm} \\
     Call PureseqTM from R             & pureseqtmr                & \cite{pureseqtmr} \\
     Call NetMHCIIpan from R           & netmhc2pan                & \cite{netmhc2pan} \\
-    Call MHCnuggets from R            & mhcnuggetsr               & \cite{mhcnuggetsr} \\
     \verb;epitope-prediction; LUT     & epiprepreds               & \cite{epiprepreds} \\
     NetMHCIIpan LUT                   & nmhc2ppreds               & \cite{nmhc2ppreds} \\
-    MHCnuggets LUT                    & mhcnpreds                 & \cite{mhcnpreds} \\
     Sequence alignment                & ClustalW                  & \cite{thompson1994clustal} \\
     Conservation scores               & msa                       & \cite{bodenhofer2015msa} \\
     Combine all                       & bbbq                      & \cite{bbbq}
@@ -460,9 +457,9 @@ from a set of multiple tools,
 NetMHCcons (\cite{karosiene2012netmhccons}) gave the best predictions.
 A tool developed later is \verb;epitope-prediction; (\cite{bianchi2017}),
 which uses a stabilized matrix method (\cite{kim2009derivation}).
-The most recent FOSS tool available is 
-MHCnuggets (\cite{shao2020high}) (which can do both MHC-I 
-and MHC-II prediction) which is used in this study
+The most recent and promising FOSS tool available now appears
+to be MHCnuggets (\cite{shao2020high}), which can do both MHC-I 
+and MHC-II prediction.
 
 \paragraph{MHC-II epitope prediction}
 
@@ -474,12 +471,9 @@ According to \cite{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
 NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
 gave rise to the most accurate predictions.
-Later tools are 
-\richel{name of tool here} (\cite{zhang2013predicting}),
-\richel{name of tool here} (\cite{trolle2014nettepi}),
-\richel{name of tool here} (\cite{zhang2015accurate})
-and the very recent MHCnuggets (\cite{shao2020high}),
-the latter which is used in this study.
+Later tools are NetTepi (\cite{trolle2014nettepi}),
+a genetic-algorithm-based ensemble method (\cite{zhang2015accurate})
+and (again) the very recent MHCnuggets (\cite{shao2020high}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software written}
@@ -489,7 +483,6 @@ The R programming language is used for the complete
 experiment, including the analysis.
 The complete experiment is bundled in the 'bbbq' R package,
 which is dependent on 'pureseqtmr', 
-'mhcnuggetsr' and 'mhcnpreds',
 'epitope-prediction' and 'epiprepreds',
 'netmhc2pan' and 'nmhc2ppreds'
 as described below.
@@ -501,26 +494,15 @@ Excluded are the features that are used by the 'PureseqTM'
 developers to verify the correctness of their work.
 'pureseqtmr' has been submitted to CRAN.
 
-The R package 'mhcnuggetsr' is written to call the 
-'MHCnuggets' Python package.
-'mhcnuggetsr' allows to install 'MHCnuggets' and call it
-to predict IC50 values for multiple MHC haplotypes that 'MHCnuggets' 
-has already been trained upon.
-Excluded is the feature to train 'MHCnuggets' on new data and/or other
-haplotypes, as this study only needs IC50 predictions.
-'mhcnuggetsr' has been submitted to CRAN.
-
 To be able to use pre-calculated 
-\verb;epitope-prediction;, NetMHCIIpan and MHCnuggets
+\verb;epitope-prediction; and NetMHCIIpan
 predictions (i.e. a distribution of IC50 values per haplotype, 
-derived from random peptides), the 'epiprepreds', 'nmhc2ppreds' 
-and 'mhcnpreds' R package have been 
+derived from random peptides), the 'epiprepreds' and 'nmhc2ppreds' 
+R packages have been 
 developed. In practice, these are nothing more than a big look-up table.
 If \verb;epitope-prediction; is put onto CRAN, 'epiprepreds'
 will be submitted as well.
 If 'netmhc2pan' is allowed onto CRAN, 'nmhc2ppreds'
-will be submitted as well.
-If 'mhcnuggetsr' is put onto CRAN, 'mhcnpreds'
 will be submitted as well.
 
 To reproduce the full experiment as done in this paper,
@@ -731,10 +713,11 @@ Instead, we chose to use PureseqTM, which is free and open source.
 
 \paragraph{IC50 prediction software}
 
-The earlier study uses a hand-crafted method, 
-that has been trained on MHC-I haplotypes only.
-This study uses MHCnuggets, which (1) free and open source, and (2) predicts
-IC50s on both MHC-I and MHC-II.
+The earlier study uses \verb;epitope-prediction; a hand-crafted method, 
+that has been trained on MHC-I haplotypes only,
+which is used here again. For MHC-II IC50 predictions, the
+'netmhc2pan' R package is used, which calls NetMHC2pan.
+Both are packages are free and open-source.
 
 \paragraph{Definition of what a binder is}
 
@@ -753,16 +736,6 @@ for a binder per haplotype.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_1/fig_f_tmh_mhc1_grid.png}
-  \caption{
-    Percentage of MHC-I epitopes overlapping with TMHs
-    for a human, viral and bacterial proteome.
-    Epitope prediction by MHCnuggets.
-  }
-  \label{fig:1_mhcnuggets}
-\end{figure}
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc1_normalized.png}
@@ -801,17 +774,6 @@ for a binder per haplotype.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_1/fig_f_tmh_mhc2_grid.png}
-  \caption{
-    \% epitopes overlapping with transmembrane helix
-    for a human, SARS-CoV-2 (labeled 'covid') 
-    and Mycobacterium tuberculosis (labeled 'myco') proteome,
-    Epitope prediction by MHCnuggets.
-  }
-  \label{fig:2_mhcnuggets}
-\end{figure}
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc2_normalized.png}
@@ -899,7 +861,8 @@ for a binder per haplotype.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Per MHC haplotype, we simulated random peptides and measured the
-predicted IC50 using MHCnuggets. 
+predicted IC50 using \verb;epitope-prediction; (for MHC-I) 
+and netmhc2pan (for MHC-II). 
 Here, we show the IC50 value per haplotype that
 is used to determine if a peptide binds to the haplotype's MHC.
 
