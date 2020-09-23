@@ -1,0 +1,26 @@
+\begin{table}
+
+\caption{\label{tab:uniprot_ids}Overview of reference proteomes and Uniprot IDs}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+name & uniprot\_id\\
+\hline
+SARS-CoV-2 & UP000464024\\
+\hline
+Influenza A & UP000009255\\
+\hline
+Hepatitus A & UP000006724\\
+\hline
+HIV & UP000002241\\
+\hline
+Human & UP000005640\\
+\hline
+MTb & UP000001584\\
+\hline
+Polio & UP000000356\\
+\hline
+Rhinovirus & UP000007070\\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,9 @@
+target,name,uniprot_id
+covid,SARS-CoV-2,UP000464024
+flua,Influenza A,UP000009255
+hepa,Hepatitus A,UP000006724
+hiv,HIV,UP000002241
+human,Human,UP000005640
+myco,MTb,UP000001584
+polio,Polio,UP000000356
+rhino,Rhinovirus,UP000007070
