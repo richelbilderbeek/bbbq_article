@@ -319,11 +319,8 @@ gene from all 45k SARS-CoV-2 proteomes,
 resulting in around 500 unique protein sequences per gene.
 From the unique protein sequences, we made an alignment per gene,
 using the msa (\cite{bodenhofer2015msa}) R package, 
-using default settings, including the use of the default alignment tool
-ClustalW (\cite{thompson1994clustal}).
-Instead of the default and general BLOSUM62 amino acid transition matrix (\cite{henikoff1992amino}),
-the FLU transition matrix (\cite{dang2010flu}) was used,
-as the latter is based on amino acid transitions in another viral pathogen, influenza.
+set up to use ClustalOmega (\cite{thompson1994clustal})
+with the BLOSUM80 amino acid transition matrix (\cite{henikoff1992amino}).
 Per alignment, we used msa to determine the consensus sequence
 and the conservation scores.
 Per consensus sequences, the topology was determined using pureseqtmr.
