@@ -182,7 +182,7 @@ one can imagine that the human immune system
 is not tailored to detect these sites, 
 as hinted by upon by the aforementioned influenza study.
 
-\paragraph{Selection may be detectable in TMHs}
+% \paragraph{Selection may be detectable in TMHs}
 
 TMHs, on the other hand, also have their function constraints, 
 yet can occur multiple time a pathogen's proteome.
@@ -195,7 +195,7 @@ to detect hydrophobic regions in the soluble proteins of pathogens.
 It is unknown, when focusing on TMHs only, if a signal of selection
 can be detected.
 
-\paragraph{Use of protein data in phylogenetics}
+% \paragraph{Use of protein data in phylogenetics}
 
 When using DNA sequences, one can use a skewed rate
 in non- versus synonymous mutation
@@ -219,14 +219,14 @@ those genes that are selected cannot be detected (\cite{yang2000statistical}).
 \section{Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Data sets for TMH epitopes}
+% \paragraph{Data sets for TMH epitopes}
 
 To determine the percentages of epitopes overlapping
-with TMHs, we use three reference proteomes, which are
-a human, viral and bacterial one.
+with TMHs, we use reference proteomes of 
+a human, viral and bacterial nature.
 For a human reference proteome, we used the Uniprot human reference proteome
 from \url{https://www.uniprot.org/proteomes/UP000005640}), 
-which is the same as \cite{bianchi2017}.
+which is the same as used previously (\cite{bianchi2017}).
 The viral reference proteome is represented by
 the proteome of the first sequenced SARS-CoV-2 strain (\cite{wu2020new},
 GenBank ID of MN908947.3, \url{https://www.ncbi.nlm.nih.gov/nuccore/MN908947})
@@ -480,8 +480,12 @@ for the TMH and epitope counts.
   \caption{
     Percentage of MHC-I epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
-    Epitope prediction by EpitopePrediction.
+    The horizontal lines indicate the percentage as expected by chance.
+    \richel{Refer to a table with the numbers as expected by chance)}
     See table \ref{tab:tmh_binders_mhc1} for the TMH and epitope counts.
+    \richel{Epitope prediction by EpitopePrediction.}.
+    Note that for smaller proteomes a percentage of zero is likelier.
+    \richel{use of top 2\% binders}
   }
   \label{fig:1}
 \end{figure}
@@ -498,11 +502,14 @@ for the TMH and epitope counts.
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_fast/fig_f_tmh_mhc2_grid.png}
   \caption{
-    \% epitopes overlapping with transmembrane helix
-    for a human, SARS-CoV-2 (labeled 'covid') 
-    and Mycobacterium tuberculosis (labeled 'myco') proteome,
-    Epitope prediction by NetMHCIIpan.
+    Percentage of MHC-II epitopes overlapping with TMHs
+    for a human, viral and bacterial proteome.
+    The horizontal lines indicate the percentage as expected by chance.
+    \richel{Refer to a table with the numbers as expected by chance)}
+    \richel{Epitope prediction by NetMHCIIpan.}
     See table \ref{tab:tmh_binders_mhc2} for the TMH and epitope counts.
+    Note that for smaller proteomes a percentage of zero is likelier.
+    \richel{use of top 2\% binders}
   }
   \label{fig:2}
 \end{figure}
