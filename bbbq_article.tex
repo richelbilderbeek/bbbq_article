@@ -3,8 +3,10 @@
 The human immune system is unexpectedly attentive towards
 human transmembrane helices (TMHs), as TMH-derived peptide fragments
 bind to histocompatibility complex (MHC) class I more often then expected
-by chance only.
-This finding hints that there has been selection upon detecting TMH-derived
+by chance only, which can be mostly explained by the low hydrophobicity
+of those residues.
+The physiological reason is yet unclear,
+yet this finding hints that there has been selection upon detecting TMH-derived
 peptides in pathogens.
 If this signature of selection is present in MHC-II is unknown.
 This study shows that MHC-I [also has/does not have] more
@@ -18,6 +20,7 @@ Our findings suggest that the immune system is [less/neutral/more]
 vigilant to TMHs than expected by chance and this has 
 left [a clear/a weak/no]
 signal in the evolutionary history of the pathogen.
+The impact of this is [revolutionary/awesome].
 
 \end{abstract}
 
@@ -29,26 +32,28 @@ epitopes, T lymphocyte, MHC-I, MHC-II, SARS-CoV-2
 \section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Immune response}
+% \paragraph{Immune response}
 
-Our immune system fights invaders on a daily basis.
-These invaders can be fungi, bacteria or viruses.
-The innate immune response is its first general 
-and immediate strategy, where the acquired immune response
+Our immune system fights microbial pathogens on a daily basis,
+such as fungi, bacteria or viruses.
+The acquired immune response
 needs time to develop its specialized and more effective
-combat forces.
+combat forces and learn to recognize the pathogens 
+by use of the Major Histocompatibility Complex (MHC).
 
-\paragraph{Immune response by MHC-I}
+% \paragraph{Immune response by MHC-I}
 
-All nucleated cells in humans present randomly sampled peptides
-fragments to the surroundings of the cell using the Major 
-Histocompatibility Complex (MHC) class I molecules.
-If a cell gets infected by a virus, also the virus' peptides
-will be presented at the cell surface. The foreign viral antigen is detected 
+Antigen-presenting cells such as dendritic cells
+use the MHC class I molecules to 
+present randomly sampled peptides fragments,
+as created by the immunoproteasome (\cite{chapiro2006destructive}).
+If a cell gets infected by an intracellular pathogen, also the virus' peptides
+will also be presented at the cell surface. The foreign viral antigen is detected 
 by cytotoxic T lymphocytes, which will kill the infected cell.
 
-\paragraph{Immune response by MHC-II}
+% \paragraph{Immune response by MHC-II, contrast with APC}
 
+\richel{Weak, add refs}
 All pathogens can be detected by the foreign proteins on 
 their (bacterial or fungal) cell walls or (viral) envelope.
 For bacteria and fungi, this is the main mode of their detection,
@@ -61,21 +66,12 @@ An immune response is started when MHC-II detects a pathogen.
 Any human's immune system detects only a fraction of all possible
 peptide fragments.
 For humans, the MHC proteins are encoded by the
-HLA ('Human Leukocyte Antigens') genes.
+HLA (Human Leukocyte Antigens) genes.
 Each MHC complex can only bind a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
 peptides they bind (\cite{lund2004definition}).
 The HLA region of humans is highly polymorphic, 
 making it hard to classify all of the many haplotypes.
-Classification of HLAs is based on algorithms that
-maximize the information content of each 
-classification, such as the presence of a certain amino acid at 
-the first (for MHC-II, \cite{southwood1998several})
-or second position (for MHC-I, \cite{lund2004definition}) of a peptide.
-However, this does not imply that when a peptide follows
-a classification pattern, that it will bind to the MHC. 
-Instead, software should be used to predict if the
-full peptide will do so.
 
 \paragraph{Epitope prediction}
 
