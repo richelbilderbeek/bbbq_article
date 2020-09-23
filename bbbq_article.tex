@@ -61,19 +61,28 @@ as these do not infect a cell with their (foreign) DNA.
 T and B cells express MHC-II to detect foreign peptide fragments.
 An immune response is started when MHC-II detects a pathogen.
 
-\paragraph{Classification of HLA}
+% \paragraph{Classification of HLA}
 
 Any human's immune system detects only a fraction of all possible
 peptide fragments.
 For humans, the MHC proteins are encoded by the
 HLA (Human Leukocyte Antigens) genes.
+There are three genes encoding for MHC-I, which are HLA-A, HLA-B and HLA-C,
+for MHC-II there are three major genes, which are HLA-DR, HLA-DQ, HLA-DP.
 Each MHC complex can only bind a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
 peptides they bind (\cite{lund2004definition}).
-The HLA region of humans is highly polymorphic, 
-making it hard to classify all of the many haplotypes.
+The HLA region of humans is highly polymorphic, with hundreds
+to thousands of alleles for a gene (\cite{marsh2010nomenclature}).
 
-\paragraph{Epitope prediction}
+% \paragraph{HLAs increase detection range}
+
+Because of these multiple and highly polymorphic MHC genes,
+the number of pathogenic peptides that can be detected is increased,
+as a wide variety of MHCs will be expressed,
+each presenting their own subset of epitopes.
+
+% \paragraph{Epitope prediction}
 
 It is helpful to be able to predict which peptides are immunogenic,
 in, among others, vaccine development \richel{Reference here}. 
@@ -85,7 +94,16 @@ Due to this, software was written that allows for silico
 predictions, which are reliable in 
 practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
  
-\paragraph{TMHs}
+% \paragraph{TMHs}
+
+As the immunoproteasome is a cytosolic protein complex, on expects it
+to cleave only cytosolic proteins. However, it has recently been
+discovered that transmembrane protein residues are also presented
+by MHC-I complexes (\cite{bianchi2017}). This discovery is based
+on both in vitro elution studies, as well as on in silico predictions,
+with a focus on transmembrane helices. 
+The intracellular pathway, in which transmembrane residues are loaded onto
+an MHC, however, is yet unknown.
 
 Transmembrane helices are structurally conserved structures that span
 a cell membrane with an alpha helix.
@@ -97,48 +115,28 @@ Polypeptide fragments derived from TMHs are among the most hydrophobic,
 together with the internals of soluble proteins, where the
 hydrophobicity parts guide the protein to achieve its 3D configuration.
 TMHs are general structures: 25 percent of the human proteome is
-anchored by at least one TMH. SARS-CoV-2 has 21 TMHs, 
+anchored by at least one TMH. Also the pathogen SARS-CoV-2 has 21 TMHs, 
 making up for 5.5 percent of its entire genome.
 There are multiple computational tools developed to predict which
-parts of membrane proteins are TMH.
+parts of membrane proteins are TMH (\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}).
 
-\paragraph{MHC-I presents hydrophobic regions more often}
-
-One might expect that the hydrophobic epitopes presented,
-for a same hydrophobicity, are as likely to stem from 
-membrane proteins TMHs or from soluble proteins hydrophobic (non-TMH) regions.
-For MHC-I, however, it is found that the 9-mers stemming
-from TMHs are presented more often than expected by 
-chance (\cite{bianchi2017})
-\richel{but also when compensating for hydrophobicity?}.
-For MHC-II, it is unknown which percentage of binders 
-is derived from TMHs for all 13-mers present in a proteome
-that have the same hydrophobicity.
-
-\paragraph{HLAs increase detection range}
-
-One of many strategies to increase the number of pathogenic
-peptides that can be detected is to express a wide variety of
-MHCs, which is assured by the human leukocyte antigen gene complex (HLA).
-However, a different HLA will result in a different variety of MHCs,
-that will display different peptide fragments. Additionally, there
-may have been selection the HLA to display and or detect different
-peptide fragments.
-
-\paragraph{MHC-I presents TMH-derived epitopes in humans more often}
+% \paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
 For MHC-I, it was found that predicted epitopes derived 
 from human transmembrane helices (TMHs)
 are over-presented by all 5 HLA-A and 
-most of 8 HLA-B super types (\cite{bianchi2017}).
-One explanation is that the presentation of TMHs 
-may have an evolutionary advantage for 
-the (human) host, as TMHs have a reduced variability 
-due to the functional requirement of being able to span a lipid bilayer. 
-Due to this, pathogens have a lower chance to develop an escape mutation,
+most of 8 HLA-B super-types (\cite{bianchi2017}),
+due the high hydrophobicity as is required for a TMH to span
+the (hydrophobic) cell membrane, combined with the fact that the MHC
+binding cleft is hydrophobic as well.
+
+It is unknown if the presentation of hydrophobic/TMH residues
+is evolutionary selected for.
+One possible explanation is that TMHs have a reduced variability,
+imposed by the functional requirement of being able to span a lipid bilayer.
+Due to this, the TMHs that pathogens possess, 
+have a lower chance to develop an escape mutation,
 as many mutations will result in a dysfunctional TMH.
-Note that the mechanism by which a cell presents its TMHs is
-yet unknown.
 
 \paragraph{Does MHC-I present TMH-derived epitopes from pathogens as often?}
 
