@@ -13,6 +13,11 @@ The Bianchi  Bilderbeek Bogaart Question answered.
 make
 ```
 
+## Notes
+
+ * [natural-selection-analysis-of-sars-cov-2-covid-19](https://observablehq.com/@spond/natural-selection-analysis-of-sars-cov-2-covid-19)
+ * [Natural selection in the evolution of SARS-CoV-2 in bats, not humans, created a highly capable human pathogen](https://www.biorxiv.org/content/10.1101/2020.05.28.122366v2.full)
+ * [Proteins structures of SARS-CoV-2](https://compsysbio.ornl.gov/covid-19/covid-19-structome/)
 
 ## Download 
 
