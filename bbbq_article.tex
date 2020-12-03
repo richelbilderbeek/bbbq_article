@@ -15,7 +15,8 @@ a host proteome.
 Additionally, MHC-II binds to peptides derived from TMHs 
 [less/equally/more] often than expected by chance.
 Lastly, we show the TMHs are [more/less/equally] 
-conserved.
+conserved by determining if SNPs are found in TMH more/less/equal
+than expected by chance.
 Our findings suggest that the immune system is [less/neutral/more]
 vigilant to TMHs than expected by chance and this has 
 left [a clear/a weak/no]
@@ -307,23 +308,77 @@ which is a common significance level for an exploratory study.
 
 \paragraph{Introduction}
 
-To detect the evolutionary conservation of TMHs,
-we first selected all unique protein sequences per
-gene from all 45k SARS-CoV-2 proteomes,
-resulting in around 500 unique protein sequences per gene.
-From the unique protein sequences, we made an alignment per gene,
-using the msa (\cite{bodenhofer2015msa}) R package, 
-set up to use ClustalOmega (\cite{thompson1994clustal})
-with the BLOSUM80 amino acid transition matrix (\cite{henikoff1992amino}).
-Per alignment, we used msa to determine the consensus sequence
-and the conservation scores.
-Per consensus sequences, the topology was determined using pureseqtmr.
+To detect the evolutionary conservation of TMHs, 
+we use the follow workflow (also shown
+in figure \ref{fig:snp_workflow}) to be able to count the
+number of SNPs that occur in TMHs, as well as the number of SNPs
+that occur in TMHs by chance. 
 
-\paragraph{Statistics}
+To do so, we use the 
+NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases:
+'gene' to find the gene names of membane proteins, 
+'dbSNP' for SNPs associated with those genes
+and 'protein' to obtain the sequence of proteins that SNPs act upon.
+The 'dbSNP' contains 2 billion (human-only) SNPs, although
+it is estimated that approx 10 percent is a false positive 
+\richel{see references on dbSNP Wikipedia page}.
 
-We compare the conservation values for TMH versus non-TMH locations,
-for all membrane proteins combined,
-using a Kolmogorov-Smirnov test, for a significance level of 5 percent.
+The \verb;rentrez; R package provides for doing so from script.
+
+The first query is a call to the 'gene' database for the 
+term 'membrane protein' (in all fields) for the organism Homo sapiens.
+This results in \richel{1126} gene IDs.
+The next query is a call to the 'gene' database 
+to obtain the gene names from the gene IDs.
+Per gene name, the 'dbSNP' NCBI database is queried for 
+SNPs associated with the gene name. The number of SNPs
+was limited to the first \richel{100} SNPs per gene,
+resulting in \richel{112600} SNPs.
+Per selected SNP, all variation (i.e. descriptions of the changes on DNA
+and/or RNA and/or protein level) are obtained from the 'dbSNP' database
+as well. Of these variations, only the variations that result in a single
+amino acid substitution are kept, resulting in \richel{???} protein changes.
+Per protein substitution (i.e. a protein name and an index of the changed residue), 
+the 'protein' NCBI database was queried for the
+protein sequence.
+Of each protein sequence, the protein topology is determined 
+using PureseqTM.
+From the topology and the known location of the amino acid substitution, 
+it is tallied if the change occurred within a TMH or not.
+Also, the percentage of the topology that is TMH is measured.
+Not all membrane proteins have a transmembrane helix, resulting
+in \richel{???} proteins with at least one TMH. 
+
+
+\begin{figure}[!htbp]
+  \includegraphics[height=0.9\textheight]{snp_workflow.png}
+  \caption{
+    Workflow to determine the evolutionary conservation of TMHs
+    using human SNPs.
+  }
+  \label{fig:snp_workflow}
+\end{figure}
+
+
+% \paragraph{Introduction}
+% 
+% To detect the evolutionary conservation of TMHs,
+% we first selected all unique protein sequences per
+% gene from all 45k SARS-CoV-2 proteomes,
+% resulting in around 500 unique protein sequences per gene.
+% From the unique protein sequences, we made an alignment per gene,
+% using the msa (\cite{bodenhofer2015msa}) R package, 
+% set up to use ClustalOmega (\cite{thompson1994clustal})
+% with the BLOSUM80 amino acid transition matrix (\cite{henikoff1992amino}).
+% Per alignment, we used msa to determine the consensus sequence
+% and the conservation scores.
+% Per consensus sequences, the topology was determined using pureseqtmr.
+% 
+% \paragraph{Statistics}
+% 
+% We compare the conservation values for TMH versus non-TMH locations,
+% for all membrane proteins combined,
+% using a Kolmogorov-Smirnov test, for a significance level of 5 percent.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software used}
