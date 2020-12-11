@@ -1,9 +1,17 @@
 # bbbq_article
 
-Branch |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)                                                                             |[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
--------|------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-master |[![Build Status](https://travis-ci.org/richelbilderbeek/bbbq_article.svg?branch=master)](https://travis-ci.org/richelbilderbeek/bbbq_article) |[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq_article/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq_article/branch/master)
-develop|[![Build Status](https://travis-ci.org/richelbilderbeek/bbbq_article.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/bbbq_article)|[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq_article/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/bbbq_article/branch/develop)
+Branch   |[GitHub Actions](https://github.com/richelbilderbeek/bbbq_article/actions)                                     
+---------|--------------------------------------------------------------------------------------------------
+`master` |![R-CMD-check](https://github.com/richelbilderbeek/bbbq_article/workflows/R-CMD-check/badge.svg?branch=master) 
+`develop`|![R-CMD-check](https://github.com/richelbilderbeek/bbbq_article/workflows/R-CMD-check/badge.svg?branch=develop)
+
+## Dependencies
+
+Repository                                                             |[GitHub Actions](https://github.com/informalr/informalr/actions)                                             |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
+-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------
+[`bbbq`](https://github.com/richelbilderbeek/bbbq)                     |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master) |[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq/branch/master)
+[`bbbq_1_fast`](https://github.com/richelbilderbeek/bbbq_1_fast)       |![R-CMD-check](https://github.com/richelbilderbeek/bbbq_1_fast/workflows/R-CMD-check/badge.svg?branch=master) |[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq_1_fast/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq_1_fast/branch/master)
+[`ncbi_peregrine`](https://github.com/richelbilderbeek/ncbi_peregrine) |![R-CMD-check](https://github.com/richelbilderbeek/ncbi_peregrine/workflows/R-CMD-check/badge.svg?branch=master) |[![codecov.io](https://codecov.io/github/richelbilderbeek/ncbi_peregrine/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/ncbi_peregrine/branch/master)
 
 The Bianchi  Bilderbeek Bogaart Question answered.
 
