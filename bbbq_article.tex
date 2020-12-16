@@ -13,15 +13,13 @@ This study shows that MHC-I [also has/does not have] more
 epitopes derived from a TMH for a pathogen proteome, when compared with
 a host proteome.
 Additionally, MHC-II binds to peptides derived from TMHs 
-[less/equally/more] often than expected by chance.
-Lastly, we show the TMHs are [more/less/equally] 
-conserved by determining if SNPs are found in TMH more/less/equal
-than expected by chance.
-Our findings suggest that the immune system is [less/neutral/more]
-vigilant to TMHs than expected by chance and this has 
-left [a clear/a weak/no]
-signal in the evolutionary history of the pathogen.
-The impact of this is [revolutionary/awesome].
+more often than expected by chance.
+Lastly, we show the TMHs are evolutionarily more conserved,
+as less SNPs are found in TMH than expected by chance.
+Our findings suggest that the immune system is more
+vigilant to TMHs than expected by chance
+and suggests that an evolutionary signal in the evolutionary history of a pathogen
+may be found.
 
 \end{abstract}
 
@@ -309,19 +307,19 @@ which is a common significance level for an exploratory study.
 \paragraph{Introduction}
 
 To detect the evolutionary conservation of TMHs, 
-we use the follow workflow (also shown
+we use the following workflow (also shown
 in figure \ref{fig:snp_workflow}) to be able to count the
 number of SNPs that occur in TMHs, as well as the number of SNPs
 that occur in TMHs by chance. 
 
 To do so, we use the 
 NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases:
-'gene' to find the gene names of membane proteins, 
-'dbSNP' for SNPs associated with those genes
+'gene' to find the gene names of membrane proteins, 
+'dbSNP' (\cite{sachidanandam2001map}) for SNPs associated with those genes
 and 'protein' to obtain the sequence of proteins that SNPs act upon.
 The 'dbSNP' contains 2 billion (human-only) SNPs, although
-it is estimated that approx 10 percent is a false positive 
-\richel{see references on dbSNP Wikipedia page}.
+it is estimated that approximately ten percent (ranging from 2 to 36 percent) 
+are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}).
 
 The \verb;rentrez; R package provides for doing so from script.
 
@@ -662,6 +660,13 @@ From a pathogen's point of view, however, this struggle
 is of only minor importance:
 in seasonal influenza, for example, the selection pressure
 exerted by the immune system was only limited (\cite{han2019individual}).
+
+Regarding the evolutionary conservation of TMHs using SNPs,
+again, it is estimated that approx 8.32 percent
+of SNPs is caused, due to sequence variations in
+highly similar duplicated sequences \cite{musumeci2010single}.
+We assume that these duplications occur as often in TMHs as in
+regions around these, hence we expect this not to affect our results.
 
 \richel{
   Note that most bacteria are opportunistic pathogens.
