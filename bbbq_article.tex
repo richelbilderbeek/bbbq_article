@@ -310,16 +310,17 @@ To detect the evolutionary conservation of TMHs,
 we use the following workflow (also shown
 in figure \ref{fig:snp_workflow}) to be able to count the
 number of SNPs that occur in TMHs, as well as the number of SNPs
-that occur in TMHs by chance. 
+that occur in TMHs by chance.
 
 To do so, we use the 
 NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases:
 'gene' to find the gene names of membrane proteins, 
-'dbSNP' (\cite{sachidanandam2001map}) for SNPs associated with those genes
+'dbSNP' (\cite{sherry2001dbsnp}) for SNPs associated with those genes
 and 'protein' to obtain the sequence of proteins that SNPs act upon.
 The 'dbSNP' contains 2 billion (human-only) SNPs, although
 it is estimated that approximately ten percent (ranging from 2 to 36 percent) 
 are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}).
+
 
 The \verb;rentrez; R package provides for doing so from script.
 
@@ -331,7 +332,10 @@ to obtain the gene names from the gene IDs.
 Per gene name, the 'dbSNP' NCBI database is queried for 
 SNPs associated with the gene name. The number of SNPs
 was limited to the first \richel{100} SNPs per gene,
-resulting in \richel{112600} SNPs.
+resulting in \richel{112600} SNPs 
+\richel{Note that \cite{musumeci2010single} demonstrates for a way to get
+try SNPs, instead of SNDs, maybe I should use that}
+.
 Per selected SNP, all variation (i.e. descriptions of the changes on DNA
 and/or RNA and/or protein level) are obtained from the 'dbSNP' database
 as well. Of these variations, only the variations that result in a single
