@@ -9,7 +9,7 @@ The physiological reason is yet unclear,
 yet this finding hints that there has been selection upon detecting TMH-derived
 peptides in pathogens.
 If this signature of selection is present in MHC-II is unknown.
-This study shows that MHC-I [also has/does not have] more
+This study shows that MHC-I also has more
 epitopes derived from a TMH for a pathogen proteome, when compared with
 a host proteome.
 Additionally, MHC-II binds to peptides derived from TMHs 
@@ -25,7 +25,7 @@ may be found.
 
 {\bf Keywords:} antigen presentation, membrane proteins, bioinformatics, 
 adaptive immunity, transmembrane domain, transmembrane helix, 
-epitopes, T lymphocyte, MHC-I, MHC-II, SARS-CoV-2
+epitopes, T lymphocyte, MHC-I, MHC-II, SARS-CoV-2, evolutionary conservation
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -666,11 +666,21 @@ in seasonal influenza, for example, the selection pressure
 exerted by the immune system was only limited (\cite{han2019individual}).
 
 Regarding the evolutionary conservation of TMHs using SNPs,
-again, it is estimated that approx 8.32 percent
-of SNPs is caused, due to sequence variations in
-highly similar duplicated sequences \cite{musumeci2010single}.
+again, it is estimated that approximately ten percent
+of SNPs is a false positive that result from the methods to determine
+a SNP. One example is that sequence variations are incorrectly
+detected due to highly similar duplicated sequences \cite{musumeci2010single}.
 We assume that these duplications occur as often in TMHs as in
 regions around these, hence we expect this not to affect our results.
+
+We used a low number of SNPs, as was imposed by the
+NCBI API, which constrains its users to three calls per second.
+As a second factor, we limited the time querying the NCBI database
+for the duration of the project.
+The SNPs we did use, we picked those
+with the lowest SNP ID (which denotes the earliest discovery date) first.
+We expect this not to introduce a bias, so we expect that
+the SNPs we used are a representative sample of all SNPs.
 
 \richel{
   Note that most bacteria are opportunistic pathogens.
