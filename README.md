@@ -21,6 +21,15 @@ The Bianchi  Bilderbeek Bogaart Question answered.
 make
 ```
 
+## Schedule
+
+Start     |End       |What                   
+----------|----------|----------------------------------------------------------------------
+2021-01-12|2021-01-??|Replicate `bbbq_1_fast` in /data/p230198/GitHubs/bbbq_1_fast, `sbatch peregrine_make.sh peregrine`, 16915938, 16919234
+2021-01-12|2021-01-??|Replicate `bbbq_1_fast` with 2% in /data/p230198/GitHubs/bbbq_1_fast_2_perc, `sbatch peregrine_make.sh peregrine_make.sh`, 16919801
+
+
+
 ## Notes
 
  * [natural-selection-analysis-of-sars-cov-2-covid-19](https://observablehq.com/@spond/natural-selection-analysis-of-sars-cov-2-covid-19)
