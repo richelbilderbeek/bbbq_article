@@ -62,13 +62,15 @@ t_unique_matches$tmhmm_topology <- NA
 t_unique_matches$pureseqtm_topology <- NA
 readr::write_csv(t_matches, "unique_matches.csv")
 
-for (i in seq_len(nrow(t_unique_matches))) {
-  print(paste0(i, "/", nrow(t_unique_matches)))
-  if (!is.na(t_unique_matches$pureseqtm_topology[i])) next
-  t_unique_matches$pureseqtm_topology[i] <- pureseqtmr::predict_topology_from_sequence(
-    protein_sequence = t_unique_matches$sequence[i]
-  )
-  readr::write_csv(t_matches, "unique_matches.csv")
+if (1 == 2) {
+  for (i in seq_len(nrow(t_unique_matches))) {
+    print(paste0(i, "/", nrow(t_unique_matches)))
+    if (!is.na(t_unique_matches$pureseqtm_topology[i])) next
+    t_unique_matches$pureseqtm_topology[i] <- pureseqtmr::predict_topology_from_sequence(
+      protein_sequence = t_unique_matches$sequence[i]
+    )
+    readr::write_csv(t_matches, "unique_matches.csv")
+  }
 }
 if (1 == 2) {
   for (i in seq_len(nrow(t_unique_matches))) {
@@ -100,5 +102,3 @@ if (1 == 2) {
     pattern = "1*"
   )
 }
-
-
