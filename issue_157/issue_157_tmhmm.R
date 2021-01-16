@@ -2,6 +2,9 @@ library(bianchietal2017)
 library(dplyr, warn.conflicts = FALSE)
 library(ggplot2, quietly = TRUE)
 
+if (1 == 2) {
+  setwd("~/GitHubs/bbbq_article/issue_157/")
+}
 #It is claimed that some eluates from Schellens et al., 2015,
 #are derived from TMHs.
 
@@ -51,54 +54,27 @@ t_matches <- readr::read_csv("matches.csv")
 
 
 
-# The distribution of matches per epitope sequence:
-ggplot2::ggplot() + ggplot2::aes(t_matches$n_matches) +
-  ggplot2::geom_histogram(binwidth = 1) + ggplot2::ggsave("n_matches_histogram.png", width = 7, height = 7)
 
 #The question is, for unique mapping of an epitope onto the human reference proteome:
 #are those epitopes indeed overlapping with a TMH?
-t_unique_matches <- dplyr::filter(t_matches, n_matches == 1)
-t_unique_matches$tmhmm_topology <- NA
-t_unique_matches$pureseqtm_topology <- NA
-readr::write_csv(t_matches, "unique_matches.csv")
-
-if (1 == 2) {
-  for (i in seq_len(nrow(t_unique_matches))) {
-    print(paste0(i, "/", nrow(t_unique_matches)))
-    if (!is.na(t_unique_matches$pureseqtm_topology[i])) next
-    t_unique_matches$pureseqtm_topology[i] <- pureseqtmr::predict_topology_from_sequence(
-      protein_sequence = t_unique_matches$sequence[i]
-    )
-    readr::write_csv(t_matches, "unique_matches.csv")
-  }
+if (!file.exists("unique_matches_tmhmm.csv")) {
+  t_unique_matches <- dplyr::filter(t_matches, n_matches == 1)
+  t_unique_matches$tmhmm_topology <- NA
+  readr::write_csv(t_unique_matches, "unique_matches_tmhmm.csv")
 }
-if (1 == 2) {
-  for (i in seq_len(nrow(t_unique_matches))) {
-    print(paste0(i, "/", nrow(t_unique_matches)))
-    if (!is.na(t_unique_matches$pureseqtm_topology[i])) next
-    t_unique_matches$tmhmm_topology[i] <- tmhmm::run_tmhmm_on_sequence(
-      protein_sequence = t_unique_matches$sequence[i]
-    )
-    print(t_unique_matches$tmhmm_topology[i])
-    readr::write_csv(t_matches, "unique_matches.csv")
-  }
+t_unique_matches <- readr::read_csv("unique_matches_tmhmm.csv")
+
+for (i in seq_len(nrow(t_unique_matches))) {
+  print(paste0(i, "/", nrow(t_unique_matches)))
+  if (!is.na(t_unique_matches$tmhmm_topology[i])) next
+  t_unique_matches$tmhmm_topology[i] <- tmhmm::predict_topology_from_sequence(
+    protein_sequence = t_unique_matches$sequence[i]
+  )
+  readr::write_csv(t_unique_matches, "unique_matches_tmhmm.csv")
 }
 
 if (1 == 2) {
-  # Done for now
-  #Zooming in on
-
-  t_unique_matches$n_tmh <- pureseqtmr::count_n_tmhs(t_unique_matches$topology)
-  t_unique_matches_with_tmh <- dplyr::filter(t_unique_matches, n_tmh > 0)
-
-  # Locate the epitope sequence within the human protein sequence:
-
-  stringr::str_locate(
-    string = t_unique_matches$sequence[1],
-    pattern = t_unique_matches$epitope_sequence[1]
-  )
-  stringr::str_locate(
-    string = t_unique_matches$topology[4],
-    pattern = "1*"
-  )
+  # The distribution of matches per epitope sequence:
+  ggplot2::ggplot() + ggplot2::aes(t_matches$n_matches) +
+    ggplot2::geom_histogram(binwidth = 1) + ggplot2::ggsave("n_matches_histogram.png", width = 7, height = 7)
 }
