@@ -72,3 +72,41 @@ for (i in seq_len(nrow(t_unique_matches))) {
   )
   readr::write_csv(t_unique_matches, "unique_matches_pureseqtm.csv")
 }
+
+
+t_tmhs_pureseqtm <- t_unique_matches[
+  stringr::str_which(
+    t_unique_matches$pureseqtm_topology,
+    "1"
+  ),
+]
+
+testthat::expect_equal(
+  nchar(t_tmhs_pureseqtm$sequence),
+  nchar(t_tmhs_pureseqtm$pureseqtm_topology)
+)
+
+epitope_locations <- stringr::str_locate(
+  string = t_tmhs_pureseqtm$sequence,
+  pattern = t_tmhs_pureseqtm$epitope_sequence
+)
+epitope_locations
+topology_overlap <- stringr::str_sub(
+  t_tmhs_pureseqtm$pureseqtm_topology,
+  start = epitope_locations[, 1],
+  end = epitope_locations[, 2]
+)
+topology_overlap
+
+
+t_tmhs_pureseqtm$topology_overlap <- topology_overlap
+t_tmhs_pureseqtm$from <- epitope_locations[, 1]
+t_tmhs_pureseqtm$to <- epitope_locations[, 2]
+readr::write_csv(x = t_tmhs_pureseqtm, "tmhs_pureseqtm.csv")
+
+t_tmhs_pureseqtm <- readr::read_csv("tmhs_pureseqtm.csv")
+
+n <- length(t_tmhs_pureseqtm$topology_overlap)
+n_tmh <- length(stringr::str_which(t_tmhs_pureseqtm$topology_overlap, pattern = "1"))
+n_tmh / n
+# 0.1119097 = 11.19097%

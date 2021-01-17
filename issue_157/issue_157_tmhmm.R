@@ -67,6 +67,7 @@ t_unique_matches <- readr::read_csv("unique_matches_tmhmm.csv")
 for (i in seq_len(nrow(t_unique_matches))) {
   print(paste0(i, "/", nrow(t_unique_matches)))
   if (!is.na(t_unique_matches$tmhmm_topology[i])) next
+  if (stringr::str_count(t_unique_matches$sequence[i], "U") != 0) next
   t_unique_matches$tmhmm_topology[i] <- tmhmm::predict_topology_from_sequence(
     protein_sequence = t_unique_matches$sequence[i]
   )
@@ -78,3 +79,40 @@ if (1 == 2) {
   ggplot2::ggplot() + ggplot2::aes(t_matches$n_matches) +
     ggplot2::geom_histogram(binwidth = 1) + ggplot2::ggsave("n_matches_histogram.png", width = 7, height = 7)
 }
+
+
+t_tmhs_tmhmm <- t_unique_matches[
+  stringr::str_which(
+    t_unique_matches$tmhmm_topology,
+    "(m|M)"
+  ),
+]
+
+testthat::expect_equal(
+  nchar(t_tmhs_tmhmm$sequence),
+  nchar(t_tmhs_tmhmm$tmhmm_topology)
+)
+
+epitope_locations <- stringr::str_locate(
+  string = t_tmhs_tmhmm$sequence,
+  pattern = t_tmhs_tmhmm$epitope_sequence
+)
+epitope_locations
+topology_overlap <- stringr::str_sub(
+  t_tmhs_tmhmm$tmhmm_topology,
+  start = epitope_locations[, 1],
+  end = epitope_locations[, 2]
+)
+topology_overlap
+
+t_tmhs_tmhmm$topology_overlap <- topology_overlap
+t_tmhs_tmhmm$from <- epitope_locations[, 1]
+t_tmhs_tmhmm$to <- epitope_locations[, 2]
+readr::write_csv(x = t_tmhs_tmhmm, "tmhs_tmhmm.csv")
+
+t_tmhs_tmhmm <- readr::read_csv("tmhs_tmhmm.csv")
+
+n <- length(t_tmhs_tmhmm$topology_overlap)
+n_tmh <- length(stringr::str_which(t_tmhs_tmhmm$topology_overlap, pattern = "(M|m)"))
+n_tmh / n
+# 0.1448718 = 14.48718 %
