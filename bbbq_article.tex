@@ -422,17 +422,13 @@ As a starting point, a review paper was used.
 There are multiple computational tools developed to predict which
 parts of membrane proteins are TMH.
 In 2001, multiple tools to do so have been compared (\cite{moller2001evaluation}),
-of which TMHMM (\cite{krogh2001predicting}) turned out to be the best.
-TMHMM is used in the previous study (\cite{bianchi2017}),
-yet TMHMM itself has a restrictive software license and is nearly two
-decades old. 
-Inspired on TMHMM, many other tools followed, such as 
-Phobius (\cite{kall2004combined}),
-ConPred II (\cite{arai2004conpred}),
-MEMSAT3 (\cite{jones2007improving})
-and MetaTM (\cite{klammer2009metatm}).
-The most recent FOSS tool is called PureseqTM (\cite{wang2019efficient}),
-which is used in this study.
+of which TMHMM (\cite{krogh2001predicting}) turned out to be the best, 
+as is used in the previous study (\cite{bianchi2017}).
+TMHMM has a restrictive software license and is nearly two
+decades old.
+Due to this, also PureseqTM (\cite{wang2019efficient}),
+is used in this study, which has been recently developed
+and has a free software license.
 
 \paragraph{MHC-I epitope prediction}
 
@@ -681,6 +677,18 @@ The SNPs we did use, we picked those
 with the lowest SNP ID (which denotes the earliest discovery date) first.
 We expect this not to introduce a bias, so we expect that
 the SNPs we used are a representative sample of all SNPs.
+
+Both TMH prediction tools struggle with selenocysteine,
+the 21st amino acid incorporated in human proteins.
+The human reference proteome used contains 30 selenoproteins.
+TMHMM gives a clear error message, due to which we removed
+these selenoproteins from the analysis.
+How PureseqTM deals with selenocysteine is unclear,
+as it gives no error, nor is it mentioned anywhere,
+nor do the authors respond to emails.
+We assume PureseqTM ignores these residues.
+In either case, we think that the effect of the 30 selenoproteins
+on a proteome of 20600 proteins is only minor.
 
 \richel{
   Note that most bacteria are opportunistic pathogens.
