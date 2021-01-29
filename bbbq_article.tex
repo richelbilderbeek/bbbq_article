@@ -678,18 +678,15 @@ with the lowest SNP ID (which denotes the earliest discovery date) first.
 We expect this not to introduce a bias, so we expect that
 the SNPs we used are a representative sample of all SNPs.
 
-Both TMH prediction tools struggle with selenocysteine,
-the 21st amino acid incorporated in human proteins.
-The human reference proteome used contains 30 selenoproteins.
-TMHMM gives a clear error message, due to which we removed
+We have removed the 25 selenoproteins found in the human
+reference proteome, as both prediction tools struggle with 
+selenocysteine, the 21st amino acid incorporated in human proteins.
+TMHMM gives a clear error message, forcing us to remove
 these selenoproteins from the analysis.
 How PureseqTM deals with selenocysteine is unclear,
 as it gives no error, nor is it mentioned anywhere,
-nor do the authors respond to emails.
-We assume PureseqTM ignores these residues.
-In either case, we think that the effect of the 30 selenoproteins
-on a proteome of 20600 proteins is only minor.
-
+nor do the authors respond to emails. Due to this, we removed the
+selenoproteins from our analysis.
 Another bug in PureseqTM is that it does not predict the topology
 of proteins that have less than three amino acids. 
 The TRDD1_HUMAN protein, short for 'T cell receptor delta diversity 1',
