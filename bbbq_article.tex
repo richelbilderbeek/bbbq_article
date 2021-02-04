@@ -224,13 +224,36 @@ To determine the percentages of epitopes overlapping
 with TMHs, we use reference proteomes of 
 a human, viral and bacterial nature.
 An overview of Uniprot IDs is shown in table \ref{tab:uniprot_ids}.
-The human reference proteome is the same as used previously (\cite{bianchi2017}).
+Instead of using the full human reference proteome, we
+use the representative human reference proteome 
+as used previously (\cite{bianchi2017}).
 
 \paragraph{Data set for evolutionary conservation of TMHs}
 
 To detect the evolutionary conservation of TMHs,
 we use the 49790 (as of 2020-06-22) fully sequenced SARS-CoV-2 proteomes, 
 as provided by GISAID (\cite{shu2017gisaid}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Elution studies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To determine if epitopes derived from TMHs are presented at all,
+we started from epitopes sequenced from elution studies
+for MHC-I \cite{schellens2015comprehensive} 
+and MHC-II \cite{bergseng2015different}.
+For each epitope, the human representative reference proteome
+was searched for its origin.
+We kept only the epitopes of which were found exactly once
+on the proteome.
+We predicted the topology of the proteome
+and counted how often the epitopes overlapped
+with a predicted TMH.
+In this analysis, both TMHMM and 
+PureseqTM (see section 'Prediction software used') 
+were used to predict the topology.
+The full analysis can be found
+at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Measuring TMH epitopes}
@@ -242,6 +265,9 @@ To summarize: from a proteome all possible 9-mers are derived. For each
 of these peptides, it is measured if it has been part of a 
 TMH (at least overlapping 1 residue), 
 as well as if the peptide is a binder to an MHC-I haplotype.
+For MHC-II, 15-mers are used, as these are the most occurring
+epitope length \cite{bergseng2015different}.
+
 Because the percentage of TMH residues is known, a binomial test can be
 used to determine if TMH-derived peptides are as likely to be a binder
 as expected by chance (the null hypothesis), or that TMHs are indeed an
@@ -494,6 +520,12 @@ This package is too specific to be submitted to CRAN.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Elution studies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
