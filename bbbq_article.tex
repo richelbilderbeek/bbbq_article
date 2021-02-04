@@ -286,8 +286,7 @@ also a viral and bacterial proteome are analyzed.
 The definition of a binder differs from \cite{bianchi2017}:
 in this study a peptide is called a binder if, within a haplotype, 
 any of its 9-mer peptides have an IC50 value in the lowest 2\% of 
-one thousand randomly simulated 
-peptides (see table \ref{table:ic50s_per_haplotype} for values), 
+the epitopes within a proteome (see table \ref{table:ic50s_per_haplotype} for values), 
 whereas the original study defined
 a binder as having an IC50 in the lowest 2\% of the peptides within a protein.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
@@ -308,10 +307,6 @@ Where the original study used a significance level of 1\%
 for the binomial test to determine if TMH-derived peptides 
 are as likely to be a binder as expected by chance, this study
 uses 5\%, which is a common significance level for an exploratory study.
-
-Instead of using the membrane protein topology prediction
-tool \verb;TMHMM; (\cite{krogh2001predicting}), PureseqTM (\cite{wang2019efficient})
-is used instead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Comparing amounts of TMH epitopes}
@@ -346,7 +341,6 @@ and 'protein' to obtain the sequence of proteins that SNPs act upon.
 The 'dbSNP' contains 2 billion (human-only) SNPs, although
 it is estimated that approximately ten percent (ranging from 2 to 36 percent) 
 are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}).
-
 
 The \verb;rentrez; R package provides for doing so from script.
 
@@ -525,7 +519,12 @@ This package is too specific to be submitted to CRAN.
 \subsection{Elution studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% tab:elution
+\input{../bbbq_article_issue_157/results/results.tex}
 
+Table \ref{tab:elution} shows the percentage of epitopes derived from a TMH
+found in the two elution studies, for the two different kind of topology
+prediction tools. Whatever the tool or MHC class, at least 100 epitopes
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
@@ -552,7 +551,7 @@ for the TMH and epitope counts.
 % are sampled from the same distribution. 
 
 \begin{figure}[!htbp]
-  \includegraphics[height=0.9\textheight]{bbbq_1_fast/fig_f_tmh_mhc1_grid.png}
+  \includegraphics[height=0.9\textheight]{../bbbq_1_smart/fig_f_tmh_mhc1_grid.png}
   \caption{
     Percentage of MHC-I epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
@@ -576,7 +575,7 @@ See the supplementary materials (table \ref{tab:tmh_binders_mhc2})
 for the TMH and epitope counts.
 
 \begin{figure}[!htbp]
-  \includegraphics[height=0.9\textheight]{bbbq_1_fast/fig_f_tmh_mhc2_grid.png}
+  \includegraphics[height=0.9\textheight]{../bbbq_1_smart/fig_f_tmh_mhc2_grid.png}
   \caption{
     Percentage of MHC-II epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
@@ -832,7 +831,7 @@ See \url{https://github.com/richelbilderbeek/bbbq_article/issues/155}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc1_normalized.png}
+  \includegraphics[width=\textwidth]{../bbbq_1_smart/fig_f_tmh_mhc1_normalized.png}
   \caption{
     Normalized proportion of MHC-I epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
@@ -863,30 +862,12 @@ See \url{https://github.com/richelbilderbeek/bbbq_article/issues/155}.
 
 \input{bbbq_1_fast/table_tmh_binders_mhc1.latex}
 
-%\begin{table}[!htbp]
-%   \input{bbbq_1_fast/bbbq_1_stats_covid.latex}
-%   \caption{
-%     Kolmogorov-Smirnov test results comparing human and SARS-CoV-2 for MHC-I
-%     \richel{Done on the simulated data}
-%   }
-%   \label{table:bbbq_1_stats_covid}
-% \end{table}
-
-% \begin{table}[!htbp]
-%   \input{bbbq_1_fast/bbbq_1_stats_myco.latex}
-%   \caption{
-%     Kolmogorov-Smirnov test results comparing human and Mycobacterium tuberculosis for MHC-I
-%     \richel{Done on the simulated data}
-%   }
-%   \label{table:bbbq_1_stats_myco}
-% \end{table}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_1_fast/fig_f_tmh_mhc2_normalized.png}
+  \includegraphics[width=\textwidth]{../bbbq_1_smart/fig_f_tmh_mhc2_normalized.png}
   \caption{
     Normalized proportion of MHC-II epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
@@ -899,27 +880,8 @@ See \url{https://github.com/richelbilderbeek/bbbq_article/issues/155}.
 
 %\begin{sidewaystable}
 %  \centering
-  \input{bbbq_1_fast/table_tmh_binders_mhc2.latex}
+%  \input{../bbbq_1_smart/table_tmh_binders_mhc2.latex}
 %\end{sidewaystable}
-
-% \begin{table}[!htbp]
-%   \input{bbbq_1_fast/bbbq_2_stats_covid.latex}
-%   \caption{
-%     Kolmogorov-Smirnov test results comparing human and SARS-CoV-2 for MHC-II
-%     \richel{Done on the simulated data}
-%   }
-%   \label{table:bbbq_2_stats_covid}
-% \end{table}
-
-% \begin{table}[!htbp]
-%   \input{bbbq_1_fast/bbbq_2_stats_myco.latex}
-%   \caption{
-%     Kolmogorov-Smirnov test results comparing human and 
-      Mycobacterium tuberculosis for MHC-II
-%     \richel{Done on the simulated data}
-%   }
-%   \label{table:bbbq_2_stats_myco}
-% \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
