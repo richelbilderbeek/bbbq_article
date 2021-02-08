@@ -827,11 +827,25 @@ See \url{https://github.com/richelbilderbeek/bbbq_article/issues/155}.
 \input{create_table_reference_proteomes/uniprot_ids.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{IC50 for binders}
+\subsection{IC50s per haplotype}
+\label{subsec:ic50s_per_haplotype}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% tab:tab:ic50_binders
-\input{../bbbq_1_smart/table_ic50_binders_2.latex}
+Per target proteome (i.e. human, SARS-CoV-2, Mycobacterium tuberculosis),
+we collected all 9-mers (for MHC-I) and 15-mers (for MHC-II),
+after removing the selenoproteins and proteins that are shorter
+than the epitope length.
+From these epitopes, per MHC haplotype,
+we predicted the IC50 using \verb;epitope-prediction; (for MHC-I)
+and MHCnuggets (for MHC-II). 
+Here, we show the IC50 value per haplotype that
+is used to determine if a peptide binds to the haplotype's MHC.
+
+% tab:ic50_binders_mhc1
+\input{../bbbq_1_smart/table_ic50_binders_mhc1_2.latex}
+
+% tab:ic50_binders_mhc2
+\input{../bbbq_1_smart/table_ic50_binders_mhc2_2.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
@@ -1046,93 +1060,6 @@ See \url{https://github.com/richelbilderbeek/bbbq_article/issues/155}.
   }
   \label{fig:evolutionary_conservation_all_unique_all_violin}
 \end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{IC50s per haplotype}
-\label{subsec:ic50s_per_haplotype}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Per MHC haplotype, we simulated random peptides and measured the
-predicted IC50 using \verb;epitope-prediction; (for MHC-I) 
-and netmhc2pan (for MHC-II). 
-Here, we show the IC50 value per haplotype that
-is used to determine if a peptide binds to the haplotype's MHC.
-Included in this figure is the MHCnuggets prediction tool,
-by \cite{shao2020high}.
-
-% Less pretty 
-% 
-% \begin{figure}[!htbp]
-%   \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype.png}
-%   \caption{
-%     IC50 values that define a binder
-%   }
-%   \label{fig:ic50s_per_haplotype}
-% \end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=0.9\textwidth]{ic50s_per_haplotype/ic50s_per_haplotype_per_mhc_class.png}
-  \caption{
-    IC50 values that define a binder
-  }
-  \label{fig:ic50s_per_haplotype}
-\end{figure}
-
-\input{ic50s_per_haplotype/ic50s_per_haplotype_1.latex}
-
-\input{ic50s_per_haplotype/ic50s_per_haplotype_2.latex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Relation between hydrophobicity, TMH and MHC binding}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\begin{figure}[!htbp]
-%  \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/binds_mhc1_vs_binds_mhc2.png}
-%  \caption{
-%    \richel{Used randomly simulated peptides, results are real}
-%  }
-%  \label{fig:binds_mhc1_vs_binds_mhc2}
-%\end{figure}
-
-%\begin{figure}[!htbp]
-%  \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc1.png}
-%  \caption{
-%    \richel{Used randomly simulated peptides, results are real}
-%  }
-%  \label{fig:hydrophobicity_vs_binds_mhc1}
-%\end{figure}
-
-%\begin{figure}[!htbp]
-%  \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_binds_mhc2.png}
-%  \caption{
-%    \richel{Used randomly simulated peptides, results are real}
-%  }
-%  \label{fig:hydrophobicity_vs_binds_mhc2}
-%\end{figure}
-
-%\begin{figure}[!htbp]
-%  \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/hydrophobicity_vs_is_tmh.png}
-%  \caption{
-%    \richel{Used randomly simulated peptides, results are real}
-%  }
-%  \label{fig:hydrophobicity_vs_is_tmh}
-%\end{figure}
-
-%\begin{figure}[!htbp]
-%  \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc1.png}
-%  \caption{
-%    \richel{Used randomly simulated peptides, results are real}
-%  }
-%  \label{fig:is_tmh_vs_binds_mhc1}
-%\end{figure}
-
-%\begin{figure}[!htbp]
-%  \includegraphics[width=0.9\textwidth]{p_bind_per_hydrophobicity/is_tmh_vs_binds_mhc2.png}
-%  \caption{
-%    \richel{Used randomly simulated peptides, results are real}
-%  }
-%  \label{fig:is_tmh_vs_binds_mhc2}
-%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II haplotype occurrences}
