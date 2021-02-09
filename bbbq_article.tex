@@ -1,6 +1,5 @@
 \begin{abstract}
 
-
 The human immune system is unexpectedly attentive towards
 human transmembrane helices (TMHs), as TMH-derived peptide fragments
 bind to histocompatibility complex (MHC) class I more often then expected
@@ -266,7 +265,7 @@ To summarize: from a proteome all possible 9-mers are derived. For each
 of these peptides, it is measured if it has been part of a 
 TMH (at least overlapping 1 residue), 
 as well as if the peptide is a binder to an MHC-I haplotype.
-For MHC-II, 15-mers are used, as these are the most occurring
+For MHC-II, 14-mers are used, as these are the most occurring
 epitope length \cite{bergseng2015different}.
 
 Because the percentage of TMH residues is known, a binomial test can be
@@ -329,18 +328,32 @@ which is a common significance level for an exploratory study.
 \paragraph{Introduction}
 
 To detect the evolutionary conservation of TMHs, 
-we use the following workflow (also shown
-in figure \ref{fig:snp_workflow}) to be able to count the
-number of SNPs that occur in TMHs, as well as the number of SNPs
-that occur in TMHs by chance.
+we collect human mutations and 
+tally their predicted location.
+To be more precise, we collected single nucleotide
+polymorphisms (SNPs) within the human population
+that resulted in the substitution of one amino acid.
+As we know the sequence of the protein a SNP acts upon,
+we predict that protein's topology and tally if
+the SNP occurred in a TMH or not, 
+after which we use statistics to determine if there are
+more, less or an equal amount of SNPs in TMHs
+as a measure of evolutionary conservation.
+This workflow is discussed in more detail below and also
+depicted in figure \ref{fig:snp_workflow}).
 
-To do so, we use the 
-NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases:
+HIERO
+
+\paragraph{Data}
+As a data source, multiple
+NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases are used:
 'gene' to find the gene names of membrane proteins, 
 'dbSNP' (\cite{sherry2001dbsnp}) for SNPs associated with those genes
 and 'protein' to obtain the sequence of proteins that SNPs act upon.
-The 'dbSNP' contains 2 billion (human-only) SNPs, although
-it is estimated that approximately ten percent (ranging from 2 to 36 percent) 
+The 'dbSNP' contains 650 million 
+catalogued non-redundant humane variations (called RefSNPs,
+/url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}).
+It is estimated that approximately ten percent (ranging from 2 to 36 percent) 
 are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}).
 
 The \verb;rentrez; R package provides for doing so from script.
@@ -381,27 +394,6 @@ in \richel{???} proteins with at least one TMH.
   }
   \label{fig:snp_workflow}
 \end{figure}
-
-
-% \paragraph{Introduction}
-% 
-% To detect the evolutionary conservation of TMHs,
-% we first selected all unique protein sequences per
-% gene from all 45k SARS-CoV-2 proteomes,
-% resulting in around 500 unique protein sequences per gene.
-% From the unique protein sequences, we made an alignment per gene,
-% using the msa (\cite{bodenhofer2015msa}) R package, 
-% set up to use ClustalOmega (\cite{thompson1994clustal})
-% with the BLOSUM80 amino acid transition matrix (\cite{henikoff1992amino}).
-% Per alignment, we used msa to determine the consensus sequence
-% and the conservation scores.
-% Per consensus sequences, the topology was determined using pureseqtmr.
-% 
-% \paragraph{Statistics}
-% 
-% We compare the conservation values for TMH versus non-TMH locations,
-% for all membrane proteins combined,
-% using a Kolmogorov-Smirnov test, for a significance level of 5 percent.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software used}
@@ -552,7 +544,7 @@ for the TMH and epitope counts.
 % are sampled from the same distribution. 
 
 \begin{figure}[!htbp]
-  \includegraphics[height=0.9\textheight]{../bbbq_1_smart/fig_f_tmh_mhc1_2_grid.png}
+  \includegraphics[height=0.9\textheight]{../bbbq_1_smart/results_14-mer/fig_f_tmh_mhc1_2_grid.png}
   \caption{
     Percentage of MHC-I epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
@@ -576,7 +568,7 @@ See the supplementary materials (table \ref{tab:tmh_binders_mhc2})
 for the TMH and epitope counts.
 
 \begin{figure}[!htbp]
-  \includegraphics[height=0.9\textheight]{../bbbq_1_smart/fig_f_tmh_mhc2_2_grid.png}
+  \includegraphics[height=0.9\textheight]{../bbbq_1_smart/results_14-mer/fig_f_tmh_mhc2_2_grid.png}
   \caption{
     Percentage of MHC-II epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
@@ -677,6 +669,12 @@ The TRDD1\_HUMAN protein, short for 'T cell receptor delta diversity 1',
 is, however, two peptides long. We manually added the prediction
 that both peptides reside in the cytosol.
 
+DRIPs.
+
+Translational staling.
+
+Trans-splicing for epitopes.
+
 \richel{
   Note that most bacteria are opportunistic pathogens.
   Note that most bacteria are generalists.
@@ -737,7 +735,7 @@ The earlier study uses TMHMM, which has a restricted software license.
 Instead, we chose to use PureseqTM, which is free and open source.
 
 % Percentage of spots and spots that overlap with a TMH
-\input{../bbbq_1_smart/table_f_tmh_2.latex}
+\input{../bbbq_1_smart/results_14-mer/table_f_tmh_2.latex}
 
 \paragraph{IC50 prediction software}
 
@@ -790,7 +788,7 @@ and smaller reference proteome instead.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Per target proteome (i.e. human, SARS-CoV-2, Mycobacterium tuberculosis),
-we collected all 9-mers (for MHC-I) and 15-mers (for MHC-II),
+we collected all 9-mers (for MHC-I) and 14-mers (for MHC-II),
 after removing the selenoproteins and proteins that are shorter
 than the epitope length.
 From these epitopes, per MHC haplotype,
@@ -802,17 +800,17 @@ for MHC-I (see \ref{tab:ic50_binders_mhc1}) and
 MHC-II (see \ref{tab:ic50_binders_mhc2}).
 
 % tab:ic50_binders_mhc1
-\input{../bbbq_1_smart/table_ic50_binders_mhc1_2.latex}
+\input{../bbbq_1_smart/results_14-mer/table_ic50_binders_mhc1_2.latex}
 
 % tab:ic50_binders_mhc2
-\input{../bbbq_1_smart/table_ic50_binders_mhc2_2.latex}
+\input{../bbbq_1_smart/results_14-mer/table_ic50_binders_mhc2_2.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{../bbbq_1_smart/fig_f_tmh_mhc1_2_normalized.png}
+  \includegraphics[width=\textwidth]{../bbbq_1_smart/results_14-mer/fig_f_tmh_mhc1_2_normalized.png}
   \caption{
     Normalized proportion of MHC-I epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
@@ -823,14 +821,14 @@ MHC-II (see \ref{tab:ic50_binders_mhc2}).
 \end{figure}
 
 % Label: tab:tmh_binders_mhc1
-\input{../bbbq_1_smart/table_tmh_binders_mhc1_2.latex}
+\input{../bbbq_1_smart/results_14-mer/table_tmh_binders_mhc1_2.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{../bbbq_1_smart/fig_f_tmh_mhc2_2_normalized.png}
+  \includegraphics[width=\textwidth]{../bbbq_1_smart/results_14-mer/fig_f_tmh_mhc2_2_normalized.png}
   \caption{
     Normalized proportion of MHC-II epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
@@ -841,7 +839,7 @@ MHC-II (see \ref{tab:ic50_binders_mhc2}).
 \end{figure}
 
 % Label: tab:tmh_binders_mhc2
-\input{../bbbq_1_smart/table_tmh_binders_mhc2_2.latex}
+\input{../bbbq_1_smart/results_14-mer/table_tmh_binders_mhc2_2.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
