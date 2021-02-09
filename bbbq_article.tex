@@ -345,17 +345,30 @@ depicted in figure \ref{fig:snp_workflow}).
 \paragraph{Data}
 
 As a data source, multiple
-NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases are used:
-'gene' to find the gene names of membrane proteins, 
+NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases are used,
+which are 'gene', to find the gene names of membrane proteins, 
 'dbSNP' (\cite{sherry2001dbsnp}) for SNPs associated with those genes
-and 'protein' to obtain the sequence of proteins that SNPs act upon.
+and 'protein', to obtain the sequence of proteins that SNPs act upon.
 The 'dbSNP' contains 650 million 
 catalogued non-redundant humane variations (called RefSNPs,
 \url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}).
 It is estimated that approximately ten percent (ranging from 2 to 36 percent) 
-are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}).
+are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}),
+yet if this has been corrected for (if possible) in the last decade is unknown.
 
-The \verb;rentrez; R package provides for doing so from script.
+\paragraph{Data retrieval}
+
+To retrieve the data from these databases the
+\verb;rentrez; R package (\cite{rentrez}) is used
+to calls the NCBI website's API. To provide for a 
+stable user experience for all users, 
+this API limits the user to 3 calls per second.
+Additionally, the API splits the result of a bigger
+query into multiple pages, each of which needs one API call.
+We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
+bigger queries of multiple (and delayed) API calls.
+
+\paragraph{Data retrieval}
 
 The first query is a call to the 'gene' database for the 
 term 'membrane protein' (in all fields) for the organism Homo sapiens.
