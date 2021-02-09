@@ -1,5 +1,6 @@
 \begin{abstract}
 
+
 The human immune system is unexpectedly attentive towards
 human transmembrane helices (TMHs), as TMH-derived peptide fragments
 bind to histocompatibility complex (MHC) class I more often then expected
@@ -593,54 +594,6 @@ for the TMH and epitope counts.
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Evolutionary conservation scores are shown in 
-figures \ref{fig:evolutionary_conservation_8k} (topology),
-\ref{fig:evolutionary_conservation_8k_violin} (per 
-protein with at least 1 TMH, violin)
-and \ref{fig:evolutionary_conservation_8k_merged} (grouped 
-from all proteins that have at least 1 TMH).
-See figures
-\ref{fig:evolutionary_conservation_8k_all} and 
-\ref{fig:evolutionary_conservation_8k_all_violin}
-for the scores for all proteins).
-
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/8000_42/scores.png}
-  \caption{
-    Conservation scores for the aligned SARS-CoV-2 proteomes,
-    for proteins that have at least one TMH,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-    The (non-logarithmic) scale of the conservation score has been removed
-    for readability.
-    Conservation scores do not start at residue 1 when
-    an aligned protein sequence outflanks the consensus sequence 
-    at the N-terminal
-  }
-  \label{fig:evolutionary_conservation_8k}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/8000_42/scores_merged_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    with conservation scores group from all proteins that have at least one TMH,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-  }
-  \label{fig:evolutionary_conservation_8k_merged}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/8000_42/scores_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    for proteins that have at least one TMH,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-  }
-  \label{fig:evolutionary_conservation_8k_violin}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -720,7 +673,7 @@ nor do the authors respond to emails. Due to this, we removed the
 selenoproteins from our analysis.
 Another bug in PureseqTM is that it does not predict the topology
 of proteins that have less than three amino acids. 
-The TRDD1_HUMAN protein, short for 'T cell receptor delta diversity 1',
+The TRDD1\_HUMAN protein, short for 'T cell receptor delta diversity 1',
 is, however, two peptides long. We manually added the prediction
 that both peptides reside in the cytosol.
 
@@ -823,6 +776,11 @@ See \url{https://github.com/richelbilderbeek/bbbq_article/issues/155}.
 \subsection{Uniprot IDs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Table \ref{tab:uniprot_ids} shows an overview of the Uniprot IDs
+for the reference proteomes used. Note that for Homo sapiens,
+we did not use the full reference proteome, but a representative
+and smaller reference proteome instead.
+
 % tab:uniprot_ids
 \input{create_table_reference_proteomes/uniprot_ids.latex}
 
@@ -836,10 +794,12 @@ we collected all 9-mers (for MHC-I) and 15-mers (for MHC-II),
 after removing the selenoproteins and proteins that are shorter
 than the epitope length.
 From these epitopes, per MHC haplotype,
-we predicted the IC50 using \verb;epitope-prediction; (for MHC-I)
+we predicted the IC50 (in nM) using \verb;epitope-prediction; (for MHC-I)
 and MHCnuggets (for MHC-II). 
 Here, we show the IC50 value per haplotype that
-is used to determine if a peptide binds to the haplotype's MHC.
+is used to determine if a peptide binds to the haplotype's MHC
+for MHC-I (see \ref{tab:ic50_binders_mhc1}) and 
+MHC-II (see \ref{tab:ic50_binders_mhc2}).
 
 % tab:ic50_binders_mhc1
 \input{../bbbq_1_smart/table_ic50_binders_mhc1_2.latex}
@@ -856,9 +816,8 @@ is used to determine if a peptide binds to the haplotype's MHC.
   \caption{
     Normalized proportion of MHC-I epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
-    Legend: covid = SARS-CoV-2, flua = influenza A, hepa = hepatitis A,
-    human = homo sapiens, myco = Mycobacterium tuberculosis, 
-    polio = poliovirus, rhino = rhinovirus
+    Legend: covid = SARS-CoV-2,
+    human = homo sapiens, myco = Mycobacterium tuberculosis
   }
   \label{fig:f_tmh_mhc1_normalized}
 \end{figure}
@@ -875,9 +834,8 @@ is used to determine if a peptide binds to the haplotype's MHC.
   \caption{
     Normalized proportion of MHC-II epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
-    Legend: covid = SARS-CoV-2, flua = influenza A, hepa = hepatitis A,
-    human = homo sapiens, myco = Mycobacterium tuberculosis, 
-    polio = poliovirus, rhino = rhinovirus
+    Legend: covid = SARS-CoV-2,
+    human = homo sapiens, myco = Mycobacterium tuberculosis
   }
   \label{fig:f_tmh_mhc2_normalized}
 \end{figure}
@@ -892,174 +850,6 @@ is used to determine if a peptide binds to the haplotype's MHC.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Subset of random sequences}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/8000_42/scores.png}
-  \caption{
-    Conservation scores for the aligned SARS-CoV-2 proteomes,
-    for proteins that have at least one TMH,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-    The (non-logarithmic) scale of the conservation score has been removed
-    for readability.
-    Conservation scores do not start at residue 1 when
-    an aligned protein sequence outflanks the consensus sequence 
-    at the N-terminal
-  }
-  \label{fig:evolutionary_conservation_8k}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/8000_42/scores_merged_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    with conservation scores group from all proteins that have at least one TMH,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-  }
-  \label{fig:evolutionary_conservation_8k_merged}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/8000_42/scores_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    for proteins that have at least one TMH,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-  }
-  \label{fig:evolutionary_conservation_8k_violin}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=0.7\textwidth,scale=0.7]{bbbq_2/8000_42/scores_all.png}
-  \caption{
-    Conservation scores for the aligned SARS-CoV-2 proteomes,
-    for all proteins,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-    The (non-logarithmic) scale of the conservation score has been removed
-    for readability.
-    Conservation scores do not start at residue 1 when
-    an aligned protein sequence outflanks the consensus sequence 
-    at the N-terminal.
-  }
-  \label{fig:evolutionary_conservation_8k_all}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/8000_42/scores_violin_all.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    for all proteins,
-    from a subset of 8000 randomly selected SARS-CoV-2 sequences.
-  }
-  \label{fig:evolutionary_conservation_8k_all_violin}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{All unique sequences}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores.png}
-  \caption{
-    Conservation scores for the aligned SARS-CoV-2 proteomes,
-    for proteins that have at least one TMH,
-    using all unique sequences \richel{which I doubt is valid}.
-    The (non-logarithmic) scale of the conservation score has been removed
-    for readability.
-    Conservation scores do not start at residue 1 when
-    an aligned protein sequence outflanks the consensus sequence 
-    at the N-terminal
-  }
-  \label{fig:evolutionary_conservation_all_unique}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_merged_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    with conservation scores group from all proteins that have at least one TMH,
-    using all unique sequences \richel{which I doubt is valid}.
-  }
-  \label{fig:evolutionary_conservation_all_unique_merged}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    for proteins that have at least one TMH,
-    using all unique sequences \richel{which I doubt is valid}.
-  }
-  \label{fig:evolutionary_conservation_all_unique_violin}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores.png}
-  \caption{
-    Conservation scores for the aligned SARS-CoV-2 proteomes,
-    for proteins that have at least one TMH,
-    using all unique sequences \richel{which I doubt is valid}.
-    The (non-logarithmic) scale of the conservation score has been removed
-    for readability.
-    Conservation scores do not start at residue 1 when
-    an aligned protein sequence outflanks the consensus sequence 
-    at the N-terminal
-  }
-  \label{fig:evolutionary_conservation_all_unique}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_merged_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    with conservation scores group from all proteins that have at least one TMH,
-    using all unique sequences \richel{which I doubt is valid}.
-  }
-  \label{fig:evolutionary_conservation_all_unique_merged}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_violin.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    for proteins that have at least one TMH,
-    using all unique sequences \richel{which I doubt is valid}.
-  }
-  \label{fig:evolutionary_conservation_all_unique_violin}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=0.7\textwidth,scale=0.7]{bbbq_2/scores_all.png}
-  \caption{
-    Conservation scores for the aligned SARS-CoV-2 proteomes,
-    for all proteins,
-    using all unique sequences \richel{which I doubt is valid}.
-    The (non-logarithmic) scale of the conservation score has been removed
-    for readability.
-    Conservation scores do not start at residue 1 when
-    an aligned protein sequence outflanks the consensus sequence 
-    at the N-terminal.
-  }
-  \label{fig:evolutionary_conservation_all_unique_all}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{bbbq_2/scores_violin_all.png}
-  \caption{
-    Evolutionary conservation scores of TMH versus non-TMH
-    residues in the SARS-CoV-2 proteome,
-    for all proteins,
-    using all unique sequences \richel{which I doubt is valid}.
-  }
-  \label{fig:evolutionary_conservation_all_unique_all_violin}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-II haplotype occurrences}
