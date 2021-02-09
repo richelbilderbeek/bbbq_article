@@ -104,20 +104,21 @@ with a focus on transmembrane helices.
 The intracellular pathway, in which transmembrane residues are loaded onto
 an MHC, however, is yet unknown.
 
-Transmembrane helices are structurally conserved structures that span
-a cell membrane with an alpha helix.
-TMHs are hydrophobic, as this is required to span the 
-hydrophobic cellular lipid membrane. Additionally,
-they often have a length of 23 amino acids to be able to span
-the membrane.
-Polypeptide fragments derived from TMHs are among the most hydrophobic,
-together with the internals of soluble proteins, where the
-hydrophobicity parts guide the protein to achieve its 3D configuration.
-TMHs are general structures: 25 percent of the human proteome is
-anchored by at least one TMH. Also the pathogen SARS-CoV-2 has 21 TMHs, 
-making up for 5.5 percent of its entire genome.
-There are multiple computational tools developed to predict which
-parts of membrane proteins are TMH (\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}).
+Transmembrane helices (TMHs) 
+are structurally conserved and hydrophobic 
+regions of a protein that span a (also hydrophobic) 
+cell membrane by an alpha helix of usually 23 amino acids.
+Together with the internals of soluble proteins,
+peptides derived from TMHs are the most hydrophobic
+of a proteome. In both cases, the hydrophobic regions
+help shape the protein in its correct 3D configuration.
+TMHs are common structures in the proteins of
+humans and pathogens. For example, 
+15-39\% of the proteins in humans
+is predicted to be a membrane protein (\cite{ahram2006estimation}).
+There are multiple tools to do in silico predictions 
+to determine the transmembrane regions of a protein 
+(\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}).
 
 % \paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
@@ -959,7 +960,7 @@ MHC-II (see \ref{tab:ic50_binders_mhc2}).
     with viral/bacterial TMHs as with human TMHs
   \item $\mathcal{H}_{2,HVB}$: MHC-II has the same percentage of epitopes overlapping
     with human/viral/bacterial TMHs as expected by chance
-  \item $\mathcal{H}_{3}$: TMH and non-TMH regions are equally conserved
+  \item $\mathcal{H}_{3}$: TMHs and soluble protein regions are equally conserved
     in a proteome
 \end{itemize}
 
