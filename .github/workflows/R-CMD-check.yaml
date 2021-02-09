@@ -17,9 +17,6 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v1
 
-      - name: Checkout bbbq_1_smart
-        run: cd ../ ; git checkout https://github.com/richelbilderbeek/bbbq_1_smart ; cd bbbq_article
-
       - name: Build the doc
         run: echo "Not yet"
 
