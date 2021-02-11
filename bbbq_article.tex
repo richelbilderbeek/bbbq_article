@@ -599,6 +599,25 @@ for the TMH and epitope counts.
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected.png}
+  \caption{
+    Percentage of SNPs found in TMHs.
+    Each point resembles one protein, with a predicted percentage of
+    TMH (x-axis) and an observed occurrence of SNPs being located
+    within a TMH (y-axis).
+    The dashed diagonal line shows the expected linear trend line
+    if TMHs and soluble protein regions are equally conserved.
+    The red line is a linear trend line that includes the membrane-associated
+    proteins at the origin. 
+    The blue line is a linear trend line that includes only the
+    transmembrane proteins.
+  }
+  \label{fig:f_snps_found_and_expected}
+\end{figure}
+
+SNPs occur more often in soluble than in transmembrane protein regions,
+as shown in figure \ref{fig:f_snps_found_and_expected}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -940,16 +959,6 @@ MHC-II (see \ref{tab:ic50_binders_mhc2}).
 )
 
 \begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected.png}
-  \caption{
-    Percentage of SNPs found in TMHs.
-    The dashed diagonal line shows the expected linear trend line
-    if TMHs and soluble protein regions are equally conserved.
-  }
-  \label{fig:f_snps_found_and_expected}
-\end{figure}
-
-\begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_n_proteins_per_gene_name.png}
   \caption{
     Histogram of the number of proteins found per gene name.
@@ -994,34 +1003,6 @@ MHC-II (see \ref{tab:ic50_binders_mhc2}).
   }
   \label{fig:snps_per_gene_name_processed}
 \end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{MHC-II haplotype occurrences}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{table}[!htbp]
-  \input{mhc2_haplotypes.latex}
-  \caption{
-    Percentage of MHC-II haplotypes, from \cite{greenbaum2011functional}
-  }
-  \label{table:mhc2_haplotypes}
-\end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Hypotheses}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\richel{As a reminder, to focus the research on}
-
-\begin{itemize}
-  \item $\mathcal{H}_{1,VB}$: MHC-I has the same percentage of epitopes overlapping
-    with viral/bacterial TMHs as with human TMHs
-  \item $\mathcal{H}_{2,HVB}$: MHC-II has the same percentage of epitopes overlapping
-    with human/viral/bacterial TMHs as expected by chance
-  \item $\mathcal{H}_{3}$: TMHs and soluble protein regions are equally conserved
-    in a proteome
-\end{itemize}
-
 
 %
 % Notes to self
