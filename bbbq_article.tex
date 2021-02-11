@@ -236,7 +236,7 @@ we use the 49790 (as of 2020-06-22) fully sequenced SARS-CoV-2 proteomes,
 as provided by GISAID (\cite{shu2017gisaid}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Elution studies}
+\subsection{Elution studies}\label{subsec:elution_studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To determine if epitopes derived from TMHs are presented at all,
@@ -667,6 +667,32 @@ with the lowest SNP ID (which denotes the earliest discovery date) first.
 We expect this not to introduce a bias, so we expect that
 the SNPs we used are a representative sample of all SNPs.
 
+
+\paragraph{Elution studies}
+
+We assume that epitopes 
+derived from TMHs are actually presented by MHC-I and MHC-II.
+Our analysis (at subsection \ref{subsec:elution_studies}) 
+finds that 1.4\% (for MHC-I) and 4.0% (for MHC-II) 
+of the epitopes presented 
+overlap with a TMH.
+It is unsure if this a true finding or a false positive.
+One source of noise would stem from imperfect predictions
+by the topology prediction software used. 
+We have counteracted this by using two different topology prediction
+software and confirm these have similar results.
+Two biological sources of noise
+are defective ribosomal products (DRiPs) (\cite{yewdell1996defective}) 
+and peptide fusion \cite{delong2016pathogenic},
+two processes that both result in peptide fragments
+that did not originate from genome directly.
+Note however, that both elution studies have a
+methodological bias caused by mass spectronomy,
+as hydrophobic fragments are detected less 
+by mass spectronomy \richel{Look up wording and ref in Bianchi et al 2017}.
+
+\paragraph{\% epitopes overlapping with TMHs}
+
 We have removed the 25 selenoproteins found in the human
 reference proteome, as both prediction tools struggle with 
 selenocysteine, the 21st amino acid incorporated in human proteins.
@@ -682,9 +708,21 @@ The TRDD1\_HUMAN protein, short for 'T cell receptor delta diversity 1',
 is, however, two peptides long. We manually added the prediction
 that both peptides reside in the cytosol.
 
-DRIPs.
+\paragraph{Evolutionary conservation}
+
+In our evolutionary experiment, we removed variations that were synonymous mutations (i.e.
+resulted in the same amino acid, from a different genetic code) 
+from our analysis.
+There is evidence, however, that these synonymous mutations
+do have an effect and may even be evolutionary selected 
+for (\cite{hunt2009silent}).
+As the possible effect of synonymous mutations is ignored by our
+topology prediction software, we do so as well.
+
 
 Translational staling.
+
+
 
 Trans-splicing for epitopes.
 
