@@ -604,71 +604,31 @@ for the TMH and epitope counts.
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We found that the percentages of epitopes overlapping 
-with TMHs for a human and viral proteome are 
-[similar/different]. In other words, the
-epitopes that MHC-I presents are [as/not as] likely 
-to be derived from TMH within either a human host and its viral pathogen.
+\paragraph{General pattern in epitope presentation}
 
-We found that the percentages of epitopes overlapping 
-with TMHs for a human and bacterial proteome are 
-[similar/different]. In other words, the
-epitopes that MHC-I presents are [as/not as] likely 
-to be derived from TMH within either a human host and its bacterial pathogen.
+We found a general pattern in the
+presentation of epitopes that overlap with a TMH.
+For humans, a bacterial and viral pathogen,
+as well as for MHC-I and MHC-II,
+we found that these are presented more often 
+than expected by chance.
+
+\paragraph{Interesting haplotype for SARS-CoV-2}
+
+One interesting finding is that the MHC-I 
+haplotype HLA-A*24:02 
+present four times as much epitopes derived from SARS-CoV-2 TMHs
+than expected by chance.
+This may help the immune system to detect a SARS-CoV-2 infection earlier,
+but we have not investigates if an effect can be found in clinical data.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We concluded that the
-epitopes that MHC-I presents are [as/not as] likely 
-to be derived from TMH within either a human host and its viral pathogen.
-Because the full SARS-CoV-2 has 21 TMHs, the percentages
-of MHC-I epitopes being part of a TMH are likelier to be affected by
-stochasticity. We chose to use SARS-CoV-2 regardless, as the thousands
-of its time-dated genomic sequences are ideal for determining the 
-evolutionary conservation of MHC-I detecting TMHs. 
+\subsection{Elution studies}
 
-We concluded that the
-epitopes that MHC-I presents are [as/not as] likely 
-to be derived from TMH within either a human host and its bacterial pathogen.
-Because a bacterium does not infect a cell, thus its peptides
-will not be presented by MHC-I, this result is [unexpected/expected]
-
-We aimed our evolutionary experiment at TMHs, because these can
-be predicted well from a protein structure,
-are common structures and are present in all pathogens. 
-We could have done the same experiment on beta-turn,
-as also these can be predicted well (\cite{petersen2010netturnp}),
-are common structures and are present in all pathogens.
-
-The human immune system and human pathogen are in an evolutionary
-arms race: our immune systems is selected for the detection
-of pathogens, whereas pathogens are selected to avoid detection.
-From a pathogen's point of view, however, this struggle 
-is of only minor importance:
-in seasonal influenza, for example, the selection pressure
-exerted by the immune system was only limited (\cite{han2019individual}).
-
-Regarding the evolutionary conservation of TMHs using SNPs,
-again, it is estimated that approximately ten percent
-of SNPs is a false positive that result from the methods to determine
-a SNP. One example is that sequence variations are incorrectly
-detected due to highly similar duplicated sequences \cite{musumeci2010single}.
-We assume that these duplications occur as often in TMHs as in
-regions around these, hence we expect this not to affect our results.
-
-We used a low number of SNPs, as was imposed by the
-NCBI API, which constrains its users to three calls per second.
-As a second factor, we limited the time querying the NCBI database
-for the duration of the project.
-The SNPs we did use, we picked those
-with the lowest SNP ID (which denotes the earliest discovery date) first.
-We expect this not to introduce a bias, so we expect that
-the SNPs we used are a representative sample of all SNPs.
-
-
-\paragraph{Elution studies}
+\paragraph{False positives}
 
 We assume that epitopes 
 derived from TMHs are actually presented by MHC-I and MHC-II.
@@ -691,7 +651,9 @@ methodological bias caused by mass spectronomy,
 as hydrophobic fragments are detected less 
 by mass spectronomy \richel{Look up wording and ref in Bianchi et al 2017}.
 
-\paragraph{\% epitopes overlapping with TMHs}
+\subsection{\% epitopes overlapping with TMHs}
+
+\paragraph{Removal of selenoproteins}
 
 We have removed the 25 selenoproteins found in the human
 reference proteome, as both prediction tools struggle with 
@@ -702,15 +664,39 @@ How PureseqTM deals with selenocysteine is unclear,
 as it gives no error, nor is it mentioned anywhere,
 nor do the authors respond to emails. Due to this, we removed the
 selenoproteins from our analysis.
-Another bug in PureseqTM is that it does not predict the topology
+
+\paragraph{Topology prediction of TRDD1}
+
+PureseqTM does not predict the topology
 of proteins that have less than three amino acids. 
-The TRDD1\_HUMAN protein, short for 'T cell receptor delta diversity 1',
-is, however, two peptides long. We manually added the prediction
-that both peptides reside in the cytosol.
+The TRDD1 ('T cell receptor delta diversity 1') protein,
+however, is two peptides long. 
+We corrected for this by predicting that this protein
+is completely cytosolic.
 
-\paragraph{Evolutionary conservation}
+\paragraph{Bacteria have a different cell membrane}
 
-In our evolutionary experiment, we removed variations that were synonymous mutations (i.e.
+In this experiment we predicted epitopes that overlap with 
+TMHs from a human, bacterial and viral proteome,
+would these proteins be expressed in a human host.
+Bacteria, however have different cell membranes and cell walls, 
+hence different structural requirements for a TMH.
+Both topology prediction tools were trained to recognize
+human TMHs (\richel{Check}), thus we cannot be sure that
+the transmembrane regions predicted in bacterial proteins
+are actually part of an integral membrane protein.
+For the purpose of this study, we assume the 
+error in topology predictions to be unbiased way towards topology.
+In other words: that a bacterial TMH is incorrectly
+predicted to be absent just as often as it is incorrectly
+predicted to be present elsewhere.
+
+\subsection{Evolutionary conservation}
+
+\paragraph{synonymous mutations}
+
+In our evolutionary experiment, 
+we removed variations that were synonymous mutations (i.e.
 resulted in the same amino acid, from a different genetic code) 
 from our analysis.
 There is evidence, however, that these synonymous mutations
@@ -719,19 +705,58 @@ for (\cite{hunt2009silent}).
 As the possible effect of synonymous mutations is ignored by our
 topology prediction software, we do so as well.
 
+\paragraph{False positives in SNPs}
 
-Translational staling.
+Regarding the evolutionary conservation of TMHs using SNPs,
+again, it is estimated that approximately ten percent
+of SNPs is a false positive that result from the methods to determine
+a SNP. One example is that sequence variations are incorrectly
+detected due to highly similar duplicated sequences \cite{musumeci2010single}.
+We assume that these duplications occur as often in TMHs as in
+regions around these, hence we expect this not to affect our results.
 
+\paragraph{Low number of SNPs}
 
+The NCBI dbSNP database contains millions of SNPs.
+As the NCBI API constrains its users to three calls per second,
+we had to limited the extent of our analysis
+by downloading SNPs to approximately 300 
+hours (i.e. the length of a Christmas holiday).
 
-Trans-splicing for epitopes.
+\paragraph{Selection of SNPs}
 
-\richel{
-  Note that most bacteria are opportunistic pathogens.
-  Note that most bacteria are generalists.
-  Note that most bacteria have different cell membranes (and walls), that
-  may have different functional constraints than a human cell membrane
-}
+We selected to analyze SNPs with the lowest SNP ID first.
+This means we have a bias for picking SNPs with
+an earlier discovery date.
+We expect this bias to be biologically irrelevant
+and we find no clear evidence of a bias, as
+shown in figure \ref{fig:n_tmhs_per_protein}.
+Still, the best way to interpret this figure
+is open to discussion.
+
+\subsection{Notes and/or to be removed}
+
+We concluded that the
+epitopes that MHC-I presents are [as/not as] likely 
+to be derived from TMH within either a human host and its bacterial pathogen.
+Because a bacterium does not infect a cell, thus its peptides
+will not be presented by MHC-I, this result is [unexpected/expected]
+
+We aimed our evolutionary experiment at TMHs, because these can
+be predicted well from a protein structure,
+are common structures and are present in all pathogens. 
+We could have done the same experiment on beta-turn,
+as also these can be predicted well (\cite{petersen2010netturnp}),
+are common structures and are present in all pathogens.
+
+The human immune system and human pathogen are in an evolutionary
+arms race: our immune systems is selected for the detection
+of pathogens, whereas pathogens are selected to avoid detection.
+From a pathogen's point of view, however, this struggle 
+is of only minor importance:
+in seasonal influenza, for example, the selection pressure
+exerted by the immune system was only limited (\cite{han2019individual}).
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgments}
@@ -925,17 +950,6 @@ MHC-II (see \ref{tab:ic50_binders_mhc2}).
     Most often, a gene name is associated with one proteins. 
   }
   \label{fig:n_proteins_per_gene_name}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_n_snps_found_and_expected_per_n_tmhs.png}
-  \caption{
-    Number of SNPs found in TMHs,
-    separated per number of TMHs.
-    The dashed diagonal lines show the expected linear trend line
-    if TMHs and soluble protein regions are equally conserved.
-  }
-  \label{fig:n_snps_found_and_expected_per_n_tmhs}
 \end{figure}
 
 \begin{figure}[!htbp]
