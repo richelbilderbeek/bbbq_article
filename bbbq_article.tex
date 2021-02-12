@@ -90,7 +90,7 @@ are immunogenic.
 This approach, however, is tedious and costly.
 Due to this, software was written that allows for silico 
 predictions, which are reliable in 
-practice \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
+practice (\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}).
  
 % \paragraph{TMHs}
 
@@ -131,8 +131,10 @@ binding cleft is hydrophobic as well.
 
 It is unknown if the presentation of hydrophobic/TMH residues
 is evolutionary selected for.
-One possible explanation is that TMHs have a reduced variability,
-imposed by the functional requirement of being able to span a lipid bilayer.
+One reason to expect a reduced variability (and hence 
+evolutionary conservation) in TMHs, is
+that these are restricted in their evolution
+by the functional requirement to span a lipid bilayer.
 Due to this, the TMHs that pathogens possess, 
 have a lower chance to develop an escape mutation,
 as many mutations will result in a dysfunctional TMH.
@@ -226,11 +228,6 @@ Instead of using the full human reference proteome, we
 use the representative human reference proteome 
 as used previously (\cite{bianchi2017}).
 
-\paragraph{Data set for evolutionary conservation of TMHs}
-
-To detect the evolutionary conservation of TMHs,
-we use the 49790 (as of 2020-06-22) fully sequenced SARS-CoV-2 proteomes, 
-as provided by GISAID (\cite{shu2017gisaid}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Elution studies}\label{subsec:elution_studies}
@@ -238,8 +235,8 @@ as provided by GISAID (\cite{shu2017gisaid}).
 
 To determine if epitopes derived from TMHs are presented at all,
 we started from epitopes sequenced from elution studies
-for MHC-I \cite{schellens2015comprehensive} 
-and MHC-II \cite{bergseng2015different}.
+for MHC-I (\cite{schellens2015comprehensive}) 
+and MHC-II (\cite{bergseng2015different}).
 For each epitope, the human representative reference proteome
 was searched for its origin.
 We kept only the epitopes of which were found exactly once
@@ -263,13 +260,8 @@ To summarize: from a proteome all possible 9-mers are derived. For each
 of these peptides, it is measured if it has been part of a 
 TMH (at least overlapping 1 residue), 
 as well as if the peptide is a binder to an MHC-I haplotype.
-For MHC-II, 14-mers are used, as these are the most occurring
-epitope length \cite{bergseng2015different}.
-
-Because the percentage of TMH residues is known, a binomial test can be
-used to determine if TMH-derived peptides are as likely to be a binder
-as expected by chance (the null hypothesis), or that TMHs are indeed an
-overrepresented source of epitopes (as found by \cite{bianchi2017}).
+For MHC-II, 14-mers are used, as these are the most frequently occurring
+epitope length (\cite{bergseng2015different}).
 
 This study differs in some aspects, described below in more detail,
 which is the definition of what a binder is,
@@ -284,17 +276,18 @@ also a viral and bacterial proteome are analyzed.
 The definition of a binder differs from \cite{bianchi2017}:
 in this study a peptide is called a binder if, within a haplotype, 
 any of its 9-mer peptides have an IC50 value in the lowest 2\% of 
-the epitopes within a proteome (see table \ref{table:ic50s_per_haplotype} for values), 
-whereas the original study defined
-a binder as having an IC50 in the lowest 2\% of the peptides within a protein.
+the epitopes within a 
+\emph{proteome} (see tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
+for values), whereas the original study defined
+a binder as having an IC50 in the lowest 2\% 
+of the peptides within a \emph{protein}.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
 
 The 13 MHC-I haplotypes used in this study are the same as 
 the ones in \cite{bianchi2017}.
 The MHC-II haplotypes used additionally are selected 
 to occur with a phenotypic frequency of at least 14\% in
-the human population (\cite{greenbaum2011functional},
-see \ref{table:mhc2_haplotypes} for coverage),
+the human population (\cite{greenbaum2011functional}),
 resulting in 21 haplotypes.
 When using an MHC-II haplotype, instead of using 9-mers, 14-mers are
 used, as these are the most common MHC-II epitope size,
@@ -419,8 +412,7 @@ and has a free software license.
 
 For MHC-I, there are multiple computational tools developed 
 to predict epitopes. 
-According to \cite{lundegaard2011prediction}, in 2011,
-from a set of multiple tools, 
+According to \cite{lundegaard2011prediction}, at that time,
 NetMHCcons (\cite{karosiene2012netmhccons}) gave the best predictions.
 A tool developed later is \verb;epitope-prediction; (\cite{bianchi2017}),
 which uses a stabilized matrix method (\cite{kim2009derivation}).
