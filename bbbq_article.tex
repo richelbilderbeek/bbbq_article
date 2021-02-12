@@ -52,7 +52,6 @@ by cytotoxic T lymphocytes, which will kill the infected cell.
 
 % \paragraph{Immune response by MHC-II, contrast with APC}
 
-\richel{Weak, add refs}
 All pathogens can be detected by the foreign proteins on 
 their (bacterial or fungal) cell walls or (viral) envelope.
 For bacteria and fungi, this is the main mode of their detection,
@@ -84,10 +83,10 @@ each presenting their own subset of epitopes.
 % \paragraph{Epitope prediction}
 
 It is helpful to be able to predict which peptides are immunogenic,
-in, among others, vaccine development \richel{Reference here}. 
+in, among others, vaccine development. 
 Already for a decade, synthesized peptide fragments are used
 to experimentally determine which peptides
-are immunogenic \richel{Reference here}.
+are immunogenic.
 This approach, however, is tedious and costly.
 Due to this, software was written that allows for silico 
 predictions, which are reliable in 
@@ -202,8 +201,7 @@ to detect the signature of selection (\cite{murrell2015gene}).
 Using AA sequences, however, has its advantages,
 as its is closer to the actual phenotype
 selection acts upon: DNA may never be transcribed to RNA,
-or its RNA may never be translated (\cite{diz2012proteomics})
-\richel{improve upon this point}.
+or its RNA may never be translated (\cite{diz2012proteomics}).
 When using a proteome in phylogenetic research,
 we know that the majority of proteins are selected to just
 maintain their function most of the time, where
@@ -514,31 +512,13 @@ when using EpitopePrediction to predict epitopes.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc1}) 
 for the TMH and epitope counts.
 
-% The KS test to determine if MHC-I has the same percentage 
-% of epitopes overlapping with viral TMHs, 
-% compared to human TMHs \richel{$\mathcal{H}_{1,V}$},
-% resulted in a p-value of \richel{unknown},
-% which makes us [reject/accept] the hypothesis that these percentages
-% are sampled from the same distribution. 
-
-% The KS test to determine if MHC-I has the same percentage 
-% of epitopes overlapping with bacterial TMHs, 
-% compared to human TMHs \richel{$\mathcal{H}_{1,B}$},
-% resulted in a p-value of \richel{unknown},
-% which makes us [reject/accept] the hypothesis that these percentages
-% are sampled from the same distribution. 
-
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
   \caption{
     Percentage of MHC-I epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
     The horizontal lines indicate the percentage as expected by chance.
-    \richel{Refer to a table with the numbers as expected by chance)}
-    See table \ref{tab:tmh_binders_mhc1} for the TMH and epitope counts.
-    \richel{Epitope prediction by EpitopePrediction.}.
-    Note that for smaller proteomes a percentage of zero is likelier.
-    \richel{use of top 2\% binders}
+    See table \ref{tab:tmh_binders_mhc1} for the exact TMH and epitope counts.
   }
   \label{fig:1}
 \end{figure}
@@ -558,11 +538,8 @@ for the TMH and epitope counts.
     Percentage of MHC-II epitopes overlapping with TMHs
     for a human, viral and bacterial proteome.
     The horizontal lines indicate the percentage as expected by chance.
-    \richel{Refer to a table with the numbers as expected by chance)}
-    \richel{Epitope prediction by NetMHCIIpan.}
-    See table \ref{tab:tmh_binders_mhc2} for the TMH and epitope counts.
+    See table \ref{tab:tmh_binders_mhc2} for the exact TMH and epitope counts.
     Note that for smaller proteomes a percentage of zero is likelier.
-    \richel{use of top 2\% binders}
   }
   \label{fig:2}
 \end{figure}
@@ -706,7 +683,7 @@ that did not originate from genome directly.
 Note however, that both elution studies have a
 methodological bias caused by mass spectronomy,
 as hydrophobic fragments are detected less 
-by mass spectronomy \richel{Look up wording and ref in Bianchi et al 2017}.
+by mass spectronomy.
 
 \subsection{\% epitopes overlapping with TMHs}
 
@@ -739,7 +716,7 @@ would these proteins be expressed in a human host.
 Bacteria, however have different cell membranes and cell walls, 
 hence different structural requirements for a TMH.
 Both topology prediction tools were trained to recognize
-human TMHs (\richel{Check}), thus we cannot be sure that
+human TMHs, thus we cannot be sure that
 the transmembrane regions predicted in bacterial proteins
 are actually part of an integral membrane protein.
 For the purpose of this study, we assume the 
@@ -897,11 +874,6 @@ for a binder per haplotype.
 Within the human reference proteome, there are 30 sequences that have a
 selenocysteine (with the symbol 'U').
 See \url{https://github.com/richelbilderbeek/bbbq_article/issues/158}.
-
-\paragraph{Which reference proteome?}
-
-See \url{https://github.com/richelbilderbeek/bbbq_article/issues/155}.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Uniprot IDs}
