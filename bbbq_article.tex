@@ -493,16 +493,16 @@ This package is too specific to be submitted to CRAN.
 Table \ref{tab:elution} shows the percentage of epitopes derived from a TMH
 found in the two elution studies, for the two different kind of topology
 prediction tools. Whatever the tool or MHC class, at least 100 epitopes
+can be uniquely map to human representative reference proteome.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure \ref{fig:1} shows the percentages of MHC-I epitopes overlapping 
-with TMHs for our human, viral and bacterial proteome,
-when using EpitopePrediction to predict epitopes.
+with TMHs for our human, viral and bacterial proteome.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc1}) 
-for the TMH and epitope counts.
+for the exact TMH and epitope counts.
 
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
@@ -624,7 +624,7 @@ there is no clear pattern to be observed.
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{General pattern in epitope presentation}
+% \paragraph{General pattern in epitope presentation}
 
 We found a general pattern in the
 presentation of epitopes that overlap with a TMH.
@@ -633,7 +633,7 @@ as well as for MHC-I and MHC-II,
 we found that these are presented more often 
 than expected by chance.
 
-\paragraph{Interesting haplotype for SARS-CoV-2}
+% \paragraph{Interesting haplotype for SARS-CoV-2}
 
 It is known that an individual's haplotype
 influences the dynamics of a pathogen (see,
@@ -654,7 +654,7 @@ and change the infection's dynamics.
 
 \subsection{Elution studies}
 
-\paragraph{False positives}
+% \paragraph{False positives}
 
 We assume that epitopes 
 derived from TMHs are actually presented by MHC-I and MHC-II.
@@ -679,7 +679,7 @@ by mass spectronomy.
 
 \subsection{\% epitopes overlapping with TMHs}
 
-\paragraph{Removal of selenoproteins}
+% \paragraph{Removal of selenoproteins}
 
 We have removed the 25 selenoproteins found in the human
 reference proteome, as both prediction tools struggle with 
@@ -691,7 +691,7 @@ as it gives no error, nor is it mentioned anywhere,
 nor do the authors respond to emails. Due to this, we removed the
 selenoproteins from our analysis.
 
-\paragraph{Topology prediction of TRDD1}
+% \paragraph{Topology prediction of TRDD1}
 
 PureseqTM does not predict the topology
 of proteins that have less than three amino acids. 
@@ -700,7 +700,7 @@ however, is two peptides long.
 We corrected for this by predicting that this protein
 is completely cytosolic.
 
-\paragraph{Bacteria have a different cell membrane}
+% \paragraph{Bacteria have a different cell membrane}
 
 In this experiment we predicted epitopes that overlap with 
 TMHs from a human, bacterial and viral proteome,
@@ -719,7 +719,7 @@ predicted to be present elsewhere.
 
 \subsection{Evolutionary conservation}
 
-\paragraph{synonymous mutations}
+% \paragraph{synonymous mutations}
 
 In our evolutionary experiment, 
 we removed variations that were synonymous mutations (i.e.
@@ -731,7 +731,7 @@ for (\cite{hunt2009silent}).
 As the possible effect of synonymous mutations is ignored by our
 topology prediction software, we do so as well.
 
-\paragraph{False positives in SNPs}
+% \paragraph{False positives in SNPs}
 
 Regarding the evolutionary conservation of TMHs using SNPs,
 again, it is estimated that approximately ten percent
@@ -741,7 +741,7 @@ detected due to highly similar duplicated sequences \cite{musumeci2010single}.
 We assume that these duplications occur as often in TMHs as in
 regions around these, hence we expect this not to affect our results.
 
-\paragraph{Low number of SNPs}
+% \paragraph{Low number of SNPs}
 
 The NCBI dbSNP database contains millions of SNPs.
 As the NCBI API constrains its users to three calls per second,
@@ -749,7 +749,7 @@ we had to limited the extent of our analysis
 by downloading SNPs to approximately 300 
 hours (i.e. the length of a Christmas holiday).
 
-\paragraph{Selection of SNPs}
+% \paragraph{Selection of SNPs}
 
 We selected to analyze SNPs with the lowest SNP ID first.
 This means we have a bias for picking SNPs with
@@ -760,29 +760,26 @@ shown in figure \ref{fig:n_tmhs_per_protein}.
 Still, the best way to interpret this figure
 is open to discussion.
 
-\subsection{Notes and/or to be removed}
-
-We concluded that the
-epitopes that MHC-I presents are [as/not as] likely 
-to be derived from TMH within either a human host and its bacterial pathogen.
-Because a bacterium does not infect a cell, thus its peptides
-will not be presented by MHC-I, this result is [unexpected/expected]
-
-We aimed our evolutionary experiment at TMHs, because these can
-be predicted well from a protein structure,
-are common structures and are present in all pathogens. 
-We could have done the same experiment on beta-turn,
-as also these can be predicted well (\cite{petersen2010netturnp}),
-are common structures and are present in all pathogens.
-
-The human immune system and human pathogen are in an evolutionary
-arms race: our immune systems is selected for the detection
-of pathogens, whereas pathogens are selected to avoid detection.
-From a pathogen's point of view, however, this struggle 
-is of only minor importance:
-in seasonal influenza, for example, the selection pressure
-exerted by the immune system was only limited (\cite{han2019individual}).
-
+% We concluded that the
+% epitopes that MHC-I presents are [as/not as] likely 
+% to be derived from TMH within either a human host and its bacterial pathogen.
+% Because a bacterium does not infect a cell, thus its peptides
+% will not be presented by MHC-I, this result is [unexpected/expected]
+% 
+% We aimed our evolutionary experiment at TMHs, because these can
+% be predicted well from a protein structure,
+% are common structures and are present in all pathogens. 
+% We could have done the same experiment on beta-turn,
+% as also these can be predicted well (\cite{petersen2010netturnp}),
+% are common structures and are present in all pathogens.
+% 
+% The human immune system and human pathogen are in an evolutionary
+% arms race: our immune systems is selected for the detection
+% of pathogens, whereas pathogens are selected to avoid detection.
+% From a pathogen's point of view, however, this struggle 
+% is of only minor importance:
+% in seasonal influenza, for example, the selection pressure
+% exerted by the immune system was only limited (\cite{han2019individual}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgments}
@@ -831,7 +828,7 @@ A part of this study does the same analysis as Bianchi et al., 2017.
 Here we describe the deviations, which are about the use of different
 software and the use of a different definition of what a binder is.
 
-\paragraph{TMH prediction software}
+% \paragraph{TMH prediction software}
 
 The earlier study uses TMHMM, which has a restricted software license.
 Instead, we chose to use PureseqTM, which is free and open source.
@@ -839,7 +836,7 @@ Instead, we chose to use PureseqTM, which is free and open source.
 % Percentage of spots and spots that overlap with a TMH
 \input{bbbq_1_smart_results/table_f_tmh_2.latex}
 
-\paragraph{IC50 prediction software}
+% \paragraph{IC50 prediction software}
 
 The earlier study uses \verb;epitope-prediction; a hand-crafted method, 
 that has been trained on MHC-I haplotypes only,
@@ -847,7 +844,7 @@ which is used here again. For MHC-II IC50 predictions, the
 'netmhc2pan' R package is used, which calls NetMHC2pan.
 Both are packages are free and open-source.
 
-\paragraph{Definition of what a binder is}
+% \paragraph{Definition of what a binder is}
 
 The earlier study defines a peptide a binder (for a haplotype), 
 if \emp{within the peptide} in which it is found, 
@@ -861,23 +858,11 @@ is within the peptides with the 2\% lowest IC50 values.
 Subsection \ref{subsec:ic50s_per_haplotype} shows the IC50 values
 for a binder per haplotype.
 
-\paragraph{Unclear handing of sequences with U}
+% \paragraph{Unclear handing of sequences with U}
 
 Within the human reference proteome, there are 30 sequences that have a
 selenocysteine (with the symbol 'U').
 See \url{https://github.com/richelbilderbeek/bbbq_article/issues/158}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Uniprot IDs}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Table \ref{tab:uniprot_ids} shows an overview of the Uniprot IDs
-for the reference proteomes used. Note that for Homo sapiens,
-we did not use the full reference proteome, but a representative
-and smaller reference proteome instead.
-
-% tab:uniprot_ids
-\input{create_table_reference_proteomes/uniprot_ids.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50s per haplotype}
@@ -893,8 +878,8 @@ we predicted the IC50 (in nM) using \verb;epitope-prediction; (for MHC-I)
 and MHCnuggets (for MHC-II). 
 Here, we show the IC50 value per haplotype that
 is used to determine if a peptide binds to the haplotype's MHC
-for MHC-I (see \ref{tab:ic50_binders_mhc1}) and 
-MHC-II (see \ref{tab:ic50_binders_mhc2}).
+for MHC-I (see table \ref{tab:ic50_binders_mhc1}) and 
+MHC-II (see table \ref{tab:ic50_binders_mhc2}).
 
 % tab:ic50_binders_mhc1
 \input{bbbq_1_smart_results/table_ic50_binders_mhc1_2.latex}
@@ -969,33 +954,6 @@ MHC-II (see \ref{tab:ic50_binders_mhc2}).
     indicates the last residue at the C-terminus.
   }
   \label{fig:snp_rel_pos}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_snps_per_gene_name_ncbi.png}
-  \caption{
-    Total number of SNPs per gene name.
-  }
-  \label{fig:snps_per_gene_name_ncbi}
-\end{figure}
-
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_snps_per_gene_name_processed.png}
-  \caption{
-    Number of SNPs per gene processed.
-  }
-  \label{fig:snps_per_gene_name_processed}
-\end{figure}
-
-
-\begin{figure}[!htbp]
-  \includegraphics[height=0.9\textheight]{snp_workflow.png}
-  \caption{
-    Workflow to determine the evolutionary conservation of TMHs
-    using human SNPs.
-  }
-  \label{fig:snp_workflow}
 \end{figure}
 
 %
