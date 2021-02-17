@@ -90,137 +90,166 @@ will not affect MHC presentation for all haplotypes \richel{Reference needed}.
 
 % \paragraph{Epitope prediction}
 
-It is helpful to be able to predict which peptides are immunogenic,
-in, among others, vaccine development. 
-Already for a decade, synthesized peptide fragments are used
-to experimentally determine which peptides
-are immunogenic.
-This approach, however, is tedious and costly.
-Due to this, software was written that allows for silico 
-predictions, which are reliable in 
-practice (\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}).
+Much studies are aimed at determining which peptides are presented in MHC 
+and will result in an immune response, 
+as this will for instance aid the design of vaccines. 
+These studies have led to the development 
+of very reliable prediction algorithms 
+that allows for in silico predictions 
+of the binding affinities of peptides (\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}).
  
 % \paragraph{TMHs}
 
-As the immunoproteasome is a cytosolic protein complex, on expects it
-to cleave only cytosolic proteins. However, it has recently been
-discovered that transmembrane protein residues are also presented
-by MHC-I complexes (\cite{bianchi2017}). This discovery is based
-on both in vitro elution studies, as well as on in silico predictions,
-with a focus on transmembrane helices. 
-The intracellular pathway, in which transmembrane residues are loaded onto
-an MHC, however, is yet unknown.
+Using these prediction algorithms, 
+we recently showed that peptides derived 
+from transmembrane helices (TMHs) 
+are predicted to be more frequently presented by MHC-I 
+than expected based on their abundance (\cite{bianchi2017}). 
+Moreover, we showed that some well-known immunodominant peptides stem from TMHs. 
 
-Transmembrane helices (TMHs) 
-are structurally conserved and hydrophobic 
-regions of a protein that span a (also hydrophobic) 
-cell membrane by an alpha helix of usually 23 amino acids.
-Together with the internals of soluble proteins,
-peptides derived from TMHs are the most hydrophobic
-of a proteome. In both cases, the hydrophobic regions
-help shape the protein in its correct 3D configuration.
-TMHs are common structures in the proteins of
-humans and pathogens. For example, 
-15-39\% of the proteins in humans
-is predicted to be a membrane protein (\cite{ahram2006estimation}).
-There are multiple tools to do in silico predictions 
-to determine the transmembrane regions of a protein 
-(\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}).
+This over-presentation is entirely explained by the fact 
+that the peptide-binding groove of most MHC-I haplotypes 
+is relatively hydrophobic, 
+and therefore hydrophobic peptides have a higher affinity 
+than hydrophilic peptides. 
+
+
+
+Transmembrane helices (TMHs) are hydrophobic 
+as they need to span the hydrophobic lipid bilayer of cellular membranes, 
+and they consist of an alpha helix of usually 23 amino acids. 
+TMHs are common structures in the proteins of humans and pathogens. 
+For example, 
+15-39% 
+\richel{Why wide range? Issue 180}
+of the proteins in humans 
+are predicted to be a membrane protein 
+containing at least one TMH (\cite{ahram2006estimation}). 
+TMHs can also be predicted from a protein sequence 
+with high accuracy by bioinformatics approaches (\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}).
 
 % \paragraph{MHC-I presents TMH-derived epitopes in humans more often}
 
-For MHC-I, it was found that predicted epitopes derived 
-from human transmembrane helices (TMHs)
-are over-presented by all 5 HLA-A and 
-most of 8 HLA-B super-types (\cite{bianchi2017}),
-due the high hydrophobicity as is required for a TMH to span
-the (hydrophobic) cell membrane, combined with the fact that the MHC
-binding cleft is hydrophobic as well.
+%For MHC-I, it was found that predicted epitopes derived 
+%from human transmembrane helices (TMHs)
+%are over-presented by all 5 HLA-A and 
+%most of 8 HLA-B super-types (\cite{bianchi2017}),
+%due the high hydrophobicity as is required for a TMH to span
+%the (hydrophobic) cell membrane, combined with the fact that the MHC
+%binding cleft is hydrophobic as well.
+%
+%It is unknown if the presentation of hydrophobic/TMH residues
+%is evolutionary selected for.
+%One reason to expect a reduced variability (and hence 
+%evolutionary conservation) in TMHs, is
+%that these are restricted in their evolution
+%by the functional requirement to span a lipid bilayer.
+%Due to this, the TMHs that pathogens possess, 
+%have a lower chance to develop an escape mutation,
+%as many mutations will result in a dysfunctional TMH.
 
-It is unknown if the presentation of hydrophobic/TMH residues
-is evolutionary selected for.
-One reason to expect a reduced variability (and hence 
-evolutionary conservation) in TMHs, is
-that these are restricted in their evolution
-by the functional requirement to span a lipid bilayer.
-Due to this, the TMHs that pathogens possess, 
-have a lower chance to develop an escape mutation,
-as many mutations will result in a dysfunctional TMH.
+However, the physiological reason why peptides derived from TMHs 
+would be presented more often than peptides 
+stemming from soluble protein regions is unknown. 
+One possibility is that the presentation of 
+hydrophobic/TMH residues is evolutionary selected for, 
+because TMHs are less prone to undergo escape mutation. 
+One reason to expect such a reduced 
+variability (and hence evolutionary conservation) in TMHs, 
+is that these are restricted in their evolution 
+by the functional requirement to span a lipid bilayer. 
+Due to this, there are constraints in the types of amino acids 
+that can be present in the TMH \richel{ref}. 
+Therefore, the TMHs of pathogens 
+might have a lower chance to develop an escape mutations, 
+as many mutations will result in a dysfunctional TMH 
+and render the protein inactive.
 
+% GvdB:
+% The text below here is more discussion 
+% as it is already interpretation of the findings. 
+% I would add one short paragraph, 
+% where you reiterate the most important findings:
+% In this study, we show that ...(and than basically 
+% the abstract in slightly different words and slightly 
+% more detail). End with a statement of why it is 
+% important (vaccin development based on TMHs?)...
+
+% RJCB: This was suggested for removal, until the Methods:
 % \paragraph{Does MHC-I present TMH-derived epitopes from pathogens as often?}
-
-It is important that MHC-I presents both the peptides of the 
-(healthy) cell, as well as possible pathogen-derived peptides when the
-cell is infected. As described above, MHC-I presents TMH-derived epitopes 
-from the human host more often. It is unknown if MHC-I has the same
-dedication to present epitopes that stem from TMHs derived from
-proteins produced by pathogen, either would the pathogen
-be a virus or 
-a bacterium.
-
+% 
+% It is important that MHC-I presents both the peptides of the 
+% (healthy) cell, as well as possible pathogen-derived peptides when the
+% cell is infected. As described above, MHC-I presents TMH-derived epitopes 
+% from the human host more often. It is unknown if MHC-I has the same
+% dedication to present epitopes that stem from TMHs derived from
+% proteins produced by pathogen, either would the pathogen
+% be a virus or 
+% a bacterium.
+% 
 % \paragraph{MHC-II is expected to present TMHs}
-
-If presentation of TMHs on MHC-I would bring an evolutionary advantage 
-in the recognition of pathogens by the immune system, 
-it would follow that this is equally important for MHC-II, 
-especially as the help of CD4+ T cells is needed for a long lasting CD8+ T cell 
-response (\cite{novy2007cd4}). 
-The mechanism to detect foreign TMHs by MHC-II would be unknown, 
-similar to the discovery that MHC-I presents TMHs.
-
+% 
+% If presentation of TMHs on MHC-I would bring an evolutionary advantage 
+% in the recognition of pathogens by the immune system, 
+% it would follow that this is equally important for MHC-II, 
+% especially as the help of CD4+ T cells is needed for a long lasting CD8+ T cell 
+% response (\cite{novy2007cd4}). 
+% The mechanism to detect foreign TMHs by MHC-II would be unknown, 
+% similar to the discovery that MHC-I presents TMHs.
+% 
 % \paragraph{Does MHC-II present TMH-derived epitopes from pathogens as often?}
-
-It is unknown if MHC-II, like MHC-I, 
-presents TMH-derived epitopes as often, either 
-in humans,
-bacteria or viruses.
-
+% 
+% It is unknown if MHC-II, like MHC-I, 
+% presents TMH-derived epitopes as often, either 
+% in humans,
+% bacteria or viruses.
+% 
 % \paragraph{Selection undetectable in whole proteome}
-
-In general, on would hope that evolutionary selection results in
-an immune system that as most attentive for loci that are
-essential for a virus, as these will be most conserved.
-In SARS-CoV-2, for example, there is preliminary evidence that the strongest
-selection pressure is upon residues that changes its 
-virulence (\cite{velazquez2020positive}).
-These loci, however, only account for a small part of a pathogen's proteome.
-Additionally, these essential parts differ widely between pathogens.
-Because of this scarcity and variance in targets, 
-one can imagine that the human immune system 
-is not tailored to detect these sites, 
-as hinted by upon by the aforementioned influenza study.
-
+% 
+% In general, on would hope that evolutionary selection results in
+% an immune system that as most attentive for loci that are
+% essential for a virus, as these will be most conserved.
+% In SARS-CoV-2, for example, there is preliminary evidence that the strongest
+% selection pressure is upon residues that changes its 
+% virulence (\cite{velazquez2020positive}).
+% These loci, however, only account for a small part of a pathogen's proteome.
+% Additionally, these essential parts differ widely between pathogens.
+% Because of this scarcity and variance in targets, 
+% one can imagine that the human immune system 
+% is not tailored to detect these sites, 
+% as hinted by upon by the aforementioned influenza study.
+% 
 % \paragraph{Selection may be detectable in TMHs}
-
-TMHs, on the other hand, also have their function constraints, 
-yet can occur multiple time a pathogen's proteome.
-One can safely assume a pathogen's proteome contains multiple TMHs.
-Therefore, it may be beneficial for the host
-if its immune system would be more attentive towards TMHs.
-And maybe this has already happened: MHC-I already detects hydrophobic
-peptides. This feature, however, may also be caused by selection
-to detect hydrophobic regions in the soluble proteins of pathogens.
-It is unknown, when focusing on TMHs only, if a signal of selection
-can be detected.
-
+% 
+% TMHs, on the other hand, also have their function constraints, 
+% yet can occur multiple time a pathogen's proteome.
+% One can safely assume a pathogen's proteome contains multiple TMHs.
+% Therefore, it may be beneficial for the host
+% if its immune system would be more attentive towards TMHs.
+% And maybe this has already happened: MHC-I already detects hydrophobic
+% peptides. This feature, however, may also be caused by selection
+% to detect hydrophobic regions in the soluble proteins of pathogens.
+% It is unknown, when focusing on TMHs only, if a signal of selection
+% can be detected.
+% 
 % \paragraph{Use of protein data in phylogenetics}
-
-When using DNA sequences, one can use a skewed rate
-in non- versus synonymous mutation
-to detect the signature of selection (\cite{murrell2015gene}).
-Using AA sequences, however, has its advantages,
-as its is closer to the actual phenotype
-selection acts upon: DNA may never be transcribed to RNA,
-or its RNA may never be translated (\cite{diz2012proteomics}).
-When using a proteome in phylogenetic research,
-we know that the majority of proteins are selected to just
-maintain their function most of the time, where
-is the time spans there is selection, only a few AAs
-can actually increase the 'fitness' of the
-protein (\cite{anisimova2009investigating}).
-There, when generalizing the dynamics of mostly purifying selection (to maintain
-a protein's function) and a short duration of positive selection,
-those genes that are selected cannot be detected (\cite{yang2000statistical}).
+% 
+% When using DNA sequences, one can use a skewed rate
+% in non- versus synonymous mutation
+% to detect the signature of selection (\cite{murrell2015gene}).
+% Using AA sequences, however, has its advantages,
+% as its is closer to the actual phenotype
+% selection acts upon: DNA may never be transcribed to RNA,
+% or its RNA may never be translated (\cite{diz2012proteomics}).
+% When using a proteome in phylogenetic research,
+% we know that the majority of proteins are selected to just
+% maintain their function most of the time, where
+% is the time spans there is selection, only a few AAs
+% can actually increase the 'fitness' of the
+% protein (\cite{anisimova2009investigating}).
+% There, when generalizing the dynamics of mostly purifying selection (to maintain
+% a protein's function) and a short duration of positive selection,
+% those genes that are selected cannot be detected (\cite{yang2000statistical}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}
