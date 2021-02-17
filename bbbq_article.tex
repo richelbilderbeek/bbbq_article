@@ -261,39 +261,39 @@ as found in the elution study (\cite{bergseng2015different}).
 % \paragraph{Introduction}
 
 To detect the evolutionary conservation of TMHs, 
-we collect human mutations and 
-tally their predicted location.
+we collected human mutations and 
+tallied their predicted location.
 To be more precise, we collected single nucleotide
 polymorphisms (SNPs) within the human population
 that resulted in the substitution of one amino acid.
-As we know the sequence of the protein a SNP acts upon,
-we predict that protein's topology and tally if
-the SNP occurred in a TMH or not, 
-after which we use statistics to determine if there are
+We then predicted that protein's topology and tallied if
+the SNP occurred within a TMH or not, 
+after which we used statistics to determine if there are
 more, less or an equal amount of SNPs in TMHs
 as a measure of evolutionary conservation.
-This workflow is discussed in more detail below and also
-depicted in figure \ref{fig:snp_workflow}).
+This workflow is discussed in more detail below.
 
 % \paragraph{Data}
 
 As a data source, multiple
-NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases are used,
+NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used,
 which are 'gene', to find the gene names of membrane proteins, 
 'dbSNP' (\cite{sherry2001dbsnp}) for SNPs associated with those genes
 and 'protein', to obtain the sequence of proteins that SNPs act upon.
 The 'dbSNP' contains 650 million 
 catalogued non-redundant humane variations (called RefSNPs,
 \url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}).
-It is estimated that approximately ten percent (ranging from 2 to 36 percent) 
-are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}),
-yet if this has been corrected for (if possible) in the last decade is unknown.
+% GvdB: Not really relevant. As these are sequencing artefacts in the DNA, these should be randomly distributed and not affect the conclusions.
+% GvdB: In addition, you use the most frequent SNPs, which minimizes the chance of those sequencing artifacts.
+% It is estimated that approximately ten percent (ranging from 2 to 36 percent) 
+% are artifacts (\cite{carlson2003additional, cutler2001high, gabriel2002structure, mitchell2004discrepancies, musumeci2010single, reich2003quality}),
+% yet if this has been corrected for (if possible) in the last decade is unknown.
 
 % \paragraph{Data retrieval}
 
 To retrieve the data from these databases the
-\verb;rentrez; R package (\cite{rentrez}) is used
-to calls the NCBI website's API. To provide for a 
+\verb;rentrez; R package (\cite{rentrez}) was used
+that calls the NCBI website's API. To provide for a 
 stable user experience for all users, 
 this API limits the user to 3 calls per second.
 Additionally, the API splits the result of a bigger
@@ -303,26 +303,27 @@ bigger queries of multiple (and delayed) API calls.
 
 % \paragraph{Pipeline}
 
-The first query is a call to the 'gene' database for the 
-term 'membrane protein' (in all fields) for the organism Homo sapiens.
-This results in 1129 gene IDs (note that this number varies through time).
-The next query is a call to the 'gene' database 
+The first query was a call to the 'gene' database for the 
+term 'membrane protein' (in all fields) for the organism \textbf{Homo sapiens}.
+This resulted in 1129 gene IDs.
+The next query was a call to the 'gene' database 
 to obtain the gene names from the gene IDs.
 Per gene name, the 'dbSNP' NCBI database is queried for 
 variations associated with the gene name. 
 The number of variations
 was limited to the first 250 variations per gene,
-resulting in 282250 variations. A variation need not always be a SNP,
+resulting in 282250 variations. 
+A variation needs not always be a SNP,
 as dbSNP also catalogs other DNA alterations, such as, among others, insertions,
 deletions and tandem repeats.
 We select only the variations that result in a SNP for
 a single amino acid substitution.
 Per SNP, the 'protein' NCBI database was queried for the
 protein sequence.
-Of each protein sequence, the protein topology is determined 
+Of each protein sequence, the protein topology was determined 
 using PureseqTM.
 From the topology and the known location of the SNP, 
-we score the location (i.e. transmembrane or soluble protein region) 
+we score the location (i.e. TMH or soluble protein region) 
 where the change occurred.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -345,28 +346,29 @@ where the change occurred.
   \end{tabular}
   \caption{
     Overview of all software used in this research.
-    'LUT' is an abbreviation for 'Look-up table'. 
   }
   \label{table:software_used}
 \end{table}
 
 For this research, the scientific literature was explored 
-to find the most recent free and open source (FOSS) prediction software.
+to identify the most recent free and open source (FOSS) prediction software.
 This was done by searching for papers that (1) reference older
 prediction software, and (2) present a novel method to make predictions.
 As a starting point, a review paper was used.
+For all software needed, we found no studies that compared contemporary tools 
+in their prediction quality.
 
 % \paragraph{TMH prediction}
 
 There are multiple computational tools developed to predict which
-parts of membrane proteins are TMH.
-In 2001, multiple tools to do so have been compared (\cite{moller2001evaluation}),
+parts of a protein forms a TMH.
+In 2001, multiple of such prediction tools have been compared (\cite{moller2001evaluation}),
 of which TMHMM (\cite{krogh2001predicting}) turned out to be the best, 
 as is used in the previous study (\cite{bianchi2017}).
-TMHMM has a restrictive software license and is nearly two
+However, TMHMM has a restrictive software license and is nearly two
 decades old.
-Due to this, also PureseqTM (\cite{wang2019efficient}),
-is used in this study, which has been recently developed
+Therefore, PureseqTM (\cite{wang2019efficient}),
+was also used in this study, which has been more recently developed
 and has a free software license.
 
 % \paragraph{MHC-I epitope prediction}
@@ -375,11 +377,7 @@ For MHC-I, there are multiple computational tools developed
 to predict epitopes. 
 According to \cite{lundegaard2011prediction}, at that time,
 NetMHCcons (\cite{karosiene2012netmhccons}) gave the best predictions.
-A tool developed later is \verb;epitope-prediction; (\cite{bianchi2017}),
-which uses a stabilized matrix method (\cite{kim2009derivation}).
-The most recent and promising FOSS tool available now appears
-to be MHCnuggets (\cite{shao2020high}), which can do both MHC-I 
-and MHC-II prediction.
+We used the same tool as used in our earlier study, \verb;epitope-prediction; (\cite{bianchi2017}),
 
 % \paragraph{MHC-II epitope prediction}
 
@@ -391,9 +389,9 @@ According to \cite{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
 NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
 gave rise to the most accurate predictions.
-Later tools are NetTepi (\cite{trolle2014nettepi}),
-a genetic-algorithm-based ensemble method (\cite{zhang2015accurate})
-and (again) the very recent MHCnuggets (\cite{shao2020high}).
+The most recent and promising FOSS tool available now appears
+to be MHCnuggets (\cite{shao2020high}), which can do both MHC-I 
+and MHC-II prediction, which we used for MHC-II predictions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software written}
@@ -408,9 +406,9 @@ as described below.
 
 % \paragraph{tmhmm}
 
-The R package 'tmhmm' was developed to do the same topology
-predictions as the earlier study (that used 'TMHMM'), yet in a reproducible way.
-'TMHMM' has a restrictive software license and allows a user
+The R package 'tmhmm' was developed to do the similar topology
+predictions as our earlier study (that used 'TMHMM'), yet in an automated way.
+'TMHMM' has a restrictive software license \richel{ref} and allows a user
 to download a pre-compiled executable after confirmation he/she
 is in academia. The R package respects this restriction
 and allows the user to install and use TMHMM from within R,
@@ -419,7 +417,7 @@ as done in this study.
 
 % \paragraph{pureseqtmr}
 
-To be able to call, from R, the TMH prediction software 'PureseqTM',
+To be able to call, from R, the TMH prediction software 'PureseqTM' \richel{ref},
 which is written in C, the package 'pureseqtmr' has been developed. 
 'pureseqtmr' allows to install 'PureseqTM' and use most of its features.
 Excluded are the features that are used by the 'PureseqTM' 
@@ -429,14 +427,14 @@ developers to verify the correctness of their work.
 % \paragraph{mhcnuggetsr}
 
 MHCnuggets is a free and open-source Python package to predict 
-epitope affinity for many MHC-I and MHC-II variants.
+epitope affinity for many MHC-I and MHC-II variants \richel{ref}.
 The R package 'mhcnuggetsr' allows one to install and use MHCnuggets
 from within R.
 Also 'mhcnuggetsr' has been submitted to and is accepted by CRAN.
 
 % \paragraph{bbbq}
 
-To reproduce the full experiment as done in this paper,
+To reproduce the full experiment presented in this paper,
 the functions needed are bundled in the 'bbbq' R package.
 This package is too specific to be submitted to CRAN.
 
@@ -451,10 +449,19 @@ This package is too specific to be submitted to CRAN.
 % tab:elution
 \input{../bbbq_article_issue_157/results/results.tex}
 
-Table \ref{tab:elution} shows the percentage of epitopes derived from a TMH
-found in the two elution studies, for the two different kind of topology
-prediction tools. Whatever the tool or MHC class, at least 100 epitopes
-can be uniquely map to human representative reference proteome.
+% GvdB: A narrative was missing a bit. Why was this done? 
+To confirm that peptides stemming from TMHs were presented in MHC-I and MHC-II,
+we reanalyzed published peptide elution studies.
+Table \ref{tab:elution} shows the percentage of epitopes derived 
+from a TMH
+found in HNC-I and MHC-II elution studies \richel{refs}, 
+for the two topology prediction tools TMHMM and PureseqTM \richel{refs}. 
+Regardless of the prediction, 
+at least 100 epitopes were predicted to be derived from a TMH. 
+% GvdB: Also add a conclusion at the end of the paragraph.
+From these findings, we conclude that PureseqTM and TMHMM 
+result in prediction of a similar number of TMHs 
+and that peptides derived from TMHs have been identified for both MHC-I and -II.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
