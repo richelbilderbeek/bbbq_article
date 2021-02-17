@@ -467,10 +467,16 @@ and that peptides derived from TMHs have been identified for both MHC-I and -II.
 \subsection{MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Figure \ref{fig:1} shows the percentages of MHC-I epitopes overlapping 
-with TMHs for our human, viral and bacterial proteome.
+We recently showed that peptides derived from TMHs of human proteins 
+were predicted to be over-presented in MHC-I. 
+Here, we wondered if this finding would be general 
+and if peptides stemming from TMHs of microbial pathogens 
+would also be over-presented.
+Figure \ref{fig:1} shows the percentages of MHC-I epitopes predicted to be overlapping 
+with TMHs for our human, viral and bacterial proteome \richel{GvdB: you didn't explain yet which virus and bacteria}.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc1}) 
 for the exact TMH and epitope counts.
+\richel{GvdB: Also provide a short conclusion}
 
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
@@ -487,10 +493,12 @@ for the exact TMH and epitope counts.
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\richel{GvdB: Again a rationale}
 Figure \ref{fig:2} shows the percentages of MHC-II epitopes overlapping 
 with TMHs for our human, viral and bacterial proteome.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc2}) 
 for the TMH and epitope counts.
+\richel{GvdB: And a conclusion}
 
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
@@ -525,44 +533,44 @@ for the TMH and epitope counts.
   \label{fig:f_snps_found_and_expected}
 \end{figure}
 
-We obtained 1129 gene names associated with the key phrase 'membrane protein'.
-These genes are linked to 5203 proteins, of which 2754
+In the final set of experiments, we addressed the question whether TMHs would be more evolutionary conserved than soluble proteins regions by comparing the occurrences of SNPs in the genome coding for TMHs and soluble protein regions. 
+We obtained 1,129 gene names associated with the phrase 'membrane protein'.
+These genes are linked to 5,203 proteins
+\richel{GvdB: Why so many? Isoforms?}, of which 2,754
 are predicted to be transmembrane proteins.
-We obtained 4811 variations that resulted in an
-amino acids substitution, of which 2568 were located 
+We obtained 4,811 SNPs that resulted in an
+amino acids substitution, of which 2,568 were located 
 in predicted transmembrane proteins.
-Per protein, we predicted the percentage of TMH
+Per protein, we predicted the percentages of the gene coding for TMHs and soluble regions
 and calculated the percentage of amino acids substitutions
-occurring in transmembrane regions.
-These points, one per protein, were plotted as depicted in figure
+occurring in TMHs.
+Per protein, this percentage was plotted as a function of the percentage TMH in figure
 \ref{fig:f_snps_found_and_expected}.
-We did a linear fit on the data, with and without
-membrane-associated proteins, and added a 95\%
+We performed a linear regression analysis on the data, with and without
+membrane-associated proteins \richel{Dit is nog niet goed uitgelegd}, and calculated the 95\%
 confidence interval.
-Also, we added the line \inlineequation{y = x},
-which indicates the linear fit that would be expected if
-SNPs occur just as likely within transmembrane and soluble
-protein domains. Already these trend lines
-hint that variations occur more often in soluble 
+Since the regression curve clearly deviated from the line of equality,
+which would be expected if SNPs occur just as likely within transmembrane and soluble protein domains,
+this suggests that variations occur more often in soluble 
 than in transmembrane protein regions.
 
 To test whether SNPs occur just as likely in soluble as
 in transmembrane protein domains, we used a Poisson binomial
 distribution. We first calculated the expected number of SNPs
-found in TMHs, which is 61457 SNPs multiplied by 6.8\% 
-of all proteins being TMH, resulting in the null hypothesis
-of 4203 SNPs being in the TMH. 
+found in TMHs, which is 61,457 SNPs \richel{GvdB: I don’t completely follow this. Based on what?} and multiplied this number by 6.8\% 
+of all proteins being a TMH, resulting in the null hypothesis
+of 4203 SNPs occurring in TMHs. 
 Note that including or excluding
 the membrane associated proteins 
 has no effect on this statistical test, as the chance 
 of a successful trial is zero (there is zero chance
-to find a SNP in TMHs if there are none).
+to find a SNP in TMHs if there are none) \richel{GvdB: Also too complex for biologists. Explain in bit more words}.
 The actually number of SNPs found in TMHs
 was 3889, which is lower than the null hypothesis. 
 The chance to find, within TMHs, this amount or less SNPs 
 equals $1.6201 \cdot 10^{-9}$.
 Using a alpha value of $0.05$, as is common practice for an uninformed
-expectation, we concluded that there are significantly less SNPs
+expectation, we conclude that there are significantly less SNPs
 in TMHs as expected by chance.
 The effect size is that per 1 SNP found in soluble protein
 domains, one finds 0.925 SNPs in TMHs.
@@ -574,19 +582,22 @@ domains, one finds 0.925 SNPs in TMHs.
     separated per number of TMHs.
     The dashed diagonal lines show the expected linear trend line
     if TMHs and soluble protein regions are equally conserved.
+    \richel{GvdB: As discussed, I would simply plot 1 and multiple (>1) TMHs.}
   }
   \label{fig:f_snps_found_and_expected_per_n_tmhs}
 \end{figure}
 )
 
 We decided to split this analysis based on the number of TMHs
-a protein has. We hypothesize that single-spanners (i.e. proteins
+a protein has \richel{Why? Provide brief rationale again. Thus TMH-TMH interactions or something}. We hypothesize that single-spanners (i.e. proteins
 with one TMH predicted) are less conserved, when compared to multi-spanners,
-as single spanners just need to span a membrane, where some multi-spanners
-have enzymatically active sites embedded within their TMHs and thus
-have an additional structural constraint.
+as single spanners just need to span a membrane, while multi-spanners
+might have interactions between their TMHs, 
+for example to accommodate active sites, and 
+thus might have additional structural constraints.
 As can be seen in figure \ref{fig:f_snps_found_and_expected_per_n_tmhs}, 
-there is no clear pattern to be observed.
+there is no clear pattern to be observed. 
+\richel{GvdB: Rewrite after pooling >1 TMHs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
