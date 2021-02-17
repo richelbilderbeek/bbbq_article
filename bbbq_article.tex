@@ -166,15 +166,12 @@ as many mutations will result in a dysfunctional TMH
 and render the protein inactive.
 
 % GvdB:
-% The text below here is more discussion 
-% as it is already interpretation of the findings. 
-% I would add one short paragraph, 
+% Add one short paragraph, 
 % where you reiterate the most important findings:
 % In this study, we show that ...(and than basically 
 % the abstract in slightly different words and slightly 
 % more detail). End with a statement of why it is 
 % important (vaccin development based on TMHs?)...
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}
@@ -183,26 +180,25 @@ and render the protein inactive.
 % \paragraph{Data sets for TMH epitopes}
 
 To determine the percentages of epitopes overlapping
-with TMHs, we use reference proteomes of 
+with TMHs, we used reference proteomes of 
 a human, viral and bacterial nature.
 An overview of Uniprot IDs is shown in table \ref{tab:uniprot_ids}.
 Instead of using the full human reference proteome, we
-use the representative human reference proteome 
+used the representative human reference proteome 
 as used previously (\cite{bianchi2017}).
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Elution studies}\label{subsec:elution_studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To determine if epitopes derived from TMHs are presented at all,
-we started from epitopes sequenced from elution studies
+we started from epitopes identified in elution studies
 for MHC-I (\cite{schellens2015comprehensive}) 
 and MHC-II (\cite{bergseng2015different}).
-For each epitope, the human representative reference proteome
+For each of these peptides, the human representative reference proteome
 was searched for its origin.
-We kept only the epitopes of which were found exactly once
-on the proteome.
+We kept only the epitopes which were uniquely present
+in the proteome.
 We predicted the topology of the proteome
 and counted how often the epitopes overlapped
 with a predicted TMH.
@@ -216,27 +212,28 @@ at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 \subsection{Measuring TMH epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To determine the percentages of MHC-I and MHC-II epitopes overlap
+To determine the percentages of MHC-I and MHC-II epitopes overlapping
 with TMHs, we used mostly the same analysis as described in \cite{bianchi2017}.
 To summarize: from a proteome all possible 9-mers are derived. For each
-of these peptides, it is measured if it has been part of a 
-TMH (at least overlapping 1 residue), 
-as well as if the peptide is a binder to an MHC-I haplotype.
-For MHC-II, 14-mers are used, as these are the most frequently occurring
+of these peptides, it was determined if it was part of a 
+TMH (at least overlapping with 1 residue), 
+and if the peptide bound to an MHC-I haplotype.
+For MHC-II, 14-mers were used, as these are the most frequently occurring
 epitope length (\cite{bergseng2015different}).
 
-This study differs in some aspects, described below in more detail,
-which is the definition of what a binder is,
-the addition of using MHC-II haplotypes, the software used,
-and the significance level to determine if TMH-derived peptides are as 
-likely to be a binder as expected by chance.
-These deviations are either a refinement of the previous method or
+This study differs in some aspects from our previous work (\cite{bianchi2017}), 
+described below in more detail.
+The main differences are our definition of what a so-called binder is, 
+the inclusion of both MHC-I and MHC-II haplotypes, 
+the prediction software used, 
+and the significance level to determine if TMH-derived peptides will bind.
+These deviations are either a refinement of our previous approach or
 a pragmatic choice made due to the extension of the original experiment.
-Additionally, instead of only using a human proteome, in this study
-also a viral and bacterial proteome are analyzed.
+Additionally, instead of only using a human proteome, this study
+also includes a viral and bacterial proteome.
 
 The definition of a binder differs from \cite{bianchi2017}:
-in this study a peptide is called a binder if, within a haplotype, 
+in our current study a peptide was called a binder if, within a certain haplotype, 
 any of its 9-mer peptides have an IC50 value in the lowest 2\% of 
 the epitopes within a 
 \emph{proteome} (see tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
@@ -244,14 +241,16 @@ for values), whereas the original study defined
 a binder as having an IC50 in the lowest 2\% 
 of the peptides within a \emph{protein}.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
+We believe our revised definition precludes bias of proteins 
+that give rise to no or only very few MHC epitopes
 
 The 13 MHC-I haplotypes used in this study are the same as 
-the ones in \cite{bianchi2017}.
-The MHC-II haplotypes used additionally are selected 
+we used in our previous study (\cite{bianchi2017}).
+The MHC-II haplotypes used additionally were selected 
 to occur with a phenotypic frequency of at least 14\% in
 the human population (\cite{greenbaum2011functional}),
 resulting in 21 haplotypes.
-When using an MHC-II haplotype, instead of using 9-mers, 14-mers are
+When using an MHC-II haplotype, instead of using 9-mers, 14-mers were
 used, as these are the most common MHC-II epitope size,
 as found in the elution study (\cite{bergseng2015different}).
 
