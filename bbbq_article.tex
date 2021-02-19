@@ -713,18 +713,6 @@ by mass spectronomy.
 
 \subsection{\% epitopes overlapping with TMHs}
 
-
-
-\richel{GvdB: Also irrelevant. Only 1 protein}
-% \paragraph{Topology prediction of TRDD1}
-%
-PureseqTM does not predict the topology
-of proteins that have less than three amino acids. 
-The TRDD1 ('T cell receptor delta diversity 1') protein,
-however, is two peptides long. 
-We corrected for this by predicting that this protein
-is completely cytosolic.
-
 \richel{GvdB: Also not really relevant. This is just a minor thing, only relevant if we would see large differences between human and bacteria (but we see not)}
 % \paragraph{Bacteria have a different cell membrane}
 %
@@ -892,6 +880,17 @@ reference proteome.
 For the sake of reproducible research, we use the desktop version (as
 we can call it from scripts) and, due to this, we removed the
 selenoproteins from this analysis.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differences between tool and R package}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+PureseqTM does not predict the topology
+of proteins that have less than three amino acids. 
+The TRDD1 ('T cell receptor delta diversity 1') protein,
+however, is two peptides long. 
+The R package \verb;pureseqtmr;, however, 
+predicts that mono- and di-peptides are cytosolic.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50s per haplotype}
