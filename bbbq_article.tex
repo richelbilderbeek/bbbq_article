@@ -713,24 +713,6 @@ by mass spectronomy.
 
 \subsection{\% epitopes overlapping with TMHs}
 
-\richel{GvdB: Also not really relevant. This is just a minor thing, only relevant if we would see large differences between human and bacteria (but we see not)}
-% \paragraph{Bacteria have a different cell membrane}
-%
-In this experiment we predicted epitopes that overlap with 
-TMHs from a human, bacterial and viral proteome,
-would these proteins be expressed in a human host.
-Bacteria, however have different cell membranes and cell walls, 
-hence different structural requirements for a TMH.
-Both topology prediction tools were trained to recognize
-human TMHs, thus we cannot be sure that
-the transmembrane regions predicted in bacterial proteins
-are actually part of an integral membrane protein.
-For the purpose of this study, we assume the 
-error in topology predictions to be unbiased way towards topology.
-In other words: that a bacterial TMH is incorrectly
-predicted to be absent just as often as it is incorrectly
-predicted to be present elsewhere.
-
 \subsection{Evolutionary conservation}
 
 \richel{GvdB: This might be relevant, but you need to explain why it is relevant. Thus compare your findings with previous efforts to look at conservation of TMHs}
@@ -891,6 +873,27 @@ The TRDD1 ('T cell receptor delta diversity 1') protein,
 however, is two peptides long. 
 The R package \verb;pureseqtmr;, however, 
 predicts that mono- and di-peptides are cytosolic.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Discussion details}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \paragraph{Bacteria have a different cell membrane}
+
+In this experiment we predicted epitopes that overlap with 
+TMHs from a human, bacterial and viral proteome,
+would these proteins be expressed in a human host.
+Bacteria, however have different cell membranes and cell walls, 
+hence different structural requirements for a TMH.
+Both topology prediction tools were trained to recognize
+human TMHs, thus we cannot be sure that
+the transmembrane regions predicted in bacterial proteins
+are actually part of an integral membrane protein.
+For the purpose of this study, we assume the 
+error in topology predictions to be unbiased way towards topology.
+In other words: that a bacterial TMH is incorrectly
+predicted to be absent just as often as it is incorrectly
+predicted to be present elsewhere.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50s per haplotype}
