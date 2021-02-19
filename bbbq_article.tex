@@ -138,13 +138,18 @@ and render the protein inactive.
 
 % \paragraph{Data sets for TMH epitopes}
 
-To determine the percentages of epitopes overlapping
-with TMHs, we used reference proteomes of 
-a human, viral and bacterial nature.
-An overview of Uniprot IDs is shown in table \ref{tab:uniprot_ids}.
-Instead of using the full human reference proteome, we
-used the representative human reference proteome 
-as used previously (\cite{bianchi2017}).
+We used a human, viral and bacterial reference proteome to 
+determine the percentages of epitopes overlapping
+with TMHs.
+We used a human reference proteome
+with UniProt ID UP000005640\_9606, which
+is a representative set of the full proteome
+and used is our previous study (\cite{bianchi2017}).
+We used SARS-CoV-2 as our viral reference proteome
+with UniProt ID UP000464024 and
+Mycobacterium tuberculosis (MTb) 
+with UniProt ID UP000001584.
+We chose these pathogens based on their impact on the human population.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Elution studies}\label{subsec:elution_studies}
@@ -195,7 +200,7 @@ The definition of a binder differs from \cite{bianchi2017}:
 in our current study a peptide was called a binder if, within a certain haplotype, 
 any of its 9-mer peptides have an IC50 value in the lowest 2\% of 
 the epitopes within a 
-\emph{proteome} (see tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
+\emph{proteome} (see tables \ref{tab:ic50_binders_mhc1} and \ref{tab:ic50_binders_mhc2}
 for values), whereas the original study defined
 a binder as having an IC50 in the lowest 2\% 
 of the peptides within a \emph{protein}.
@@ -432,7 +437,7 @@ Here, we wondered if this finding would be general
 and if peptides stemming from TMHs of microbial pathogens 
 would also be over-presented.
 Figure \ref{fig:1} shows the percentages of MHC-I epitopes predicted to be overlapping 
-with TMHs for our human, viral and bacterial proteome \richel{GvdB: you didn't explain yet which virus and bacteria}.
+with TMHs for our human, viral and bacterial proteome.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc1}) 
 for the exact TMH and epitope counts.
 \richel{GvdB: Also provide a short conclusion}
@@ -708,18 +713,7 @@ by mass spectronomy.
 
 \subsection{\% epitopes overlapping with TMHs}
 
-\richel{GvdB: Sounds a but irrelevant to me. Do you really want to mention this in the discussion?}
-% \paragraph{Removal of selenoproteins}
-%
-We have removed the 25 selenoproteins found in the human
-reference proteome, as both prediction tools struggle with 
-selenocysteine, the 21st amino acid incorporated in human proteins.
-TMHMM gives a clear error message, forcing us to remove
-these selenoproteins from the analysis.
-How PureseqTM deals with selenocysteine is unclear,
-as it gives no error, nor is it mentioned anywhere,
-nor do the authors respond to emails. Due to this, we removed the
-selenoproteins from our analysis.
+
 
 \richel{GvdB: Also irrelevant. Only 1 protein}
 % \paragraph{Topology prediction of TRDD1}
@@ -823,7 +817,7 @@ of Groningen for its support and for providing access to the Peregrine
 high performance computing cluster. 
 Additionally, we would like to thank Sci-Hub (\cite{himmelstein2018sci})
 for allowing us to read paywalled articles while working from home.
-\richel{GvdB: Should we include Maxim? He did the alignment of Myc tub. Let’s also ask Frans.}
+\richel{GvdB: Should we include Maxim? He did the alignment of Mycobacterium tuberculosis. Let’s also ask Frans.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Accessibility}
@@ -862,11 +856,6 @@ A part of this study does the same analysis as Bianchi et al., 2017.
 Here we describe the deviations, which are about the use of different
 software and the use of a different definition of what a binder is.
 
-% \paragraph{TMH prediction software}
-
-The earlier study uses TMHMM, which has a restricted software license.
-Instead, we chose to use PureseqTM, which is free and open source.
-
 % Percentage of spots and spots that overlap with a TMH
 \input{bbbq_1_smart_results/table_f_tmh_2.latex}
 
@@ -875,8 +864,7 @@ Instead, we chose to use PureseqTM, which is free and open source.
 The earlier study uses \verb;epitope-prediction; a hand-crafted method, 
 that has been trained on MHC-I haplotypes only,
 which is used here again. For MHC-II IC50 predictions, the
-'netmhc2pan' R package is used, which calls NetMHC2pan.
-Both are packages are free and open-source.
+'mhcnuggetsr' R package is used.
 
 % \paragraph{Definition of what a binder is}
 
@@ -887,16 +875,23 @@ This can be seen at \url{https://github.com/richelbilderbeek/bianchi_et_al_2017/
 where the binders are written to file.
 
 In this study, a peptide is defined a binder (for a haplotype), 
-if \emp{within a proteome} in which it is found, 
-is within the peptides with the 2\% lowest IC50 values.
+if within a \emp{proteome} in which it is found, 
+is within the peptides with the 2\% lowest IC50 values,
+where our previous study used the lowest 2\% IC50 values
+within each \emp{protein}.
 Subsection \ref{subsec:ic50s_per_haplotype} shows the IC50 values
 for a binder per haplotype.
 
-% \paragraph{Unclear handing of sequences with U}
+% \paragraph{Selenoproteins}
 
-Within the human reference proteome, there are 30 sequences that have a
-selenocysteine (with the symbol 'U').
-See \url{https://github.com/richelbilderbeek/bbbq_article/issues/158}.
+Our previous study used the TMHMM web server
+to predict TMHs.
+The desktop version of TMHMM, however, gives an
+error message on the 25 selenoproteins found in the human
+reference proteome.
+For the sake of reproducible research, we use the desktop version (as
+we can call it from scripts) and, due to this, we removed the
+selenoproteins from this analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50s per haplotype}
