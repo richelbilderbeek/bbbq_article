@@ -432,8 +432,10 @@ To confirm that peptides stemming from TMHs were presented in MHC-I and MHC-II,
 we reanalyzed published peptide elution studies.
 Table \ref{tab:elution} shows the percentage of epitopes derived 
 from a TMH
-found in MHC-I and MHC-II elution studies \richel{refs}, 
-for the two topology prediction tools TMHMM and PureseqTM \richel{refs}. 
+found in MHC-I and MHC-II elution 
+studies (\cite{schellens2015comprehensive} and \cite{bergseng2015different} respectively), 
+for the two topology prediction tools TMHMM and 
+PureseqTM (\cite{krogh2001predicting} and \cite{wang2019efficient} respectively). 
 Regardless of the prediction, 
 at least 100 epitopes were predicted to be derived from a TMH. 
 % GvdB: Also add a conclusion at the end of the paragraph.
@@ -454,7 +456,12 @@ Figure \ref{fig:1} shows the percentages of MHC-I epitopes predicted to be overl
 with TMHs for our human, viral and bacterial proteome.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc1}) 
 for the exact TMH and epitope counts.
-\richel{GvdB: Also provide a short conclusion}
+We found that also for pathogen epitopes derived from TMHs are
+over-presented. 
+The extent of the over-presentation is similar between the haplotypes:
+if a haplotype if prone to present TMH-derived epitopes from
+human proteins, it is also prone to present such epitopes of
+bacterial and viral proteins.
 
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
@@ -471,12 +478,17 @@ for the exact TMH and epitope counts.
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{GvdB: Again a rationale}
+Where TMH-derived epitopes are over-presented by MHC-I,
+we wondered if this finding would also generalize to MHC-II.
 Figure \ref{fig:2} shows the percentages of MHC-II epitopes overlapping 
 with TMHs for our human, viral and bacterial proteome.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc2}) 
 for the TMH and epitope counts.
-\richel{GvdB: And a conclusion}
+We show that MHC-II has the same pattern of over-presentation
+as MHC-I, yet this over-presentation is more extreme.
+Also for MHC-II, we observe that the extent the which TMH-derived
+epitopes are presented is similar between the haplotypes, regardless
+of the protein source.
 
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
