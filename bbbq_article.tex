@@ -525,28 +525,31 @@ of the protein source.
 
 In the final set of experiments, we addressed the question whether TMHs would be more evolutionary conserved than soluble proteins regions by comparing the occurrences of SNPs in the genome coding for TMHs and soluble protein regions. 
 We obtained 1,129 gene names associated with the phrase 'membrane protein'.
-These genes are linked to 5,203 proteins
-\richel{GvdB: Why so many? Isoforms?}, of which 2,754
-are predicted to be transmembrane proteins.
+These genes are linked to 5,203 protein isoforms, 
+of which 2,754 are predicted to be transmembrane proteins.
 We obtained 4,811 SNPs that resulted in an
 amino acids substitution, of which 2,568 were located 
 in predicted transmembrane proteins.
-Per protein, we predicted the percentages of the gene coding for TMHs and soluble regions
-and calculated the percentage of amino acids substitutions
-occurring in TMHs.
-Per protein, this percentage was plotted as a function of the percentage TMH in figure
-\ref{fig:f_snps_found_and_expected}.
-We performed a linear regression analysis on the data, with and without
-membrane-associated proteins \richel{GvdB: explain clearer}, and calculated the 95\%
-confidence interval.
-Since the regression curve clearly deviated from the line of equality,
-which would be expected if SNPs occur just as likely within transmembrane and soluble protein domains,
-this suggests that variations occur more often in soluble 
-than in transmembrane protein regions.
+Per protein, we calculated two percentages: 
+(1) the percentage of the gene coding for TMHs, 
+and (2) the percentage of SNPs occurring in TMHs.
+Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
+We performed a linear regression analyses on the data twice,
+one with and one without membrane-associated proteins,
+and added a 95\% confidence interval for both of these regressions.
+Would the confidence interval of the regression line 
+overlap with the line of equality,
+this would be expected if SNPs occur just as likely within TMHs and soluble protein domains.
+Our analysis shows that SNPs occur more often in soluble domains
+than in TMHs.
+The effect size is that per 1 SNP found in soluble protein
+domains, one finds 0.925 SNPs in TMHs.
 
-To test whether SNPs occur just as likely in soluble as
+To statistically test whether SNPs occur just as likely in soluble as
 in transmembrane protein domains, we used a Poisson binomial
-distribution. We first calculated the expected number of SNPs
+distribution. 
+
+We first calculated the expected number of SNPs
 found in TMHs, which is 61,457 SNPs \richel{GvdB: I don’t completely follow this. Based on what?} and multiplied this number by 6.8\% 
 of all proteins being a TMH, resulting in the null hypothesis
 of 4203 SNPs occurring in TMHs. 
@@ -562,8 +565,6 @@ equals $1.6201 \cdot 10^{-9}$.
 Using a alpha value of $0.05$, as is common practice for an uninformed
 expectation, we conclude that there are significantly less SNPs
 in TMHs as expected by chance.
-The effect size is that per 1 SNP found in soluble protein
-domains, one finds 0.925 SNPs in TMHs.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner.png}
