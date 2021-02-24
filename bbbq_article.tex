@@ -530,7 +530,8 @@ by comparing the occurrences of SNPs in the genome coding
 for TMHs and soluble protein regions. 
 We obtained 1,129 gene names associated with the phrase 'membrane protein'.
 These genes are linked to 4,811 protein isoforms, 
-of which 2,568 are predicted to be transmembrane proteins.
+of which 2,568 are predicted to be transmembrane proteins (TMPs),
+where the others are predicted to be membrane-associated proteins.
 We obtained 38,882 SNPs that resulted in an
 amino acids substitution, of which 21,738 were located 
 in predicted transmembrane proteins.
@@ -573,8 +574,8 @@ The discrepancy between the two expectations
 is caused by the distribution of SNPs over the soluble and
 transmembrane proteins: 
 there are 38,882 SNPs found in 4811 proteins (i.e. $\approx 8.08$ SNP per protein),
-of which 21,738 SNPs in 2568 integral membrane proteins (i.e. $\approx 8.46$
-SNP per integral membrane protein).
+of which 21,738 SNPs in 2568 TMPs (i.e. $\approx 8.46$
+SNP per TMP).
 
 \richel{How many SNPs in TMHs?}
 See figure \ref{fig:f_tmh_ncbi} to see which percentages
@@ -925,7 +926,7 @@ hence different structural requirements for a TMH.
 Both topology prediction tools were trained to recognize
 human TMHs, thus we cannot be sure that
 the transmembrane regions predicted in bacterial proteins
-are actually part of an integral membrane protein.
+are actually part of a TMH.
 For the purpose of this study, we assume the 
 error in topology predictions to be unbiased way towards topology.
 In other words: that a bacterial TMH is incorrectly
@@ -1026,7 +1027,7 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_n_tmhs_per_protein.png}
   \caption{
     Histogram of the number of TMHs predicted per protein,
-    for the integral membrane proteins used.
+    for the trans-membrane proteins used.
   }
   \label{fig:n_tmhs_per_protein}
 \end{figure}
