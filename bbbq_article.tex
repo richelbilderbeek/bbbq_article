@@ -276,8 +276,11 @@ Per gene name, the 'dbSNP' NCBI database is queried for
 variations associated with the gene name. 
 
 The number of variations
-was limited to the first 250 variations per gene,
-resulting in 282250 variations. 
+was limited to the first 250 variations per gene (see figure
+\ref{fig:snps_per_gene_name_ncbi} for the number of SNPs
+within the dbSNP database for these gene names),
+resulting in \richel{282250} variations.
+
 A variation needs not always be a SNP,
 as dbSNP also catalogs other DNA alterations, such as, among others, insertions,
 deletions and tandem repeats.
@@ -527,20 +530,22 @@ In the final set of experiments,
 we addressed the question whether TMHs 
 would be more evolutionary conserved than soluble proteins regions 
 by comparing the occurrences of SNPs in the genome coding 
-for TMHs and soluble protein regions. 
-We obtained 1,129 gene names associated with the phrase 'membrane protein'.
+for TMHs and soluble protein regions within membrane proteins. 
+We obtained 1,129 gene names associated with the phrase 'membrane protein',
+which are genes for both membrane-associated proteins (MAPs, no TMH) and 
+transmembrane proteins (TMPs, at least 1 TMH).
 These genes are linked to 4,811 protein isoforms, 
-of which 2,568 are predicted to be transmembrane proteins (TMPs),
-where the others are predicted to be membrane-associated proteins.
+of which 2,568 are predicted to be TMPs (hence 
+2,243 proteins are predicted to be MAPs).
 We obtained 38,882 SNPs that resulted in an
 amino acids substitution, of which 21,738 were located 
-in predicted transmembrane proteins.
+in predicted TMPs.
 Per protein, we calculated two percentages: 
-(1) the percentage of the gene coding for TMHs, 
+(1) the percentage of the protein coding for TMHs, 
 and (2) the percentage of SNPs occurring in TMHs.
 Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
 We performed a linear regression analyses on the data twice,
-one with and one without membrane-associated proteins,
+one with and one without MAPs,
 and added a 95\% confidence interval for both of these regressions.
 Would the confidence interval of the regression line 
 overlap with the line of equality,
@@ -550,53 +555,34 @@ than in TMHs.
 The effect size is that per 1 SNP found in soluble protein
 domains, one finds 0.925 SNPs in TMHs.
 
-To statistically test whether SNPs occur just as likely in soluble as
-in transmembrane protein domains, we used a Poisson binomial
-distribution.
-We calculated the number of SNPs that are expected to be
-found in TMHs by chance, $E(n_{SNP\_TMH})$, when including
-and excluding soluble proteins (with symbols
-$E(n_{SNP\_TMH}^{+})$ and $E(n_{SNP\_TMH}^{-})$ respectively).
-The number of SNPs that are expected to be
-found in TMHs by chance when including soluble proteins,
-$E(n_{SNP\_TMH}^{+})$ 
-equals the number of (all) SNPs, $n_{SNP}^{+} = 38,882$, multiplied by the fraction
-of all proteins that are TMH, $f_{TMH}^{+} = 9.96\%$,
-resulting in 
-$E(n_{SNP\_TMH}^{+}) = n_{SNP}^{+} \cdot f_{TMH}^{+} \approx 3873$
-The number of SNPs that are expected to be
-found in TMHs by chance when excluding soluble proteins,
-$E(n_{SNP\_TMH}^{-})$ 
-equals the number of SNPs in TMHs, $n_{SNP}^{-} = 21,738$, 
-multiplied by the fraction of the TMPs that are TMH, $f_{TMH}^{-} = 18.66\%$,
-$E(n_{SNP\_TMH}^{-}) = n_{SNP}^{-} \cdot f_{TMH}^{-} \approx 4056$.
-The discrepancy between the two expectations
-is caused by the distribution of SNPs over the soluble and
-transmembrane proteins: 
-there are 38,882 SNPs found in 4811 proteins (i.e. $\approx 8.08$ SNP per protein),
-of which 21,738 SNPs in 2568 TMPs (i.e. $\approx 8.46$
-SNP per TMP).
+To statistically test whether SNPs occur 
+just as likely in soluble domains as
+in TMHs, we first calculated the number of SNPs that are expected to be
+found in TMHs of TMPs by chance, $E(n_{SNP\_TMH})$,
+equals the number of SNPs in TMHs, $n_{SNP} = 21,738$, 
+multiplied by the fraction of the TMPs that are TMH, $f_{TMH} = 18.66\%$,
+$E(n_{SNP\_TMH}) = n_{SNP} \cdot f_{TMH} \approx 4056$.
+
+The actually number of SNPs found in TMHs
+was $n_{SNP\_TMH} = 3,903$, which is lower than the expectation
+of $E(n_{SNP\_TMH}) \approx 4056$.
+To test whether this difference is significant,
+we used a binomial Poisson distribution, where the number of trails,
+$n$ equals the number of SNPs, which is 21,738. The probability of success
+for TMP $i$, $p\_i$, is the percentage of each TMP that is TMH.
+We calculated the probability of having 3,903 or less successes.
+We used the type I error cut-off value of $\alpha = 2.5\%$.
+The chance to find, within TMHs, this amount or less SNPs 
+equals \richel{recalculate}
+% $1.6201 \cdot 10^{-9}$.
+
+Using a alpha value of $0.05$, as is common practice for an uninformed
+expectation, we conclude that there are significantly less SNPs
+in TMHs as expected by chance.
 
 \richel{How many SNPs in TMHs?}
 See figure \ref{fig:f_tmh_ncbi} to see which percentages
 are TMH of the transmembrane proteins.
-
-We first calculated the expected number of SNPs
-found in TMHs, which is 61,457 SNPs \richel{GvdB: I don’t completely follow this. Based on what?} and multiplied this number by 6.8\% 
-of all proteins being a TMH, resulting in the null hypothesis
-of 4203 SNPs occurring in TMHs. 
-Note that including or excluding
-the membrane associated proteins 
-has no effect on this statistical test, as the chance 
-of a successful trial is zero (there is zero chance
-to find a SNP in TMHs if there are none) \richel{GvdB: Also too complex for biologists. Explain in bit more words}.
-The actually number of SNPs found in TMHs
-was 3889, which is lower than the null hypothesis. 
-The chance to find, within TMHs, this amount or less SNPs 
-equals $1.6201 \cdot 10^{-9}$.
-Using a alpha value of $0.05$, as is common practice for an uninformed
-expectation, we conclude that there are significantly less SNPs
-in TMHs as expected by chance.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner.png}
@@ -1005,6 +991,16 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_snps_per_gene_name_ncbi.png}
+  \caption{
+    Distribution of the number of SNPs per gene name in the NCBI database.
+  }
+  \label{fig:snps_per_gene_name_ncbi}
+\end{figure}
+
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
