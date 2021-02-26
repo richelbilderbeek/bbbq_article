@@ -279,13 +279,12 @@ The number of variations
 was limited to the first 250 variations per gene (see figure
 \ref{fig:snps_per_gene_name_ncbi} for the number of SNPs
 within the dbSNP database for these gene names),
-resulting in \richel{282250} variations.
-
+resulting in 60,683 variations at the protein level.
 A variation needs not always be a SNP,
 as dbSNP also catalogs other DNA alterations, such as, among others, insertions,
 deletions and tandem repeats.
 We select only the variations that result in a SNP for
-a single amino acid substitution.
+a single amino acid substitution, resulting in 38,882 SNPs.
 
 % \paragraph{Selection of SNPs}
 %
@@ -305,11 +304,12 @@ From the topology and the known location of the SNP,
 we score the location (i.e. TMH or soluble protein region) 
 where the change occurred.
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software used}
 \label{subsec:prediction_software_used}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\richel{I suggest to move this section to the Supplementary Materials}
 
 \begin{table}[]
   \begin{tabular}{llll}
@@ -377,6 +377,8 @@ and MHC-II prediction, which we used for MHC-II predictions.
 \subsection{Prediction software written}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\richel{I suggest to move this section to the Supplementary Materials}
+
 The R programming language is used for the complete 
 experiment, including the analysis.
 The complete experiment is bundled in the 'bbbq' R package,
@@ -430,7 +432,7 @@ This package is too specific to be submitted to CRAN.
 % tab:elution
 \input{../bbbq_article_issue_157/results/results.tex}
 
-% GvdB: A narrative was missing a bit. Why was this done? 
+\geert{A narrative was missing a bit. Why was this done?}
 To confirm that peptides stemming from TMHs were presented in MHC-I and MHC-II,
 we reanalyzed published peptide elution studies.
 Table \ref{tab:elution} shows the percentage of epitopes derived 
@@ -441,7 +443,7 @@ for the two topology prediction tools TMHMM and
 PureseqTM (\cite{krogh2001predicting} and \cite{wang2019efficient} respectively). 
 Regardless of the prediction, 
 at least 100 epitopes were predicted to be derived from a TMH. 
-% GvdB: Also add a conclusion at the end of the paragraph.
+\geert{Also add a conclusion at the end of the paragraph.}
 From these findings, we conclude that PureseqTM and TMHMM 
 result in prediction of a similar number of TMHs 
 and that peptides derived from TMHs have been identified for both MHC-I and -II.
@@ -622,7 +624,8 @@ at least in the human proteome.
 
 It is known that an individual's haplotype
 influences the dynamics of a pathogen (see,
-for example, \cite{eccleston2017host} for HIV) \richel{GvdB: Too vague. How?}.
+for example, \cite{eccleston2017host} for HIV) 
+\geert{Too vague. How?}.
 The bioinformatics pipeline developed in this
 study may be interesting to make in silico
 predictions of a SARS-CoV-2 infection.
@@ -637,9 +640,7 @@ and change the infection's dynamics.
 \section{Discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{
-  GvdB:
-
+\geert{
   Discussion section needs some work, 
   as here interpretation of the results needs to be given. 
   What is the consequence of the findings? Why is it important. 
@@ -746,7 +747,7 @@ One source of noise would stem from imperfect predictions
 by the topology prediction software used. 
 We have counteracted this by using two different topology prediction
 software and confirm these have similar results.
-Two biological sources of noise \richel{GvdB: What do you mean by noise?}
+Two biological sources of noise \geert{What do you mean by noise?}
 are defective ribosomal products (DRiPs) (\cite{yewdell1996defective}) 
 and peptide fusion \cite{delong2016pathogenic},
 two processes that both result in peptide fragments
@@ -760,7 +761,7 @@ by mass spectronomy.
 
 \subsection{Evolutionary conservation}
 
-\richel{GvdB: This might be relevant, but you need to explain why it is relevant. Thus compare your findings with previous efforts to look at conservation of TMHs}
+\geert{This might be relevant, but you need to explain why it is relevant. Thus compare your findings with previous efforts to look at conservation of TMHs}
 % \paragraph{synonymous mutations}
 %
 In our evolutionary experiment, 
@@ -811,7 +812,7 @@ of Groningen for its support and for providing access to the Peregrine
 high performance computing cluster. 
 Additionally, we would like to thank Sci-Hub (\cite{himmelstein2018sci})
 for allowing us to read paywalled articles while working from home.
-\richel{GvdB: Should we include Maxim? He did the alignment of Mycobacterium tuberculosis. Let’s also ask Frans.}
+\geert{Should we include Maxim? He did the alignment of Mycobacterium tuberculosis. Let’s also ask Frans.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Accessibility}
