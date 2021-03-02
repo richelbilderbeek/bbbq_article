@@ -269,7 +269,13 @@ bigger queries of multiple (and delayed) API calls.
 
 The first query was a call to the 'gene' database for the 
 term 'membrane protein' (in all fields) for the organism \textbf{Homo sapiens}.
-This resulted in 1129 gene IDs.
+This resulted in 1077 gene IDs
+\richel{
+  This was December 2020.
+  At 2021-03-01, one will get 1130 gene IDs.
+  Also, one of the gene IDs that was valid back then,
+  has been obsoleted.
+}.
 The next query was a call to the 'gene' database 
 to obtain the gene names from the gene IDs.
 Per gene name, the 'dbSNP' NCBI database is queried for 
@@ -1053,6 +1059,50 @@ To verify if SNPs were sampled uniformly
 over proteins, we show the distribution 
 of the relative position in figure \ref{fig:snp_rel_pos}.
 We find no clear evidence of a bias.
+
+% \paragraph{Statistics}
+
+Table \ref{tab:snp_stats} shows the statistics for all
+SNPs, where tables \ref{tab:snp_stats_per_spanner_single}
+and \ref{tab:snp_stats_per_spanner_multi} show the
+statistics for only single-spanners and multi-spanners respectively.
+These probabilities are also displayed visually in 
+figures \ref{fig:ppoisbinom} (all proteins), \ref{fig:ppoisbinom_single} (single-spanners)
+and \ref{fig:ppoisbinom_multi} (multi-spanners).
+ 
+% Label: tab:snp_stats
+\input{ncbi_peregrine_results/snp_stats.tex}
+
+% Label: tab:snp_stats_per_spanner_single
+\input{ncbi_peregrine_results/snp_stats_per_spanner_single.tex}
+
+% Label: tab:snp_stats_per_spanner_multi
+\input{ncbi_peregrine_results/snp_stats_per_spanner_multi.tex}
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{ncbi_peregrine_results/ppoisbinom.png}
+  \caption{
+    Probabilities for all SNPs
+  }
+  \label{fig:ppoisbinom}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{ncbi_peregrine_results/ppoisbinom_single.png}
+  \caption{
+    Probabilities for SNPs in single-spanners
+  }
+  \label{fig:ppoisbinom_single}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{ncbi_peregrine_results/ppoisbinom_multi.png}
+  \caption{
+    Probabilities for SNPs in multi-spanners
+  }
+  \label{fig:ppoisbinom_multi}
+\end{figure}
+
 
 %
 % Notes to self
