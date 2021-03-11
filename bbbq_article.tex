@@ -4,19 +4,20 @@ Cytolytic T cell responses are predicted to be biased towards membrane proteins.
 Because the peptide-binding grooves of most haplotypes 
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
 peptide fragments derived from transmembrane helices (TMHs) 
-are predicted to be presented more often than expected based on their abundance.
+are predicted to be presented more often than expected 
+based on their abundance in the proteome.
+We show that the over-presentation of TMH-derived peptides is likely general, 
+as it is predicted for diverse microbiota and viruses 
+and for both MHC-I and MHC-II
 However, the physiological reason of why membrane proteins might be 
 over-presented is unclear
 In this study, we show the TMHs are evolutionarily more conserved, 
 as relatively less single nucleotide polymorphisms (SNPs) 
 are present in TMH-coding chromosomal regions 
 compared to regions coding for extracellular and cytosolic protein regions. 
-Moreover, we show that the over-presentation of TMH-derived peptides is 
-likely general, as it is predicted for diverse microbial pathogens 
-and for both MHC-I and MHC-II.
 Thus, our findings suggest that T cells might respond 
 more to membrane proteins, because these are evolutionary more conserved.
-We speculate that TMHs might be less prone of the escape mutations 
+We speculate that TMHs therefor might be less prone to escape mutations 
 that enable pathogens to evade T cell responses.
 
 \end{abstract}
@@ -31,12 +32,12 @@ epitopes, T lymphocyte, MHC-I, MHC-II, evolutionary conservation
 
 % \paragraph{Immune response}
 
-Our immune system fights microbial pathogens, 
+Our immune system fights diseases and infections from pathogens, 
 such as fungi, bacteria or viruses. 
 An important part of the acquired immune response, 
 that develops specialized and more effective recognition of pathogens, 
-are T cells which recognize peptides derived from the pathogens 
-by use of Major Histocompatibility Complexes (MHC). 
+are T cells which recognize peptides derived from 
+exogenous antigens presented on Major Histocompatibility Complexes (MHC). 
 
 % GvdB: Not really relevant. You don’t really need to explain the role of DCs. 
 % What is far more important is the concept of what an MHC is: 
@@ -55,7 +56,9 @@ There are three genes encoding for MHC-I, which are HLA-A, HLA-B and HLA-C,
 for MHC-II there are three major genes, which are HLA-DR, HLA-DQ, HLA-DP.
 Each MHC complex can only bind a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
-peptides they bind (\cite{lund2004definition}).
+peptides they bind (\cite{lund2004definition})
+\frans{Is dit zo?} 
+\richel{Volgens de (weggegevallen) referentie naar Lund et al., 2004, 'Definition of supertypes for {HLA} molecules using clustering of specificity matrices' wel}.
 The HLA region of humans is highly polymorphic, with hundreds 
 to thousands of different alleles, 
 and each different HLA gene is called 
@@ -65,7 +68,8 @@ an MHC haplotype (\cite{marsh2010nomenclature}).
 
 Because of these multiple and highly polymorphic MHC genes,
 the number of pathogenic peptides that can be detected is increased,
-as a wide variety of MHCs will be expressed,
+as a wide variety of MHCs: 
+6 MHC-I and 6-8 MHC-II molecules are expressed per individual
 each presenting their own subset of epitopes.
 It is believed that this improves immunity at the population level, 
 as mutations in a protein that disrupt a particular MHC presentation, 
@@ -74,7 +78,7 @@ will not affect MHC presentation for all haplotypes (\cite{sommer2005importance}
 
 % \paragraph{Epitope prediction}
 
-Much studies are aimed at determining which peptides are presented in MHC 
+Many studies are aimed at determining which peptides are presented in MHC 
 and will result in an immune response, 
 as this will for instance aid the design of vaccines. 
 These studies have led to the development 
@@ -91,34 +95,37 @@ are predicted to be more frequently presented by MHC-I
 than expected based on their abundance (\cite{bianchi2017}). 
 Moreover, we showed that some well-known immunodominant peptides stem from TMHs. 
 
-This over-presentation is entirely explained by the fact 
+This over-presentation is attributed to the fact 
 that the peptide-binding groove of most MHC-I haplotypes 
 is relatively hydrophobic, 
 and therefore hydrophobic peptides have a higher affinity 
 than hydrophilic peptides. 
 
 Transmembrane helices (TMHs) are hydrophobic 
-as they need to span the hydrophobic lipid bilayer of cellular membranes, 
-and they consist of an alpha helix of usually 23 amino acids. 
+as they need to span the hydrophobic lipid bilayer of cellular membranes.
+They consist of an alpha helix on average 23 amino acids in length. 
 TMHs are common structures in the proteins of humans and pathogens. 
 Different TMH prediction tools estimate
-that 15-39% of the proteins in humans 
-contain at least one TMH (\cite{ahram2006estimation}). 
+that 15-39\% of the proteins in humans 
+contain at least one TMH (\cite{ahram2006estimation}).
 TMHs can also be predicted from a protein sequence 
 with high accuracy by bioinformatics approaches (\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}).
 
 However, the physiological reason why peptides derived from TMHs 
 would be presented more often than peptides 
 stemming from soluble protein regions is unknown. 
-One possibility is that the presentation of 
+We hypothesized is that the presentation of 
 hydrophobic/TMH residues is evolutionary selected for, 
 because TMHs are less prone to undergo escape mutation. 
 One reason to expect such a reduced 
 variability (and hence evolutionary conservation) in TMHs, 
 is that these are restricted in their evolution 
 by the functional requirement to span a lipid bilayer. 
-Due to this, there are constraints in the types of amino acids 
-that can be present in the TMH (\cite{jones1994model}). 
+Due to these requirements, 
+the amino acids genuinely present in TMH 
+are limited to the ones with hydrophobic side chains (\cite{jones1994model}).
+\frans{Analyzing the occurrence of single nucleotide polymorphisms that were predicted to be inside ...}
+
 Therefore, the TMHs of pathogens 
 might have a lower chance to develop an escape mutations, 
 as many mutations will result in a dysfunctional TMH 
