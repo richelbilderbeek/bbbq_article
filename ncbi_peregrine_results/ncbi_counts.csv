@@ -1,0 +1,7 @@
+what,raw,all_proteins,map,tmp,in_tmh,in_sol
+Number of variations,60931,37831,16623,21208,3803,17405
+Number of unique variations,60544,37630,16606,21024,3789,17235
+Number of unique SNPs,NA,9621,4219,6026,1140,4936
+Number of unique gene names,953,911,457,605,325,590
+Number of unique protein names,5163,4780,2227,2553,1280,2467
+Percentage TMH,NA,9.978325,0,18.682489999999998,25.68375,18.18121
