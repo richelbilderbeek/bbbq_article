@@ -4,7 +4,7 @@ Cytolytic T cell responses are predicted to be biased towards membrane proteins.
 Because the peptide-binding grooves of most haplotypes 
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
 peptide fragments derived from transmembrane helices (TMHs) 
-are predicted to be presented more often than expected 
+are predicted to be presented more often than expected,
 based on their abundance in the proteome.
 We show that the over-presentation of TMH-derived peptides is likely general, 
 as it is predicted for diverse microbiota and viruses 
@@ -39,13 +39,6 @@ that develops specialized and more effective recognition of pathogens,
 are T cells which recognize peptides derived from 
 exogenous antigens presented on Major Histocompatibility Complexes (MHC). 
 
-% GvdB: Not really relevant. You don’t really need to explain the role of DCs. 
-% What is far more important is the concept of what an MHC is: 
-% a protein complex that contains a fold, called the peptide-binding groove, 
-% which presents peptides. Also immediately explain that MHC-I 
-% presents peptides of about 9-amino acids in length to cytolytic T cells, 
-% whereas MHC-II presents longer peptides to helper T cells.
-
 % \paragraph{Classification of HLA}
 
 Any individual's immune system detects only a fraction of all possible
@@ -57,8 +50,8 @@ for MHC-II there are three major genes, which are HLA-DR, HLA-DQ, HLA-DP.
 Each MHC complex can only bind a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
 peptides they bind (\cite{lund2004definition})
-\frans{Is dit zo?} 
-\richel{Volgens de (weggegevallen) referentie naar Lund et al., 2004, 'Definition of supertypes for {HLA} molecules using clustering of specificity matrices' wel}.
+[FB: is that really so?]
+[RB: yes, according to the removed reference to Lund et al., 2004, 'Definition of supertypes for {HLA} molecules using clustering of specificity matrices'] 
 The HLA region of humans is highly polymorphic, with hundreds 
 to thousands of different alleles, 
 and each different HLA gene is called 
@@ -124,7 +117,8 @@ by the functional requirement to span a lipid bilayer.
 Due to these requirements, 
 the amino acids genuinely present in TMH 
 are limited to the ones with hydrophobic side chains (\cite{jones1994model}).
-\frans{Analyzing the occurrence of single nucleotide polymorphisms that were predicted to be inside ...}
+[FB: Analyzing the occurrence of single nucleotide polymorphisms 
+that were predicted to be inside ...]
 
 Therefore, the TMHs of pathogens 
 might have a lower chance to develop an escape mutations, 
@@ -277,12 +271,12 @@ bigger queries of multiple (and delayed) API calls.
 The first query was a call to the 'gene' database for the 
 term 'membrane protein' (in all fields) for the organism \textbf{Homo sapiens}.
 This resulted in 1077 gene IDs
-\richel{
+[RJCB:
   This was December 2020.
   At 2021-03-01, one will get 1130 gene IDs.
   Also, one of the gene IDs that was valid back then,
   has been obsoleted.
-}.
+].
 The next query was a call to the 'gene' database 
 to obtain the gene names from the gene IDs.
 Per gene name, the 'dbSNP' NCBI database is queried for 
@@ -322,7 +316,7 @@ where the change occurred.
 \label{subsec:prediction_software_used}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{I suggest to move this section to the Supplementary Materials}
+[RJCB: I suggest to move this section to the Supplementary Materials]
 
 \begin{table}[]
   \begin{tabular}{llll}
@@ -390,7 +384,7 @@ and MHC-II prediction, which we used for MHC-II predictions.
 \subsection{Prediction software written}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{I suggest to move this section to the Supplementary Materials}
+[RJCB: I suggest to move this section to the Supplementary Materials]
 
 The R programming language is used for the complete 
 experiment, including the analysis.
@@ -445,7 +439,7 @@ This package is too specific to be submitted to CRAN.
 % tab:elution
 \input{../bbbq_article_issue_157/results/results.tex}
 
-\geert{A narrative was missing a bit. Why was this done?}
+[GVDB: A narrative was missing a bit. Why was this done?]
 To confirm that peptides stemming from TMHs were presented in MHC-I and MHC-II,
 we reanalyzed published peptide elution studies.
 Table \ref{tab:elution} shows the percentage of epitopes derived 
@@ -456,7 +450,7 @@ for the two topology prediction tools TMHMM and
 PureseqTM (\cite{krogh2001predicting} and \cite{wang2019efficient} respectively). 
 Regardless of the prediction, 
 at least 100 epitopes were predicted to be derived from a TMH. 
-\geert{Also add a conclusion at the end of the paragraph.}
+[GVDB: Also add a conclusion at the end of the paragraph.]
 From these findings, we conclude that PureseqTM and TMHMM 
 result in prediction of a similar number of TMHs 
 and that peptides derived from TMHs have been identified for both MHC-I and -II.
@@ -588,14 +582,14 @@ for TMP $i$, $p\_i$, is the percentage of each TMP that is TMH.
 We calculated the probability of having 3,903 or less successes.
 We used the type I error cut-off value of $\alpha = 2.5\%$.
 The chance to find, within TMHs, this amount or less SNPs 
-equals \richel{recalculate}
-% $1.6201 \cdot 10^{-9}$.
+equals [RJCB: recalculate]
+$1.6201 \cdot 10^{-9}$.
 
 Using a alpha value of $0.05$, as is common practice for an uninformed
 expectation, we conclude that there are significantly less SNPs
 in TMHs as expected by chance.
 
-\richel{How many SNPs in TMHs?}
+[RJCB: How many SNPs in TMHs?]
 See figure \ref{fig:f_tmh_ncbi} to see which percentages
 are TMH of the transmembrane proteins.
 
@@ -611,7 +605,10 @@ are TMH of the transmembrane proteins.
 )
 
 We decided to split this analysis based on the number of TMHs
-a protein has \richel{Why? Provide brief rationale again. Thus TMH-TMH interactions or something}. We hypothesize that single-spanners (i.e. proteins
+a protein has 
+[GVDB: Why? Provide brief rationale again. 
+Thus TMH-TMH interactions or something]. 
+We hypothesize that single-spanners (i.e. proteins
 with one TMH predicted) are less conserved, when compared to multi-spanners,
 as single spanners just need to span a membrane, while multi-spanners
 might have interactions between their TMHs, 
@@ -638,7 +635,7 @@ at least in the human proteome.
 It is known that an individual's haplotype
 influences the dynamics of a pathogen (see,
 for example, \cite{eccleston2017host} for HIV) 
-\geert{Too vague. How?}.
+[GVDB: Too vague. How?].
 The bioinformatics pipeline developed in this
 study may be interesting to make in silico
 predictions of a SARS-CoV-2 infection.
@@ -653,7 +650,7 @@ and change the infection's dynamics.
 \section{Discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\geert{
+[GVDB: 
   Discussion section needs some work, 
   as here interpretation of the results needs to be given. 
   What is the consequence of the findings? Why is it important. 
@@ -666,7 +663,7 @@ and change the infection's dynamics.
 
   So offer interpretations. 
   The second part of the introduction would fit here well. I can also help with this.
-}
+]
 
 % RJCB: moved this from Introduction to Discussion.
 %
@@ -760,7 +757,7 @@ One source of noise would stem from imperfect predictions
 by the topology prediction software used. 
 We have counteracted this by using two different topology prediction
 software and confirm these have similar results.
-Two biological sources of noise \geert{What do you mean by noise?}
+Two biological sources of noise [GVDB: What do you mean by noise?]
 are defective ribosomal products (DRiPs) (\cite{yewdell1996defective}) 
 and peptide fusion \cite{delong2016pathogenic},
 two processes that both result in peptide fragments
@@ -774,7 +771,11 @@ by mass spectronomy.
 
 \subsection{Evolutionary conservation}
 
-\geert{This might be relevant, but you need to explain why it is relevant. Thus compare your findings with previous efforts to look at conservation of TMHs}
+[GVDB: 
+  This might be relevant, but you need to explain why it is relevant. 
+  Thus compare your findings with previous efforts 
+  to look at conservation of TMHs
+]
 % \paragraph{synonymous mutations}
 %
 In our evolutionary experiment, 
@@ -825,7 +826,11 @@ of Groningen for its support and for providing access to the Peregrine
 high performance computing cluster. 
 Additionally, we would like to thank Sci-Hub (\cite{himmelstein2018sci})
 for allowing us to read paywalled articles while working from home.
-\geert{Should we include Maxim? He did the alignment of Mycobacterium tuberculosis. Let’s also ask Frans.}
+[GVDB: 
+  Should we include Maxim? 
+  He did the alignment of Mycobacterium tuberculosis. 
+  Let’s also ask Frans.
+]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Accessibility}
