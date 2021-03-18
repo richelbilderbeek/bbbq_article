@@ -2,21 +2,21 @@
 
 \caption{\label{tab:ncbi_counts}Amounts. raw = all variations, including DNA variations. all\_proteins = all proteins. map = MAP = membrane associated protein. tmp = TMP = transmembrane protein. in\_tmh = in transmembrane helix (TMH) of TMP. in\_sol = in soluble region of TMP. perc\_tmh = percentage transmembrane helix (TMH). The number of unique SNPs and unique gene names does not add up for MAP and TMP, as one SNP may work on multiple isoforms, some of which can be MAP where others can be TMP. The number of unique SNPs and unique gene names does not add up for TMPs in TMH and TMP in soluble regions, as one SNP may work on multiple isoforms, some of which can be MAP where others can be TMP, and some SNPs fall in a TMH, where others are found in soluble regions}
 \centering
-\begin{tabular}[t]{l|r|r|r|r|r|r}
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
 \hline
-what & raw & all\_proteins & map & tmp & in\_tmh & in\_sol\\
+what & raw & all\_proteins & map & tmp & in\_tmh & in\_sol & single\_in\_tmh & single\_in\_sol & multi\_in\_tmh & multi\_in\_sol\\
 \hline
-Number of variations & 60931 & 37831 & 16623 & 21208 & 3803 & 17405\\
+Number of variations & 60931 & 37831 & 16623 & 21208 & 3803 & 17405 & 452 & 7734 & 3351 & 9671\\
 \hline
-Number of unique variations & 60544 & 37630 & 16606 & 21024 & 3789 & 17235\\
+Number of unique variations & 60544 & 37630 & 16606 & 21024 & 3789 & 17235 & 451 & 7733 & 3338 & 9502\\
 \hline
-Number of unique SNPs & NA & 9621 & 4219 & 6026 & 1140 & 4936\\
+Number of unique SNPs & NA & 9621 & 4219 & 6026 & 1140 & 4936 & 160 & 2393 & 994 & 2762\\
 \hline
-Number of unique gene names & 953 & 911 & 457 & 605 & 325 & 590\\
+Number of unique gene names & 953 & 911 & 457 & 605 & 325 & 590 & 96 & 282 & 243 & 344\\
 \hline
-Number of unique protein names & 5163 & 4780 & 2227 & 2553 & 1280 & 2467\\
+Number of unique protein names & 5163 & 4780 & 2227 & 2553 & 1280 & 2467 & 304 & 1032 & 976 & 1435\\
 \hline
-Percentage TMH & NA & 10 & 0 & 19 & 26 & 18\\
+Percentage TMH & NA & 10 & 0 & 19 & 26 & 18 & 11 & 5 & 35 & 26\\
 \hline
 \end{tabular}
 \end{table}

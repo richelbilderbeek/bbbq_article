@@ -435,21 +435,23 @@ This package is too specific to be submitted to CRAN.
 % tab:elution
 \input{../bbbq_article_issue_157/results/results.tex}
 
-[GVDB: A narrative was missing a bit. Why was this done?]
 To confirm that peptides stemming from TMHs were presented in MHC-I and MHC-II,
 we reanalyzed published peptide elution studies.
 Table \ref{tab:elution} shows the percentage of epitopes derived 
 from a TMH
 found in MHC-I and MHC-II elution 
-studies (\cite{schellens2015comprehensive} and \cite{bergseng2015different} respectively), 
+studies (\cite{schellens2015comprehensive} and \cite{bergseng2015different} respectively),
 for the two topology prediction tools TMHMM and 
 PureseqTM (\cite{krogh2001predicting} and \cite{wang2019efficient} respectively). 
 Regardless of the prediction, 
 at least 100 epitopes were predicted to be derived from a TMH. 
-[GVDB: Also add a conclusion at the end of the paragraph.]
-From these findings, we conclude that PureseqTM and TMHMM 
-result in prediction of a similar number of TMHs 
-and that peptides derived from TMHs have been identified for both MHC-I and -II.
+From these findings, it is robustly predicted that
+epitopes derived from TMHs are presented by B cells [For Frans: please check
+that the article by Bergseng, 2015, 'Different binding motifs of the celiac 
+disease-associated HLA molecules DQ2. 5, DQ2. 2, and DQ7. 5 revealed by 
+relative quantitative proteomics of endogenous peptide repertoires'
+is appropriate. As far as I can see, it is, but I may overlook something. Richel].
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
@@ -460,7 +462,8 @@ were predicted to be over-presented in MHC-I.
 Here, we wondered if this finding would be general 
 and if peptides stemming from TMHs of microbial pathogens 
 would also be over-presented.
-Figure \ref{fig:1} shows the percentages of MHC-I epitopes predicted to be overlapping 
+Figure \ref{fig:1} shows the percentages of MHC-I epitopes 
+predicted to be overlapping 
 with TMHs for our human, viral and bacterial proteome.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc1}) 
 for the exact TMH and epitope counts.
@@ -495,8 +498,8 @@ for the TMH and epitope counts.
 We show that MHC-II has the same pattern of over-presentation
 as MHC-I, yet this over-presentation is more extreme.
 Also for MHC-II, we observe that the extent the which TMH-derived
-epitopes are presented is similar between the haplotypes, regardless
-of the protein source.
+epitopes are presented is similar between the haplotypes, for
+a human, bacterial and viral proteome.
 
 \begin{figure}[!htbp]
   \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
@@ -513,6 +516,23 @@ of the protein source.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation.png}
+  \caption{
+    Evolutionary conservation of SNPs in TMHs.
+  }
+  \label{fig:conservation}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation_per_spanner.png}
+  \caption{
+    Evolutionary conservation of SNPs in TMHs,
+    for either single- or multi-spanners
+  }
+  \label{fig:conservation_per_spanner}
+\end{figure}
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected.png}
@@ -535,16 +555,20 @@ In the final set of experiments,
 we addressed the question whether TMHs 
 would be more evolutionary conserved than soluble proteins regions 
 by comparing the occurrences of SNPs in the genome coding 
-for TMHs and soluble protein regions within membrane proteins. 
-We obtained 1,129 gene names associated with the phrase 'membrane protein',
+for TMHs and soluble protein regions within membrane proteins.
+We obtained 1,129 [For Frans: I would enjoy to write 'approx 1k' here, would that
+be acceptable? I do refer to a table with the exact values
+later on anyways. Richel] gene names associated with the phrase 'membrane protein',
 which are genes for both membrane-associated proteins (MAPs, no TMH) and 
-transmembrane proteins (TMPs, at least 1 TMH).
-These genes are linked to 4,811 protein isoforms, 
-of which 2,568 are predicted to be TMPs (hence 
-2,243 proteins are predicted to be MAPs).
-We obtained 38,882 SNPs that resulted in an
-amino acids substitution, of which 21,738 were located 
+transmembrane proteins (TMPs, at least one TMH).
+These genes are linked to 4,780 protein isoforms, 
+of which 2,553 are predicted to be TMPs (hence 
+2,237 proteins are predicted to be MAPs).
+We obtained 37,630 SNPs that resulted in an
+amino acids substitution, of which 21,024 were located 
 in predicted TMPs.
+See table \ref{tab:ncbi_counts} for an overview of all amounts.
+
 Per protein, we calculated two percentages: 
 (1) the percentage of the protein coding for TMHs, 
 and (2) the percentage of SNPs occurring in TMHs.
@@ -554,11 +578,10 @@ one with and one without MAPs,
 and added a 95\% confidence interval for both of these regressions.
 Would the confidence interval of the regression line 
 overlap with the line of equality,
-this would be expected if SNPs occur just as likely within TMHs and soluble protein domains.
-Our analysis shows that SNPs occur more often in soluble domains
-than in TMHs.
-The effect size is that per 1 SNP found in soluble protein
-domains, one finds 0.925 SNPs in TMHs.
+this would be expected if SNPs occur just as likely within TMHs 
+and soluble protein domains.
+This analysis gives the first hint that SNPs 
+occur more often in soluble domains than in TMHs.
 
 To statistically test whether SNPs occur 
 just as likely in soluble domains as
@@ -567,6 +590,12 @@ found in TMHs of TMPs by chance, $E(n_{SNP\_TMH})$,
 equals the number of SNPs in TMHs, $n_{SNP} = 21,738$, 
 multiplied by the fraction of the TMPs that are TMH, $f_{TMH} = 18.66\%$,
 $E(n_{SNP\_TMH}) = n_{SNP} \cdot f_{TMH} \approx 4056$.
+
+The effect size is that, 
+when randomly selecting SNPs, 
+per 100 SNPs found in soluble protein domains, 
+one finds 91 SNPs in TMHs,
+as depicted in figure \ref{fig:conservation}.
 
 The actually number of SNPs found in TMHs
 was $n_{SNP\_TMH} = 3,903$, which is lower than the expectation
@@ -612,6 +641,12 @@ for example to accommodate active sites, and
 thus might have additional structural constraints.
 As can be seen in figure \ref{fig:f_snps_found_and_expected_per_spanner}, 
 both single- and multi-spanners are evolutionarily conserved.
+
+We conclude that,
+when randomly selecting SNPs, 
+for 100 SNPs found in soluble regions of multi-spanners,
+one finds 89.6 SNPs in TMHs, as shown by 
+figure \ref{fig:conservation_per_spanner}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -1037,6 +1072,9 @@ See table \ref{tab:ncbi_counts} for an overview of all amounts.
 % Label: tab:ncbi_counts
 \input{ncbi_peregrine_results/ncbi_counts.tex}
 
+Figure \ref{fig:snps_per_gene_name_ncbi} shows the distribution of the
+number of SNPs per gene name, at 2020-12-14.
+
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_snps_per_gene_name_ncbi.png}
   \caption{
@@ -1053,10 +1091,15 @@ See table \ref{tab:ncbi_counts} for an overview of all amounts.
   \label{fig:snps_per_gene_name_processed}
 \end{figure}
 
+Figure \ref{fig:f_tmh_ncbi} shows the distribution 
+of the percentages of TMH of transmembrane proteins.
+
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
   \caption{
     Distribution of the percentages of TMH of transmembrane proteins.
+    Dashed vertical line: mean \% TMH in all proteins.
+    Dotted vertical line: mean \% TMH in TMPs.
   }
   \label{fig:f_tmh_ncbi}
 \end{figure}
@@ -1075,6 +1118,7 @@ See table \ref{tab:ncbi_counts} for an overview of all amounts.
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_n_snps_per_tmp.png}
   \caption{
     Histogram of the number of SNPs per trans-membrane protein.
+    Dashed vertical line: average number of SNPs per TMP
   }
   \label{fig:n_tmhs_per_protein}
 \end{figure}
@@ -1105,23 +1149,6 @@ To verify if SNPs were sampled uniformly
 over proteins, we show the distribution 
 of the relative position in figure \ref{fig:snp_rel_pos}.
 We find no clear evidence of a bias.
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation.png}
-  \caption{
-    Evolutionary conservation of SNPs in TMHs.
-  }
-  \label{fig:conservation}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation_per_spanner.png}
-  \caption{
-    Evolutionary conservation of SNPs in TMHs,
-    for either single- or multi-spanners
-  }
-  \label{fig:conservation_per_spanner}
-\end{figure}
 
 % \paragraph{Statistics}
 
