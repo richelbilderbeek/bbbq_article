@@ -702,15 +702,6 @@ but not in single-spanners.
   Discussion section needs some work, 
   as here interpretation of the results needs to be given. 
   What is the consequence of the findings? Why is it important. 
-
-  Now it is just a list of potential reasons why the results might be flawed. 
-  While this is in principle OK, 
-  it is also nitpicking as some things affect only a limited number of 
-  proteins (like selenoproteins) 
-  or you’d expect changes in the other direction (wrong prediction of TMHs for bacteria). 
-
-  So offer interpretations. 
-  The second part of the introduction would fit here well. I can also help with this.
 ]
 
 % \paragraph{General}
@@ -778,10 +769,15 @@ and in vivo work is needed to resolve this.
 
 \subsection{Evolutionary conservation of TMHs}
 
-% \paragraph{Selection undetectable in whole proteome}
+% \paragraph{Low number of SNPs}
 
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
+The NCBI dbSNP database contains millions of SNPs.
+As the NCBI API constrains its users to three calls per second
+to assure fair use, we had to limit the extent of our analysis.
+We assume we have taken a representative sample, but only
+an analysis using the full NCBI database can confirm this.
+
+% \paragraph{Selection undetectable in whole proteome}
  
 In general, on would hope that evolutionary selection results in
 an immune system that as most attentive for loci that are
@@ -794,13 +790,12 @@ Additionally, these essential parts differ widely between pathogens.
 Because of this scarcity and variance in targets, 
 one can imagine that the human immune system 
 is not tailored to detect these sites, 
- as hinted by upon by the aforementioned influenza study.
+as hinted by upon by a extensive study on influenza (\cite{han2019individual}),
+where it was found that the selection pressure
+exerted by the immune system was only limited.
  
 % \paragraph{Selection may be detectable in TMHs}
 
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
- 
 TMHs, on the other hand, also have their function constraints, 
 yet can occur multiple time a pathogen's proteome.
 One can safely assume a pathogen's proteome contains multiple TMHs.
@@ -811,83 +806,22 @@ peptides. This feature, however, may also be caused by selection
 to detect hydrophobic regions in the soluble proteins of pathogens.
 It is unknown, when focusing on TMHs only, if a signal of selection
 can be detected.
+We speculate that the human immune system is more attentive 
+towards TMHs, as it is a general structure, that is evolutionarily conserved.
 
-
-
-
-
-
-\subsection{Evolutionary conservation}
-
-[GVDB: 
-  This might be relevant, but you need to explain why it is relevant. 
-  Thus compare your findings with previous efforts 
-  to look at conservation of TMHs
-]
-% \paragraph{synonymous mutations}
-%
-In our evolutionary experiment, 
-we removed variations that were synonymous mutations (i.e.
-resulted in the same amino acid, from a different genetic code) 
-from our analysis.
-There is evidence, however, that these synonymous mutations
-do have an effect and may even be evolutionary selected 
-for (\cite{hunt2009silent}).
-As the possible effect of synonymous mutations is ignored by our
-topology prediction software, we do so as well.
-
-
-
-% \paragraph{Low number of SNPs}
-
-The NCBI dbSNP database contains millions of SNPs.
-As the NCBI API constrains its users to three calls per second,
-we had to limited the extent of our analysis.
-
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
-We concluded that the
-epitopes that MHC-I presents are [as/not as] likely 
-to be derived from TMH within either a human host and its bacterial pathogen.
-Because a bacterium does not infect a cell, thus its peptides
-will not be presented by MHC-I, this result is [unexpected/expected]
-
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
 We aimed our evolutionary experiment at TMHs, because these can
 be predicted well from a protein structure,
 are common structures and are present in all pathogens. 
 We could have done the same experiment on beta-turn,
 as also these can be predicted well (\cite{petersen2010netturnp}),
 are common structures and are present in all pathogens.
+We speculate that the human immune system may also be more attentive 
+towards beta turns for this reason.
 
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
-The human immune system and human pathogen are in an evolutionary
-arms race: our immune systems is selected for the detection
-of pathogens, whereas pathogens are selected to avoid detection.
-From a pathogen's point of view, however, this struggle 
-is of only minor importance:
-in seasonal influenza, for example, the selection pressure
-exerted by the immune system was only limited (\cite{han2019individual}).
-
-% \paragraph{Interesting haplotype for SARS-CoV-2}
-
-It is known that an individual's haplotype
-influences the dynamics of a pathogen.
-For example, in the fast-mutating HIV virus, 
-HLA haplotypes that are likelier to induce a specific T-cell response
-for the Gag protein slow down the disease's 
-progression \cite{eccleston2017host}.
-The bioinformatics pipeline developed in this
-study may be interesting to make in silico
-predictions of a SARS-CoV-2 infection.
-The most prominent example is the (MHC-I)
-haplotype HLA-A*24:02,
-which is predicted to present four times as much epitopes derived 
-from SARS-CoV-2 TMHs than expected by chance.
-This may help the immune system to detect a SARS-CoV-2 infection earlier,
-and change the infection's dynamics.
+[GVDB: 
+  Also compare your findings with previous efforts 
+  to look at conservation of TMHs
+]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgments}
@@ -1019,6 +953,18 @@ a SNP. One example is that sequence variations are incorrectly
 detected due to highly similar duplicated sequences \cite{musumeci2010single}.
 We assume that these duplications occur as often in TMHs as in
 regions around these, hence we expect this not to affect our results.
+
+% \paragraph{synonymous mutations}
+%
+In our evolutionary experiment, 
+we removed variations that were synonymous mutations (i.e.
+resulted in the same amino acid, from a different genetic code) 
+from our analysis.
+There is evidence, however, that these synonymous mutations
+do have an effect and may even be evolutionary selected 
+for (\cite{hunt2009silent}).
+As the possible effect of synonymous mutations is ignored by our
+topology prediction software, we do so as well.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50s per haplotype}
