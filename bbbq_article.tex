@@ -1067,10 +1067,28 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-See table \ref{tab:ncbi_counts} for an overview of all amounts.
+See tables \ref{tab:ncbi_counts_1} and tables \ref{tab:ncbi_counts_2}
+for an overview of all amounts.
+In table \ref{tab:ncbi_counts_1} one expects [RJCB: name these]
+numbers to add up. 
+The number of unique SNPs and unique gene names
+does not add up for MAP and TMP,
+as one SNP may work on multiple isoforms, some of which can be MAP
+where others can be TMP.
+The number of unique SNPs and unique gene names
+does not add up for TMPs in TMH and TMP in soluble regions
+as one SNP may work on multiple isoforms, some of which can be MAP
+where others can be TMP, and some SNPs fall in a TMH, where others
+are found in soluble regions
+In table \ref{tab:ncbi_counts_2} one expects [RJCB: name these]
+numbers to add up. 
 
-% Label: tab:ncbi_counts
-\input{ncbi_peregrine_results/ncbi_counts.tex}
+
+% Label: tab:ncbi_counts_1
+\input{ncbi_peregrine_results/ncbi_counts_1.tex}
+
+% Label: tab:ncbi_counts_2
+\input{ncbi_peregrine_results/ncbi_counts_2.tex}
 
 Figure \ref{fig:snps_per_gene_name_ncbi} shows the distribution of the
 number of SNPs per gene name, at 2020-12-14.
