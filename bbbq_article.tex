@@ -713,43 +713,71 @@ but not in single-spanners.
   The second part of the introduction would fit here well. I can also help with this.
 ]
 
-% \paragraph{Does MHC-I present TMH-derived epitopes from pathogens as often?}
+% \paragraph{General}
 
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
- 
-It is important that MHC-I presents both the peptides of the 
-(healthy) cell, as well as possible pathogen-derived peptides when the
-cell is infected. As described above, MHC-I presents TMH-derived epitopes 
-from the human host more often. It is unknown if MHC-I has the same
-dedication to present epitopes that stem from TMHs derived from
-proteins produced by pathogen, either would the pathogen
-be a virus or 
-a bacterium.
- 
+Our understanding of the immune system and epitope prediction is 
+important to fight disease. By this paper, we suggest that epitopes
+derived from TMHs are needlessly overlooked and may inspire to investigate
+new potential targets for combating pathogens.
+
+\subsection{Elution studies}
+
+% \paragraph{TMH presentation in vivo}
+
+From elution studies and in silico predictions, 
+we suggest that TMH-derived epitopes are presented in vivo.
+The biochemical intracellular pathway to achieve this,
+however, is still unknown. 
+
+% \paragraph{False positives}
+
+An additional unknown is, although our findings are robust,
+whether this is a false positive,
+due to additive methodological artifacts.
+An obvious artifact is that the elution studies used 
+will contain some unavoidable sequencing errors.
+Additionally, we assume that the epitopes naturally presented
+are derived from a cleanly translated proteome.
+Two known biological phenomena that violate this assumption
+are defective ribosomal products (DRiPs) (\cite{yewdell1996defective}) 
+and peptide fusion (\cite{delong2016pathogenic}),
+two processes that both result in peptide fragments
+that did not originate from genome directly.
+Also, the TMH prediction software is imperfect.
+This imperfection, however, appears to be of limited importance,
+as two different topology prediction software have similar results.
+Although those a couple of percent of epitopes that 
+can be mapped directly to the proteome,
+there is methodological bias caused by mass spectronomy,
+as hydrophobic fragments are detected less 
+by mass spectronomy. This means that the number of TMH-derived epitopes
+is underestimated.
+in vivo work in the lab will be needed to resolve this finding.
+
+\subsection{Presentation of epitopes derived from TMHs}
+
 % \paragraph{MHC-II is expected to present TMHs}
 
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
- 
-If presentation of TMHs on MHC-I would bring an evolutionary advantage 
-in the recognition of pathogens by the immune system, 
-it would follow that this is equally important for MHC-II, 
-especially as the help of CD4+ T cells is needed for a long lasting CD8+ T cell 
-response (\cite{novy2007cd4}). 
-The mechanism to detect foreign TMHs by MHC-II would be unknown, 
-similar to the discovery that MHC-I presents TMHs.
- 
-% \paragraph{Does MHC-II present TMH-derived epitopes from pathogens as often?}
+This study predict that TMH-derived epitopes are over-presented
+in MHC-II as well. 
+The intracellular pathway of MHC-II differs from that of MHC-I,
+as it acquires epitopes from the exterior of the cell by phagocytosis.
+How TMHs derived from exterior TMPs are lysed and loaded onto MHC-II 
+is unknown. in vivo work is needed to elucidate this novel pathway.
 
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
- 
-It is unknown if MHC-II, like MHC-I, 
-presents TMH-derived epitopes as often, either 
-in humans,
-bacteria or viruses.
- 
+% \paragraph{Immunogenicity}
+
+In this study, we find that TMH-derived epitopes are over-presented.
+The presentation of an epitope, however, 
+is only a first step of an adaptive immune response.
+We assume that the presentation of epitopes is
+correlated with evoking a full immune response.
+TMH-derived epitopes, however, are more hydrophobic than the average
+epitope. If this evokes a stronger or weaker immune response is unknown,
+and in vivo work is needed to resolve this.
+
+\subsection{Evolutionary conservation of TMHs}
+
 % \paragraph{Selection undetectable in whole proteome}
 
 [RJCB: this paragraph I ruthlessly moved
@@ -783,58 +811,11 @@ peptides. This feature, however, may also be caused by selection
 to detect hydrophobic regions in the soluble proteins of pathogens.
 It is unknown, when focusing on TMHs only, if a signal of selection
 can be detected.
- 
-% \paragraph{Use of protein data in phylogenetics}
 
-[RJCB: this paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
- 
-When using DNA sequences, one can use a skewed rate
-in non- versus synonymous mutation
-to detect the signature of selection (\cite{murrell2015gene}).
-Using AA sequences, however, has its advantages,
-as its is closer to the actual phenotype
-selection acts upon: DNA may never be transcribed to RNA,
-or its RNA may never be translated (\cite{diz2012proteomics}).
-When using a proteome in phylogenetic research,
-we know that the majority of proteins are selected to just
-maintain their function most of the time, where
-is the time spans there is selection, only a few AAs
-can actually increase the 'fitness' of the
-protein (\cite{anisimova2009investigating}).
-There, when generalizing the dynamics of mostly purifying selection (to maintain
-a protein's function) and a short duration of positive selection,
-those genes that are selected cannot be detected (\cite{yang2000statistical}).
 
-[RJCB: that was the last paragraph I ruthlessly moved
-from introduction to here, as was suggested by GVDB]
 
-\subsection{Elution studies}
 
-% \paragraph{False positives}
 
-We assume that epitopes 
-derived from TMHs are actually presented by MHC-I and MHC-II.
-Our analysis (at subsection \ref{subsec:elution_studies}) 
-finds that 1.4\% (for MHC-I) and 4.0% (for MHC-II) 
-of the epitopes presented 
-overlap with a TMH.
-It is unsure if this a true finding or a false positive.
-One source of noise would stem from imperfect predictions
-by the topology prediction software used. 
-We have counteracted this by using two different topology prediction
-software and confirm these have similar results.
-Two biological sources of noise [GVDB: What do you mean by noise?]
-are defective ribosomal products (DRiPs) (\cite{yewdell1996defective}) 
-and peptide fusion \cite{delong2016pathogenic},
-two processes that both result in peptide fragments
-that did not originate from genome directly.
-Note however, that both elution studies have a
-methodological bias caused by mass spectronomy,
-as hydrophobic fragments are detected less 
-by mass spectronomy.
-
-\subsection{\% epitopes overlapping with TMHs}
 
 \subsection{Evolutionary conservation}
 
