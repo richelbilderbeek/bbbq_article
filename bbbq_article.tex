@@ -881,9 +881,6 @@ A part of this study does the same analysis as Bianchi et al., 2017.
 Here we describe the deviations, which are about the use of different
 software and the use of a different definition of what a binder is.
 
-% Percentage of spots and spots that overlap with a TMH
-\input{bbbq_1_smart_results/table_f_tmh_2.latex}
-
 % \paragraph{IC50 prediction software}
 
 The earlier study uses \verb;epitope-prediction; a hand-crafted method, 
@@ -919,8 +916,27 @@ we can call it from scripts) and, due to this, we removed the
 selenoproteins from this analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Percentage of spots and spots that overlap with a TMH}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Table \ref{tab:f_tmh} shows an overview of the findings,
+where a target specifies the source of the proteome,
+where \verb;covid; denotes SARS-CoV-2 and \verb;covid; denotes
+Mycobacterium tuberculosis. \verb;mhc_class; denotes the MHC
+class, \verb;n_spots; the number of possible 9-mers (for MHC-I) 
+or 14-mers (for MHC-II) possible. \verb;n_spots_tmh; the
+number of epitopes that overlapped with a TMH that were binders. 
+\verb;f_tmh; the percentage of peptides that had at least 1 residue
+overlapping with a TMH.
+
+% Label: tab:f_tmh
+\input{bbbq_1_smart_results/table_f_tmh_2.latex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Minor methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+These are details that are removed from the 'Methods' section.
 
 PureseqTM does not predict the topology
 of proteins that have less than three amino acids. 
@@ -932,6 +948,8 @@ predicts that mono- and di-peptides are cytosolic.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Minor discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+These are details that are removed from the 'Discussion' section.
 
 % \paragraph{Bacteria have a different cell membrane}
 
