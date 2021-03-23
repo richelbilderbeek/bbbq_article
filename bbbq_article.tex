@@ -189,7 +189,7 @@ viral (SARS-CoV-2, UniProt ID UP000464024)
 and bacterial (Mycobacterium tuberculosis (MTb), UniProt ID UP000001584) 
 reference proteome. The pathogens were chosen based 
 on their impact on the human 
-population \frans{Add references here}.
+population \richel{ref}.
 We used TMHMM  \richel{ref} to predict the topology 
 of the proteins within the proteome.
 To predict the affinity of an epitope to a certain MHC molecule,
@@ -221,38 +221,23 @@ that give rise to no or only very few MHC epitopes
 
 % \paragraph{Introduction}
 
-To detect the evolutionary conservation of TMHs, 
-single nucleotide
-polymorphisms (SNPs) within the human population
-that resulted in the substitution of one amino acid were collected from ??? and tallied if
-the SNP occurred within a TMH or not. Using statistics is was determined if there are more, less or an equal amount of SNPs in TMHs
-as a measure of evolutionary conservation.
-This workflow is discussed in more detail below.
+To detect the evolutionary conservation of TMHs,
+we collected human single nucleotide polymorphisms (SNPs)
+that resulted in a single amino the substitution,
+and tallied if this substitution occurred within a TMH or not.
+From that tally, we determined how likely the number of SNPs
+found in TMHs is by chance.
 
 % \paragraph{Data}
 
 As a data source, multiple
-NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used,
-which are 'gene',\frans{snap ik niet which are gene?} to find the gene names of membrane proteins, 
-'dbSNP' (\cite{sherry2001dbsnp}) for SNPs associated with those genes
-and 'protein', to obtain the sequence of proteins that SNPs act upon.
-The 'dbSNP' contains 650 million 
+NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used.
+Pivotal was the 'dbSNP' (\cite{sherry2001dbsnp}) database,
+which contains 650 million 
 catalogued non-redundant humane variations (called RefSNPs,
 \url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}).
-
-% \paragraph{Data retrieval}
-
-\frans{ dit is relevant waarom: ?} To retrieve the data from these databases the
-\verb;rentrez; R package (\cite{rentrez}) was used
-that calls the NCBI website's API. To provide for a 
-stable user experience for all users, 
-this API limits the user to 3 calls per second.
-Additionally, the API splits the result of a bigger
-query into multiple pages, each of which needs one API call.
-We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
-bigger queries of multiple (and delayed) API calls.}
-
-\richel{Processed all of Frans feedback here}
+Additionally, the aptly-named 'gene' (for gene names)
+and 'protein' (for proteins sequences) database were used.
 
 % \paragraph{Pipeline}
 
@@ -276,11 +261,11 @@ was limited to the first 250 variations per gene (see figure
 within the dbSNP database for these gene names),
 resulting in 60,683 variations at the protein level.
 Only variations that result in a SNP for
-a single amino acid substitution were analysed, resulting in 38,882 SNPs.
+a single amino acid substitution were analyzed, resulting in 38,882 SNPs.
 
 % \paragraph{Selection of SNPs}
 %
-SNPs were picked based on ID number, which is linked to their discovery date. To verify that ID number is unrelated to SNP positions the relative positons of the analyzed SNPS in a protein was determined and showed no positional bias, shown in figure \ref{fig:snp_rel_pos}.
+SNPs were picked based on ID number, which is linked to their discovery date. To verify that ID number is unrelated to SNP positions the relative positions of the analyzed SNPS in a protein was determined and showed no positional bias, shown in figure \ref{fig:snp_rel_pos}.
 
 Per SNP, the 'protein' NCBI database was queried for the
 protein sequence.
@@ -829,8 +814,6 @@ selenoproteins from this analysis.
 \label{subsec:prediction_software_used}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[RJCB: I suggest to move this section to the Supplementary Materials]
-\frans{lijkt mij een goed idee}
 \begin{table}[]
   \begin{tabular}{llll}
     Goal & Tool & Reference \\ 
@@ -892,6 +875,18 @@ gave rise to the most accurate predictions.
 The most recent and promising FOSS tool available now appears
 to be MHCnuggets (\cite{shao2020high}), which can do both MHC-I 
 and MHC-II prediction, which we used for MHC-II predictions.
+
+% \paragraph{NCBI data retrieval software}
+
+To retrieve the data from the NCBI databases the
+\verb;rentrez; R package (\cite{rentrez}) was used
+that calls the NCBI website's API. To provide for a 
+stable user experience for all users, 
+this API limits the user to 3 calls per second.
+Additionally, the API splits the result of a bigger
+query into multiple pages, each of which needs one API call.
+We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
+bigger queries of multiple (and delayed) API calls.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Percentage of spots and spots that overlap with a TMH}
