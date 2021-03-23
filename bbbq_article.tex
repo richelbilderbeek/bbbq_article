@@ -145,38 +145,18 @@ overlooked importance of TMHs in the immune response and vaccine development.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \paragraph{Data sets for TMH epitopes}
+A human, viral and bacterial reference proteome was used to determine the percentages of epitopes overlapping with TMHs. The human reference proteome has UniProt ID UP000005640_9606, which is a representative set of the full proteome and also used in our previous study (\cite{bianchi2017}).  SARS-CoV-2 with reference proteome UniProt ID UP000464024 was used as a viral proteome and Mycobacterium tuberculosis (MTb) with UniProt ID UP000001584 was used . These pathogens were chosen based on their impact on the human population(references).
 
-We used a human, viral and bacterial reference proteome to 
-determine the percentages of epitopes overlapping
-with TMHs.
-We used a human reference proteome
-with UniProt ID UP000005640\_9606, which
-is a representative set of the full proteome
-and used is our previous study (\cite{bianchi2017}).
-We used SARS-CoV-2 as our viral reference proteome
-with UniProt ID UP000464024 and
-Mycobacterium tuberculosis (MTb) 
-with UniProt ID UP000001584.
-We chose these pathogens based on their impact on the human population.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Elution studies}\label{subsec:elution_studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To determine if epitopes derived from TMHs are presented at all,
-we started from epitopes identified in elution studies
+To determine if epitopes derived from TMHs are presented we used epitopes identified in \frans{Welke studies is dit dan van SARS-COV2 en MTB ?}
 for MHC-I (\cite{schellens2015comprehensive}) 
-and MHC-II (\cite{bergseng2015different}).
-For each of these peptides, the human representative reference proteome
-was searched for its origin.
-We kept only the epitopes which were uniquely present
-in the proteome.
-We predicted the topology of the proteome
-and counted how often the epitopes overlapped
-with a predicted TMH.
-In this analysis, both TMHMM and 
-PureseqTM (see section 'Prediction software used') 
-were used to predict the topology.
+and MHC-II (\cite{bergseng2015different})peptide elution studies.
+For each of these peptides, the human representative reference proteome was searched for its origin\frans{wat bedoel je?}. We filtered for epitopes that were uniquely present in the proteome and correlated these for overlap with predicted transmembrane regions in the proteome. 
+In this analysis, both TMHMM and PureseqTM (see section ’Prediction software used’) were used to predict the transmembrane topology. 
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 
@@ -184,8 +164,7 @@ at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 \subsection{Measuring TMH epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To determine the percentages of MHC-I and MHC-II epitopes overlapping
-with TMHs, we used mostly the same analysis as described in \cite{bianchi2017}.
+To determine the percentages of MHC-I and MHC-II epitopes overlapping with TMHs, we applied a similar analysis strategy as described in  \cite{bianchi2017}.
 To summarize: from a proteome all possible 9-mers are derived. For each
 of these peptides, it was determined if it was part of a 
 TMH (at least overlapping with 1 residue), 
@@ -194,18 +173,8 @@ For MHC-II, 14-mers were used, as these are the most frequently occurring
 epitope length (\cite{bergseng2015different}).
 
 This study differs in some aspects from our previous work (\cite{bianchi2017}), 
-described below in more detail.
-The main differences are our definition of what a so-called binder is, 
-the inclusion of both MHC-I and MHC-II haplotypes, 
-the prediction software used, 
-and the significance level to determine if TMH-derived peptides will bind.
-These deviations are either a refinement of our previous approach or
-a pragmatic choice made due to the extension of the original experiment.
-Additionally, instead of only using a human proteome, this study
-also includes a viral and bacterial proteome.
-
 The definition of a binder differs from \cite{bianchi2017}:
-in our current study a peptide was called a binder if, within a certain haplotype, 
+in the current study a peptide is called a binder if, within a certain haplotype, 
 any of its 9-mer peptides have an IC50 value in the lowest 2\% of 
 the epitopes within a 
 \emph{proteome} (see tables \ref{tab:ic50_binders_mhc1} and \ref{tab:ic50_binders_mhc2}
@@ -217,14 +186,14 @@ We believe our revised definition precludes bias of proteins
 that give rise to no or only very few MHC epitopes
 
 The 13 MHC-I haplotypes used in this study are the same as 
-we used in our previous study (\cite{bianchi2017}).
+used in our previous study (\cite{bianchi2017}).
 The MHC-II haplotypes used additionally were selected 
 to occur with a phenotypic frequency of at least 14\% in
 the human population (\cite{greenbaum2011functional}),
 resulting in 21 haplotypes.
 When using an MHC-II haplotype, instead of using 9-mers, 14-mers were
 used, as these are the most common MHC-II epitope size,
-as found in the elution study (\cite{bergseng2015different}).
+as found in the elution study (\cite{bergseng2015different}).\frans{what percentage is 9 mer or 14 mer?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Evolutionary conservation of TMHs}
@@ -233,15 +202,10 @@ as found in the elution study (\cite{bergseng2015different}).
 % \paragraph{Introduction}
 
 To detect the evolutionary conservation of TMHs, 
-we collected human mutations and 
-tallied their predicted location.
-To be more precise, we collected single nucleotide
+single nucleotide
 polymorphisms (SNPs) within the human population
-that resulted in the substitution of one amino acid.
-We then predicted that protein's topology and tallied if
-the SNP occurred within a TMH or not, 
-after which we used statistics to determine if there are
-more, less or an equal amount of SNPs in TMHs
+that resulted in the substitution of one amino acid were collected from ??? and tallied if
+the SNP occurred within a TMH or not. Using statistics is was determined if there are more, less or an equal amount of SNPs in TMHs
 as a measure of evolutionary conservation.
 This workflow is discussed in more detail below.
 
@@ -249,7 +213,7 @@ This workflow is discussed in more detail below.
 
 As a data source, multiple
 NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used,
-which are 'gene', to find the gene names of membrane proteins, 
+which are 'gene',\frans{snap ik niet which are gene?} to find the gene names of membrane proteins, 
 'dbSNP' (\cite{sherry2001dbsnp}) for SNPs associated with those genes
 and 'protein', to obtain the sequence of proteins that SNPs act upon.
 The 'dbSNP' contains 650 million 
@@ -258,7 +222,7 @@ catalogued non-redundant humane variations (called RefSNPs,
 
 % \paragraph{Data retrieval}
 
-To retrieve the data from these databases the
+\frans{ dit is relevant waarom: ? To retrieve the data from these databases the
 \verb;rentrez; R package (\cite{rentrez}) was used
 that calls the NCBI website's API. To provide for a 
 stable user experience for all users, 
@@ -266,7 +230,7 @@ this API limits the user to 3 calls per second.
 Additionally, the API splits the result of a bigger
 query into multiple pages, each of which needs one API call.
 We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
-bigger queries of multiple (and delayed) API calls.
+bigger queries of multiple (and delayed) API calls.}
 
 % \paragraph{Pipeline}
 
@@ -289,21 +253,12 @@ was limited to the first 250 variations per gene (see figure
 \ref{fig:snps_per_gene_name_ncbi} for the number of SNPs
 within the dbSNP database for these gene names),
 resulting in 60,683 variations at the protein level.
-A variation needs not always be a SNP,
-as dbSNP also catalogs other DNA alterations, such as, among others, insertions,
-deletions and tandem repeats.
-We select only the variations that result in a SNP for
-a single amino acid substitution, resulting in 38,882 SNPs.
+Only variations that result in a SNP for
+a single amino acid substitution were analysed, resulting in 38,882 SNPs.
 
 % \paragraph{Selection of SNPs}
 %
-We selected to analyze SNPs with the lowest SNP ID first.
-This means we have a bias for picking SNPs with
-an earlier discovery date.
-We expect this bias to be biologically irrelevant.
-To verify this expectation, we determined the
-relative position of each SNP in a protein,
-as shown in figure \ref{fig:snp_rel_pos}.
+SNPs were picked based on ID number, which is linked to their discovery date. To verify that ID number is unrelated to SNP positions the relative positons of the analyzed SNPS in a protein was determined and showed no positional bias, shown in figure \ref{fig:snp_rel_pos}.
 
 Per SNP, the 'protein' NCBI database was queried for the
 protein sequence.
@@ -319,7 +274,7 @@ where the change occurred.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [RJCB: I suggest to move this section to the Supplementary Materials]
-
+\frans{lijkt mij een goed idee}
 \begin{table}[]
   \begin{tabular}{llll}
     Goal & Tool & Reference \\ 
