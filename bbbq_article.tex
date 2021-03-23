@@ -144,19 +144,25 @@ overlooked importance of TMHs in the immune response and vaccine development.
 \section{Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \paragraph{Data sets for TMH epitopes}
-A human, viral and bacterial reference proteome was used to determine the percentages of epitopes overlapping with TMHs. The human reference proteome has UniProt ID UP000005640_9606, which is a representative set of the full proteome and also used in our previous study (\cite{bianchi2017}).  SARS-CoV-2 with reference proteome UniProt ID UP000464024 was used as a viral proteome and Mycobacterium tuberculosis (MTb) with UniProt ID UP000001584 was used . These pathogens were chosen based on their impact on the human population(references).
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Elution studies}\label{subsec:elution_studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To determine if epitopes derived from TMHs are presented we used epitopes identified in \frans{Welke studies is dit dan van SARS-COV2 en MTB ?}
+To determine if epitopes derived from TMHs are presented 
+we used two elution studies, which both have sequenced
+epitopes found in naturally occurring human immune cells,
 for MHC-I (\cite{schellens2015comprehensive}) 
-and MHC-II (\cite{bergseng2015different})peptide elution studies.
-For each of these peptides, the human representative reference proteome was searched for its origin\frans{wat bedoel je?}. We filtered for epitopes that were uniquely present in the proteome and correlated these for overlap with predicted transmembrane regions in the proteome. 
-In this analysis, both TMHMM and PureseqTM (see section ’Prediction software used’) were used to predict the transmembrane topology. 
+and MHC-II (\cite{bergseng2015different}).
+For each of the sequenced epitopes,
+we found its possible location(s) in 
+a human representative reference proteome,
+with UniProt ID UP000005640_9606.
+For the epitopes that were found exactly once in the proteome,
+we predicted the topology of the proteins in which the epitopes are found.
+We used both TMHMM and PureseqTM to do these predictions. 
+From this topology, we could determine if the epitope
+overlapped with a transmembrane regions.
+
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 
@@ -164,13 +170,37 @@ at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 \subsection{Measuring TMH epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To determine the percentages of MHC-I and MHC-II epitopes overlapping with TMHs, we applied a similar analysis strategy as described in  \cite{bianchi2017}.
-To summarize: from a proteome all possible 9-mers are derived. For each
-of these peptides, it was determined if it was part of a 
-TMH (at least overlapping with 1 residue), 
-and if the peptide bound to an MHC-I haplotype.
-For MHC-II, 14-mers were used, as these are the most frequently occurring
+To determine how frequently epitopes overlapping with TMHs are presented,
+we applied a similar analysis strategy as described in \cite{bianchi2017}.
+To investigate the generality of this, we applied this analysis
+for several haplotypes of both MHC-I and MHC-II, 
+as well as for a human, viral and bacterial proteome.
+To summarize, for each proteome, 
+all possible 9-mers (for MHC-I) or 14-mers (MHC-II) are derived. 
+For each of these peptides, we determined if it overlapped with a 
+TMH and if it was a binder for each haplotype.
+
+For MHC-I, 9-mers were used, as this is the length used in our earlier
+study (\cite{bianchi2017}). For MHC-II, 14-mers were used, 
+as these are the most frequently occurring
 epitope length (\cite{bergseng2015different}).
+We used a human (UniProt ID UP000005640_9606), 
+viral (SARS-CoV-2, UniProt ID UP000464024) 
+and bacterial (Mycobacterium tuberculosis (MTb), UniProt ID UP000001584) 
+reference proteome. The pathogens were chosen based 
+on their impact on the human 
+population \frans{Add references here}.
+We used TMHMM  \richel{ref} to predict the topology 
+of the proteins within the proteome.
+To predict the affinity of an epitope to a certain MHC molecule,
+we used \verb;EpitopePrediction; (\cite{bianchi2017}) for MHC-I 
+and \verb;MHCnuggets; \richel{ref} for MHC-II.
+The 13 MHC-I haplotypes used in this study are the same as 
+used in our previous study (\cite{bianchi2017}).
+The MHC-II haplotypes used additionally were selected 
+to occur with a phenotypic frequency of at least 14\% in
+the human population (\cite{greenbaum2011functional}),
+resulting in 21 haplotypes.
 
 This study differs in some aspects from our previous work (\cite{bianchi2017}), 
 The definition of a binder differs from \cite{bianchi2017}:
@@ -184,16 +214,6 @@ of the peptides within a \emph{protein}.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
 We believe our revised definition precludes bias of proteins 
 that give rise to no or only very few MHC epitopes
-
-The 13 MHC-I haplotypes used in this study are the same as 
-used in our previous study (\cite{bianchi2017}).
-The MHC-II haplotypes used additionally were selected 
-to occur with a phenotypic frequency of at least 14\% in
-the human population (\cite{greenbaum2011functional}),
-resulting in 21 haplotypes.
-When using an MHC-II haplotype, instead of using 9-mers, 14-mers were
-used, as these are the most common MHC-II epitope size,
-as found in the elution study (\cite{bergseng2015different}).\frans{what percentage is 9 mer or 14 mer?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Evolutionary conservation of TMHs}
@@ -267,75 +287,6 @@ using PureseqTM.
 From the topology and the known location of the SNP, 
 we score the location (i.e. TMH or soluble protein region) 
 where the change occurred.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prediction software used}
-\label{subsec:prediction_software_used}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-[RJCB: I suggest to move this section to the Supplementary Materials]
-\frans{lijkt mij een goed idee}
-\begin{table}[]
-  \begin{tabular}{llll}
-    Goal & Tool & Reference \\ 
-    \hline
-    Predict topology                  & TMHMM                     & \cite{krogh2001predicting} \\
-    Predict topology                  & PureseqTM                 & \cite{wang2019efficient} \\
-    Predict epitopes MHC-I            & \verb;epitope-prediction; & \cite{bianchi2017} \\
-    Predict epitopes MHC-II           & NetMHCIIpan               & \cite{nielsen2008quantitative,karosiene2013netmhciipan} \\
-    Call TMHMM from R                 & tmhmm                     & \cite{tmhmm} \\
-    Call PureseqTM from R             & pureseqtmr                & \cite{pureseqtmr} \\
-    Call NetMHCIIpan from R           & netmhc2pan                & \cite{netmhc2pan} \\
-    Combine all                       & bbbq                      & \cite{bbbq}
-  \end{tabular}
-  \caption{
-    Overview of all software used in this research.
-  }
-  \label{table:software_used}
-\end{table}
-
-For this research, the scientific literature was explored 
-to identify the most recent free and open source (FOSS) prediction software.
-This was done by searching for papers that (1) reference older
-prediction software, and (2) present a novel method to make predictions.
-As a starting point, a review paper was used.
-For all software needed, we found no studies that compared contemporary tools 
-in their prediction quality.
-
-% \paragraph{TMH prediction}
-
-There are multiple computational tools developed to predict which
-parts of a protein forms a TMH.
-In 2001, multiple of such prediction tools have been compared (\cite{moller2001evaluation}),
-of which TMHMM (\cite{krogh2001predicting}) turned out to be the best, 
-as is used in the previous study (\cite{bianchi2017}).
-However, TMHMM has a restrictive software license and is nearly two
-decades old.
-Therefore, PureseqTM (\cite{wang2019efficient}),
-was also used in this study, which has been more recently developed
-and has a free software license.
-
-% \paragraph{MHC-I epitope prediction}
-
-For MHC-I, there are multiple computational tools developed 
-to predict epitopes. 
-According to \cite{lundegaard2011prediction}, at that time,
-NetMHCcons (\cite{karosiene2012netmhccons}) gave the best predictions.
-We used the same tool as used in our earlier study, \verb;epitope-prediction; (\cite{bianchi2017}),
-
-% \paragraph{MHC-II epitope prediction}
-
-Also for MHC-II, there are multiple computational tools developed 
-to predict epitopes,
-such as using a trained neural network (\cite{nielsen2003reliable})
-or a Gibbs sampling approach (\cite{nielsen2004improved}).
-According to \cite{lundegaard2011prediction}, in 2011,
-from a set of multiple tools, 
-NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
-gave rise to the most accurate predictions.
-The most recent and promising FOSS tool available now appears
-to be MHCnuggets (\cite{shao2020high}), which can do both MHC-I 
-and MHC-II prediction, which we used for MHC-II predictions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software written}
@@ -870,6 +821,75 @@ reference proteome.
 For the sake of reproducible research, we use the desktop version (as
 we can call it from scripts) and, due to this, we removed the
 selenoproteins from this analysis.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prediction software used}
+\label{subsec:prediction_software_used}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[RJCB: I suggest to move this section to the Supplementary Materials]
+\frans{lijkt mij een goed idee}
+\begin{table}[]
+  \begin{tabular}{llll}
+    Goal & Tool & Reference \\ 
+    \hline
+    Predict topology                  & TMHMM                     & \cite{krogh2001predicting} \\
+    Predict topology                  & PureseqTM                 & \cite{wang2019efficient} \\
+    Predict epitopes MHC-I            & \verb;epitope-prediction; & \cite{bianchi2017} \\
+    Predict epitopes MHC-II           & NetMHCIIpan               & \cite{nielsen2008quantitative,karosiene2013netmhciipan} \\
+    Call TMHMM from R                 & tmhmm                     & \cite{tmhmm} \\
+    Call PureseqTM from R             & pureseqtmr                & \cite{pureseqtmr} \\
+    Call NetMHCIIpan from R           & netmhc2pan                & \cite{netmhc2pan} \\
+    Combine all                       & bbbq                      & \cite{bbbq}
+  \end{tabular}
+  \caption{
+    Overview of all software used in this research.
+  }
+  \label{table:software_used}
+\end{table}
+
+For this research, the scientific literature was explored 
+to identify the most recent free and open source (FOSS) prediction software.
+This was done by searching for papers that (1) reference older
+prediction software, and (2) present a novel method to make predictions.
+As a starting point, a review paper was used.
+For all software needed, we found no studies that compared contemporary tools 
+in their prediction quality.
+
+% \paragraph{TMH prediction}
+
+There are multiple computational tools developed to predict which
+parts of a protein forms a TMH.
+In 2001, multiple of such prediction tools have been compared (\cite{moller2001evaluation}),
+of which TMHMM (\cite{krogh2001predicting}) turned out to be the best, 
+as is used in the previous study (\cite{bianchi2017}).
+However, TMHMM has a restrictive software license and is nearly two
+decades old.
+Therefore, PureseqTM (\cite{wang2019efficient}),
+was also used in this study, which has been more recently developed
+and has a free software license.
+
+% \paragraph{MHC-I epitope prediction}
+
+For MHC-I, there are multiple computational tools developed 
+to predict epitopes. 
+According to \cite{lundegaard2011prediction}, at that time,
+NetMHCcons (\cite{karosiene2012netmhccons}) gave the best predictions.
+We used the same tool as used in our earlier study, \verb;epitope-prediction; (\cite{bianchi2017}),
+
+% \paragraph{MHC-II epitope prediction}
+
+Also for MHC-II, there are multiple computational tools developed 
+to predict epitopes,
+such as using a trained neural network (\cite{nielsen2003reliable})
+or a Gibbs sampling approach (\cite{nielsen2004improved}).
+According to \cite{lundegaard2011prediction}, in 2011,
+from a set of multiple tools, 
+NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
+gave rise to the most accurate predictions.
+The most recent and promising FOSS tool available now appears
+to be MHCnuggets (\cite{shao2020high}), which can do both MHC-I 
+and MHC-II prediction, which we used for MHC-II predictions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Percentage of spots and spots that overlap with a TMH}
