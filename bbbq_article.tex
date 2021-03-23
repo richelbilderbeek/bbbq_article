@@ -156,7 +156,7 @@ and MHC-II (\cite{bergseng2015different}).
 For each of the sequenced epitopes,
 we found its possible location(s) in 
 a human representative reference proteome,
-with UniProt ID UP000005640_9606.
+with UniProt ID UP000005640\_9606.
 For the epitopes that were found exactly once in the proteome,
 we predicted the topology of the proteins in which the epitopes are found.
 We used both TMHMM and PureseqTM to do these predictions. 
@@ -184,7 +184,7 @@ For MHC-I, 9-mers were used, as this is the length used in our earlier
 study (\cite{bianchi2017}). For MHC-II, 14-mers were used, 
 as these are the most frequently occurring
 epitope length (\cite{bergseng2015different}).
-We used a human (UniProt ID UP000005640_9606), 
+We used a human (UniProt ID UP000005640\_9606), 
 viral (SARS-CoV-2, UniProt ID UP000464024) 
 and bacterial (Mycobacterium tuberculosis (MTb), UniProt ID UP000001584) 
 reference proteome. The pathogens were chosen based 
@@ -242,7 +242,7 @@ catalogued non-redundant humane variations (called RefSNPs,
 
 % \paragraph{Data retrieval}
 
-\frans{ dit is relevant waarom: ? To retrieve the data from these databases the
+\frans{ dit is relevant waarom: ?} To retrieve the data from these databases the
 \verb;rentrez; R package (\cite{rentrez}) was used
 that calls the NCBI website's API. To provide for a 
 stable user experience for all users, 
@@ -251,6 +251,8 @@ Additionally, the API splits the result of a bigger
 query into multiple pages, each of which needs one API call.
 We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
 bigger queries of multiple (and delayed) API calls.}
+
+\richel{Processed all of Frans feedback here}
 
 % \paragraph{Pipeline}
 
