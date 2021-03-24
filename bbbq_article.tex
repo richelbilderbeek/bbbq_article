@@ -201,6 +201,11 @@ The MHC-II haplotypes used additionally were selected
 to occur with a phenotypic frequency of at least 14\% in
 the human population (\cite{greenbaum2011functional}),
 resulting in 21 haplotypes.
+\richel{This is Frans' text: 
+Unlike MHC-I where only one variable chain determines the landscape of the epitope binding pocket allowing for the classification of 5 HLA-A and 8 HLA-B superhaplotypes with .... variation in peptide binding repertoire, the MHC-II peptide binding groove is determined by both the alpha and beta chain. For HLA DQ both the alpha and beta chain is highly polymorphic  ..... \frans{why is HLA-DP not predicted?}
+We took the alleles that represent percentage of the occurrence int he overall human population according to ... et al. 
+}
+
 
 This study differs in some aspects from our previous work (\cite{bianchi2017}), 
 The definition of a binder differs from \cite{bianchi2017}:
@@ -296,11 +301,7 @@ PureseqTM (\cite{krogh2001predicting} and \cite{wang2019efficient} respectively)
 Regardless of the prediction, 
 at least 100 epitopes were predicted to be derived from a TMH. 
 From these findings, it is robustly predicted that
-epitopes derived from TMHs are presented by B cells [For Frans: please check
-that the article by Bergseng, 2015, 'Different binding motifs of the celiac 
-disease-associated HLA molecules DQ2. 5, DQ2. 2, and DQ7. 5 revealed by 
-relative quantitative proteomics of endogenous peptide repertoires'
-is appropriate. As far as I can see, it is, but I may overlook something. Richel].
+epitopes derived from TMHs are presented by B cells.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -330,15 +331,18 @@ The extent of the over-presentation between the various different HLA supertypes
 \subsection{MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We next wondered if this over-representation would also generalize to MHC-II. \frans{ you say MHC-II but this is very general I think you have to explain the choice for these haplotypes.}
-Unlike MHC-I where only one variable chain determines the landscape of the epitope binding pocket allowing for the classification of 5 HLA-A and 8 HLA-B superhaplotypes with .... variation in peptide binding repertoire, the MHC-II peptide binding groove is determined by both the alpha and beta chain. For HLA DQ both the alpha and beta chain is highly polymorphic  ..... \frans{why is HLA-DP not predicted?}
-We took the alleles that represent percentage of the occurrence int he overall human population according to ... et al. 
+We next wondered if this over-representation would also generalize to MHC-II. 
 Figure \ref{fig:2} shows the percentages of MHC-II epitopes overlapping 
 with TMHs for our human, viral and bacterial proteome.
 See the supplementary materials (table \ref{tab:tmh_binders_mhc2}) 
 for the TMH and epitope counts.
 We show that MHC-II has the same pattern of over-presentation
-as MHC-I, yet this over-presentation is more pronounced. \frans{we should explain this does it like shown for mhc-I also linearly correlates with the hydrophopbicity of the MHC-II binding celft?}
+as MHC-I, yet this over-presentation is more pronounced. 
+\frans{
+  we should explain this does it like shown for mhc-I also 
+  linearly correlates with the hydrophopbicity 
+  of the MHC-II binding cleft?
+}
 Also for MHC-II, we observe that the extent to which TMH-derived
 epitopes are presented is similar between the haplotypes, for
 a human, bacterial and viral proteome.
@@ -484,50 +488,6 @@ for 100 SNPs found in soluble regions of multi-spanners,
 one finds 89.6 SNPs in TMHs, as shown by \frans{it says 91,1 in fig 4}
 figure \ref{fig:conservation_per_spanner}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}\frans{why comes this section before discussion?}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \paragraph{General pattern in epitope presentation}
-
-From this study, two important conclusions can be drawn. 
-First, the MHC over-presentation of TMHs is likely a general feature 
-and predicted to occur for most haplotypes of both MHC-I and -II 
-and for humans as well as bacterial and viral pathogens. 
-Second, TMHs are more evolutionary conserved that soluble protein motifs, 
-at least in the human proteome. 
-
-% \paragraph{Over-presentation in vivo in MHC-I is robust}
-
-We confirm that 1.4\% of epitopes that are naturally presented on MHC-I 
-can be mapped to stem from a TMH. Additionally, this 
-prediction is robust, as it holds for two TMH prediction tools, 
-as shown by table \ref{tab:elution}).
-
-% \paragraph{Over-presentation in vivo in MHC-II is robust}
-
-We predict that also MHC-II presents epitopes derived from TMHs
-in vivo, as we find that 3.9-4.0\% of sequenced epitopes
-can be uniquely traced onto a human reference 
-proteome (also shown in table \ref{tab:elution}).
-
-% \paragraph{Over-presentation in silico}
-
-Not only do we predict that MHC-I and MHC-II TMH-derived epitopes 
-are presented in vivo, we conclude that these are additionally
-presented more often than expected by chance 
-alone (figures \ref{fig:1} and \ref{fig:2}).
-This in silico finding is a general pattern 
-that persists in both MHC-I and MHC-II, 
-for humans, bacteria and viruses. 
-
-% \paragraph{Evolutionary conservation}
-
-We conclude that mutations are more likely to occur
-in soluble regions of proteins, than in TMHs.
-When selecting SNPs at random, per 1000 SNPs found in a soluble domain, 
-one finds on average 918 SNPs in TMHs.
-This effect is more pronounced in multi spanners likely as these TMHs more often serve additional functions, besides spanning the lipid bilayer. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
@@ -658,6 +618,51 @@ towards beta sheets for this reason.
   Also compare your findings with previous efforts 
   to look at conservation of TMHs
 ]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \paragraph{General pattern in epitope presentation}
+
+From this study, two important conclusions can be drawn. 
+First, the MHC over-presentation of TMHs is likely a general feature 
+and predicted to occur for most haplotypes of both MHC-I and -II 
+and for humans as well as bacterial and viral pathogens. 
+Second, TMHs are more evolutionary conserved that soluble protein motifs, 
+at least in the human proteome. 
+
+% \paragraph{Over-presentation in vivo in MHC-I is robust}
+
+We confirm that 1.4\% of epitopes that are naturally presented on MHC-I 
+can be mapped to stem from a TMH. Additionally, this 
+prediction is robust, as it holds for two TMH prediction tools, 
+as shown by table \ref{tab:elution}).
+
+% \paragraph{Over-presentation in vivo in MHC-II is robust}
+
+We predict that also MHC-II presents epitopes derived from TMHs
+in vivo, as we find that 3.9-4.0\% of sequenced epitopes
+can be uniquely traced onto a human reference 
+proteome (also shown in table \ref{tab:elution}).
+
+% \paragraph{Over-presentation in silico}
+
+Not only do we predict that MHC-I and MHC-II TMH-derived epitopes 
+are presented in vivo, we conclude that these are additionally
+presented more often than expected by chance 
+alone (figures \ref{fig:1} and \ref{fig:2}).
+This in silico finding is a general pattern 
+that persists in both MHC-I and MHC-II, 
+for humans, bacteria and viruses. 
+
+% \paragraph{Evolutionary conservation}
+
+We conclude that mutations are more likely to occur
+in soluble regions of proteins, than in TMHs.
+When selecting SNPs at random, per 1000 SNPs found in a soluble domain, 
+one finds on average 918 SNPs in TMHs.
+This effect is more pronounced in multi spanners likely as these TMHs more often serve additional functions, besides spanning the lipid bilayer. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgments}
