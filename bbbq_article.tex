@@ -273,54 +273,6 @@ Of each protein sequence, the protein topology was determined
 using PureseqTM.
 Using the protein topology SNPs were scored to be in or outside trans membrane domains. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prediction software written}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-[RJCB: I suggest to move this section to the Supplementary Materials]
-\frans{I agree move to supp}
-
-The R programming language is used for the complete 
-experiment, including the analysis.
-The complete experiment is bundled in the 'bbbq' R package,
-which is dependent on 'tmhmm', 'pureseqtmr', 
-'epitope-prediction' and 'mhcnuggetsr'
-as described below.
-
-% \paragraph{tmhmm}
-
-The R package 'tmhmm' was developed to do the similar topology
-predictions as our earlier study (that used 'TMHMM'), yet in an automated way.
-'TMHMM' has a restrictive software license (\cite{krogh2001predicting}) and allows a user
-to download a pre-compiled executable after confirmation he/she
-is in academia. The R package respects this restriction
-and allows the user to install and use TMHMM from within R,
-as done in this study.
-'tmhmm' has been submitted to and is accepted by CRAN. \frans{wat is CRAN}
-
-% \paragraph{pureseqtmr}
-
-To be able to call, from R, the TMH prediction 
-software 'PureseqTM' (\cite{wang2019efficient}),
-which is written in C, the package 'pureseqtmr' has been developed. 
-'pureseqtmr' allows to install 'PureseqTM' and use most of its features.
-Excluded are the features that are used by the 'PureseqTM' 
-developers to verify the correctness of their work.
-'pureseqtmr' has been submitted to and is accepted by CRAN.
-
-% \paragraph{mhcnuggetsr}
-
-MHCnuggets is a free and open-source Python package to predict 
-epitope affinity for many MHC-I and MHC-II variants (\cite{shao2020high}).
-The R package 'mhcnuggetsr' allows one to install and use MHCnuggets
-from within R.
-Also 'mhcnuggetsr' has been submitted to and is accepted by CRAN.
-
-% \paragraph{bbbq}
-
-To reproduce the full experiment presented in this paper,
-the functions needed are bundled in the 'bbbq' R package.
-This package is too specific to be submitted to CRAN.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
@@ -864,6 +816,52 @@ Additionally, the API splits the result of a bigger
 query into multiple pages, each of which needs one API call.
 We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
 bigger queries of multiple (and delayed) API calls.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prediction software written}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The R programming language is used for the complete 
+experiment, including the analysis.
+The complete experiment is bundled in the 'bbbq' R package,
+which is dependent on 'tmhmm', 'pureseqtmr', 
+'epitope-prediction' and 'mhcnuggetsr'
+as described below.
+
+% \paragraph{tmhmm}
+
+The R package 'tmhmm' was developed to do the similar topology
+predictions as our earlier study (that used 'TMHMM'), yet in an automated way.
+'TMHMM' has a restrictive software license (\cite{krogh2001predicting}) and allows a user
+to download a pre-compiled executable after confirmation he/she
+is in academia. The R package respects this restriction
+and allows the user to install and use TMHMM from within R,
+as done in this study.
+'tmhmm' has been submitted to and is accepted by CRAN. \frans{wat is CRAN}
+
+% \paragraph{pureseqtmr}
+
+To be able to call, from R, the TMH prediction 
+software 'PureseqTM' (\cite{wang2019efficient}),
+which is written in C, the package 'pureseqtmr' has been developed. 
+'pureseqtmr' allows to install 'PureseqTM' and use most of its features.
+Excluded are the features that are used by the 'PureseqTM' 
+developers to verify the correctness of their work.
+'pureseqtmr' has been submitted to and is accepted by CRAN.
+
+% \paragraph{mhcnuggetsr}
+
+MHCnuggets is a free and open-source Python package to predict 
+epitope affinity for many MHC-I and MHC-II variants (\cite{shao2020high}).
+The R package 'mhcnuggetsr' allows one to install and use MHCnuggets
+from within R.
+Also 'mhcnuggetsr' has been submitted to and is accepted by CRAN.
+
+% \paragraph{bbbq}
+
+To reproduce the full experiment presented in this paper,
+the functions needed are bundled in the 'bbbq' R package.
+This package is too specific to be submitted to CRAN.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Percentage of spots and spots that overlap with a TMH}
