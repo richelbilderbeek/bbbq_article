@@ -1,6 +1,5 @@
 \begin{abstract}
 
-\frans{Show off to Frans}
 Cytolytic T cell responses are predicted to be biased towards membrane proteins. 
 Because the peptide-binding grooves of most haplotypes 
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
@@ -414,15 +413,14 @@ Per protein, we calculated two percentages:
 (1) the percentage of the protein coding for TMHs, 
 and (2) the percentage of SNPs occurring in TMHs.
 Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
-We performed a linear regression analyses on the data twice,
-one with and one without MAPs,
-and added a 95\% confidence interval for both of these regressions.
+We performed a linear regression analysis on the TMPs
+and added a 95\% confidence interval on this regression.
 Would the confidence interval of the regression line 
 overlap with the line of equality,
 this would be expected if SNPs occur just as likely within TMHs 
 and soluble protein domains.
 This analysis gives the first hint that SNPs 
-occur more often in soluble domains than in TMHs.\frans{waar vind ik dan nu het verschil tussen met en zonder MAPs je zou hopen dat er geen verschil is toch omdat het aandeel TMH in de analyse met MAPS ook naar beneden gaat}
+occur more often in soluble domains than in TMHs.
 To statistically test whether SNPs occur 
 just as likely in soluble domains as
 in TMHs, we first calculated the number of SNPs that are expected to be
@@ -432,7 +430,8 @@ multiplied by the fraction of the TMPs that are TMH, $f_{TMH} = 18.66\%$,
 $E(n_{SNP\_TMH}) = n_{SNP} \cdot f_{TMH} \approx 4056$.
 
 The effect size is that, 
-when randomly selecting SNPs, 
+when randomly selecting SNPs,
+within TMPs that are 50\% TMH (or correcting for this percentage),
 per 100 SNPs found in soluble protein domains, 
 one finds 91 SNPs in TMHs,
 as depicted in figure \ref{fig:conservation}.
@@ -484,8 +483,9 @@ both single- and multi-spanners are evolutionarily conserved.
 
 We conclude that,
 when randomly selecting SNPs, 
+within TMPs that are 50\% TMH (or correcting for this percentage),
 for 100 SNPs found in soluble regions of multi-spanners,
-one finds 89.6 SNPs in TMHs, as shown by \frans{it says 91,1 in fig 4}
+one finds 91.1 SNPs in TMHs, as shown by
 figure \ref{fig:conservation_per_spanner}.
 
 
@@ -493,19 +493,16 @@ figure \ref{fig:conservation_per_spanner}.
 \section{Discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[GVDB: 
-  Discussion section needs some work, 
-  as here interpretation of the results needs to be given. 
-  What is the consequence of the findings? Why is it important. 
-]
-
 % \paragraph{General}
 
 Our understanding of the immune system and epitope prediction is 
-important to fight disease. By this paper, we suggest that epitopes
+important to fight diseases. By this paper, we suggest that epitopes
 derived from TMHs are needlessly overlooked and may inspire to investigate
-new potential targets for combating pathogens.
-\frans{ik zie hier verder geen argumentatie voor deze statement}
+new potential targets for combating pathogens. We say 'needlessly',
+as TMH-derived epitopes are predicted to be 
+presented more often than expected by chance, 
+combined with are finding that TMHs are evolutionary conserved.
+
 \subsection{Elution studies}
 
 % \paragraph{TMH presentation in vivo}
@@ -543,7 +540,14 @@ in vivo work in the lab will be needed to resolve this finding.
 % \paragraph{MHC-II is expected to present TMHs}
 \frans{we moeten iets schrijven over de verschillende haplotypen wat is the occurence van de haplotypen met andere worden hoe relevnet zijn de haplotypen die veel TMH presenteren?}
 
-The over representation of TMH on MHC-II haplotypes such as HLADQA!*0101/DQB*0501 is more pronounced as for MHC-I with a third of the predicted binders from the human and MtB proteome stem from TMH  human reference proteome and MtB reference proteome to be presented on MHC-II. \frans{ik zoek nog naar associaties} 
+The over-presentation of TMHs for MHC-II haplotypes 
+is more pronounced than for MHC-I,
+as with a third of the predicted binders 
+HIERO
+from the human and MtB proteome stem from TMH human reference proteome and MtB reference proteome to be presented on MHC-II. \frans{ik zoek nog naar associaties} 
+
+such as \verb;HLA-DQA1*0101/DQB1*0501; 
+
 
 This study predict that TMH-derived epitopes are over-presented
 in MHC-II as well. 
@@ -944,7 +948,7 @@ As the possible effect of synonymous mutations is ignored by our
 topology prediction software, we do so as well.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{IC50s per haplotype}
+\subsection{IC50 values of binders per haplotype}
 \label{subsec:ic50s_per_haplotype}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -967,8 +971,30 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
 \input{bbbq_1_smart_results/table_ic50_binders_mhc2_2.latex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{MHC-I}
+\subsection{Presentation of TMH-derived epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
+show the exact number of binders, binders that overlap with TMHs
+and the percentage of binders that overlap with TMHs, as
+visualized by figures \ref{fig:1} and \ref{fig:2} respectively.
+
+% Label: tab:tmh_binders_mhc1
+\input{bbbq_1_smart_results/table_tmh_binders_mhc1_2.latex}
+
+% Label: tab:tmh_binders_mhc2
+\input{bbbq_1_smart_results/table_tmh_binders_mhc2_2.latex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Relative presentation of TMH-derived epitopes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To compare the over-presentation of TMH-derived epitopes between the
+different proteomes, we normalized this percentages in such a
+way that 1.0 is the percentage of TMH-derived epitopes that would 
+be expected by chance. 
+Figure \ref{fig:f_tmh_mhc1_normalized} and \ref{fig:f_tmh_mhc2_normalized}
+show these normalized values for the MHC-I and MHC-II haplotypes respectively.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_normalized.png}
@@ -981,13 +1007,6 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
   \label{fig:f_tmh_mhc1_normalized}
 \end{figure}
 
-% Label: tab:tmh_binders_mhc1
-\input{bbbq_1_smart_results/table_tmh_binders_mhc1_2.latex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{MHC-II}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_normalized.png}
   \caption{
@@ -999,8 +1018,19 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
   \label{fig:f_tmh_mhc2_normalized}
 \end{figure}
 
-% Label: tab:tmh_binders_mhc2
-\input{bbbq_1_smart_results/table_tmh_binders_mhc2_2.latex}
+To determine the additional over-presentation of TMH-derived epitopes 
+in MHC-II (as compared to MHC-I), we used the same normalized percentages
+for the human proteome only and compared the averages between MHC-I and MHC-II.
+See figure \ref{fig:fig_rel_presentation}.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_rel_presentation.png}
+  \caption{
+    Normalized proportion of MHC-I and MHC-II epitopes overlapping with TMHs
+    for human proteomes.
+  }
+  \label{fig:fig_rel_presentation}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
