@@ -156,7 +156,7 @@ and MHC-II (\cite{bergseng2015different}).
 For each of the sequenced epitopes,
 we found its possible location(s) in 
 a human representative reference proteome,
-with UniProt ID UP000005640_9606.
+with UniProt ID UP000005640\_9606.
 For the epitopes that were found exactly once in the proteome,
 we predicted the topology of the proteins in which the epitopes are found.
 We used both TMHMM and PureseqTM to do these predictions. 
@@ -184,12 +184,12 @@ For MHC-I, 9-mers were used, as this is the length used in our earlier
 study (\cite{bianchi2017}). For MHC-II, 14-mers were used, 
 as these are the most frequently occurring
 epitope length (\cite{bergseng2015different}).
-We used a human (UniProt ID UP000005640_9606), 
+We used a human (UniProt ID UP000005640\_9606), 
 viral (SARS-CoV-2, UniProt ID UP000464024) 
 and bacterial (Mycobacterium tuberculosis (MTb), UniProt ID UP000001584) 
 reference proteome. The pathogens were chosen based 
 on their impact on the human 
-population \frans{Add references here}.
+population \richel{ref}.
 We used TMHMM  \richel{ref} to predict the topology 
 of the proteins within the proteome.
 To predict the affinity of an epitope to a certain MHC molecule,
@@ -221,36 +221,23 @@ that give rise to no or only very few MHC epitopes
 
 % \paragraph{Introduction}
 
-To detect the evolutionary conservation of TMHs, 
-single nucleotide
-polymorphisms (SNPs) within the human population
-that resulted in the substitution of one amino acid were collected from ??? and tallied if
-the SNP occurred within a TMH or not. Using statistics is was determined if there are more, less or an equal amount of SNPs in TMHs
-as a measure of evolutionary conservation.
-This workflow is discussed in more detail below.
+To detect the evolutionary conservation of TMHs,
+we collected human single nucleotide polymorphisms (SNPs)
+that resulted in a single amino the substitution,
+and tallied if this substitution occurred within a TMH or not.
+From that tally, we determined how likely the number of SNPs
+found in TMHs is by chance.
 
 % \paragraph{Data}
 
 As a data source, multiple
-NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used,
-which are 'gene',\frans{snap ik niet which are gene?} to find the gene names of membrane proteins, 
-'dbSNP' (\cite{sherry2001dbsnp}) for SNPs associated with those genes
-and 'protein', to obtain the sequence of proteins that SNPs act upon.
-The 'dbSNP' contains 650 million 
+NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used.
+Pivotal was the 'dbSNP' (\cite{sherry2001dbsnp}) database,
+which contains 650 million 
 catalogued non-redundant humane variations (called RefSNPs,
 \url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}).
-
-% \paragraph{Data retrieval}
-
-\frans{ dit is relevant waarom: ? To retrieve the data from these databases the
-\verb;rentrez; R package (\cite{rentrez}) was used
-that calls the NCBI website's API. To provide for a 
-stable user experience for all users, 
-this API limits the user to 3 calls per second.
-Additionally, the API splits the result of a bigger
-query into multiple pages, each of which needs one API call.
-We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
-bigger queries of multiple (and delayed) API calls.}
+Additionally, the aptly-named 'gene' (for gene names)
+and 'protein' (for proteins sequences) database were used.
 
 % \paragraph{Pipeline}
 
@@ -357,7 +344,12 @@ PureseqTM (\cite{krogh2001predicting} and \cite{wang2019efficient} respectively)
 Regardless of the prediction, 
 at least 100 epitopes were predicted to be derived from a TMH. 
 From these findings, it is robustly predicted that
-epitopes derived from TMHs can and are presented on both MHC-I and MHC-II.
+epitopes derived from TMHs are presented by B cells [For Frans: please check
+that the article by Bergseng, 2015, 'Different binding motifs of the celiac 
+disease-associated HLA molecules DQ2. 5, DQ2. 2, and DQ7. 5 revealed by 
+relative quantitative proteomics of endogenous peptide repertoires'
+is appropriate. As far as I can see, it is, but I may overlook something. Richel].
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MHC-I}
