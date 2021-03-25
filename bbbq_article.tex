@@ -200,7 +200,7 @@ The MHC-II haplotypes used additionally were selected
 to occur with a phenotypic frequency of at least 14\% in
 the human population (\cite{greenbaum2011functional}),
 resulting in 21 haplotypes.
-\richel{This is Frans' text: 
+\richel{This is Frans' text, merge it with the current text: 
 Unlike MHC-I where only one variable chain determines the landscape of the epitope binding pocket allowing for the classification of 5 HLA-A and 8 HLA-B superhaplotypes with .... variation in peptide binding repertoire, the MHC-II peptide binding groove is determined by both the alpha and beta chain. For HLA DQ both the alpha and beta chain is highly polymorphic  ..... \frans{why is HLA-DP not predicted?}
 We took the alleles that represent percentage of the occurrence int he overall human population according to ... et al. 
 }
@@ -355,6 +355,15 @@ a human, bacterial and viral proteome.
   \label{fig:2}
 \end{figure}
 
+HIERO
+Additionally, we investigated if MHC-I and MHC-II are equally prone
+to present TMH-derived epitopes. 
+See \ref{fig:rel_presentation}
+\ref{fig:rel_presentation_per_haplotype.png}
+
+fig_rel_presentation_per_haplotype.png
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -449,8 +458,6 @@ $1.6201 \cdot 10^{-9}$.
 Using a alpha value of $0.05$, as is common practice for an uninformed
 expectation, we conclude that there are significantly less SNPs
 in TMHs as expected by chance.
-
-[RJCB: How many SNPs in TMHs?]
 See figure \ref{fig:f_tmh_ncbi} to see which percentages
 are TMH of the transmembrane proteins.
 
@@ -535,10 +542,9 @@ in vivo work in the lab will be needed to resolve this finding.
 \subsection{Presentation of epitopes derived from TMHs}
 
 % \paragraph{MHC-II is expected to present TMHs}
-\frans{we moeten iets schrijven over de verschillende haplotypen wat is the occurence van de haplotypen met andere worden hoe relevnet zijn de haplotypen die veel TMH presenteren?}
-
+\frans{we moeten iets schrijven over de verschillende haplotypen wat is the occurence van de haplotypen met andere worden hoe relevant zijn de haplotypen die veel TMH presenteren?}
 The over-presentation of TMHs for MHC-II haplotypes 
-is more pronounced than for MHC-I,
+is slight more pronounced than for MHC-I,
 as with a third of the predicted binders 
 \richel{Hier ben ik nu met verwerken...}
 from the human and MtB proteome stem from TMH human reference proteome and MtB reference proteome to be presented on MHC-II. \frans{ik zoek nog naar associaties} 
@@ -1016,7 +1022,19 @@ show these normalized values for the MHC-I and MHC-II haplotypes respectively.
 To determine the additional over-presentation of TMH-derived epitopes 
 in MHC-II (as compared to MHC-I), we used the same normalized percentages
 for the human proteome only and compared the averages between MHC-I and MHC-II.
+Figure \ref{fig:fig_rel_presentation_per_haplotype} shows the normalized
+TMH-derived epitope presentation per haplotype.
+
 See figure \ref{fig:fig_rel_presentation}.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_rel_presentation_per_haplotype.png}
+  \caption{
+    Normalized proportion of MHC-I and MHC-II epitopes overlapping with TMHs
+    for human proteomes.
+  }
+  \label{fig:fig_rel_presentation_per_haplotype}
+\end{figure}
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_rel_presentation.png}
