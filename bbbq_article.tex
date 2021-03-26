@@ -61,7 +61,10 @@ It is believed that this improves immunity at the population level,
 as mutations in a protein that disrupt a particular MHC presentation, 
 so-called escape mutations, 
 will not affect MHC presentation for all haplotypes (\cite{sommer2005importance}).
-[GEERT: I removed the nr of MHC molecules at is is more complex, as the alpha chains coded by the maternal chromosome of HLA-DQ,DR,DP can heterodimeriza with the beta chains coded by the paternal chromosome and vice versa]
+% Geert: I removed the number of MHC molecules as is is more complex, 
+% as the alpha chains coded by the maternal chromosome 
+% of HLA-DQ, DR, DP can heterodimerize with the beta chains coded 
+% by the paternal chromosome and vice versa
 
 % \paragraph{Epitope prediction}
 
@@ -71,8 +74,11 @@ as this will for instance aid the design of vaccines.
 These studies have led to the development 
 of  prediction algorithms 
 that allow for very reliable in silico predictions 
-of the binding affinities of peptides (\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}).[GEERT: can you put 'very reliable' in more quantitative terms (e.g. with overall more than 90\% accuracy)]
- 
+of the binding affinities of peptides (\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}).
+For example, \cite{tang2011genome} found that, 
+of the 432 peptides that were predicted to bind to MHC,
+86\% were confirmed to do so in vivo.
+
 % \paragraph{TMHs}
 
 Using these prediction algorithms, 
@@ -89,12 +95,15 @@ than hydrophilic ones.
 Transmembrane helices (TMHs) are hydrophobic 
 as they need to span the hydrophobic lipid bilayer of cellular membranes.
 They consist of an alpha helix of on average 23 amino acids in length. TMHs can also be predicted from a protein sequence 
-with high accuracy [GEERT: more quantitative?] by bioinformatics approaches (\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}). 
+with high accuracy by bioinformatics approaches (\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}),
+for example, \cite{jones2007improving} found that,
+from 184 TMPs with known topology, 
+80\% of the TMH predictions replicated this finding.
+ 
 TMHs are common structures in the proteins of humans and microbes. 
 Different TMH prediction tools estimate
 that 15-39\% of the human proteome 
 contain at least one TMH (\cite{ahram2006estimation}).
-
 However, the physiological reason why peptides derived from TMHs 
 would be presented more often than peptides 
 stemming from soluble protein regions is unknown. 
@@ -108,9 +117,6 @@ by the functional requirement to span a lipid bilayer.
 Due to this requirement, 
 many of the amino acids genuinely present in TMH 
 are limited to the ones with hydrophobic side chains (\cite{jones1994model}).
-[FB: Analyzing the occurrence of single nucleotide polymorphisms 
-that were predicted to be inside ...][RJCB: Uh, you want to add another
-paragraph here?][GEERT: I think it is OK like Richel wrote]
 Therefore, we speculated that the TMHs of pathogens 
 might have a lower chance to develop escape mutations, 
 as many mutations will result in a dysfunctional TMH 
@@ -214,8 +220,8 @@ As a data source, multiple
 NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used: the 'dbSNP' (\cite{sherry2001dbsnp}) database,
 which contains 650 million 
 catalogued non-redundant humane variations (called RefSNPs,
-\url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}), and the databases 'gene' (for gene names)
-and 'protein' (for proteins sequences). [GEERT: any references for databases gene and protein?]
+\url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}), and the databases 'gene' (for gene names, \cite{brown2015gene})
+and 'protein' (for proteins sequences, \cite{sayers2010database}).
 
 % \paragraph{Pipeline}
 
@@ -241,7 +247,7 @@ a single amino acid substitution were analysed, resulting in 38,882 SNPs.
 
 % \paragraph{Selection of SNPs}
 %
-SNPs were picked based on ID number, which is linked to their discovery date. To verify that ID number is unrelated to SNP positions the relative positons of the analyzed SNPS in a protein was determined and showed no positional bias, shown in figure \ref{fig:snp_rel_pos}.[GEERT: rood practice is to present the data in a chronological fashion: thus move this to figure 1 (or put in supplement)]
+SNPs were picked based on ID number, which is linked to their discovery date. To verify that ID number is unrelated to SNP positions the relative positons of the analyzed SNPS in a protein was determined and showed no positional bias, shown in figure \ref{fig:snp_rel_pos}.[GEERT: good practice is to present the data in a chronological fashion: thus move this to figure 1 (or put in supplement)]
 
 Per SNP, the 'protein' NCBI database was queried for the
 protein sequence.
