@@ -1,5 +1,9 @@
 \begin{abstract}
 
+\richel{TODO: Tables don't have a legend, but instead have a title and footnotes below the table. Modify the tables to make it so in the end}
+\richel{TODO: Condense figures into bigger ones with panels, following 1 message per figure. Order these figures chronologically}
+
+
 Cytolytic T cell responses are predicted to be biased towards membrane proteins. 
 Because the peptide-binding grooves of most haplotypes 
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
@@ -61,7 +65,7 @@ It is believed that this improves immunity at the population level,
 as mutations in a protein that disrupt a particular MHC presentation, 
 so-called escape mutations, 
 will not affect MHC presentation for all haplotypes (\cite{sommer2005importance}).
-% Geert: I removed the number of MHC molecules as is is more complex, 
+% Do noty give the number of MHC molecules, as is is more complex, 
 % as the alpha chains coded by the maternal chromosome 
 % of HLA-DQ, DR, DP can heterodimerize with the beta chains coded 
 % by the paternal chromosome and vice versa
@@ -247,13 +251,13 @@ a single amino acid substitution were analysed, resulting in 38,882 SNPs.
 
 % \paragraph{Selection of SNPs}
 %
-SNPs were picked based on ID number, which is linked to their discovery date. To verify that ID number is unrelated to SNP positions the relative positons of the analyzed SNPS in a protein was determined and showed no positional bias, shown in figure \ref{fig:snp_rel_pos}.[GEERT: good practice is to present the data in a chronological fashion: thus move this to figure 1 (or put in supplement)]
+SNPs were picked based on ID number, which is linked to their discovery date. To verify that ID number is unrelated to SNP positions the relative positons of the analyzed SNPS in a protein was determined and showed no positional bias, shown in figure \ref{fig:snp_rel_pos}.
 
 Per SNP, the 'protein' NCBI database was queried for the
 protein sequence.
 For each protein sequence, the protein topology was determined 
 using PureseqTM.
-Using these predicted protein topologies, the SNPs were scored to be located within or outside trans membrane domains. [GEERT: for Table 1: Tables don't have a legend, but instead have a title and footnotes below the table.]
+Using these predicted protein topologies, the SNPs were scored to be located within or outside trans membrane domains.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -261,31 +265,13 @@ Using these predicted protein topologies, the SNPs were scored to be located wit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Elution studies}
+\subsection{TMH-derived peptides are predicted to be over-presented in MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% tab:elution
-\input{bbbq_article_issue_157/results.tex}
-
-[GEERT: I would move this subsection to below: first explain the bioinformatics predictions, and then show this as an experimental confirmation]
-
-To obtain experimental confirmation that peptides stemming from TMHs are presented in MHC-I and MHC-II,
-peptide elution studies were reanalyzed.
-Table \ref{tab:elution} shows the percentages of epitopes derived 
-from TMHs
-found in the MHC-I (\cite{schellens2015comprehensive}) and MHC-II elution 
-studies  (\cite{bergseng2015different}),
-for the two topology prediction tools TMHMM (\cite{krogh2001predicting}) and PureseqTM (\cite{wang2019efficient}). 
-Regardless of the prediction tool, 
-at least 100 epitopes were predicted to be derived from a TMH for each condition. 
-From these findings, it is robustly predicted that
-epitopes derived from TMHs are presented in both MHC-I and MHC-II.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prediction of TMH-derived peptide presentation in MHC-I}
-[GEERT: mooier is je subheadings samen te vatten met een conclusie. Dus: TMH-derived peptides are predicted to be over-presented in MHC-I (en dan ook voor de andere subheadings)]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\richel{
+  First do the bioinformatics predictions,
+  then the experimental confirmation 
+}
 
 We recently predicted that peptides derived from TMHs of human proteins 
 are over-presented on most haplotypes of HLA-A and HLA-B. Here, we wondered if this over-presentation is general 
@@ -306,7 +292,7 @@ The extent of the over-presentation between the various different HLA supertypes
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prediction of TMH-derived peptide presentation in MHC-II}
+\subsection{TMH-derived peptides are predicted to be over-presented in MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We next wondered if the over-representation of TMH-derived peptided would also be present for MHC-II. 
@@ -339,8 +325,31 @@ to present TMH-derived epitopes.
 See \ref{fig:rel_presentation} and \ref{fig:rel_presentation_per_haplotype}. [GEERT: Wat is er in 9 en 10? Wat is de conclusie? Dit moet nog wat verder uitgewerkt worden]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Evolutionary conservation}
-[GEERT: zie mijn punt hierbove. Een korte conclusie als titel is veel sterker. Dus iets als: TMHs are more evolutionary conserved.]
+\subsection{TMH-derived peptides are predicted to be presented in vivo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\richel{
+  Use this section as an experimental confirmation 
+  of the bioinformatics predictions
+}
+
+% tab:elution
+\input{bbbq_article_issue_157/results.tex}
+
+To obtain experimental confirmation that peptides stemming from TMHs are presented in MHC-I and MHC-II,
+peptide elution studies were reanalyzed.
+Table \ref{tab:elution} shows the percentages of epitopes derived 
+from TMHs
+found in the MHC-I (\cite{schellens2015comprehensive}) and MHC-II elution 
+studies  (\cite{bergseng2015different}),
+for the two topology prediction tools TMHMM (\cite{krogh2001predicting}) and PureseqTM (\cite{wang2019efficient}). 
+Regardless of the prediction tool, 
+at least 100 epitopes were predicted to be derived from a TMH for each condition. 
+From these findings, it is robustly predicted that
+epitopes derived from TMHs are presented in both MHC-I and MHC-II.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Human TMHs are evolutionarily conserved}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!htbp]
@@ -426,7 +435,7 @@ when randomly selecting SNPs,
 within TMPs that are 50\% TMH (or correcting for this percentage),
 per 100 SNPs found in soluble protein domains, 
 one finds 91 SNPs in TMHs,
-as depicted in figure \ref{fig:conservation}. [GEERT: zie mijn eerder opmerking over panels. Ik zou met panel A, B, C, etc werken.] [GEERT: hieronder had je indentieke tekst, maar verwees naar andere figuur \ref{fig:conservation_per_spanner}. Ik denk dat je deze hieronder kan samenvoegen]
+as depicted in figure \ref{fig:conservation}. [GEERT: hieronder had je indentieke tekst, maar verwees naar andere figuur \ref{fig:conservation_per_spanner}. Ik denk dat je deze hieronder kan samenvoegen]
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner.png}
@@ -468,7 +477,7 @@ that TMHs are evolutionary more conserved than solvent-exposed protein regions.
 
 % \paragraph{TMH presentation in vivo}
 
-Although elution studies and in silico predictions both suggest that TMH-derived epitopes are presented in MHC-I and MHC-II, the molecular mechanisms of how integral membrane proteins are processed for MHC presentation are largely unknown [GEERT: cite Bianchi]. Most prominently, the fundamental principles of how TMHs are extracted from the  hydrophobic lipid environment into the aqueous vacuolar lumen, and their prior or subsequent proteolytic processing are unresolved. [GEERT: beetje kort. Suggesties? Experimental approaches? Hoeft niet super origineel, bijvoorbeeld suggereren dat lipases een rol kunnen spelen. Frans kan vast helpen met mooie zin.]
+Although elution studies and in silico predictions both suggest that TMH-derived epitopes are presented in MHC-I and MHC-II, the molecular mechanisms of how integral membrane proteins are processed for MHC presentation are largely unknown (\cite{bianchi2017}). Most prominently, the fundamental principles of how TMHs are extracted from the  hydrophobic lipid environment into the aqueous vacuolar lumen, and their prior or subsequent proteolytic processing are unresolved. [GEERT: beetje kort. Suggesties? Experimental approaches? Hoeft niet super origineel, bijvoorbeeld suggereren dat lipases een rol kunnen spelen. Frans kan vast helpen met mooie zin.]
 
 % \paragraph{False positives}
 
@@ -485,7 +494,7 @@ as our data show that two different topology prediction software algorithms give
 
 A final caveat in the elution studies is that there is methodological bias caused by mass spectronomy,
 as hydrophobic fragments are detected less 
-by mass spectronomy [GEERT: referentie, zie paper Bianchi]. This means that the number of TMH-derived epitopes
+by mass spectronomy (\cite{bianchi2017}). This means that the number of TMH-derived epitopes
 might be underestimated.
 
 \subsection{Presentation of epitopes derived from TMHs}
