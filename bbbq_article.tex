@@ -373,21 +373,25 @@ to present TMH-derived epitopes.
 \richel{Add exact method}
 See \ref{fig:rel_presentation} and \ref{fig:rel_presentation_per_haplotype}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived peptides are predicted to be presented in vivo}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{
-  Use this section as an experimental confirmation 
-  of the bioinformatics predictions
-}
-
-% tab:elution
-\input{bbbq_article_issue_157/results.tex}
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{bbbq_article_issue_157/results.png}
+  \caption{
+    TMH-derived epitopes are presented in vivo,
+    for both MHC-I and MHC-II, for two topology prediction
+    programs.
+    See table \ref{tab:elution} for the exact values.
+  }
+  \label{fig:elution}
+\end{figure}
 
 To obtain experimental confirmation that peptides stemming from TMHs are presented in MHC-I and MHC-II,
 peptide elution studies were reanalyzed.
-Table \ref{tab:elution} shows the percentages of epitopes derived 
+Figure \ref{fig:elution} shows the percentages of epitopes derived 
 from TMHs
 found in the MHC-I (\cite{schellens2015comprehensive}) and MHC-II elution 
 studies  (\cite{bergseng2015different}),
@@ -960,6 +964,13 @@ do have an effect and may even be evolutionary selected
 for (\cite{hunt2009silent}).
 As the possible effect of synonymous mutations is ignored by our
 topology prediction software, we do so as well.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Elution studies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% tab:elution
+\input{bbbq_article_issue_157/results.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50 values of binders per haplotype}
