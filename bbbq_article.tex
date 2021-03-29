@@ -398,43 +398,117 @@ epitopes derived from TMHs are presented in both MHC-I and MHC-II.
 \subsection{Human TMHs are evolutionarily conserved}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation.png}
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_conservation.png}
+    \label{fig:conservation}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected.png}
+    \label{fig:f_snps_found_and_expected}
+  \end{subfigure}
   \caption{
-    The number of SNPs in TMHs as expected by chance (left bar) 
-    and found in the dbSNP database (right bar).
-    Percentages are added to show the relative conservation
-    of SNPs in TMHs found.
+      A. The number of SNPs in TMHs as expected by chance (left bar) 
+      and found in the dbSNP database (right bar).
+      Percentages are added to show the relative conservation
+      of SNPs in TMHs found.
+      B. 
+      Percentage of SNPs found in TMHs.
+      Each point shows the predicted percentage of
+      TMH (x-axis) and the observed occurrence of SNPs being located
+      within a TMH (y-axis) for a protein.
+      The dashed diagonal line shows the line of equality (i.e.
+      equal conservation of TMHs and soluble protein regions).
+      The blue line is a linear trend line that includes only the
+      transmembrane proteins.
   }
-  \label{fig:conservation}
 \end{figure}
 
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation_per_spanner.png}
+%\begin{figure}[!htbp]
+%  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation.png}
+%  \caption{
+%    The number of SNPs in TMHs as expected by chance (left bar) 
+%    and found in the dbSNP database (right bar).
+%    Percentages are added to show the relative conservation
+%    of SNPs in TMHs found.
+%  }
+%  \label{fig:conservation}
+%\end{figure}
+
+%\begin{figure}[!htbp]
+%  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected.png}
+%  \caption{
+%    Percentage of SNPs found in TMHs.
+%    Each point shows the predicted percentage of
+%    TMH (x-axis) and the observed occurrence of SNPs being located
+%    within a TMH (y-axis) for a protein.
+%    The dashed diagonal line shows the line of equality (i.e.
+%    equal conservation of TMHs and soluble protein regions).
+%    The blue line is a linear trend line that includes only the
+%    transmembrane proteins.
+%  }
+%  \label{fig:f_snps_found_and_expected}
+%\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.3\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_conservation_per_spanner.png}
+    \label{fig:conservation_per_spanner}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.55\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner.png}
+    \label{fig:f_snps_found_and_expected_per_spanner}
+  \end{subfigure}
   \caption{
-    The number of SNPs in TMHs as expected by chance (red bars) 
-    and found in the dbSNP database (right bars), 
-    after splitting the data into single- and multi-spanners.
-    Percentages are added to show the relative conservation
-    of SNPs in TMHs found.
+      A. 
+      The number of SNPs in TMHs as expected by chance (red bars) 
+      and found in the dbSNP database (right bars), 
+      after splitting the data into single- and multi-spanners.
+      Percentages are added to show the relative conservation
+      of SNPs in TMHs found.
+      B. 
+      Percentage of SNPs found in TMPs predicted to have only a single
+      (left) or multiple (right) TMHs.
+      The dashed diagonal lines show the expected line of equality 
+      (i.e., equal conservation of TMHs and solvent-exposed 
+      protein regions).
   }
-  \label{fig:conservation_per_spanner}
 \end{figure}
 
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected.png}
-  \caption{
-    Percentage of SNPs found in TMHs.
-    Each point shows the predicted percentage of
-    TMH (x-axis) and the observed occurrence of SNPs being located
-    within a TMH (y-axis) for a protein.
-    The dashed diagonal line shows the line of equality (i.e.
-    equal conservation of TMHs and soluble protein regions).
-    The blue line is a linear trend line that includes only the
-    transmembrane proteins.
-  }
-  \label{fig:f_snps_found_and_expected}
-\end{figure}
+%\begin{figure}[!htbp]
+%  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_conservation_per_spanner.png}
+%  \caption{
+%    The number of SNPs in TMHs as expected by chance (red bars) 
+%    and found in the dbSNP database (right bars), 
+%    after splitting the data into single- and multi-spanners.
+%    Percentages are added to show the relative conservation
+%    of SNPs in TMHs found.
+%  }
+%  \label{fig:conservation_per_spanner}
+%\end{figure}
+
+%\begin{figure}[!htbp]
+%  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner.png}
+%  \caption{
+%    Percentage of SNPs found in TMPs predicted to have only a single (left) or multiple (right) TMHs.
+%    The dashed diagonal lines show the expected line of equality (i.e., equal conservation of TMHs and solvent-exposed protein regions).
+%  }
+%  \label{fig:f_snps_found_and_expected_per_spanner}
+%\end{figure}
+)
+
 
 We addressed the question whether there is an evolutionary advantage in presenting TMHs. We determined the conservation of TMHs by comparing the occurrences of SNPs located in TMHs or solvent-exposed protein regions for the genes coding for membrane proteins.
 We obtained $>$1,000 gene names associated with the phrase 'membrane protein',
@@ -487,15 +561,6 @@ per 100 SNPs found in soluble protein domains,
 one finds 91 SNPs in TMHs,
 as depicted in figure \ref{fig:conservation}. [GEERT: hieronder had je indentieke tekst, maar verwees naar andere figuur \ref{fig:conservation_per_spanner}. Ik denk dat je deze hieronder kan samenvoegen]
 
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner.png}
-  \caption{
-    Percentage of SNPs found in TMPs predicted to have only a single (left) or multiple (right) TMHs.
-    The dashed diagonal lines show the expected line of equality (i.e., equal conservation of TMHs and solvent-exposed protein regions).
-  }
-  \label{fig:f_snps_found_and_expected_per_spanner}
-\end{figure}
-)
 
 We splitted this analysis based on the number of TMHs
 of each TMP. 
