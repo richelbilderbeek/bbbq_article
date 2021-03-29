@@ -312,17 +312,56 @@ TMH-derived epitopes more often than expected by chance.
 The extent of the over-presentation between the various different haplotypes 
 is similar for the probed proteomes, which strenghtens our previous conclusion (\cite{bianchi2017}) that the hydrophopbicity of the MHC-binding groove is the main factor responsible for the predicted over-presentation of TMH-derived peptides.  
 
-\begin{figure}[!htbp]
-  \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
+    \label{fig:1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
+    \label{fig:2}
+  \end{subfigure}
   \caption{
-    Percentage of MHC-I epitopes predicted to be overlapping with TMHs
+    TMH-derived peptides are predicted to be over-presented in MHC-I (left
+    panel) and MHC-II (right panel).
+    Both panels show the percentage of epitopes predicted to be 
+    overlapping with TMHs
     for the proteomes of human, SARS-CoV-2 and \emph{M. tuberculosis}.
     The dashed horizontal lines indicate the percentage as expected by chance.
-    See supplementary table \ref{tab:tmh_binders_mhc1} for the exact TMH and epitope counts.
+    See supplementary tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
+    for the exact TMH and  epitope counts.
     \richel{Add panel with hydrophobicity}
   }
-  \label{fig:1}
 \end{figure}
+
+%\begin{figure}[!htbp]
+%  \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
+%  \caption{
+%    Percentage of MHC-I epitopes predicted to be overlapping with TMHs
+%    for the proteomes of human, SARS-CoV-2 and \emph{M. tuberculosis}.
+%    The dashed horizontal lines indicate the percentage as expected by chance.
+%    See supplementary table \ref{tab:tmh_binders_mhc1} for the exact TMH and epitope counts.
+%    \richel{Add panel with hydrophobicity}
+%  }
+%  \label{fig:1}
+%\end{figure}
+%
+%\begin{figure}[!htbp]
+%  \includegraphics[height=0.8\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
+%  \caption{
+%    Percentage of MHC-II epitopes predicted to be overlapping with TMHs
+%    for a human, viral and bacterial proteome.
+%    The dashed horizontal lines indicate the percentage as expected by chance.
+%    See supplementary table \ref{tab:tmh_binders_mhc2} for the exact TMH and epitope counts.
+%  }
+%  \label{fig:2}
+%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived peptides are predicted to be over-presented in MHC-II}
@@ -341,16 +380,6 @@ We predict that TMH-derived peptides are also over-presented in most MHC-II hapl
 Similar to our previous results with MHC-I, we predicted that the extent to which TMH-derived
 epitopes are presented by each MHC-II haplotype is similar for the human, bacterial and viral proteome.
 
-\begin{figure}[!htbp]
-  \includegraphics[height=0.8\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
-  \caption{
-    Percentage of MHC-II epitopes predicted to be overlapping with TMHs
-    for a human, viral and bacterial proteome.
-    The dashed horizontal lines indicate the percentage as expected by chance.
-    See supplementary table \ref{tab:tmh_binders_mhc2} for the exact TMH and epitope counts.
-  }
-  \label{fig:2}
-\end{figure}
 
 Plotting the normalized values of presented TMH-derived epitopes (where
 $1.0$ denotes that the percentage of presented TMH-derived epitopes
