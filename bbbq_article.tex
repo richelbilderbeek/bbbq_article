@@ -483,7 +483,6 @@ expectation, we conclude that there are significantly less SNPs
 in TMHs as expected by chance.
 See figure \ref{fig:f_tmh_ncbi} for the percentages of TMHs in the transmembrane proteins.[GEERT: staat deze figuur hier wel goed? Niet naar boven?] The effect size is that, 
 when randomly selecting SNPs,
-within TMPs that are 50\% TMH (or correcting for this percentage),
 per 100 SNPs found in soluble protein domains, 
 one finds 91 SNPs in TMHs,
 as depicted in figure \ref{fig:conservation}. [GEERT: hieronder had je indentieke tekst, maar verwees naar andere figuur \ref{fig:conservation_per_spanner}. Ik denk dat je deze hieronder kan samenvoegen]
@@ -511,9 +510,9 @@ both single- and multi-spanners are evolutionarily conserved.[GEERT: maar een st
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \paragraph{General}
 
@@ -523,7 +522,9 @@ derived from TMHs are a major but overlooked source of MHC epitopes. Both our bi
 presented more often than expected by chance, regardless of the organism. Moreover, our SNP analysis shows  
 that TMHs are evolutionary more conserved than solvent-exposed protein regions.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived epitopes are predicted to be presentated in vivo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \paragraph{Over-presentation in vivo in MHC-I and MHC-II is robust
 We show that 1.4\% of epitopes that are naturally presented on MHC-I 
@@ -533,15 +534,37 @@ proteome (also shown in table \ref{tab:elution}).
 
 % \paragraph{TMH presentation in vivo}
 
-Although elution studies and in silico predictions both suggest that TMH-derived epitopes are presented in MHC-I and MHC-II, the molecular mechanisms of how integral membrane proteins are processed for MHC presentation are largely unknown (\cite{bianchi2017}). Most prominently, the fundamental principles of how TMHs are extracted from the  hydrophobic lipid environment into the aqueous vacuolar lumen, and their prior or subsequent proteolytic processing are unresolved. [GEERT: beetje kort. Suggesties? Experimental approaches? Hoeft niet super origineel, bijvoorbeeld suggereren dat lipases een rol kunnen spelen. Frans kan vast helpen met mooie zin.]
+Although elution studies and in silico predictions both suggest that TMH-derived epitopes are presented in MHC-I and MHC-II, the molecular mechanisms of how integral membrane proteins are processed for MHC presentation are largely unknown (\cite{bianchi2017}). Most prominently, the fundamental principles of how TMHs are extracted from the  hydrophobic lipid environment into the aqueous vacuolar lumen, and their prior or subsequent proteolytic processing are unresolved.
+\geert{
+  beetje kort. Suggesties? Experimental approaches? Hoeft niet super
+  origineel, bijvoorbeeld suggereren dat lipases een rol kunnen spelen. 
+  Frans kan vast helpen met mooie zin
+}
 
 % \paragraph{False positives}
 
-An important caveat of the elution studies is that we assume that the found epitopes are derived from their completely translated predecessor proteins.
-However,defective ribosomal products (DRiPs) (\cite{yewdell1996defective}) 
-and peptide fusion (\cite{delong2016pathogenic}) are
-two processes that both result in peptide fragments
-that did not originate from the mature proteins. [GEERT: mooi argument, maar moet wel kort uitgewerkt worden. Uitleggen wat DRiPs zijn en wat peptide fusion is, en hoe het kan leiden tot false positives]
+An important caveat of the elution studies is that we assume that 
+the found epitopes are derived from their completely 
+translated predecessor proteins.
+However, there are multiple cellular processes 
+that may result in peptide fragments that did not originate 
+from the mature proteins.
+One such process is the production of defective ribosomal 
+products (DRiPs) (\cite{yewdell1996defective}),
+in which the ribosome terminates its translation prematurely,
+intrudes a point mutation, 
+or cause a frame shift, at low frequencies (\cite{yewdell2011drips}).
+Another process that results in peptide fragments absent in the
+proteome is peptide fusion, 
+in which peptides form covalent bonds with other peptides,
+as is for example found in mice (\cite{delong2016pathogenic}).
+Due to these processes, we may incorrectly attribute an
+epitope to a specific proteome locations, 
+where in reality, it was created de novo.
+This may lead to false positives, as we incorrectly deduce
+epitopes to be derived from a TMH, instead of from one of
+these processes. Both processes, however, are thought to
+occur at low frequencies (\cite{yewdell2011drips,delong2016pathogenic}).
 
 Another caveat is that the TMH prediction tools are imperfect.
 This imperfection, however, appears to be of limited importance,
@@ -555,7 +578,9 @@ as hydrophobic fragments are detected less
 by mass spectronomy (\cite{bianchi2017}). This means that the number of TMH-derived epitopes
 might be underestimated.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived epitopes are presented more often than expected by chance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \paragraph{Over-presentation in silico}
 
@@ -579,7 +604,9 @@ such as \verb;HLA-DQA1*0101/DQB1*0501;
 This results from this study support our hypothesis that TMH-derived epitopes are over-presented
 in MHC-II, similarly to we previously showed for MHC-I [CITE BIANCHI].[GEERT: deel gewist, want was letterlijke herhaling van hierboven. Beter is zeggen dat (1) MHC-II presentatie belangrijk is voor B cell activatie. (2) B cellen antilichamen produceren, en dan antilichamen solvent-exposed protein regions herkennen. (3) Dat onze analyse suggereert HMC-II presentatie voornamelijk andere (TMH of buried) regio's betreft. (4) Dat T helper cellen dus andere delen van antigene eiwitten herkennen (MHC-II gepresenteerd door de B cellen) dan de BCR bindt.]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Less SNPs in TMHs found, hinting at evolutionary conservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We find that mutations are more likely to occur
 in soluble regions of proteins, than in TMHs.
@@ -601,29 +628,34 @@ Because of this scarcity and variance in targets,
 one can imagine that it will be mostly unfeasible to provide innate immune responses against such essential protein regions, 
 as hinted upon by a study on influenza (\cite{han2019individual}),
 where it was found that the selection pressure
-exerted by the immune system was a non profounding factor.
+exerted by the immune system was either weak or absent.
  
 % \paragraph{Selection may be detectable in TMHs}
 
-TMHs, on the other hand, also have strict functional constraints as they need to span through hydrophobic lipid bilayers. Moreover, TMHs are abundant and make up ... of a human, bacterial or viral proteome.
-Proteomes thus contain many TMHs,
-and it might therefore be beneficial for host organisms
-to tailor their immune systems towards immune responses against foreign TMHs.
-This feature, however, may also be caused by selection
-to detect hydrophobic regions in the soluble proteins of pathogens.
-It is unknown, when focusing on TMHs only, if a signal of selection
-can be detected.\frans{ik snap deze redenatie niet?}[GEERT: ik ook niet, vind beetje onnodig. Volstaat te zeggen dat TMHs niet de enige hydrofobe regio's zijn, en ook belang voor intra-protein en protein-protein interacties en catalytische sites. Daarnaast in deze paragraaf iets zeggen over single vs multi-TMH eiwitten]
+Evolutionary selection of pathogens by a host's immune system,
+however, is likelier to occur for proteomic patterns that are general,
+over patterns that are rare.
+Where essential catalytic sites in a pathogenic proteome
+are rare, TMHs are common and thus a more feasible 
+target for evolution to respond to.
+We have found the signature of evolution when both factors,
+that is, TMHs and catalytic sites are likely to co-occur,
+which is in proteins that span the membrane at least twice.
+This may be explained additionally that multi-spoanners
+are not only likelier to have a catalytically active site,
+also there are interactions between the TMHs.
+For single-spanners, we found no evolutionary conservation.
 We speculate that the human immune system is more attentive 
-towards TMHs, as it is a general structure, that is evolutionarily conserved.
+towards TMHs in multi-spanners, as these are evolutionarily conserved.
 
-[GVDB: 
+\geert{
   Also compare your findings with previous efforts 
   to look at conservation of TMHs
-]
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \paragraph{General pattern in epitope presentation}
 
@@ -634,9 +666,9 @@ and for humans as well as bacterial and viral pathogens.
 Second, TMHs are more evolutionary conserved than solvent-exposed protein motifs, 
 at least in the human proteome. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgments}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We thank the Center for Information Technology of the University 
 of Groningen for its support and for providing access to the Peregrine 
@@ -666,24 +698,18 @@ RJCB, FB and GvdB wrote the article.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \section{Supplementary materials}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Differences with Bianchi et al., 2017}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A part of this study does the same analysis as Bianchi et al., 2017.mainly concern the use of different
+A part of this study does the same analysis as Bianchi et al., 2017.
+mainly concern the use of different
 software and a different definition of what an MHC binder is.
-
-% \paragraph{IC50 prediction software}
-
-The earlier study used \verb;epitope-prediction; a hand-crafted method [GEERT: what is hand-crafted? They didn't use a computer? Why relevant?], 
-that has been trained on MHC-I haplotypes only,
-which is used here again. For MHC-II IC50 predictions, the
-'mhcnuggetsr' R package was used in this study.
 
 % \paragraph{Definition of what a binder is}
 
