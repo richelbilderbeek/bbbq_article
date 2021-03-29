@@ -1,7 +1,5 @@
 \begin{abstract}
 
-\richel{TODO: Tables don't have a legend, but instead have a title and footnotes below the table. Modify the tables to make it so in the end, \url{https://github.com/richelbilderbeek/bbbq_article/issues/181}}
-
 Cytolytic T cell responses are predicted to be biased towards membrane proteins. 
 Because the peptide-binding grooves of most haplotypes 
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
@@ -41,7 +39,6 @@ are T cells which recognize peptides derived from
 exogenous antigens presented on Major Histocompatibility Complexes (MHC) class I and II. 
 
 % \paragraph{Classification of HLA}
-
 
 The MHC proteins are heterodimeric proteins encoded by the
 HLA (Human Leukocyte Antigens) genes.
@@ -224,9 +221,6 @@ which put less strain on the bioinformatics pipeline.
 We believe that our revised definition precludes bias of proteins 
 that give rise to no or only very few MHC epitopes
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Evolutionary conservation of TMHs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,12 +284,7 @@ Using these predicted protein topologies, the SNPs were scored to be located wit
 \subsection{TMH-derived peptides are predicted to be over-presented in MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{
-  First do the bioinformatics predictions,
-  then the experimental confirmation 
-}
-
-Figure \ref{fig:1} shows the predicted presentation of TMH-derived peptides in MHC-I,
+Figure \ref{fig:bbbq_1_smart_results} shows the predicted presentation of TMH-derived peptides in MHC-I,
 for a human, viral and bacterial proteome.
 Per MHC-I haplotype, it shows the percentage of binders that overlap with a TMH 
 for at least one residue.
@@ -327,40 +316,12 @@ is similar for the probed proteomes, which strengthens our previous conclusion (
   \label{fig:bbbq_1_smart_results}
 \end{figure}
 
-%\begin{figure}
-%  \centering
-%  \begin{subfigure}[t]{0.45\textwidth}
-%    \centering
-%    \caption{}
-%    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
-%    \label{fig:1}
-%  \end{subfigure}
-%  \hfill
-%  \begin{subfigure}[t]{0.45\textwidth}
-%    \centering
-%    \caption{}
-%    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
-%    \label{fig:2}
-%  \end{subfigure}
-%  \caption{
-%    TMH-derived peptides are predicted to be over-presented in MHC-I (left
-%    panel) and MHC-II (right panel).
-%    Both panels show the percentage of epitopes predicted to be 
-%    overlapping with TMHs
-%    for the proteomes of human, SARS-CoV-2 and \emph{M. tuberculosis}.
-%    The dashed horizontal lines indicate the percentage as expected by chance.
-%    See supplementary tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
-%    for the exact TMH and  epitope counts.
-%    \richel{Add panel with hydrophobicity}
-%  }
-%\end{figure}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived peptides are predicted to be over-presented in MHC-II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We next wondered if the over-representation of TMH-derived peptides would also be present for MHC-II. 
-Figure \ref{fig:2} shows the percentages of MHC-II epitopes predicted to be overlapping 
+Figure \ref{fig:bbbq_1_smart_results} shows the percentages of MHC-II epitopes predicted to be overlapping 
 with TMHs for our human, viral and bacterial proteomes.
 See supplementary table \ref{tab:tmh_binders_mhc2} 
 for the TMH and epitope counts.
@@ -629,7 +590,7 @@ might be underestimated.
 Not only do we predict that MHC-I and MHC-II TMH-derived epitopes 
 are presented , we conclude that these are additionally
 presented more often than expected by chance 
-alone (figures \ref{fig:1} and \ref{fig:2}).
+alone (figure \ref{fig:bbbq_1_smart_results}).
 This in silico finding is a general pattern 
 that persists in both MHC-I and MHC-II, 
 for humans, bacteria and viruses. 
@@ -1020,7 +981,7 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
 Tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
 show the exact number of binders, binders that overlap with TMHs
 and the percentage of binders that overlap with TMHs, as
-visualized by figures \ref{fig:1} and \ref{fig:2} respectively.
+visualized by figure \ref{fig:bbbq_1_smart_results}.
 
 % Label: tab:tmh_binders_mhc1
 \input{bbbq_1_smart_results/table_tmh_binders_mhc1_2.latex}
