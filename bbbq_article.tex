@@ -1,9 +1,6 @@
 \begin{abstract}
 
 \richel{TODO: Tables don't have a legend, but instead have a title and footnotes below the table. Modify the tables to make it so in the end, \url{https://github.com/richelbilderbeek/bbbq_article/issues/181}}
-\richel{TODO: Condense figures into bigger ones with panels, following 1 message per figure. Order these figures chronologically,
-\url{https://github.com/richelbilderbeek/bbbq_article/issues/195}}
-
 
 Cytolytic T cell responses are predicted to be biased towards membrane proteins. 
 Because the peptide-binding grooves of most haplotypes 
@@ -66,7 +63,7 @@ It is believed that this improves immunity at the population level,
 as mutations in a protein that disrupt a particular MHC presentation, 
 so-called escape mutations, 
 will not affect MHC presentation for all haplotypes (\cite{sommer2005importance}).
-% Do noty give the number of MHC molecules, as is is more complex, 
+% Do not give the number of MHC molecules, as is is more complex, 
 % as the alpha chains coded by the maternal chromosome 
 % of HLA-DQ, DR, DP can heterodimerize with the beta chains coded 
 % by the paternal chromosome and vice versa
@@ -135,17 +132,17 @@ single nucleotide polymorphisms (SNPs) showed that random point mutations are in
 to occur within TMHs. These findings strengthen the emerging notion that TMHs are important for the T cell branch of the adaptive immune system, and hence are of  
 overlooked importance in vaccine development.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \richel{I wonder if the order of the Methods, should match the improved
 order of the Results as well, so first the MHC-I and MHC-II presentation,
 followed by the experimental confirmation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Peptide elution studies}\label{subsec:elution_studies}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To determine if epitopes derived from TMHs are presented 
 we used two elution studies, which both have sequenced
@@ -165,9 +162,9 @@ overlapped with a transmembrane region.
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Predicting TMH epitopes}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To predict how frequently epitopes overlapping with TMHs are presented,
 we applied a similar analysis strategy as described in \cite{bianchi2017} for several haplotypes of both MHC-I and MHC-II, 
@@ -230,9 +227,9 @@ that give rise to no or only very few MHC epitopes
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Evolutionary conservation of TMHs}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \paragraph{Introduction}
 
@@ -285,13 +282,13 @@ using PureseqTM.
 Using these predicted protein topologies, the SNPs were scored to be located within or outside trans membrane domains.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived peptides are predicted to be over-presented in MHC-I}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \richel{
   First do the bioinformatics predictions,
@@ -340,32 +337,9 @@ is similar for the probed proteomes, which strenghtens our previous conclusion (
   }
 \end{figure}
 
-%\begin{figure}[!htbp]
-%  \includegraphics[height=0.9\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_grid.png}
-%  \caption{
-%    Percentage of MHC-I epitopes predicted to be overlapping with TMHs
-%    for the proteomes of human, SARS-CoV-2 and \emph{M. tuberculosis}.
-%    The dashed horizontal lines indicate the percentage as expected by chance.
-%    See supplementary table \ref{tab:tmh_binders_mhc1} for the exact TMH and epitope counts.
-%    \richel{Add panel with hydrophobicity}
-%  }
-%  \label{fig:1}
-%\end{figure}
-%
-%\begin{figure}[!htbp]
-%  \includegraphics[height=0.8\textheight]{bbbq_1_smart_results/fig_f_tmh_mhc2_2_grid.png}
-%  \caption{
-%    Percentage of MHC-II epitopes predicted to be overlapping with TMHs
-%    for a human, viral and bacterial proteome.
-%    The dashed horizontal lines indicate the percentage as expected by chance.
-%    See supplementary table \ref{tab:tmh_binders_mhc2} for the exact TMH and epitope counts.
-%  }
-%  \label{fig:2}
-%\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived peptides are predicted to be over-presented in MHC-II}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We next wondered if the over-representation of TMH-derived peptided would also be present for MHC-II. 
 Figure \ref{fig:2} shows the percentages of MHC-II epitopes predicted to be overlapping 
