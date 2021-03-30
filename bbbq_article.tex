@@ -133,32 +133,6 @@ overlooked importance in vaccine development.
 \section{Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\richel{I wonder if the order of the Methods, should match the improved
-order of the Results as well, so first the MHC-I and MHC-II presentation,
-followed by the experimental confirmation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Peptide elution studies}\label{subsec:elution_studies}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-To determine if epitopes derived from TMHs are presented 
-we used two elution studies, which both have sequenced
-epitopes found in naturally occurring human immune cells,
-for MHC-I (\cite{schellens2015comprehensive}) 
-and MHC-II (\cite{bergseng2015different}).
-For each of the sequenced epitopes,
-we found its possible location(s) in 
-a human representative reference proteome,
-with UniProt ID UP000005640\_9606.
-For the epitopes that were present only a single time in the proteome,
-we predicted the topology of the proteins in which these epitopes are found.
-We used both TMHMM and PureseqTM to do these predictions. 
-From this topology, we could determine if the epitope
-overlapped with a transmembrane region.
-
-The full analysis can be found
-at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Predicting TMH epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,6 +194,28 @@ which put less strain on the bioinformatics pipeline.
 \richel{Show side-by-side-comparison in supplementary materials}
 We believe that our revised definition precludes bias of proteins 
 that give rise to no or only very few MHC epitopes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Peptide elution studies}\label{subsec:elution_studies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To determine if epitopes derived from TMHs are presented 
+we used two elution studies, which both have sequenced
+epitopes found in naturally occurring human immune cells,
+for MHC-I (\cite{schellens2015comprehensive}) 
+and MHC-II (\cite{bergseng2015different}).
+For each of the sequenced epitopes,
+we found its possible location(s) in 
+a human representative reference proteome,
+with UniProt ID UP000005640\_9606.
+For the epitopes that were present only a single time in the proteome,
+we predicted the topology of the proteins in which these epitopes are found.
+We used both TMHMM and PureseqTM to do these predictions. 
+From this topology, we could determine if the epitope
+overlapped with a transmembrane region.
+
+The full analysis can be found
+at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Evolutionary conservation of TMHs}
@@ -399,34 +395,56 @@ epitopes derived from TMHs are presented in both MHC-I and MHC-II.
     \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected.png}
     \label{fig:f_snps_found_and_expected}
   \end{subfigure}
+  
+   \vfill
+
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
+    \label{fig:f_tmh_ncbi}
+  \end{subfigure}  
+
+
   \caption{
-      \textbf{(A)} 
-      The number of SNPs in TMHs as expected by chance (left bar) 
-      and found in the dbSNP database (right bar).
-      Percentages are added to show the relative conservation
-      of SNPs in TMHs found.
-      \textbf{(B)}
-      Percentage of SNPs found in TMHs.
-      Each point shows the predicted percentage of
-      TMH (x-axis) and the observed occurrence of SNPs being located
-      within a TMH (y-axis) for a protein.
-      The dashed diagonal line shows the line of equality (i.e.
-      equal conservation of TMHs and soluble protein regions).
-      The blue line is a linear trend line that includes only the
-      transmembrane proteins.
+    \textbf{(A)} 
+    The number of SNPs in TMHs as expected by chance (left bar) 
+    and found in the dbSNP database (right bar).
+    Percentages are added to show the relative conservation
+    of SNPs in TMHs found.
+    \textbf{(B)}
+    Percentage of SNPs found in TMHs.
+    Each point shows the predicted percentage of
+    TMH (x-axis) and the observed occurrence of SNPs being located
+    within a TMH (y-axis) for a protein.
+    The dashed diagonal line shows the line of equality (i.e.
+    equal conservation of TMHs and soluble protein regions).
+    The blue line is a linear trend line that includes only the
+    transmembrane proteins.
+    \textbf{(C)}
+    Distribution of the percentages of TMH of TMPs.
   }
 \end{figure}
 
 \begin{figure}
   \centering
-  \begin{subfigure}[t]{0.3\textwidth}
+  \begin{subfigure}[t]{0.45\textwidth}
     \centering
     \caption{}
     \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_conservation_per_spanner.png}
     \label{fig:conservation_per_spanner}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[t]{0.55\textwidth}
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
+    \label{fig:f_tmh_ncbi_per_spanner}
+  \end{subfigure}  
+
+  \vfill
+  
+  \begin{subfigure}[t]{\textwidth}
     \centering
     \caption{}
     \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner.png}
@@ -440,6 +458,10 @@ epitopes derived from TMHs are presented in both MHC-I and MHC-II.
       Percentages are added to show the relative conservation
       of SNPs in TMHs found.
       \textbf{(B)} 
+      \richel{THIS IS A PLACEHOLDER}
+      Distribution of the proportion of amino acids residing
+      in the plasma membrane.
+      \textbf{(C)} 
       Percentage of SNPs found in TMPs predicted to have only a single
       (left) or multiple (right) TMHs.
       The dashed diagonal lines show the expected line of equality 
@@ -462,45 +484,48 @@ See tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}
 for the detailed numbers and distributions of SNPs.
 
 Per protein, we calculated two percentages: 
-(1) the percentage of the total protein predicted to be  TMHs, 
+(1) the percentage of the total protein predicted to be TMHs, 
 and (2) the percentage of SNPs located within these predicted TMHs.
 Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
-We performed a linear regression analysis on the TMPs
+Most our TMPs had less than half their residues located in the 
+plasma membrane.
+The proportion of SNPs found in TMHs varied from 
+none (i.e. all SNPs were in
+soluble regions) to all.
+To determine if it is likelier to find SNPs within either TMHs or
+soluble-facing domains, we performed a linear regression analysis,
 and added a 95\% confidence interval on this regression.
-Would the confidence interval of the regression line 
-overlap with the line of equality,
-this would indicate that SNPs occur just as likely within TMHs 
-and solvent-exposed protein domains (i.e., no higher conservation of TMHs). However, we observed that ...[GEERT give brief explanation in words of what is seen in the graph]
-This finding suggests that SNPs 
-occur more often in soluble domains than in TMHs.
+This linear fit nearly goes through the origin and has a slope
+below the line of equality,
+which shows that less SNPs are found in TMHs than expected by chance.
 
-To statistically test whether SNPs occur 
-just as likely in soluble domains as
-in TMHs, we first calculated the number of SNPs that are expected to be
-found in TMHs of TMPs by chance ($E(n_{SNP\_TMH})= n_{SNP} \cdot f_{TMH} \approx 4,056$), by multiplying the number of SNPs predicted to be in TMHs ($n_{SNP} = 21,738$ ) with the fraction of the TMPs that are predicted TMH. The actual number of SNPs predicted to be located within TMHs
-is $n_{SNP\_TMH} = 3,903$, which is lower than the expectation
-of $E(n_{SNP\_TMH}) \approx 4,056$.
-
-To test whether this difference is significant,
-we used a binomial Poisson distribution, where the number of trails ($n$) equals the number of SNPs, which is 21,738. The probability of success
-for the $i$th TMP ($p\_i$), is the percentage of each TMP that is TMH.
-We calculated the probability of having 3,903 or less successes.
+We determined the probability to find the observed amount
+of SNPs in TMHs by chance, i.e. when assuming SNPs occur 
+just as likely in soluble domains as in TMHs.
+We used a binomial Poisson distribution, 
+where the number of trails ($n$) equals the number of SNPs, 
+which is 21,208. 
+The probability of success for the $i$th TMP ($p\_i$), 
+is the percentage of residues within a TMH per TMP. 
+These probabilities are shown as a histogram 
+in figure \ref{fig:f_tmh_ncbi}). 
+The expected number of SNPs expected to be found in 
+TMHs by chance equals $\sum{p} \approx 4,141$.
+As we observed 3,903 SNPs in TMHs, 
+we calculated the probability of having that amount or less successes.
 We used the type I error cut-off value of $\alpha = 2.5\%$.
 The chance to find, within TMHs, this amount or less SNPs 
-equals [RJCB: recalculate]
-$1.6201 \cdot 10^{-9}$.
+equals $6.8208 \cdot 10^{-11}$.
+We determined the relevance of this finding, by
+calculating how much less SNPs are found in TMHs,
+when compared to soluble regions, which is the
+ratio between the number of SNPs found in TMHs
+versus the number of SNPs as expected by chance.
+In effect, per 1000 SNPs found in soluble protein domains, 
+one finds 918 SNPs in TMHs,
+as depicted in figure \ref{fig:conservation}. 
 
-Using a alpha value of $0.05$, as is common practice for an uninformed
-expectation, we conclude that there are significantly less SNPs
-in TMHs as expected by chance.
-See figure \ref{fig:f_tmh_ncbi} for the percentages of TMHs in the transmembrane proteins.[GEERT: staat deze figuur hier wel goed? Niet naar boven?] The effect size is that, 
-when randomly selecting SNPs,
-per 100 SNPs found in soluble protein domains, 
-one finds 91 SNPs in TMHs,
-as depicted in figure \ref{fig:conservation}. [GEERT: hieronder had je indentieke tekst, maar verwees naar andere figuur \ref{fig:conservation_per_spanner}. Ik denk dat je deze hieronder kan samenvoegen]
-
-
-We splitted this analysis based on the number of TMHs
+We split this analysis based on the number of TMHs
 of each TMP. 
 We hypothesized that single-membrane spanners (i.e., proteins
 with a single predicted TMH) are less conserved than multi-membrane spanners (with $>$1 TMH),
@@ -508,10 +533,36 @@ because multi-membrane spanners
 might have protein-protein interactions between their TMHs, 
 for example to accommodate active sites, and 
 thus might have additional structural constraints.
-As can be seen in figure \ref{fig:f_snps_found_and_expected_per_spanner}, 
-both single- and multi-spanners are evolutionarily conserved.[GEERT: maar een sterker dan de andere? Kun je die conclusie niet trekken?]
+From the split data, we did the same analysis:
+figure \ref{fig:f_snps_found_and_expected_per_spanner} 
+shows, the percentage a protein resides in the membrane versus the
+percentage of SNPs found in those TMH regions, per spanner.
+In both cases, a linear regression shows that less
+SNPs are found in TMHs, than expected by chance.
 
+Also per spanner, we determined the probability to find the 
+observed amount of SNPs in TMHs by chance.
+For single-spanners, we found 452 SNPs in TMH, where
+$\approx462$ were expected by chance. 
+The chance to observe this or a lower number by chance is 
+$0.319$. As this chance was higher than our $\alpha = 0.025$
+and we considered this no significant effect.
+For the single-spanners, we found 3,351 SNPs in TMH, where
+$\approx3678$ were expected by chance. 
+The chance to observe this or a lower number by chance is 
+$8.315841 \cdot 10^{-12}$, 
+which means we attribute the lower number of SNPs found
+to an effect, instead of luck. 
 
+Also, per spanner type, 
+we determined the relevance of this finding, by
+calculating how much less SNPs are found in TMHs,
+when compared to soluble regions,
+as depicted in figure \ref{fig:conservation_per_spanner}.
+In effect, per 1000 SNPs found in soluble protein domains, 
+one finds 978 SNPs in TMHs 
+in single spanners (although this is not significant)
+and 911 SNPs in TMHs in multi-spanners.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
@@ -540,8 +591,7 @@ proteome (also shown in table \ref{tab:elution}).
 Although elution studies and in silico predictions both suggest that TMH-derived epitopes are presented in MHC-I and MHC-II, the molecular mechanisms of how integral membrane proteins are processed for MHC presentation are largely unknown (\cite{bianchi2017}). Most prominently, the fundamental principles of how TMHs are extracted from the  hydrophobic lipid environment into the aqueous vacuolar lumen, and their prior or subsequent proteolytic processing are unresolved.
 \geert{
   beetje kort. Suggesties? Experimental approaches? Hoeft niet super
-  origineel, bijvoorbeeld suggereren dat lipases een rol kunnen spelen. 
-  Frans kan vast helpen met mooie zin
+  origineel, bijvoorbeeld suggereren dat lipases een rol kunnen spelen. Frans kan vast helpen met mooie zin
 }
 
 % \paragraph{False positives}
@@ -588,7 +638,7 @@ might be underestimated.
 % \paragraph{Over-presentation in silico}
 
 Not only do we predict that MHC-I and MHC-II TMH-derived epitopes 
-are presented , we conclude that these are additionally
+are presented, we conclude that these are additionally
 presented more often than expected by chance 
 alone (figure \ref{fig:bbbq_1_smart_results}).
 This in silico finding is a general pattern 
@@ -596,16 +646,34 @@ that persists in both MHC-I and MHC-II,
 for humans, bacteria and viruses. 
 
 % \paragraph{MHC-II is expected to present TMHs}
-\frans{we moeten iets schrijven over de verschillende haplotypen wat is the occurence van de haplotypen met andere worden hoe relevant zijn de haplotypen die veel TMH presenteren?}
+The results from this study support our hypothesis 
+that TMH-derived epitopes are over-presented
+in MHC-II, similarly to we previously showed for MHC-I (\cite{bianchi2017}). 
 The over-presentation of TMHs for most MHC-II haplotypes 
-is more pronounced than for MHC-I haplotypes,
-as up to a third of the predicted MHC-II binders 
-\richel{Hier ben ik nu met verwerken...} 
-from the human and MTb proteome stem from TMHs. \frans{ik zoek nog naar associaties} 
-such as \verb;HLA-DQA1*0101/DQB1*0501; 
+appears to follow a similar pattern as MHC-I haplotypes,
+although MHC-II presents slightly more TMH-derived
+epitopes (see Supplementary Materials, figure \ref{fig:rel_presentation}
+for a direct comparison). 
+Unlike MHC-I, the human proteome over-presents TMH-derived
+epitopes for all MHC-II haplotypes that we have investigated.
+Possible there are MHC-II haplotypes that present less TMH-derived
+epitopes than expected by chance.
+The haplotype \verb;HLA-DQA1*0101/DQB1*0501; had the highest
+over-presentation of TMH-derived epitopes,
+which we suggest is the haplotype of choice 
+to investigate the intracellular mechanism of TMH-derived
+antigen presentation.
 
-This results from this study support our hypothesis that TMH-derived epitopes are over-presented
-in MHC-II, similarly to we previously showed for MHC-I [CITE BIANCHI].[GEERT: deel gewist, want was letterlijke herhaling van hierboven. Beter is zeggen dat (1) MHC-II presentatie belangrijk is voor B cell activatie. (2) B cellen antilichamen produceren, en dan antilichamen solvent-exposed protein regions herkennen. (3) Dat onze analyse suggereert HMC-II presentatie voornamelijk andere (TMH of buried) regio's betreft. (4) Dat T helper cellen dus andere delen van antigene eiwitten herkennen (MHC-II gepresenteerd door de B cellen) dan de BCR bindt.]
+\richel{Geert, ik kan je hulp goed gebruiken bij dit stukje}
+Presentation of antigens by MHC-II is important for the activation of
+B cells \richel{je bedoelt denk ik T cellen hier?}. 
+B cell produce antibodies that recognize only solvent-exposed protein regions,
+thus the B cell receptor is inherently unable to present hydrophobic regions.
+Our analysis suggests, however, that MHC-II
+over-presents TMH regions. A helper T cell thus needs an 
+\geert{
+  Beter is zeggen dat (1) MHC-II presentatie belangrijk is voor B cell activatie. (2) B cellen antilichamen produceren, en dan antilichamen solvent-exposed protein regions herkennen. (3) Dat onze analyse suggereert HMC-II presentatie voornamelijk andere (TMH of buried) regio's betreft. (4) Dat T helper cellen dus andere delen van antigene eiwitten herkennen (MHC-II gepresenteerd door de B cellen) dan de BCR bindt.
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Less SNPs in TMHs found, hinting at evolutionary conservation}
@@ -651,10 +719,23 @@ For single-spanners, we found no evolutionary conservation.
 We speculate that the human immune system is more attentive 
 towards TMHs in multi-spanners, as these are evolutionarily conserved.
 
-\geert{
-  Also compare your findings with previous efforts 
-  to look at conservation of TMHs
-}
+There have been more efforts to look at the conservation of TMHs,
+using different methodologies.
+One such example is \ref{stevens2001substitution}, 
+in which aligned protein sequence data was used.
+Also this study found that TMHs are evolutionarily more conserved,
+as the mean amino acid substitution rate in TMHs is about ten
+percent lower,
+which is the same value as this study found.
+Another example is a study that estimates the conservation
+scores for TMH and soluble regions based on 
+evolutionary related protein alignments,
+and found that TMHs are more conserved, 
+with a conservation score that was 17\% higher in 
+TMHs (\ref{oberai2009structural}).
+Note that the last study also used human SNPs
+and found that mutations in TMH are likelier to cause
+a disease, again underlining the importance of TMHs.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -1096,18 +1177,18 @@ number of SNPs per gene name, at 2020-12-14.
   \label{fig:snps_per_gene_name_processed}
 \end{figure}
 
-Figure \ref{fig:f_tmh_ncbi} shows the distribution 
-of the percentages of TMH of transmembrane proteins.
-
-\begin{figure}[!htbp]
-  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
-  \caption{
-    Distribution of the percentages of TMH of transmembrane proteins.
-    Dashed vertical line: mean \% TMH in all proteins.
-    Dotted vertical line: mean \% TMH in TMPs.
-  }
-  \label{fig:f_tmh_ncbi}
-\end{figure}
+%Figure \ref{fig:f_tmh_ncbi} shows the distribution 
+%of the percentages of TMH of transmembrane proteins.
+%
+%\begin{figure}[!htbp]
+%  \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
+%  \caption{
+%    Distribution of the percentages of TMH of transmembrane proteins.
+%    Dashed vertical line: mean \% TMH in all proteins.
+%    Dotted vertical line: mean \% TMH in TMPs.
+%  }
+%  \label{fig:f_tmh_ncbi}
+%\end{figure}
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_n_proteins_per_gene_name.png}
