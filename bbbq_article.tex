@@ -151,11 +151,11 @@ epitope length (\cite{bergseng2015different}).
 We used a human (UniProt ID UP000005640\_9606), 
 viral (SARS-CoV-2, UniProt ID UP000464024) 
 and bacterial (\emph{Mycobacterium tuberculosis} (MTb), UniProt ID UP000001584) 
-reference proteome. We used TMHMM  \richel{ref} to predict the topology 
+reference proteome. We used TMHMM (\cite{krogh2001predicting}) to predict the topology 
 of the proteins within these proteomes.
 To predict the affinity of an epitope to a certain MHC molecule,
 we used \verb;EpitopePrediction; (\cite{bianchi2017}) for MHC-I 
-and \verb;MHCnuggets; \richel{ref} for MHC-II.
+and \verb;MHCnuggets; (\cite{shao2020high}) for MHC-II.
 The 13 MHC-I haplotypes used in this study are the same as 
 used in our previous study (\cite{bianchi2017}).
 The most frequent MHC-II haplotypes used  were selected, with a phenotypic frequency of at least 14\% in
@@ -334,7 +334,7 @@ Plotting the normalized values of presented TMH-derived epitopes (where
 $1.0$ denotes that the percentage of presented TMH-derived epitopes
 matches the values as expected by chance) in \ref{fig:rel_presentation}
 shows that MHC-II has a higher relative over-presentation of TMH-derived
-epitopes, when compared to MHC-I. \richel{HIERO}
+epitopes, when compared to MHC-I.
 The MHC-I molecule presents epitopes of shorter length than MHC-II.
 We expect this to be of no influence in the presentation level
 of TMH-derived epitopes, for each of the three proteomes.
@@ -342,7 +342,7 @@ We verified this, by normalizing the percentage of TMH-derived epitopes found
 to the percentage of TMH-derived epitopes expected, 
 where a value of $1.0$ denotes that the percentage of TMH-derived epitopes found
 matches the percentage as expected by chance.
-\richel{TODO: explain only the results found. Elaborate. Draw a conclusion}
+\richel{explain only the results found. Elaborate. Draw a conclusion}
 Additionally, we investigated if MHC-I and MHC-II are equally prone
 to present TMH-derived epitopes. 
 \richel{Add exact method}
@@ -721,7 +721,7 @@ towards TMHs in multi-spanners, as these are evolutionarily conserved.
 
 There have been more efforts to look at the conservation of TMHs,
 using different methodologies.
-One such example is \ref{stevens2001substitution}, 
+One such example is \cite{stevens2001substitution}, 
 in which aligned protein sequence data was used.
 Also this study found that TMHs are evolutionarily more conserved,
 as the mean amino acid substitution rate in TMHs is about ten
@@ -732,7 +732,7 @@ scores for TMH and soluble regions based on
 evolutionary related protein alignments,
 and found that TMHs are more conserved, 
 with a conservation score that was 17\% higher in 
-TMHs (\ref{oberai2009structural}).
+TMHs (\cite{oberai2009structural}).
 Note that the last study also used human SNPs
 and found that mutations in TMH are likelier to cause
 a disease, again underlining the importance of TMHs.
