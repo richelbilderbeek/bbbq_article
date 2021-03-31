@@ -145,9 +145,10 @@ all possible 9-mers (for MHC-I) or 14-mers (MHC-II) were derived.
 For each of these peptides, we determined if it overlapped with a predicted 
 TMH and if it was predicted to bind to each haplotype.
 
-For MHC-I, 9-mers were used, as this is the length most frequently presented in MHC-I and was used in our earlier
-study (\cite{bianchi2017}). For MHC-II, 14-mers were used,  as these are the most frequently occurring
-epitope length (\cite{bergseng2015different}).
+For MHC-I, 9-mers were used, as this is the length most frequently presented in MHC-I 
+and was used in our earlier study (\cite{bianchi2017}). 
+For MHC-II, 14-mers were used, 
+as these are the most frequently occurring epitope length (\cite{bergseng2015different}).
 We used a human (UniProt ID UP000005640\_9606), 
 viral (SARS-CoV-2, UniProt ID UP000464024) 
 and bacterial (\emph{Mycobacterium tuberculosis} (MTb), UniProt ID UP000001584) 
@@ -158,8 +159,8 @@ we used \verb;EpitopePrediction; (\cite{bianchi2017}) for MHC-I
 and \verb;MHCnuggets; (\cite{shao2020high}) for MHC-II.
 The 13 MHC-I haplotypes used in this study are the same as 
 used in our previous study (\cite{bianchi2017}).
-The most frequent MHC-II haplotypes used  were selected, with a phenotypic frequency of at least 14\% in
-the human population (\cite{greenbaum2011functional}),
+For MHC-II, we selected haplotypes with a phenotypic frequency 
+of at least 14\% in the human population (\cite{greenbaum2011functional}),
 resulting in 21 MHC-II haplotypes.
 
 The MHC-I molecule presents epitopes of shorter length than MHC-II.
@@ -170,15 +171,11 @@ to the percentage of TMH-derived epitopes expected,
 where a value of $1.0$ denotes that the percentage of TMH-derived epitopes found
 matches the percentage as expected by chance.
 
-Additionally, we investigated if MHC-I and MHC-II are equally prone
-to present TMH-derived epitopes. 
-\richel{Add exact method}
-See \ref{fig:rel_presentation} and \ref{fig:rel_presentation_per_haplotype}.
-
 In our previous work, we found that the observed pattern can be
 explained from the hydrophobicity of the MHC-I binding 
 cleft (\cite{bianchi2017}), we validated.
-Here we do the same analysis for MHC-II \richel{Explain the analysis here}.
+Here we do the same analysis for MHC-II 
+\richel{Really need to do? If yes, explain the analysis here}.
 
 This study differs in one important aspect from our previous work (\cite{bianchi2017}), 
 The definition of a binder differs from \cite{bianchi2017}:
@@ -307,7 +304,7 @@ is similar for the probed proteomes, which strengthens our previous conclusion (
     The red lines indicate the percentage as expected by chance.
     See supplementary tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
     for the exact TMH and  epitope counts.
-    \richel{Add panel with hydrophobicity}
+    \richel{Decide in meeting: add panel with hydrophobicity}
   }
   \label{fig:bbbq_1_smart_results}
 \end{figure}
@@ -323,30 +320,12 @@ See supplementary table \ref{tab:tmh_binders_mhc2}
 for the TMH and epitope counts.
 We predict that TMH-derived peptides are also over-presented in most MHC-II haplotypes, and this over-presentation seems even more pronounced than for MHC-I. 
 \richel{
-  Showing how general our finding is (as it is explained by hydrophobicity)
+  Decide in meeting: 
+  showing how general our finding is (as it is explained by hydrophobicity)
   is important. See \url{https://github.com/richelbilderbeek/bbbq_article/issues/192}
 }
 Similar to our previous results with MHC-I, we predicted that the extent to which TMH-derived
 epitopes are presented by each MHC-II haplotype is similar for the human, bacterial and viral proteome.
-
-
-Plotting the normalized values of presented TMH-derived epitopes (where
-$1.0$ denotes that the percentage of presented TMH-derived epitopes
-matches the values as expected by chance) in \ref{fig:rel_presentation}
-shows that MHC-II has a higher relative over-presentation of TMH-derived
-epitopes, when compared to MHC-I.
-The MHC-I molecule presents epitopes of shorter length than MHC-II.
-We expect this to be of no influence in the presentation level
-of TMH-derived epitopes, for each of the three proteomes.
-We verified this, by normalizing the percentage of TMH-derived epitopes found
-to the percentage of TMH-derived epitopes expected, 
-where a value of $1.0$ denotes that the percentage of TMH-derived epitopes found
-matches the percentage as expected by chance.
-\richel{explain only the results found. Elaborate. Draw a conclusion}
-Additionally, we investigated if MHC-I and MHC-II are equally prone
-to present TMH-derived epitopes. 
-\richel{Add exact method}
-See \ref{fig:rel_presentation} and \ref{fig:rel_presentation_per_haplotype}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH-derived peptides are predicted to be presented in vivo}
@@ -749,11 +728,7 @@ Note that the last study also used human SNPs
 and found that mutations in TMH are likelier to cause
 a disease, again underlining the importance of TMHs.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \paragraph{General pattern in epitope presentation}
+% \paragraph{Conclusion}
 
 From this study, two important conclusions can be drawn. 
 First, the MHC over-presentation of TMHs is likely a general feature 
@@ -938,7 +913,8 @@ to download a pre-compiled executable after confirmation he/she
 is in academia. The R package respects this restriction
 and allows the user to install and use TMHMM from within R,
 as done in this study.
-'tmhmm' has been submitted to and is accepted by CRAN. \frans{wat is CRAN}
+'tmhmm' has been submitted to and is accepted 
+by the Comprehensive R Archive Network (CRAN).
 
 % \paragraph{pureseqtmr}
 
@@ -1116,13 +1092,17 @@ show these normalized values for the MHC-I and MHC-II haplotypes respectively.
 \end{figure}
 
 To determine the additional over-presentation of TMH-derived epitopes 
-in MHC-II (as compared to MHC-I), we used the same normalized percentages
-and compared the averages between MHC-I and MHC-II.
-Figure \ref{fig:rel_presentation_per_haplotype} shows the normalized
-TMH-derived epitope presentation per haplotype.
-To compare the TMH-derived over-presentation per MHC class, 
-we plot the mean and standard error of the normalized values,
-grouped per haplotype in figure \ref{fig:rel_presentation}.
+in MHC-II (as compared to MHC-I), we normalized the data to enable
+a side-by-side comparison. 
+The percentage of TMH-derived epitopes presented was normalized
+to the expected percentage of TMH-derived epitopes,
+where $1.0$ denotes that the percentage of presented TMH-derived epitopes
+matches the values as expected by chance.
+The normalized values per haplotype are shown 
+in figure \ref{fig:rel_presentation_per_haplotype}.
+To compare the TMH-derived over-presentation per MHC class,
+we grouped the normalized values per haplotype, 
+and plot the mean and standard error, as shown in figure \ref{fig:rel_presentation}.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_rel_presentation_per_haplotype.png}
