@@ -188,9 +188,11 @@ a binder as having an IC50 in the lowest 2\%
 of the peptides within a \emph{protein}, 
 which put less strain on the bioinformatics pipeline.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
-\richel{Show side-by-side-comparison in supplementary materials}
 We believe that our revised definition precludes bias of proteins 
-that give rise to no or only very few MHC epitopes
+that give rise to no or only very few MHC epitopes.
+To verify our results are similar,
+we compare the previous and the
+current approach side by side in the supplementary materials.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Peptide elution studies}\label{subsec:elution_studies}
@@ -805,6 +807,15 @@ For the sake of reproducible research, we used the desktop version (as
 we can call it from scripts) and, due to this, we removed the
 selenoproteins from this analysis.
 
+% \paragraph{Compare results in figure}
+
+To verify if the previous and the current method give rise to
+notable difference, we show a side-by-side comparison
+in figures \ref{fig:bianch_et_al_2017_1a} and \ref{fig:bilderbeek_et_al_2021_1a}.
+The figures that haplotypes that over-present or under-present TMH-derived epitopes,
+do so in both studies. The extent to which TMH-derived eptitopes are
+presented, however, is more extreme in our current setup.
+
 \begin{figure}
   \centering
   \begin{subfigure}[t]{0.45\textwidth}
@@ -823,9 +834,11 @@ selenoproteins from this analysis.
 
   \caption{
     \textbf{(A)} 
-    From Bianch et al.
+    Results for \cite{bianchi2017}. 
+    Red lines denotes the coincidence interval.
     \textbf{(B)}
-    From this study
+    Results for this study.
+    Red line denotes the percentage as expected by chance.
   }
 \end{figure}
 
