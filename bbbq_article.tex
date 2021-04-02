@@ -172,10 +172,12 @@ where a value of $1.0$ denotes that the percentage of TMH-derived epitopes found
 matches the percentage as expected by chance.
 
 In our previous work, we found that the observed pattern can be
-explained from the hydrophobicity of the MHC-I binding 
-cleft (\cite{bianchi2017}), we validated.
-Here we do the same analysis for MHC-II 
-\richel{Really need to do? If yes, explain the analysis here}.
+explained from the hydrophobicity of the MHC-I binding cleft (\cite{bianchi2017}).
+Here we do a similar analysis, by correlating the percentage of TMH-derived
+epitopes presented versus the mean hydrophobicity of all presented
+peptides. From these points, we derive a linear trendline and measure
+the $R^2$, where $R^2$ is the proportion of the correlation explained by
+the assumed linear relation.
 
 This study differs in one important aspect from our previous work (\cite{bianchi2017}), 
 The definition of a binder differs from \cite{bianchi2017}:
@@ -320,11 +322,13 @@ Figure \ref{fig:bbbq_1_smart_results} shows the percentages of MHC-II epitopes p
 with TMHs for our human, viral and bacterial proteomes.
 See supplementary table \ref{tab:tmh_binders_mhc2} 
 for the TMH and epitope counts.
-We predict that TMH-derived peptides are also over-presented in most MHC-II haplotypes, and this over-presentation seems even more pronounced than for MHC-I. 
+We predict that TMH-derived peptides are also over-presented in most MHC-II haplotypes, 
+and this over-presentation seems even more pronounced than for MHC-I. 
+
+This over-presentation can be explained by the hydrophobicity of the MHC-I binding cleft.
 \richel{
-  Decide in meeting: 
-  showing how general our finding is (as it is explained by hydrophobicity)
-  is important. See \url{https://github.com/richelbilderbeek/bbbq_article/issues/192}
+  Elaborate.
+  See \url{https://github.com/richelbilderbeek/bbbq_article/issues/192}
 }
 Similar to our previous results with MHC-I, we predicted that the extent to which TMH-derived
 epitopes are presented by each MHC-II haplotype is similar for the human, bacterial and viral proteome.
