@@ -295,10 +295,32 @@ TMH-derived epitopes more often than expected by chance.
 The extent of the over-presentation between the various different haplotypes 
 is similar for the probed proteomes, which strengthens our previous conclusion (\cite{bianchi2017}) that the hydrophobicity of the MHC-binding groove is the main factor responsible for the predicted over-presentation of TMH-derived peptides.  
 
-\begin{figure}[!htbp]
+\begin{figure}
   \centering
-  \includegraphics[width=0.95\textwidth]{bbbq_1_smart_results/fig_f_tmh_2_panel}
+  \begin{subfigure}[t]{0.9\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_f_tmh_2_panel.png}
+    \label{fig:bbbq_1_smart_results}
+  \end{subfigure}
+
+  \vfill
+
+  \begin{subfigure}[t]{0.4\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_hydrophobicity_mhc1.png}
+    \label{fig:hydrophobicity_2}
+  \end{subfigure}  
+  \hfill
+  \begin{subfigure}[t]{0.4\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_hydrophobicity_mhc2.png}
+    \label{fig:hydrophobicity_2}
+  \end{subfigure}  
   \caption{
+    \textbf{(A)} 
     TMH-derived peptides are predicted to be over-presented in general,
     which is for MHC-I (left column) and MHC-II (right column),
     as well as for the proteomes of SARS-CoV-2 (top row), human (middle 
@@ -308,9 +330,11 @@ is similar for the probed proteomes, which strengthens our previous conclusion (
     The red lines indicate the percentage as expected by chance.
     See supplementary tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
     for the exact TMH and  epitope counts.
-    \richel{Add panel with hydrophobicity?}
+    \textbf{(B)} and \textbf{(C)}:
+    The relation between the percentage of TMH-derived epitopes presented,
+    and the hydrophobicity score of binders for MHC-I haplotypes (panel B)
+    and MHC-II haplotypes (panel C). Trendline assumes a linear relationship.
   }
-  \label{fig:bbbq_1_smart_results}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
