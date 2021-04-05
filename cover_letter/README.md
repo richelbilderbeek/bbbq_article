@@ -56,7 +56,7 @@ This study expands our previous research [1].
      Histocompatibility Complex Class I epitopes." 
      Frontiers in immunology 8 (2017): 1118.
 
-## Letter that resulted from followint the requirements
+## Letter that resulted from the requirements
 
 Dear Editor,
 
