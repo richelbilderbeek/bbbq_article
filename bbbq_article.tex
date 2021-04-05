@@ -1248,20 +1248,12 @@ and plot the mean and standard error, as shown in figure \ref{fig:rel_presentati
 
 See tables \ref{tab:ncbi_counts_1} and tables \ref{tab:ncbi_counts_2}
 for an overview of all amounts.
-In table \ref{tab:ncbi_counts_1} one expects [RJCB: name these]
-numbers to add up. 
-The number of unique SNPs and unique gene names
-does not add up for MAP and TMP,
-as one SNP may work on multiple isoforms, some of which can be MAP
-where others can be TMP.
-The number of unique SNPs and unique gene names
-does not add up for TMPs in TMH and TMP in soluble regions
-as one SNP may work on multiple isoforms, some of which can be MAP
-where others can be TMP, and some SNPs fall in a TMH, where others
-are found in soluble regions
-In table \ref{tab:ncbi_counts_2} one expects [RJCB: name these]
-numbers to add up. 
-
+In table \ref{tab:ncbi_counts_1} there are multiple instances where
+the amounts are expected to add up, yet don't, as one SNP can work on
+multiple isoforms. For example, there are 9,621 unique SNPs 
+found in all proteins, of which 4,219 around found in MAPs 
+and 6,026 in TMPs. Apparently, 624 SNPs work on a set of isoforms that
+contains both MAPs and TMPs.
 
 % Label: tab:ncbi_counts_1
 \input{ncbi_peregrine_results/ncbi_counts_1.tex}
