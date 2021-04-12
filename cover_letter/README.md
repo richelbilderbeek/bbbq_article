@@ -62,32 +62,29 @@ Dear Editor,
 
 We hereby would like to submit our paper 
 entitled 'Transmembrane helices are an overlooked and evolutionarily conserved
-source of major histocompatibility complex class II epitopes.' 
+source of major histocompatibility complex class II epitopes' 
 for publication in PLoS Biology.
 
-In this manuscript, we investigate
+In this manuscript, we investigated
 if it is a general and evolutionarily conserved pattern 
-that TMH-derived epitopes are presented more
-often than expected by chance by the human immune system.
-We found for the large majority of MHC-I and MHC-II haplotypes, in
-a human, bacterial and viral proteome, that TMH-derived epitopes
-are presented more often than expected by chance.
-Our evidence is obtained from multiple in silico analyses,
-based on protein sequences from two elution studies,
-three reference proteomes and SNPs from the NCBI database.
+that TMH-derived epitopes are over-presented by the human immune system.
+We found that TMH-derived epitopes, from
+a human, bacterial and viral proteome, 
+are presented more often than expected by chance on the large majority of MHC-I and MHC-II haplotypes. Moreover, we found that 
+transmembrane helices are evolutionarily more conserved than soluble protein regions, suggesting that this over-presentation is evolutionary advantageous for the recognition of pathogenic microbes.
+Our evidence is obtained from extensive in silico analysis of protein sequences from peptide elution studies, MHC epitope predictions of reference proteomes, and SNPs from the NCBI database.
 
 This study expands our previous research [1]
-and is related to 
-
+and raises the important mechanistic question how membrane proteins are processed for antigen presentation, as this cannot be explained by the currently understood mechanisms.
 RICHEL: Hier moet ik twee recente studies
 noemen die relevant zijn. Bij deze kan ik wat hulp gebruiken :-)
+GEERT: gewoon twee recente reviews noemen over cross-presentatie (Blander, Cruz, ofzo, kijk in je referentielijst)
 
-We reason that epitopes derived from transmembrane helices are
-an overlooked source of epitopes and 
-we suggest that the human immune system obtains its antigens not only
-from cytosolic proteines, but from membrane proteins as well.
-Finally, we find that the over-presentation of epitopes derived from
-transmembrane helices is evolutionarily conserved.
+Thus, we show that transmembrane helices are
+an overlooked and evolutionary conserved source of MHC epitopes and 
+the human immune system obtains its antigens not only
+from cytosolic proteins, but from membrane proteins as well.
+
 
 We look forward to your evaluation.
 
