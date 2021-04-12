@@ -2,8 +2,6 @@
 
  * [Requirements](https://journals.plos.org/plosbiology/s/submission-guidelines#loc-cover-letter)
 
-## Letter that resulted from the requirements
-
 Dear Editor,
 
 We hereby would like to submit our paper 
@@ -72,39 +70,4 @@ References
    "Transmembrane Helices are an overlooked source of Major 
    Histocompatibility Complex Class I epitopes." 
    Frontiers in immunology 8 (2017): 1118.
-
-## Adaptation of earlier cover letter
-
-Dear Editor,
-
-We hereby would like to submit our paper 
-entitled 'Transmembrane helices are an overlooked and evolutionarily conserved
-source of major histocompatibility complex class II epitopes.' 
-for publication in PLoS Biology.
-
-In this manuscript, 
-we reason that MHC class II epitopes 
-derived from transmembrane helices of membrane proteins are presented more
-often than can be explained by chance. 
-Due to the strict compositional requirements of transmembrane helices, 
-this can well constitute a novel mechanism 
-of how escape mutations by pathogens are prevented. 
-Moreover, it raises the question how membrane proteins are (cross-)presented, 
-because currently described mechanisms cannot explain 
-their processing for MHC class II presentation. 
-Finally, we hypothesize how MHC class II presentation of membrane-buried epitopes 
-can contribute to the disease correlations described for many HLA haplotypes. 
-
-We look forward to your evaluation.
-
-
-Best wishes and kind regards,
-
-Richel Bilderbeek (on behalf of all authors)
-
-
-Richel Bilderbeek
-Department of Molecular Immunology
-Nijenborgh 7, 9747 AG Groningen, the Netherlands
-Email: richel@richelbilderbeek.nl
 
