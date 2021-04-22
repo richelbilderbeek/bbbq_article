@@ -12,8 +12,8 @@ for publication in PLoS Biology.
 Antigen presentation in major histocompatibility complexes (MHC) is essential 
 for the activation of T cells, 
 and much research is aimed at dissecting 
-the underlying cellular mechanisms and predicting immunodominant epitopes, 
-for instance for designing better vaccines [1,2]
+the underlying cellular mechanisms and predicting immunodominant MHC epitopes, 
+for instance for designing better vaccines [1,2]. 
 However, a neglected fact is that most MHC haplotypes 
 in the human population present hydrophobic peptides, 
 which, as we showed previously for MHC class I presentation 
@@ -30,15 +30,15 @@ What is the physiological reason why TMH-derived peptides are over-presented?
 Our bioinformatics predictions and analysis of peptide elution studies 
 demonstrate that TMH-derived epitopes are presented more often 
 than expected by chance, for almost all MHC-I and MHC-II haplotypes 
-in the human population and regardless of the origin of the 
+in the human population, and regardless of the origin of the 
 protein (i.e., human, bacterial or viral).
 
 Moreover, analysis of single nucleotide polymorphisms in the human 
-population revealed that transmembrane helices are evolutionary more 
+population revealed that transmembrane helices are evolutionarily more 
 conserved than solvent-exposed protein domains, 
 suggesting that the over-presentation of TMH-derived epitopes 
 might be evolutionary advantageous as they are less prone 
-to so-called escape mutations that prevent antigen presentation.
+to the so-called escape mutations by which pathogens evade T cell responses.
 
 Thus, we demonstrate that transmembrane helices are a major, 
 overlooked and evolutionary conserved source of MHC epitopes. 
