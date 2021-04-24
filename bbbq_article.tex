@@ -33,11 +33,11 @@ In humans, the peptide binding groove of MHC-I is made by only the alpha subunit
 For MHC-II, both the alpha and the beta chains contribute to the peptide binding groove. There are three classical forms of MHC-II as well, called HLA-DR, HLA-DQ and HLA-DP, that all present epitopes to helper T cells.
 Each MHC complex can present a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
-epitopes they bind (\cite{lund2004definition}).
+epitopes they bind \cite{lund2004definition}.
 Moreover, the HLA genes of humans are highly polymorphic, with hundreds 
 to thousands of different alleles, 
 and each different HLA allele is called 
-an MHC haplotype and presents a different subset of peptides (\cite{marsh2010nomenclature}).
+an MHC haplotype and presents a different subset of peptides \cite{marsh2010nomenclature}.
 
 % \paragraph{HLAs increase detection range}
 
@@ -48,7 +48,7 @@ is very high, because of the highly polymorphic MHC genes.
 It is therefor believed that MHC polymorphism improves immunity at the population level, 
 as mutations in a protein that disrupt a particular MHC presentation at the individual level, 
 so-called escape mutations, 
-will not affect MHC presentation for all haplotypes present in the population  (\cite{sommer2005importance}).
+will not affect MHC presentation for all haplotypes present in the population \cite{sommer2005importance}.
 
 % \paragraph{Epitope prediction}
 
@@ -57,7 +57,7 @@ as this will for instance aid the design of vaccines.
 These studies have led to the development of prediction algorithms 
 that allow for very reliable \emph{in silico} predictions 
 of the binding affinities of peptides
-(\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}).
+\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
 For example, \cite{tang2011genome} found that, 
 of the 432 peptides that were predicted to bind to MHC,
 86\% were experimentally confirmed to do so. 
@@ -68,7 +68,7 @@ Using these prediction algorithms,
 we recently predicted that peptides derived 
 from transmembrane helices (TMHs) 
 will be more frequently presented by MHC-I 
-than expected based on their abundance (\cite{bianchi2017}). 
+than expected based on their abundance \cite{bianchi2017}. 
 Moreover, we showed that some well-known immunodominant peptides stem from TMHs. 
 This over-presentation is attributed to the fact 
 that the peptide-binding groove of most MHC-I haplotypes 
@@ -80,14 +80,14 @@ TMHs are hydrophobic
 as they need to span the hydrophobic lipid bilayer of cellular membranes.
 They consist of an alpha helix of, on average, 23 amino acids in length. 
 TMHs can also be predicted with high accuracy from a protein sequence 
-by bioinformatics approaches (\cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}),
+by bioinformatics approaches \cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient},
 for example, \cite{jones2007improving} found that,
 from 184 transmembrane proteins (TMPs) with known topology, 
 80\% of the TMH predictions replicated this finding.
  
 TMHs are common structures in the proteins of humans and microbes. 
 Different TMH prediction tools estimate that 15-39\% of all proteins 
-in the human proteome contain at least one TMH (\cite{ahram2006estimation}).
+in the human proteome contain at least one TMH \cite{ahram2006estimation}.
 However, the physiological reason why peptides derived from TMHs 
 would be presented more often than peptides 
 stemming from soluble (i.e., extracellular or cytoplasmic) protein regions is unknown. 
@@ -100,7 +100,7 @@ is that these are restricted in their evolution
 by the functional requirement to span a lipid bilayer. 
 Due to this requirement, 
 many of the amino acids genuinely present in TMHs 
-are limited to the ones with hydrophobic side chains (\cite{jones1994model}).
+are limited to the ones with hydrophobic side chains \cite{jones1994model}.
 Therefore, we speculated that the TMHs of pathogens 
 might have a lower chance to develop escape mutations, 
 as many mutations will result in a dysfunctional TMH 
@@ -142,30 +142,32 @@ all possible 9-mers (for MHC-I) or 14-mers (MHC-II) were derived.
 For each of these peptides, we determined if it overlapped with a predicted 
 TMH and if it was predicted to bind to each haplotype.
 
-For MHC-I, 9-mers were used, as this is the length most frequently presented in MHC-I and was used in our earlier study (\cite{bianchi2017}). 
+For MHC-I, 9-mers were used, 
+as this is the length most frequently presented in MHC-I 
+and was used in our earlier study \cite{bianchi2017}. 
 For MHC-II, 14-mers were used, 
-as these are the most frequently occurring epitope length (\cite{bergseng2015different}).
+as these are the most frequently occurring epitope length \cite{bergseng2015different}.
 A human (UniProt ID UP000005640\_9606), 
 viral (SARS-CoV-2, UniProt ID UP000464024) 
 and bacterial (\emph{Mycobacterium tuberculosis}, UniProt ID UP000001584) 
 reference proteome was used. 
-\verb;TMHMM; (\cite{krogh2001predicting}) was used to predict the topology 
+\verb;TMHMM; \cite{krogh2001predicting} was used to predict the topology 
 of the proteins within these proteomes.
 To predict the affinity of an epitope to a certain MHC haplotype,
- \verb;EpitopePrediction; (\cite{bianchi2017}) for MHC-I 
-and \verb;MHCnuggets; (\cite{shao2020high}) for MHC-II was used.
+ \verb;EpitopePrediction; \cite{bianchi2017} for MHC-I 
+and \verb;MHCnuggets; \cite{shao2020high} for MHC-II was used.
 The 13 MHC-I haplotypes used in this study are the same as 
-used in the previous study (\cite{bianchi2017}).
+used in the previous study \cite{bianchi2017}.
 For MHC-II, haplotypes were selected with a phenotypic frequency 
-of at least 14\% in the human population (\cite{greenbaum2011functional}),
+of at least 14\% in the human population \cite{greenbaum2011functional},
 resulting in 21 MHC-II haplotypes.
  
 In previous work, it was found that the over-presentation of TMH-derived peptides can be
-explained from the hydrophobicity of the MHC-I binding cleft (\cite{bianchi2017}).
+explained from the hydrophobicity of the MHC-I binding cleft \cite{bianchi2017}.
 Here, a similar analysis was applied, by correlating the percentage of predicted TMH-derived epitopes versus the mean hydrophobicity of all 
 peptides. 
 
-This study differs in one important aspect from our previous work (\cite{bianchi2017}). 
+This study differs in one important aspect from our previous work \cite{bianchi2017}. 
 The definition of a binder differs from \cite{bianchi2017}:
 in the current study, a peptide is called a binder if, for a certain haplotype, 
 any of its 9-mer or 14-mer peptides have an IC50 value in the lowest 2\% of 
@@ -183,14 +185,17 @@ To verify that the results are similar, a side by side comparison was performed 
 \subsection{Peptide elution studies}\label{subsec:elution_studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To obtain experimental evidence that epitopes derived from TMHs are presented in MHC, peptide elution studies for MHC-I (\cite{schellens2015comprehensive}) 
-and MHC-II (\cite{bergseng2015different}) were reanalyzed.
+To obtain experimental evidence that epitopes derived from TMHs are presented in MHC, 
+peptide elution studies for MHC-I \cite{schellens2015comprehensive} 
+and MHC-II \cite{bergseng2015different} were reanalyzed.
 For each of the detected epitopes,
 its possible location(s) in 
 a human reference proteome,
 with UniProt ID UP000005640\_9606, was mapped.
 For the epitopes that were present in the proteome exactly once,
-the topology of the proteins in which these epitopes were located was predicted using both \verb;TMHMM; (\cite{krogh2001predicting}) and \verb;PureseqTM; (\cite{wang2019efficient}). 
+the topology of the proteins in which these epitopes were located 
+was predicted using both \verb;TMHMM; \cite{krogh2001predicting} 
+and \verb;PureseqTM; \cite{wang2019efficient}. 
 From this topology, we determined if the epitope
 overlapped with a TMH.
 
@@ -211,7 +216,8 @@ and we then determined if this substitution occurred within a predicted TMH or n
 % \paragraph{Data}
 
 As a data source, multiple
-NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used: the \emph{dbSNP} (\cite{sherry2001dbsnp}) database,
+NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used: 
+the \emph{dbSNP} \cite{sherry2001dbsnp} database,
 which contains 650 million 
 catalogued non-redundant humane variations (called RefSNPs,
 \url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}), and the databases \emph{gene} (for gene names, \cite{brown2015gene})
@@ -270,7 +276,7 @@ For the viral proteome, 12 out of 13 haplotypes present
 TMH-derived epitopes more often than expected by chance.
 The extent of the over-presentation between the different haplotypes 
 is similar for the probed proteomes, 
-which strengthens our previous conclusion (\cite{bianchi2017}) 
+which strengthens our previous conclusion \cite{bianchi2017} 
 that the hydrophobicity of the MHC-binding groove 
 is the main factor responsible for the predicted over-presentation 
 of TMH-derived peptides.
@@ -362,14 +368,16 @@ To obtain experimental confirmation that peptides stemming from TMHs
 are presented in MHC-I and MHC-II,
 two peptide elution studies were reanalyzed:
 For MHC-I, peptides presented \emph{in vivo} 
-by the (humane) haplotypes HLA-A and B were sequenced (\cite{schellens2015comprehensive}),
+by the (humane) haplotypes HLA-A and B 
+were sequenced \cite{schellens2015comprehensive},
 for MHC-II these were haplotypes DQ2.5, DQ2.2, and 
-DQ7.5 (\cite{bergseng2015different}).
+DQ7.5 \cite{bergseng2015different}.
 Figure \ref{fig:elution} shows the percentages of epitopes derived 
 from TMHs
 found in the MHC-I and MHC-II elution 
 studies,
-for the two topology prediction tools \verb;TMHMM; (\cite{krogh2001predicting}) and \verb;PureseqTM; (\cite{wang2019efficient}). 
+for the two topology prediction tools \verb;TMHMM; \cite{krogh2001predicting} 
+and \verb;PureseqTM; \cite{wang2019efficient}. 
 Regardless of the prediction tool, 
 at least 100 epitopes were predicted to be derived from a TMH for each condition. 
 From these findings, it is robustly predicted that
@@ -579,19 +587,65 @@ than solvent-exposed protein regions.
 Although our data show that 
 TMH-derived epitopes are presented in MHC-I and MHC-II, 
 the molecular mechanisms of how integral membrane proteins are processed 
-for MHC presentation are largely unknown (\cite{bianchi2017}). 
+for MHC presentation are largely unknown \cite{bianchi2017}. 
 Most prominently, the fundamental principles of 
 how TMHs are extracted from their hydrophobic lipid environments 
 into the aqueous vacuolar lumen, 
 and their prior or subsequent proteolytic processing are unresolved. 
 
-A first possibility is that the extraction of TMPs from the membrane is mediated by the ER-associated degradation (ERAD) machinery. For MHC class I (MHC-I) antigen presentation of soluble proteins, the loading of the epitope primarily occurs at the endoplasmatic reticulum (ER). The chaperones tapasin (TAPBP), ERp57 (PDIA3), and calreticulin (CALR) (\cite{rock2016present}) first assemble and stabilize the heavy and light chains of MHC-I. Later, this complex binds to the transporter associated with antigen processing (TAP) leading to the formation of the so-called peptide-loading complex (PLC). The PLC drives import of peptides into the ER and mediates their subsequent loading into the peptide-binding groove of MHC-I (\cite{blees2017structure}). Membrane proteins first will have to be extracted from the membrane before they become amenable to this MHC-I loading by the PLC. In the ER, this process can be orchestrated by the ERAD machinery, consisting of several chaperones that recognize TMPs, ubiquitinate them, and extract them from the ER membrane into the cytosol (retrotranslocation) for proteasomal degradation (\cite{preston2017evolving,meusser2005erad}). Similar to the peptides generated from soluble proteins, the TMP-derived peptides might then be re-imported by TAP into the ER for MHC-I loading. This ERAD-driven antigen retrotranslocation might be facilitated by lipid bodies (LBs) (\cite{bougneres2009role}), since LBs can serve as cytosolic sites for ubiquitination of ER-derived cargo (\cite{fujimoto2006proteasomal}). 
+A first possibility is that the extraction of TMPs from the membrane 
+is mediated by the ER-associated degradation (ERAD) machinery. 
+For MHC class I (MHC-I) antigen presentation of soluble proteins, 
+the loading of the epitope primarily occurs at the endoplasmatic reticulum (ER). 
+The chaperones tapasin (TAPBP), ERp57 (PDIA3), 
+and calreticulin (CALR) \cite{rock2016present} first assemble 
+and stabilize the heavy and light chains of MHC-I. 
+Later, this complex binds to the transporter 
+associated with antigen processing (TAP) 
+leading to the formation of the so-called peptide-loading complex (PLC). 
+The PLC drives import of peptides into the ER 
+and mediates their subsequent loading into the peptide-binding groove of MHC-I \cite{blees2017structure}. 
+Membrane proteins first will have to be extracted from the membrane 
+before they become amenable to this MHC-I loading by the PLC. 
+In the ER, this process can be orchestrated by the ERAD machinery, 
+consisting of several chaperones that recognize TMPs, 
+ubiquitinate them, and extract them from the ER membrane 
+into the cytosol (retrotranslocation) for proteasomal degradation \cite{preston2017evolving,meusser2005erad}. 
+Similar to the peptides generated from soluble proteins, 
+the TMP-derived peptides might then be re-imported by TAP 
+into the ER for MHC-I loading. 
+This ERAD-driven antigen retrotranslocation might be facilitated by lipid bodies (LBs) \cite{bougneres2009role}, 
+since LBs can serve as cytosolic sites for ubiquitination of ER-derived cargo \cite{fujimoto2006proteasomal}. 
 
-A second possibility is that TMPs are proteolytically processed by intramembrane proteases that cleave TMHs while they are still membrane embedded. Supporting this hypothesis is the well established notion that peptides generated by signal peptide peptidases (SPPs), an important class of intramembrane proteases that cleave TMH-like signal sequences, are presented on a specialized class of MHC-I called HLA-E (\cite{oliveira2015alternative}). The loading of peptides generated by SPP onto MHC-I does not depend on the proteosome and TAP, possibly because the peptides are directly released into the lumen of the ER (\cite{oliveira2015alternative}). However, this mechanism would not explain how multispanner polytopic membrane proteins can be processed for antigen presentation, because SPPs only cleave TMH-like signal sequences at the N-terminus of a protein. Nevertheless, the presentation of peptides with a high hydrophobicity index was shown to be independent on TAP as well (\cite{lautscham2001processing}), suggesting the TMH peptides might perhaps be released directly in the ER lumen by other intramembrane proteases. 
+A second possibility is that TMPs are proteolytically processed 
+by intramembrane proteases that cleave TMHs while they are still membrane embedded. Supporting this hypothesis is the well established notion that peptides generated by signal peptide peptidases (SPPs), an important class of intramembrane proteases that cleave TMH-like signal sequences, 
+are presented on a specialized class of MHC-I called HLA-E \cite{oliveira2015alternative}. 
+The loading of peptides generated by SPP onto MHC-I does not depend on the proteosome and TAP, 
+possibly because the peptides are directly released into the lumen of the ER \cite{oliveira2015alternative}. 
+However, this mechanism would not explain how multispanner polytopic membrane proteins can be processed for antigen presentation, because SPPs only cleave TMH-like signal sequences at the N-terminus of a protein. 
+Nevertheless, the presentation of peptides with a high hydrophobicity index 
+was shown to be independent on TAP as well \cite{lautscham2001processing}, 
+suggesting the TMH peptides might perhaps be released directly in the ER lumen by other intramembrane proteases. 
 
-A third possibility is that peptide processing and MHC-loading occur in multivesicular bodies (MVBs) (\cite{oliveira2015alternative}). TMPs can be routed from the plasma membrane and other organelles by vesicular trafficking to endosomes. Eventually, these TMPs can be sorted by the endosomal sorting complexes required for transport (ESCRT) pathway into luminal invaginations that pinch off from the limiting membrane and form intraluminal vesicles. This thus results in MVBs where the membrane proteins destined for degradation are located in intraluminal vesicles. Upon the fusion of MVBs with lysosomes, the entire intraluminal vesicles including the TMPs are degraded (\cite{gruenberg2020life}). Via this mechanism, TMPs might well be processed for antigen presentation, particularly since the loading of MHC class II molecules is well understood to occur in MVBs (\cite{kleijmeer2001reorganization,peters1991segregation,zwart2005spatial}). However, such processing of membrane proteins in MVBs for antigen presentation poses a problem, because complexes of HLA-DR with its antigen-loading chaperon HLA-DM were only observed on intraluminal vesicles, but not on the limiting membranes of MVBs (\cite{zwart2005spatial}), indicating that epitope loading of MHC-II also occurs at intraluminal vesicles. This observation hence raises the question how the intraluminal vesicles carrying the TMPs destined for antigen presentation can be selectively degraded, while the intraluminal vesicles carrying the MHC-II remain intact. A second problem is that phagosomes carrying internalized microbes lack intraluminal vesicles, and it is hence unclear how TMPs from these microbes would be routed to MVBs for MHC-II loading (\cite{zwart2005spatial}).
+A third possibility is that peptide processing and MHC-loading occur in multivesicular bodies (MVBs) \cite{oliveira2015alternative}. 
+TMPs can be routed from the plasma membrane and other organelles by vesicular trafficking to endosomes. Eventually, these TMPs can be sorted by the endosomal sorting complexes required for transport (ESCRT) pathway into luminal invaginations that pinch off from the limiting membrane and form intraluminal vesicles. This thus results in MVBs where the membrane proteins destined for degradation are located in intraluminal vesicles. Upon the fusion of MVBs with lysosomes, 
+the entire intraluminal vesicles including the TMPs are degraded \cite{gruenberg2020life}. 
+Via this mechanism, TMPs might well be processed for antigen presentation, 
+particularly since the loading of MHC class II molecules is well understood 
+to occur in MVBs \cite{kleijmeer2001reorganization,peters1991segregation,zwart2005spatial}. 
+However, such processing of membrane proteins in MVBs for antigen presentation poses a problem, because complexes of HLA-DR with its antigen-loading chaperon HLA-DM were only observed on intraluminal vesicles, 
+but not on the limiting membranes of MVBs \cite{zwart2005spatial}, 
+indicating that epitope loading of MHC-II also occurs at intraluminal vesicles. This observation hence raises the question how the intraluminal vesicles carrying the TMPs destined for antigen presentation can be selectively degraded, while the intraluminal vesicles carrying the MHC-II remain intact. A second problem is that phagosomes carrying internalized microbes lack intraluminal vesicles, 
+and it is hence unclear how TMPs from these microbes 
+would be routed to MVBs for MHC-II loading \cite{zwart2005spatial}.
 
-Alternatively to the enzymatic degradation of lipids in MVBs by lipases (\cite{sander2016lipase,gilleron2016lysosomal}), they might be oxidatively degraded by reactions with radical oxygen species (ROS) produced by the NADPH oxidase NOX2 (\cite{dingjan2016lipid}). This oxidation can result in a destabilization and disruption of membranes (\cite{dingjan2016lipid}) and might thereby lead to the extraction of TMPs. Due to the hydrophobic nature of TMHs, however, the extracted proteins will likely aggregate and it is unclear how these aggregates would be processed further for MHC loading. 
+Alternatively to the enzymatic degradation of lipids in MVBs by lipases \cite{sander2016lipase,gilleron2016lysosomal}, 
+they might be oxidatively degraded by reactions with radical oxygen species (ROS) produced by the NADPH oxidase NOX2 \cite{dingjan2016lipid}. 
+This oxidation can result in a destabilization and disruption of membranes \cite{dingjan2016lipid} 
+and might thereby lead to the extraction of TMPs. 
+Due to the hydrophobic nature of TMHs, 
+however, the extracted proteins will likely aggregate 
+and it is unclear how these aggregates would be processed further for MHC loading. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{T cells recognize different protein regions than B cells}
@@ -633,13 +687,13 @@ essential for the survival, proliferation and/or virulence or pathogenic microbe
 as these will be most conserved.
 In SARS-CoV-2, for example, there is preliminary evidence that the strongest
 selection pressure is upon residues that change its 
-virulence (\cite{velazquez2020positive}).
+virulence \cite{velazquez2020positive}.
 These regions, however, may only account for a small part of a pathogen's proteome.
 Additionally, the structure and function of these essential regions might differ widely between different pathogenic proteins.
 Because of this scarcity and variance in targets, 
 one can imagine that it will be mostly unfeasible 
 to provide innate immune responses against such rare essential protein regions, 
-as suggested in a study on influenza (\cite{han2019individual}),
+as suggested in a study on influenza \cite{han2019individual},
 where it was found that the selection pressure
 exerted by the immune system was either weak or absent.
  
@@ -671,7 +725,7 @@ scores for TMHs and soluble regions based on
 alignments of evolutionary related proteins,
 and also found that TMHs are more conserved, 
 with a conservation score that was 17\% higher in 
-TMHs (\cite{oberai2009structural}).
+TMHs \cite{oberai2009structural}.
 Note that the last study also found that mutations in human TMHs are likelier to cause
 a disease, in line with our conclusion that TMHs are more conserved.
 
@@ -844,12 +898,12 @@ affinities).
 
 There are multiple computational tools developed to predict which
 parts of a protein forms a TMH.
-In 2001, multiple of such prediction tools have been compared (\cite{moller2001evaluation}),
-of which TMHMM (\cite{krogh2001predicting}) turned out to be the most accurate, 
-as is used in the previous study (\cite{bianchi2017}).
+In 2001, multiple of such prediction tools have been compared \cite{moller2001evaluation},
+of which TMHMM \cite{krogh2001predicting} turned out to be the most accurate, 
+as is used in the previous study \cite{bianchi2017}.
 However, TMHMM has a restrictive software license and is nearly two
 decades old.
-Therefore, PureseqTM (\cite{wang2019efficient}),
+Therefore, PureseqTM \cite{wang2019efficient},
 was also used in this study, which has been more recently developed
 and has a free software license.
 
@@ -858,35 +912,36 @@ and has a free software license.
 For MHC-I, there are multiple computational tools developed 
 to predict epitopes. 
 According to \cite{lundegaard2011prediction}, at that time,
-NetMHCcons (\cite{karosiene2012netmhccons}) gave the best predictions.
-We used the same tool as used in our earlier study, \verb;epitope-prediction; (\cite{bianchi2017}),
+NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
+We used the same tool as used in our earlier study, 
+\verb;epitope-prediction; \cite{bianchi2017},
 
 % \paragraph{MHC-II epitope prediction}
 
 Also for MHC-II, there are multiple computational tools developed 
 to predict epitopes,
-such as using a trained neural network (\cite{nielsen2003reliable})
-or a Gibbs sampling approach (\cite{nielsen2004improved}).
+such as using a trained neural network \cite{nielsen2003reliable}
+or a Gibbs sampling approach \cite{nielsen2004improved}.
 According to \cite{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
-NetMHCIIpan (\cite{nielsen2008quantitative,karosiene2013netmhciipan})
+NetMHCIIpan \cite{nielsen2008quantitative,karosiene2013netmhciipan}
 made the most accurate predictions.
 The most recent FOSS tool available now appears
-to be MHCnuggets (\cite{shao2020high}), which can do both MHC-I 
+to be MHCnuggets \cite{shao2020high}, which can do both MHC-I 
 and MHC-II predictions. 
-As we already use \verb;epitope-prediction; (\cite{bianchi2017}) 
+As we already use \verb;epitope-prediction; \cite{bianchi2017} 
 for MHC-I predictions, we use MHCnuggets only for MHC-II predictions.
 
 % \paragraph{NCBI data retrieval software}
 
 To retrieve the data from the NCBI databases the
-\verb;rentrez; R package (\cite{rentrez}) was used
+\verb;rentrez; R package \cite{rentrez} was used
 that calls the NCBI website's API. To provide for a 
 stable user experience for all users, 
 this API limits the user to 3 calls per second.
 Additionally, the API splits the result of a bigger
 query into multiple pages, each of which needs one API call.
-We wrote the \verb;sprentrez; package (\cite{sprentrez}) to provide for 
+We wrote the \verb;sprentrez; package \cite{sprentrez} to provide for 
 bigger queries of multiple (and delayed) API calls.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -904,7 +959,8 @@ as described below.
 
 The R package 'tmhmm' was developed to do the similar topology
 predictions as our earlier study (that used 'TMHMM'), yet in an automated way.
-'TMHMM' has a restrictive software license (\cite{krogh2001predicting}) and allows a user
+'TMHMM' has a restrictive software license \cite{krogh2001predicting} 
+and allows a user
 to download a pre-compiled executable after confirmation he/she
 is in academia. The R package respects this restriction
 and allows the user to install and use TMHMM from within R,
@@ -915,7 +971,7 @@ by the Comprehensive R Archive Network (CRAN).
 % \paragraph{pureseqtmr}
 
 To be able to call, from R, the TMH prediction 
-software 'PureseqTM' (\cite{wang2019efficient}),
+software 'PureseqTM' \cite{wang2019efficient},
 which is written in C, the package 'pureseqtmr' has been developed. 
 'pureseqtmr' allows to install 'PureseqTM' and use most of its features.
 'pureseqtmr' has been submitted to and is accepted by CRAN.
@@ -923,7 +979,7 @@ which is written in C, the package 'pureseqtmr' has been developed.
 % \paragraph{mhcnuggetsr}
 
 MHCnuggets is a free and open-source Python package to predict 
-epitope affinity for many MHC-I and MHC-II variants (\cite{shao2020high}).
+epitope affinity for many MHC-I and MHC-II variants \cite{shao2020high}.
 The R package 'mhcnuggetsr' allows one to install and use MHCnuggets
 from within R.
 Also 'mhcnuggetsr' has been submitted to and is accepted by CRAN.
@@ -1005,7 +1061,7 @@ resulted in the same amino acid, from a different genetic code)
 from our analysis.
 There is evidence, however, that these synonymous mutations
 do have an effect and may even be evolutionary selected 
-for (\cite{hunt2009silent}).
+for \cite{hunt2009silent}.
 As the possible effect of synonymous mutations is ignored by our
 topology prediction software, we do so as well.
 
