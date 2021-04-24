@@ -939,7 +939,7 @@ This package is too specific to be submitted to CRAN.
 Table \ref{tab:f_tmh} shows an overview of the findings,
 where a target specifies the source of the proteome,
 where \verb;covid; denotes SARS-CoV-2 and \verb;myco; denotes
-Mycobacterium tuberculosis. \verb;mhc_class; denotes the MHC
+\emph{Mycobacterium tuberculosis}. \verb;mhc_class; denotes the MHC
 class, \verb;n_spots; the number of possible 9-mers (for MHC-I) 
 or 14-mers (for MHC-II) possible. \verb;n_spots_tmh; the
 number of epitopes that overlapped with a TMH that were binders. 
@@ -1019,7 +1019,7 @@ topology prediction software, we do so as well.
 \label{subsec:ic50s_per_haplotype}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Per target proteome (i.e. human, SARS-CoV-2, Mycobacterium tuberculosis),
+Per target proteome (i.e. human, SARS-CoV-2, \emph{M tuberculosis}),
 we collected all 9-mers (for MHC-I) and 14-mers (for MHC-II),
 after removing the selenoproteins and proteins that are shorter
 than the epitope length.
@@ -1075,7 +1075,8 @@ show these normalized values for the MHC-I and MHC-II haplotypes respectively.
     Normalized proportion of MHC-I epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
     Legend: covid = SARS-CoV-2,
-    human = homo sapiens, myco = Mycobacterium tuberculosis
+    human = \emph{Homo sapiens}, 
+    myco = \emph{Mycobacterium tuberculosis}
   }
   \label{fig:f_tmh_mhc1_normalized}
 \end{figure}
@@ -1086,7 +1087,7 @@ show these normalized values for the MHC-I and MHC-II haplotypes respectively.
     Normalized proportion of MHC-II epitopes overlapping with TMHs
     for human, viral and bacterial proteomes.
     Legend: covid = SARS-CoV-2,
-    human = homo sapiens, myco = Mycobacterium tuberculosis
+    human = \emph{Homo sapiens}, myco = \emph{Mycobacterium tuberculosis}
   }
   \label{fig:f_tmh_mhc2_normalized}
 \end{figure}
