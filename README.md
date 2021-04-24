@@ -15,7 +15,7 @@ make
 
 ## Re-do the analysis
 
-### Naturally presented epitopes are dereved from TMH
+### Naturally presented epitopes are derived from TMH
 
 See [https://github.com/richelbilderbeek/bbbq_article_issue_157](https://github.com/richelbilderbeek/bbbq_article_issue_157).
 
