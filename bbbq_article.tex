@@ -34,7 +34,6 @@ epitopes, T lymphocyte, MHC-I, MHC-II, evolutionary conservation
     TMH & Transmembrane helix         \\
     TMP & Transmembrane protein
   \end{tabular}
-  \label{table:abbreviations}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -198,7 +197,7 @@ The definition of a binder differs from \cite{bianchi2017}:
 in the current study, a peptide is called a binder if, for a certain haplotype, 
 any of its 9-mer or 14-mer peptides have an IC50 value in the lowest 2\% of 
 all peptides within a \emph{proteome} 
-(see tables \ref{tab:ic50_binders_mhc1} and \ref{tab:ic50_binders_mhc2} for values), 
+(see supplementary Tables \ref{tab:ic50_binders_mhc1} and \ref{tab:ic50_binders_mhc2} for values), 
 whereas the previous study defined
 a binder as having an IC50 in the lowest 2\% 
 of the peptides within a \emph{protein}.
@@ -271,7 +270,7 @@ resulting in $\approx$61k variations.
 Only variations that result in a SNP for
 a single amino acid substitution were analyzed, resulting in $\approx$38k SNPs.
 The exact amounts can be found in the supplementary materials,
-tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}.
+Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}.
 
 % \paragraph{Selection of SNPs}
 %
@@ -337,13 +336,14 @@ of TMH-derived peptides.
     overlap with TMHs for the proteomes of SARS-CoV-2 (top row), human (middle 
     row) and \emph{M. tuberculosis} (bottom row).
     The red lines indicate the percentages as expected by chance.
-    See supplementary tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
+    See supplementary Tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
     for the exact TMH and  epitope counts.
     \textbf{(B-C)}
     Correlation between the percentages of predicted TMH-derived epitopes
     and the hydrophobicity score of all predicted epitopes for MHC-I \textbf{(B)}
-    and MHC-II haplotypes \textbf{(C)}. Red curve: linear regression analysis. Labels are shorthand for the HLA haplotypes,
-    see Table \ref{tab:haplotype_abbreviations} for the names.
+    and MHC-II haplotypes \textbf{(C)}. Red curve: linear regression analysis. 
+    Labels are shorthand for the HLA haplotypes,
+    see the supplementary Table \ref{tab:haplotype_abbreviations} for the names.
   }
 \end{figure}
 
@@ -359,7 +359,7 @@ We found that TMH-derived peptides are over-presented in all
 of the 21 MHC-II haplotypes, 
 for a human, bacterial and viral proteome,
 except for \verb;HLA-DRB3*0101; in \emph{M. tuberculosis}.
-See supplementary table \ref{tab:tmh_binders_mhc2} 
+See supplementary Table \ref{tab:tmh_binders_mhc2} 
 for the exact TMH and epitope counts.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -408,7 +408,7 @@ Regardless of the prediction tool,
 at least 100 epitopes were predicted to be derived from a TMH for each condition. 
 From these findings, it is robustly predicted that
 epitopes derived from TMHs are presented in both MHC-I and MHC-II.
-See the supplementary materials (table \ref{tab:elution}) for the exact values.
+See the supplementary Table \ref{tab:elution} for the exact values.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Human TMHs are evolutionarily conserved}
@@ -512,7 +512,7 @@ of which 2,553 are predicted to be TMPs and
 We obtained 37,630 unique variations, 
 of which 9,621 are SNPs that resulted in a straightforward amino acids substitution, 
 of which 6,062 were located in predicted TMPs.
-See tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2} 
+See supplementary Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2} 
 for the detailed numbers and distributions of SNPs.
 
 Per protein, we calculated two percentages: 
@@ -1020,7 +1020,7 @@ This package is too specific to be submitted to CRAN.
 \subsection{Prediction of percentage of epitopes overlapping with a TMH}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Table \ref{tab:f_tmh} shows an overview of the findings,
+Supplementary Table \ref{tab:f_tmh} shows an overview of the findings,
 where a target specifies the source of the proteome,
 where \verb;covid; denotes SARS-CoV-2 and \verb;myco; denotes
 \emph{Mycobacterium tuberculosis}. \verb;mhc_class; denotes the MHC
@@ -1112,8 +1112,8 @@ we predicted the IC50 (in nM) using \verb;epitope-prediction; (for MHC-I)
 and MHCnuggets (for MHC-II). 
 Here, we show the IC50 value per haplotype that
 is used to determine if a peptide binds to the haplotype's MHC
-for MHC-I (see table \ref{tab:ic50_binders_mhc1}) and 
-MHC-II (see table \ref{tab:ic50_binders_mhc2}).
+for MHC-I (see supplementary Table \ref{tab:ic50_binders_mhc1}) and 
+MHC-II (see supplementary Table \ref{tab:ic50_binders_mhc2}).
 
 % tab:ic50_binders_mhc1
 \input{bbbq_1_smart_results/table_ic50_binders_mhc1_2.latex}
@@ -1125,13 +1125,13 @@ MHC-II (see table \ref{tab:ic50_binders_mhc2}).
 \subsection{Presentation of TMH-derived epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Table \ref{tab:haplotype_abbreviations} shows the
+Supplementary Table \ref{tab:haplotype_abbreviations} shows the
 shorthand notation for the HLA haplotypes.
 
 % Label: tab:haplotype_abbreviations
 \input{bbbq_1_smart_results/haplotype_abbreviations.tex}
 
-Tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
+Supplementary Tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
 show the exact number of binders, binders that overlap with TMHs
 and the percentage of binders that overlap with TMHs, as
 visualized by figure \ref{fig:bbbq_1_smart_results}.
@@ -1212,9 +1212,9 @@ and plot the mean and standard error, as shown in figure \ref{fig:rel_presentati
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-See tables \ref{tab:ncbi_counts_1} and tables \ref{tab:ncbi_counts_2}
+See supplementary Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}
 for an overview of all amounts.
-In table \ref{tab:ncbi_counts_1} there are multiple instances where
+In supplementary Table \ref{tab:ncbi_counts_1} there are multiple instances where
 the amounts are expected to add up, yet don't, as one SNP can work on
 multiple isoforms. For example, there are 9,621 unique SNPs 
 found in all proteins, of which 4,219 around found in MAPs 
@@ -1307,8 +1307,8 @@ We find no clear evidence of a bias.
 
 % \paragraph{Statistics}
 
-Table \ref{tab:snp_stats} shows the statistics for all
-SNPs, where tables \ref{tab:snp_stats_per_spanner_single}
+Supplementary Table \ref{tab:snp_stats} shows the statistics for all
+SNPs, where supplementary Tables \ref{tab:snp_stats_per_spanner_single}
 and \ref{tab:snp_stats_per_spanner_multi} show the
 statistics for only single-spanners and multi-spanners respectively.
  
