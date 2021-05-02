@@ -105,7 +105,7 @@ TMHs are hydrophobic
 as they need to span the hydrophobic lipid bilayer of cellular membranes.
 They consist of an alpha helix of, on average, 23 amino acids in length. 
 TMHs can also be predicted with high accuracy from a protein sequence 
-by bioinformatics approaches \cite{krogh2001predicting,bianchi2017,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient},
+by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient},
 for example, \cite{jones2007improving} found that,
 from 184 transmembrane proteins (TMPs) with known topology, 
 80\% of the TMH predictions replicated this finding.
@@ -125,7 +125,8 @@ is that these are restricted in their evolution
 by the functional requirement to span a lipid bilayer. 
 Due to this requirement, 
 many of the amino acids genuinely present in TMHs 
-are limited to the ones with hydrophobic side chains \cite{jones1994model}.
+are limited to the ones with hydrophobic side chains 
+\cite{hessa2007molecular,jones1994model}.
 Therefore, we speculated that the TMHs of pathogens 
 might have a lower chance to develop escape mutations, 
 as many mutations will result in a dysfunctional TMH 
@@ -587,7 +588,7 @@ when compared to soluble regions,
 as depicted in figure \ref{fig:conservation_per_spanner}.
 In effect, per 1,000 SNPs found in soluble protein domains, 
 one finds 978 SNPs in TMHs 
-of single-spanners (although this is not significant)
+of single-spanners
 and 911 SNPs in TMHs of multi-spanners.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -950,7 +951,7 @@ such as using a trained neural network \cite{nielsen2003reliable}
 or a Gibbs sampling approach \cite{nielsen2004improved}.
 According to \cite{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
-NetMHCIIpan \cite{nielsen2008quantitative,karosiene2013netmhciipan}
+\mbox{NetMHCIIpan} \cite{nielsen2008quantitative,karosiene2013netmhciipan}
 made the most accurate predictions.
 The most recent FOSS tool available now appears
 to be MHCnuggets \cite{shao2020high}, which can do both MHC-I 
@@ -1228,7 +1229,8 @@ contains both MAPs and TMPs.
 \input{ncbi_peregrine_results/ncbi_counts_2.tex}
 
 Figure \ref{fig:snps_per_gene_name_ncbi} shows the distribution of the
-number of SNPs per gene name, at 2020-12-14.
+number of SNPs per gene name, at the date we started the experiment,
+at December 14th 2020.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_snps_per_gene_name_ncbi.png}
