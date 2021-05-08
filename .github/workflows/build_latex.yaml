@@ -4,19 +4,19 @@ on:
   push:
   pull_request:
 
-name: R-CMD-check
+name: Build LaTeX document
 
 jobs:
-  R-CMD-check:
+  build_latex:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Set up Git repository
+        uses: actions/checkout@v2
 
-      - uses: r-lib/actions/setup-r@v1
-
-      - name: Build the doc
-        run: echo "Not yet"
-
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: bbbq_header.tex
