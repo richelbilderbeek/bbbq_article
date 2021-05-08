@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: latex2pdf
-        uses: thomas-chauvet/latex2pdf-action@latest
+        uses: thomas-chauvet/latex2pdf-action@1.0.1
         with:
           main_latex_file: bbbq_header.tex
           ctan_packages: amssymb latexsym amsmath
