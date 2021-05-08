@@ -16,11 +16,6 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
 
-      - name: Latex compiler
-        uses: Jatus93/Latex-multicompiler@master
-        with:
-          path_to_list: bbbq_header.tex
-
       #- name: latex2pdf
       #  uses: thomas-chauvet/latex2pdf-action@1.0.1
       #  with:
@@ -32,10 +27,10 @@ jobs:
       #  with:
       #    root_file: bbbq_header.tex
 
-      #- name: Compile LaTeX document
-      #  uses: xu-cheng/latex-action@v2
-      #  with:
-      #    root_file: bbbq_header.tex
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: bbbq_header.tex
 
       - name: Find PDF and fail if absent
         uses: DovnarAlexander/github-action-file-detection@master
