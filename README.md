@@ -5,9 +5,24 @@ Branch   |[GitHub Actions](https://github.com/richelbilderbeek/bbbq_article/acti
 `master` |![build_latex](https://github.com/richelbilderbeek/bbbq_article/workflows/build_latex/badge.svg?branch=master) 
 `develop`|![build_latex](https://github.com/richelbilderbeek/bbbq_article/workflows/build_latex/badge.svg?branch=develop)
 
-The Bianchi  Bilderbeek Bogaart Question answered.
+The article 'Transmembrane helices are an overlooked and evolutionarily conserved source of major histocompatibility complex class I and II epitopes',
+by Bilderbeek, Baranov, van den Bogaart and Bianchi.
 
- * [This article on biorxiv](https://www.biorxiv.org/content/10.1101/2021.05.02.441235v1)
+ * [This article on biorxiv](https://www.biorxiv.org/content/10.1101/2021.05.02.441235v3)
+
+```
+Bilderbeek, Richèl JC, et al. "Transmembrane helices are an overlooked and evolutionarily conserved source of major histocompatibility complex class I and II epitopes." bioRxiv (2021).
+```
+
+```
+@article{bilderbeek2021transmembrane,
+  title={Transmembrane helices are an overlooked and evolutionarily conserved source of major histocompatibility complex class {I} and {II} epitopes},
+  author={Bilderbeek, Richèl JC and Baranov, Maxim and van den Bogaart, Geert and Bianchi, Frans},
+  journal={bioRxiv},
+  year={2021},
+  publisher={Cold Spring Harbor Laboratory}
+}
+```
 
 ## Build the article
 
