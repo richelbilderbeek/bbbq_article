@@ -23,7 +23,7 @@ See [https://github.com/richelbilderbeek/bbbq_article_issue_157](https://github.
 
 ### TMH-derived epitopes are over-presented
 
-See [https://github.com/richelbilderbeek/bbbq_1_fast](https://github.com/richelbilderbeek/bbbq_1_fast).
+See [https://github.com/richelbilderbeek/bbbq_1_smart](https://github.com/richelbilderbeek/bbbq_1_smart).
 
 ### TMHs are conserved
 
@@ -36,7 +36,7 @@ See [https://github.com/richelbilderbeek/ncbi_results](https://github.com/richel
 Repository                                                                            |[GitHub Actions](https://github.com/informalr/informalr/actions)                                                         
 --------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------
 [`bbbq`](https://github.com/richelbilderbeek/bbbq)                                    |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master)                   
-[`bbbq_1_fast`](https://github.com/richelbilderbeek/bbbq_1_fast)                      |![R-CMD-check](https://github.com/richelbilderbeek/bbbq_1_fast/workflows/R-CMD-check/badge.svg?branch=master)            
+[`bbbq_1_smart`](https://github.com/richelbilderbeek/bbbq_1_smart)                      |![R-CMD-check](https://github.com/richelbilderbeek/bbbq_1_smart/workflows/R-CMD-check/badge.svg?branch=master)            
 [`bbbq_article_issue_157`](https://github.com/richelbilderbeek/bbbq_article_issue_157)|![R-CMD-check](https://github.com/richelbilderbeek/bbbq_article_issue_157/workflows/R-CMD-check/badge.svg?branch=master) 
 [`ncbi_peregrine`](https://github.com/richelbilderbeek/ncbi_peregrine)                |![R-CMD-check](https://github.com/richelbilderbeek/ncbi_peregrine/workflows/R-CMD-check/badge.svg?branch=master)         
 [`ncbi_results`](https://github.com/richelbilderbeek/ncbi_results)                    |![R-CMD-check](https://github.com/richelbilderbeek/ncbi_results/workflows/R-CMD-check/badge.svg?branch=master)           
