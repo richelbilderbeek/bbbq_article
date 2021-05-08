@@ -17,9 +17,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: dante-ev/latex-action@latest
         with:
           root_file: bbbq_header.tex
+
+      #- name: Compile LaTeX document
+      #  uses: xu-cheng/latex-action@v2
+      #  with:
+      #    root_file: bbbq_header.tex
 
       - name: Upload PDF
         name: my_pdf
