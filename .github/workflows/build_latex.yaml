@@ -37,6 +37,13 @@ jobs:
       #  with:
       #    root_file: bbbq_header.tex
 
+      - name: Find PDF and fail if absent
+        uses: DovnarAlexander/github-action-file-detection@master
+        with:
+          wildcard: 'bbbq_article.pdf'
+          exit_code_found: 0
+          exit_code_not_found: 1
+
       - name: Upload PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
