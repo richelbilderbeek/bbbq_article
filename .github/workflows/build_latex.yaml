@@ -26,8 +26,8 @@ jobs:
       #  with:
       #    root_file: bbbq_header.tex
 
-      - name: Upload PDF
-        name: my_pdf
+      - uses: actions/upload-artifact@v2
         with:
+        name: my-pdf
           path: bbbq_article.pdf
 
