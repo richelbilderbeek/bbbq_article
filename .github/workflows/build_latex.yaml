@@ -20,3 +20,9 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: bbbq_header.tex
+
+      - name: Upload PDF
+        name: my_pdf
+        with:
+          path: bbbq_article.pdf
+
