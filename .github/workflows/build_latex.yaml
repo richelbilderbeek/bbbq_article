@@ -39,9 +39,12 @@ jobs:
       #    exit_code_found: 0
       #    exit_code_not_found: 1
 
+      - name: Rename PDF
+        run: mv bbbq_header.pdf bbbq_article.pdf
+
       - name: Upload PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
           name: my-pdf
-          path: bbbq_header.pdf
+          path: bbbq_article.pdf
 
