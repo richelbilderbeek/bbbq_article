@@ -16,21 +16,21 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
 
-      #- name: latex2pdf
-      #  uses: thomas-chauvet/latex2pdf-action@1.0.1
-      #  with:
-      #    main_latex_file: bbbq_header.tex
-      #    ctan_packages: amssymb latexsym amsmath
+      - name: latex2pdf
+        uses: thomas-chauvet/latex2pdf-action@latest
+        with:
+          main_latex_file: bbbq_header.tex
+          ctan_packages: amssymb latexsym amsmath
 
       #- name: Compile LaTeX document
       #  uses: dante-ev/latex-action@latest
       #  with:
       #    root_file: bbbq_header.tex
 
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: bbbq_header.tex
+      #- name: Compile LaTeX document
+      #  uses: xu-cheng/latex-action@v2
+      #  with:
+      #    root_file: bbbq_header.tex
 
       - name: Find PDF and fail if absent
         uses: DovnarAlexander/github-action-file-detection@master
