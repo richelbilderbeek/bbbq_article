@@ -16,16 +16,16 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
 
-      - name: latex2pdf
-        uses: thomas-chauvet/latex2pdf-action@1.0.1
-        with:
-          main_latex_file: bbbq_header.tex
-          ctan_packages: amssymb latexsym amsmath
-
-      #- name: Compile LaTeX document
-      #  uses: dante-ev/latex-action@latest
+      #- name: latex2pdf
+      #  uses: thomas-chauvet/latex2pdf-action@1.0.1
       #  with:
-      #    root_file: bbbq_header.tex
+      #    main_latex_file: bbbq_header.tex
+      #    ctan_packages: amssymb latexsym amsmath
+
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: bbbq_header.tex
 
       #- name: Compile LaTeX document
       #  uses: xu-cheng/latex-action@v2
