@@ -18,5 +18,4 @@ ggplot(df, aes(hydrophobicity, fill = is_tmh)) +
   ) + scale_x_continuous(
     breaks = seq(-5, 5, by = 1),
     minor_breaks = seq(-4.5, 4.5, by = 0.5)
-  ) + scale_y_continuous() +
-  ggsave("hydrophobicity_vs_is_tmh.png", width = 7, height = 7)
+  ) + scale_y_continuous(); ggsave("hydrophobicity_vs_is_tmh.png", width = 7, height = 7)

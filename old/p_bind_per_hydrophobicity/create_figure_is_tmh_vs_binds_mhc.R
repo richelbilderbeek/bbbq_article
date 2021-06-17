@@ -38,22 +38,13 @@ plot_is_tmh_vs_is_binder <- function(
   df_tally <- df %>%
     dplyr::group_by(is_tmh, is_binder) %>%
     dplyr::tally()
-  ggplot2::ggplot(df_tally, ggplot2::aes(is_tmh, is_binder, fill = n)) +
-    ggplot2::geom_tile() +
-    ggplot2::geom_text(ggplot2::aes(label = n)) +
-      ggplot2::scale_fill_gradient(low = "white", high = "red") +
-      ggplot2::scale_x_discrete() +
-      ggplot2::scale_y_discrete() +
-      ggplot2::xlab("Is TMH? Left = no, right = yes") +
-      ggplot2::ylab(
+  ggplot2::ggplot(df_tally, ggplot2::aes(is_tmh, is_binder, fill = n)); ggplot2::geom_tile(); ggplot2::geom_text(ggplot2::aes(label = n));   ggplot2::scale_fill_gradient(low = "white", high = "red");   ggplot2::scale_x_discrete();   ggplot2::scale_y_discrete();   ggplot2::xlab("Is TMH? Left = no, right = yes");   ggplot2::ylab(
         glue::glue("Binds to MHC-{mhc_class}? Down = no, up = yes")
-      ) +
-      ggplot2::labs(
+      );   ggplot2::labs(
         caption = glue::glue(
           "#peptides: {n_peptides}, # haplotypes: {n_haplotypes}"
         )
-      ) +
-      ggplot2::ggsave(png_filename, width = 7, height = 7)
+      );   ggplot2::ggsave(png_filename, width = 7, height = 7)
 }
 
 
@@ -72,8 +63,7 @@ plot_is_tmh_vs_is_binder(
 if (1 == 2) {
   df$is_tmh <- as.double(df$is_tmh)
   ggplot(df, aes(is_tmh, fill = is_binder)
-  ) +
-    geom_histogram(
+  ); geom_histogram(
       breaks = c(-0.5, 0.5, 1.5)
   ) + scale_x_continuous(breaks = c(0, 1))
 }

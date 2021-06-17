@@ -21,8 +21,7 @@ ggplot(df %>% filter(mhc_haplotype %in% get_mhc1_haplotypes()),
   ) + scale_x_continuous(
     breaks = seq(-5, 5, by = 1),
     minor_breaks = seq(-4.5, 4.5, by = 0.5)
-  ) + scale_y_continuous() +
-  ggsave("hydrophobicity_vs_is_binder_1.png", width = 7, height = 7)
+  ) + scale_y_continuous(); ggsave("hydrophobicity_vs_is_binder_1.png", width = 7, height = 7)
 
 ggplot(df %>% filter(mhc_haplotype %in% get_mhc2_haplotypes()),
   aes(hydrophobicity, fill = is_binder)
@@ -32,5 +31,4 @@ ggplot(df %>% filter(mhc_haplotype %in% get_mhc2_haplotypes()),
   ) + scale_x_continuous(
     breaks = seq(-5, 5, by = 1),
     minor_breaks = seq(-4.5, 4.5, by = 0.5)
-  ) + scale_y_continuous() +
-  ggsave("hydrophobicity_vs_is_binder_2.png", width = 7, height = 7)
+  ) + scale_y_continuous(); ggsave("hydrophobicity_vs_is_binder_2.png", width = 7, height = 7)

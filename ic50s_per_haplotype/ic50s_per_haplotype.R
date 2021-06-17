@@ -61,8 +61,7 @@ ggplot(t, aes(x = official_name, y = ic50, fill = ic50_prediction_tool)) +
     caption = glue::glue(
       "Percentile: {percentile}"
     )
-  ) +
-  ggsave("ic50s_per_haplotype.png", width = 7, height = 7)
+  ); ggsave("ic50s_per_haplotype.png", width = 7, height = 7)
 
   ggplot(t, aes(x = official_name, y = ic50, fill = ic50_prediction_tool)) +
   geom_col(position = "dodge", col = "black") +
@@ -76,8 +75,7 @@ ggplot(t, aes(x = official_name, y = ic50, fill = ic50_prediction_tool)) +
     caption = glue::glue(
       "Percentile: {percentile}"
     )
-  ) +
-  ggsave("ic50s_per_haplotype_per_mhc_class.png", width = 7, height = 7)
+  ); ggsave("ic50s_per_haplotype_per_mhc_class.png", width = 7, height = 7)
 
 
 

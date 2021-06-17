@@ -40,6 +40,6 @@ knitr::kable(
 ) %>% cat(., file = "covid_tmhs.latex")
 
 # Create plot
-plot_topology(topology) + ggsave("tmhs.png", width = 7, height = 7)
+plot_topology(topology); ggsave("tmhs.png", width = 7, height = 7)
 
 

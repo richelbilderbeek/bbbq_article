@@ -24,7 +24,7 @@ ggplot(df, aes(color = haplotype)) +
       "Substitutions pers peptide: {n_muts}. ",
       "Dashed line: x = y."
     )
-  ) + ggsave("delta_ic50s_per_haplotype.png", width = 7, height = 7)
+  ); ggsave("delta_ic50s_per_haplotype.png", width = 7, height = 7)
 
 
 expect_true(all(df$to_ic50 > 0.0))
@@ -43,4 +43,4 @@ ggplot(df, aes(x = haplotype, y = ic50_changed)) +
       "Peptides per haplotype: {n_peptides}. ",
       "Substitutions pers peptide: {n_muts}. "
     )
-  ) + ggsave("delta_ic50s_per_haplotype_perc.png", width = 7, height = 7)
+  ); ggsave("delta_ic50s_per_haplotype_perc.png", width = 7, height = 7)
