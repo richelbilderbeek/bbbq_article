@@ -688,6 +688,9 @@ RJCB, MB, GvdB and FB wrote the article.
 % No page number on this page
 \thispagestyle{empty}
 
+%
+% Figure 1
+%
 \begin{figure}[!htbp]
   \centering
   \begin{subfigure}[t]{0.8\textwidth}
@@ -736,6 +739,9 @@ RJCB, MB, GvdB and FB wrote the article.
 % No page number on this page
 \thispagestyle{empty}
 
+%
+% Figure 2
+%
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{bbbq_article_issue_157/results.png}
@@ -756,6 +762,9 @@ RJCB, MB, GvdB and FB wrote the article.
 % No page number on this page
 \thispagestyle{empty}
 
+%
+% Figure 3
+%
 \begin{figure}[!htbp]
   \centering
 
@@ -809,8 +818,21 @@ RJCB, MB, GvdB and FB wrote the article.
 % No page number on this page
 \thispagestyle{empty}
 
+%
+% Figure 4
+%
 \begin{figure}[!htbp]
   \centering
+
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner_bw.png}
+    \label{fig:f_snps_found_and_expected_per_spanner}
+  \end{subfigure}
+
+  \vfill
+
   \begin{subfigure}[t]{0.45\textwidth}
     \centering
     \caption{}
@@ -824,30 +846,22 @@ RJCB, MB, GvdB and FB wrote the article.
     \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_tmh_ncbi_per_spanner.png}
     \label{fig:f_tmh_ncbi_per_spanner}
   \end{subfigure}  
-
-  \vfill
   
-  \begin{subfigure}[t]{\textwidth}
-    \centering
-    \caption{}
-    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_snps_found_and_expected_per_spanner_bw.png}
-    \label{fig:f_snps_found_and_expected_per_spanner}
-  \end{subfigure}
   \caption{ \textbf{Membrane proteins with multiple TMHs are evolutionary more conserved than proteins with only a single TMH.}
       \textbf{(A)} 
+      Percentage of SNPs found in TMPs predicted to have only a single
+      (left) or multiple (right) TMHs.
+        Each point shows for one protein the predicted percentage of TMH ($x$-axis) and the observed occurrence of SNPs being located within a TMH ($y$-axis). The dashed diagonal lines show the line of equality (i.e., equal conservation of TMHs and soluble protein regions). 
+        The diagonal line indicates a linear fit, the gray area its 95\% confidence interval.
+      \textbf{(B)} 
       The number of SNPs in TMHs as expected by chance 
       and observed in the dbSNP database, 
       for TMPs with one TMH (single-spanners) and multiple TMHs (multi-spanners).
       Percentages show the relative conservation
       of SNPs in TMHs found.
-      \textbf{(B)} 
+      \textbf{(C)} 
       Distribution of the proportion of amino acids residing
       in the plasma membrane. 
-      \textbf{(C)} 
-      Percentage of SNPs found in TMPs predicted to have only a single
-      (left) or multiple (right) TMHs.
-        Each point shows for one protein the predicted percentage of TMH ($x$-axis) and the observed occurrence of SNPs being located within a TMH ($y$-axis). The dashed diagonal lines show the line of equality (i.e., equal conservation of TMHs and soluble protein regions). 
-        The diagonal line indicates a linear fit, the gray area its 95\% confidence interval.
      }
 \end{figure}
 
