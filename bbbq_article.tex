@@ -900,6 +900,9 @@ MHC-II (see supplementary Table \ref{tab:ic50_binders_mhc2}).
 % tab:ic50_binders_mhc2
 \input{bbbq_1_smart_results/table_ic50_binders_mhc2_2.latex}
 
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Counts}
 \label{subsec:counts}
@@ -920,9 +923,15 @@ contains both MAPs and TMPs.
 % Label: tab:ncbi_counts_2
 \input{ncbi_peregrine_results/ncbi_counts_2.tex}
 
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Relative positions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+See Supplementary Figure \ref{fig:snp_rel_pos}
+for the distribution of the relative position of the SNPs.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_snp_rel_pos.png}
@@ -935,23 +944,43 @@ contains both MAPs and TMPs.
   \label{fig:snp_rel_pos}
 \end{figure}
 
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Presentation of TMH-derived epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+See supplementary Table \ref{tab:tmh_binders_mhc2} 
+for the percentage of MHC-II 14-mers overlapping with TMH.
+
 % Label: tab:tmh_binders_mhc2
 \input{bbbq_1_smart_results/table_tmh_binders_mhc2_2.latex}
+
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Elution studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+See supplementary Table \ref{tab:elution} 
+for the percentages of epitopes derived from a TMH 
+found in the two elution studies, 
+for the two different kind of topology prediction tools.
+
 % tab:elution
 \input{bbbq_article_issue_157/results.tex}
+
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Presentation of TMH-derived epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+See supplementary Table \ref{tab:tmh_binders_mhc1} 
+for the percentage of MHC-I 9-mers overlapping with TMH.
 
 % Label: tab:tmh_binders_mhc1
 \input{bbbq_1_smart_results/table_tmh_binders_mhc1_2.latex}
@@ -967,29 +996,8 @@ show the exact number of binders, binders that overlap with TMHs
 and the percentage of binders that overlap with TMHs, as
 visualized by figure \ref{fig:bbbq_1_smart_results}.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Differences with Bianchi et al., 2017}
@@ -1056,6 +1064,9 @@ presented, however, is more extreme in our current setup.
     Dashed line denotes the percentage as expected by chance.
   }
 \end{figure}
+
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software used}
@@ -1146,6 +1157,9 @@ query into multiple pages, each of which needs one API call.
 We wrote the \verb;sprentrez; package \cite{sprentrez} to provide for 
 bigger queries of multiple (and delayed) API calls.
 
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction software written}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1192,6 +1206,9 @@ To reproduce the full experiment presented in this paper,
 the functions needed are bundled in the 'bbbq' R package.
 This package is too specific to be submitted to CRAN.
 
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prediction of percentage of epitopes overlapping with a TMH}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1208,6 +1225,9 @@ overlapping with a TMH.
 
 % Label: tab:f_tmh
 \input{bbbq_1_smart_results/table_f_tmh_2.latex}
+
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Minor methods}
@@ -1267,9 +1287,8 @@ for \cite{hunt2009silent}.
 As the possible effect of synonymous mutations is ignored by our
 topology prediction software, we do so as well.
 
-
-
-
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Relative presentation of TMH-derived epitopes}
@@ -1337,11 +1356,12 @@ and plot the mean and standard error, as shown in figure \ref{fig:rel_presentati
   \label{fig:rel_presentation}
 \end{figure}
 
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolutionary conservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 Figure \ref{fig:snps_per_gene_name_ncbi} shows the distribution of the
 number of SNPs per gene name, at the date we started the experiment,
@@ -1362,7 +1382,6 @@ at December 14th 2020.
   }
   \label{fig:snps_per_gene_name_processed}
 \end{figure}
-
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{ncbi_peregrine_results/fig_n_proteins_per_gene_name.png}
@@ -1415,4 +1434,7 @@ statistics for only single-spanners and multi-spanners respectively.
 
 % Label: tab:snp_stats_per_spanner_multi
 \input{ncbi_peregrine_results/snp_stats_per_spanner_multi.tex}
+
+% Process all floats before going to a next page
+\clearpage
 
