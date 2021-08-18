@@ -191,11 +191,11 @@ For MHC-II, haplotypes were selected with a phenotypic frequency
 of at least 14\% in the human population \cite{greenbaum2011functional},
 resulting in 21 MHC-II haplotypes.
  
-[SOMETHING HERE] A peptide is called a binder if, for a certain haplotype, 
+We define a protein to be a binder if, for a certain haplotype, 
 any of its 9-mer or 14-mer peptides have an IC50 value in the lowest 2\% of 
 all peptides within a \emph{proteome} 
 (see supplementary Tables \ref{tab:ic50_binders_mhc1} and \ref{tab:ic50_binders_mhc2} for values), 
-whereas the previous study defined
+this differs from our previous study where we defined
 a binder as having an IC50 in the lowest 2\% 
 of the peptides within a \emph{protein}.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
@@ -328,7 +328,10 @@ For MHC-I, we previously showed that the over-presentation of TMH-derived peptid
 show the extent of over-presentation
 of TMH-derived epitopes as a function of the hydrophobicity preference score for the different haplotypes.
 An assumed linear correlation explains 88\% of the variability in MHC-I.
-For MHC-II, 62\% of the variability is explained by hydrophobicity. This strengthens our previous finding \cite{bianchi2017} and indicates that TMH-derived peptides are over-presented because the peptide binding grooves of most MHC-I and -II haplotypes are relatively hydrophobic.
+For MHC-II, 62\% of the variability is explained by hydrophobicity. 
+This indicates that TMH-derived peptides are over-presented, 
+because the peptide binding grooves of most MHC-I and -II haplotypes 
+are relatively hydrophobic.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experimental validation of presentation of TMH-derived peptides}
@@ -769,9 +772,9 @@ RJCB, MB, GvdB and FB wrote the article.
   \begin{subfigure}[t]{0.45\textwidth}
     \centering
     \caption{}
-    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_conservation.png}
-    \label{fig:conservation}
-  \end{subfigure}
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
+    \label{fig:f_tmh_ncbi}
+  \end{subfigure}  
 
   
    \vfill
@@ -779,9 +782,9 @@ RJCB, MB, GvdB and FB wrote the article.
   \begin{subfigure}[t]{0.45\textwidth}
     \centering
     \caption{}
-    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_f_tmh_ncbi.png}
-    \label{fig:f_tmh_ncbi}
-  \end{subfigure}  
+    \includegraphics[width=\linewidth]{ncbi_peregrine_results/fig_conservation.png}
+    \label{fig:conservation}
+  \end{subfigure}
 
 
   \caption{ \textbf{Evolutionary conservation of human TMHs.}
@@ -794,12 +797,12 @@ RJCB, MB, GvdB and FB wrote the article.
     equal conservation of TMHs and soluble protein regions). 
     The diagonal line indicates a linear fit, the gray area its 95\% confidence interval.
     \textbf{(B)}
+    Distribution of the percentages of TMH in the TMPs used in this study.
+    \textbf{(C)}
     The number of SNPs in TMHs as expected by chance (left bar) 
     and found in the dbSNP database (right bar).
     Percentages show the relative conservation
     of SNPs in TMHs found.
-    \textbf{(C)}
-    Distribution of the percentages of TMH in the TMPs used in this study.
   }
 \end{figure}
 
