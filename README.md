@@ -36,15 +36,23 @@ make
 
 See [https://github.com/richelbilderbeek/bbbq_article_issue_157](https://github.com/richelbilderbeek/bbbq_article_issue_157).
 
+ * [ ] Zenodo here
+
 ### TMH-derived epitopes are over-presented
 
 See [https://github.com/richelbilderbeek/bbbq_1_smart](https://github.com/richelbilderbeek/bbbq_1_smart).
+
+ * [ ] Zenodo here
 
 ### TMHs are conserved
 
 See [https://github.com/richelbilderbeek/ncbi_peregrine](https://github.com/richelbilderbeek/ncbi_peregrine) for the scripts.
 
+ * [ ] Zenodo here
+
 See [https://github.com/richelbilderbeek/ncbi_results](https://github.com/richelbilderbeek/ncbi_results) to see how the results are processed.
+
+ * [ ] Zenodo here
 
 ## Dependencies
 
