@@ -1,6 +1,6 @@
 # bbbq_article
 
-Branch   |[GitHub Actions](https://github.com/richelbilderbeek/bbbq_article/actions)                                     
+Branch   |[![GitHub Actions logo](pics/GitHubActions.png)](https://github.com/richelbilderbeek/bbbq_article/actions)                                     
 ---------|--------------------------------------------------------------------------------------------------
 `master` |![build_latex](https://github.com/richelbilderbeek/bbbq_article/actions/workflows/build_latex/badge.svg?branch=master)
 `develop`|![build_latex](https://github.com/richelbilderbeek/bbbq_article/actions/workflows/build_latex/badge.svg?branch=develop)
