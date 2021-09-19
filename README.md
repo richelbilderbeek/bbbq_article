@@ -3,7 +3,7 @@
 Branch   |[GitHub Actions](https://github.com/richelbilderbeek/bbbq_article/actions)                                     
 ---------|--------------------------------------------------------------------------------------------------
 `master` |![build_latex](https://github.com/richelbilderbeek/bbbq_article/actions/workflows/build_latex/badge.svg?branch=master)
-`develop` |![build_latex](https://github.com/richelbilderbeek/bbbq_article/actions/workflows/build_latex/badge.svg?branch=develop)
+`develop`|![build_latex](https://github.com/richelbilderbeek/bbbq_article/actions/workflows/build_latex/badge.svg?branch=develop)
 
 The article 'Transmembrane helices are an overlooked and evolutionarily conserved source of major histocompatibility complex class I and II epitopes',
 by Bilderbeek, Baranov, van den Bogaart and Bianchi.
