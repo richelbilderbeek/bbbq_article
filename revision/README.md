@@ -5,7 +5,6 @@
  * M: Maxim Baranov
  * G: Geert van den Bogaart
 
-
 R: First, something must have gone wrong with the figures at the
 Frontier back-end, as the paper is automatically rebuilt
 from LaTex to PDF by a continuous integration script,
@@ -64,14 +63,15 @@ Thanks for the appreciation of our work!
 
 TODO: Add to manuscript
 
- * [ ] Add to manuscript
+ * [ ] @Frans: you want to add this?
+ * [ ] @Geert: you want to add this?
+ * [ ] @Maxim: you want to add this?
 
 > L. 64: "[6] found that" can be written as "S. Tang et al. [6] found that"
 
 Thanks, we changed the LaTeX to:
 
 > For example, S. Tang et al. \cite{tang2011genome} found that, 
-
 
 ## Check List
 
@@ -150,7 +150,7 @@ We agree with the reviewer and we did [some statistical tests]
 
 > In addition to the two peptidome studies used by the authors, 
 > many comprehensive immunopeptidomes are available for analysis. For example, 
-> the NIH Immune Epitiope Database and Analysis Resource lists several hundred 
+> the NIH Immune Epitope Database and Analysis Resource lists several hundred 
 > studies with many hundreds of thousands of epitopes. A detailed analysis of 
 > the frequency of TMH in experimentally determined MHC-I and MHC-II peptidomes 
 > (rather than predicted binders) could provide the information sought by 
@@ -161,7 +161,7 @@ are plenty. For both MCH-I and MHC-II, we simply took the first study
 we found on Google Scholar, as all we wanted to know was whether
 TMH-derived epitopes would be presented at all.
 
-Although the NIH Immune Epitiope Database and Analysis Resource is a great 
+Although the NIH Immune Epitope Database and Analysis Resource is a great 
 resource, we [?]
 
 [R: well, we can do some more, but then the question is how much more we should
@@ -322,19 +322,35 @@ not clearly enough]
 > DQ2.2 and DQ7.5, in this case each haplotype is a combination of two 
 > specific alleles derived from DQA and/or DQB.
 
-TODO
+[R: Interesting point! As we work with alleles -and we should have used that
+work instead of haplotype-, this is not a problem to address]
+
+ * [ ] @Frans: agree?
+ * [ ] @Geert: agree? 
+ * [ ] @Maxim: agree? 
 
 > 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
 > of the allotypes they used are highly hydrophilic because they have highly 
 > polarized anchor positions.
 
-TODO
+[R: do we? I guess that the term 'MHC alleles' is already confusing, as
+this is a piece of DNA. Assuming this to be 'MHC complex' instead, I see
+no reason why these proteins would have a different hydrophobicity. 
+Does anyone else know what the reviewer could mean here?]
+
+ * [ ] @Frans: ideas?
+ * [ ] @Geert: ideas? 
+ * [ ] @Maxim: ideas? 
 
 > 3. It is not clear how the authors chose the MHC-I allotypes? It is 
 > explained only for MHC-II alleles. I assume for their representation 
 > in the population.
 
-TODO
+We chose the MHC-I alleles based on our previous study [TODO: REF here],
+which were chosen by [...]
+
+ * [ ] @Frans: want to write this?
+ * [ ] @Geert: want to write this?
 
 > 4. Is it significant the overlapping of one residue for MHC binding? 
 > Why not consider only those peptides that are really predicted and 
@@ -347,7 +363,16 @@ TODO
 > TMH contributes to every position of the ligand predicted compared to 
 > those experimentally confirmed.
 
-TODO
+[R: I feel the reviewer has his/her idea how to do this best, where we have
+had ours. I admit I do not see how the reviewer wants to do this exactly.
+I think we have chosen a clear definition with 'a TMH-derived epitope is
+an epitope that has at least 1 amino acid overlapping with a TMH'
+and we statistically test these are over-presented. I suggest to write the
+reply down as such.]
+
+ * [ ] @Frans: agree?
+ * [ ] @Geert: agree?
+ * [ ] @Maxim: agree?
 
 > 5. The latter point is also more relevant to the case of MHC-II, 
 > where the anchor positions are “internal” and the extremes are more 
@@ -356,23 +381,49 @@ TODO
 > only one residue coming from a TMP/TMH which is almost “floating” in 
 > extreme of the binding groove?
 
-TODO
+[R: I would say, similar to above: Yes!]
 
-> 6. To state that TMH are overrepresented in the MHC peptidome, the authors should have considered at least a minimum length where part of the TMH binds to the main or secondary positions of MHC allele.
+ * [ ] @Frans: agree?
+ * [ ] @Geert: agree?
+ * [ ] @Maxim: agree?
 
-TODO
+> 6. To state that TMH are overrepresented in the MHC peptidome, the authors 
+> should have considered at least a minimum length where part of the 
+> TMH binds to the main or secondary positions of MHC allele.
 
-> 7. Considering that the predicted peptides of the TMH are hydrophobic, are these values comparable to those obtained from peptide elution studies? Is it well correlated of what we know about their peptide preferences of each MHC in this study? There is no explanation of how MHC alleles with polar binding preferences bind part of the TMH.
+[R: don't we, with a minimum length of 1 amino acid overlapping?]
 
-TODO
+ * [ ] @Frans: agree?
+ * [ ] @Geert: agree?
+ * [ ] @Maxim: agree?
 
-> 8. Conservation of the TMH, or it is lack of variation, has been documented many years ago by different biochemical experiments and it is mainly explained by the nature of the few amino acids that can compose the hydrophobic helix. However, the authors could try to explain if the SNPs identified by them could affect the presentation of some predicted or experimental epitopes.
+> 7. Considering that the predicted peptides of the TMH are hydrophobic, 
+> are these values comparable to those obtained from peptide elution studies? 
+> Is it well correlated of what we know about their peptide preferences of 
+> each MHC in this study? There is no explanation of how MHC alleles with 
+> polar binding preferences bind part of the TMH.
 
-TODO
+ * [ ] @Frans: want to do this one?
+ * [ ] @Geert: want to do this one?
+ * [ ] @Maxim: want to do this one?
 
-> 9. Figure 2 has not explanation of what it is included in each graph. Which one is from MHC-I? MHC-II? Is all together?
+> 8. Conservation of the TMH, or it is lack of variation, has been documented 
+> many years ago by different biochemical experiments and it is mainly 
+> explained by the nature of the few amino acids that can compose the 
+> hydrophobic helix. However, the authors could try to explain if the SNPs
+> identified by them could affect the presentation of some predicted or 
+> experimental epitopes.
 
-TODO
+ * [ ] @Frans: want to do this one?
+ * [ ] @Geert: want to do this one?
+ * [ ] @Maxim: want to do this one?
+
+> 9. Figure 2 has not explanation of what it is included in each graph. 
+> Which one is from MHC-I? MHC-II? Is all together?
+
+[R: I will fix this]
+
+ * [ ] @Richel: TODO
 
 > 10. There is no Figure 4 in the manuscript.
 
@@ -393,7 +444,13 @@ We agree that this is annoying and we will check again upon our next submission.
 > proteome and predictive algorithms. I think authors must analyze the data 
 > using a more immunologically point of view.
 
-TODO
+The reviewer is right that we took two studies into account, where there
+are plenty. For both MCH-I and MHC-II, we simply took the first study
+we found on Google Scholar, as all we wanted to know was whether
+TMH-derived epitopes would be presented at all.
+
+[R: well, we can do some more, but then the question is how much more we should
+do?]
 
 ## Check List
 
