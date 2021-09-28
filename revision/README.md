@@ -11,6 +11,12 @@ from LaTex to PDF by a continuous integration script,
 with the current latest version at 
 https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6.
 
+## Editor
+
+> Thank you for the submission. Your manuscript has been examined by three expert reviewers. Two of the reviewers raised some significant concerns regarding the manuscript that can only be addressed by additional analyses and work. In particular, please pay special attention to the comment by reviewer #3, as follows:
+> "In addition to the two peptidome studies used by the authors, many comprehensive immunopeptidomes are available for analysis. For example, the NIH Immune Epitiope Database and Analysis Resource lists several hundred studies with many hundreds of thousands of epitopes. A detailed analysis of the frequency of TMH in experimentally determined MHC-I and MHC-II peptidomes (rather than predicted binders) could provide the information sought by the authors."
+> Should you decide to revise the manuscript and resubmit, please make sure that you address all of the reviewer's concerns in the interactive forum. If you need additional time for the revision, please feel free to let me know.
+
 ## Reviewer 1
 
 > Interactive review activated: 26 Sep 2021
