@@ -218,90 +218,196 @@ We have also fixed the legends as suggested by the reviewer.
 > T cells would be deleted or tolerized. So TMH-specific responses might be 
 > promoted or suppressed by increased TM peptide presentation.
 
- * [ ] @Frans: ideas?
- * [ ] @Geert: ideas?
- * [ ] @Maxim: ideas?
+ * [ ] @Frans: want to have a stab here?
+ * [ ] @Geert: want to have a stab here?
+ * [ ] @Maxim: want to have a stab here?
 
-Also some parts of manuscript are confusing:
+> Also some parts of manuscript are confusing:
 
-5) The use of MHC haplotype to refer to a particular MHC allele is incorrect and confusing. An MHC haplotype is a set of HLA genes present on a single chromosome and therefore genetically linked. The peptide binding molecules are called MHC proteins or HLA gene products or (less frequently) MHC allotypes.
+> 5) The use of MHC haplotype to refer to a particular MHC allele is 
+> incorrect and confusing. An MHC haplotype is a set of HLA genes present on 
+> a single chromosome and therefore genetically linked. The peptide binding 
+> molecules are called MHC proteins or HLA gene products or (less 
+> frequently) MHC allotypes.
 
-6) The authors search for the “physiological reason” why peptides derived from TMHs are frequently presented is puzzling, as they state that it is already known that MHC protein prefer hydrophobic peptide and TMHs are hydrophobic. This would appear to be the reason. They seem to be asking how the preference of MHCs to bind TMHs impacts MHC cellular and immunological function and evolution, but those are consequences, not reasons.
+[R: I agree with the reviewer here. I assumed we used this incorrect
+terminology as to match the previous paper. I would happily uses allele
+here as well!]
 
-5) The section on T cells recognizing different parts of an immunogenic protein than B cells is confusing and unnecessary since this is already well appreciated.
+ * [ ] @Frans: agree to use allele?
+ * [ ] @Geert: agree to use allele?
+ * [ ] @Maxim: agree to use allele?
 
-6) Finally, the analyses of chance versus observed epitopes do not include any uncertainly estimates.
-Q 2
+> 6) The authors search for the “physiological reason” why peptides derived 
+> from TMHs are frequently presented is puzzling, as they state that it 
+> is already known that MHC protein prefer hydrophobic peptide and TMHs 
+> are hydrophobic. This would appear to be the reason. They seem to be asking
+> how the preference of MHCs to bind TMHs impacts MHC cellular and 
+> immunological function and evolution, but those are consequences, not reasons.
+
+[R: I guess we should supply the reasons why this is puzzling
+more clearly, e.g. it will be hard for a hydrophobic epiptope to
+be transported across a cell membran. I assume we do, yet apparently
+not clearly enough]
+
+ * [ ] @Frans: you want this one?
+ * [ ] @Geert: you want this one?
+ * [ ] @Maxim: you want this one?
+
+> 5) The section on T cells recognizing different parts of an immunogenic 
+> protein than B cells is confusing and unnecessary since this is already 
+> well appreciated.
+
+[R: I suggest to remove it then :-) ]
+
+ * [ ] @Frans: you want this one?
+ * [ ] @Geert: you want this one?
+ * [ ] @Maxim: you want this one?
+
+> 6) Finally, the analyses of chance versus observed epitopes do not include 
+> any uncertainly estimates.
+
+[R: I will do this one!]
+
+ * [R] Do this
 
 ## Check List
 
-a. Is the quality of the figures and tables satisfactory?
-- No
+> a. Is the quality of the figures and tables satisfactory?
+> - No
 
-b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
-- Yes
+[R: I will the one to hopefully fix this]
 
-c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
-- No
+> b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
+> - Yes
 
-d. Are the methods sufficiently documented to allow replication studies?
-- Yes
+> c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
+> - No
+
+[R: I will the one to hopefully fix this]
+
+> d. Are the methods sufficiently documented to allow replication studies?
+> - Yes
 
 
 # Reviewer 4
 
+ * Independent review report submitted: 26 Sep 2021
+ * Interactive review activated: 26 Sep 2021
+ * Recommendation for the Editor: The manuscript should be rejected
 
-Reviewer 4
-Independent review report submitted: 26 Sep 2021
-Interactive review activated: 26 Sep 2021
+> This reviewer recommended rejection of the manuscript on 26 Sep 2021. Discussions for this review are closed.
+> Reason:
+> 
+> The manuscript contains fundamental errors that cannot be rectified through author revisions.
+> Note to the authors:
+> 
+> The authors have shown that TMH/TMP should be overrepresented in 
+> MHC-associated peptidomes. However, they are overestimating the contribution 
+> of these structures in the ligand generation considering that, in some cases, 
+> the contribution of one residue of the TMH to the ligand is almost 
+> anecdotic even more if this contribution mainly affects N or C-terminal 
+> positions and not in anchor positions. To state that TMH are overrepresented 
+> in the MHC peptidome, the authors should have considered at least a 
+> minimum length where part of the TMH sequence binds to the main or 
+> secondary positions of MHC allele.
 
-Recommendation for the Editor: The manuscript should be rejected
+##  EVALUATION
 
-This reviewer recommended rejection of the manuscript on 26 Sep 2021. Discussions for this review are closed.
-Reason:
+> 1. There is a confusion, authors are working with allotypes instead 
+> haplotypes. They are considering the protein expressed by one HLA allele, 
+> so it is allotype or allomorph. For instance: HLA-A*02:01, HLA-B*27:05. 
+> The only If they were considering haplotypes, they must notice that an 
+> MHC haplotype considers a combination of more than one gene; i.e the DQ2.5, 
+> DQ2.2 and DQ7.5, in this case each haplotype is a combination of two 
+> specific alleles derived from DQA and/or DQB.
 
-The manuscript contains fundamental errors that cannot be rectified through author revisions.
-Note to the authors:
+TODO
 
-The authors have shown that TMH/TMP should be overrepresented in MHC-associated peptidomes. However, they are overestimating the contribution of these structures in the ligand generation considering that, in some cases, the contribution of one residue of the TMH to the ligand is almost anecdotic even more if this contribution mainly affects N or C-terminal positions and not in anchor positions. To state that TMH are overrepresented in the MHC peptidome, the authors should have considered at least a minimum length where part of the TMH sequence binds to the main or secondary positions of MHC allele.
+> 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
+> of the allotypes they used are highly hydrophilic because they have highly 
+> polarized anchor positions.
 
-##  EVALUATION: Q 1 Please list your revision requests for the authors and provide your detailed comments, including highlighting limitations and strengths of the study and evaluating the validity of the methods, results, and data interpretation. If you have additional comments based on Q2 and Q3 you can add them as well.
+TODO
 
-1. There is a confusion, authors are working with allotypes instead haplotypes. They are considering the protein expressed by one HLA allele, so it is allotype or allomorph. For instance: HLA-A*02:01, HLA-B*27:05. The only If they were considering haplotypes, they must notice that an MHC haplotype considers a combination of more than one gene; i.e the DQ2.5, DQ2.2 and DQ7.5, in this case each haplotype is a combination of two specific alleles derived from DQA and/or DQB.
+> 3. It is not clear how the authors chose the MHC-I allotypes? It is 
+> explained only for MHC-II alleles. I assume for their representation 
+> in the population.
 
-2. Why the authors stated that MHC alleles are slightly hydrophobic? Some of the allotypes they used are highly hydrophilic because they have highly polarized anchor positions.
+TODO
 
-3. It is not clear how the authors chose the MHC-I allotypes? It is explained only for MHC-II alleles. I assume for their representation in the population.
+> 4. Is it significant the overlapping of one residue for MHC binding? 
+> Why not consider only those peptides that are really predicted and 
+> analyze them if they are really found in experimental data? Contribution 
+> of one residue of the TMH to the ligand is almost anecdotic even more 
+> if this contribution mainly affects N or C-terminal positions. 
+> It is logically to see these residues located near outside the lipid
+> bilayer because they are more “available” to be processed independently 
+> of what the mechanistic process is. It would be nice to saw how the 
+> TMH contributes to every position of the ligand predicted compared to 
+> those experimentally confirmed.
 
-4. Is it significant the overlapping of one residue for MHC binding? Why not consider only those peptides that are really predicted and analyze them if they are really found in experimental data? Contribution of one residue of the TMH to the ligand is almost anecdotic even more if this contribution mainly affects N or C-terminal positions. It is logically to see these residues located near outside the lipid bilayer because they are more “available” to be processed independently of what the mechanistic process is. It would be nice to saw how the TMH contributes to every position of the ligand predicted compared to those experimentally confirmed.
+TODO
 
-5. The latter point is also more relevant to the case of MHC-II, where the anchor positions are “internal” and the extremes are more diverse and less conserved. Are the authors considering significant to state that TMH are overrepresented if an MHC-II-derived peptide has only one residue coming from a TMP/TMH which is almost “floating” in extreme of the binding groove?
+> 5. The latter point is also more relevant to the case of MHC-II, 
+> where the anchor positions are “internal” and the extremes are more 
+> diverse and less conserved. Are the authors considering significant 
+> to state that TMH are overrepresented if an MHC-II-derived peptide has 
+> only one residue coming from a TMP/TMH which is almost “floating” in 
+> extreme of the binding groove?
 
-6. To state that TMH are overrepresented in the MHC peptidome, the authors should have considered at least a minimum length where part of the TMH binds to the main or secondary positions of MHC allele.
+TODO
 
-7. Considering that the predicted peptides of the TMH are hydrophobic, are these values comparable to those obtained from peptide elution studies? Is it well correlated of what we know about their peptide preferences of each MHC in this study? There is no explanation of how MHC alleles with polar binding preferences bind part of the TMH.
+> 6. To state that TMH are overrepresented in the MHC peptidome, the authors should have considered at least a minimum length where part of the TMH binds to the main or secondary positions of MHC allele.
 
-8. Conservation of the TMH, or it is lack of variation, has been documented many years ago by different biochemical experiments and it is mainly explained by the nature of the few amino acids that can compose the hydrophobic helix. However, the authors could try to explain if the SNPs identified by them could affect the presentation of some predicted or experimental epitopes.
+TODO
 
-9. Figure 2 has not explanation of what it is included in each graph. Which one is from MHC-I? MHC-II? Is all together?
+> 7. Considering that the predicted peptides of the TMH are hydrophobic, are these values comparable to those obtained from peptide elution studies? Is it well correlated of what we know about their peptide preferences of each MHC in this study? There is no explanation of how MHC alleles with polar binding preferences bind part of the TMH.
 
-10. There is no Figure 4 in the manuscript.
+TODO
 
-11. This study would give more information if it was based on all the experimental data available in public databases, as IEDB, instead the proteome and predictive algorithms. I think authors must analyze the data using a more immunologically point of view.
+> 8. Conservation of the TMH, or it is lack of variation, has been documented many years ago by different biochemical experiments and it is mainly explained by the nature of the few amino acids that can compose the hydrophobic helix. However, the authors could try to explain if the SNPs identified by them could affect the presentation of some predicted or experimental epitopes.
+
+TODO
+
+> 9. Figure 2 has not explanation of what it is included in each graph. Which one is from MHC-I? MHC-II? Is all together?
+
+TODO
+
+> 10. There is no Figure 4 in the manuscript.
+
+First, something must have gone wrong with the figures at the
+Frontier back-end, as the paper is automatically rebuilt
+from LaTex to PDF by a continuous integration script,
+with the current latest version at 
+https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6 .
+
+We agree that this is annoying and we will check again upon our next submission.
+
+ * [ ] @Frans: could you check the final submission? 
+ * [ ] @Geert: could you check the final submission? 
+ * [ ] @Maxim: could you check the final submission?
+
+> 11. This study would give more information if it was based on all the 
+> experimental data available in public databases, as IEDB, instead the 
+> proteome and predictive algorithms. I think authors must analyze the data 
+> using a more immunologically point of view.
+
+TODO
 
 ## Check List
 
- Reviewer 4 | 26 Sep 2021 | 02:19
-#1
-a. Is the quality of the figures and tables satisfactory?
-- No
+> a. Is the quality of the figures and tables satisfactory?
+> - No
 
-b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
-- Yes
+[R: this one is on me]
 
-c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
-- Yes
+> b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
+> - Yes
 
-d. Are the methods sufficiently documented to allow replication studies?
-- Yes
+> c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
+> - Yes
+
+> d. Are the methods sufficiently documented to allow replication studies?
+> - Yes
 
