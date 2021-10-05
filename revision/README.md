@@ -315,35 +315,29 @@ We have added the uncertainty estimates.
 > DQ2.2 and DQ7.5, in this case each haplotype is a combination of two 
 > specific alleles derived from DQA and/or DQB.
 
-[R: Interesting point! As we work with alleles -and we should have used that
-work instead of haplotype-, this is not a problem to address]
-
- * [ ] @Frans: agree?
- * [ ] @Geert: agree? 
- * [ ] @Maxim: agree? 
+@Frans: ik ben het hiermee eens om 'MHC allele' te gebruiken in het stuk 
+en wil dit graag doen. Mee eens?
 
 > 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
 > of the allotypes they used are highly hydrophilic because they have highly 
 > polarized anchor positions.
 
-[R: do we? I guess that the term 'MHC alleles' is already confusing, as
+@Frans: [R: do we? I guess that the term 'MHC alleles' is already confusing, as
 this is a piece of DNA. Assuming this to be 'MHC complex' instead, I see
 no reason why these proteins would have a different hydrophobicity. 
 Does anyone else know what the reviewer could mean here?]
-
- * [ ] @Frans: ideas?
- * [ ] @Geert: ideas? 
- * [ ] @Maxim: ideas? 
 
 > 3. It is not clear how the authors chose the MHC-I allotypes? It is 
 > explained only for MHC-II alleles. I assume for their representation 
 > in the population.
 
-We chose the MHC-I alleles based on our previous study [TODO: REF here],
-which were chosen by [...]
+Apparently, the reason was unclear and we have added it to the text more explicitly:
 
- * [ ] @Frans: want to write this?
- * [ ] @Geert: want to write this?
+[quote test here, something like 'We picked the same MHC-I alleles as used in a previous study [1]']
+
+ * [ ] Richel: add this, https://github.com/richelbilderbeek/bbbq_article/issues/234
+
+ * [1] Bianchi, Frans, Johannes Textor, and Geert van den Bogaart. "Transmembrane helices are an overlooked source of Major Histocompatibility Complex Class I epitopes." Frontiers in immunology 8 (2017): 1118.
 
 > 4. Is it significant the overlapping of one residue for MHC binding? 
 > Why not consider only those peptides that are really predicted and 
@@ -356,16 +350,13 @@ which were chosen by [...]
 > TMH contributes to every position of the ligand predicted compared to 
 > those experimentally confirmed.
 
+@Frans: ik snap deze niet goed. Jij wel?
 [R: I feel the reviewer has his/her idea how to do this best, where we have
 had ours. I admit I do not see how the reviewer wants to do this exactly.
 I think we have chosen a clear definition with 'a TMH-derived epitope is
 an epitope that has at least 1 amino acid overlapping with a TMH'
 and we statistically test these are over-presented. I suggest to write the
 reply down as such.]
-
- * [ ] @Frans: agree?
- * [ ] @Geert: agree?
- * [ ] @Maxim: agree?
 
 > 5. The latter point is also more relevant to the case of MHC-II, 
 > where the anchor positions are “internal” and the extremes are more 
@@ -374,21 +365,13 @@ reply down as such.]
 > only one residue coming from a TMP/TMH which is almost “floating” in 
 > extreme of the binding groove?
 
-[R: I would say, similar to above: Yes!]
-
- * [ ] @Frans: agree?
- * [ ] @Geert: agree?
- * [ ] @Maxim: agree?
+@Frans: ik zou zeggen 'Yes', maar ik snap het punt niet helemaal
 
 > 6. To state that TMH are overrepresented in the MHC peptidome, the authors 
 > should have considered at least a minimum length where part of the 
 > TMH binds to the main or secondary positions of MHC allele.
 
-[R: don't we, with a minimum length of 1 amino acid overlapping?]
-
- * [ ] @Frans: agree?
- * [ ] @Geert: agree?
- * [ ] @Maxim: agree?
+@Frans: hier lijkt het alsof de reviewer in de war is. Snap jij deze vraag?
 
 > 7. Considering that the predicted peptides of the TMH are hydrophobic, 
 > are these values comparable to those obtained from peptide elution studies? 
@@ -396,9 +379,13 @@ reply down as such.]
 > each MHC in this study? There is no explanation of how MHC alleles with 
 > polar binding preferences bind part of the TMH.
 
- * [ ] @Frans: want to do this one?
- * [ ] @Geert: want to do this one?
- * [ ] @Maxim: want to do this one?
+Indeed, the predicted peptides of TMHs are usually hydrophobic, 
+yet we cannot compare these hydrophobicity values with 
+those obtained from peptide elution studies, as peptide elution studies
+use [RICHEL IS HIERO]
+
+
+
 
 > 8. Conservation of the TMH, or it is lack of variation, has been documented 
 > many years ago by different biochemical experiments and it is mainly 
