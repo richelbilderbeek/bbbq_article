@@ -8,9 +8,24 @@ https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6.
 
 ## Editor
 
-> Thank you for the submission. Your manuscript has been examined by three expert reviewers. Two of the reviewers raised some significant concerns regarding the manuscript that can only be addressed by additional analyses and work. In particular, please pay special attention to the comment by reviewer #3, as follows:
-> "In addition to the two peptidome studies used by the authors, many comprehensive immunopeptidomes are available for analysis. For example, the NIH Immune Epitiope Database and Analysis Resource lists several hundred studies with many hundreds of thousands of epitopes. A detailed analysis of the frequency of TMH in experimentally determined MHC-I and MHC-II peptidomes (rather than predicted binders) could provide the information sought by the authors."
-> Should you decide to revise the manuscript and resubmit, please make sure that you address all of the reviewer's concerns in the interactive forum. If you need additional time for the revision, please feel free to let me know.
+> Thank you for the submission. Your manuscript has been examined by three expert reviewers. 
+> Two of the reviewers raised some significant concerns regarding the manuscript that can only be addressed by additional analyses and work. 
+> In particular, please pay special attention to the comment by reviewer #3, as follows:
+> "In addition to the two peptidome studies used by the authors, many comprehensive immunopeptidomes are available for analysis. 
+> For example, the NIH Immune Epitiope Database and Analysis Resource lists several hundred studies with many hundreds of thousands of epitopes. 
+> A detailed analysis of the frequency of TMH in experimentally determined MHC-I and MHC-II peptidomes (rather than predicted binders) 
+> could provide the information sought by the authors."
+> Should you decide to revise the manuscript and resubmit, 
+> please make sure that you address all of the reviewer's concerns in the interactive forum. 
+> If you need additional time for the revision, please feel free to let me know.
+
+We thank you for your help and the reviewers' feedback. Below we address all reviewers' comments.
+
+After debate, we decided to add two additional (?randomly chosen) immunopeptidomes studies (one per MHC class).
+We chose two over 'several hundred' as we have had no intention to thoroughly investigate many immunopeptidomes studies,
+but instead demonstrate a proof-of-principle that TMH-derived epitopes are presented at all.
+
+ * [ ]: Richel: Do analysis with two random immunopeptidomes studies, https://github.com/richelbilderbeek/bbbq_article/issues/229
 
 ## Reviewer 1
 
@@ -147,7 +162,7 @@ of the in vivo presented epitopes to be of (predicted) TMH origin,
 as the expected percentages would be zero percent.
 We agree with the reviewer and we did [some statistical tests]
 
- * [R]: do this
+ * [ ]: Richel: do this, https://github.com/richelbilderbeek/bbbq_article/issues/230
 
 > In addition to the two peptidome studies used by the authors, 
 > many comprehensive immunopeptidomes are available for analysis. For example, 
@@ -161,18 +176,13 @@ The reviewer is right that we took two studies into account, where there
 are plenty. For both MCH-I and MHC-II, we simply took the first study
 we found on Google Scholar, as all we wanted to know was whether
 TMH-derived epitopes would be presented at all.
+As requested, however, we have added another two (randomly chosen) 
+studies (one per MHC class) to the paper, from the NIH Immune Epitope 
+Database and Analysis Resource, which indeed is a great resource :-)
 
-Although the NIH Immune Epitope Database and Analysis Resource is a great 
-resource, we [?]
-
-[R: well, we can do some more, but then the question is how much more we should
-do?]
-
- * [ ] @Frans: ideas?
- * [ ] @Geert: ideas?
- * [ ] @Maxim: ideas?
-
-There are other major issues:
+ * [ ] Richel: do this: https://github.com/richelbilderbeek/bbbq_article/issues/229
+ 
+> There are other major issues:
 
 > 2) The figures are numbered incorrectly and don’t correspond to the text. 
 > Figure 1 matches its legend, but Figure 2 appears to be missing. 
@@ -186,18 +196,19 @@ website, as the paper is automatically rebuilt
 from LaTex to PDF by a continuous integration script,
 with the current latest version at 
 https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6 .
-Also, of course, we have taken the effort to re-order the figures correctly [1]
-and that the TIFFs are valid [2]. 
-Just to make sure, we will go through the data again.
+Already before the submission, we have taken the effort to re-order the figures correctly [1]
+and that the TIFFs were valid [2]. 
 
-We have also fixed the legends as suggested by the reviewer.
+We have added the legends as requested (thanks!) and checked the figures by eye again.
 
- * [R] Check TIFFs again
- * [R] Add legends
+ * [ ] Richel: Check TIFFs again, https://github.com/richelbilderbeek/bbbq_article/issues/231
+ * [ ] Richel: Add legends, https://github.com/richelbilderbeek/bbbq_article/issues/232
 
  * [1] https://github.com/richelbilderbeek/bbbq_article/issues/222
  * [2] https://github.com/richelbilderbeek/bbbq_article/issues/223
-
+ * [3] https://github.com/richelbilderbeek/bbbq_article/issues/232
+ * [4] https://github.com/richelbilderbeek/bbbq_article/issues/231
+ 
 > 3) A key message from this would appear to be that TMH sequences are 
 > overlooked as a source of MHC-I and MHC-II epitopes, but this statement is 
 > not supported by any data. There are many published instances of TMH 
