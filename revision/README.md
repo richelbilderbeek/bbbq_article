@@ -269,7 +269,8 @@ We have added the uncertainty estimates.
 > a. Is the quality of the figures and tables satisfactory?
 > - No
 
- * [ ] Richel: check version uploaded to Frontiers after submission, https://github.com/richelbilderbeek/bbbq_article/issues/227
+ * [ ] Richel: check version uploaded to Frontiers after submission, https://github.com/richelbilderbeek/bbbq_article/issues/236
+
 
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - Yes
@@ -381,11 +382,11 @@ reply down as such.]
 
 Indeed, the predicted peptides of TMHs are usually hydrophobic, 
 yet we cannot compare these hydrophobicity values with 
-those obtained from peptide elution studies, as peptide elution studies
-use [RICHEL IS HIERO]
+those obtained from peptide elution studies directly, as peptide elution studies
+use mass spectrometry to detect peptides. A known feature of this technique
+is that hydrophobic peptides are less likely to be detected.
 
-
-
+@Frans: de tweede en derde zin kan ik minder mij. Helpt jij mij hier uit de brand?
 
 > 8. Conservation of the TMH, or it is lack of variation, has been documented 
 > many years ago by different biochemical experiments and it is mainly 
@@ -394,16 +395,20 @@ use [RICHEL IS HIERO]
 > identified by them could affect the presentation of some predicted or 
 > experimental epitopes.
 
- * [ ] @Frans: want to do this one?
- * [ ] @Geert: want to do this one?
- * [ ] @Maxim: want to do this one?
+We agree with the reviewer that it is an interesting point to see if a 
+certain SNP results in a TMH being absent or presented, as we actually 
+tried that idea for a short time ourselves [1]. We abandoned this approach,
+as this was beyond the goal of finding if TMHs are evolutionary conserved,
+not of the consequences of a mutation. We do agree that this may be a nice follow-up study!
+
+ * [1] https://github.com/richelbilderbeek/bbbq_article/blob/v1.1/p_transition/create_dataset.R
 
 > 9. Figure 2 has not explanation of what it is included in each graph. 
 > Which one is from MHC-I? MHC-II? Is all together?
 
-[R: I will fix this]
+We have improved upon the explanation of figure 2.
 
- * [ ] @Richel: TODO
+ * [ ] Richel: do so, https://github.com/richelbilderbeek/bbbq_article/issues/235
 
 > 10. There is no Figure 4 in the manuscript.
 
@@ -415,29 +420,23 @@ https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6 .
 
 We agree that this is annoying and we will check again upon our next submission.
 
- * [ ] @Frans: could you check the final submission? 
- * [ ] @Geert: could you check the final submission? 
- * [ ] @Maxim: could you check the final submission?
+ * [ ] Richel: do so, https://github.com/richelbilderbeek/bbbq_article/issues/236
 
 > 11. This study would give more information if it was based on all the 
 > experimental data available in public databases, as IEDB, instead the 
 > proteome and predictive algorithms. I think authors must analyze the data 
 > using a more immunologically point of view.
 
-The reviewer is right that we took two studies into account, where there
-are plenty. For both MCH-I and MHC-II, we simply took the first study
-we found on Google Scholar, as all we wanted to know was whether
-TMH-derived epitopes would be presented at all.
+We have extended the study to include two more (randomly selected) immunopeptidomes.
 
-[R: well, we can do some more, but then the question is how much more we should
-do?]
+ * [ ] Richel: do this, https://github.com/richelbilderbeek/bbbq_article/issues/229
 
 ## Check List
 
 > a. Is the quality of the figures and tables satisfactory?
 > - No
 
-[R: this one is on me]
+ * [ ] Richel: check new Frontiers upload, https://github.com/richelbilderbeek/bbbq_article/issues/236
 
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - Yes
