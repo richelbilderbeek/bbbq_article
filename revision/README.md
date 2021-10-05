@@ -77,11 +77,7 @@ Thanks for the appreciation of our work!
 > of variability is explained by the hydrophobicity score of TMH-derived 
 > epitopes in MHC-II than in MHC-I, with regard to the discussion in section 4.2
 
-TODO: Add to manuscript
-
- * [ ] @Frans: you want to add this?
- * [ ] @Geert: you want to add this?
- * [ ] @Maxim: you want to add this?
+@Frans: deze vind jij denk ik mooi om te doen!
 
 > L. 64: "[6] found that" can be written as "S. Tang et al. [6] found that"
 
@@ -99,11 +95,7 @@ Great!
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - No
 
-TODO: How to solve this?
-
- * [ ] @Frans: ideas?
- * [ ] @Geert: ideas?
- * [ ] @Maxim: ideas?
+@Frans: heb jij een idee wat hiermee te doen?
 
 > c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
 > - Yes
