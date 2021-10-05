@@ -216,9 +216,7 @@ We have added the legends as requested (thanks!) and checked the figures by eye 
 > peptidome analysis. HLA-E is well-known to bind signal sequence peptides, 
 > which are a type of TM sequences.
 
- * [ ] @Frans: ideas?
- * [ ] @Geert: ideas?
- * [ ] @Maxim: ideas?
+@Frans: deze lijkt mij leuk voor jou :-)
 
 > 4) It is claimed that both that data suggest that both cytolytic and 
 > helper T cells respond to more to membrane proteins, but no T cell data at 
@@ -230,9 +228,8 @@ We have added the legends as requested (thanks!) and checked the figures by eye 
 > T cells would be deleted or tolerized. So TMH-specific responses might be 
 > promoted or suppressed by increased TM peptide presentation.
 
- * [ ] @Frans: want to have a stab here?
- * [ ] @Geert: want to have a stab here?
- * [ ] @Maxim: want to have a stab here?
+@Frans: deze lijkt mij leuk voor jou, maar ik kan ook wel iets verzinnen: 
+het is immers irrelevant voor ons onderzoek welke cellen de MHC complexen hebben.
 
 > Also some parts of manuscript are confusing:
 
@@ -242,13 +239,8 @@ We have added the legends as requested (thanks!) and checked the figures by eye 
 > molecules are called MHC proteins or HLA gene products or (less 
 > frequently) MHC allotypes.
 
-[R: I agree with the reviewer here. I assumed we used this incorrect
-terminology as to match the previous paper. I would happily uses allele
-here as well!]
-
- * [ ] @Frans: agree to use allele?
- * [ ] @Geert: agree to use allele?
- * [ ] @Maxim: agree to use allele?
+@Frans: ik ben het hiermee eens. Ik wel prima de tekst aanpassen om 'MHC allele' te gebruiken.
+Heb ik jouw groene licht?
 
 > 6) The authors search for the “physiological reason” why peptides derived 
 > from TMHs are frequently presented is puzzling, as they state that it 
@@ -257,38 +249,27 @@ here as well!]
 > how the preference of MHCs to bind TMHs impacts MHC cellular and 
 > immunological function and evolution, but those are consequences, not reasons.
 
-[R: I guess we should supply the reasons why this is puzzling
-more clearly, e.g. it will be hard for a hydrophobic epiptope to
-be transported across a cell membran. I assume we do, yet apparently
-not clearly enough]
-
- * [ ] @Frans: you want this one?
- * [ ] @Geert: you want this one?
- * [ ] @Maxim: you want this one?
+@Frans: deze lijkt mij leuk voor jou! 
 
 > 5) The section on T cells recognizing different parts of an immunogenic 
 > protein than B cells is confusing and unnecessary since this is already 
 > well appreciated.
 
-[R: I suggest to remove it then :-) ]
-
- * [ ] @Frans: you want this one?
- * [ ] @Geert: you want this one?
- * [ ] @Maxim: you want this one?
+@Frans: ik stel voor dat we dat stukje verwijderen. Goed plan?
 
 > 6) Finally, the analyses of chance versus observed epitopes do not include 
 > any uncertainly estimates.
 
-[R: I will do this one!]
+We have added the uncertainty estimates.
 
- * [R] Do this
+ * [ ] Richel: add uncertainty estimates, https://github.com/richelbilderbeek/bbbq_article/issues/233
 
 ## Check List
 
 > a. Is the quality of the figures and tables satisfactory?
 > - No
 
-[R: I will the one to hopefully fix this]
+ * [ ] Richel: check version uploaded to Frontiers after submission, https://github.com/richelbilderbeek/bbbq_article/issues/227
 
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - Yes
@@ -296,7 +277,7 @@ not clearly enough]
 > c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
 > - No
 
-[R: I will the one to hopefully fix this]
+ * [ ] Richel: will have added this
 
 > d. Are the methods sufficiently documented to allow replication studies?
 > - Yes
