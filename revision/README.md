@@ -1,10 +1,5 @@
 # Revision
 
- * R: Richel
- * F: Frans Bianchi
- * M: Maxim Baranov
- * G: Geert van den Bogaart
-
 R: First, something must have gone wrong with the figures at the
 Frontier back-end, as the paper is automatically rebuilt
 from LaTex to PDF by a continuous integration script,
