@@ -343,13 +343,14 @@ Does anyone else know what the reviewer could mean here?]
 > explained only for MHC-II alleles. I assume for their representation 
 > in the population.
 
-Apparently, the reason was unclear and we have added it to the text more explicitly:
+Well spotted; we had only explained the length of the peptides for our MHC-I analysis.
+I have added the following text to the manuscript.
 
-[quote test here, something like 'We picked the same MHC-I alleles as used in a previous study [1]']
-
- * [ ] Richel: add this, https://github.com/richelbilderbeek/bbbq_article/issues/234
-
- * [1] Bianchi, Frans, Johannes Textor, and Geert van den Bogaart. "Transmembrane helices are an overlooked source of Major Histocompatibility Complex Class I epitopes." Frontiers in immunology 8 (2017): 1118.
+```
+Both MCH-I and MHC-II haplotypes were selected to have a high occurrance,
+where the MHC-I haplotypes are the same 13 haplothose used in our earlier study \cite{bianchi2017},
+[...]
+```
 
 > 4. Is it significant the overlapping of one residue for MHC binding? 
 > Why not consider only those peptides that are really predicted and 

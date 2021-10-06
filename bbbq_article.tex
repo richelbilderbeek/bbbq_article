@@ -77,7 +77,8 @@ will not affect MHC presentation for all haplotypes present in the population \c
 
 % \paragraph{Epitope prediction}
 
-Many studies are aimed at identifying the repertoire of epitopes that are presented in any MHC haplotype and determining which epitopes will result in an immune response, 
+Many studies are aimed at identifying the repertoire of epitopes that are presented 
+in any MHC haplotype and determining which epitopes will result in an immune response, 
 as this will for instance aid the design of vaccines. 
 These studies have led to the development of prediction algorithms 
 that allow for very reliable \emph{in silico} predictions 
@@ -187,9 +188,10 @@ of the proteins within these proteomes.
 To predict the affinity of an epitope to a certain MHC haplotype,
  \verb;EpitopePrediction; \cite{bianchi2017} for MHC-I 
 and \verb;MHCnuggets; \cite{shao2020high} for MHC-II was used.
-For MHC-II, haplotypes were selected with a phenotypic frequency 
-of at least 14\% in the human population \cite{greenbaum2011functional},
-resulting in 21 MHC-II haplotypes.
+Both MCH-I and MHC-II haplotypes were selected to have a high occurrance,
+where the MHC-I haplotypes are the same 13 haplothose used in our earlier study \cite{bianchi2017},
+and the 21 MHC-II, haplotypes have a phenotypic frequency 
+of 14\% or more in the human population \cite{greenbaum2011functional}.
  
 We define a protein to be a binder if, for a certain haplotype, 
 any of its 9-mer or 14-mer peptides have an IC50 value in the lowest 2\% of 
