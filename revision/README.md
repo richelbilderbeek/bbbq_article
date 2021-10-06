@@ -417,9 +417,14 @@ not of the consequences of a mutation. We do agree that this may be a nice follo
 > 9. Figure 2 has not explanation of what it is included in each graph. 
 > Which one is from MHC-I? MHC-II? Is all together?
 
-We have improved upon the explanation of figure 2.
+We can imagine one glosses over a legend if there is a mismatch between 
+figures and legend. We have checked and it is there; here is a literal copy-paste:
 
- * [ ] Richel: do so, https://github.com/richelbilderbeek/bbbq_article/issues/235
+'(B-C)  Correlation  between  the  percentages  of 
+predicted  TMH-derived  epitopes  and  the  hydrophobicity  score  of  all  predicted 
+epitopes  for  MHC-I  (B)  and  MHC-II  haplotypes  (C).  Diagonal  line:  linear 
+regression  analysis.  Labels  are  shorthand  for  the  HLA  haplotypes,  see  the 
+supplementary Table S8 for the names.'
 
 > 10. There is no Figure 4 in the manuscript.
 
