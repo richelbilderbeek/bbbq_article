@@ -56,7 +56,7 @@ See [https://github.com/richelbilderbeek/ncbi_results](https://github.com/richel
 
 ## Dependencies
 
-Repository                                                                            |[GitHub Actions](https://github.com/informalr/informalr/actions)                                                         
+Repository                                                                            |[![GitHub Actions logo](pics/GitHubActions.png)](https://github.com/informalr/informalr/actions)                                                         
 --------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------
 [`bbbq`](https://github.com/richelbilderbeek/bbbq)                                    |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master)                   
 [`bbbq_1_smart`](https://github.com/richelbilderbeek/bbbq_1_smart)                    |![make](https://github.com/richelbilderbeek/bbbq_1_smart/workflows/make/badge.svg?branch=master)            
