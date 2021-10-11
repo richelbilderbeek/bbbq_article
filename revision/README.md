@@ -227,6 +227,8 @@ black-and-white version of the tables. We have ensured these match now [3].
 > peptidome analysis. HLA-E is well-known to bind signal sequence peptides, 
 > which are a type of TM sequences.
 
+The key message of the paper that TMH are an overlooked source MHC-I and MHC-II epitopes comes from the fact that we predict that due to the hydrophobic nature of TMH, peptides derived from TMH make good binders for the majority of MHC haplotypes. Literature on TMH derived epitopes howevr is scarce, indeed for a specific class of TMH peptides signal peptides, mechanistic insights have been acquired, however for general polytopic trans membrane helices we have no understanding how they are processed for presentation on MHC, though peptidome analysis do show their presence. 
+
 @Frans: deze lijkt mij leuk voor jou :-)
 
 > 4) It is claimed that both that data suggest that both cytolytic and 
@@ -238,6 +240,8 @@ black-and-white version of the tables. We have ensured these match now [3].
 > highly represented in thymic epithelium, one might expect that TM-specific
 > T cells would be deleted or tolerized. So TMH-specific responses might be 
 > promoted or suppressed by increased TM peptide presentation.
+
+
 
 @Frans: deze lijkt mij leuk voor jou, maar ik kan ook wel iets verzinnen: 
 het is immers irrelevant voor ons onderzoek welke cellen de MHC complexen hebben.
@@ -328,7 +332,7 @@ We have added the uncertainty estimates.
 > specific alleles derived from DQA and/or DQB.
 
 @Frans: ik ben het hiermee eens om 'MHC allele' te gebruiken in het stuk 
-en wil dit graag doen. Mee eens?
+en wil dit graag doen. Mee eens? @Richel het is een beetje ingewikkeld verhaal volgens mij want de B chain in MHC-I doet niet mee aan de peptide binding daarvoor is in dat geval haplotype en allotype functioneel hetzelfde. In geval van MHC-II heb je echt naar de combi gekeken oftewel haplotypes. 
 
 > 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
 > of the allotypes they used are highly hydrophilic because they have highly 
@@ -338,6 +342,8 @@ en wil dit graag doen. Mee eens?
 this is a piece of DNA. Assuming this to be 'MHC complex' instead, I see
 no reason why these proteins would have a different hydrophobicity. 
 Does anyone else know what the reviewer could mean here?]
+@Richel not all MHC-alleles are hydrophobic perhaps we can define a treshold for hydrophobicity and refer to fig 1B and 1C stating that the majority of MHC have a hydrophobic preference. 
+
 
 > 3. It is not clear how the authors chose the MHC-I allotypes? It is 
 > explained only for MHC-II alleles. I assume for their representation 
