@@ -154,12 +154,17 @@ as well as the new Frontiers submission
 > how epitope prediction favors TMHs is interesting but only part of 
 > the question.
 
-We completely agree that the paper does not prove that TMH-derived epitopes
-are presented in vivo. We think that our in silico experiments do encourage 
+We  agree that the paper does not prove that TMH-derived epitopes
+are presented in vivo. However there are known clincial samples of TMH derived epitopes in litarature. 
+
+We think that our in silico experiments do encourage 
 to actually do such in vivo work (or the other way around: 
 would our in silico experiments have found 
 that TMH-derived are unlikely to be be presented, in vivo work 
 would be discouraged)
+
+ * [ ] Frans doet dit. Hij schreef 'we kunnen even in de database kijken naar een aantal klinisch 
+       relevante epitopen en deze matchen aan TMH voor MHC-II zoals ook gedaan in vorige paper'
 
 > The authors do present an example of TMH that are known to be presented by 
 > MHC-I and MHC-II, from two peptide elution studies. These data indeed appear 
@@ -172,7 +177,7 @@ would be discouraged)
 The reviewer is right that we do not show any statistics here;
 we were simply already convinced that 1.3% (for MHC-I) and 3.9% (for MHC-II)
 of the in vivo presented epitopes to be of (predicted) TMH origin,
-as the expected percentages would be zero percent.
+as the expected percentages would be zero percent. {snap ik niet}
 We agree with the reviewer and we did [some statistical tests]
 
  * [ ]: Richel: do this, https://github.com/richelbilderbeek/bbbq_article/issues/230
@@ -192,8 +197,9 @@ TMH-derived epitopes would be presented at all.
 As requested, however, we have added another two (randomly chosen) 
 studies (one per MHC class) to the paper, from the NIH Immune Epitope 
 Database and Analysis Resource, which indeed is a great resource :-)
-
- * [ ] Richel: do this: https://github.com/richelbilderbeek/bbbq_article/issues/229
+@ Richel Shouldn't we do one per haplotype? 
+ 
+* [ ] Richel: do this: https://github.com/richelbilderbeek/bbbq_article/issues/229
  
 > There are other major issues:
 
@@ -227,9 +233,7 @@ black-and-white version of the tables. We have ensured these match now [3].
 > peptidome analysis. HLA-E is well-known to bind signal sequence peptides, 
 > which are a type of TM sequences.
 
-The key message of the paper that TMH are an overlooked source MHC-I and MHC-II epitopes comes from the fact that we predict that due to the hydrophobic nature of TMH, peptides derived from TMH make good binders for the majority of MHC haplotypes. Literature on TMH derived epitopes howevr is scarce, indeed for a specific class of TMH peptides signal peptides, mechanistic insights have been acquired, however for general polytopic trans membrane helices we have no understanding how they are processed for presentation on MHC, though peptidome analysis do show their presence. 
-
-@Frans: deze lijkt mij leuk voor jou :-)
+The key message of the paper that TMH are an overlooked source MHC-I and MHC-II epitopes comes from the fact that we predict that due to the hydrophobic nature of TMH, peptides derived from TMH make good binders for the majority of MHC haplotypes. Literature on TMH derived epitopes howevr is scarce, indeed for a specific class of TMH peptides signal peptides, mechanistic insights have been acquired, however for general polytopic trans membrane helices we have no understanding how they are processed for presentation on MHC, though we show peptidome analysis does show they are presented. 
 
 > 4) It is claimed that both that data suggest that both cytolytic and 
 > helper T cells respond to more to membrane proteins, but no T cell data at 
@@ -241,10 +245,10 @@ The key message of the paper that TMH are an overlooked source MHC-I and MHC-II 
 > T cells would be deleted or tolerized. So TMH-specific responses might be 
 > promoted or suppressed by increased TM peptide presentation.
 
+We agree that we have no indication if more T-cells respond to membrane proteins than expected. 
+We revised the manuscript and included the notion that higher conservation might also lead to more tolerization. 
 
-
-@Frans: deze lijkt mij leuk voor jou, maar ik kan ook wel iets verzinnen: 
-het is immers irrelevant voor ons onderzoek welke cellen de MHC complexen hebben.
+ * [ ] Frans past manuscript aan
 
 > Also some parts of manuscript are confusing:
 
@@ -254,8 +258,7 @@ het is immers irrelevant voor ons onderzoek welke cellen de MHC complexen hebben
 > molecules are called MHC proteins or HLA gene products or (less 
 > frequently) MHC allotypes.
 
-@Frans: ik ben het hiermee eens. Ik wel prima de tekst aanpassen om 'MHC allele' te gebruiken.
-Heb ik jouw groene licht?
+ * [ ] Frans: checkt literatuur voor correct taalgebruik
 
 > 6) The authors search for the “physiological reason” why peptides derived 
 > from TMHs are frequently presented is puzzling, as they state that it 
@@ -264,13 +267,16 @@ Heb ik jouw groene licht?
 > how the preference of MHCs to bind TMHs impacts MHC cellular and 
 > immunological function and evolution, but those are consequences, not reasons.
 
-@Frans: deze lijkt mij leuk voor jou! 
+ * [ ] Frans: doet deze :-)
 
 > 5) The section on T cells recognizing different parts of an immunogenic 
 > protein than B cells is confusing and unnecessary since this is already 
 > well appreciated.
 
+ * [ ] Frans: doet deze :-)
+
 @Frans: ik stel voor dat we dat stukje verwijderen. Goed plan?
+In ieder geval flink afzwakken in de zin dat consequentie van een TMH epitope is dat B en T cell epitopen voor hetzelfde eiwit niet kunnen overlappen. Duidelijk maken dat dit al bekend is. Oftewel iets in de trand dat epitope meestal voor beide recepotren dominant is maat dit in het geval van TMH niet mogelijk is zoals we ook al weten van andere gevallen.  
 
 > 6) Finally, the analyses of chance versus observed epitopes do not include 
 > any uncertainly estimates.
@@ -334,16 +340,19 @@ We have added the uncertainty estimates.
 @Frans: ik ben het hiermee eens om 'MHC allele' te gebruiken in het stuk 
 en wil dit graag doen. Mee eens? @Richel het is een beetje ingewikkeld verhaal volgens mij want de B chain in MHC-I doet niet mee aan de peptide binding daarvoor is in dat geval haplotype en allotype functioneel hetzelfde. In geval van MHC-II heb je echt naar de combi gekeken oftewel haplotypes. 
 
+ * [ ] Frans kijkt naar literatuur :-)
+
 > 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
 > of the allotypes they used are highly hydrophilic because they have highly 
 > polarized anchor positions.
+
+ * [ ] Frans fixt deze :-)
 
 @Frans: [R: do we? I guess that the term 'MHC alleles' is already confusing, as
 this is a piece of DNA. Assuming this to be 'MHC complex' instead, I see
 no reason why these proteins would have a different hydrophobicity. 
 Does anyone else know what the reviewer could mean here?]
 @Richel not all MHC-alleles are hydrophobic perhaps we can define a treshold for hydrophobicity and refer to fig 1B and 1C stating that the majority of MHC have a hydrophobic preference. 
-
 
 > 3. It is not clear how the authors chose the MHC-I allotypes? It is 
 > explained only for MHC-II alleles. I assume for their representation 
@@ -354,9 +363,12 @@ I have added the following text to the manuscript.
 
 ```
 Both MCH-I and MHC-II haplotypes were selected to have a high occurrance,
-where the MHC-I haplotypes are the same 13 haplothose used in our earlier study \cite{bianchi2017},
+where the MHC-I haplotypes are the same 13 haplotypes used in our earlier study \cite{bianchi2017},
 [...]
 ```
+
+ * [ ] Frans: vervangt ref naar bianchi2017 naar moeder-referentie
+
 
 > 4. Is it significant the overlapping of one residue for MHC binding? 
 > Why not consider only those peptides that are really predicted and 
@@ -369,13 +381,9 @@ where the MHC-I haplotypes are the same 13 haplothose used in our earlier study 
 > TMH contributes to every position of the ligand predicted compared to 
 > those experimentally confirmed.
 
-@Frans: ik snap deze niet goed. Jij wel?
-[R: I feel the reviewer has his/her idea how to do this best, where we have
-had ours. I admit I do not see how the reviewer wants to do this exactly.
-I think we have chosen a clear definition with 'a TMH-derived epitope is
-an epitope that has at least 1 amino acid overlapping with a TMH'
-and we statistically test these are over-presented. I suggest to write the
-reply down as such.]
+ * [ ] Richel: check with 2 AAs overlap, demonstrate that this does not matter,
+       use one haplotype :-)
+ * [ ] Richel: Less overlap means less TMH-derived epitopes, hence lower statistical power
 
 > 5. The latter point is also more relevant to the case of MHC-II, 
 > where the anchor positions are “internal” and the extremes are more 
@@ -384,13 +392,13 @@ reply down as such.]
 > only one residue coming from a TMP/TMH which is almost “floating” in 
 > extreme of the binding groove?
 
-@Frans: ik zou zeggen 'Yes', maar ik snap het punt niet helemaal
+ * [ ] Frans: kopieert van de vorige antwoord :-)
 
 > 6. To state that TMH are overrepresented in the MHC peptidome, the authors 
 > should have considered at least a minimum length where part of the 
 > TMH binds to the main or secondary positions of MHC allele.
 
-@Frans: hier lijkt het alsof de reviewer in de war is. Snap jij deze vraag?
+ * [ ] Frans: kopieert van de vorige antwoord :-)
 
 > 7. Considering that the predicted peptides of the TMH are hydrophobic, 
 > are these values comparable to those obtained from peptide elution studies? 
@@ -404,7 +412,7 @@ those obtained from peptide elution studies directly, as peptide elution studies
 use mass spectrometry to detect peptides. A known feature of this technique
 is that hydrophobic peptides are less likely to be detected.
 
-@Frans: de tweede en derde zin kan ik minder mij. Helpt jij mij hier uit de brand?
+ * [ ] Frans fixt dit
 
 > 8. Conservation of the TMH, or it is lack of variation, has been documented 
 > many years ago by different biochemical experiments and it is mainly 
@@ -417,7 +425,8 @@ We agree with the reviewer that it is an interesting point to see if a
 certain SNP results in a TMH being absent or presented, as we actually 
 tried that idea for a short time ourselves [1]. We abandoned this approach,
 as this was beyond the goal of finding if TMHs are evolutionary conserved,
-not of the consequences of a mutation. We do agree that this may be a nice follow-up study!
+not of the consequences of a mutation. We do agree that this may be a nice follow-up study,
+yet, we have experieced this idea -as far as we came- became computationally intractable!
 
  * [1] https://github.com/richelbilderbeek/bbbq_article/blob/v1.1/p_transition/create_dataset.R
 
