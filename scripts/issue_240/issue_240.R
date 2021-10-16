@@ -4,7 +4,7 @@ tibbles <- list()
 i <- 1
 
 for (haplotype in bbbq::get_mhc_haplotypes()) {
-  # haplotype <- bbbq::get_mhc_haplotypes()[1]
+  # haplotype <- bbbq::get_mhc2_haplotypes()[1]
   
   for (which_cells in c("b_cells", "t_cells")) {
     message("haplotype:", haplotype, ", which_cells: ", which_cells)

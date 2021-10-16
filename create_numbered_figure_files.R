@@ -1,5 +1,8 @@
 # Create the numbered figures as 'figure_1.tiff' etc,
 # from the articles' better-described figure names
+if (1 == 2) {
+  setwd("~/GitHubs/bbbq_article")
+}
 
 tex_lines <- readr::read_lines("bbbq_article.tex")
 includegraphics_lines <- stringr::str_subset(tex_lines, "^  .*includegraphics")
@@ -10,10 +13,18 @@ tiff_filenames <- stringr::str_replace(png_filenames, "png$", "tiff")
 tiff_filenames[!file.exists(tiff_filenames)]
 testthat::expect_true(all(file.exists(tiff_filenames)))
 
+figures <- tibble::tibble(
+  number = seq(1, 4),
+  n_sub = c(3, 1, 3, 4)
+)
+HIERO
+
 t <- tibble::tibble(
   from = tiff_filenames,
   to = NA
 )
+
+
 t$to[1:4] <- paste0("~/figure_", seq(1, 4), ".tiff")
 t$to[5:nrow(t)] <- paste0("~/figure_s", seq(1, nrow(t) - 4), ".tiff")
 

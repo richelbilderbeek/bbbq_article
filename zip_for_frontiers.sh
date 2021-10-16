@@ -14,4 +14,13 @@
 # TIFF files 
 Rscript create_numbered_figure_files.R
 
-zip 
+
+
+
+
+
+
+
+zip ~/frontiers.zip ~/figure_1.tiff
+
+
