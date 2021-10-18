@@ -14,8 +14,7 @@ all_table_filenames = \
 all_figure_filenames = \
   ../bbbq_1_smart/fig_f_tmh_mhc1_2_grid.png \
   ../bbbq_1_smart/fig_f_tmh_mhc2_2_grid.png \
-  pics/covid_genome_and_proteome.png \
-  fig_tmh_mut_rate.png
+  pics/covid_genome_and_proteome.png
 
 all: view.sh article.pdf
 	./view.sh
