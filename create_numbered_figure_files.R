@@ -12,29 +12,27 @@ tiff_filenames <- stringr::str_replace(png_filenames, "png$", "tiff")
 
 tiff_filenames[!file.exists(tiff_filenames)]
 testthat::expect_true(all(file.exists(tiff_filenames)))
-# fig_f_tmh_2_human_mhc1.png is created
-# fig_f_tmh_2_human_mhc1.tiff is not
 
-figures <- tibble::tibble(
-  number = c(
-    paste0(1, letters[1:3]),
-    paste0(2, letters[1]),
-    paste0(3, letters[1:3]),
-    paste0(4, letters[1:4])
-  ),
-  filename = NA
+figure_numbers <- c(
+  paste0(1, letters[1:3]),
+  "2",
+  paste0(3, letters[1:3]),
+  paste0(4, letters[1:4])
 )
-HIERO
+tiff_filenames <- tiff_filenames[1:length(figure_numbers)]
+# figure_numbers <- c(figure_numbers, rep(NA, length(tiff_filenames) - length(figure_numbers)))
+testthat::expect_equal(length(tiff_filenames), length(figure_numbers))
 
 t <- tibble::tibble(
-  from = tiff_filenames,
-  to = NA
+  figure_number = figure_numbers,
+  tiff_filename = tiff_filenames,
+  paper_filename = paste0("numbered_figure_files/figure_", figure_numbers, ".tiff")
 )
-
-
-t$to[1:4] <- paste0("~/figure_", seq(1, 4), ".tiff")
-t$to[5:nrow(t)] <- paste0("~/figure_s", seq(1, nrow(t) - 4), ".tiff")
+t
 
 for (i in seq_len(nrow(t))) {
-  file.copy(t$from[i], t$to[i])
+  file.copy(
+    from = t$tiff_filename[i], 
+    to = t$paper_filename[i]
+  )
 }
