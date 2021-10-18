@@ -30,6 +30,15 @@ Bilderbeek, Richèl JC, et al. "Transmembrane helices are an overlooked and evol
 make
 ```
 
+## Zip the article for Frontiers
+
+```
+make frontiers
+```
+
+Will create a file `~/frontiers.zip` 
+with all files for a Frontiers submission.
+
 ## Re-do the analysis
 
 ### Naturally presented epitopes are derived from TMH

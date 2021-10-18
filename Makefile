@@ -41,10 +41,8 @@ mhc2_haplotypes.latex: mhc2_haplotypes.csv
 pics/covid_genome_and_proteome.png: pics/covid_genome_and_proteome.gif
 	convert pics/covid_genome_and_proteome.gif pics/covid_genome_and_proteome.png
 
-frans: bbbq.zip
-
-bbbq.zip: zip.sh article.pdf
-	./zip.sh
+frontiers: 
+	./zip_for_frontiers.sh
 
 clean:
 	rm bbbq_article.aux bbbq_article.bbl bbbq_article.blg bbbq_article.log bbbq_article.tex.bak
