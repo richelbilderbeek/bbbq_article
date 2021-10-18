@@ -1,9 +1,0 @@
-digraph markov_chain {
-  a [label=detected];
-  b [label=undetected];
-  a -> a [label=0.7 tailport=nw headport=sw];
-  a -> b [label=0.3 tailport=ne headport=nw];
-  b -> a [label=0.2 tailport=sw headport=se];
-  b -> b [label=0.8 tailport=se headport=ne];
-  { rank=same; a b }
-}
