@@ -39,6 +39,11 @@ make frontiers
 Will create a file `~/frontiers.zip` 
 with all files for a Frontiers submission.
 
+## Figure sources
+
+See [numbered_figure_files.csv](numbered_figure_files.csv) where the 
+numbered figures (`figure_1a.tiff`, etc) originally come from.
+
 ## Re-do the analysis
 
 ### Naturally presented epitopes are derived from TMH

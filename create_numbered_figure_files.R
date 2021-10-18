@@ -26,13 +26,14 @@ testthat::expect_equal(length(tiff_filenames), length(figure_numbers))
 t <- tibble::tibble(
   figure_number = figure_numbers,
   tiff_filename = tiff_filenames,
-  paper_filename = paste0("numbered_figure_files/figure_", figure_numbers, ".tiff")
+  paper_filename = paste0("figure_", figure_numbers, ".tiff")
 )
 t
+readr::write_csv(t, "numbered_figure_files.csv")
 
 for (i in seq_len(nrow(t))) {
   file.copy(
     from = t$tiff_filename[i], 
-    to = t$paper_filename[i]
+    to = paste0("numbered_figure_files/", t$paper_filename[i])
   )
 }
