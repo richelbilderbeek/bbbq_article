@@ -7,7 +7,8 @@
 #   ./zip_for_frontiers.sh
 #
 
-# Article supmat
+# Article split in main part, figures and submat
+./split_pdf.sh
 
 # Creates the numbered TIFF files in 'numbered_figure_files'
 Rscript create_numbered_figure_files.R
