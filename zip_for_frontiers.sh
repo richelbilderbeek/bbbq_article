@@ -7,20 +7,16 @@
 #   ./zip_for_frontiers.sh
 #
 
-# Article without figures, but with legends
-
 # Article supmat
 
-# TIFF files 
+# Creates the numbered TIFF files in 'numbered_figure_files'
 Rscript create_numbered_figure_files.R
 
+zip ~/frontiers.zip \
+  bbbq_article_main.pdf \
+  bbbq_article_figures.pdf \
+  bbbq_article_supplementary_materials.pdf \
+  numbered_figure_files/*.tiff
 
-
-
-
-
-
-
-zip ~/frontiers.zip ~/figure_1.tiff
 
 
