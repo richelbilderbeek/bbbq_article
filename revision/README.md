@@ -15,23 +15,20 @@
 
 We thank you for your help and the reviewers' feedback. Below we address all reviewers' comments.
 
-First and foremost, something must have gone wrong with the figures 
-and their corresponding legends at the
-Frontier back-end (as the paper is automatically rebuilt
-from LaTex to PDF by a continuous integration script,
-with the current latest version at 
-https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6 ).
+First and foremost, it is clear something had gone wrong with the figures 
+and their corresponding legends.
+The script that copied descriptively-named figure files to 
+the desired filenames ('figure_1a.tiff', etc) was untested and wrong [1].
 This must have been horrible for the reviewers!
 Instead of assuming everything 'just works', 
 we have double-checked the latest version of the manuscript,
 as well as the new submission.
 
+We have added [data from IEDB]
 
-After debate, we decided to add two additional (?randomly chosen) immunopeptidomes studies (one per MHC class).
-We chose two over 'several hundred' as we have had no intention to thoroughly investigate many immunopeptidomes studies,
-but instead demonstrate a proof-of-principle that TMH-derived epitopes are presented at all.
+ * [ ]: Richel: Do analysis with IEDB data, https://github.com/richelbilderbeek/bbbq_article/issues/229
 
- * [ ]: Richel: Do analysis with two random immunopeptidomes studies, https://github.com/richelbilderbeek/bbbq_article/issues/229
+ * [1] https://github.com/richelbilderbeek/bbbq_article/blob/master/create_numbered_figure_files.R
 
 ## Reviewer 1
 
