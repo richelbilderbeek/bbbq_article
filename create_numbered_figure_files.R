@@ -13,9 +13,15 @@ tiff_filenames <- stringr::str_replace(png_filenames, "png$", "tiff")
 tiff_filenames[!file.exists(tiff_filenames)]
 testthat::expect_true(all(file.exists(tiff_filenames)))
 
+
 figures <- tibble::tibble(
-  number = seq(1, 4),
-  n_sub = c(3, 1, 3, 4)
+  number = c(
+    paste0(1, letters[1:3]),
+    paste0(2, letters[1]),
+    paste0(3, letters[1:3]),
+    paste0(4, letters[1:4])
+  ),
+  filename = NA
 )
 HIERO
 
