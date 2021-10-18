@@ -12,7 +12,8 @@ tiff_filenames <- stringr::str_replace(png_filenames, "png$", "tiff")
 
 tiff_filenames[!file.exists(tiff_filenames)]
 testthat::expect_true(all(file.exists(tiff_filenames)))
-
+# fig_f_tmh_2_human_mhc1.png is created
+# fig_f_tmh_2_human_mhc1.tiff is not
 
 figures <- tibble::tibble(
   number = c(
