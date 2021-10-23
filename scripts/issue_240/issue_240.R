@@ -4,8 +4,12 @@ tibbles <- list()
 i <- 1
 
 for (haplotype in bbbq::get_mhc_haplotypes()) {
-  # haplotype <- bbbq::get_mhc2_haplotypes()[1]
-  
+  # Use the IEDB names
+  haplotype <- stringr::str_replace_all(
+    haplotype, "\\*([[:digit:]]{2})([[:digit:]]{2})", 
+    "*\\1:\\2"
+  )
+  haplotype
   for (which_cells in c("b_cells", "t_cells")) {
     message("haplotype:", haplotype, ", which_cells: ", which_cells)
     params <- list(
