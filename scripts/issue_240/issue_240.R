@@ -2,8 +2,10 @@ require(httr)
 
 tibbles <- list()
 i <- 1
+haplotypes <- bbbq::get_mhc_haplotypes()
+n_haplotypes <- length(haplotypes)
 
-for (haplotype in bbbq::get_mhc_haplotypes()) {
+for (haplotype in haplotypes) {
   # Use the IEDB names
   haplotype <- stringr::str_replace_all(
     haplotype, "\\*([[:digit:]]{2})([[:digit:]]{2})", 
@@ -11,7 +13,7 @@ for (haplotype in bbbq::get_mhc_haplotypes()) {
   )
   haplotype
   for (which_cells in c("b_cells", "t_cells")) {
-    message("haplotype:", haplotype, ", which_cells: ", which_cells)
+    message(i, "/", n_haplotypes, ": ", haplotype, ", which_cells: ", which_cells)
     params <- list(
       `structure_type` = 'eq.Linear peptide',
       `mhc_allele_names` = paste0("cs.{", haplotype, "}"),
