@@ -171,13 +171,22 @@ would be discouraged)
 > expected by chance, as they do in detail for the predicted epitopes, just 
 > the presence of TMH-derived epitopes in the peptidome is noted.
 
-The reviewer is right that we do not show any statistics here;
-we were simply already convinced that 1.3% (for MHC-I) and 3.9% (for MHC-II)
-of the in vivo presented epitopes to be of (predicted) TMH origin,
-as the expected percentages would be zero percent. {snap ik niet}
-We agree with the reviewer and we did [some statistical tests]
+The reviewer is right that we do not show any statistics here
+and we are happy this omission was spotted.
+However, unlike most omitted statistics tests, this would be an exception
+when adding a statistical test would not make sense.
 
- * [ ]: Richel: do this, https://github.com/richelbilderbeek/bbbq_article/issues/230
+To clarify, we considered adding the text below to describe the statistical test:
+
+We used a binomial statistical test to determine if more TMH-derived epitopes 
+are presented than expected, with the number of epitopes being the number of trails,
+the number of TMH-derived epitopes being the number of successful trials,
+for a estimated chance of success of zero. This resulted in highly significant values,
+indicating there were seignificantly more TMH-derived epitopes presented than expected.
+ 
+We still feel it would be better to leave out this trivial statistics test, 
+as it sets readers on the wrong foot: any binomial test with a chance of a successful trial, p, of zero 
+(in R code: binom.test(x = 109, n = 7897, p = 0.0)) always results in a p value of zero.
 
 > In addition to the two peptidome studies used by the authors, 
 > many comprehensive immunopeptidomes are available for analysis. For example, 
