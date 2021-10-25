@@ -289,8 +289,6 @@ In ieder geval flink afzwakken in de zin dat consequentie van een TMH epitope is
 
 We have added the uncertainty estimates.
 
- * [ ] Richel: add uncertainty estimates, https://github.com/richelbilderbeek/bbbq_article/issues/233
-
 ## Check List
 
 > a. Is the quality of the figures and tables satisfactory?
