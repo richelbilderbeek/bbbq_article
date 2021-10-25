@@ -1,5 +1,10 @@
 require(httr)
 
+if (1 == 2) {
+  setwd("~/GitHubs/bbbq_article/scripts/issue_240")
+  list.files()
+}
+
 tibbles <- list()
 i <- 1
 haplotypes <- bbbq::get_mhc_haplotypes()
@@ -50,7 +55,20 @@ t <- dplyr::bind_rows(tibbles)
 t
 readr::write_csv(t, "~/issue_240.csv")
 
+t <- readr::read_csv(
+  "issue_240.csv",
+  col_types = readr::cols(
+    linear_sequence = readr::col_character(),
+    haplotype = readr::col_character(),
+    cell_type = readr::col_character(),
+  )
+)
 
+length(unique(t$haplotype))
+knitr::kable(head(t))
+knitr::kable(tail(t))
+stringr::str_which(t$haplotype, pattern = "HLA-DRB1")[1]
+nrow(t)
 
 # Do these 471 epitopes come from TMHs yes/no?
 nrow(u)
