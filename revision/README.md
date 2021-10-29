@@ -17,18 +17,14 @@ We thank you for your help and the reviewers' feedback. Below we address all rev
 
 First and foremost, it is clear something had gone wrong with the figures 
 and their corresponding legends.
-The script that copied descriptively-named figure files to 
-the desired filenames ('figure_1a.tiff', etc) was untested and wrong [1].
 This must have been horrible for the reviewers!
 Instead of assuming everything 'just works', 
 we have double-checked the latest version of the manuscript,
 as well as the new submission.
 
-We have added [data from IEDB]
-
- * [ ]: Richel: Do analysis with IEDB data, https://github.com/richelbilderbeek/bbbq_article/issues/229
-
- * [1] https://github.com/richelbilderbeek/bbbq_article/blob/master/create_numbered_figure_files.R
+As requested, we have added another source of data for naturally occurring epitopes, 
+which is the IEDB (the Immune Epitope Database), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
+and an new figure 2. The added data strengthened the message of this paper.
 
 ## Reviewer 1
 
@@ -152,15 +148,13 @@ as well as the new Frontiers submission
 > the question.
 
 We  agree that the paper does not prove that TMH-derived epitopes
-are presented in vivo. However there are known clincial samples of TMH derived epitopes in litarature. 
+are presented in vivo. However there are known clinicial samples of TMH derived epitopes in litarature. 
 
 We think that our in silico experiments do encourage 
 to actually do such in vivo work (or the other way around: 
 would our in silico experiments have found 
 that TMH-derived are unlikely to be be presented, in vivo work 
 would be discouraged)
-
-* [] Richel is already checking IEDB correlating the epitope elution studies with TMH. This gives a direct answer to this question. 
 
  * [ ] Frans doet dit. Hij schreef 'we kunnen even in de database kijken naar een aantal klinisch 
        relevante epitopen en deze matchen aan TMH voor MHC-II zoals ook gedaan in vorige paper'
@@ -213,13 +207,11 @@ The reviewer is right that we took two studies into account, where there
 are plenty. For both MCH-I and MHC-II, we simply took the first study
 we found on Google Scholar, as all we wanted to know was whether
 TMH-derived epitopes would be presented at all.
-As requested, however, we have added another two (randomly chosen) 
-studies (one per MHC class) to the paper, from the NIH Immune Epitope 
-Database and Analysis Resource, which indeed is a great resource :-)
-@ Richel Shouldn't we do one per haplotype? 
- 
-* [ ] Richel: do this: https://github.com/richelbilderbeek/bbbq_article/issues/229
- 
+
+As requested, we have the suggested source of data for naturally occurring epitopes, 
+which is the IEDB (the Immune Epitope Database), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
+and an new figure 2. The added data strengthened the message of this paper.
+
 > There are other major issues:
 
 > 2) The figures are numbered incorrectly and don’t correspond to the text. 
