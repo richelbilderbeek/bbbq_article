@@ -397,6 +397,7 @@ where the MHC-I haplotypes are the same 13 haplotypes used in our earlier study 
 > TMH contributes to every position of the ligand predicted compared to 
 > those experimentally confirmed.
 
+ * [ ] Richel: https://github.com/richelbilderbeek/bbbq_article/issues/242
  * [ ] Richel: check with 2 AAs overlap, demonstrate that this does not matter,
        use one haplotype :-)
  * [ ] Richel: Less overlap means less TMH-derived epitopes, hence lower statistical power
@@ -475,9 +476,9 @@ We agree that this is annoying and we will check again upon our next submission.
 > proteome and predictive algorithms. I think authors must analyze the data 
 > using a more immunologically point of view.
 
-We have extended the study to include two more (randomly selected) immunopeptidomes.
-
- * [ ] Richel: do this, https://github.com/richelbilderbeek/bbbq_article/issues/229
+As requested, we have added another source of data for naturally occurring epitopes, 
+which is the IEDB (the Immune Epitope Database), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
+and an new figure 2. The added data strengthened the message of this paper.
 
 ## Check List
 
