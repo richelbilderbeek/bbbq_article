@@ -1,7 +1,7 @@
 \begin{abstract}
 
 Cytolytic T cell responses are predicted to be biased towards membrane proteins. 
-The peptide-binding grooves of most haplotypes 
+The peptide-binding grooves of the alleles of most haplotypes
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
 therefore peptide fragments derived from human transmembrane helices (TMHs) are predicted to be presented more often as would be expected 
 based on their abundance in the proteome. However, the physiological reason of why membrane proteins might be over-presented is unclear. 
@@ -53,15 +53,14 @@ are T cells which recognize peptides, called epitopes, derived from antigenic pr
 
 The MHC proteins are heterodimeric complexes encoded by the
 HLA (Human Leukocyte Antigens) genes.
-In humans, the peptide binding groove of MHC-I is made by only the alpha subunit. There are three classical forms of MHC-I, hallmarked by a highly polymorphic alpha chain called HLA-A, HLA-B and HLA-C, that all present epitopes to cytolytic T cells. 
-For MHC-II, both the alpha and the beta chains contribute to the peptide binding groove. There are three classical forms of MHC-II as well, called HLA-DR, HLA-DQ and HLA-DP, that all present epitopes to helper T cells.
+In humans, the peptide binding groove of MHC-I is made by only the alpha subunit. There are three classical haplotypes of MHC-I, hallmarked by a highly polymorphic alpha chain called HLA-A, HLA-B and HLA-C, that all present epitopes to cytolytic T cells. 
+For MHC-II, both the alpha and the beta chains contribute to the peptide binding groove. There are three classical haplotypes of MHC-II as well, called HLA-DR, HLA-DQ and HLA-DP, that all present epitopes to helper T cells.
 Each MHC complex can present a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
 epitopes they bind \cite{lund2004definition}.
 Moreover, the HLA genes of humans are highly polymorphic, with hundreds 
 to thousands of different alleles, 
-and each different HLA allele is called 
-an MHC haplotype and presents a different subset of peptides \cite{marsh2010nomenclature}.
+and each different allele presents a different subset of peptides \cite{marsh2010nomenclature}.
 
 % \paragraph{HLAs increase detection range}
 
@@ -73,12 +72,12 @@ is very high, because of the highly polymorphic MHC genes.
 It is therefore believed that MHC polymorphism improves immunity at the population level, 
 as mutations in a protein that disrupt a particular MHC presentation at the individual level, 
 so-called escape mutations, 
-will not affect MHC presentation for all haplotypes present in the population \cite{sommer2005importance}.
+will not affect MHC presentation for all alleles present in the population \cite{sommer2005importance}.
 
 % \paragraph{Epitope prediction}
 
 Many studies are aimed at identifying the repertoire of epitopes that are presented 
-in any MHC haplotype and determining which epitopes will result in an immune response, 
+in any MHC haplotype allele and determining which epitopes will result in an immune response, 
 as this will for instance aid the design of vaccines. 
 These studies have led to the development of prediction algorithms 
 that allow for very reliable \emph{in silico} predictions 
@@ -142,9 +141,9 @@ This study had two objectives.
 First, we aimed to generalize our findings by predicting the presentation of peptides 
 from different kingdoms of life and for both MHC-I and -II. 
 From these \emph{in silico} predictions, we conclude that TMH-derived
-epitopes are presented more often than expected by chance,
+epitopes are likely to be presented more often than expected by chance,
 in a human, viral and bacterial proteome, 
-and for most haplotypes of both MHC-I and II. 
+and for most alleles of both MHC-I and II. 
 We confirmed the presentation of TMH-derived peptides 
 by re-analysis of peptide elution studies. 
 Second, we tested our hypothesis that TMHs 
@@ -172,7 +171,7 @@ and for a human, viral and bacterial proteome.
 To summarize, for each proteome, 
 all possible 9-mers (for MHC-I) or 14-mers (MHC-II) were derived. 
 For each of these peptides, we determined if it overlapped with a predicted 
-TMH and if it was predicted to bind to each haplotype.
+TMH and if it was predicted to bind to the moest frequent alleles of each haplotype.
 
 For MHC-I, 9-mers were used, 
 as this is the length most frequently presented in MHC-I 
@@ -185,13 +184,13 @@ and bacterial (\emph{Mycobacterium tuberculosis}, UniProt ID UP000001584)
 reference proteome was used. 
 \verb;TMHMM; \cite{krogh2001predicting} was used to predict the topology 
 of the proteins within these proteomes.
-To predict the affinity of an epitope to a certain MHC haplotype,
+To predict the affinity of an epitope to a certain HLA allele,
  \verb;EpitopePrediction; \cite{bianchi2017} for MHC-I 
 and \verb;MHCnuggets; \cite{shao2020high} for MHC-II was used.
-Both MCH-I and MHC-II haplotypes were selected to have a high occurrence,
-where the MHC-I haplotypes are the same 13 haplotypes as 
-those used in our earlier study \cite{bianchi2017},
-and the 21 MHC-II, haplotypes have a phenotypic frequency 
+Both MCH-I and MHC-II alleles were selected to have a high occurrence,
+where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
+with over 99.6\% coverage of the populations MHC-I repertoire as defined by \cite{lund2004definition} \cite{sette1999},
+and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
 of 14\% or more in the human population \cite{greenbaum2011functional}.
  
 We define a protein to be a binder if, for a certain haplotype, 
@@ -211,7 +210,7 @@ To verify that the results are similar, a side by side comparison was performed 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To obtain experimental evidence that epitopes derived from TMHs are presented in MHC,
-we used two sources of data of naturally occurring epitopes.
+we used two sources of data of naturally occurring epitopes.  
 The first type of data are two randomly picked 
 peptide elution studies for MHC-I \cite{schellens2015comprehensive} 
 and MHC-II \cite{bergseng2015different}.
@@ -229,7 +228,7 @@ was predicted using both \verb;TMHMM; \cite{krogh2001predicting}
 and \verb;PureseqTM; \cite{wang2019efficient}. 
 From this topology, we determined if the epitope
 overlapped with a TMH.
-For IEDB, we queried for epitope sequences presented by B and T cells
+For the second we queried IEDB for epitope sequences presented by B and T cells
 in healthy humans, for the haplotypes used in this study.
 
 The full analysis can be found
@@ -298,14 +297,14 @@ protein sequence. For each protein sequence, the protein topology was determined
 
 Figure \ref{fig:bbbq_1_smart_results} shows the predicted presentation of TMH-derived peptides in MHC-I,
 for a human, viral and bacterial proteome.
-Per MHC-I haplotype, it shows the percentage of binders that overlap with a TMH 
+Per MHC-I allele, it shows the percentage of binders that overlap with a TMH 
 with at least one residue.
 The horizontal line shows the expected percentage of TMH-derived epitopes 
 that would be presented, if TMH-derived epitopes would be presented just as 
 likely as epitopes derived from soluble regions.
-For 11 out of 13 MHC-I haplotypes, TMH-derived epitopes are predicted to be presented more often 
+For 11 out of 13 MHC-I alleles, TMH-derived epitopes are predicted to be presented more often 
 than the null expectation, for a human and bacterial proteome.
-For the viral proteome, 12 out of 13 haplotypes present
+For the viral proteome, 12 out of 13 alleles present
 TMH-derived epitopes more often than expected by chance.
 The extent of the over-presentation between the different haplotypes 
 is similar for the probed proteomes, 
@@ -325,7 +324,7 @@ would also be present for MHC-II.
 Figure \ref{fig:bbbq_1_smart_results} shows the percentages of MHC-II epitopes 
 predicted to be overlapping with TMHs for our human, viral and bacterial proteomes.
 We found that TMH-derived peptides are over-presented in all
-of the 21 MHC-II haplotypes, 
+of the 21 MHC-II alleles, 
 for a human, bacterial and viral proteome,
 except for \verb;HLA-DRB3*0101; in \emph{M. tuberculosis}.
 See supplementary Table \ref{tab:tmh_binders_mhc2} 
@@ -341,7 +340,7 @@ grooves \cite{bianchi2017}.
 Figures \ref{fig:hydrophobicity_1} and \ref{fig:hydrophobicity_2}
 show the extent of over-presentation
 of TMH-derived epitopes as a function of the hydrophobicity preference score 
-for the different haplotypes.
+for the different alleles.
 An assumed linear correlation explains 88\% of the variability in MHC-I.
 For MHC-II, 62\% of the variability is explained by hydrophobicity. 
 This indicates that TMH-derived peptides are over-presented, 
@@ -356,9 +355,9 @@ To obtain experimental confirmation that peptides stemming from TMHs
 are presented in MHC-I and MHC-II,
 two peptide elution studies were reanalyzed:
 For MHC-I, peptides presented \emph{in vivo} 
-by the (humane) haplotypes HLA-A and B 
+by the (human) haplotypes HLA-A and B 
 were sequenced \cite{schellens2015comprehensive},
-for MHC-II these were haplotypes DQ2.5, DQ2.2, and 
+for MHC-II these were alleles DQ2.5, DQ2.2, and 
 DQ7.5 \cite{bergseng2015different}.
 Figure \ref{fig:elution} shows the percentages of epitopes derived 
 from TMHs
