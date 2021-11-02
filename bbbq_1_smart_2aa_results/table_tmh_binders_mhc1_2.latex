@@ -1,0 +1,36 @@
+\begin{table}
+
+\caption{\label{tab:tmh_binders_mhc1}Percentage of MHC-I 9-mers overlapping with TMH. Values in brackets show the number of binders that have at least one residue overlapping with a TMH (first value)as well as the number of binders (second value). percentage used: 2}
+\centering
+\begin{tabular}[t]{l|l|l|l}
+\hline
+haplotype & covid & human & myco\\
+\hline
+HLA-A*01:01 & 14.539 (41/282) & 12.092 (27232/225209) & 10.912 (2815/25797)\\
+\hline
+HLA-A*02:01 & 34.155 (97/284) & 28.037 (63085/225003) & 29.360 (7546/25702)\\
+\hline
+HLA-A*03:01 & 9.122 (27/296) & 6.388 (14361/224796) & 9.673 (2488/25721)\\
+\hline
+HLA-A*24:02 & 37.809 (107/283) & 21.677 (48913/225648) & 21.643 (5571/25741)\\
+\hline
+HLA-A*26:01 & 21.405 (64/299) & 13.905 (31370/225598) & 13.632 (3516/25793)\\
+\hline
+HLA-B*07:02 & 9.712 (27/278) & 4.880 (10854/222429) & 8.184 (2107/25744)\\
+\hline
+HLA-B*08:01 & 14.539 (41/282) & 8.218 (18376/223616) & 9.662 (2480/25667)\\
+\hline
+HLA-B*15:01 & 23.311 (69/296) & 14.686 (33269/226542) & 16.961 (4382/25835)\\
+\hline
+HLA-B*18:01 & 11.034 (32/290) & 5.603 (12537/223745) & 5.560 (1433/25773)\\
+\hline
+HLA-B*27:05 & 6.818 (18/264) & 4.171 (9350/224178) & 7.054 (1812/25688)\\
+\hline
+HLA-B*39:01 & 17.091 (47/275) & 10.983 (24538/223419) & 14.159 (3652/25793)\\
+\hline
+HLA-B*40:02 & 3.534 (10/283) & 3.251 (7264/223408) & 3.852 (991/25729)\\
+\hline
+HLA-B*58:01 & 22.939 (64/279) & 15.627 (35022/224119) & 19.793 (5095/25742)\\
+\hline
+\end{tabular}
+\end{table}
