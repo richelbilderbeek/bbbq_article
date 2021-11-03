@@ -147,10 +147,8 @@ as well as the new Frontiers submission
 > how epitope prediction favors TMHs is interesting but only part of 
 > the question.
 
-Although the main focus in our works is on the predictions. We do show that TMH derived epitopes are found in two peptide elution studies illustrating that indeed these peptides are presented on the surface of cells. We have now extended this analysis to ..... There are also some clinicial examples of epitopes e.g. MART... and ... that correlate to trans membrane helices, showing that indeed T-cell responses are generated against epitopes derived from TMH's. 
+Although the main focus in our works is on the predictions. We do show that TMH derived epitopes are found in two peptide elution studies illustrating that indeed these peptides are presented on the surface of cells. We have now extended this analysis with MHC-I ligand studies as reported on IEDB the results show .... We furthermore mined the IEDB datbase for epitopes that evoke T-cell responses and correlated these to TMH fig?, ...% of these MHC-I and MHC-II epitopes stem form TMH showing that not only are TMH derived presented in MHC they also leed to T-cell responses. As is also evident from clincial studies e.g. MART... and ... that correlate to trans membrane helices, showing that indeed T-cell responses are generated against epitopes derived from TMH's. 
 
- * [ ] Frans doet dit. Hij schreef 'we kunnen even in de database kijken naar een aantal klinisch 
-       relevante epitopen en deze matchen aan TMH voor MHC-II zoals ook gedaan in vorige paper'
 
 > The authors do present an example of TMH that are known to be presented by 
 > MHC-I and MHC-II, from two peptide elution studies. These data indeed appear 
@@ -237,7 +235,7 @@ black-and-white version of the tables. We have ensured these match now [3].
 > peptidome analysis. HLA-E is well-known to bind signal sequence peptides, 
 > which are a type of TM sequences.
 
-The key message of the paper that TMH are an overlooked source MHC-I and MHC-II epitopes comes from the fact that we predict that due to the hydrophobic nature of TMH, peptides derived from TMH make good binders for the majority of MHC haplotypes. Literature on TMH derived epitopes howevr is scarce, indeed for a specific class of TMH peptides signal peptides, mechanistic insights have been acquired, however for general polytopic trans membrane helices we have no understanding how they are processed for presentation on MHC, though we show peptidome analysis does show they are presented. 
+The key message of the paper that TMH are an overlooked source MHC-I and MHC-II epitopes comes from the fact that we predict that due to the hydrophobic nature of TMH, peptides derived from TMH make good binders for the majority of MHC alleles. Literature on TMH derived epitopes however is scarce, indeed for a specific class of TMH peptides signal peptides, mechanistic insights have been acquired, however for general polytopic trans membrane helices we have no understanding how they are processed for presentation on MHC, though we show that peptidome analysis reveals they are presented. 
 
 > 4) It is claimed that both that data suggest that both cytolytic and 
 > helper T cells respond to more to membrane proteins, but no T cell data at 
@@ -249,10 +247,9 @@ The key message of the paper that TMH are an overlooked source MHC-I and MHC-II 
 > T cells would be deleted or tolerized. So TMH-specific responses might be 
 > promoted or suppressed by increased TM peptide presentation.
 
-We agree that we have no indication if more T-cells respond to membrane proteins than expected.
+We agree although T-cell responses against TMH derived epitopes have been reported we have no indication if more T-cells respond to membrane proteins than expected.
 We adapted the text to the following:
-"Our bioinformatics predictions indicate that the TMH-derived epitope repertoire is larger than expected by chance, 
-regardless of the organism. Furthermore we see despite the bias towards hydrophilic peptides due to their enhanced ionization in mass spec that in several peptide elution studies still a higher fraction of TMH derived epitopes is found than predicted by chance. Therefor it's tempting to assume that this would also result in enhanced T-cell responses, assuming that the conservation of TMH's across organisms does not effect the deletion of such T-cells by central tolerance mechanisms."
+"Our bioinformatics predictions indicate that the TMH-derived epitope repertoire is larger than expected by chance, regardless of the organism. Furthermore we see despite the bias towards hydrophilic peptides due to their enhanced ionization in mass spec that in several peptide elution studies still a higher fraction of TMH derived epitopes is found than predicted by chance. Therefor it's tempting to speculate that this would also result in enhanced T-cell responses, assuming that the conservation of TMH's across organisms does not effect the deletion of such T-cells by central tolerance mechanisms."
 
 > Also some parts of manuscript are confusing:
 
@@ -262,7 +259,7 @@ regardless of the organism. Furthermore we see despite the bias towards hydrophi
 > molecules are called MHC proteins or HLA gene products or (less 
 > frequently) MHC allotypes.
 
-We completely agree that there has been a mix up of nomenclature and have modified the manuscript accordingly. 
+We agree that there has been a mix up of nomenclature and have modified the manuscript accordingly. 
 
 > 6) The authors search for the “physiological reason” why peptides derived 
 > from TMHs are frequently presented is puzzling, as they state that it 
@@ -271,16 +268,18 @@ We completely agree that there has been a mix up of nomenclature and have modifi
 > how the preference of MHCs to bind TMHs impacts MHC cellular and 
 > immunological function and evolution, but those are consequences, not reasons.
 
-Although we understand this reasoning we do not agree, first of all the fact that a peptide is hydrophobic does not mean it stems from a trans membrane helix. The affinity of a peptide to for MHC is generated by a few residues, Yes indeed it was previously reported that MHC-I in general seems to have a slight preference for hydrophobic residues, however that does not mean that those would stem from TMH helices, however it they would indeed this would have consequences for the cellular and immunological function and evolution. Therefor we indeed assessed ....
+Although we understand this reasoning we do not agree, first of all the fact that a peptide is hydrophobic does not mean it stems from a trans membrane helix. Second as the affinity of a peptide for MHC is generated by a few residues, there preference is not a prediction for the overall hydrophobic preference of the allele. Indeed it was previously reported that MHC-I in general seems to have a slight preference for hydrophobic residues, however their correlation with TMH was not yet addressed nor the consequences for the cellular and immunological function and evolution. 
 
 > 5) The section on T cells recognizing different parts of an immunogenic 
 > protein than B cells is confusing and unnecessary since this is already 
 > well appreciated.
 
-We agree with the reviewer that this is a well known phenomena stated in many text books.  
-However as a conseqeucne of TMH over representation this would even more often be the case:
-Although it's well known that T cells and B Cells seem to predominantly recognize different protein regions,
-this is enhanced by the over-presentation of TMH-derived epitopes, as TMH's buried in the lipid bilayer are unlikely to be recognized by BCR's. 
+We agree with the reviewer that this is a well known phenomena stated in many text books. 
+A consequence of TMH over representation is that the discrepancy between BCR epitopes and TCr epitopes is enhanced due to the fact that BCR's are unable to recognize TMH epitopes, however we agree that this information is not of significant importance and therefor removed the section.  
+
+Although it's well known that T cells and B Cells seem to predominantly recognize different protein regions,this is enhanced by the over-presentation of TMH-derived epitopes, as TMH's buried in the lipid bilayer are unlikely to be recognized by BCR's. 
+
+
 
 > 6) Finally, the analyses of chance versus observed epitopes do not include 
 > any uncertainly estimates.
