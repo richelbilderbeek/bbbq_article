@@ -1,6 +1,6 @@
 \begin{table}
 
-\caption{\label{tab:ic50_binders_mhc1}IC50 values (in nM) per haplotype below which a peptide is considered a binder. percentage used: 2}
+\caption{\label{tab:ic50_binders_mhc1_2aas}IC50 values (in nM) per haplotype below which a peptide is considered a binder. percentage used: 2}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
