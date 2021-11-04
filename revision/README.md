@@ -379,10 +379,24 @@ of 14\% or more in the human population \cite{greenbaum2011functional}.
 > TMH contributes to every position of the ligand predicted compared to 
 > those experimentally confirmed.
 
- * [ ] Richel: https://github.com/richelbilderbeek/bbbq_article/issues/242
- * [ ] Richel: check with 2 AAs overlap, demonstrate that this does not matter,
-       use one haplotype :-)
- * [ ] Richel: Less overlap means less TMH-derived epitopes, hence lower statistical power
+We agree that one could argue that we should use
+a higher number of overlapping amino acids, so to make the epitopes more
+'transmembrane helix-ey'. We chose not too, for two reason: (1) epitopes that overlap with a TMH
+for 1 AA already, cannot be processed by the proteasome in a known and conventional
+way (2) whatever number of overlapping amino acids we use, we expect the pattern to be the same.
+However, using only 1 AA gives the most TMH-derived epitopes and hence the highest statistical
+power.
+
+To prove this point, we did exactly the same analysis 
+as shown in Figure 2a,
+yet with defining a TMH-derived epitope as an epitope that overlaps with a TMH
+for at least 2 AAs, as shown in Figure S16.
+As these two figures look identical (they are not), 
+we also added the counts as numbers,
+with Table S14 showing the same data
+as S5, except the former uses 2 AAs overlap.
+Likewise, Table S15 showing the same data
+as S7, except the former uses 2 AAs overlap.
 
 > 5. The latter point is also more relevant to the case of MHC-II, 
 > where the anchor positions are “internal” and the extremes are more 
