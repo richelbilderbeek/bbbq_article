@@ -78,3 +78,17 @@ Repository                                                                      
 [`ncbi_peregrine`](https://github.com/richelbilderbeek/ncbi_peregrine)                |![R-CMD-check](https://github.com/richelbilderbeek/ncbi_peregrine/workflows/R-CMD-check/badge.svg?branch=master)         
 [`ncbi_results`](https://github.com/richelbilderbeek/ncbi_results)                    |![R-CMD-check](https://github.com/richelbilderbeek/ncbi_results/workflows/R-CMD-check/badge.svg?branch=master)           
 
+
+# How did you make the comparison figure?
+
+I made the comparison figure using:
+
+```
+compare bbbq_1_smart_results/fig_f_tmh_2_panel.png bbbq_1_smart_2aa_results/fig_f_tmh_2_panel.png compare_fig_f_tmh_2_panel.png
+```
+
+The comparison figure:
+
+![](compare_fig_f_tmh_2_panel.png)
+
+
