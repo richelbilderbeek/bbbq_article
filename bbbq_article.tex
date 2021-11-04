@@ -699,7 +699,7 @@ RJCB, MB, GvdB and FB wrote the article.
     overlap with TMHs for the proteomes of SARS-CoV-2 (top row), human (middle 
     row) and \emph{M. tuberculosis} (bottom row).
     The pair of dashed lines in each plot indicate the lower and upper bound of the 99\% confidence interval.
-    See supplementary Tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
+    See supplementary Tables \ref{tab:tmh_binders_mhc2} and \ref{tab:tmh_binders_mhc1}
     for the exact TMH and  epitope counts.
     \textbf{(B-C)}
     Correlation between the percentages of predicted TMH-derived epitopes
@@ -1486,4 +1486,49 @@ statistics for only single-spanners and multi-spanners respectively.
 % Process all floats before going to a next page
 \clearpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Presentation of TMH-derived epitopes when two amino acids overlap}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+In our experiment, we define a TMH-derived epitope as a peptide that overlaps
+with a TMH for at least one amino acid. One could argue that we should use
+a higher number of overlapping amino acids, so to make the epitopes more
+'transmembrane helix-ey'. We chose not too, for two reason: (1) epitopes that overlap with a TMH
+for 1 AA already, cannot be processed by the proteasome in a known and conventional
+way (2) whatever number of overlapping amino acids we use, we expect the pattern to be the same.
+However, using only 1 AA gives the most TMH-derived epitopes and hence the highest statistical
+power.
+
+To prove this point, we did exactly the same analysis 
+as shown in Figure \ref{fig:bbbq_1_smart_results},
+yet with defining a TMH-derived epitope as an epitope that overlaps with a TMH
+for at least 2 AAs, as shown in Figure \ref{fig:bbbq_1_smart_results_2aas}.
+As these two figures look identical \richel{TODO: they are indentical,
+need to redo the calculation then}, 
+we also added the counts as numbers,
+with Table \ref{tab:tmh_binders_mhc2_2aas} showing the same data
+as \ref{tab:tmh_binders_mhc2}, except the former uses 2 AAs overlap.
+Likewise, Table \ref{tab:tmh_binders_mhc1_2aas} showing the same data
+as \ref{tab:tmh_binders_mhc1}, except the former uses 2 AAs overlap.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{bbbq_1_smart_2aa_results/fig_f_tmh_2_panel.png}
+  \caption{
+    The percentage of epitopes for MHC-I and -II haplotypes that are predicted to 
+    overlap with TMHs for the proteomes of SARS-CoV-2 (top row), human (middle 
+    row) and \emph{M. tuberculosis} (bottom row).
+    The pair of dashed lines in each plot indicate the lower and upper bound of the 99\% confidence interval.
+    See supplementary Tables \ref{tab:tmh_binders_mhc2_2aas} and \ref{tab:tmh_binders_mhc1_2aas}
+    for the exact TMH and  epitope counts.
+  }
+  \label{fig:bbbq_1_smart_results_2aas}
+\end{figure}
+
+% Label: tab:tmh_binders_mhc2_2aas
+\input{bbbq_1_smart_2aa_results/table_tmh_binders_mhc2_2.latex}
+
+% Label: tab:tmh_binders_mhc1_2aas
+\input{bbbq_1_smart_2aa_results/table_tmh_binders_mhc1_2.latex}
+
+% Process all floats before going to a next page
+\clearpage
