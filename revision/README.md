@@ -379,24 +379,11 @@ of 14\% or more in the human population \cite{greenbaum2011functional}.
 > TMH contributes to every position of the ligand predicted compared to 
 > those experimentally confirmed.
 
-We agree that one could argue that we should use
-a higher number of overlapping amino acids, so to make the epitopes more
-'transmembrane helix-ey'. We chose not too, for two reason: (1) epitopes that overlap with a TMH
-for 1 AA already, cannot be processed by the proteasome in a known and conventional
-way (2) whatever number of overlapping amino acids we use, we expect the pattern to be the same.
-However, using only 1 AA gives the most TMH-derived epitopes and hence the highest statistical
-power.
-
-To prove this point, we did exactly the same analysis 
-as shown in Figure 2a,
+The residue overlap was chosen on the basis of cellular mechanisms, the term TMH epitope has not been defined on the basis of the majority of amino acids stemming from a Trans membrane helix, but the fact that translocation of the TMH from the membrane is required for presentation. One residue stemming from a TMH segment is already has implications on the mechanistic by which the protein was proteolytically processed. Besides the definition of defining something as a TMH does not alter the result, as increasing the overlap equally reduces the chance that an epitope stem from a TMH. 
+To prove this point, we did exactly the same analysis as shown in Figure 2a,
 yet with defining a TMH-derived epitope as an epitope that overlaps with a TMH
-for at least 2 AAs, as shown in Figure S16.
-As these two figures look identical (they are not), 
-we also added the counts as numbers,
-with Table S14 showing the same data
-as S5, except the former uses 2 AAs overlap.
-Likewise, Table S15 showing the same data
-as S7, except the former uses 2 AAs overlap.
+for at least 2 AAs, as shown in Figure S16. As these two figures look identical (they are not), 
+we also added the counts as numbers, with Table S14 showing the same data as S5, except the former uses 2 AAs overlap. Likewise, Table S15 showing the same data as S7, except the former uses 2 AAs overlap.
 
 > 5. The latter point is also more relevant to the case of MHC-II, 
 > where the anchor positions are “internal” and the extremes are more 
@@ -405,13 +392,13 @@ as S7, except the former uses 2 AAs overlap.
 > only one residue coming from a TMP/TMH which is almost “floating” in 
 > extreme of the binding groove?
 
- * [ ] Frans: kopieert van de vorige antwoord :-)
+See earlier answer we have showed that altering the overlap does not change the result. 
 
 > 6. To state that TMH are overrepresented in the MHC peptidome, the authors 
 > should have considered at least a minimum length where part of the 
 > TMH binds to the main or secondary positions of MHC allele.
 
- * [ ] Frans: kopieert van de vorige antwoord :-)
+We disagree because we chose this definition to show that TMH segments, Besides when looking at the 
 
 > 7. Considering that the predicted peptides of the TMH are hydrophobic, 
 > are these values comparable to those obtained from peptide elution studies? 
@@ -419,14 +406,11 @@ as S7, except the former uses 2 AAs overlap.
 > each MHC in this study? There is no explanation of how MHC alleles with 
 > polar binding preferences bind part of the TMH.
 
-
 Indeed, the predicted peptides of TMHs are usually hydrophobic, 
 yet we cannot compare these hydrophobicity values with 
 those obtained from peptide elution studies directly, as peptide elution studies
 use mass spectrometry to detect peptides. A known feature of this technique
-is that hydrophobic peptides are less likely to be detected.
-
- * [ ] Frans fixt dit
+is that hydrophobic peptides are less likely to be detected. As for the later point Membrane regions are often flanked by tryptophans followed by charged residues, as the lipid head groups are often polar, these charges stabilize the TMH in the membrane. In Bianchi. et. al. 2017 we showed mapped the distance of the predicted binders to the TMH regions and showed that for especially MHC alleles that bind polar regions a peak was found at the interface of TMH, showing that these strcutural requirements make preferred antigens. 
 
 > 8. Conservation of the TMH, or it is lack of variation, has been documented 
 > many years ago by different biochemical experiments and it is mainly 
@@ -440,7 +424,7 @@ certain SNP results in a TMH being absent or presented, as we actually
 tried that idea for a short time ourselves [1]. We abandoned this approach,
 as this was beyond the goal of finding if TMHs are evolutionary conserved,
 not of the consequences of a mutation. We do agree that this may be a nice follow-up study,
-yet, we have experieced this idea -as far as we came- became computationally intractable!
+yet, we have experienced this idea -as far as we came- became computationally intractable!
 
  * [1] https://github.com/richelbilderbeek/bbbq_article/blob/v1.1/p_transition/create_dataset.R
 
@@ -464,7 +448,7 @@ from LaTex to PDF by a continuous integration script,
 with the current latest version at 
 https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6 .
 
-We agree that this is annoying and we will check again upon our next submission.
+We agree that this is unacceptable and we will check again upon our next submission.
 
  * [ ] Richel: do so, https://github.com/richelbilderbeek/bbbq_article/issues/236
 
