@@ -214,8 +214,8 @@ we used two sources of data of naturally occurring epitopes.
 The first type of data are two randomly picked 
 peptide elution studies for MHC-I \cite{schellens2015comprehensive} 
 and MHC-II \cite{bergseng2015different}.
-The second type of data is obtained from IEDB, 
-the Immune Epitope Databse \cite{vita2019immune}.
+The second type of data is obtained from , 
+the Immune Epitope Database (IEDB) \cite{vita2019immune}.
 All these sources contain sequences of naturally occurring
 epitopes. 
 For each of the detected epitopes,
@@ -1129,10 +1129,12 @@ presented, however, is more extreme in our current setup.
     Predict topology                  & PureseqTM                 & \cite{wang2019efficient} \\
     Predict epitopes MHC-I            & \verb;epitope-prediction; & \cite{bianchi2017} \\
     Predict epitopes MHC-II           & NetMHCIIpan               & \cite{nielsen2008quantitative,karosiene2013netmhciipan} \\
-    Call TMHMM from R                 & tmhmm                     & \cite{tmhmm} \\
-    Call PureseqTM from R             & pureseqtmr                & \cite{pureseqtmr} \\
-    Call NetMHCIIpan from R           & netmhc2pan                & \cite{netmhc2pan} \\
-    Combine all                       & bbbq                      & \cite{bbbq}
+    Call TMHMM from R                 & \verb;tmhmm;              & \cite{tmhmm} \\
+    Call PureseqTM from R             & \verb;pureseqtmr;         & \cite{pureseqtmr} \\
+    Call NetMHCIIpan from R           & \verb;netmhc2pan;         & \cite{netmhc2pan} \\
+    Work with IEDB                    & \verb;iedbr;              & \cite{iedbr} \\
+    Work with \verb;rentrez;          & \verb;sprentrez;          & \cite{sprentrez} \\
+    Combine all                       & \verb;bbbq;               & \cite{bbbq}
   \end{tabular}
   \caption{
     Overview of all software used in this research.
@@ -1197,13 +1199,23 @@ for MHC-I predictions, we use MHCnuggets only for MHC-II predictions.
 
 To retrieve the data from the NCBI databases the
 \verb;rentrez; R package \cite{rentrez} was used
-that calls the NCBI website's API. To provide for a 
-stable user experience for all users, 
-this API limits the user to 3 calls per second.
+that calls the NCBI database's API. 
+The NCBI database provides a stable user experience for all users, 
+by limiting its API to 3 calls per second per user.
 Additionally, the API splits the result of a bigger
 query into multiple pages, each of which needs one API call.
-We wrote the \verb;sprentrez; package \cite{sprentrez} to provide for 
+The \verb;sprentrez; package \cite{sprentrez} provides for 
 bigger queries of multiple (and delayed) API calls.
+
+% \paragraph{IEDB software}
+
+To retrieve the data from the IEDB  databases \cite{vita2019immune}, 
+the \verb;iedbr; R package \cite{iedbr} was written,
+to calls the IEDB database's API. 
+Similar to the NCBI database,
+the IEDB has a limit to 1 call per second per user
+and allows a query results to return 10k results maximally.
+The \verb;iedbr; package \cite{iedbr} allows for bigger queries.
 
 % Process all floats before going to a next page
 \clearpage
