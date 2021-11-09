@@ -24,7 +24,8 @@ as well as the new submission.
 
 As requested, we have added another source of data for naturally occurring epitopes, 
 which is the IEDB (the Immune Epitope Database), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
-and an new figure 2. The added data strengthened the message of this paper.
+and an new figure 2. The collection of this new data was the main reason for needing 
+the extended amount of time. The added IEDB data strengthened the message of this paper.
 
 ## Reviewer 1
 
