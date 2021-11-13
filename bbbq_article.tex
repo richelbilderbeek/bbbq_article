@@ -206,22 +206,22 @@ that give rise to no or only very few MHC epitopes.
 To verify that the results are similar, a side by side comparison was performed shown in the supplementary materials.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Peptide elution studies}\label{subsec:elution_studies}
+\subsection{TMH epitopes obtained from experimental data}\label{subsec:elution_studies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To obtain experimental evidence that epitopes derived from TMHs are presented in MHC,
+To obtain experimental confirmation that peptides stemming from TMHs 
+are presented \emph{in vivo} in MHC-I and MHC-II,
 we used the Immune Epitope Database (IEDB) \cite{vita2019immune}.
-This database contains the sequences of thousands of experimentally
-established epitope sequences.
-For each of these epitopes,
-its possible location(s) in 
-a human reference proteome,
-with UniProt ID UP000005640\_9606, was mapped.
-For the epitopes that were present in the proteome exactly once,
-the topology of the proteins in which these epitopes were located 
-was predicted using \verb;TMHMM; \cite{krogh2001predicting} . 
-From this topology, we determined if the epitope
-overlapped with a TMH.
+We queried the IEDB for all linear epitopes obtained
+from MHC ligand assays in healthy humans, 
+for the MHC alleles as used in this study.
+From these epitopes, we kept those that are found
+exactly once in the human reference proteome
+with UniProt ID UP000005640\_9606.
+We predicted the topology of the protein each epitope
+was found in, using \verb;TMHMM; \cite{krogh2001predicting},
+from which we conclude if the epitope is overlapping with a TMH
+for at least 1 amino acid.
 
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
@@ -343,18 +343,29 @@ are relatively hydrophobic.
 \subsection{Experimental validation of presentation of TMH-derived peptides}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To obtain experimental confirmation that peptides stemming from TMHs 
-are presented \emph{in vivo} in MHC-I and MHC-II,
-we used epitope data from the IEDB.
-We queried the IEDB for all linear epitopes obtained
-from MHC ligand assays in healthy humans, 
-for the MHC alleles as used in this study.
-From these epitopes, we kept those that are found
-exactly once in the human reference proteome.
-We predicted the topology of the protein each epitope
-was found in, using \verb;TMHMM; \cite{krogh2001predicting},
-from which we conclude if the epitope is overlapping with a TMH
-for at least 1 amino acid.
+From the IEDB,
+we obtained \richel{53,041}
+and \richel{2,495} linear epitope sequences for our MHC-I 
+and MHC-II alleles respectively.
+There are relatively few epitopes for MHC-II, 
+as MHC-II has many more different alleles than MHC-I \richel{describe how an
+MHC-II allele is a combation of two alleles}, 
+where we select only the 21 MHC-II alleles used in this study.
+
+Figure \ref{fig:2a} shows that there is a correlation between the
+percentage of TMH-derived epitopes that is presented \emph{in vivo}
+versus the percentage of TMH-derived epitopes that is predicted to be presented
+in MHC-I alleles. For MHC-II alleles, there were too few epitopes per MHC allele
+to result in a useful plot. 
+
+We grouped all epitopes presented by MHC-I and MHC-II alleles and show 
+the percentage of which these were TMH-derived in figure \ref{fig:2c}.
+\richel{value}\% and \richel{value}\% were
+predicted to be TMH-derived epitopes.
+\richel{Indeed, what is the null hypothesis? The original one is that
+zero percent of all TMH derived epitopes is presented, rendering statistics
+useless. However, what about testing if TMH-derived epitopes are presented
+just as often as TMHs are part of the proteom?}.
 
 From these findings, it is robustly predicted that
 epitopes derived from TMHs are presented in both MHC-I and MHC-II.
