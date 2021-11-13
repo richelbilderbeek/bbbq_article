@@ -210,26 +210,18 @@ To verify that the results are similar, a side by side comparison was performed 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To obtain experimental evidence that epitopes derived from TMHs are presented in MHC,
-we used two sources of data of naturally occurring epitopes.  
-The first type of data are two randomly picked 
-peptide elution studies for MHC-I \cite{schellens2015comprehensive} 
-and MHC-II \cite{bergseng2015different}.
-The second type of data is obtained from , 
-the Immune Epitope Database (IEDB) \cite{vita2019immune}.
-All these sources contain sequences of naturally occurring epitopes. 
-For each of the detected epitopes,
+we used the Immune Epitope Database (IEDB) \cite{vita2019immune}.
+This database contains the sequences of thousands of experimentally
+established epitope sequences.
+For each of these epitopes,
 its possible location(s) in 
 a human reference proteome,
 with UniProt ID UP000005640\_9606, was mapped.
 For the epitopes that were present in the proteome exactly once,
 the topology of the proteins in which these epitopes were located 
-was predicted using both \verb;TMHMM; \cite{krogh2001predicting} 
-and \verb;PureseqTM; \cite{wang2019efficient}. 
+was predicted using \verb;TMHMM; \cite{krogh2001predicting} . 
 From this topology, we determined if the epitope
 overlapped with a TMH.
-As a second source of naturally occurring epitopes, 
-we used the IEDB \cite{vita2019immune} for epitope sequences presented in healthy humans
-by T cells, or as found in MHC ligand studies.
 
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
@@ -352,21 +344,18 @@ are relatively hydrophobic.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To obtain experimental confirmation that peptides stemming from TMHs 
-are presented in MHC-I and MHC-II,
-two peptide elution studies were reanalyzed:
-For MHC-I, peptides presented \emph{in vivo} 
-by the (human) haplotypes HLA-A and B 
-were sequenced \cite{schellens2015comprehensive},
-for MHC-II these were alleles DQ2.5, DQ2.2, and 
-DQ7.5 \cite{bergseng2015different}.
-Figure \ref{fig:elution} shows the percentages of epitopes derived 
-from TMHs
-found in the MHC-I and MHC-II elution 
-studies,
-for the two topology prediction tools \verb;TMHMM; \cite{krogh2001predicting} 
-and \verb;PureseqTM; \cite{wang2019efficient}. 
-Regardless of the prediction tool, 
-at least 100 epitopes were predicted to be derived from a TMH for each condition. 
+are presented \emph{in vivo} in MHC-I and MHC-II,
+we used epitope data from the IEDB.
+We queried the IEDB for all linear epitopes obtained
+from MHC ligand assays in healthy humans, 
+for the MHC alleles as used in this study.
+From these epitopes, we kept those that are found
+exactly once in the human reference proteome.
+We predicted the topology of the protein each epitope
+was found in, using \verb;TMHMM; \cite{krogh2001predicting},
+from which we conclude if the epitope is overlapping with a TMH
+for at least 1 amino acid.
+
 From these findings, it is robustly predicted that
 epitopes derived from TMHs are presented in both MHC-I and MHC-II.
 See the supplementary Table \ref{tab:elution} for the exact values.
