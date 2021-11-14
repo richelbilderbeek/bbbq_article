@@ -64,7 +64,7 @@ and each different allele presents a different subset of peptides \cite{marsh201
 
 % \paragraph{HLAs increase detection range}
 
-Humans mostly express two haplotypes per MHC form, one from the parental and one from the maternal chromosome, 
+Humans mostly express two alleles per MHC haplotype, one from the parental and one from the maternal chromosome, 
 and therefore an individual's immune system detects 
 only a fraction of all possible peptide fragments. 
 However, at the population level, the coverage of pathogenic peptides that are detected 
@@ -77,14 +77,14 @@ will not affect MHC presentation for all alleles present in the population \cite
 % \paragraph{Epitope prediction}
 
 Many studies are aimed at identifying the repertoire of epitopes that are presented 
-in any MHC haplotype allele and determining which epitopes will result in an immune response, 
+in any of the different alleles to determine which epitopes will result in an immune response, 
 as this will for instance aid the design of vaccines. 
 These studies have led to the development of prediction algorithms 
 that allow for very reliable \emph{in silico} predictions 
 of the binding affinities of peptides
 \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
 For example, S. Tang et al. \cite{tang2011genome} found that, 
-of the 432 peptides that were predicted to bind to MHC,
+of the 432 peptides that were predicted to bind to an MHC allele,
 86\% were experimentally confirmed to do so. 
 
 % \paragraph{TMHs}
@@ -92,7 +92,7 @@ of the 432 peptides that were predicted to bind to MHC,
 Using these prediction algorithms, 
 we recently predicted that peptides derived 
 from transmembrane helices (TMHs) 
-will be more frequently presented by MHC-I 
+are likely to be more frequently presented by MHC-I 
 than expected based on their abundance \cite{bianchi2017},
 which is in line with a previous study 
 by Istrail et al \cite{istrail2004comparative},
@@ -101,7 +101,7 @@ are likely to be presented within major histocompatibility complexes,
 due their hydrophobic nature. 
 Moreover, we showed that some well-known immunodominant peptides stem from TMHs. 
 This over-presentation is attributed to the fact 
-that the peptide-binding groove of most MHC-I haplotypes 
+that the peptide-binding groove of most MHC-I alleles
 is relatively hydrophobic, 
 and therefore hydrophobic TMH-derived peptides have a higher affinity 
 to bind than their soluble hydrophilic counterparts. 
@@ -299,7 +299,7 @@ For 11 out of 13 MHC-I alleles, TMH-derived epitopes are predicted to be present
 than the null expectation, for a human and bacterial proteome.
 For the viral proteome, 12 out of 13 alleles present
 TMH-derived epitopes more often than expected by chance.
-The extent of the over-presentation between the different haplotypes 
+The extent of the over-presentation between the different alleles
 is similar for the probed proteomes, 
 which strengthens our previous conclusion \cite{bianchi2017} 
 that the hydrophobicity of the MHC-binding groove 
@@ -371,11 +371,11 @@ zero percent of all TMH derived epitopes is presented, rendering statistics
 useless. However, what about testing if TMH-derived epitopes are presented
 just as often as TMHs are part of the proteom?}.
 
-The percentage of TMH derived epitopes is lower than expected, 
+The percentage of TMH derived epitopes is relatively high
 for both the predictions \richel{Figure 1} 
 and statistical chance \richel{indeed, need stats}, 
-however these results are affected by 
-(I) the probed proteins/peptides 
+however these results are hard to compare with the predictions as they are biased by
+(I) the expression of the probed proteins and cleavage sites, 
 (II) the bias in mass spectrometry towards hydrophillic peptides (refs) and (III) availablilty of data for the different alleles.
 
 In fact, these findings robustly confirm that
@@ -497,7 +497,7 @@ In this study, we provide evidence that epitopes
 derived from TMHs are a major but overlooked source of MHC epitopes. 
 Our bioinformatics predictions indicate that the TMH-derived epitope repertoire is larger than expected by chance, 
 regardless of the organism. Furthermore we see despite the bias towards hydrophilic peptides due to their enhanced ionization in mass spec that in several peptide elution studies still a higher fraction of TMH derived epitopes is found than predicted by chance. Therefor it's tempting to assume that this would also result in enhanced T-cell responses, assuming that the conservation of TMH's across organisms does not significantly effect the deletion of such T-cells by central tolerance mechanisms.
-Moreover, reanalysis of peptide elution studies confirmed the presentation of TMH-derived epitopes.
+Moreover, reanalysis of MHC-Ligands from the IEDB database and T-cell studies confirmed the presentation and immunicity of TMH-derived epitopes.
 Finally, our SNP analysis shows that TMHs are evolutionary more conserved 
 than solvent-exposed protein regions.
 
