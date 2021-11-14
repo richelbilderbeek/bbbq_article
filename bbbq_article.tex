@@ -344,26 +344,24 @@ are relatively hydrophobic.
 \subsection{Experimental validation of presentation of TMH-derived peptides}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\frans{This section requires review}
-\richel{This section requires review indeed}
-
-From the IEDB,
-we obtained \richel{53,041}
-and \richel{2,495} linear epitope sequences for our MHC-I 
+The IEDB contains millions of linear epitope sequences obtained
+by an MHC ligand assay.
+For the MHC alleles used in this study, 
+we obtained 54,303 and 2,484 linear epitope sequences for the MHC-I
 and MHC-II alleles respectively.
 There are relatively few epitopes for MHC-II, 
-as MHC-II has many more different alleles than MHC-I \richel{describe how an
-MHC-II allele is a combation of two alleles}, 
+as MHC-II has many more different alleles than MHC-I, 
 where we select only the 21 MHC-II alleles used in this study.
 
-Figure \ref{fig:2a} shows that there is a correlation between the
+Figure \ref{fig:2a} shows that there are similar levels of
+over-presentation of TMH-derived epitopes between (1) the
 percentage of TMH-derived epitopes that is presented \emph{in vivo}
-versus the percentage of TMH-derived epitopes that is predicted to be presented
+versus (2) the percentage of TMH-derived epitopes that is predicted to be presented
 in MHC-I alleles. For MHC-II alleles, there were too few epitopes per MHC allele
 to result in an informative figure. 
 
 We grouped all epitopes presented by MHC-I and MHC-II alleles and show 
-the percentage of which these were TMH-derived in figure \ref{fig:2c}.
+the percentage of which these were TMH-derived in figure \ref{fig:2b}.
 \richel{value}\% and \richel{value}\% were
 predicted to be TMH-derived epitopes.
 \richel{Indeed, what is the null hypothesis? The original one is that
@@ -751,8 +749,8 @@ RJCB, MB, GvdB and FB wrote the article.
   \begin{subfigure}[t]{0.45\textwidth}
     \centering
     \caption{}
-    \includegraphics[width=1.0\textwidth]{bbbq_article_issue_157/figure_2c.png}
-    \label{fig:2c}
+    \includegraphics[width=1.0\textwidth]{bbbq_article_issue_157/figure_2b.png}
+    \label{fig:2b}
   \end{subfigure}  
 
   \caption{
@@ -1000,6 +998,45 @@ for the two different kind of topology prediction tools.
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Correlation of epitope presentation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the main text of this research, we use two sources of epitopes
+to determine if TMH-derived epitopes are presented.
+The first source of epitopes are all the 9-mers (for MHC-I) (and 15-mers for MHC-II)
+derived from a human reference proteome, where this over-presentation
+is displayed in figure \ref{fig:bbbq_1_smart_results}.
+The second source of epitopes are those that are present in the IEDB
+that are obtained from MHC ligand assays,
+as displayed in figure \ref{fig:2a}.
+
+Here we correlate between the over-presentation of TMH-derived
+epitopes between these two sources of data.
+Figure \ref{fig:thm_presentation_correlation} shows per haplotype
+the percentage of TMH-derived epitopes, with a linear trendline.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{bbbq_article_issue_157/figure_2c.png}
+  \caption{
+    \textbf{
+      TMH-derived epitopes are over-presented when using
+      predicted as well as \emph{in vivo} data
+    }
+    For the MHC class I alleles, the over-presentation of
+    TMH-derived epitopes is correlated between 
+    IEDB MHC ligand epitopes (horizontal axis) and the 9-mers
+    derived from a human reference proteome (vertical axis).
+    The trendline shows the linear correlation between these
+    percentages, where the gray area is the 95\% confidence interval.
+  }
+  \label{fig:thm_presentation_correlation}
+\end{figure}
+
+% Process all floats before going to a next page
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Presentation of TMH-derived epitopes \emph{in vivo} in T cells}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1022,11 +1059,13 @@ MHC ligand assays, as presented in the main article).
       T cells present TMH-derived epitopes \emph{in vivo}
     }
     The numbers above the bars denotes the number of epitopes
-    found in the IEDB for the MHC alleles used in this study
-    \richel{Numbers must be approx 259 and 651}
+    found in the IEDB for the MHC alleles used in this study.
   }
   \label{fig:t_cells_present_tmh_derived_epitopes}
 \end{figure}
+
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Presentation of TMH-derived epitopes}
