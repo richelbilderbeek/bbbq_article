@@ -361,30 +361,30 @@ in MHC-I alleles. For MHC-II alleles, there were too few epitopes per MHC allele
 to result in an informative figure. 
 
 We grouped all epitopes presented by MHC-I and MHC-II alleles and show 
-the percentage of which these were TMH-derived in figure \ref{fig:2b}.
-\richel{value}\% and \richel{value}\% were
-predicted to be TMH-derived epitopes.
-\richel{Indeed, what is the null hypothesis? The original one is that
-zero percent of all TMH derived epitopes is presented, rendering statistics
-useless. However, what about testing if TMH-derived epitopes are presented
-just as often as TMHs are part of the proteom?}.
+the percentage of which these were TMH-derived in figure \ref{fig:2b},
+which are 22\% and 10\%.
 
 The percentage of TMH derived epitopes is relatively high
-for both the predictions \richel{Figure 1} 
-and statistical chance \richel{indeed, need stats}, 
-however these results are hard to compare with the predictions as they are biased by
+for both sources of epitopes, which are (1) the predicted 
+9-mers (for MHC-I) and 14-mers (for MHC-II) from
+a reference human proteome  (see Figure \ref{fig:bbbq_1_smart_results}),
+(2) the IEBD epitopes from MHC ligand assays (Figure \ref{fig:2a}).
+These results cannot be compared with an \emp{a priori}
+expactation, as the predicted percentages are biased by
 (I) the expression of the probed proteins and cleavage sites, 
-(II) the bias in mass spectrometry towards hydrophillic peptides (refs) and (III) availablilty of data for the different alleles.
+(II) the bias in mass spectrometry towards hydrophillic peptides 
+and (III) availablilty of data for the different alleles.
 
-In fact, these findings robustly confirm that
+Regardless, these findings robustly confirm that
 epitopes derived from human TMHs are presented in both MHC-I and MHC-II.
 See the supplementary Table \ref{tab:elution} for the exact values.
 
 We also mined the IEDB database for in
 which T-cell responses were confirmed against specific human epitopes from the specified
-alleles, from the total reports \richel{value}\% and \richel{value}\% concerned TMH-derived epitopes in MHC class I
-and II, respectively 
+alleles, from the total reports 36\% and 7\% 
+concerned TMH-derived epitopes in MHC class I and II, respectively 
 (see Figure \ref{fig:t_cells_present_tmh_derived_epitopes}). 
+
 This data confirms that not only TMH derived epitopes are presented on MHC, but also result in immune responses.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -765,7 +765,6 @@ RJCB, MB, GvdB and FB wrote the article.
     MHC ligands from the IEDB bind to TMH-derived epitopes.
     The numbers above the bars denotes the number of epitopes
     obtained using an MHC ligand assay
-    \richel{Numbers must be 8031 and 698, percentage will then match 2A}
   }
   \label{fig:elution}
 \end{figure}
@@ -982,14 +981,15 @@ for the percentage of MHC-II 14-mers overlapping with TMH.
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Elution studies}
+\subsection{The percentage of TMH-derived epitopes from IEDB epitopes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-See figure \ref{fig:elution_per_software} or
-supplementary Table \ref{tab:elution} 
-for the percentages of epitopes derived from a TMH 
-found in the two elution studies, 
-for the two different kind of topology prediction tools.
+We display the over-presentation of epitopes taken from the
+IEDB database, for two assays: an MHC ligand assay (Figure \ref{fig:2a})
+and a T cell assay (see figure \ref{fig:t_cells_present_tmh_derived_epitopes}),
+as a bar plot.
+Supplementary Table \ref{tab:elution} below shows the
+exact numbers.
 
 % tab:elution
 \input{bbbq_article_issue_157/results.tex}
@@ -1003,7 +1003,7 @@ for the two different kind of topology prediction tools.
 
 In the main text of this research, we use two sources of epitopes
 to determine if TMH-derived epitopes are presented.
-The first source of epitopes are all the 9-mers (for MHC-I) (and 15-mers for MHC-II)
+The first source of epitopes are all the 9-mers (for MHC-I) (and 14-mers for MHC-II)
 derived from a human reference proteome, where this over-presentation
 is displayed in figure \ref{fig:bbbq_1_smart_results}.
 The second source of epitopes are those that are present in the IEDB
