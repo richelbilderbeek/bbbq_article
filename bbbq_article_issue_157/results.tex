@@ -1,21 +1,17 @@
 % latex table generated in R 4.1.1 by xtable 1.8-4 package
-% Fri Oct 29 12:40:25 2021
+% Sun Nov 14 19:33:23 2021
 \begin{table}[ht]
 \centering
-\begin{tabular}{llll}
+\begin{tabular}{lll}
   \hline
-MHC class & Tool & Dataset & n \\ 
+MHC class & Dataset & n \\ 
   \hline
-I & PureseqTM & schellens & 1.38\% (109/7897) \\ 
-  I & PureseqTM & iedb & 6.81\% (43/631) \\ 
-  I & TMHMM & schellens & 1.43\% (113/7897) \\ 
-  I & TMHMM & iedb & 7.13\% (45/631) \\ 
-  II & PureseqTM & bergseng & 3.92\% (498/12712) \\ 
-  II & PureseqTM & iedb & 0.29\% (4/1364) \\ 
-  II & TMHMM & bergseng & 3.96\% (504/12712) \\ 
-  II & TMHMM & iedb & 1.39\% (19/1364) \\ 
+I & iedb\_mhc\_ligand & 22.28\% (1789/8030) \\ 
+  I & iedb\_t\_cell & 35.91\% (93/259) \\ 
+  II & iedb\_mhc\_ligand & 10.46\% (73/698) \\ 
+  II & iedb\_t\_cell &  6.66\% (42/631) \\ 
    \hline
 \end{tabular}
-\caption{Percentage of epitopes derived from a TMH found in the two elution studies, for the two different kind of topology prediction tools. The values between braces show the the number of epitopes that were predicted to overlapping with a TMH per all epitopes that could be uniquely mapped to the representative human reference proteome.} 
+\caption{Percentage of epitopes derived from a TMH for epitopes taken from the IEDB, for two different types of assays:  an MHC ligand assay, as well as a T cell assay.  The values between braces show the the number of epitopes that were predicted to overlapping with a TMH per all epitopes that could be uniquely mapped to the representative human reference proteome.} 
 \label{tab:elution}
 \end{table}
