@@ -95,7 +95,8 @@ Great!
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - No
 
-@Frans: heb jij een idee wat hiermee te doen?
+We regret this verdict and hope that the addition of the feedback
+as given by the reviews resulted in a more unbiased literature list. 
 
 > c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
 > - Yes
@@ -120,12 +121,7 @@ Great!
 > presentation pathways.
 
 First and foremost, something must have gone wrong with the figures 
-and their corresponding legends at the
-Frontier back-end (as the paper is automatically rebuilt
-from LaTex to PDF by a continuous integration script,
-with the current latest version at 
-https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6 ).
-
+and their corresponding legends.
 This must have been horrible for you (and the other reviewers)!
 
 Instead of assuming everything 'just works', 
@@ -148,8 +144,20 @@ as well as the new Frontiers submission
 > how epitope prediction favors TMHs is interesting but only part of 
 > the question.
 
-Although the main focus in our works is on the predictions. We do show that TMH derived epitopes are found in two peptide elution studies illustrating that indeed these peptides are presented on the surface of cells. We have now extended this analysis with MHC-I ligand studies as reported on IEDB the results show .... We furthermore mined the IEDB datbase for epitopes that evoke T-cell responses and correlated these to TMH fig?, ...% of these MHC-I and MHC-II epitopes stem form TMH showing that not only are TMH derived presented in MHC they also leed to T-cell responses. As is also evident from clincial studies e.g. MART... and ... that correlate to trans membrane helices, showing that indeed T-cell responses are generated against epitopes derived from TMH's. 
+Although the main focus in our works is on the predictions,
+we now additionally show that epitopes taken from the IEDB
+database are likelier to be TMH-derived.
+We did this for epitopes that were obtained from an MHC assay (figure 2),
+illustrating that indeed these peptides are presented on the surface of cells. 
+Furthermore, we  mined the IEDB database for epitopes that evoke T-cell 
+responses (as shown in figure S3), which are also likelier to be
+derived from TMHs. 
 
+Lastly, we correlated the percentage of TMH-derived epitopes
+taken from 9-mers (for MHC-I) and 14-mers (for MHC-II) from
+a human reference proteome, with these percentages as obtained
+from the IEDB (as shown in figure S2), indicating that
+our findings are robust.
 
 > The authors do present an example of TMH that are known to be presented by 
 > MHC-I and MHC-II, from two peptide elution studies. These data indeed appear 
@@ -159,8 +167,13 @@ Although the main focus in our works is on the predictions. We do show that TMH 
 > expected by chance, as they do in detail for the predicted epitopes, just 
 > the presence of TMH-derived epitopes in the peptidome is noted.
 
-*[] same as above richel is correlating IEDB with haplotypes this will show how many are found per haplotype. 
-However it will be hard to correlate as hydrophobic peptides don't fly well in mass spec and results in IEDB are therfore biased to non TMH peptides. 
+As discussed in the response above, we replaced the epitopes obtained
+from two elustion studies by epitope sequences from the IEDB.
+However, we cannot have an a priori prediction of how many IEDB epitopes
+are presented, due to many biases in the IEBD protocols,
+among others that hydrophobic peptides don't fly well in mass spectronomy,
+are thus less likely to be sequenced,
+and are thus less likely to be in the IEBD.
 
 Bagag A, Jault J-M, Sidahmed-Adrar N, Réfrégiers M, Giuliani A,
 Le Naour F. Characterization of hydrophobic peptides in the presence of
@@ -217,13 +230,10 @@ We are sorry: the mismatch between legends and figures must have been horrible
 for the reviewer! This time we double-check our Frontiers upload, instead
 of assuming everything 'just works' [1].
 
-The scrambled TIFFs are ... [2]
+The scrambled TIFFs are double-checked as well [2]
 
 The red lines were indeed not described, as the legend was written for a 
 black-and-white version of the tables. We have ensured these match now [3].
-
- * [ ] Richel: Check TIFFs again, https://github.com/richelbilderbeek/bbbq_article/issues/231
- * [ ] Richel: Check if figures are in color or black-and-white, https://github.com/richelbilderbeek/bbbq_article/issues/232
 
  * [1] https://github.com/richelbilderbeek/bbbq_article/issues/236
  * [2] https://github.com/richelbilderbeek/bbbq_article/issues/231
@@ -292,8 +302,7 @@ We have added the uncertainty estimates.
 > a. Is the quality of the figures and tables satisfactory?
 > - No
 
- * [ ] Richel: check version uploaded to Frontiers after submission, https://github.com/richelbilderbeek/bbbq_article/issues/236
-
+We hope this is fixed now.
 
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - Yes
@@ -301,7 +310,7 @@ We have added the uncertainty estimates.
 > c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
 > - No
 
- * [ ] Richel: will have added this
+We hope this is fixed now.
 
 > d. Are the methods sufficiently documented to allow replication studies?
 > - Yes
@@ -340,21 +349,18 @@ We have added the uncertainty estimates.
 > specific alleles derived from DQA and/or DQB.
 
 We agree that there has been a misconception in nomenclature and corrected the manuscript accordingly. 
-@ richel Haplotypes are HLA A, B and C or DQ Dr etc Alleles are the different versions of HLA-A for instance pleae correct I will do to. 
 
 > 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
 > of the allotypes they used are highly hydrophilic because they have highly 
 > polarized anchor positions.
 
-The majority of allotypes prefers more hydrophobic than hydrophilic residues as can be seen in figure ... 
-We agree that the statment could however be revised to majority of .... 
-correct accordingly 
+First, we assume that it was meant whether MHC alleles prefer epitopes
+being hydrophobic (as an MHC allele is a piece of DNA),
+however, we are unsure whether we interpret the question correctly.
 
-@Frans: [R: do we? I guess that the term 'MHC alleles' is already confusing, as
-this is a piece of DNA. Assuming this to be 'MHC complex' instead, I see
-no reason why these proteins would have a different hydrophobicity. 
-Does anyone else know what the reviewer could mean here?]
-@Richel not all MHC-alleles are hydrophobic perhaps we can define a treshold for hydrophobicity and refer to fig 1B and 1C stating that the majority of MHC have a hydrophobic preference. 
+Assuming the question is why we state that MHC alleles prefer epitopes
+being hydrophobic, we feel that figures 1A and 1B demonstrate
+that most MHC alleles have a positive hydrophobicity score.
 
 > 3. It is not clear how the authors chose the MHC-I allotypes? It is 
 > explained only for MHC-II alleles. I assume for their representation 
@@ -362,12 +368,13 @@ Does anyone else know what the reviewer could mean here?]
 
 We agree that this can be more clearly stated and revised the text to the follwing: Both MCH-I and MHC-II alleles were selected to have a high occurrence,
 where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
-with over 99.6\% coverage of the populations MHC-I repertoire as defined by \cite{lund2004definition} \cite{sette1999},
+with over 99.6\% coverage of the populations MHC-I repertoire as defined by [1, 2]
 and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
-of 14\% or more in the human population \cite{greenbaum2011functional}.
+of 14\% or more in the human population [3].
 
- Lund, O., Nielsen, M., Kesmir, C. et al. Definition of supertypes for HLA molecules using clustering of specificity matrices. Immunogenetics 55, 797–810 (2004). https://doi.org/10.1007/s00251-004-0647-4
- Sette, A., Sidney, J. Nine major HLA class I supertypes account for the vast preponderance of HLA-A and -B polymorphism. Immunogenetics 50, 201–212 (1999). https://doi.org/10.1007/s002510050594
+ * [1] Lund, O., Nielsen, M., Kesmir, C. et al. Definition of supertypes for HLA molecules using clustering of specificity matrices. Immunogenetics 55, 797–810 (2004). https://doi.org/10.1007/s00251-004-0647-4
+ * [2] Sette, A., Sidney, J. Nine major HLA class I supertypes account for the vast preponderance of HLA-A and -B polymorphism. Immunogenetics 50, 201–212 (1999). https://doi.org/10.1007/s002510050594
+ * [3] Greenbaum, Jason, et al. "Functional classification of class II human leukocyte antigen (HLA) molecules reveals seven different supertypes and a surprising degree of repertoire sharing across supertypes." Immunogenetics 63.6 (2011): 325-335.
 
 > 4. Is it significant the overlapping of one residue for MHC binding? 
 > Why not consider only those peptides that are really predicted and 
@@ -399,7 +406,7 @@ See earlier answer we have showed that altering the overlap does not change the 
 > should have considered at least a minimum length where part of the 
 > TMH binds to the main or secondary positions of MHC allele.
 
-We disagree because we chose this definition to show that TMH segments, Besides when looking at the 
+See earlier answer we have showed that altering the overlap does not change the result. 
 
 > 7. Considering that the predicted peptides of the TMH are hydrophobic, 
 > are these values comparable to those obtained from peptide elution studies? 
@@ -411,7 +418,7 @@ Indeed, the predicted peptides of TMHs are usually hydrophobic,
 yet we cannot compare these hydrophobicity values with 
 those obtained from peptide elution studies directly, as peptide elution studies
 use mass spectrometry to detect peptides. A known feature of this technique
-is that hydrophobic peptides are less likely to be detected. As for the later point Membrane regions are often flanked by tryptophans followed by charged residues, as the lipid head groups are often polar, these charges stabilize the TMH in the membrane. In Bianchi. et. al. 2017 we showed mapped the distance of the predicted binders to the TMH regions and showed that for especially MHC alleles that bind polar regions a peak was found at the interface of TMH, showing that these strcutural requirements make preferred antigens. 
+is that hydrophobic peptides are less likely to be detected. As for the later point Membrane regions are often flanked by tryptophans followed by charged residues, as the lipid head groups are often polar, these charges stabilize the TMH in the membrane. In Bianchi. et. al. 2017 we showed mapped the distance of the predicted binders to the TMH regions and showed that for especially MHC alleles that bind polar regions a peak was found at the interface of TMH, showing that these structural requirements make preferred antigens. 
 
 > 8. Conservation of the TMH, or it is lack of variation, has been documented 
 > many years ago by different biochemical experiments and it is mainly 
@@ -443,15 +450,9 @@ supplementary Table S8 for the names.'
 
 > 10. There is no Figure 4 in the manuscript.
 
-First, something must have gone wrong with the figures at the
-Frontier back-end, as the paper is automatically rebuilt
-from LaTex to PDF by a continuous integration script,
-with the current latest version at 
-https://github.com/richelbilderbeek/bbbq_article/releases/tag/v1.6 .
+As already noted, something must have gone wrong with the figures.
 
 We agree that this is unacceptable and we will check again upon our next submission.
-
- * [ ] Richel: do so, https://github.com/richelbilderbeek/bbbq_article/issues/236
 
 > 11. This study would give more information if it was based on all the 
 > experimental data available in public databases, as IEDB, instead the 
@@ -467,7 +468,7 @@ and an new figure 2. The added data strengthened the message of this paper.
 > a. Is the quality of the figures and tables satisfactory?
 > - No
 
- * [ ] Richel: check new Frontiers upload, https://github.com/richelbilderbeek/bbbq_article/issues/236
+We hope this is now fixed.
 
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - Yes
