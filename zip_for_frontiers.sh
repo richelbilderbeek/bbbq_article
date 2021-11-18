@@ -17,7 +17,7 @@ Rscript create_numbered_figure_files.R
 zip ~/frontiers.zip \
   bbbq_article.bib \
   bbbq_article.tex \
-  bbbq_header.bbl \ 
+  bbbq_header.bbl \
   bbbq_header.blg \
   bbbq_header.tex \
   mee.bst \
