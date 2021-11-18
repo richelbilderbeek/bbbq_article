@@ -11,9 +11,9 @@ because single nucleotide polymorphisms (SNPs) are present
 relatively less frequently in TMH-coding chromosomal regions 
 compared to regions coding for extracellular and cytoplasmic protein regions. 
 Thus, our findings suggest that 
-both cytolytic and helper T cells respond more to membrane proteins, 
+both cytolytic and helper T cells are more tuned to respond to membrane proteins, 
 because these are evolutionary more conserved. 
-We speculate that TMHs therefore are less prone to escape mutations 
+We speculate that TMHs are less prone to mutations 
 that enable pathogens to evade T cell responses.
 
 \end{abstract}
@@ -21,6 +21,9 @@ that enable pathogens to evade T cell responses.
 {\bf Keywords:} antigen presentation, membrane proteins, bioinformatics, 
 adaptive immunity, transmembrane domain, transmembrane helix, 
 epitopes, T lymphocyte, MHC-I, MHC-II, evolutionary conservation
+
+% Process all floats before going to a next page
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Abbreviations}
@@ -45,6 +48,9 @@ TMH & Transmembrane helix         \\
   \end{tabular}
 \end{table}
 
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,6 +66,10 @@ is T cells which recognize peptides, called epitopes, derived from antigenic pro
 
 % \paragraph{Classification of HLA}
 
+\maksim{
+  I would change the whole sentence: 
+  T cells are an important part of the acquired immunity, they specialize in recognition of pathogen-derived peptides, called epitopes, presented on the cells surface of antigen presenting cells (APC) within the Major Histocompatibility Complexes (MHC) class I and II.
+}
 The MHC proteins are heterodimeric complexes encoded by the
 HLA (Human Leukocyte Antigens) genes.
 In humans, the peptide binding groove of MHC-I is made by only the alpha subunit. There are three classical haplotypes of MHC-I, hallmarked by a highly polymorphic alpha chain called HLA-A, HLA-B and HLA-C, that all present epitopes to cytolytic T cells. 
@@ -89,8 +99,9 @@ Many studies are aimed at identifying the repertoire of epitopes that are presen
 in any of the different alleles to determine which epitopes will result in an immune response, 
 as this will for instance aid the design of vaccines. 
 These studies have led to the development of prediction algorithms 
-that allow for very reliable \emph{in silico} predictions 
-of the binding affinities of peptides
+that allow for very reliable \emph{in silico} 
+\maksim{predictions of the peptide binding affinities}
+predictions of the binding affinities of peptides
 \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
 For example, S. Tang et al. \cite{tang2011genome} found that, 
 of the 432 peptides that were predicted to bind to an MHC allele,
@@ -99,7 +110,7 @@ of the 432 peptides that were predicted to bind to an MHC allele,
 % \paragraph{TMHs}
 
 Using these prediction algorithms, 
-we recently predicted that peptides derived 
+we recently showed that peptides derived 
 from transmembrane helices (TMHs) 
 are likely to be more frequently presented by MHC-I 
 than expected based on their abundance \cite{bianchi2017},
@@ -113,7 +124,10 @@ This over-presentation is attributed to the fact
 that the peptide-binding groove of most MHC-I alleles
 is relatively hydrophobic, 
 and therefore hydrophobic TMH-derived peptides have a higher affinity 
-to bind than their soluble hydrophilic counterparts. 
+to bind than their soluble hydrophilic 
+\maxim{shouldn't be hydrophobic? 
+  A hydrophobic peptide binds to its hydrophobic counterpart - hyprophobic grove of MHC-I}
+counterparts. 
 
 TMHs are hydrophobic 
 as they need to span the hydrophobic lipid bilayer of cellular membranes.
@@ -121,7 +135,11 @@ They consist of an alpha helix of, on average, 23 amino acids in length.
 TMHs can also be predicted with high accuracy from a protein sequence 
 by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}. For example, a study by Jones \cite{jones2007improving} found that,
 from 184 transmembrane proteins (TMPs) with known topology, 
-80\% of the TMH predictions replicated this finding.
+80\% of the TMH predictions 
+\maxim{this part is confusing: 
+  correct maybe:
+  for example, TMH prediction algorithms identified 80\% of TMH in 184 transmembrane proteins (TMPs) with known topology [12].}
+replicated this finding.
  
 TMHs are common structures in the proteins of humans and microbes. 
 Different TMH prediction tools estimate that 15-39\% of all proteins 
@@ -130,37 +148,39 @@ However, the physiological reason why peptides derived from TMHs
 would be presented more often than peptides 
 stemming from soluble (i.e., extracellular or cytoplasmic) protein regions is unknown. 
 In this study, we hypothesized that the presentation of 
-TMH residues is evolutionary selected for, 
-because TMHs are less prone to undergo escape mutations. 
+TMH residues is evolutionarily preferred, 
+since TMHs are less prone to undergo escape mutations. 
 One reason to expect such a reduced 
 variability (and hence evolutionary conservation) in TMHs, 
-is that these are restricted in their evolution 
+is that these are restricted in their variability 
 by the functional requirement to span a lipid bilayer. 
-Due to this requirement, 
-many of the amino acids genuinely present in TMHs 
-are limited to the ones with hydrophobic side chains 
+This limits 
+many of the amino acids present in TMHs 
+to have hydrophobic side chains 
 \cite{hessa2007molecular,jones1994model}.
 Therefore, we speculated that the TMHs of pathogens 
 might have a lower chance to develop escape mutations, 
-as many mutations will result in a dysfunctional TMH 
+as that will result in a dysfunctional TMH 
 and render the protein inactive.
 
 This study had two objectives. 
-First, we aimed to generalize our findings by predicting the presentation of peptides 
-from different kingdoms of life and for both MHC-I and -II. 
+First, we aimed to generalize our findings by predicting
+\maxim{the antigenic presentation}
+the presentation of peptides 
+from different kingdoms of life in both MHC-I and -II. 
 From these \emph{in silico} predictions, we conclude that TMH-derived
-epitopes are likely to be presented more often than expected by chance,
-in a human, viral and bacterial proteome, 
-and for most alleles of both MHC-I and II. 
+epitopes from a human, viral and bacterial proteome
+are likely to be presented more often than expected by chance 
+for most alleles of MHC-I and II. 
 We confirmed the presentation of TMH-derived peptides 
 by re-analysis of peptide elution studies. 
 Second, we tested our hypothesis that TMHs 
-are more evolutionary conserved than soluble protein regions. 
+are more evolutionary conserved than soluble protein regions.
 Our analysis of human single nucleotide polymorphisms (SNPs) showed 
 that random point mutations are indeed less likely
 to occur within TMHs. 
 These findings strengthen the emerging notion 
-that TMHs are important for the T cell branch of the adaptive immune system, 
+that TMHs are important for the T cell-mediated adaptive immune system, 
 and hence are of  
 overlooked importance in vaccine development.
 
