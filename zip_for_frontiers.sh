@@ -8,6 +8,7 @@
 #
 
 # Article split in main part, figures and submat
+chmod +x split_pdf.sh
 ./split_pdf.sh
 
 # Creates the numbered TIFF files in 'numbered_figure_files'
