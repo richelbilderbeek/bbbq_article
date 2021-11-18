@@ -199,13 +199,13 @@ and for a human, viral and bacterial proteome.
 To summarize, for each proteome, 
 all possible 9-mers (for MHC-I) or 14-mers (MHC-II) were derived. 
 For each of these peptides, we determined if it overlapped with a predicted 
-TMH and if it was predicted to bind to the moest frequent alleles of each haplotype.
+TMH and if it was predicted to bind to the most frequent alleles of each haplotype.
 
 For MHC-I, 9-mers were used, 
 as this is the length most frequently presented in MHC-I 
 and was used in our earlier study \cite{bianchi2017}. 
 For MHC-II, 14-mers were used, 
-as these are the most frequently occurring epitope length \cite{bergseng2015different}.
+as this is the most frequently occurring epitope length \cite{bergseng2015different}.
 A human (UniProt ID UP000005640\_9606), 
 viral (SARS-CoV-2, UniProt ID UP000464024) 
 and bacterial (\emph{Mycobacterium tuberculosis}, UniProt ID UP000001584) 
@@ -215,7 +215,9 @@ of the proteins within these proteomes.
 To predict the affinity of an epitope to a certain HLA allele,
  \verb;EpitopePrediction; \cite{bianchi2017} for MHC-I 
 and \verb;MHCnuggets; \cite{shao2020high} for MHC-II was used.
-Both MCH-I and MHC-II alleles were selected to have a high occurrence,
+Both MCH-I and MHC-II alleles were selected to have a high occurrence
+\maxim{was it meant to be: 
+were selected based on their occurrence scores? or based in their prevalence in the population?},
 where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
 with over 99.6\% coverage of the population's MHC-I repertoire as defined by \cite{lund2004definition} \cite{sette1999},
 and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
@@ -231,7 +233,7 @@ of the peptides within a \emph{protein}.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
 This revised definition precludes bias of proteins 
 that give rise to no or only very few MHC epitopes.
-To verify that the results are similar, a side by side comparison was performed shown in the supplementary materials, Figures \ref{fig:bianch_et_al_2017_1a}
+To verify that the results are similar \maxim{does it mean: that the new thresholding does not obscure the previous results, a side...}, a side by side comparison was performed shown in the supplementary materials, Figures \ref{fig:bianch_et_al_2017_1a}
 and \ref{fig:bilderbeek_et_al_2021_1a}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -251,7 +253,7 @@ with UniProt ID UP000005640\_9606.
 We predicted the topology of the protein each epitope
 was found in, using \verb;TMHMM; \cite{krogh2001predicting},
 from which we concluded if the epitope is overlapping with a TMH
-with at least 1 amino acid.
+with at least 1 amino acid \maxim{1 amino acid overlap is already a good enough evidence to label something as TMH?}.
 
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
@@ -264,6 +266,7 @@ at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 
 To determine the evolutionary conservation of TMHs,
 human single nucleotide polymorphisms (SNPs) were first collected
+\maxim{..TMHs, we first collected (SNPs) resulting in a single amino acid substitution to determine if this occurred within a predicted TMH or not.}
 that resulted in a single amino acid substitution,
 and we then determined if this substitution occurred within a predicted TMH or not.
 
@@ -299,7 +302,7 @@ resulting in $\approx$61k variations.
 Only variations that result in a SNP for
 a single amino acid substitution were analyzed, resulting in $\approx$38k SNPs.
 The exact amounts can be found in the supplementary materials,
-Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}.
+Tables \maxim{earlier you used brackets to refer to these tables} \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}.
 
 % \paragraph{Selection of SNPs}
 %
@@ -323,7 +326,7 @@ Per MHC-I allele, it shows the percentage of binders that overlap with a TMH
 with at least one residue.
 The horizontal line shows the expected percentage of TMH-derived epitopes 
 that would be presented, if TMH-derived epitopes would be presented just as 
-likely as epitopes derived from soluble regions.
+likely as epitopes derived from soluble regions \maxim{assuming equal incidence of soluble and TMH-derived epitope presentation.}.
 For 11 out of 13 MHC-I alleles, TMH-derived epitopes are predicted to be presented more often 
 than the null expectation, for a human and bacterial proteome.
 For the viral proteome, 12 out of 13 MHC-I alleles present
@@ -342,7 +345,7 @@ of TMH-derived peptides.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We next wondered if the over-representation of TMH-derived peptides 
-would also be present for MHC-II. 
+would also be confirmed for MHC-II. 
 Figure \ref{fig:bbbq_1_smart_results} shows the percentages of MHC-II epitopes 
 predicted to be overlapping with TMHs for our human, viral and bacterial proteomes.
 We found that TMH-derived peptides are over-presented in all
@@ -379,7 +382,8 @@ For the MHC alleles used in this study,
 we obtained 54,303 and 2,484 linear epitope sequences for the MHC-I
 and MHC-II alleles respectively.
 There are relatively few epitopes for MHC-II, 
-as MHC-II has many more different alleles than MHC-I and we selected only the epitopes found for the 21 MHC-II alleles used in this study.
+as MHC-II has many more different alleles than MHC-I,
+whereas we selected only the epitopes found for the 21 MHC-II alleles used in this study.
 
 Figure \ref{fig:2a} shows that there are similar levels of
 over-presentation of TMH-derived epitopes between (1) the
@@ -388,8 +392,9 @@ versus (2) the percentage of TMH-derived epitopes that is predicted to be presen
 in MHC-I alleles. For MHC-II alleles, there were too few epitopes per MHC allele
 to result in an informative figure. 
 
-We grouped all epitopes presented by MHC-I and MHC-II alleles and show 
-the percentage of which these were TMH-derived in figure \ref{fig:2b},
+In figure \ref{fig:2b} we grouped all the epitopes 
+presented by MHC-I and MHC-II alleles 
+by the percentage of TMH-derived epitopes,
 which are 22\% and 10\%.
 
 These findings robustly confirm that
@@ -397,12 +402,13 @@ epitopes derived from human TMHs are presented in both MHC-I and MHC-II, and sup
 See the supplementary Table \ref{tab:elution} for the exact values.
 
 We also mined the IEDB database for epitopes for
-which T-cell responses were confirmed from the specified
+any type of T-cell response from the specified
 alleles, from the total reports 36\% and 7\% 
 concerned TMH-derived epitopes in MHC class I and II, respectively 
 (see Figure \ref{fig:t_cells_present_tmh_derived_epitopes}). 
 
-This data confirms that not only TMH derived epitopes are presented on MHC, but also result in immune responses.
+This data confirms that not only TMH derived epitopes are presented on MHC, 
+but this also elicits T-cell mediated immune responses.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Human TMHs are evolutionarily conserved}
@@ -426,7 +432,8 @@ See supplementary Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}
 for the detailed numbers and distributions of SNPs.
 
 Per protein, we calculated two percentages: 
-(1) the percentage of the total protein predicted to be TMHs, 
+(1) the percentage of the total protein predicted to be TMHs \maxim{is it percentage of a protein sequence length bearing TMHs? 
+if it is true - it would be a better wording}, 
 and (2) the percentage of SNPs located within these predicted TMHs.
 Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
 The proportion of SNPs found in TMHs varied from 
@@ -463,6 +470,7 @@ ratio between the number of SNPs found in TMHs
 versus the number of SNPs as expected by chance.
 In effect, per 1000 SNPs found in soluble protein domains, 
 one finds 918 SNPs in TMHs,
+\maxim{your current figure does not describe it}
 as depicted in figure \ref{fig:conservation}. 
 
 We split this analysis for TMPs containing only a single TMH (so-called single-membrane spanners) and TMPs containing multiple TMHs (multi-membrane spanners). 
