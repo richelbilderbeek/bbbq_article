@@ -2,7 +2,8 @@ figure_number,tiff_filename,paper_filename
 1a,bbbq_1_smart_results/fig_f_tmh_2_panel.tiff,figure_1a.tiff
 1b,bbbq_1_smart_results/fig_hydrophobicity_mhc1.tiff,figure_1b.tiff
 1c,bbbq_1_smart_results/fig_hydrophobicity_mhc2.tiff,figure_1c.tiff
-2,bbbq_article_issue_157/results.tiff,figure_2.tiff
+2a,bbbq_article_issue_157/figure_2a.tiff,figure_2a.tiff
+2b,bbbq_article_issue_157/figure_2b.tiff,figure_2b.tiff
 3a,ncbi_peregrine_results/fig_f_snps_found_and_expected.tiff,figure_3a.tiff
 3b,ncbi_peregrine_results/fig_f_tmh_ncbi.tiff,figure_3b.tiff
 3c,ncbi_peregrine_results/fig_conservation.tiff,figure_3c.tiff

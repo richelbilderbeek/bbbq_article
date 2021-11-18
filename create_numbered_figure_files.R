@@ -15,7 +15,7 @@ testthat::expect_true(all(file.exists(tiff_filenames)))
 
 figure_numbers <- c(
   paste0(1, letters[1:3]),
-  "2",
+  paste0(2, letters[1:2]),
   paste0(3, letters[1:3]),
   paste0(4, letters[1:4])
 )
