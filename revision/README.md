@@ -6,7 +6,7 @@
 > Two of the reviewers raised some significant concerns regarding the manuscript that can only be addressed by additional analyses and work. 
 > In particular, please pay special attention to the comment by reviewer #3, as follows:
 > "In addition to the two peptidome studies used by the authors, many comprehensive immunopeptidomes are available for analysis. 
-> For example, the NIH Immune Epitiope Database and Analysis Resource lists several hundred studies with many hundreds of thousands of epitopes. 
+> For example, the NIH Immune Epitope Database and Analysis Resource lists several hundred studies with many hundreds of thousands of epitopes. 
 > A detailed analysis of the frequency of TMH in experimentally determined MHC-I and MHC-II peptidomes (rather than predicted binders) 
 > could provide the information sought by the authors."
 > Should you decide to revise the manuscript and resubmit, 
@@ -16,16 +16,10 @@
 We thank you for your help and the reviewers' feedback. Below we address all reviewers' comments.
 
 First and foremost, it is clear something had gone wrong with the figures 
-and their corresponding legends.
-This must have been horrible for the reviewers!
-Instead of assuming everything 'just works', 
-we have double-checked the latest version of the manuscript,
-as well as the new submission.
+and their corresponding legends in our original submission. We apologize for this, and have double-checked the revised version of the manuscript.
 
-As requested, we have added another source of data for naturally occurring epitopes, 
-which is the IEDB (the Immune Epitope Database), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
-and an new figure 2. The collection of this new data was the main reason for needing 
-the extended amount of time. The added IEDB data strengthened the message of this paper.
+As requested, we have added another source of data for naturally occurring epitopes, which is the suggested IEDB (the Immune Epitope Database from NIH), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
+and a new figure 2. The collection of this new data was the main reason for needing the extended amount of time. The added IEDB data strengthened the message of this paper, as we found an over-presentation of epitopes derived from tranmembrane helices for both MHC class I and II.
 
 ## Reviewer 1
 
@@ -77,13 +71,14 @@ Thanks for the appreciation of our work!
 > of variability is explained by the hydrophobicity score of TMH-derived 
 > epitopes in MHC-II than in MHC-I, with regard to the discussion in section 4.2
 
-@Frans: deze vind jij denk ik mooi om te doen!
+\textbf{@Frans: deze vind jij denk ik mooi om te doen!
+GEERT: kan het met de lengte te maken hebben? We nemen immers alles met >1 aminozuur overlap...}
 
 > L. 64: "[6] found that" can be written as "S. Tang et al. [6] found that"
 
 Thanks, we changed the LaTeX to:
-
 > For example, S. Tang et al. \cite{tang2011genome} found that, 
+In addition, we have amended similar instances throughout the manuscript.
 
 ## Check List
 
@@ -95,8 +90,7 @@ Great!
 > b. Does the reference list cover the relevant literature adequately and in an unbiased manner?
 > - No
 
-We regret this verdict and hope that the addition of the feedback
-as given by the reviews resulted in a more unbiased literature list. 
+We hope that our revised manuscript covers the literature in a more adequate fashion. 
 
 > c. Are the statistical methods valid and correctly applied? (e.g. sample size, choice of test)
 > - Yes
@@ -121,14 +115,7 @@ Great!
 > presentation pathways.
 
 First and foremost, something must have gone wrong with the figures 
-and their corresponding legends.
-This must have been horrible for you (and the other reviewers)!
-
-Instead of assuming everything 'just works', 
-we have double-checked the latest version of the manuscript 
-while processing all feedback,
-as well as the new Frontiers submission 
-(see https://github.com/richelbilderbeek/bbbq_article/issues/236).
+and their corresponding legends in the orginial submission. We apologize for this and have corrected this in our revised manuscript.
 
 > 1) The authors claim to have shown that transmembrane helices (TMH) are 
 > important sources of MHC class I and class II epitopes. But they have not 
@@ -144,19 +131,12 @@ as well as the new Frontiers submission
 > how epitope prediction favors TMHs is interesting but only part of 
 > the question.
 
-Although the main focus in our works is on the predictions,
-we now additionally show that epitopes taken from the IEDB
-database are likelier to be TMH-derived.
-We did this for epitopes that were obtained from an MHC assay (figure 2),
-illustrating that indeed these peptides are presented on the surface of cells. 
-Furthermore, we  mined the IEDB database for epitopes that evoke T-cell 
-responses (as shown in figure S3), which are also likelier to be
-derived from TMHs. 
+As suggested, we have performed an analysis of epitopes taken from the IEDB (the Immune Epitope Database from NIH), confirming that peptides derived from transmembrane helices (TMHs) are more likely to be presented on MHC class I and II (new Figure 2). Furthermore, we  mined the IEDB database for epitopes that evoke T cell responses (as shown in new Figure S3), which are also likelier to be derived from TMHs. 
 
-Lastly, we correlated the percentage of TMH-derived epitopes
+We also correlated the percentage of TMH-derived epitopes
 taken from 9-mers (for MHC-I) and 14-mers (for MHC-II) from
 a human reference proteome, with these percentages as obtained
-from the IEDB (as shown in figure S2), indicating that
+from the IEDB (as shown in new Figure S2), indicating that
 our findings are robust.
 
 > The authors do present an example of TMH that are known to be presented by 
@@ -169,36 +149,8 @@ our findings are robust.
 
 As discussed in the response above, we replaced the epitopes obtained
 from two elustion studies by epitope sequences from the IEDB.
-However, we cannot have an a priori prediction of how many IEDB epitopes
-are presented, due to many biases in the IEBD protocols,
-among others that hydrophobic peptides don't fly well in mass spectronomy,
-are thus less likely to be sequenced,
-and are thus less likely to be in the IEBD.
+\textbf{GEERT: ik heb stuk gewist. Je ziet wel degelijk meer TMH-overlapping peptides als je verwacht bij chance. Dit is dus precies wat je verwacht; alle artifacten zouden resulteren in een lagere waarde. Geen woorden aan vuil maken dus. ZIe ook mijn comments in MS}
 
-Bagag A, Jault J-M, Sidahmed-Adrar N, Réfrégiers M, Giuliani A,
-Le Naour F. Characterization of hydrophobic peptides in the presence of
-detergent by photoionization mass spectrometry. PLoS One (2013) 8:e79033.
-doi:10.1371/journal.pone.0079033
-26. Schindler PA, Van Dorsselaer A, Falick AM. Analysis of hydrophobic
-proteins and peptides by electrospray ionization mass spectrometry. Anal
-Biochem (1993) 213:256–63. doi:10.1006/abio.1993.1418
-
-The reviewer is right that we do not show any statistics here
-and we are happy this omission was spotted.
-However, unlike most omitted statistics tests, this would be an exception
-when adding a statistical test would not make sense.
-
-To clarify, we considered adding the text below to describe the statistical test:
-
-We used a binomial statistical test to determine if more TMH-derived epitopes 
-are presented than expected, with the number of epitopes being the number of trails,
-the number of TMH-derived epitopes being the number of successful trials,
-for a estimated chance of success of zero. This resulted in highly significant values,
-indicating there were significantly more TMH-derived epitopes presented than expected.
- 
-We still feel it would be better to leave out this trivial statistics test, 
-as it sets readers on the wrong foot: any binomial test with a chance of a successful trial, p, of zero 
-(in R code: binom.test(x = 109, n = 7897, p = 0.0)) always results in a p value of zero.
 
 > In addition to the two peptidome studies used by the authors, 
 > many comprehensive immunopeptidomes are available for analysis. For example, 
@@ -208,14 +160,7 @@ as it sets readers on the wrong foot: any binomial test with a chance of a succe
 > (rather than predicted binders) could provide the information sought by 
 > the authors.
 
-The reviewer is right that we took two studies into account, where there
-are plenty. For both MCH-I and MHC-II, we simply took the first study
-we found on Google Scholar, as all we wanted to know was whether
-TMH-derived epitopes would be presented at all.
-
-As requested, we have the suggested source of data for naturally occurring epitopes, 
-which is the IEDB (the Immune Epitope Database), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
-and an new figure 2. The added data strengthened the message of this paper.
+Please see our comments above. As requested, we have performed the analysis with epitopes from the IEDB. 
 
 > There are other major issues:
 
@@ -226,19 +171,8 @@ and an new figure 2. The added data strengthened the message of this paper.
 > bold red line on each plot is not described, and indicated confidence 
 > intervals are missing.
 
-We are sorry: the mismatch between legends and figures must have been horrible
-for the reviewer! This time we double-check our Frontiers upload, instead
-of assuming everything 'just works' [1].
+We are sorry for these mistakes and have corrected them.
 
-The scrambled TIFFs are double-checked as well [2]
-
-The red lines were indeed not described, as the legend was written for a 
-black-and-white version of the tables. We have ensured these match now [3].
-
- * [1] https://github.com/richelbilderbeek/bbbq_article/issues/236
- * [2] https://github.com/richelbilderbeek/bbbq_article/issues/231
- * [3] https://github.com/richelbilderbeek/bbbq_article/issues/232
- 
 > 3) A key message from this would appear to be that TMH sequences are 
 > overlooked as a source of MHC-I and MHC-II epitopes, but this statement is 
 > not supported by any data. There are many published instances of TMH 
@@ -246,7 +180,7 @@ black-and-white version of the tables. We have ensured these match now [3].
 > peptidome analysis. HLA-E is well-known to bind signal sequence peptides, 
 > which are a type of TM sequences.
 
-The key message of the paper that TMH are an overlooked source MHC-I and MHC-II epitopes comes from the fact that we predict that due to the hydrophobic nature of TMH, peptides derived from TMH make good binders for the majority of MHC alleles. Literature on TMH derived epitopes however is scarce, indeed for a specific class of TMH peptides signal peptides, mechanistic insights have been acquired, however for general polytopic trans membrane helices we have no understanding how they are processed for presentation on MHC, though we show that peptidome analysis reveals they are presented. 
+The key message of the paper that TMHs are an overlooked source MHC-I and MHC-II epitopes comes from the fact that we predict that, due to the hydrophobic nature of TMHs, peptides derived from TMHs make good binders for the majority of MHC alleles. As discussed above, we now provide a new analysis of peptides from IEDB confirming our predictions. In addition, we now include a description of the presentation of signal peptides by HLA-E in our revised Discussion section. Please note that HLA-E is a non-canonical MHC-I form, whereas our study considers the canonical HLA-A, -B, and -C forms.
 
 > 4) It is claimed that both that data suggest that both cytolytic and 
 > helper T cells respond to more to membrane proteins, but no T cell data at 
@@ -258,9 +192,9 @@ The key message of the paper that TMH are an overlooked source MHC-I and MHC-II 
 > T cells would be deleted or tolerized. So TMH-specific responses might be 
 > promoted or suppressed by increased TM peptide presentation.
 
-We agree although T-cell responses against TMH derived epitopes have been reported we have no indication if more T-cells respond to membrane proteins than expected.
+We agree with the reviewer. Although T cell responses against TMH derived epitopes have been reported, we have no indication if more T cells respond to membrane proteins than expected by chance.
 We adapted the text to the following:
-"Our bioinformatics predictions indicate that the TMH-derived epitope repertoire is larger than expected by chance, regardless of the organism. Furthermore we see despite the bias towards hydrophilic peptides due to their enhanced ionization in mass spec that in several peptide elution studies still a higher fraction of TMH derived epitopes is found than predicted by chance. Therefor it's tempting to speculate that this would also result in enhanced T-cell responses, assuming that the conservation of TMH's across organisms does not effect the deletion of such T-cells by central tolerance mechanisms."
+"Our bioinformatics predictions indicate that the TMH-derived epitope repertoire is larger than expected by chance for both MHC-I and MHC-II, regardless of the organism. Moreover, reanalysis of MHC-ligands from the IEDB database confirmed the presentation of TMH-derived epitopes. Therefor, it seems likely that TMH-derived epitopes would also result in enhanced T cell responses, although the conservation of TMHs might promote the deletion of T cells responsive to TMH-derived epitopes by central tolerance mechanisms."
 
 > Also some parts of manuscript are confusing:
 
@@ -270,7 +204,7 @@ We adapted the text to the following:
 > molecules are called MHC proteins or HLA gene products or (less 
 > frequently) MHC allotypes.
 
-We agree that there has been a mix up of nomenclature and have modified the manuscript accordingly. 
+We agree that there was a mix up of nomenclature and have modified the manuscript accordingly. 
 
 > 6) The authors search for the “physiological reason” why peptides derived 
 > from TMHs are frequently presented is puzzling, as they state that it 
@@ -279,23 +213,18 @@ We agree that there has been a mix up of nomenclature and have modified the manu
 > how the preference of MHCs to bind TMHs impacts MHC cellular and 
 > immunological function and evolution, but those are consequences, not reasons.
 
-Although we understand this reasoning we do not agree, first of all the fact that a peptide is hydrophobic does not mean it stems from a trans membrane helix. Second as the affinity of a peptide for MHC is generated by a few residues, there preference is not a prediction for the overall hydrophobic preference of the allele. Indeed it was previously reported that MHC-I in general seems to have a slight preference for hydrophobic residues, however their correlation with TMH was not yet addressed nor the consequences for the cellular and immunological function and evolution. 
+We politely disagree. First, that a peptide is hydrophobic does not mean it stems from a TMH. Second, as the affinity of a peptide for MHC is generated by a few residues, their preference is not a prediction for the overall hydrophobic preference of the allele. Although it was previously reported that MHC-I in general seems to have a slight preference for hydrophobic residues, the correlation with TMHs was not yet addressed nor the consequences for the cellular and immunological function and evolution. 
 
 > 5) The section on T cells recognizing different parts of an immunogenic 
 > protein than B cells is confusing and unnecessary since this is already 
 > well appreciated.
 
-We agree with the reviewer that this is a well known phenomena stated in many text books. 
-A consequence of TMH over representation is that the discrepancy between BCR epitopes and TCr epitopes is enhanced due to the fact that BCR's are unable to recognize TMH epitopes, however we agree that this information is not of significant importance and therefor removed the section.  
-
-Although it's well known that T cells and B Cells seem to predominantly recognize different protein regions,this is enhanced by the over-presentation of TMH-derived epitopes, as TMH's buried in the lipid bilayer are unlikely to be recognized by BCR's. 
-
-
+We agree with the reviewer that this is a well known phenomena and have removed it from our revised manuscript. \textbf{GEERT: correct?} 
 
 > 6) Finally, the analyses of chance versus observed epitopes do not include 
 > any uncertainly estimates.
 
-We have added the uncertainty estimates.
+We have added the uncertainty estimates as requested.
 
 ## Check List
 
@@ -348,25 +277,19 @@ We hope this is fixed now.
 > DQ2.2 and DQ7.5, in this case each haplotype is a combination of two 
 > specific alleles derived from DQA and/or DQB.
 
-We agree that there has been a misconception in nomenclature and corrected the manuscript accordingly. 
+We agree that there has been a misconception in nomenclature and corrected the manuscript accordingly. \textbf{GEERT: is dit nu al helemaal doorgevoerd? Dus overal haplotype voor allotype vervangen?}
 
 > 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
 > of the allotypes they used are highly hydrophilic because they have highly 
 > polarized anchor positions.
 
-First, we assume that it was meant whether MHC alleles prefer epitopes
-being hydrophobic (as an MHC allele is a piece of DNA),
-however, we are unsure whether we interpret the question correctly.
-
-Assuming the question is why we state that MHC alleles prefer epitopes
-being hydrophobic, we feel that figures 1A and 1B demonstrate
-that most MHC alleles have a positive hydrophobicity score.
+If we interpret the question correctly, we believe our statement that most MHC alleles prefer hydrophobic epitopes is warranted by figures 1A and 1B, since these figures demonstrate that most MHC alleles have a positive hydrophobicity score.
 
 > 3. It is not clear how the authors chose the MHC-I allotypes? It is 
 > explained only for MHC-II alleles. I assume for their representation 
 > in the population.
 
-We agree that this can be more clearly stated and revised the text to the follwing: Both MCH-I and MHC-II alleles were selected to have a high occurrence,
+As requested, we have and revised the text to the following: Both MCH-I and MHC-II alleles were selected to have a high occurrence,
 where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
 with over 99.6\% coverage of the populations MHC-I repertoire as defined by [1, 2]
 and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
@@ -387,11 +310,11 @@ of 14\% or more in the human population [3].
 > TMH contributes to every position of the ligand predicted compared to 
 > those experimentally confirmed.
 
-The residue overlap was chosen on the basis of cellular mechanisms, the term TMH epitope has not been defined on the basis of the majority of amino acids stemming from a Trans membrane helix, but the fact that translocation of the TMH from the membrane is required for presentation. One residue stemming from a TMH segment is already has implications on the mechanistic by which the protein was proteolytically processed. Besides the definition of defining something as a TMH does not alter the result, as increasing the overlap equally reduces the chance that an epitope stem from a TMH. 
-To prove this point, we did exactly the same analysis as shown in Figure 2a,
+We defined a TMH-derived epitope as any epitope that overlaps with at least one residue with a TMH, because  the underlying cellular mechanisms of presentation must differ from the canonical mechanisms for presentation of soluble proteins. As we explain in the Discussion section of our revised manuscript, the presentation of a TMH requires its extraction from the membrane even if just a single amino acid contributes to the epitope. 
+
+In addition, please note that this definition of a TMH-derived epitope does not alter the conclusion, as increasing the overlap equally reduces the chance that an epitope stems from a TMH. To prove this point, we did exactly the same analysis as shown in Figure 2a,
 yet with defining a TMH-derived epitope as an epitope that overlaps with a TMH
-for at least 2 AAs, as shown in Figure S16. As these two figures look identical (they are not), 
-we also added the counts as numbers, with Table S14 showing the same data as S5, except the former uses 2 AAs overlap. Likewise, Table S15 showing the same data as S7, except the former uses 2 AAs overlap.
+for at least 2 residus, as shown in Figure S16. These two figures are highly similar. See Table S14 and S5, and S15 and S7 for the corresponding values.
 
 > 5. The latter point is also more relevant to the case of MHC-II, 
 > where the anchor positions are “internal” and the extremes are more 
@@ -400,13 +323,13 @@ we also added the counts as numbers, with Table S14 showing the same data as S5,
 > only one residue coming from a TMP/TMH which is almost “floating” in 
 > extreme of the binding groove?
 
-See earlier answer we have showed that altering the overlap does not change the result. 
+Please see above. Increasing the overlap does not alter the conclusion.
 
 > 6. To state that TMH are overrepresented in the MHC peptidome, the authors 
 > should have considered at least a minimum length where part of the 
 > TMH binds to the main or secondary positions of MHC allele.
 
-See earlier answer we have showed that altering the overlap does not change the result. 
+Please see above. Increasing the overlap does not alter the conclusion.
 
 > 7. Considering that the predicted peptides of the TMH are hydrophobic, 
 > are these values comparable to those obtained from peptide elution studies? 
@@ -414,11 +337,15 @@ See earlier answer we have showed that altering the overlap does not change the 
 > each MHC in this study? There is no explanation of how MHC alleles with 
 > polar binding preferences bind part of the TMH.
 
-Indeed, the predicted peptides of TMHs are usually hydrophobic, 
-yet we cannot compare these hydrophobicity values with 
-those obtained from peptide elution studies directly, as peptide elution studies
-use mass spectrometry to detect peptides. A known feature of this technique
-is that hydrophobic peptides are less likely to be detected. As for the later point Membrane regions are often flanked by tryptophans followed by charged residues, as the lipid head groups are often polar, these charges stabilize the TMH in the membrane. In Bianchi. et. al. 2017 we showed mapped the distance of the predicted binders to the TMH regions and showed that for especially MHC alleles that bind polar regions a peak was found at the interface of TMH, showing that these structural requirements make preferred antigens. 
+As suggested, we have performed an analysis of epitopes taken from the IEDB (the Immune Epitope Database from NIH), confirming that peptides derived from TMHs are more likely to be presented on MHC class I and II as predicted (new Figure 2). Furthermore, we  mined the IEDB database for epitopes that evoke T cell responses (as shown in new Figure S3), which are also likelier to be derived from TMHs. 
+
+We also correlated the percentage of TMH-derived epitopes
+taken from 9-mers (for MHC-I) and 14-mers (for MHC-II) from
+a human reference proteome, with these percentages as obtained
+from the IEDB (as shown in new Figure S2), indicating that
+our findings are robust.
+
+In Bianchi. et. al. 2017 we  mapped the distance of the predicted binders to the TMH regions and showed that for especially MHC alleles that bind polar regions a peak was found at the interface of TMH, showing that these structural requirements make preferred antigens. 
 
 > 8. Conservation of the TMH, or it is lack of variation, has been documented 
 > many years ago by different biochemical experiments and it is mainly 
@@ -427,41 +354,27 @@ is that hydrophobic peptides are less likely to be detected. As for the later po
 > identified by them could affect the presentation of some predicted or 
 > experimental epitopes.
 
-We agree with the reviewer that it is an interesting point to see if a 
-certain SNP results in a TMH being absent or presented, as we actually 
-tried that idea for a short time ourselves [1]. We abandoned this approach,
-as this was beyond the goal of finding if TMHs are evolutionary conserved,
-not of the consequences of a mutation. We do agree that this may be a nice follow-up study,
-yet, we have experienced this idea -as far as we came- became computationally intractable!
+We agree with the reviewer that it is an interesting idea to determine if SNPs that disrupt a TMH also prevent MHC presentation, and we actually 
+explored this [1]. However, we abandoned this approach,
+because it became computationally intractable.
 
  * [1] https://github.com/richelbilderbeek/bbbq_article/blob/v1.1/p_transition/create_dataset.R
 
 > 9. Figure 2 has not explanation of what it is included in each graph. 
 > Which one is from MHC-I? MHC-II? Is all together?
 
-We can imagine one glosses over a legend if there is a mismatch between 
-figures and legend. We have checked and it is there; here is a literal copy-paste:
-
-'(B-C)  Correlation  between  the  percentages  of 
-predicted  TMH-derived  epitopes  and  the  hydrophobicity  score  of  all  predicted 
-epitopes  for  MHC-I  (B)  and  MHC-II  haplotypes  (C).  Diagonal  line:  linear 
-regression  analysis.  Labels  are  shorthand  for  the  HLA  haplotypes,  see  the 
-supplementary Table S8 for the names.'
+We apologize if this is unclear and now state this in the legend.
 
 > 10. There is no Figure 4 in the manuscript.
 
-As already noted, something must have gone wrong with the figures.
-
-We agree that this is unacceptable and we will check again upon our next submission.
+We apologize for the mistake and have corrected this.
 
 > 11. This study would give more information if it was based on all the 
 > experimental data available in public databases, as IEDB, instead the 
 > proteome and predictive algorithms. I think authors must analyze the data 
 > using a more immunologically point of view.
 
-As requested, we have added another source of data for naturally occurring epitopes, 
-which is the IEDB (the Immune Epitope Database), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
-and an new figure 2. The added data strengthened the message of this paper.
+Please see above, we have performed the requested analysis of the IEDB.
 
 ## Check List
 
