@@ -66,10 +66,6 @@ is T cells which recognize peptides, called epitopes, derived from antigenic pro
 
 % \paragraph{Classification of HLA}
 
-\maksim{
-  I would change the whole sentence: 
-  T cells are an important part of the acquired immunity, they specialize in recognition of pathogen-derived peptides, called epitopes, presented on the cells surface of antigen presenting cells (APC) within the Major Histocompatibility Complexes (MHC) class I and II.
-}
 The MHC proteins are heterodimeric complexes encoded by the
 HLA (Human Leukocyte Antigens) genes.
 In humans, the peptide binding groove of MHC-I is made by only the alpha subunit. There are three classical haplotypes of MHC-I, hallmarked by a highly polymorphic alpha chain called HLA-A, HLA-B and HLA-C, that all present epitopes to cytolytic T cells. 
@@ -100,8 +96,7 @@ in any of the different alleles to determine which epitopes will result in an im
 as this will for instance aid the design of vaccines. 
 These studies have led to the development of prediction algorithms 
 that allow for very reliable \emph{in silico} 
-\maksim{predictions of the peptide binding affinities}
-predictions of the binding affinities of peptides
+predictions of the peptide binding affinities
 \cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
 For example, S. Tang et al. \cite{tang2011genome} found that, 
 of the 432 peptides that were predicted to bind to an MHC allele,
@@ -124,23 +119,18 @@ This over-presentation is attributed to the fact
 that the peptide-binding groove of most MHC-I alleles
 is relatively hydrophobic, 
 and therefore hydrophobic TMH-derived peptides have a higher affinity 
-to bind than their soluble hydrophilic 
-\maxim{shouldn't be hydrophobic? 
-  A hydrophobic peptide binds to its hydrophobic counterpart - hyprophobic grove of MHC-I}
+to bind than their soluble hydrophobic 
 counterparts. 
 
 TMHs are hydrophobic 
 as they need to span the hydrophobic lipid bilayer of cellular membranes.
 They consist of an alpha helix of, on average, 23 amino acids in length. 
 TMHs can also be predicted with high accuracy from a protein sequence 
-by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}. For example, a study by Jones \cite{jones2007improving} found that,
-from 184 transmembrane proteins (TMPs) with known topology, 
-80\% of the TMH predictions 
-\maxim{this part is confusing: 
-  correct maybe:
-  for example, TMH prediction algorithms identified 80\% of TMH in 184 transmembrane proteins (TMPs) with known topology [12].}
-replicated this finding.
- 
+by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}. 
+For example, a study by Jones \cite{jones2007improving} found that,
+from 184 transmembrane proteins (TMPs) with known \emph{in vitro} topology, 
+80\% of the TMH predictions of these proteins
+matched the experimental findings.
 TMHs are common structures in the proteins of humans and microbes. 
 Different TMH prediction tools estimate that 15-39\% of all proteins 
 in the human proteome contain at least one TMH \cite{ahram2006estimation}.
@@ -165,8 +155,7 @@ and render the protein inactive.
 
 This study had two objectives. 
 First, we aimed to generalize our findings by predicting
-\maxim{the antigenic presentation}
-the presentation of peptides 
+the antigenic presentation
 from different kingdoms of life in both MHC-I and -II. 
 From these \emph{in silico} predictions, we conclude that TMH-derived
 epitopes from a human, viral and bacterial proteome
@@ -215,9 +204,8 @@ of the proteins within these proteomes.
 To predict the affinity of an epitope to a certain HLA allele,
  \verb;EpitopePrediction; \cite{bianchi2017} for MHC-I 
 and \verb;MHCnuggets; \cite{shao2020high} for MHC-II was used.
-Both MCH-I and MHC-II alleles were selected to have a high occurrence
-\maxim{was it meant to be: 
-were selected based on their occurrence scores? or based in their prevalence in the population?},
+Both MCH-I and MHC-II alleles were selected 
+to have a high prevalence in the population,
 where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
 with over 99.6\% coverage of the population's MHC-I repertoire as defined by \cite{lund2004definition} \cite{sette1999},
 and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
@@ -233,8 +221,9 @@ of the peptides within a \emph{protein}.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
 This revised definition precludes bias of proteins 
 that give rise to no or only very few MHC epitopes.
-To verify that the results are similar \maxim{does it mean: that the new thresholding does not obscure the previous results, a side...}, a side by side comparison was performed shown in the supplementary materials, Figures \ref{fig:bianch_et_al_2017_1a}
-and \ref{fig:bilderbeek_et_al_2021_1a}.
+To verify that the slight change in method yields similar results,
+a side by side comparison is shown in the supplementary materials, 
+Figures \ref{fig:bianch_et_al_2017_1a} and \ref{fig:bilderbeek_et_al_2021_1a}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH epitopes obtained from experimental data}\label{subsec:elution_studies}
@@ -253,7 +242,7 @@ with UniProt ID UP000005640\_9606.
 We predicted the topology of the protein each epitope
 was found in, using \verb;TMHMM; \cite{krogh2001predicting},
 from which we concluded if the epitope is overlapping with a TMH
-with at least 1 amino acid \maxim{1 amino acid overlap is already a good enough evidence to label something as TMH?}.
+with at least 1 amino acid.
 
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
@@ -265,10 +254,8 @@ at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
 % \paragraph{Introduction}
 
 To determine the evolutionary conservation of TMHs,
-human single nucleotide polymorphisms (SNPs) were first collected
-\maxim{..TMHs, we first collected (SNPs) resulting in a single amino acid substitution to determine if this occurred within a predicted TMH or not.}
-that resulted in a single amino acid substitution,
-and we then determined if this substitution occurred within a predicted TMH or not.
+we first collected human single nucleotide polymorphisms (SNPs) 
+resulting in a single amino acid substitution to determine if this occurred within a predicted TMH or not.
 
 % \paragraph{Data}
 
@@ -302,7 +289,7 @@ resulting in $\approx$61k variations.
 Only variations that result in a SNP for
 a single amino acid substitution were analyzed, resulting in $\approx$38k SNPs.
 The exact amounts can be found in the supplementary materials,
-Tables \maxim{earlier you used brackets to refer to these tables} \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}.
+Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}.
 
 % \paragraph{Selection of SNPs}
 %
@@ -326,7 +313,8 @@ Per MHC-I allele, it shows the percentage of binders that overlap with a TMH
 with at least one residue.
 The horizontal line shows the expected percentage of TMH-derived epitopes 
 that would be presented, if TMH-derived epitopes would be presented just as 
-likely as epitopes derived from soluble regions \maxim{assuming equal incidence of soluble and TMH-derived epitope presentation.}.
+likely as epitopes derived from soluble regions,
+when assuming equal incidence of soluble and TMH-derived epitope presentation.
 For 11 out of 13 MHC-I alleles, TMH-derived epitopes are predicted to be presented more often 
 than the null expectation, for a human and bacterial proteome.
 For the viral proteome, 12 out of 13 MHC-I alleles present
@@ -432,8 +420,7 @@ See supplementary Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}
 for the detailed numbers and distributions of SNPs.
 
 Per protein, we calculated two percentages: 
-(1) the percentage of the total protein predicted to be TMHs \maxim{is it percentage of a protein sequence length bearing TMHs? 
-if it is true - it would be a better wording}, 
+(1) the percentage of a protein sequence length bearing TMHs, 
 and (2) the percentage of SNPs located within these predicted TMHs.
 Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
 The proportion of SNPs found in TMHs varied from 
@@ -470,8 +457,7 @@ ratio between the number of SNPs found in TMHs
 versus the number of SNPs as expected by chance.
 In effect, per 1000 SNPs found in soluble protein domains, 
 one finds 918 SNPs in TMHs,
-\maxim{your current figure does not describe it}
-as depicted in figure \ref{fig:conservation}. 
+as depicted (as percentages) in figure \ref{fig:conservation}. 
 
 We split this analysis for TMPs containing only a single TMH (so-called single-membrane spanners) and TMPs containing multiple TMHs (multi-membrane spanners). 
 We hypothesized that single-membrane spanners are less conserved than multi-membrane spanners,
