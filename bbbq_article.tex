@@ -5,8 +5,8 @@ The peptide-binding grooves of the alleles of most haplotypes
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
 therefore peptide fragments derived from human transmembrane helices (TMHs) are predicted to be presented more often as would be expected 
 based on their abundance in the proteome. However, the physiological reason of why membrane proteins might be over-presented is unclear. 
-In this study, we show that the over-presentation of TMH-derived peptides is general, as it is predicted for bacteria and viruses 
-and for both MHC-I and MHC-II. Moreover, we show that TMHs are evolutionarily more conserved, 
+In this study, we show that the predicted over-presentation of TMH-derived peptides is general, as it is predicted for bacteria and viruses 
+and for both MHC-I and MHC-II, and confirmed from re-analysis of epitope databases. Moreover, we show that TMHs are evolutionarily more conserved, 
 because single nucleotide polymorphisms (SNPs) are present 
 relatively less frequently in TMH-coding chromosomal regions 
 compared to regions coding for extracellular and cytoplasmic protein regions. 
@@ -30,8 +30,17 @@ epitopes, T lymphocyte, MHC-I, MHC-II, evolutionary conservation
   \begin{tabular}{ll}
     Abbreviation & Full               \\ 
     \hline
-    MAP & Membrane-associated protein \\
-    TMH & Transmembrane helix         \\
+ER & Endoplasmatic reticulum \\
+ERAD & ER-associated degradation \\
+HLA & Human leukocyte antigen \\
+IEDB & Immune Epitope Database  \\
+LB & lipid body \\
+MAP & Membrane-associated protein \\
+MHC & Major histocompatibility complex \\
+MVB & Multivesicular body \\
+PLC & Peptide-loading complex \\
+SNP & Single nucleotide polymorphism \\
+TMH & Transmembrane helix         \\
     TMP & Transmembrane protein
   \end{tabular}
 \end{table}
@@ -47,7 +56,7 @@ such as fungi, bacteria or viruses.
 An important part of the acquired immune response, 
 that develops specialized and more specific recognition of pathogens 
 than the innate immune response, 
-are T cells which recognize peptides, called epitopes, derived from antigenic proteins presented on Major Histocompatibility Complexes (MHC) class I and II on the cell surface. 
+is T cells which recognize peptides, called epitopes, derived from antigenic proteins presented on Major Histocompatibility Complexes (MHC) class I and II on the cell surface. 
 
 % \paragraph{Classification of HLA}
 
@@ -110,8 +119,7 @@ TMHs are hydrophobic
 as they need to span the hydrophobic lipid bilayer of cellular membranes.
 They consist of an alpha helix of, on average, 23 amino acids in length. 
 TMHs can also be predicted with high accuracy from a protein sequence 
-by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient},
-for example, \cite{jones2007improving} found that,
+by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}. For example, a study by Jones \cite{jones2007improving} found that,
 from 184 transmembrane proteins (TMPs) with known topology, 
 80\% of the TMH predictions replicated this finding.
  
@@ -121,7 +129,7 @@ in the human proteome contain at least one TMH \cite{ahram2006estimation}.
 However, the physiological reason why peptides derived from TMHs 
 would be presented more often than peptides 
 stemming from soluble (i.e., extracellular or cytoplasmic) protein regions is unknown. 
-We hypothesized that the presentation of 
+In this study, we hypothesized that the presentation of 
 TMH residues is evolutionary selected for, 
 because TMHs are less prone to undergo escape mutations. 
 One reason to expect such a reduced 
@@ -189,7 +197,7 @@ To predict the affinity of an epitope to a certain HLA allele,
 and \verb;MHCnuggets; \cite{shao2020high} for MHC-II was used.
 Both MCH-I and MHC-II alleles were selected to have a high occurrence,
 where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
-with over 99.6\% coverage of the populations MHC-I repertoire as defined by \cite{lund2004definition} \cite{sette1999},
+with over 99.6\% coverage of the population's MHC-I repertoire as defined by \cite{lund2004definition} \cite{sette1999},
 and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
 of 14\% or more in the human population \cite{greenbaum2011functional}.
  
@@ -203,7 +211,7 @@ of the peptides within a \emph{protein}.
 % See https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/72e6755a31d400158368509fd80a41e984677ab1/predict-binders.R#L17
 This revised definition precludes bias of proteins 
 that give rise to no or only very few MHC epitopes.
-To verify that the results are similar, a side by side comparison was performed shown in the supplementary materials.
+To verify that the results are similar, a side by side comparison was performed shown in the supplementary materials. \textbf{GEERT: where? give reference to figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH epitopes obtained from experimental data}\label{subsec:elution_studies}
@@ -215,14 +223,14 @@ we mined the Immune Epitope Database (IEDB) \cite{vita2019immune}
 for confirmed human MHC-ligands.
 We queried the IEDB for all linear epitopes obtained
 from MHC ligand assays in healthy humans, 
-for the MHC alleles as used in this study.
-From these epitopes, we kept those that are found
+carrying the MHC alleles as used in this study.
+From these epitopes, we kept those that were present
 exactly once in the human reference proteome
 with UniProt ID UP000005640\_9606.
 We predicted the topology of the protein each epitope
 was found in, using \verb;TMHMM; \cite{krogh2001predicting},
-from which we conclude if the epitope is overlapping with a TMH
-for at least 1 amino acid.
+from which we concluded if the epitope is overlapping with a TMH
+with at least 1 amino acid.
 
 The full analysis can be found
 at \url{https://github.com/richelbilderbeek/bbbq_article_issue_157}.
@@ -245,8 +253,8 @@ NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used:
 the \emph{dbSNP} \cite{sherry2001dbsnp} database,
 which contains 650 million 
 cataloged non-redundant humane variations (called RefSNPs,
-\url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}), and the databases \emph{gene} (for gene names, \cite{brown2015gene})
-and \emph{protein} (for proteins sequences, \cite{sayers2010database}).
+\url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}), and the databases \emph{gene} (for gene names \cite{brown2015gene})
+and \emph{protein} (for proteins sequences \cite{sayers2010database}).
 
 % \paragraph{Pipeline}
 
@@ -297,7 +305,7 @@ that would be presented, if TMH-derived epitopes would be presented just as
 likely as epitopes derived from soluble regions.
 For 11 out of 13 MHC-I alleles, TMH-derived epitopes are predicted to be presented more often 
 than the null expectation, for a human and bacterial proteome.
-For the viral proteome, 12 out of 13 alleles present
+For the viral proteome, 12 out of 13 MHC-I alleles present
 TMH-derived epitopes more often than expected by chance.
 The extent of the over-presentation between the different alleles
 is similar for the probed proteomes, 
@@ -333,7 +341,7 @@ grooves \cite{bianchi2017}.
 Figures \ref{fig:hydrophobicity_1} and \ref{fig:hydrophobicity_2}
 show the extent of over-presentation
 of TMH-derived epitopes as a function of the hydrophobicity preference score 
-for the different alleles.
+for the different alleles. \textbf{GEERT: is this done for human, SARS-CoV-2, or MtB?}
 An assumed linear correlation explains 88\% of the variability in MHC-I.
 For MHC-II, 62\% of the variability is explained by hydrophobicity. 
 This indicates that TMH-derived peptides are over-presented, 
@@ -344,27 +352,26 @@ are relatively hydrophobic.
 \subsection{Experimental validation of presentation of TMH-derived peptides}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The IEDB contains millions of linear epitope sequences obtained
+The Immune Epitope Database (IEDB) from the National Institutes of Health contains millions of linear epitope sequences obtained
 by an MHC ligand assay.
 For the MHC alleles used in this study, 
 we obtained 54,303 and 2,484 linear epitope sequences for the MHC-I
 and MHC-II alleles respectively.
 There are relatively few epitopes for MHC-II, 
-as MHC-II has many more different alleles than MHC-I, 
-where we select only the 21 MHC-II alleles used in this study.
+as MHC-II has many more different alleles than MHC-I and we selected only the epitopes found for the 21 MHC-II alleles used in this study.
 
 Figure \ref{fig:2a} shows that there are similar levels of
 over-presentation of TMH-derived epitopes between (1) the
-percentage of TMH-derived epitopes that is presented \emph{in vivo}
+percentage of TMH-derived epitopes that is reported in the IEDB database
 versus (2) the percentage of TMH-derived epitopes that is predicted to be presented
 in MHC-I alleles. For MHC-II alleles, there were too few epitopes per MHC allele
 to result in an informative figure. 
 
 We grouped all epitopes presented by MHC-I and MHC-II alleles and show 
 the percentage of which these were TMH-derived in figure \ref{fig:2b},
-which are 22\% and 10\%.
+which are 22\% and 10\%. \textbf{GEERT: zou je ook geen horizontale rode streep kunnen trekken op de verwachtingswaardes, net al in Fig 1A? Dan zie je dat het hoger is}
 
-The percentage of TMH derived epitopes is relatively high
+\textbf{GEERT: zie voorgaande punt aangaande verwachtingwaarde. De gevonden waardes zijn hoger, dus zoek je in volgende stuk tekst naar problemen die er niet zijn, en zou dit dus weg laten. Is onduidelijk en wollig stuk: The percentage of TMH derived epitopes is relatively high
 for both sources of epitopes, which are (1) the predicted 
 9-mers (for MHC-I) and 14-mers (for MHC-II) from
 a reference human proteome  (see Figure \ref{fig:bbbq_1_smart_results}),
@@ -373,14 +380,15 @@ These results cannot be compared with an \emp{a priori}
 expactation, as the predicted percentages are biased by
 (I) the expression of the probed proteins and cleavage sites, 
 (II) the bias in mass spectrometry towards hydrophillic peptides 
-and (III) availablilty of data for the different alleles.
+and (III) availablilty of data for the different alleles.}
 
-Regardless, these findings robustly confirm that
-epitopes derived from human TMHs are presented in both MHC-I and MHC-II.
+
+These findings robustly confirm that
+epitopes derived from human TMHs are presented in both MHC-I and MHC-II, and support that they are over-presented.
 See the supplementary Table \ref{tab:elution} for the exact values.
 
-We also mined the IEDB database for in
-which T-cell responses were confirmed against specific human epitopes from the specified
+We also mined the IEDB database for epitopes for
+which T-cell responses were confirmed from the specified
 alleles, from the total reports 36\% and 7\% 
 concerned TMH-derived epitopes in MHC class I and II, respectively 
 (see Figure \ref{fig:t_cells_present_tmh_derived_epitopes}). 
@@ -413,8 +421,9 @@ Per protein, we calculated two percentages:
 and (2) the percentage of SNPs located within these predicted TMHs.
 Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
 The proportion of SNPs found in TMHs varied from 
-none (i.e. all SNPs were in
-soluble regions) to all.
+none (i.e., all SNPs were in
+soluble regions) to all (i.e., all SNPs were in
+TMHs).
 To determine if SNPs were randomly distributed over the protein, we performed a linear regression analysis,
 and added a 95\% confidence interval on this regression.
 This linear fit nearly goes through the origin and has a slope
@@ -471,7 +480,7 @@ For the multi-spanners, we found 3,351 SNPs in TMH, where
 $\approx3,678$ were expected by chance. 
 The chance to observe this or a lower number by chance is 
 $8.315841 \cdot 10^{-12}$, 
-which means this number is significantly less as explained by variation. 
+which means this number is significantly less as explained by variation. The TMHs of multi-spanners are thus significantly more conserved than soluble protein regions, whereas this is not the case for single-spanners.
 
 Also, for single- and multi-spanners, 
 we determined the relevance of this finding by
@@ -493,10 +502,7 @@ Epitope prediction is important to understand the immune system
 and for the design of vaccines.
 In this study, we provide evidence that epitopes
 derived from TMHs are a major but overlooked source of MHC epitopes. 
-Our bioinformatics predictions indicate that the TMH-derived epitope repertoire is larger than expected by chance, 
-regardless of the organism. Furthermore we see despite the bias towards hydrophilic peptides due to their enhanced ionization in mass spec that in several peptide elution studies still a higher fraction of TMH derived epitopes is found than predicted by chance. Therefor it's tempting to assume that this would also result in enhanced T-cell responses, assuming that the conservation of TMH's across organisms does not significantly effect the deletion of such T-cells by central tolerance mechanisms.
-Moreover, reanalysis of MHC-Ligands from the IEDB database and T-cell studies confirmed the presentation and immunicity of TMH-derived epitopes.
-Finally, our SNP analysis shows that TMHs are evolutionary more conserved 
+Our bioinformatics predictions indicate that the TMH-derived epitope repertoire is larger than expected by chance for both MHC-I and MHC-II, regardless of the organism. Moreover, reanalysis of MHC-ligands from the IEDB database confirmed the presentation of TMH-derived epitopes. Therefor, it seems likely that TMH-derived epitopes would also result in enhanced T cell responses, although the conservation of TMHs might promote the deletion of T cells responsive to TMH-derived epitopes by central tolerance mechanisms. Finally, our SNP analysis shows that TMHs are evolutionary more conserved 
 than solvent-exposed protein regions.
 
 \subsection{Mechanism of MHC presentation of TMH-derived epitopes}
@@ -536,20 +542,20 @@ This ERAD-driven antigen retrotranslocation might be facilitated by lipid bodies
 since LBs can serve as cytosolic sites for ubiquitination of ER-derived cargo \cite{fujimoto2006proteasomal}. 
 
 A second possibility is that TMPs are proteolytically processed 
-by intramembrane proteases that cleave TMHs while they are still membrane embedded. Supporting this hypothesis is the well established notion that peptides generated by signal peptide peptidases (SPPs), an important class of intramembrane proteases that cleave TMH-like signal sequences, 
+by intramembrane proteases that cleave TMHs while they are still membrane embedded. Supporting this hypothesis is the well-established notion that peptides generated by signal peptide peptidases (SPPs), an important class of intramembrane proteases that cleave TMH-like signal sequences, 
 are presented on a specialized class of MHC-I called HLA-E \cite{oliveira2015alternative}. 
 The loading of peptides generated by SPP onto MHC-I does not depend on the proteosome and TAP, 
 possibly because the peptides are directly released into the lumen of the ER \cite{oliveira2015alternative}. 
-However, this mechanism would not explain how multispanner polytopic membrane proteins can be processed for antigen presentation, because SPPs only cleave TMH-like signal sequences at the N-terminus of a protein. 
+However, this mechanism cannot explain how most membrane proteins can be processed for antigen presentation, because SPPs only cleave TMH-like signal sequences at their C-termini, and N-terminal domains will hence not be removed. 
 Nevertheless, the presentation of peptides with a high hydrophobicity index 
 was shown to be independent of TAP as well \cite{lautscham2001processing}, 
-suggesting the TMH peptides might perhaps be released directly in the ER lumen by other intramembrane proteases. 
+suggesting that the TMH peptides might perhaps be released directly in the ER lumen by other intramembrane proteases. 
 
 A third possibility is that peptide processing and MHC-loading occur in multivesicular bodies (MVBs) \cite{oliveira2015alternative}. 
 TMPs can be routed from the plasma membrane and other organelles by vesicular trafficking to endosomes. Eventually, these TMPs can be sorted by the endosomal sorting complexes required for transport (ESCRT) pathway into luminal invaginations that pinch off from the limiting membrane and form intraluminal vesicles. This thus results in MVBs where the membrane proteins destined for degradation are located in intraluminal vesicles. Upon the fusion of MVBs with lysosomes, 
 the entire intraluminal vesicles including the TMPs are degraded \cite{gruenberg2020life}. 
 Via this mechanism, TMPs might well be processed for antigen presentation, 
-particularly since the loading of MHC class II molecules is well understood 
+particularly since the loading of MHC-II molecules is well understood 
 to occur in MVBs \cite{kleijmeer2001reorganization,peters1991segregation,zwart2005spatial}. 
 However, such processing of membrane proteins in MVBs for antigen presentation poses a problem, because complexes of HLA-DR with its antigen-loading chaperon HLA-DM were only observed on intraluminal vesicles, 
 but not on the limiting membranes of MVBs \cite{zwart2005spatial}, 
@@ -558,7 +564,7 @@ and it is hence unclear how TMPs from these microbes
 would be routed to MVBs for MHC-II loading \cite{zwart2005spatial}.
 
 Alternatively to the enzymatic degradation of lipids in MVBs by lipases \cite{sander2016lipase,gilleron2016lysosomal}, 
-they might be oxidatively degraded by reactions with radical oxygen species (ROS) produced by the NADPH oxidase NOX2 \cite{dingjan2016lipid}. 
+they might be oxidatively degraded by reactions with radical oxygen species produced by the NADPH oxidase NOX2 \cite{dingjan2016lipid}. 
 This oxidation can result in a destabilization and disruption of membranes \cite{dingjan2016lipid} 
 and might thereby lead to the extraction of TMPs. 
 Due to the hydrophobic nature of TMHs, 
@@ -573,7 +579,7 @@ and it is unclear how these aggregates would be processed further for MHC loadin
 % \paragraph{Selection undetectable in whole proteome}
  
 In general, one might expect that evolutionary selection results in
-an immune system that as most attentive for protein regions that are
+an immune system that is most attentive for protein regions that are
 essential for the survival, proliferation and/or virulence or pathogenic microbes, 
 as these will be most conserved.
 In SARS-CoV-2, for example, there is preliminary evidence that the strongest
@@ -591,7 +597,7 @@ exerted by the immune system was either weak or absent.
 % \paragraph{Selection may be detectable in TMHs}
 
 Evolutionary selection of pathogens by a host's immune system,
-however, is likelier to occur for proteomic patterns that are general,
+however, is likelier to occur for protein patterns that are general,
 over patterns that are rare.
 While essential catalytic sites in a pathogenic proteome
 might be relatively rare, TMHs are common and thus might be a more feasible 
@@ -605,18 +611,18 @@ towards TMHs in multi-spanners, as these are evolutionarily more conserved.
 
 There have been more efforts to assess the conservation of TMHs,
 using different methodologies.
-One such example is \cite{stevens2001substitution}, 
+One such example is a study by Stevens and Arkin \cite{stevens2001substitution}, 
 in which aligned protein sequence data was used.
 Also this study found that TMHs are evolutionarily more conserved,
 as the mean amino acid substitution rate in TMHs is about ten
 percent lower,
 which is a similar value as we found.
-Another example is a study that estimated the conservation
+Another example is a study by Oberai, et al. \cite{oberai2009structural} that estimated the conservation
 scores for TMHs and soluble regions based on 
 alignments of evolutionary related proteins,
 and also found that TMHs are more conserved, 
 with a conservation score that was 17\% higher in 
-TMHs \cite{oberai2009structural}.
+TMHs.
 Note that the last study also found that mutations in human TMHs are likelier to cause
 a disease, in line with our conclusion that TMHs are more conserved.
 
@@ -713,14 +719,14 @@ RJCB, MB, GvdB and FB wrote the article.
     \textbf{(A)} 
     The percentage of epitopes for MHC-I and -II haplotypes that are predicted to 
     overlap with TMHs for the proteomes of SARS-CoV-2 (top row), human (middle 
-    row) and \emph{M. tuberculosis} (bottom row).
+    row) and \emph{M. tuberculosis} (MtB; bottom row).
     The pair of dashed lines in each plot indicate the lower and upper bound of the 99\% confidence interval.
     See supplementary Tables \ref{tab:tmh_binders_mhc2} and \ref{tab:tmh_binders_mhc1}
     for the exact TMH and  epitope counts.
     \textbf{(B-C)}
     Correlation between the percentages of predicted TMH-derived epitopes
     and the hydrophobicity score of all predicted epitopes for MHC-I \textbf{(B)}
-    and MHC-II haplotypes \textbf{(C)}. 
+    and MHC-II haplotypes \textbf{(C)}. \textbf{GEERT: are panels B-C done with human, SARS-CoV-2 or MtB?}
     Diagonal red line: linear regression analysis. 
     Labels are shorthand for the HLA haplotypes,
     see the supplementary Table \ref{tab:haplotype_abbreviations} for the names.
@@ -758,13 +764,13 @@ RJCB, MB, GvdB and FB wrote the article.
       Robust prediction that TMH epitopes are presented \emph{in vivo}.
     }
     The percentage of epitopes for MHC-I and -II alleles 
-    that overlap with TMHs that are presented
+    that overlap with TMHs that are presented.
     \textbf{(A)} 
     Observed and predicted percentage of TMH-derived epitopes
     \textbf{(B)} 
-    MHC ligands from the IEDB bind to TMH-derived epitopes.
+    MHC ligands from IEDB binding to TMH-derived epitopes.
     The numbers above the bars denotes the number of epitopes
-    obtained using an MHC ligand assay
+    obtained using an MHC ligand assay. \textbf{GEER: zie comment in main text: wellicht rode horizontale streep bij verwachtingswaarde, net als in Fig 1A? Maakt manuscript veel duidelijker}
   }
   \label{fig:elution}
 \end{figure}
@@ -810,7 +816,7 @@ RJCB, MB, GvdB and FB wrote the article.
     \textbf{(A)} 
     Percentage of SNPs found in TMHs.
     Each point shows for one protein the predicted percentage of
-    TMH ($x$-axis) and the observed occurrence of SNPs being located
+    amino acids that are part of a TMH ($x$-axis) and the observed occurrence of SNPs being located
     within a TMH ($y$-axis).
     The dashed diagonal line shows the line of equality (i.e.,
     equal conservation of TMHs and soluble protein regions). 
@@ -822,7 +828,7 @@ RJCB, MB, GvdB and FB wrote the article.
     The number of SNPs in TMHs as expected by chance (left bar) 
     and found in the dbSNP database (right bar).
     Percentages show the relative conservation
-    of SNPs in TMHs found.
+    of SNPs in TMHs found relative to stochastic chance.
   }
 \end{figure}
 
@@ -865,14 +871,14 @@ RJCB, MB, GvdB and FB wrote the article.
       \textbf{(A)} 
       Percentage of SNPs found in TMPs predicted to have only a single
       (left) or multiple (right) TMHs.
-      Each point shows for one protein the predicted percentage of TMH ($x$-axis) and the observed occurrence of SNPs being located within a TMH ($y$-axis). The dashed diagonal lines show the line of equality (i.e., equal conservation of TMHs and soluble protein regions). 
+      Each point shows for one protein the predicted percentage of amino acids that are part of a TMH ($x$-axis) and the observed occurrence of SNPs being located within a TMH ($y$-axis). The dashed diagonal lines show the line of equality (i.e., equal conservation of TMHs and soluble protein regions). 
       The diagonal red lines indicate a linear fit, the gray areas their 95\% confidence intervals.
       \textbf{(B)} 
       The number of SNPs in TMHs as expected by chance 
       and observed in the dbSNP database, 
       for TMPs with one TMH (single-spanners) and multiple TMHs (multi-spanners).
       Percentages show the relative conservation
-      of SNPs in TMHs found.
+      of SNPs in TMHs found relative to the stochastic chances.
       \textbf{(C)} 
       Distribution of the proportion of amino acids residing
       in the plasma membrane. 
@@ -929,7 +935,7 @@ MHC-II (see supplementary Table \ref{tab:ic50_binders_mhc2}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 See supplementary Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}
-for an overview of all amounts.
+for an overview of all amounts. \textbf{GEERT in Table S1 en S2 schrijven SARS-CoV-2 ipv covid (want covid is de ziekte, SARS-CoV-2 het virus)}
 In supplementary Table \ref{tab:ncbi_counts_1} there are multiple instances where
 the amounts are expected to add up, yet don't, as one SNP can work on
 multiple isoforms. For example, there are 9,621 unique SNPs 
@@ -989,7 +995,7 @@ IEDB database, for two assays: an MHC ligand assay (Figure \ref{fig:2a})
 and a T cell assay (see figure \ref{fig:t_cells_present_tmh_derived_epitopes}),
 as a bar plot.
 Supplementary Table \ref{tab:elution} below shows the
-exact numbers.
+exact numbers. \textbf{GEERT: spelfout in legenda: brackets ipv braces}
 
 % tab:elution
 \input{bbbq_article_issue_157/results.tex}
@@ -1021,7 +1027,7 @@ the percentage of TMH-derived epitopes, with a linear trendline.
   \caption{
     \textbf{
       TMH-derived epitopes are over-presented when using
-      predicted as well as \emph{in vivo} data
+      predicted as well as experimental data
     }
     For the MHC class I alleles, the over-presentation of
     TMH-derived epitopes is correlated between 
@@ -1042,22 +1048,19 @@ the percentage of TMH-derived epitopes, with a linear trendline.
 
 Figure \ref{fig:t_cells_present_tmh_derived_epitopes} 
 shows the percentage of TMH-derived
-epitopes as presented \emph{in vivo} in T cells. 
+epitopes of the reported epitopes that for which T-cell responses were established. 
 The data was obtained from the IEDB and includes only the MHC
-alleles as used in this study. As there are many (especially class II)
+alleles used in this study. As there are many (especially class II)
 MHC alleles, only a small percentage of the full IEDB data could be used.
-Although this figure demonstrates that TMH-derived epitopes are presented
-\emph{in vivo}, we excluded this figure from the main article, as these
-protocols select epitopes in a non-random fashion (unlike the
-MHC ligand assays, as presented in the main article).
+
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{bbbq_article_issue_157/figure_2d.png}
   \caption{
     \textbf{
-      T cells present TMH-derived epitopes \emph{in vivo}
-    }
+      TMH-derived epitopes evoke T-cell responses 
+      }
     The numbers above the bars denotes the number of epitopes
     found in the IEDB for the MHC alleles used in this study.
   }
