@@ -141,12 +141,12 @@ and their corresponding legends in the original submission. We apologize for thi
 > how epitope prediction favors TMHs is interesting but only part of 
 > the question.
 
-As suggested, we have performed an analysis of epitopes taken from the IEDB (the Immune Epitope Database from NIH), confirming that peptides derived from transmembrane helices (TMHs) are more likely to be presented on MHC class I and II (new Figure 2). Furthermore, we  mined the IEDB database for epitopes that evoke T cell responses (as shown in new Figure S3), which are also likelier to be derived from TMHs. 
+As suggested, we have performed an analysis of epitopes taken from the IEDB (the Immune Epitope Database from NIH), confirming that peptides derived from transmembrane helices (TMHs) are more likely to be presented on MHC class I and II (new Figure 2). Furthermore, we  mined the IEDB database for epitopes that evoke T cell responses (as shown in new Figure S4), which are also likelier to be derived from TMHs. 
 
 We also correlated the percentage of TMH-derived epitopes
 taken from 9-mers (for MHC-I) and 14-mers (for MHC-II) from
 a human reference proteome, with these percentages as obtained
-from the IEDB (as shown in new Figure S2), indicating that
+from the IEDB (as shown in new Figure S3), indicating that
 our findings are robust.
 
 > The authors do present an example of TMH that are known to be presented by 
@@ -322,7 +322,7 @@ We defined a TMH-derived epitope as any epitope that overlaps with at least one 
 
 In addition, please note that this definition of a TMH-derived epitope does not alter the conclusion, as increasing the overlap equally reduces the chance that an epitope stems from a TMH. To prove this point, we did exactly the same analysis as shown in Figure 2a,
 yet with defining a TMH-derived epitope as an epitope that overlaps with a TMH
-for at least 2 residus, as shown in Figure S16. These two figures are highly similar. See Table S14 and S5, and S15 and S7 for the corresponding values.
+for at least 2 residues, as shown in Figure S14. These two figures are highly similar. See Table S14 and S5, and S15 and S7 for the corresponding values.
 
 > 5. The latter point is also more relevant to the case of MHC-II, 
 > where the anchor positions are “internal” and the extremes are more 
@@ -345,7 +345,7 @@ Please see above. Increasing the overlap does not alter the conclusion.
 > each MHC in this study? There is no explanation of how MHC alleles with 
 > polar binding preferences bind part of the TMH.
 
-As suggested, we have performed an analysis of epitopes taken from the IEDB (the Immune Epitope Database from NIH), confirming that peptides derived from TMHs are more likely to be presented on MHC class I and II as predicted (new Figure 2). Furthermore, we  mined the IEDB database for epitopes that evoke T cell responses (as shown in new Figure S3), which are also likelier to be derived from TMHs. 
+As suggested, we have performed an analysis of epitopes taken from the IEDB (the Immune Epitope Database from NIH), confirming that peptides derived from TMHs are more likely to be presented on MHC class I and II as predicted (new Figure 2). Furthermore, we  mined the IEDB database for epitopes that evoke T cell responses (as shown in new Figure S4), which are also likelier to be derived from TMHs. 
 
 We also correlated the percentage of TMH-derived epitopes
 taken from 9-mers (for MHC-I) and 14-mers (for MHC-II) from
