@@ -61,8 +61,11 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
-      - name: for splitting PDFs
-        run: sudo apt install pdftk
+      - name: Install pdflatex
+        run: sudo apt-get install pdflatex
+
+      - name: Install pdftk, for splitting PDFs
+        run: sudo apt-get install pdftk
 
       - name: revision
         run: chmod +x create_revision.sh; ./create_revision.sh
