@@ -18,7 +18,8 @@ We thank you for your help and the reviewers' feedback. Below we address all rev
 First and foremost, it is clear something had gone wrong with the figures 
 and their corresponding legends in our original submission. We apologize for this, and have double-checked the revised version of the manuscript.
 
-As requested, we have added another source of data for naturally occurring epitopes, which is the suggested IEDB (the Immune Epitope Database from NIH), resulting in a rewrite of paragraph 2.2 ('Peptide Elution Studies')
+As requested, we have added another source of data for naturally occurring epitopes, which is the suggested IEDB (the Immune Epitope Database from NIH), resulting in a rewrite of 
+paragraph 2.2 ('TMH epitopes obtained from experimental data')
 and a new figure 2. The collection of this new data was the main reason for needing the extended amount of time. The added IEDB data strengthened the message of this paper, as we found an over-presentation of epitopes derived from tranmembrane helices for both MHC class I and II.
 
 ## Reviewer 1
@@ -71,12 +72,21 @@ Thanks for the appreciation of our work!
 > of variability is explained by the hydrophobicity score of TMH-derived 
 > epitopes in MHC-II than in MHC-I, with regard to the discussion in section 4.2
 
-\textbf{@Frans: deze vind jij denk ik mooi om te doen!
-GEERT: kan het met de lengte te maken hebben? We nemen immers alles met >1 aminozuur overlap...}
+Section 4.2 discusses why TMHs are evolutionarily more conserverved
+and the role of the immune system in this. 
+Figures 1b and 1c show that there is a correlation 
+between MHC alleles presenting TMH-derived epitopes
+and preferring hydrophobic elements. Figure 1c
+shows that this correlation is weaker in MHC-II.
+
+We fail to see a relation between these two sections strong enough
+to describe it. Apparently, we overlook something
+and would enjoy to hear it.
 
 > L. 64: "[6] found that" can be written as "S. Tang et al. [6] found that"
 
 Thanks, we changed the LaTeX to:
+
 > For example, S. Tang et al. \cite{tang2011genome} found that, 
 In addition, we have amended similar instances throughout the manuscript.
 
@@ -115,7 +125,7 @@ Great!
 > presentation pathways.
 
 First and foremost, something must have gone wrong with the figures 
-and their corresponding legends in the orginial submission. We apologize for this and have corrected this in our revised manuscript.
+and their corresponding legends in the original submission. We apologize for this and have corrected this in our revised manuscript.
 
 > 1) The authors claim to have shown that transmembrane helices (TMH) are 
 > important sources of MHC class I and class II epitopes. But they have not 
@@ -149,8 +159,6 @@ our findings are robust.
 
 As discussed in the response above, we replaced the epitopes obtained
 from two elustion studies by epitope sequences from the IEDB.
-\textbf{GEERT: ik heb stuk gewist. Je ziet wel degelijk meer TMH-overlapping peptides als je verwacht bij chance. Dit is dus precies wat je verwacht; alle artifacten zouden resulteren in een lagere waarde. Geen woorden aan vuil maken dus. ZIe ook mijn comments in MS}
-
 
 > In addition to the two peptidome studies used by the authors, 
 > many comprehensive immunopeptidomes are available for analysis. For example, 
@@ -219,7 +227,7 @@ We politely disagree. First, that a peptide is hydrophobic does not mean it stem
 > protein than B cells is confusing and unnecessary since this is already 
 > well appreciated.
 
-We agree with the reviewer that this is a well known phenomena and have removed it from our revised manuscript. \textbf{GEERT: correct?} 
+We agree with the reviewer that this is a well known phenomena and have removed it from our revised manuscript.
 
 > 6) Finally, the analyses of chance versus observed epitopes do not include 
 > any uncertainly estimates.
@@ -277,7 +285,7 @@ We hope this is fixed now.
 > DQ2.2 and DQ7.5, in this case each haplotype is a combination of two 
 > specific alleles derived from DQA and/or DQB.
 
-We agree that there has been a misconception in nomenclature and corrected the manuscript accordingly. \textbf{GEERT: is dit nu al helemaal doorgevoerd? Dus overal haplotype voor allotype vervangen?}
+We agree that there has been a misconception in nomenclature and corrected the manuscript accordingly.
 
 > 2. Why the authors stated that MHC alleles are slightly hydrophobic? Some 
 > of the allotypes they used are highly hydrophilic because they have highly 
