@@ -915,6 +915,76 @@ RJCB, MB, GvdB and FB wrote the article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differences with Bianchi et al., 2017}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A part of this study does the same analysis as Bianchi et al., 2017.
+mainly concern the use of different
+software and a different definition of what an MHC binder is.
+
+% \paragraph{Definition of what a binder is}
+
+The earlier study defined a peptide an MHC binder 
+if \emph{within the protein} in which it was found, 
+is was among the peptides with the 2\% lowest IC50 values.
+This can be seen at \url{https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/master/predict-binders.R},
+where the binders are written to file.
+
+However, in this study, an MHC binder is defined as a peptide within a \emph{proteome} in which it is found, that is among the peptides with the 2\% lowest IC50 values.
+Subsection \ref{subsec:ic50s_per_haplotype} shows the IC50 values
+for a binder per MHC allele. 
+
+% \paragraph{Selenoproteins}
+
+Our previous study used the TMHMM web server
+to predict TMHs.
+The desktop version of TMHMM, however, gives an
+error message on the 25 selenoproteins found in the human
+reference proteome.
+For the sake of reproducible research, we used the desktop version (as
+we can call it from scripts) and, due to this, we removed the
+selenoproteins from this analysis.
+
+% \paragraph{Compare results in figure}
+
+To verify if the previous and the current method give rise to
+notable difference, we show a side-by-side comparison
+in figures \ref{fig:bianch_et_al_2017_1a} and \ref{fig:bilderbeek_et_al_2021_1a}.
+The figures that MHC molecules that over-present or under-present TMH-derived epitopes,
+do so in both studies. The extent to which TMH-derived epitopes are
+presented, however, is more extreme in our current setup.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{bianchi_et_al_2017_results/figure-1-a.png} % use same naming as them
+    \label{fig:bianch_et_al_2017_1a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \caption{}
+    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_f_tmh_2_human_mhc1.png}
+    \label{fig:bilderbeek_et_al_2021_1a}
+  \end{subfigure}
+
+  \caption{
+    \textbf{(A)} 
+    Results for \cite{bianchi2017}. 
+    Dashed lines denotes the coincidence interval.
+    \textbf{(B)}
+    Results for this study.
+    Dashed line denotes the percentage as expected by chance.
+  }
+\end{figure}
+
+% Process all floats before going to a next page
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IC50 values of binders per MHC allele}
 \label{subsec:ic50s_per_haplotype}
@@ -1017,6 +1087,8 @@ exact numbers.
 % Process all floats before going to a next page
 \clearpage
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Correlation of epitope presentation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1105,75 +1177,6 @@ Supplementary Tables \ref{tab:tmh_binders_mhc1} and \ref{tab:tmh_binders_mhc2}
 show the exact number of binders, binders that overlap with TMHs
 and the percentage of binders that overlap with TMHs, as
 visualized by figure \ref{fig:bbbq_1_smart_results}.
-
-% Process all floats before going to a next page
-\clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Differences with Bianchi et al., 2017}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-A part of this study does the same analysis as Bianchi et al., 2017.
-mainly concern the use of different
-software and a different definition of what an MHC binder is.
-
-% \paragraph{Definition of what a binder is}
-
-The earlier study defined a peptide an MHC binder 
-if \emph{within the protein} in which it was found, 
-is was among the peptides with the 2\% lowest IC50 values.
-This can be seen at \url{https://github.com/richelbilderbeek/bianchi_et_al_2017/blob/master/predict-binders.R},
-where the binders are written to file.
-
-However, in this study, an MHC binder is defined as a peptide within a \emph{proteome} in which it is found, that is among the peptides with the 2\% lowest IC50 values.
-Subsection \ref{subsec:ic50s_per_haplotype} shows the IC50 values
-for a binder per MHC allele. 
-
-% \paragraph{Selenoproteins}
-
-Our previous study used the TMHMM web server
-to predict TMHs.
-The desktop version of TMHMM, however, gives an
-error message on the 25 selenoproteins found in the human
-reference proteome.
-For the sake of reproducible research, we used the desktop version (as
-we can call it from scripts) and, due to this, we removed the
-selenoproteins from this analysis.
-
-% \paragraph{Compare results in figure}
-
-To verify if the previous and the current method give rise to
-notable difference, we show a side-by-side comparison
-in figures \ref{fig:bianch_et_al_2017_1a} and \ref{fig:bilderbeek_et_al_2021_1a}.
-The figures that MHC molecules that over-present or under-present TMH-derived epitopes,
-do so in both studies. The extent to which TMH-derived epitopes are
-presented, however, is more extreme in our current setup.
-
-\begin{figure}
-  \centering
-  \begin{subfigure}[t]{0.45\textwidth}
-    \centering
-    \caption{}
-    \includegraphics[width=\linewidth]{bianchi_et_al_2017_results/figure-1-a.png} % use same naming as them
-    \label{fig:bianch_et_al_2017_1a}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{0.45\textwidth}
-    \centering
-    \caption{}
-    \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_f_tmh_2_human_mhc1.png}
-    \label{fig:bilderbeek_et_al_2021_1a}
-  \end{subfigure}
-
-  \caption{
-    \textbf{(A)} 
-    Results for \cite{bianchi2017}. 
-    Dashed lines denotes the coincidence interval.
-    \textbf{(B)}
-    Results for this study.
-    Dashed line denotes the percentage as expected by chance.
-  }
-\end{figure}
 
 % Process all floats before going to a next page
 \clearpage
