@@ -58,6 +58,11 @@ jobs:
       - name: revision
         run: chmod +x create_revision.sh; ./create_revision.sh
 
+      - name: Install R packages
+        run: |
+          install.packages(c("readr", "stringr", "testthat", "tibble"))
+        shell: Rscript {0}
+
       - name: zip
         run: chmod +x zip_for_frontiers.sh ; ./zip_for_frontiers.sh
 
