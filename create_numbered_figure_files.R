@@ -9,9 +9,14 @@ includegraphics_lines <- stringr::str_subset(tex_lines, "^  .*includegraphics")
 png_filenames <- stringr::str_match(includegraphics_lines, "includegraphics.*\\{(.*)\\}")[, 2]
 testthat::expect_true(all(file.exists(png_filenames)))
 tiff_filenames <- stringr::str_replace(png_filenames, "png$", "tiff")
+eps_filenames <- stringr::str_replace(png_filenames, "png$", "eps")
 
 tiff_filenames[!file.exists(tiff_filenames)]
 testthat::expect_true(all(file.exists(tiff_filenames)))
+
+message("Not all .eps files can be found")
+eps_filenames[!file.exists(eps_filenames)]
+# testthat::expect_true(all(file.exists(eps_filenames)))
 
 figure_numbers <- c(
   paste0(1, letters[1:3]),
