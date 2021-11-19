@@ -45,6 +45,16 @@ jobs:
       - name: Upload PDF to the workflow tab
         uses: actions/upload-artifact@v2
         with:
-          name: my-pdf
+          name: bbbq_article_pdf
           path: bbbq_article.pdf
+
+      - name: zip
+        run: chmod +x zip_for_frontiers.sh ; ./zip_for_frontiers.sh
+
+      - name: Upload PDF to the workflow tab
+        uses: actions/upload-artifact@v2
+        with:
+          name: frontiers_zip
+          path: frontiers.zip
+
 

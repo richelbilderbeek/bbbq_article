@@ -14,7 +14,7 @@ chmod +x split_pdf.sh
 # Creates the numbered TIFF files in 'numbered_figure_files'
 Rscript create_numbered_figure_files.R
 
-zip ~/frontiers.zip \
+zip frontiers.zip \
   bbbq_article.bib \
   bbbq_article.tex \
   bbbq_header.bbl \
