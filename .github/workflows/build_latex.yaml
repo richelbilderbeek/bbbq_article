@@ -61,8 +61,11 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
-      - name: split PDFs
+      - name: for splitting PDFs
         run: sudo apt install pdftk
+
+      - name: revision
+        run: chmod +x create_revision.sh; ./create_revision.sh
 
       - name: zip
         run: chmod +x zip_for_frontiers.sh ; ./zip_for_frontiers.sh
