@@ -63,11 +63,11 @@ jobs:
           install.packages(c("readr", "stringr", "testthat", "tibble"))
         shell: Rscript {0}
 
-      - name: create merged figures
-        run: Rscript create_merged_figures.sh
+      #- name: create merged figures
+      #  run: Rscript create_merged_figures.sh
 
-      - name: create merged manuscript
-        run: Rscript create_merged_tex.sh
+      #- name: create merged manuscript
+      #  run: Rscript create_merged_tex.sh
 
       - name: zip
         run: chmod +x zip_for_frontiers.sh ; ./zip_for_frontiers.sh
