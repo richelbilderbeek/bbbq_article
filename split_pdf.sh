@@ -12,4 +12,4 @@
 #
 pdftk bbbq_article.pdf cat 1-29 output bbbq_article_main.pdf
 pdftk bbbq_article.pdf cat 31-34 output bbbq_article_figures.pdf
-pdftk bbbq_article.pdf cat 54-66 output bbbq_article_supplementary_materials.pdf
+pdftk bbbq_article.pdf cat 35-66 output bbbq_article_supplementary_materials.pdf
