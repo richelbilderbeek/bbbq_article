@@ -6,7 +6,7 @@ of histocompatibility complex class I (MHC-I) are relatively hydrophobic,
 therefore peptide fragments derived from human transmembrane helices (TMHs) are predicted to be presented more often as would be expected 
 based on their abundance in the proteome. However, the physiological reason of why membrane proteins might be over-presented is unclear. 
 In this study, we show that the predicted over-presentation of TMH-derived peptides is general, as it is predicted for bacteria and viruses 
-and for both MHC-I and MHC-II, and confirmed from re-analysis of epitope databases. Moreover, we show that TMHs are evolutionarily more conserved, 
+and for both MHC-I and MHC-II, and confirmed by re-analysis of epitope databases. Moreover, we show that TMHs are evolutionarily more conserved, 
 because single nucleotide polymorphisms (SNPs) are present 
 relatively less frequently in TMH-coding chromosomal regions 
 compared to regions coding for extracellular and cytoplasmic protein regions. 
@@ -62,7 +62,7 @@ such as fungi, bacteria or viruses.
 An important part of the acquired immune response, 
 that develops specialized and more specific recognition of pathogens 
 than the innate immune response, 
-is T cells which recognize peptides, called epitopes, derived from antigenic proteins presented on Major Histocompatibility Complexes (MHC) class I and II on the cell surface. 
+are T cells which recognize peptides, called epitopes, derived from antigenic proteins presented on Major Histocompatibility Complexes (MHC) class I and II on the cell surface. 
 
 % \paragraph{Classification of HLA}
 
@@ -128,7 +128,7 @@ They consist of an alpha helix of, on average, 23 amino acids in length.
 TMHs can also be predicted with high accuracy from a protein sequence 
 by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}. 
 For example, a study by Jones \cite{jones2007improving} found that,
-from 184 transmembrane proteins (TMPs) with known \emph{in vitro} topology, 
+from 184 transmembrane proteins (TMPs) with known topology, 
 80\% of the TMH predictions of these proteins
 matched the experimental findings.
 TMHs are common structures in the proteins of humans and microbes. 
@@ -162,7 +162,7 @@ epitopes from a human, viral and bacterial proteome
 are likely to be presented more often than expected by chance 
 for most alleles of MHC-I and II. 
 We confirmed the presentation of TMH-derived peptides 
-by re-analysis of peptide elution studies. 
+by re-analysis of peptides from The Immune Epitope Database (IEDB) \cite{vita2019immune}.
 Second, we tested our hypothesis that TMHs 
 are more evolutionary conserved than soluble protein regions.
 Our analysis of human single nucleotide polymorphisms (SNPs) showed 
@@ -230,8 +230,8 @@ Figures \ref{fig:bianch_et_al_2017_1a} and \ref{fig:bilderbeek_et_al_2021_1a}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To obtain experimental confirmation that peptides stemming from TMHs 
-are presented \emph{in vivo} in MHC-I and MHC-II,
-we mined the Immune Epitope Database (IEDB) \cite{vita2019immune}
+are presented by MHC-I and MHC-II,
+we mined the IEDB \cite{vita2019immune}
 for confirmed human MHC-ligands.
 We queried the IEDB for all linear epitopes obtained
 from MHC ligand assays in healthy humans, 
@@ -263,7 +263,7 @@ As a data source, multiple
 NCBI (\url{https://www.ncbi.nlm.nih.gov/}) databases were used: 
 the \emph{dbSNP} \cite{sherry2001dbsnp} database,
 which contains 650 million 
-cataloged non-redundant humane variations (called RefSNPs,
+cataloged non-redundant human variations (called RefSNPs,
 \url{https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/}), and the databases \emph{gene} (for gene names \cite{brown2015gene})
 and \emph{protein} (for proteins sequences \cite{sayers2010database}).
 
@@ -365,25 +365,26 @@ are relatively hydrophobic.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The Immune Epitope Database (IEDB) from the National Institutes of Health contains millions of linear epitope sequences obtained
-by an MHC ligand assay.
+by MHC ligand assays.
 For the MHC alleles used in this study, 
 we obtained 54,303 and 2,484 linear epitope sequences for the MHC-I
-and MHC-II alleles respectively.
+and MHC-II alleles from human origin respectively.
 There are relatively few epitopes for MHC-II, 
 as MHC-II has many more different alleles than MHC-I,
-whereas we selected only the epitopes found for the 21 MHC-II alleles used in this study.
+whereas we selected only the human epitopes found for the 21 MHC-II alleles used in this study.
 
-Figure \ref{fig:2a} shows that there are similar levels of
+Figure (\ref{fig:2a} and \ref{fig:thm_presentation_correlation}) shows there are similar levels of
 over-presentation of TMH-derived epitopes between (1) the
 percentage of TMH-derived epitopes that is reported in the IEDB database
 versus (2) the percentage of TMH-derived epitopes that is predicted to be presented
-in MHC-I alleles. For MHC-II alleles, there were too few epitopes per MHC allele
+in MHC-I alleles.
+For MHC-II alleles, there were too few epitopes per MHC allele
 to result in an informative figure. 
 
 In figure \ref{fig:2b} we grouped all the epitopes 
 presented by MHC-I and MHC-II alleles 
 by the percentage of TMH-derived epitopes,
-which are 22\% and 10\%.
+which are 22\% and 10\%, respectively.
 
 These findings robustly confirm that
 epitopes derived from human TMHs are presented in both MHC-I and MHC-II, and support that they are over-presented.
@@ -509,7 +510,7 @@ Our bioinformatics predictions indicate that the TMH-derived epitope repertoire 
 than solvent-exposed protein regions.
 
 \subsection{Mechanism of MHC presentation of TMH-derived epitopes}
-% \paragraph{TMH presentation in vivo}
+% \paragraph{TMH presentation}
 
 Although our data show that 
 TMH-derived epitopes are presented in all classical MHC-I and MHC-II haplotypes, 
@@ -765,20 +766,18 @@ RJCB, MB, GvdB and FB wrote the article.
 
   \caption{
     \textbf{
-      Robust prediction that TMH epitopes are presented \emph{in vivo}.
+      Robust prediction that TMH epitopes are presented.
     }
-    The percentage of epitopes for MHC-I and -II alleles
-    that overlap with TMHs that are presented.
-    The pair of horizontal red lines in each plot indicate the lower and upper bound 
-    of the 99\% confidence interval. Note that only one line is visible as this
-    interval is relatively narrow.
+    The percentage of epitopes for MHC-I and -II alleles that overlap with TMHs
+    that are presented. The pair of horizontal red lines in each plot indicate the
+    lower and upper bound of the 99\% confidence interval. Note that only one line
+    is visible as this interval is relatively narrow. 
     Alleles are listed in Table \ref{tab:haplotype_abbreviations}).
     \textbf{(A)} 
-    Observed and predicted percentage of TMH-derived epitopes
+    Observed and predicted percentage of TMH-derived epitopes for MHC-I alleles. 
     \textbf{(B)} 
-    MHC ligands from IEDB binding to TMH-derived epitopes.
-    The numbers above the bars denotes the number of epitopes
-    obtained using an MHC ligand assay. 
+    MHC ligands from IEDB corresponding to TMH-derived epitopes. 
+    The numbers above the bars denotes the number of TMH derived epitopes obtained.
   }
   \label{fig:elution}
 \end{figure}
@@ -1054,12 +1053,12 @@ the percentage of TMH-derived epitopes, with a linear trendline.
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Presentation of TMH-derived epitopes \emph{in vivo} in T cells}
+\subsection{Presentation of TMH-derived epitopes result in T cell responses}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure \ref{fig:t_cells_present_tmh_derived_epitopes} 
 shows the percentage of TMH-derived
-epitopes of the reported epitopes that for which T-cell responses were established. 
+epitopes of the reported epitopes from human origin for which T-cell responses were established. 
 The data was obtained from the IEDB and includes only the MHC
 alleles used in this study. As there are many (especially class II)
 MHC alleles, only a small percentage of the full IEDB data could be used.
