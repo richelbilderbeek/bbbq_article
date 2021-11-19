@@ -1,7 +1,7 @@
 \begin{abstract}
 
 Cytolytic T cell responses are predicted to be biased towards membrane proteins. 
-The peptide-binding grooves of the alleles of most haplotypes
+The peptide-binding grooves of most alleles
 of histocompatibility complex class I (MHC-I) are relatively hydrophobic, 
 therefore peptide fragments derived from human transmembrane helices (TMHs) are predicted to be presented more often as would be expected 
 based on their abundance in the proteome. However, the physiological reason of why membrane proteins might be over-presented is unclear. 
@@ -68,8 +68,8 @@ are T cells which recognize peptides, called epitopes, derived from antigenic pr
 
 The MHC proteins are heterodimeric complexes encoded by the
 HLA (Human Leukocyte Antigens) genes.
-In humans, the peptide binding groove of MHC-I is made by only the alpha subunit. There are three classical haplotypes of MHC-I, hallmarked by a highly polymorphic alpha chain called HLA-A, HLA-B and HLA-C, that all present epitopes to cytolytic T cells. 
-For MHC-II, both the alpha and the beta chains contribute to the peptide binding groove. There are three classical haplotypes of MHC-II as well, called HLA-DR, HLA-DQ and HLA-DP, that all present epitopes to helper T cells.
+In humans, the peptide binding groove of MHC-I is made by only the alpha subunit. There are three classical alleles of MHC-I, hallmarked by a highly polymorphic alpha chain called HLA-A, HLA-B and HLA-C, that all present epitopes to cytolytic T cells. 
+For MHC-II, both the alpha and the beta chains contribute to the peptide binding groove. There are three classical alleles of MHC-II as well, called HLA-DR, HLA-DQ and HLA-DP, that all present epitopes to helper T cells.
 Each MHC complex can present a subset of all possible peptides.
 For example, HLA-A and HLA-B have no overlap in which
 epitopes they bind \cite{lund2004definition}.
@@ -79,7 +79,7 @@ and each different allele presents a different subset of peptides \cite{marsh201
 
 % \paragraph{HLAs increase detection range}
 
-Humans mostly express two alleles per MHC haplotype, one from the parental and one from the maternal chromosome, 
+Humans express a limited set of MHC alleles
 and therefore an individual's immune system detects 
 only a fraction of all possible peptide fragments. 
 However, at the population level, the coverage of pathogenic peptides that are detected 
@@ -183,12 +183,12 @@ overlooked importance in vaccine development.
 
 To predict how frequently epitopes overlapping with TMHs are presented,
 a similar analysis strategy was applied as described in \cite{bianchi2017} 
-for several haplotypes of both MHC-I and MHC-II, 
+for several alleles of both MHC-I and MHC-II, 
 and for a human, viral and bacterial proteome.
 To summarize, for each proteome, 
 all possible 9-mers (for MHC-I) or 14-mers (MHC-II) were derived. 
 For each of these peptides, we determined if it overlapped with a predicted 
-TMH and if it was predicted to bind to the most frequent alleles of each haplotype.
+TMH and if it was predicted to bind to the most frequent alleles of each MHC allele.
 
 For MHC-I, 9-mers were used, 
 as this is the length most frequently presented in MHC-I 
@@ -206,12 +206,12 @@ To predict the affinity of an epitope to a certain HLA allele,
 and \verb;MHCnuggets; \cite{shao2020high} for MHC-II was used.
 Both MCH-I and MHC-II alleles were selected 
 to have a high prevalence in the population,
-where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
+where the alleles of MHC-I are the alleles representing the 13 supertypes 
 with over 99.6\% coverage of the population's MHC-I repertoire as defined by \cite{lund2004definition} \cite{sette1999},
-and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
+and the 21 MHC-II alleles, have a phenotypic frequency 
 of 14\% or more in the human population \cite{greenbaum2011functional}.
  
-We define a protein to be a binder if, for a certain haplotype, 
+We define a protein to be a binder if, for a certain MHC allele, 
 any of its 9-mer or 14-mer peptides have an IC50 value in the lowest 2\% of 
 all peptides within a \emph{proteome} 
 (see supplementary Tables \ref{tab:ic50_binders_mhc1} and \ref{tab:ic50_binders_mhc2} for values), 
@@ -357,7 +357,7 @@ for the different human MHC alleles.
 An assumed linear correlation explains 88\% of the variability in MHC-I.
 For MHC-II, 62\% of the variability is explained by hydrophobicity. 
 This indicates that TMH-derived peptides are over-presented, 
-because the peptide binding grooves of most MHC-I and -II haplotypes 
+because the peptide binding grooves of most MHC-I and -II alleles 
 are relatively hydrophobic.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -513,7 +513,7 @@ than solvent-exposed protein regions.
 % \paragraph{TMH presentation}
 
 Although our data show that 
-TMH-derived epitopes are presented in all classical MHC-I and MHC-II haplotypes, 
+TMH-derived epitopes are presented in all classical MHC-I and MHC-II alleles, 
 the molecular mechanisms of how integral membrane proteins are processed 
 for MHC presentation are largely unknown \cite{bianchi2017}. 
 Most prominently, the fundamental principles of 
@@ -609,7 +609,12 @@ target for evolution to respond to.
 Indeed, we have found the signature of evolution when both factors,
 that is, TMHs and catalytic sites are likely to co-occur,
 which is in TMPs that span the membrane at least twice.
-In contrast to single-spanners, where we found no significant evolutionary conservation, the TMHs of multi-spanners are more evolutionary conserved than soluble protein regions. Likely, the TMHs in many multi-spanners need to interact which each other for correct protein structure and function and they might hence be more structurally constrained compared to the TMHs of single-spanners.
+In contrast to single-spanners, where we found no significant evolutionary conservation, 
+the TMHs of multi-spanners are more evolutionary conserved than soluble protein regions. 
+Likely, the TMHs in many multi-spanners need to interact which each other 
+for correct protein structure and function 
+and they might hence be more structurally constrained 
+compared to the TMHs of single-spanners.
 Thus, we speculate that the human immune system is more attentive 
 towards TMHs in multi-spanners, as these are evolutionarily more conserved. 
 
@@ -634,7 +639,7 @@ a disease, in line with our conclusion that TMHs are more conserved.
 
 Together, from this study, two important conclusions can be drawn. 
 First, the MHC over-presentation of TMHs is likely a general feature 
-and predicted to occur for most haplotypes of both MHC-I and -II 
+and predicted to occur for most alleles of both MHC-I and -II 
 and for humans as well as bacterial and viral pathogens. 
 Second, TMHs are genuinely more evolutionary conserved than soluble protein motifs, 
 at least in the human proteome. 
@@ -719,9 +724,9 @@ RJCB, MB, GvdB and FB wrote the article.
     \includegraphics[width=\linewidth]{bbbq_1_smart_results/fig_hydrophobicity_mhc2.png}
     \label{fig:hydrophobicity_2}
   \end{subfigure}  
-  \caption{ \textbf{Over-presentation of TMH-derived epitopes on most MHC-I and -II haplotypes}
+  \caption{ \textbf{Over-presentation of TMH-derived epitopes on most MHC-I and -II alleles}
     \textbf{(A)} 
-    The percentage of epitopes for MHC-I and -II haplotypes that are predicted to 
+    The percentage of epitopes for MHC-I and -II alleles that are predicted to 
     overlap with TMHs for the proteomes of SARS-CoV-2 (top row), human (middle 
     row) and \emph{M. tuberculosis} (MtB; bottom row).
     The pair of horizontal red lines in each plot indicate the lower and upper bound 
@@ -733,7 +738,7 @@ RJCB, MB, GvdB and FB wrote the article.
     and the hydrophobicity score of all predicted epitopes for 
     human MHC-I \textbf{(B)} and MHC-II alleles \textbf{(C)}.
     Diagonal red line: linear regression analysis. 
-    Labels are shorthand for the HLA haplotypes,
+    Labels are shorthand for the HLA alleles,
     see the supplementary Table \ref{tab:haplotype_abbreviations} for the names.
   }
 \end{figure}
@@ -911,7 +916,7 @@ RJCB, MB, GvdB and FB wrote the article.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{IC50 values of binders per haplotype}
+\subsection{IC50 values of binders per MHC allele}
 \label{subsec:ic50s_per_haplotype}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -919,11 +924,11 @@ Per target proteome (i.e. human, SARS-CoV-2, \emph{M tuberculosis}),
 we collected all 9-mers (for MHC-I) and 14-mers (for MHC-II),
 after removing the selenoproteins and proteins that are shorter
 than the epitope length.
-From these epitopes, per MHC haplotype,
+From these epitopes, per MHC allele,
 we predicted the IC50 (in nM) using \verb;epitope-prediction; (for MHC-I)
 and MHCnuggets (for MHC-II). 
-Here, we show the IC50 value per haplotype that
-is used to determine if a peptide binds to the haplotype's MHC
+Here, we show the IC50 value per MHC allele that
+is used to determine if a peptide binds to the allele's MHC
 for MHC-I (see supplementary Table \ref{tab:ic50_binders_mhc1}) and 
 MHC-II (see supplementary Table \ref{tab:ic50_binders_mhc2}).
 
@@ -1027,7 +1032,7 @@ as displayed in figure \ref{fig:2a}.
 
 Here we correlate between the over-presentation of TMH-derived
 epitopes between these two sources of data.
-Figure \ref{fig:thm_presentation_correlation} shows per haplotype
+Figure \ref{fig:thm_presentation_correlation} shows per MHC allele
 the percentage of TMH-derived epitopes, with a linear trendline.
 
 \begin{figure}[!htbp]
@@ -1091,7 +1096,7 @@ for the percentage of MHC-I 9-mers overlapping with TMH.
 \input{bbbq_1_smart_results/table_tmh_binders_mhc1_2.latex}
 
 Supplementary Table \ref{tab:haplotype_abbreviations} shows the
-shorthand notation for the HLA haplotypes.
+shorthand notation for the HLA alleles.
 
 % Label: tab:haplotype_abbreviations
 \input{bbbq_1_smart_results/haplotype_abbreviations.tex}
@@ -1122,7 +1127,7 @@ where the binders are written to file.
 
 However, in this study, an MHC binder is defined as a peptide within a \emph{proteome} in which it is found, that is among the peptides with the 2\% lowest IC50 values.
 Subsection \ref{subsec:ic50s_per_haplotype} shows the IC50 values
-for a binder per haplotype. 
+for a binder per MHC allele. 
 
 % \paragraph{Selenoproteins}
 
@@ -1140,7 +1145,7 @@ selenoproteins from this analysis.
 To verify if the previous and the current method give rise to
 notable difference, we show a side-by-side comparison
 in figures \ref{fig:bianch_et_al_2017_1a} and \ref{fig:bilderbeek_et_al_2021_1a}.
-The figures that haplotypes that over-present or under-present TMH-derived epitopes,
+The figures that MHC molecules that over-present or under-present TMH-derived epitopes,
 do so in both studies. The extent to which TMH-derived epitopes are
 presented, however, is more extreme in our current setup.
 
@@ -1416,7 +1421,7 @@ different proteomes, we normalized this percentages in such a
 way that 1.0 is the percentage of TMH-derived epitopes that would 
 be expected by chance. 
 Figure \ref{fig:f_tmh_mhc1_normalized} and \ref{fig:f_tmh_mhc2_normalized}
-show these normalized values for the MHC-I and MHC-II haplotypes respectively.
+show these normalized values for the MHC-I and MHC-II alleles respectively.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_f_tmh_mhc1_2_normalized.png}
@@ -1448,17 +1453,17 @@ The percentage of TMH-derived epitopes presented was normalized
 to the expected percentage of TMH-derived epitopes,
 where $1.0$ denotes that the percentage of presented TMH-derived epitopes
 matches the values as expected by chance.
-The normalized values per haplotype are shown 
+The normalized values per MHC allele are shown 
 in figure \ref{fig:rel_presentation_per_haplotype}.
 To compare the TMH-derived over-presentation per MHC class,
-we grouped the normalized values per haplotype, 
+we grouped the normalized values per allele, 
 and plot the mean and standard error, as shown in figure \ref{fig:rel_presentation}.
 
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_smart_results/fig_rel_presentation_per_haplotype.png}
   \caption{
     Normalized proportion of MHC-I and MHC-II epitopes overlapping with TMHs,
-    for the different haplotypes and proteomes
+    for the different MHC alleles and proteomes
   }
   \label{fig:rel_presentation_per_haplotype}
 \end{figure}
@@ -1582,7 +1587,7 @@ as \ref{tab:tmh_binders_mhc1}, except the former uses 2 AAs overlap.
 \begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{bbbq_1_smart_2aa_results/fig_f_tmh_2_panel.png}
   \caption{
-    The percentage of epitopes for MHC-I and -II haplotypes that are predicted to 
+    The percentage of epitopes for MHC-I and -II alleles that are predicted to 
     overlap with TMHs (for at least two amino acids) 
     for the proteomes of SARS-CoV-2 (top row), human (middle 
     row) and \emph{M. tuberculosis} (bottom row).
