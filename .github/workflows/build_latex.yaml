@@ -7,7 +7,7 @@ on:
 name: Build LaTeX document
 
 jobs:
-  build_latex:
+  build_article:
 
     runs-on: ubuntu-latest
     env:
@@ -48,6 +48,22 @@ jobs:
           name: bbbq_article_pdf
           path: bbbq_article.pdf
 
+  build_frontiers:
+
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@v1
+
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: split PDFs
+        run: sudo apt install pdftk
+
       - name: zip
         run: chmod +x zip_for_frontiers.sh ; ./zip_for_frontiers.sh
 
@@ -56,5 +72,4 @@ jobs:
         with:
           name: frontiers_zip
           path: frontiers.zip
-
 
