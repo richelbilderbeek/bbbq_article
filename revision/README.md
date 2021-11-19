@@ -298,9 +298,9 @@ If we interpret the question correctly, we believe our statement that most MHC a
 > in the population.
 
 As requested, we have and revised the text to the following: Both MCH-I and MHC-II alleles were selected to have a high occurrence,
-where the alleles of the MHC-I haplotypes are the alleles representing the 13 supertypes 
+where the alleles of MHC-I are the alleles representing the 13 supertypes 
 with over 99.6\% coverage of the populations MHC-I repertoire as defined by [1, 2]
-and the 21 MHC-II haplotype alleles, have a phenotypic frequency 
+and the 21 MHC-II alleles, have a phenotypic frequency 
 of 14\% or more in the human population [3].
 
  * [1] Lund, O., Nielsen, M., Kesmir, C. et al. Definition of supertypes for HLA molecules using clustering of specificity matrices. Immunogenetics 55, 797–810 (2004). https://doi.org/10.1007/s00251-004-0647-4
