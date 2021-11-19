@@ -18,6 +18,9 @@ zip frontiers.zip \
   revision/README.md \
   revision/revision.docx \
   revision/revision.pdf \
+  manuscript.bib \
+  manuscript.tex \
+  bbbq_article.tex \
   bbbq_article.bib \
   bbbq_article.tex \
   bbbq_header.bbl \

@@ -63,6 +63,9 @@ jobs:
           install.packages(c("readr", "stringr", "testthat", "tibble"))
         shell: Rscript {0}
 
+      - name: create merged manuscript
+        run: chmod +x create_merged_tex.sh ; ./create_merged_tex.sh
+
       - name: zip
         run: chmod +x zip_for_frontiers.sh ; ./zip_for_frontiers.sh
 
