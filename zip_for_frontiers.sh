@@ -15,9 +15,9 @@ chmod +x split_pdf.sh
 Rscript create_numbered_figure_files.R
 
 zip frontiers.zip \
-  revision\README.md \
-  revision\revision.docx \
-  revision\revision.pdf \
+  revision/README.md \
+  revision/revision.docx \
+  revision/revision.pdf \
   bbbq_article.bib \
   bbbq_article.tex \
   bbbq_header.bbl \
