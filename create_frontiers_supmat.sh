@@ -10,8 +10,7 @@
 #   ./create_frontiers_supmat.sh
 #
 pdflatex frontiers_SupplementaryMaterial.tex
-bibtex frontiers_SupplementaryMaterial.tex >/dev/null
+bibtex frontiers_SupplementaryMaterial >/dev/null
 pdflatex frontiers_SupplementaryMaterial.tex >/dev/null
 pdflatex frontiers_SupplementaryMaterial.tex
-mv frontiers_SupplementaryMaterial.pdf frontiers_supmat.pdf
 

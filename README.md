@@ -98,6 +98,42 @@ The comparison figure:
 
 ![](compare_fig_f_tmh_2_panel.png)
 
+## Labels
+
+
+\subsection{TMH epitopes obtained from experimental data}\label{subsec:elution_studies}
+    \label{fig:bbbq_1_smart_results}
+    \label{fig:hydrophobicity_1}
+    \label{fig:hydrophobicity_2}
+    \label{fig:2a}
+    \label{fig:2b}
+  \label{fig:elution}
+    \label{fig:f_snps_found_and_expected}
+    \label{fig:f_tmh_ncbi}
+    \label{fig:conservation}
+    \label{fig:f_snps_found_and_expected_per_spanner}
+    \label{fig:conservation_per_spanner}
+    \label{fig:f_tmh_ncbi_per_spanner}
+    \label{fig:bianch_et_al_2017_1a}
+    \label{fig:bilderbeek_et_al_2021_1a}
+\label{subsec:ic50s_per_haplotype}
+\label{subsec:counts}
+  \label{fig:snp_rel_pos}
+  \label{fig:thm_presentation_correlation}
+  \label{fig:t_cells_present_tmh_derived_epitopes}
+\label{subsec:prediction_software_used}
+  \label{table:software_used}
+  \label{fig:f_tmh_mhc1_normalized}
+  \label{fig:f_tmh_mhc2_normalized}
+  \label{fig:rel_presentation_per_haplotype}
+  \label{fig:rel_presentation}
+  \label{fig:snps_per_gene_name_ncbi}
+  \label{fig:snps_per_gene_name_processed}
+  \label{fig:n_proteins_per_gene_name}
+  \label{fig:fig_n_snps_per_tmp}
+  \label{fig:fig_n_tmhs_per_protein}
+  \label{fig:bbbq_1_smart_results_2aas}
+
 
 
 ## Frontiers files

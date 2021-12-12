@@ -45,6 +45,9 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \usepackage{longtable}
 
+% Added by RJCB
+%\usepackage{xr}
+%\externaldocument{frontiers_SupplementaryMaterial.tex}
 
 % Leave a blank line between paragraphs instead of using \\
 
@@ -371,7 +374,7 @@ protein sequence. For each protein sequence, the protein topology was determined
 \subsection{TMH-derived peptides are predicted to be over-presented in MHC-I}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Figure \ref{fig:bbbq_1_smart_results} shows the predicted presentation of TMH-derived peptides in MHC-I,
+Figure \ref{fig:1}A shows the predicted presentation of TMH-derived peptides in MHC-I,
 for a human, viral and bacterial proteome.
 Per MHC-I allele, it shows the percentage of binders that overlap with a TMH 
 with at least one residue.
@@ -398,7 +401,7 @@ of TMH-derived peptides.
 
 We next wondered if the over-representation of TMH-derived peptides 
 would also be confirmed for MHC-II. 
-Figure \ref{fig:bbbq_1_smart_results} shows the percentages of MHC-II epitopes 
+Figure \ref{fig:1}A shows the percentages of MHC-II epitopes 
 predicted to be overlapping with TMHs for our human, viral and bacterial proteomes.
 We found that TMH-derived peptides are over-presented in all
 of the 21 MHC-II alleles, 
@@ -414,7 +417,7 @@ for the exact TMH and epitope counts.
 For MHC-I, we previously showed that the over-presentation of TMH-derived 
 peptides is caused by the hydrophobicity of the peptide binding 
 grooves \cite{bianchi2017}. 
-Figures \ref{fig:hydrophobicity_1} and \ref{fig:hydrophobicity_2}
+Figures \ref{fig:1}B and \ref{fig:1}C
 show the extent of over-presentation
 of TMH-derived epitopes as a function of the hydrophobicity preference score 
 for the different human MHC alleles.
@@ -487,7 +490,7 @@ for the detailed numbers and distributions of SNPs.
 Per protein, we calculated two percentages: 
 (1) the percentage of a protein sequence length bearing TMHs, 
 and (2) the percentage of SNPs located within these predicted TMHs.
-Each percentage pair was plotted in figure \ref{fig:f_snps_found_and_expected}.
+Each percentage pair was plotted in figure \ref{fig:3}A.
 The proportion of SNPs found in TMHs varied from 
 none (i.e., all SNPs were in
 soluble regions) to all (i.e., all SNPs were in
@@ -507,7 +510,7 @@ which is 21,208.
 The probability of success for the $i$th TMP ($p\_i$), 
 is the percentage of residues within a TMH per TMP. 
 These percentages are shown as a histogram 
-in figure \ref{fig:f_tmh_ncbi}. 
+in figure \ref{fig:3}B. 
 The expected number of SNPs expected to be found in 
 TMHs by chance equals $\sum{p} \approx 4,141$.
 As we observed 3,803 SNPs in TMHs, 
@@ -522,7 +525,7 @@ ratio between the number of SNPs found in TMHs
 versus the number of SNPs as expected by chance.
 In effect, per 1000 SNPs found in soluble protein domains, 
 one finds 918 SNPs in TMHs,
-as depicted (as percentages) in figure \ref{fig:conservation}. 
+as depicted (as percentages) in figure \ref{fig:3}C. 
 
 We split this analysis for TMPs containing only a single TMH (so-called single-membrane spanners) and TMPs containing multiple TMHs (multi-membrane spanners). 
 We hypothesized that single-membrane spanners are less conserved than multi-membrane spanners,
@@ -531,7 +534,7 @@ might have protein-protein interactions between their TMHs,
 for example to accommodate active sites, and 
 thus might have additional structural constraints.
 From the split data, we did the same analysis as for the total TMPs.
-Figure \ref{fig:f_snps_found_and_expected_per_spanner} 
+Figure \ref{fig:4}A 
 shows the percentages of TMHs for individual proteins as a function of the
 percentage of SNPs located in TMHs.
 For both single- and multi-spanners, a linear regression shows that less
@@ -554,7 +557,7 @@ Also, for single- and multi-spanners,
 we determined the relevance of this finding by
 calculating how much less SNPs are found in TMHs
 when compared to soluble regions,
-as depicted in figure \ref{fig:conservation_per_spanner}.
+as depicted in figure \ref{fig:4}B.
 In effect, per 1,000 SNPs found in soluble protein domains, 
 one finds 978 SNPs in TMHs 
 of single-spanners
