@@ -281,7 +281,7 @@ of 14\% or more in the human population \cite{greenbaum2011functional}.
 We define a protein to be a binder if, for a certain MHC allele, 
 any of its 9-mer or 14-mer peptides have an IC50 value in the lowest 2\% of 
 all peptides within a \emph{proteome} 
-(see supplementary Tables \ref{tab:ic50_binders_mhc1} and \ref{tab:ic50_binders_mhc2} for values), 
+(see supplementary Tables ST1 and ST2 for values), 
 this differs from our previous study where we defined
 a binder as having an IC50 in the lowest 2\% 
 of the peptides within a \emph{protein}.
@@ -290,7 +290,7 @@ This revised definition precludes bias of proteins
 that give rise to no or only very few MHC epitopes.
 To verify that the slight change in method yields similar results,
 a side by side comparison is shown in the supplementary materials, 
-Figures \ref{fig:bianch_et_al_2017_1a} and \ref{fig:bilderbeek_et_al_2021_1a}.
+Figures S1 and S2.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TMH epitopes obtained from experimental data}\label{subsec:elution_studies}
@@ -356,11 +356,11 @@ resulting in $\approx$61k variations.
 Only variations that result in a SNP for
 a single amino acid substitution were analyzed, resulting in $\approx$38k SNPs.
 The exact amounts can be found in the supplementary materials,
-Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2}.
+Tables ST3 and ST4.
 
 % \paragraph{Selection of SNPs}
 %
-SNPs were picked based on ID number, which is linked to their discovery date. To verify that these ID numbers are unrelated to SNP positions, the relative positions of all analyzed SNPs in a protein were determined. This analysis showed no positional bias of the SNPs, as shown in supplementary figure \ref{fig:snp_rel_pos}.
+SNPs were picked based on ID number, which is linked to their discovery date. To verify that these ID numbers are unrelated to SNP positions, the relative positions of all analyzed SNPs in a protein were determined. This analysis showed no positional bias of the SNPs, as shown in supplementary figure S3.
 
 Per SNP, the \emph{protein} NCBI database was queried for the
 protein sequence. For each protein sequence, the protein topology was determined using \verb;PureseqTM;. Using these predicted protein topologies, the SNPs were scored to be located within or outside TMHs.
@@ -407,7 +407,7 @@ We found that TMH-derived peptides are over-presented in all
 of the 21 MHC-II alleles, 
 for a human, bacterial and viral proteome,
 except for \verb;HLA-DRB3*0101; in \emph{M. tuberculosis}.
-See supplementary Table \ref{tab:tmh_binders_mhc2} 
+See supplementary Table ST5 
 for the exact TMH and epitope counts.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -440,7 +440,7 @@ There are relatively few epitopes for MHC-II,
 as MHC-II has many more different alleles than MHC-I,
 whereas we selected only the human epitopes found for the 21 MHC-II alleles used in this study.
 
-Figure (\ref{fig:2a} and \ref{fig:thm_presentation_correlation}) shows there are similar levels of
+Figure (\ref{fig:2}A and S4) shows there are similar levels of
 over-presentation of TMH-derived epitopes between (1) the
 percentage of TMH-derived epitopes that is reported in the IEDB database
 versus (2) the percentage of TMH-derived epitopes that is predicted to be presented
@@ -448,20 +448,20 @@ in MHC-I alleles.
 For MHC-II alleles, there were too few epitopes per MHC allele
 to result in an informative figure. 
 
-In figure \ref{fig:2b} we grouped all the epitopes 
+In figure \ref{fig:2}B we grouped all the epitopes 
 presented by MHC-I and MHC-II alleles 
 by the percentage of TMH-derived epitopes,
 which are 22\% and 10\%, respectively.
 
 These findings robustly confirm that
 epitopes derived from human TMHs are presented in both MHC-I and MHC-II, and support that they are over-presented.
-See the supplementary Table \ref{tab:elution} for the exact values.
+See the supplementary Table ST6 for the exact values.
 
 We also mined the IEDB database for epitopes for
 any type of T-cell response from the specified
 alleles, from the total reports 36\% and 7\% 
 concerned TMH-derived epitopes in MHC class I and II, respectively 
-(see Figure \ref{fig:t_cells_present_tmh_derived_epitopes}). 
+(see Figure S5). 
 
 This data confirms that not only TMH derived epitopes are presented on MHC, 
 but this also elicits T-cell mediated immune responses.
@@ -484,7 +484,7 @@ of which 2,553 are predicted to be TMPs and
 We obtained 37,630 unique variations, 
 of which 9,621 are SNPs that resulted in a straightforward amino acids substitution, 
 of which 6,062 were located in predicted TMPs.
-See supplementary Tables \ref{tab:ncbi_counts_1} and \ref{tab:ncbi_counts_2} 
+See supplementary Tables ST3 and ST4 
 for the detailed numbers and distributions of SNPs.
 
 Per protein, we calculated two percentages: 
@@ -840,7 +840,7 @@ All code, intermediate and final results are archived at
     row) and \emph{M. tuberculosis} (MtB; bottom row).
     The pair of horizontal red lines in each plot indicate the lower and upper bound 
     of the 99\% confidence interval.
-    See supplementary Tables \ref{tab:tmh_binders_mhc2} and \ref{tab:tmh_binders_mhc1}
+    See supplementary Tables ST5 and ST7
     for the exact TMH and  epitope counts.
     \textbf{(B-C)}
     Correlation between the percentages of predicted TMH-derived epitopes
@@ -848,7 +848,7 @@ All code, intermediate and final results are archived at
     human MHC-I \textbf{(B)} and MHC-II alleles \textbf{(C)}.
     Diagonal red line: linear regression analysis. 
     Labels are shorthand for the HLA alleles,
-    see the supplementary Table \ref{tab:haplotype_abbreviations} for the names.}
+    see the supplementary Table ST8 for the names.}
   \label{fig:1}
 \end{figure}
 % 1A: \label{fig:bbbq_1_smart_results}
@@ -870,14 +870,14 @@ All code, intermediate and final results are archived at
     that are presented. The pair of horizontal red lines in each plot indicate the
     lower and upper bound of the 99\% confidence interval. Note that only one line
     is visible as this interval is relatively narrow. 
-    Alleles are listed in Table \ref{tab:haplotype_abbreviations}).
+    Alleles are listed in Table ST8).
     \textbf{(A)} 
     Observed and predicted percentage of TMH-derived epitopes for MHC-I alleles. 
     \textbf{(B)} 
     MHC ligands from IEDB corresponding to TMH-derived epitopes. 
     The numbers above the bars denotes the number of TMH derived epitopes obtained.
 }
-\label{fig:elution}
+\label{fig:2}
 \end{figure}
 % Figure 2a: \label{fig:2a}
 % Figure 2b: \label{fig:2b}
