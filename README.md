@@ -44,6 +44,13 @@ with all files for a Frontiers submission.
 See [numbered_figure_files.csv](numbered_figure_files.csv) where the 
 numbered figures (`figure_1a.tiff`, etc) originally come from.
 
+The subfigures (e.g. figure 1a, figure 1b), 
+were put into TIFF figure files (e.g. figure 1, figure 2) by @fransbianchi.
+
+The figure TIFF files (e.g. figure_1.tiff, figure_2.tiff) were converted
+to EPS files (e.g. figure_1.eps, figure_2.eps)
+using [https://www.freeconvert.com/tiff-to-eps](https://www.freeconvert.com/tiff-to-eps).
+
 ## Re-do the analysis
 
 ### Naturally presented epitopes are derived from TMH
