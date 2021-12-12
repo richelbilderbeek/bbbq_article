@@ -100,41 +100,53 @@ The comparison figure:
 
 ## Labels
 
+Fig|Label
+---|-------------------------------------------
+1A |`fig:bbbq_1_smart_results`
+1B |`fig:hydrophobicity_1`
+1C |`fig:hydrophobicity_2`
+2  |`fig:elution`
+2A |`fig:2a`
+2B |`fig:2b`
+3A |`fig:f_snps_found_and_expected`
+3B |`fig:f_tmh_ncbi`
+3C |`fig:conservation`
+4A |`fig:f_snps_found_and_expected_per_spanner`
+4B |`fig:conservation_per_spanner`
+4C |`fig:f_tmh_ncbi_per_spanner`
+S1 |`fig:bianch_et_al_2017_1a`
+S2 |`fig:bilderbeek_et_al_2021_1a`
+S3 |`fig:snp_rel_pos`
+S4 |`fig:thm_presentation_correlation`
+S5 |`fig:t_cells_present_tmh_derived_epitopes`
+S6 |`fig:f_tmh_mhc1_normalized`
+S7 |`fig:f_tmh_mhc2_normalized`
+S8 |`fig:rel_presentation_per_haplotype`
+S9 |`fig:rel_presentation`
+S10|`fig:snps_per_gene_name_ncbi`
+S11|`fig:snps_per_gene_name_processed`
+S12|`fig:n_proteins_per_gene_name`
+S13|`fig:fig_n_snps_per_tmp`
+S14|`fig:fig_n_tmhs_per_protein`
+S15|`fig:bbbq_1_smart_results_2aas`
 
-\subsection{TMH epitopes obtained from experimental data}\label{subsec:elution_studies}
-    \label{fig:bbbq_1_smart_results}
-    \label{fig:hydrophobicity_1}
-    \label{fig:hydrophobicity_2}
-    \label{fig:2a}
-    \label{fig:2b}
-  \label{fig:elution}
-    \label{fig:f_snps_found_and_expected}
-    \label{fig:f_tmh_ncbi}
-    \label{fig:conservation}
-    \label{fig:f_snps_found_and_expected_per_spanner}
-    \label{fig:conservation_per_spanner}
-    \label{fig:f_tmh_ncbi_per_spanner}
-    \label{fig:bianch_et_al_2017_1a}
-    \label{fig:bilderbeek_et_al_2021_1a}
-\label{subsec:ic50s_per_haplotype}
-\label{subsec:counts}
-  \label{fig:snp_rel_pos}
-  \label{fig:thm_presentation_correlation}
-  \label{fig:t_cells_present_tmh_derived_epitopes}
-\label{subsec:prediction_software_used}
-  \label{table:software_used}
-  \label{fig:f_tmh_mhc1_normalized}
-  \label{fig:f_tmh_mhc2_normalized}
-  \label{fig:rel_presentation_per_haplotype}
-  \label{fig:rel_presentation}
-  \label{fig:snps_per_gene_name_ncbi}
-  \label{fig:snps_per_gene_name_processed}
-  \label{fig:n_proteins_per_gene_name}
-  \label{fig:fig_n_snps_per_tmp}
-  \label{fig:fig_n_tmhs_per_protein}
-  \label{fig:bbbq_1_smart_results_2aas}
-
-
+Tab |Label
+----|-------------------------------------------
+ST1 |`tab:ic50_binders_mhc1`
+ST2 |`tab:ic50_binders_mhc2`
+ST3 |`tab:ncbi_counts_1`
+ST4 |`tab:ncbi_counts_2`
+ST5 |`tab:tmh_binders_mhc2`
+ST6 |`tab:elution`
+ST7 |`tab:tmh_binders_mhc1`
+ST8 |`tab:haplotype_abbreviations`
+ST9 |`table:software_used`
+ST10|`tab:f_tmh`
+ST11|`tab:snp_stats`
+ST12|`tab:snp_stats_per_spanner_single`
+ST13|`tab:snp_stats_per_spanner_multi`
+ST14|`tab:tmh_binders_mhc2_2aas`
+ST15|`tab:tmh_binders_mhc1_2aas`
 
 ## Frontiers files
 
