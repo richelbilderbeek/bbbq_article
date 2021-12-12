@@ -69,7 +69,7 @@ presented, however, is more extreme in our current setup.
 \includegraphics[width=\linewidth]{bianchi_et_al_2017_results/figure-1-a.png} % use same naming as them
 \end{center}
 \caption{
-    Results for \cite{bianchi2017}. 
+    Results for \citep{bianchi2017}. 
     Dashed lines denotes the coincidence interval.
 }
 \label{fig:bianch_et_al_2017_1a}
@@ -294,16 +294,16 @@ visualized by figure 1A.
   \begin{tabular}{llll}
     Goal & Tool & Reference \\ 
     \hline
-    Predict topology                  & TMHMM                     & \cite{krogh2001predicting} \\
-    Predict topology                  & PureseqTM                 & \cite{wang2019efficient} \\
-    Predict epitopes MHC-I            & \verb;epitope-prediction; & \cite{bianchi2017} \\
-    Predict epitopes MHC-II           & NetMHCIIpan               & \cite{nielsen2008quantitative,karosiene2013netmhciipan} \\
-    Call TMHMM from R                 & \verb;tmhmm;              & \cite{tmhmm} \\
-    Call PureseqTM from R             & \verb;pureseqtmr;         & \cite{pureseqtmr} \\
-    Call NetMHCIIpan from R           & \verb;netmhc2pan;         & \cite{netmhc2pan} \\
-    Work with IEDB                    & \verb;iedbr;              & \cite{iedbr} \\
-    Work with \verb;rentrez;          & \verb;sprentrez;          & \cite{sprentrez} \\
-    Combine all                       & \verb;bbbq;               & \cite{bbbq}
+    Predict topology                  & TMHMM                     & \citep{krogh2001predicting} \\
+    Predict topology                  & PureseqTM                 & \citep{wang2019efficient} \\
+    Predict epitopes MHC-I            & \verb;epitope-prediction; & \citep{bianchi2017} \\
+    Predict epitopes MHC-II           & NetMHCIIpan               & \citep{nielsen2008quantitative,karosiene2013netmhciipan} \\
+    Call TMHMM from R                 & \verb;tmhmm;              & \citep{tmhmm} \\
+    Call PureseqTM from R             & \verb;pureseqtmr;         & \citep{pureseqtmr} \\
+    Call NetMHCIIpan from R           & \verb;netmhc2pan;         & \citep{netmhc2pan} \\
+    Work with IEDB                    & \verb;iedbr;              & \citep{iedbr} \\
+    Work with \verb;rentrez;          & \verb;sprentrez;          & \citep{sprentrez} \\
+    Combine all                       & \verb;bbbq;               & \citep{bbbq}
   \end{tabular}
   \caption{
     Overview of all software used in this research.
@@ -321,21 +321,21 @@ prediction software.
 This was done by searching for papers that (1) cite older
 prediction software, and (2) present a novel method to make predictions.
 As a starting point, per type of prediction software,
-a review paper was used (\cite{moller2001evaluation} for protein
-topology, \cite{lundegaard2011prediction} for MHC-I
-binding affinities and \cite{nielsen2003reliable} for MHC-II binding
+a review paper was used (\citep{moller2001evaluation} for protein
+topology, \citep{lundegaard2011prediction} for MHC-I
+binding affinities and \citep{nielsen2003reliable} for MHC-II binding
 affinities). 
 
 % \paragraph{TMH prediction}
 
 There are multiple computational tools developed to predict which
 parts of a protein forms a TMH.
-In 2001, multiple of such prediction tools have been compared \cite{moller2001evaluation},
-of which TMHMM \cite{krogh2001predicting} turned out to be the most accurate, 
-as is used in the previous study \cite{bianchi2017}.
+In 2001, multiple of such prediction tools have been compared \citep{moller2001evaluation},
+of which TMHMM \citep{krogh2001predicting} turned out to be the most accurate, 
+as is used in the previous study \citep{bianchi2017}.
 However, TMHMM has a restrictive software license and is nearly two
 decades old.
-Therefore, PureseqTM \cite{wang2019efficient},
+Therefore, PureseqTM \citep{wang2019efficient},
 was also used in this study, which has been more recently developed
 and has a free software license.
 
@@ -343,48 +343,48 @@ and has a free software license.
 
 For MHC-I, there are multiple computational tools developed 
 to predict epitopes. 
-According to \cite{lundegaard2011prediction}, at that time,
-NetMHCcons \cite{karosiene2012netmhccons} gave the best predictions.
+According to \citep{lundegaard2011prediction}, at that time,
+NetMHCcons \citep{karosiene2012netmhccons} gave the best predictions.
 We used the same tool as used in our earlier study, 
-\verb;epitope-prediction; \cite{bianchi2017},
+\verb;epitope-prediction; \citep{bianchi2017},
 
 % \paragraph{MHC-II epitope prediction}
 
 Also for MHC-II, there are multiple computational tools developed 
 to predict epitopes,
-such as using a trained neural network \cite{nielsen2003reliable}
-or a Gibbs sampling approach \cite{nielsen2004improved}.
-According to \cite{lundegaard2011prediction}, in 2011,
+such as using a trained neural network \citep{nielsen2003reliable}
+or a Gibbs sampling approach \citep{nielsen2004improved}.
+According to \citep{lundegaard2011prediction}, in 2011,
 from a set of multiple tools, 
-\mbox{NetMHCIIpan} \cite{nielsen2008quantitative,karosiene2013netmhciipan}
+\mbox{NetMHCIIpan} \citep{nielsen2008quantitative,karosiene2013netmhciipan}
 made the most accurate predictions.
 The most recent FOSS tool available now appears
-to be MHCnuggets \cite{shao2020high}, which can do both MHC-I 
+to be MHCnuggets \citep{shao2020high}, which can do both MHC-I 
 and MHC-II predictions. 
-As we already use \verb;epitope-prediction; \cite{bianchi2017} 
+As we already use \verb;epitope-prediction; \citep{bianchi2017} 
 for MHC-I predictions, we use MHCnuggets only for MHC-II predictions.
 
 % \paragraph{NCBI data retrieval software}
 
 To retrieve the data from the NCBI databases the
-\verb;rentrez; R package \cite{rentrez} was used
+\verb;rentrez; R package \citep{rentrez} was used
 that calls the NCBI database's API. 
 The NCBI database provides a stable user experience for all users, 
 by limiting its API to 3 calls per second per user.
 Additionally, the API splits the result of a bigger
 query into multiple pages, each of which needs one API call.
-The \verb;sprentrez; package \cite{sprentrez} provides for 
+The \verb;sprentrez; package \citep{sprentrez} provides for 
 bigger queries of multiple (and delayed) API calls.
 
 % \paragraph{IEDB software}
 
-To retrieve the data from the IEDB  databases \cite{vita2019immune}, 
-the \verb;iedbr; R package \cite{iedbr} was written,
+To retrieve the data from the IEDB  databases \citep{vita2019immune}, 
+the \verb;iedbr; R package \citep{iedbr} was written,
 to calls the IEDB database's API. 
 Similar to the NCBI database,
 the IEDB has a limit to 1 call per second per user
 and allows a query results to return 10k results maximally.
-The \verb;iedbr; package \cite{iedbr} allows for bigger queries.
+The \verb;iedbr; package \citep{iedbr} allows for bigger queries.
 
 % Process all floats before going to a next page
 \clearpage
@@ -404,7 +404,7 @@ as described below.
 
 The R package 'tmhmm' was developed to do the similar topology
 predictions as our earlier study (that used 'TMHMM'), yet in an automated way.
-'TMHMM' has a restrictive software license \cite{krogh2001predicting} 
+'TMHMM' has a restrictive software license \citep{krogh2001predicting} 
 and allows a user
 to download a pre-compiled executable after confirmation that he/she
 is in academia. The R package respects this restriction
@@ -416,7 +416,7 @@ by the Comprehensive R Archive Network (CRAN).
 % \paragraph{pureseqtmr}
 
 To be able to call, from R, the TMH prediction 
-software 'PureseqTM' \cite{wang2019efficient},
+software 'PureseqTM' \citep{wang2019efficient},
 which is written in C, the package 'pureseqtmr' has been developed. 
 'pureseqtmr' allows to install 'PureseqTM' and use most of its features.
 'pureseqtmr' has been submitted to and is accepted by CRAN.
@@ -424,7 +424,7 @@ which is written in C, the package 'pureseqtmr' has been developed.
 % \paragraph{mhcnuggetsr}
 
 MHCnuggets is a free and open-source Python package to predict 
-epitope affinity for many MHC-I and MHC-II variants \cite{shao2020high}.
+epitope affinity for many MHC-I and MHC-II variants \citep{shao2020high}.
 The R package 'mhcnuggetsr' allows one to install and use MHCnuggets
 from within R.
 Also 'mhcnuggetsr' has been submitted to and is accepted by CRAN.
@@ -500,7 +500,7 @@ Regarding the evolutionary conservation of TMHs using SNPs,
 again, it is estimated that approximately ten percent
 of SNPs is a false positive that result from the methods to determine
 a SNP. One example is that sequence variations are incorrectly
-detected due to highly similar duplicated sequences \cite{musumeci2010single}.
+detected due to highly similar duplicated sequences \citep{musumeci2010single}.
 We assume that these duplications occur as often in TMHs as in
 regions around these, hence we expect this not to affect our results.
 
@@ -512,7 +512,7 @@ resulted in the same amino acid, from a different genetic code)
 from our analysis.
 There is evidence, however, that these synonymous mutations
 do have an effect and may even be evolutionary selected 
-for \cite{hunt2009silent}.
+for \citep{hunt2009silent}.
 As the possible effect of synonymous mutations is ignored by our
 topology prediction software, we do so as well.
 
