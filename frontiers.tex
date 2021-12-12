@@ -89,13 +89,133 @@ that enable pathogens to evade T cell responses.
  \keyFont{ \section{Keywords:} antigen presentation, membrane proteins, bioinformatics, adaptive immunity, transmembrane domain, transmembrane helix, epitopes, T lymphocyte, MHC-I, MHC-II, evolutionary conservation}
 \end{abstract}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For Original Research Articles \citep{conference}, Clinical Trial Articles \citep{article}, and Technology Reports \citep{patent}, the introduction should be succinct, with no subheadings \citep{book}. For Case Reports the Introduction should include symptoms at presentation \citep{chapter}, physical exams and lab results \citep{dataset}.
+% For Original Research Articles \citep{conference}, Clinical Trial Articles \citep{article}, and Technology Reports \citep{patent}, the introduction should be succinct, with no subheadings \citep{book}. For Case Reports the Introduction should include symptoms at presentation \citep{chapter}, physical exams and lab results \citep{dataset}.
 
+% \paragraph{Immune response}
 
+Our immune system fights diseases and infections from pathogens, 
+such as fungi, bacteria or viruses. 
+An important part of the acquired immune response, 
+that develops specialized and more specific recognition of pathogens 
+than the innate immune response, 
+are T cells which recognize peptides, called epitopes, derived from antigenic proteins presented on Major Histocompatibility Complexes (MHC) class I and II on the cell surface. 
 
+% \paragraph{Classification of HLA}
+
+The MHC proteins are heterodimeric complexes encoded by the
+HLA (Human Leukocyte Antigens) genes.
+In humans, the peptide binding groove of MHC-I is made by only the alpha subunit. There are three classical alleles of MHC-I, hallmarked by a highly polymorphic alpha chain called HLA-A, HLA-B and HLA-C, that all present epitopes to cytolytic T cells. 
+For MHC-II, both the alpha and the beta chains contribute to the peptide binding groove. There are three classical alleles of MHC-II as well, called HLA-DR, HLA-DQ and HLA-DP, that all present epitopes to helper T cells.
+Each MHC complex can present a subset of all possible peptides.
+For example, HLA-A and HLA-B have no overlap in which
+epitopes they bind \cite{lund2004definition}.
+Moreover, the HLA genes of humans are highly polymorphic, with hundreds 
+to thousands of different alleles, 
+and each different allele presents a different subset of peptides \cite{marsh2010nomenclature}.
+
+% \paragraph{HLAs increase detection range}
+
+Humans express a limited set of MHC alleles
+and therefore an individual's immune system detects 
+only a fraction of all possible peptide fragments. 
+However, at the population level, the coverage of pathogenic peptides that are detected 
+is very high, because of the highly polymorphic MHC genes.
+It is therefore believed that MHC polymorphism improves immunity at the population level, 
+as mutations in a protein that disrupt a particular MHC presentation at the individual level, 
+so-called escape mutations, 
+will not affect MHC presentation for all alleles present in the population \cite{sommer2005importance}.
+
+% \paragraph{Epitope prediction}
+
+Many studies are aimed at identifying the repertoire of epitopes that are presented 
+in any of the different alleles to determine which epitopes will result in an immune response, 
+as this will for instance aid the design of vaccines. 
+These studies have led to the development of prediction algorithms 
+that allow for very reliable \emph{in silico} 
+predictions of the peptide binding affinities
+\cite{larsen2010identification,schellens2008unanticipated,tang2011genome}.
+For example, S. Tang et al. \cite{tang2011genome} found that, 
+of the 432 peptides that were predicted to bind to an MHC allele,
+86\% were experimentally confirmed to do so. 
+
+% \paragraph{TMHs}
+
+Using these prediction algorithms, 
+we recently showed that peptides derived 
+from transmembrane helices (TMHs) 
+are likely to be more frequently presented by MHC-I 
+than expected based on their abundance \cite{bianchi2017},
+which is in line with a previous study 
+by Istrail et al \cite{istrail2004comparative},
+demonstrating that N-terminal signal sequences 
+are likely to be presented within major histocompatibility complexes, 
+due their hydrophobic nature. 
+Moreover, we showed that some well-known immunodominant peptides stem from TMHs. 
+This over-presentation is attributed to the fact 
+that the peptide-binding groove of most MHC-I alleles
+is relatively hydrophobic, 
+and therefore hydrophobic TMH-derived peptides have a higher affinity 
+to bind than their soluble hydrophobic 
+counterparts. 
+
+TMHs are hydrophobic 
+as they need to span the hydrophobic lipid bilayer of cellular membranes.
+They consist of an alpha helix of, on average, 23 amino acids in length. 
+TMHs can also be predicted with high accuracy from a protein sequence 
+by bioinformatics approaches \cite{krogh2001predicting,kall2004combined,arai2004conpred,jones2007improving,klammer2009metatm,wang2019efficient}. 
+For example, a study by Jones \cite{jones2007improving} found that,
+from 184 transmembrane proteins (TMPs) with known topology, 
+80\% of the TMH predictions of these proteins
+matched the experimental findings.
+TMHs are common structures in the proteins of humans and microbes. 
+Different TMH prediction tools estimate that 15-39\% of all proteins 
+in the human proteome contain at least one TMH \cite{ahram2006estimation}.
+However, the physiological reason why peptides derived from TMHs 
+would be presented more often than peptides 
+stemming from soluble (i.e., extracellular or cytoplasmic) protein regions is unknown. 
+In this study, we hypothesized that the presentation of 
+TMH residues is evolutionarily preferred, 
+since TMHs are less prone to undergo escape mutations. 
+One reason to expect such a reduced 
+variability (and hence evolutionary conservation) in TMHs, 
+is that these are restricted in their variability 
+by the functional requirement to span a lipid bilayer. 
+This limits 
+many of the amino acids present in TMHs 
+to have hydrophobic side chains 
+\cite{hessa2007molecular,jones1994model}.
+Therefore, we speculated that the TMHs of pathogens 
+might have a lower chance to develop escape mutations, 
+as that will result in a dysfunctional TMH 
+and render the protein inactive.
+
+This study had two objectives. 
+First, we aimed to generalize our findings by predicting
+the antigenic presentation
+from different kingdoms of life in both MHC-I and -II. 
+From these \emph{in silico} predictions, we conclude that TMH-derived
+epitopes from a human, viral and bacterial proteome
+are likely to be presented more often than expected by chance 
+for most alleles of MHC-I and II. 
+We confirmed the presentation of TMH-derived peptides 
+by re-analysis of peptides from The Immune Epitope Database (IEDB) \cite{vita2019immune}.
+Second, we tested our hypothesis that TMHs 
+are more evolutionary conserved than soluble protein regions.
+Our analysis of human single nucleotide polymorphisms (SNPs) showed 
+that random point mutations are indeed less likely
+to occur within TMHs. 
+These findings strengthen the emerging notion 
+that TMHs are important for the T cell-mediated adaptive immune system, 
+and hence are of  
+overlooked importance in vaccine development.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Article types}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 For requirements for a specific article type please refer to the Article Types on any Frontiers journal page. Please also refer to  \href{http://home.frontiersin.org/about/author-guidelines#Sections}{Author Guidelines} for further information on how to organize your manuscript in the required sections or their equivalents for your field
 
@@ -167,7 +287,7 @@ The datasets [GENERATED/ANALYZED] for this study can be found in the [NAME OF RE
 
 \bibliographystyle{frontiersinSCNS_ENG_HUMS} % for Science, Engineering and Humanities and Social Sciences articles, for Humanities and Social Sciences articles please include page numbers in the in-text citations
 %\bibliographystyle{frontiersinHLTH&FPHY} % for Health, Physics and Mathematics articles
-\bibliography{test}
+\bibliography{bbbq_article}
 
 %%% Make sure to upload the bib file along with the tex file and PDF
 %%% Please see the test.bib file for some examples of references
