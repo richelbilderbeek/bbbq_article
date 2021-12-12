@@ -92,3 +92,28 @@ The comparison figure:
 ![](compare_fig_f_tmh_2_panel.png)
 
 
+
+## Frontiers files
+
+frontiers.aux
+frontiersFPHY.cls
+frontiersHLTH.cls
+frontiersinHLTH&FPHY.bst
+frontiersinSCNS_ENG_HUMS.bst
+frontiers.log
+frontiers.out
+frontiers.pdf
+frontiersSCNS.cls
+frontiers_SupplementaryMaterial.tex
+frontiers_suppmat.cls
+frontiers.tex
+logo1.eps
+logo1-eps-converted-to.pdf
+logo2.eps
+logos.eps
+logos-eps-converted-to.pdf
+PDF examples
+stfloats.sty
+test.bib
+YM-logo.eps
+
