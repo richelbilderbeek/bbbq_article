@@ -69,7 +69,7 @@ See [https://github.com/richelbilderbeek/bbbq_1_smart](https://github.com/richel
 
 See [https://github.com/richelbilderbeek/ncbi_peregrine](https://github.com/richelbilderbeek/ncbi_peregrine) for the scripts.
 
- * [ ] Zenodo here
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5809128.svg)](https://doi.org/10.5281/zenodo.5809128)
 
 See [https://github.com/richelbilderbeek/ncbi_results](https://github.com/richelbilderbeek/ncbi_results) to see how the results are processed.
 
