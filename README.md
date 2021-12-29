@@ -63,7 +63,7 @@ See [https://github.com/richelbilderbeek/bbbq_article_issue_157](https://github.
 
 See [https://github.com/richelbilderbeek/bbbq_1_smart](https://github.com/richelbilderbeek/bbbq_1_smart).
 
- * [ ] Zenodo here
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5809125.svg)](https://doi.org/10.5281/zenodo.5809125)
 
 ### TMHs are conserved
 
