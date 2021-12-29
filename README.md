@@ -73,7 +73,7 @@ See [https://github.com/richelbilderbeek/ncbi_peregrine](https://github.com/rich
 
 See [https://github.com/richelbilderbeek/ncbi_results](https://github.com/richelbilderbeek/ncbi_results) to see how the results are processed.
 
- * [ ] Zenodo here
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5809134.svg)](https://doi.org/10.5281/zenodo.5809134)
 
 ## Dependencies
 
