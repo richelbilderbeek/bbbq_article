@@ -55,9 +55,9 @@ using [https://www.freeconvert.com/tiff-to-eps](https://www.freeconvert.com/tiff
 
 ### Naturally presented epitopes are derived from TMH
 
-See [https://github.com/richelbilderbeek/bbbq_article_issue_157](https://github.com/richelbilderbeek/bbbq_article_issue_157).
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5809109.svg)](https://doi.org/10.5281/zenodo.5809109)
 
- * [ ] Zenodo here
+See [https://github.com/richelbilderbeek/bbbq_article_issue_157](https://github.com/richelbilderbeek/bbbq_article_issue_157).
 
 ### TMH-derived epitopes are over-presented
 
