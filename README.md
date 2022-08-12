@@ -10,6 +10,32 @@ Branch   |[![GitHub Actions logo](pics/GitHubActions.png)](https://github.com/ri
 The article 'Transmembrane helices are an overlooked and evolutionarily conserved source of major histocompatibility complex class I and II epitopes',
 by Bilderbeek, Baranov, van den Bogaart and Bianchi.
 
+## Article download and citation
+
+This article was published in Frontiers in Immunology,
+with a pre-print on bioRxiv.
+
+### Frontiers in Immunology
+
+ * [This article on Frontiers in Immunology](https://www.frontiersin.org/articles/10.3389/fimmu.2021.763044/full)
+
+```
+Bilderbeek, Richèl JC, et al. "Transmembrane Helices Are an Over-Presented and Evolutionarily Conserved Source of Major Histocompatibility Complex Class I and II Epitopes." Frontiers in immunology 12 (2021).
+```
+
+```
+@article{bilderbeek2021transmembrane,
+  title={Transmembrane Helices Are an Over-Presented and Evolutionarily Conserved Source of Major Histocompatibility Complex Class I and II Epitopes},
+  author={Bilderbeek, Rich{\`e}l JC and Baranov, Maksim V and Van Den Bogaart, Geert and Bianchi, Frans},
+  journal={Frontiers in immunology},
+  volume={12},
+  year={2021},
+  publisher={Frontiers Media SA}
+}
+```
+
+### bioRxiv
+
  * [This article on biorxiv](https://www.biorxiv.org/content/10.1101/2021.05.02.441235v3)
 
 ```
