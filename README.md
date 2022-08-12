@@ -178,6 +178,7 @@ ST15|`tab:tmh_binders_mhc1_2aas`
 
 ## Frontiers files
 
+```
 frontiers.aux
 frontiersFPHY.cls
 frontiersHLTH.cls
@@ -199,4 +200,4 @@ PDF examples
 stfloats.sty
 test.bib
 YM-logo.eps
-
+```
