@@ -54,7 +54,7 @@ Richel Bilderbeek (on behalf of all authors)
 Richel Bilderbeek
 Department of Molecular Immunology
 Nijenborgh 7, 9747 AG Groningen, the Netherlands
-Email: richel@richelbilderbeek.nl
+Email: rjcbilderbeek@gmail.com
 
 References
 
